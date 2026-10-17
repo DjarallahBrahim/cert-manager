@@ -1,0 +1,389 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 7,
+  "filesSkipped": [
+    ".github/renovate.json5",
+    ".trivyignore",
+    "LICENSES",
+    "OWNERS",
+    "OWNERS_ALIASES",
+    "cmd/acmesolver/LICENSES",
+    "cmd/acmesolver/OWNERS",
+    "cmd/acmesolver/go.mod",
+    "cmd/acmesolver/go.sum",
+    "cmd/cainjector/LICENSES",
+    "cmd/cainjector/go.mod",
+    "cmd/cainjector/go.sum",
+    "cmd/controller/LICENSES",
+    "cmd/controller/go.mod",
+    "cmd/controller/go.sum",
+    "cmd/startupapicheck/LICENSES",
+    "cmd/startupapicheck/go.mod",
+    "cmd/startupapicheck/go.sum"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 7,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 2,
+      "failed": 0,
+      "skipped": 5
+    }
+  },
+  "results": [
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 39,
+      "nonEmptyLines": 31,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature-request.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 26,
+      "nonEmptyLines": 18,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 48,
+      "nonEmptyLines": 29,
+      "sections": [
+        {
+          "heading": "Pull Request Motivation",
+          "level": 3,
+          "line": 15
+        },
+        {
+          "heading": "Kind",
+          "level": 3,
+          "line": 19
+        },
+        {
+          "heading": "Release Note",
+          "level": 3,
+          "line": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": ".github/chainguard/make-self-upgrade.sts.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 8,
+      "sections": [
+        {
+          "heading": "issuer",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "subject_pattern",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "permissions",
+          "level": 1,
+          "line": 7
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": ".github/chainguard/renovate.sts.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "sections": [
+        {
+          "heading": "issuer",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "subject_pattern",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "permissions",
+          "level": 1,
+          "line": 7
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "cmd/acmesolver/app/app.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 68,
+      "functions": [
+        {
+          "name": "NewACMESolverCommand",
+          "startLine": 33,
+          "endLine": 89,
+          "params": [
+            "_"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewACMESolverCommand",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "new",
+          "lineNumber": 34
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "logs.NewOptions",
+          "lineNumber": 35
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "logf.ValidateAndApply",
+          "lineNumber": 45
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "fmt.Errorf",
+          "lineNumber": 46
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "cmd.Context",
+          "lineNumber": 53
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "logf.FromContext",
+          "lineNumber": 54
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "make",
+          "lineNumber": 56
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "func() {\n\t\t\t\tdefer close(completedCh)\n\t\t\t\t<-runCtx.Done()\n\n\t\t\t\t// allow a timeout for graceful shutdown\n\t\t\t\tshutdownCtx, cancel := context.WithTimeout(context.Background(), 5*time.Second)\n\t\t\t\tdefer cancel()\n\n\t\t\t\t// nolint: contextcheck\n\t\t\t\tif err := s.Shutdown(shutdownCtx); err != nil {\n\t\t\t\t\tlog.Error(err, \"error shutting down acmesolver server\")\n\t\t\t\t}\n\t\t\t}",
+          "lineNumber": 57
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "close",
+          "lineNumber": 58
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "runCtx.Done",
+          "lineNumber": 59
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "context.WithTimeout",
+          "lineNumber": 62
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "context.Background",
+          "lineNumber": 62
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "cancel",
+          "lineNumber": 63
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "s.Shutdown",
+          "lineNumber": 66
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "log.Error",
+          "lineNumber": 67
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "s.Listen",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "errors.Is",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "cmd.Flags().IntVar",
+          "lineNumber": 81
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "cmd.Flags",
+          "lineNumber": 81
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "cmd.Flags().StringVar",
+          "lineNumber": 82
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "cmd.Flags",
+          "lineNumber": 82
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "cmd.Flags().StringVar",
+          "lineNumber": 83
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "cmd.Flags",
+          "lineNumber": 83
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "cmd.Flags().StringVar",
+          "lineNumber": 84
+        },
+        {
+          "caller": "NewACMESolverCommand",
+          "callee": "cmd.Flags",
+          "lineNumber": 84
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cmd/acmesolver/main.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 31,
+          "endLine": 45,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "util.SetupExitHandler",
+          "lineNumber": 32
+        },
+        {
+          "caller": "main",
+          "callee": "context.Background",
+          "lineNumber": 32
+        },
+        {
+          "caller": "main",
+          "callee": "exit",
+          "lineNumber": 33
+        },
+        {
+          "caller": "main",
+          "callee": "logf.InitLogs",
+          "lineNumber": 35
+        },
+        {
+          "caller": "main",
+          "callee": "logf.FlushLogs",
+          "lineNumber": 36
+        },
+        {
+          "caller": "main",
+          "callee": "logf.NewContext",
+          "lineNumber": 37
+        },
+        {
+          "caller": "main",
+          "callee": "app.NewACMESolverCommand",
+          "lineNumber": 39
+        },
+        {
+          "caller": "main",
+          "callee": "cmd.ExecuteContext",
+          "lineNumber": 41
+        },
+        {
+          "caller": "main",
+          "callee": "logf.Log.Error",
+          "lineNumber": 42
+        },
+        {
+          "caller": "main",
+          "callee": "util.SetExitCode",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

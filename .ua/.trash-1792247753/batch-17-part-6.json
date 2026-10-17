@@ -1,0 +1,856 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "type": "file",
+      "name": "certificaterequest.go",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "summary": "Generated typed client for cert-manager CertificateRequest resources, defining the getter and CRUD/apply interface including status subresource updates.",
+      "tags": [
+        "generated-code",
+        "api-client",
+        "cert-manager",
+        "certificate-request"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "type": "file",
+      "name": "clusterissuer.go",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "summary": "Generated typed client for cluster-scoped cert-manager ClusterIssuer resources, defining the getter and CRUD/apply interface.",
+      "tags": [
+        "generated-code",
+        "api-client",
+        "cert-manager",
+        "clusterissuer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go:CertificateRequestsGetter",
+      "type": "class",
+      "name": "CertificateRequestsGetter",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "lineRange": [
+        35,
+        37
+      ],
+      "summary": "Interface exposing the CertificateRequests accessor that group clients must implement.",
+      "tags": [
+        "interface",
+        "api-client",
+        "cert-manager",
+        "certificate-request"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go:CertificateRequestInterface",
+      "type": "class",
+      "name": "CertificateRequestInterface",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "lineRange": [
+        40,
+        55
+      ],
+      "summary": "Full client interface for cert-manager CertificateRequest resources covering CRUD, watch, patch and apply operations.",
+      "tags": [
+        "interface",
+        "api-client",
+        "cert-manager",
+        "certificate-request"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go:newCertificateRequests",
+      "type": "function",
+      "name": "newCertificateRequests",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "lineRange": [
+        63,
+        74
+      ],
+      "summary": "Constructs the gentype-backed certificaterequests client for the given namespace (or cluster scope).",
+      "tags": [
+        "constructor",
+        "api-client",
+        "cert-manager",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go:ClusterIssuersGetter",
+      "type": "class",
+      "name": "ClusterIssuersGetter",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "lineRange": [
+        35,
+        37
+      ],
+      "summary": "Interface exposing the ClusterIssuers accessor that group clients must implement.",
+      "tags": [
+        "interface",
+        "api-client",
+        "cert-manager",
+        "clusterissuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go:ClusterIssuerInterface",
+      "type": "class",
+      "name": "ClusterIssuerInterface",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "lineRange": [
+        40,
+        55
+      ],
+      "summary": "Full client interface for cluster-scoped cert-manager ClusterIssuer resources covering CRUD, watch, patch and apply operations.",
+      "tags": [
+        "interface",
+        "api-client",
+        "cert-manager",
+        "clusterissuer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go:newClusterIssuers",
+      "type": "function",
+      "name": "newClusterIssuers",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "lineRange": [
+        63,
+        74
+      ],
+      "summary": "Constructs the gentype-backed clusterissuers client for the given namespace (or cluster scope).",
+      "tags": [
+        "constructor",
+        "api-client",
+        "cert-manager",
+        "factory"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/caissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificateadditionaloutputformat.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatecondition.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatekeystores.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificateprivatekey.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestcondition.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatestatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuercondition.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuerconfig.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuerspec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuerstatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/jkskeystore.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraintitem.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/venaficloud.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/venafitpp.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/x509subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/clientset/versioned/scheme/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "file:pkg/client/clientset/versioned/scheme/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/caissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificateadditionaloutputformat.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatecondition.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatekeystores.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificateprivatekey.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestcondition.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatestatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuercondition.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuerconfig.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuerspec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuerstatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/jkskeystore.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraintitem.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/venaficloud.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/venafitpp.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/x509subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/clientset/versioned/scheme/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/client/clientset/versioned/scheme/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "class:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go:CertificateRequestsGetter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "class:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go:CertificateRequestsGetter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "class:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go:CertificateRequestInterface",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "class:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go:CertificateRequestInterface",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "target": "function:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go:newCertificateRequests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "class:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go:ClusterIssuersGetter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "class:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go:ClusterIssuersGetter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "class:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go:ClusterIssuerInterface",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "class:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go:ClusterIssuerInterface",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "target": "function:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go:newClusterIssuers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    }
+  ]
+}

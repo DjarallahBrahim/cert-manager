@@ -1,0 +1,1001 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/e2e/suite/conformance/rbac/issuer.go",
+      "type": "file",
+      "name": "issuer.go",
+      "filePath": "test/e2e/suite/conformance/rbac/issuer.go",
+      "summary": "RBAC conformance tests asserting which verbs the built-in view, edit and admin ClusterRoles grant for Issuer resources.",
+      "tags": [
+        "test",
+        "conformance",
+        "rbac",
+        "issuer",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "test/e2e/suite/doc.go",
+      "summary": "Root package aggregator that blank-imports all e2e suite subpackages so their Ginkgo specs are registered.",
+      "tags": [
+        "entry-point",
+        "barrel",
+        "test",
+        "e2e",
+        "bootstrap"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Go doc-only package file whose imports exist solely to register Ginkgo specs or expose helpers."
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/acme/certificate/http01.go",
+      "type": "file",
+      "name": "http01.go",
+      "filePath": "test/e2e/suite/issuers/acme/certificate/http01.go",
+      "summary": "End-to-end ACME HTTP01 Certificate tests covering ingress annotation and redirect validation, blocked DNS names, failing certificate recovery and challenge pod recreation.",
+      "tags": [
+        "test",
+        "e2e",
+        "acme",
+        "http01",
+        "certificate"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/acme/certificate/notafter.go",
+      "type": "file",
+      "name": "notafter.go",
+      "filePath": "test/e2e/suite/issuers/acme/certificate/notafter.go",
+      "summary": "End-to-end ACME test verifying that short requested durations are honoured and reflected in the issued certificate notAfter date.",
+      "tags": [
+        "test",
+        "e2e",
+        "acme",
+        "certificate",
+        "duration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/acme/certificate/webhook.go",
+      "type": "file",
+      "name": "webhook.go",
+      "filePath": "test/e2e/suite/issuers/acme/certificate/webhook.go",
+      "summary": "End-to-end ACME test for the sample webhook DNS solver, asserting challenges are presented through the webhook provider, with helpers listing owned Orders and Challenges.",
+      "tags": [
+        "test",
+        "e2e",
+        "acme",
+        "webhook",
+        "dns01"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/acme/certificaterequest/dns01.go",
+      "type": "file",
+      "name": "dns01.go",
+      "filePath": "test/e2e/suite/issuers/acme/certificaterequest/dns01.go",
+      "summary": "End-to-end ACME DNS01 CertificateRequest tests parameterised over RFC2136 and other DNS providers for regular, wildcard and apex domains.",
+      "tags": [
+        "test",
+        "e2e",
+        "acme",
+        "dns01",
+        "certificaterequest"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/acme/certificaterequest/http01.go",
+      "type": "file",
+      "name": "http01.go",
+      "filePath": "test/e2e/suite/issuers/acme/certificaterequest/http01.go",
+      "summary": "End-to-end ACME HTTP01 CertificateRequest tests covering RSA and ECDSA keys, long domains, wildcard-plus-apex names, invalid domains and challenge pod recovery.",
+      "tags": [
+        "test",
+        "e2e",
+        "acme",
+        "http01",
+        "certificaterequest"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/acme/certificaterequest/profiles.go",
+      "type": "file",
+      "name": "profiles.go",
+      "filePath": "test/e2e/suite/issuers/acme/certificaterequest/profiles.go",
+      "summary": "End-to-end tests for the ACME Profiles extension, checking profile-selected durations and actionable failure messages on CertificateRequests.",
+      "tags": [
+        "test",
+        "e2e",
+        "acme",
+        "profiles",
+        "certificaterequest"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "type": "file",
+      "name": "cloudflare.go",
+      "filePath": "test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "summary": "Cloudflare DNS provider addon that provisions a test zone and API token for ACME DNS01 end-to-end tests.",
+      "tags": [
+        "test",
+        "addon",
+        "cloudflare",
+        "dns01",
+        "e2e"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/acme/dnsproviders/dnsproviders.go",
+      "type": "file",
+      "name": "dnsproviders.go",
+      "filePath": "test/e2e/suite/issuers/acme/dnsproviders/dnsproviders.go",
+      "summary": "Shared Details transferable-data struct describing DNS provider endpoints and credentials for ACME DNS01 addons.",
+      "tags": [
+        "test",
+        "addon",
+        "dns01",
+        "data-model",
+        "e2e"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/acme/certificate/http01.go:findDNSNames",
+      "type": "function",
+      "name": "findDNSNames",
+      "filePath": "test/e2e/suite/issuers/acme/certificate/http01.go",
+      "lineRange": [
+        500,
+        520
+      ],
+      "summary": "Parses the certificate stored in a TLS secret and returns its DNS subject alternative names.",
+      "tags": [
+        "utility",
+        "x509",
+        "dns",
+        "test-helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/acme/certificate/webhook.go:listOwnedChallenges",
+      "type": "function",
+      "name": "listOwnedChallenges",
+      "filePath": "test/e2e/suite/issuers/acme/certificate/webhook.go",
+      "lineRange": [
+        177,
+        192
+      ],
+      "summary": "Lists all ACME Challenges owned by a given Order via owner references.",
+      "tags": [
+        "test-helper",
+        "acme",
+        "challenge",
+        "kubernetes-client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/acme/certificate/webhook.go:listOwnedOrders",
+      "type": "function",
+      "name": "listOwnedOrders",
+      "filePath": "test/e2e/suite/issuers/acme/certificate/webhook.go",
+      "lineRange": [
+        194,
+        210
+      ],
+      "summary": "Lists all ACME Orders owned by a given Certificate via owner references.",
+      "tags": [
+        "test-helper",
+        "acme",
+        "order",
+        "kubernetes-client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/acme/certificaterequest/dns01.go:testRFC2136DNSProvider",
+      "type": "function",
+      "name": "testRFC2136DNSProvider",
+      "filePath": "test/e2e/suite/issuers/acme/certificaterequest/dns01.go",
+      "lineRange": [
+        46,
+        169
+      ],
+      "summary": "Registers the DNS01 CertificateRequest test context for the RFC2136 provider when credentials are configured, asserting issuance for regular, wildcard and apex domains.",
+      "tags": [
+        "test-harness",
+        "acme",
+        "dns01",
+        "rfc2136"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go:Cloudflare",
+      "type": "class",
+      "name": "Cloudflare",
+      "filePath": "test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "lineRange": [
+        37,
+        46
+      ],
+      "summary": "Cloudflare DNS provider addon implementing setup, provisioning, deprovisioning and details reporting for ACME DNS01 tests.",
+      "tags": [
+        "addon",
+        "cloudflare",
+        "dns01",
+        "test-infrastructure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go:Setup",
+      "type": "function",
+      "name": "Setup",
+      "filePath": "test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "lineRange": [
+        48,
+        66
+      ],
+      "summary": "Prepares the Cloudflare addon namespaces and resolves configuration before provisioning the test zone.",
+      "tags": [
+        "addon",
+        "cloudflare",
+        "setup",
+        "test-infrastructure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go:Provision",
+      "type": "function",
+      "name": "Provision",
+      "filePath": "test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "lineRange": [
+        71,
+        103
+      ],
+      "summary": "Creates the Cloudflare DNS zone and API token secret, waiting until the test zone is resolvable.",
+      "tags": [
+        "addon",
+        "cloudflare",
+        "provisioning",
+        "dns01"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/e2e/suite/issuers/acme/dnsproviders/dnsproviders.go:Details",
+      "type": "class",
+      "name": "Details",
+      "filePath": "test/e2e/suite/issuers/acme/dnsproviders/dnsproviders.go",
+      "lineRange": [
+        33,
+        39
+      ],
+      "summary": "Transferable-data struct carrying DNS provider API endpoints, zone names and credential secret references between addon lifecycle phases.",
+      "tags": [
+        "data-model",
+        "addon",
+        "dns01",
+        "test-infrastructure"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/e2e/suite/conformance/rbac/issuer.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/rbac/issuer.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/rbac/issuer.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/rbac/issuer.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/doc.go",
+      "target": "file:test/e2e/suite/certificaterequests/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/doc.go",
+      "target": "file:test/e2e/suite/certificates/additionaloutputformats.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/doc.go",
+      "target": "file:test/e2e/suite/certificates/duplicatesecretname.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/doc.go",
+      "target": "file:test/e2e/suite/certificates/foregrounddeletion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/doc.go",
+      "target": "file:test/e2e/suite/certificates/literalsubjectrdns.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/doc.go",
+      "target": "file:test/e2e/suite/certificates/othernamesan.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/doc.go",
+      "target": "file:test/e2e/suite/certificates/secrettemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/doc.go",
+      "target": "file:test/e2e/suite/certificatesigningrequests/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/doc.go",
+      "target": "file:test/e2e/suite/conformance/import.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/doc.go",
+      "target": "file:test/e2e/suite/issuers/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/doc.go",
+      "target": "file:test/e2e/suite/serving/cainjector.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/http01.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/http01.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/http01.go",
+      "target": "file:test/e2e/framework/helper/featureset/featureset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/http01.go",
+      "target": "file:test/e2e/framework/helper/validation/validation.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/http01.go",
+      "target": "file:test/e2e/framework/log/log.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/http01.go",
+      "target": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/http01.go",
+      "target": "file:test/e2e/framework/matcher/san_matchers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/http01.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/http01.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/http01.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/http01.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/notafter.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/notafter.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/notafter.go",
+      "target": "file:test/e2e/framework/helper/featureset/featureset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/notafter.go",
+      "target": "file:test/e2e/framework/helper/validation/validation.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/notafter.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/notafter.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/notafter.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/notafter.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/webhook.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/webhook.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/webhook.go",
+      "target": "file:test/e2e/framework/log/log.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/webhook.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/webhook.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/webhook.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/webhook.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/dns01.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/dns01.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/dns01.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/dns01.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/dns01.go",
+      "target": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/dns01.go",
+      "target": "file:test/e2e/suite/issuers/acme/dnsproviders/dnsproviders.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/dns01.go",
+      "target": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/dns01.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/dns01.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/http01.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/http01.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/http01.go",
+      "target": "file:test/e2e/framework/log/log.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/http01.go",
+      "target": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/http01.go",
+      "target": "file:test/e2e/framework/matcher/san_matchers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/http01.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/http01.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/http01.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/http01.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/profiles.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/profiles.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/profiles.go",
+      "target": "file:test/e2e/framework/helper/certificaterequests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/profiles.go",
+      "target": "file:test/e2e/framework/helper/certificates.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/profiles.go",
+      "target": "file:test/e2e/framework/helper/certificatesigningrequests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/profiles.go",
+      "target": "file:test/e2e/framework/helper/describe.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/profiles.go",
+      "target": "file:test/e2e/framework/helper/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/profiles.go",
+      "target": "file:test/e2e/framework/helper/kubectl.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/profiles.go",
+      "target": "file:test/e2e/framework/helper/secret.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/profiles.go",
+      "target": "file:test/e2e/framework/helper/validate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/profiles.go",
+      "target": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/profiles.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/profiles.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/profiles.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/profiles.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "file:test/e2e/framework/addon/base/base.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "file:test/e2e/framework/addon/globals.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "file:test/e2e/framework/config/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "file:test/e2e/framework/config/addons.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "file:test/e2e/framework/config/certmanager.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "file:test/e2e/framework/config/config.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "file:test/e2e/framework/config/gateway.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "file:test/e2e/framework/config/ginkgo.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "file:test/e2e/framework/config/helm.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "file:test/e2e/framework/config/ingress_controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "file:test/e2e/framework/config/samplewebhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "file:test/e2e/framework/config/suite.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "file:test/e2e/framework/config/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "file:test/e2e/framework/util/errors/errors.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/http01.go",
+      "target": "function:test/e2e/suite/issuers/acme/certificate/http01.go:findDNSNames",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/webhook.go",
+      "target": "function:test/e2e/suite/issuers/acme/certificate/webhook.go:listOwnedChallenges",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificate/webhook.go",
+      "target": "function:test/e2e/suite/issuers/acme/certificate/webhook.go:listOwnedOrders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/certificaterequest/dns01.go",
+      "target": "function:test/e2e/suite/issuers/acme/certificaterequest/dns01.go:testRFC2136DNSProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "class:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go:Cloudflare",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "function:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go:Setup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "function:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go:Provision",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/dnsproviders.go",
+      "target": "class:test/e2e/suite/issuers/acme/dnsproviders/dnsproviders.go:Details",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "class:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go:Cloudflare",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "function:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go:Setup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go",
+      "target": "function:test/e2e/suite/issuers/acme/dnsproviders/cloudflare.go:Provision",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/dnsproviders.go",
+      "target": "class:test/e2e/suite/issuers/acme/dnsproviders/dnsproviders.go:Details",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

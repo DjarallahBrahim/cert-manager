@@ -1,0 +1,416 @@
+{
+  "nodes": [
+    {
+      "id": "file:internal/apis/meta/fuzzer/fuzzer.go",
+      "type": "file",
+      "name": "fuzzer.go",
+      "filePath": "internal/apis/meta/fuzzer/fuzzer.go",
+      "summary": "Declares the fuzzer function set for the meta API group, currently returning an empty list so that round-trip fuzz tests use only default Kubernetes fuzzing behaviour.",
+      "tags": ["testing", "fuzzing", "api", "type-definition"],
+      "complexity": "simple",
+      "languageNotes": "Defines an exported package-level variable holding a closure over a runtime codec factory, the standard k8s fuzzer registration idiom."
+    },
+    {
+      "id": "file:internal/controller/certificaterequests/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "internal/controller/certificaterequests/OWNERS",
+      "summary": "Reviewer ownership rules for the CertificateRequest controller package, requiring joshvanl to review changes to the generated apply configuration files.",
+      "tags": ["governance", "code-review", "controller"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/controller/certificates/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "internal/controller/certificates/OWNERS",
+      "summary": "Reviewer ownership rules for the certificates controller package, requiring joshvanl to review changes to the generated apply configuration files.",
+      "tags": ["governance", "code-review", "controller"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/controller/challenges/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "internal/controller/challenges/OWNERS",
+      "summary": "Reviewer ownership rules for the ACME challenges controller package, requiring joshvanl to review changes to the generated apply configuration files.",
+      "tags": ["governance", "code-review", "controller"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/controller/issuers/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "internal/controller/issuers/OWNERS",
+      "summary": "Reviewer ownership rules for the issuers controller package, requiring joshvanl to review changes to the generated apply configuration files.",
+      "tags": ["governance", "code-review", "controller"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/controller/orders/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "internal/controller/orders/OWNERS",
+      "summary": "Reviewer ownership rules for the ACME orders controller package, requiring joshvanl to review changes to the generated apply configuration files.",
+      "tags": ["governance", "code-review", "controller"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/generated/openapi/cmd/models-schema/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "internal/generated/openapi/cmd/models-schema/doc.go",
+      "summary": "Package declaration file for the models-schema code generation command that emits the OpenAPI model schema consumed by the generated client and API reference.",
+      "tags": ["code-generation", "openapi", "entry-point", "generated"],
+      "complexity": "simple",
+      "languageNotes": "A Go package clause only (package main); all generator logic lives in sibling files, this file just carries the license header and package name."
+    },
+    {
+      "id": "file:internal/pem/testdata/issue-ghsa-r4pg-vg54-wxx4.bin",
+      "type": "file",
+      "name": "issue-ghsa-r4pg-vg54-wxx4.bin",
+      "filePath": "internal/pem/testdata/issue-ghsa-r4pg-vg54-wxx4.bin",
+      "summary": "Malformed PEM corpus file used as a regression fixture for the GHSA-r4pg-vg54-wxx4 vulnerability, feeding hostile multi-block BEGIN sequences into the PEM decoder test.",
+      "tags": ["test-fixture", "security", "pem", "regression-test"],
+      "complexity": "simple",
+      "languageNotes": "Binary fuzz-style corpus entry; the decoder must reject or safely normalize the concatenated malformed headers without panicking."
+    },
+    {
+      "id": "file:internal/vault/fake/client.go",
+      "type": "file",
+      "name": "client.go",
+      "filePath": "internal/vault/fake/client.go",
+      "summary": "In-memory fake implementation of the HashiCorp Vault API client used by issuer unit tests, allowing canned raw responses and captured tokens without a live Vault server.",
+      "tags": ["test", "fake", "vault", "test-double"],
+      "complexity": "moderate",
+      "languageNotes": "Uses a fluent builder pattern (WithX methods returning the receiver) and injects *testing.T for assertions inside request handlers."
+    },
+    {
+      "id": "class:internal/vault/fake/client.go:FakeClient",
+      "type": "class",
+      "name": "FakeClient",
+      "filePath": "internal/vault/fake/client.go",
+      "lineRange": [26, 31],
+      "summary": "Struct implementing the Vault client surface, storing the canned request, a pluggable raw-request handler, the captured token, and the test handle.",
+      "tags": ["test", "fake", "vault", "test-double"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/vault/fake/client.go:NewFakeClient",
+      "type": "function",
+      "name": "NewFakeClient",
+      "filePath": "internal/vault/fake/client.go",
+      "lineRange": [33, 40],
+      "summary": "Constructs a FakeClient with an empty request and a raw-request handler that fails the test by returning an unexpected-call error.",
+      "tags": ["test", "factory", "vault"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/vault/fake/client.go:WithRawRequest",
+      "type": "function",
+      "name": "WithRawRequest",
+      "filePath": "internal/vault/fake/client.go",
+      "lineRange": [51, 56],
+      "summary": "Configures the fake to return a fixed response and error pair for any raw request, returning the client for chaining.",
+      "tags": ["test", "fake", "builder"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/vault/fake/client.go:WithRawRequestFn",
+      "type": "function",
+      "name": "WithRawRequestFn",
+      "filePath": "internal/vault/fake/client.go",
+      "lineRange": [58, 63],
+      "summary": "Installs a custom raw-request handler that receives the client's *testing.T, enabling per-test assertions on outgoing Vault requests.",
+      "tags": ["test", "fake", "builder", "dependency-injection"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:logo/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "logo/README.md",
+      "summary": "Explains the cert-manager logo assets, notes that other organisation repositories reference these files by location, and points to the licence terms.",
+      "tags": ["documentation", "branding", "assets", "licensing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:make/00_mod.mk",
+      "type": "file",
+      "name": "00_mod.mk",
+      "filePath": "make/00_mod.mk",
+      "summary": "Root build configuration that sets repository-wide variables such as Go source lists, build flags, binary names, chart paths, and toolchain options before any other make module is included.",
+      "tags": ["build-system", "makefile", "configuration", "variables"],
+      "complexity": "moderate",
+      "languageNotes": "Uses GNU Make's call/eval helpers and ordering conventions where numbered module files load in sequence (00 sets variables, 02 defines targets)."
+    },
+    {
+      "id": "file:make/02_mod.mk",
+      "type": "file",
+      "name": "02_mod.mk",
+      "filePath": "make/02_mod.mk",
+      "summary": "Aggregates the project's Make modules (CI, tests, containers, release, manifests, licences, scanning) and defines top-level targets for tidying, licence generation, and base-image updates.",
+      "tags": ["build-system", "makefile", "orchestration", "entry-point"],
+      "complexity": "simple",
+      "languageNotes": "Central include hub; most behaviour comes from the included make/*.mk files, with this file only adding a handful of phony aggregate targets."
+    },
+    {
+      "id": "file:make/_shared/boilerplate/00_mod.mk",
+      "type": "file",
+      "name": "00_mod.mk",
+      "filePath": "make/_shared/boilerplate/00_mod.mk",
+      "summary": "Defines the default Go license header template path and the overridable go_header_file variable used by the shared boilerplate module.",
+      "tags": ["build-system", "makefile", "boilerplate", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:make/_shared/boilerplate/01_mod.mk",
+      "type": "file",
+      "name": "01_mod.mk",
+      "filePath": "make/_shared/boilerplate/01_mod.mk",
+      "summary": "Adds shared make targets that verify every file carries the correct license boilerplate via boilersuite and copy the base LICENSE into the repository.",
+      "tags": ["build-system", "makefile", "licensing", "verification"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:make/_shared/boilerplate/template/boilerplate.go.txt",
+      "type": "document",
+      "name": "boilerplate.go.txt",
+      "filePath": "make/_shared/boilerplate/template/boilerplate.go.txt",
+      "summary": "Apache 2.0 license header template stamped onto generated and hand-written Go files by the shared boilerplate tooling.",
+      "tags": ["documentation", "licensing", "template", "boilerplate"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:make/_shared/generate-verify/00_mod.mk",
+      "type": "file",
+      "name": "00_mod.mk",
+      "filePath": "make/_shared/generate-verify/00_mod.mk",
+      "summary": "Initialises the shared lists of generate and verify targets that individual make modules append to, letting the shared layer discover them generically.",
+      "tags": ["build-system", "makefile", "code-generation", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:make/_shared/generate-verify/02_mod.mk",
+      "type": "file",
+      "name": "02_mod.mk",
+      "filePath": "make/_shared/generate-verify/02_mod.mk",
+      "summary": "Defines the generic generate and verify targets, expanding every registered generate target into a verify-% rule that reruns it in an isolated copy of the repo.",
+      "tags": ["build-system", "makefile", "code-generation", "verification"],
+      "complexity": "simple",
+      "languageNotes": "Uses pattern rules plus GNU Make foreach/expansion to derive verify targets, and marks side-effecting targets to run last."
+    },
+    {
+      "id": "file:make/_shared/generate-verify/util/verify.sh",
+      "type": "file",
+      "name": "verify.sh",
+      "filePath": "make/_shared/generate-verify/util/verify.sh",
+      "summary": "Helper that copies the repository to a temporary directory, reruns a supplied make target there, and diffs the result against the working tree to prove generated files are committed.",
+      "tags": ["script", "verification", "code-generation", "ci-cd"],
+      "complexity": "moderate",
+      "languageNotes": "Deliberately avoids rsync (macOS ships openrsync with differing semantics) and copies top-level entries with find plus cp -af, trapping EXIT/SIGINT to clean up."
+    },
+    {
+      "id": "config:make/_shared/go/.golangci.override.yaml",
+      "type": "config",
+      "name": ".golangci.override.yaml",
+      "filePath": "make/_shared/go/.golangci.override.yaml",
+      "summary": "Shared golangci-lint v2 overlay that enables a broad linter set, staticcheck tuning, exclusion presets, and gci/gofmt formatters merged into each repo's own lint config.",
+      "tags": ["configuration", "linting", "go", "code-quality"],
+      "complexity": "moderate",
+      "languageNotes": "v2 schema with default:none and an explicit enable list; the {{REPO-NAME}} placeholder is substituted at generation time for gci import grouping."
+    },
+    {
+      "id": "file:make/_shared/go/01_mod.mk",
+      "type": "file",
+      "name": "01_mod.mk",
+      "filePath": "make/_shared/go/01_mod.mk",
+      "summary": "Shared Go tooling module providing targets for go.work creation, go mod tidy across modules, govulncheck scanning, and generating/verifying/fixing the golangci-lint configuration.",
+      "tags": ["build-system", "makefile", "go", "linting", "verification"],
+      "complexity": "moderate",
+      "languageNotes": "Iterates over every go.mod outside _bin and make/_shared using find plus a pushd/popd loop, and intentionally keeps verify-govulncheck out of make verify so new CVEs do not block PRs."
+    },
+    {
+      "id": "document:make/_shared/go/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "make/_shared/go/README.md",
+      "summary": "One-line description of the shared make module that bundles Go static analysis checks.",
+      "tags": ["documentation", "go", "build-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "pipeline:make/_shared/go/base/.github/workflows/govulncheck.yaml",
+      "type": "pipeline",
+      "name": "govulncheck.yaml",
+      "filePath": "make/_shared/go/base/.github/workflows/govulncheck.yaml",
+      "summary": "Generated GitHub Actions workflow that runs make verify-govulncheck nightly and on demand to surface newly disclosed Go vulnerabilities affecting the repository.",
+      "tags": ["ci-cd", "security", "go", "monitoring"],
+      "complexity": "simple",
+      "languageNotes": "Actions are pinned to full commit SHAs and the job is guarded by a repository-name check so the generated file can be copied safely across org repos."
+    },
+    {
+      "id": "file:make/_shared/help/01_mod.mk",
+      "type": "file",
+      "name": "01_mod.mk",
+      "filePath": "make/_shared/help/01_mod.mk",
+      "summary": "Registers the make help target, forwarding the active MAKEFILE_LIST and make binary to the shared help.sh renderer.",
+      "tags": ["build-system", "makefile", "developer-experience"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:make/_shared/help/help.sh",
+      "type": "file",
+      "name": "help.sh",
+      "filePath": "make/_shared/help/help.sh",
+      "summary": "Renders a categorised make help screen by parsing ## doc comments, @category markers, and target rules out of every included makefile and expanding variable-based target names.",
+      "tags": ["script", "developer-experience", "documentation", "build-system"],
+      "complexity": "moderate",
+      "languageNotes": "Uses bash regex matching plus sentinel-string templating to build line items, then sorts them in reverse for stable category grouping."
+    },
+    {
+      "id": "file:make/_shared/klone/01_mod.mk",
+      "type": "file",
+      "name": "01_mod.mk",
+      "filePath": "make/_shared/klone/01_mod.mk",
+      "summary": "Provides klone targets for syncing and upgrading the shared makefile modules, with generate-klone deliberately excluded from automatic generation so versions are pinned manually.",
+      "tags": ["build-system", "makefile", "dependencies", "maintenance"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:internal/vault/fake/client.go",
+      "target": "class:internal/vault/fake/client.go:FakeClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/vault/fake/client.go",
+      "target": "function:internal/vault/fake/client.go:NewFakeClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/vault/fake/client.go",
+      "target": "function:internal/vault/fake/client.go:WithRawRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/vault/fake/client.go",
+      "target": "function:internal/vault/fake/client.go:WithRawRequestFn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/vault/fake/client.go",
+      "target": "class:internal/vault/fake/client.go:FakeClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/vault/fake/client.go",
+      "target": "function:internal/vault/fake/client.go:NewFakeClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/vault/fake/client.go",
+      "target": "function:internal/vault/fake/client.go:WithRawRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/vault/fake/client.go",
+      "target": "function:internal/vault/fake/client.go:WithRawRequestFn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:make/_shared/boilerplate/00_mod.mk",
+      "target": "document:make/_shared/boilerplate/template/boilerplate.go.txt",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/_shared/boilerplate/01_mod.mk",
+      "target": "file:make/_shared/boilerplate/00_mod.mk",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:make/_shared/generate-verify/02_mod.mk",
+      "target": "file:make/_shared/generate-verify/00_mod.mk",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/_shared/generate-verify/02_mod.mk",
+      "target": "file:make/_shared/generate-verify/util/verify.sh",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:make/_shared/go/.golangci.override.yaml",
+      "target": "file:make/_shared/go/01_mod.mk",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "pipeline:make/_shared/go/base/.github/workflows/govulncheck.yaml",
+      "target": "file:make/_shared/go/01_mod.mk",
+      "type": "triggers",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/_shared/help/01_mod.mk",
+      "target": "file:make/_shared/help/help.sh",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/02_mod.mk",
+      "target": "file:make/00_mod.mk",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/00_mod.mk",
+      "target": "file:make/02_mod.mk",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:make/_shared/go/README.md",
+      "target": "file:make/_shared/go/01_mod.mk",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:make/_shared/boilerplate/template/boilerplate.go.txt",
+      "target": "file:make/_shared/boilerplate/01_mod.mk",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

@@ -1,0 +1,6325 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 32,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 32,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 32,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "pkg/apis/acme/v1/types_order.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 254,
+      "nonEmptyLines": 211,
+      "classes": [
+        {
+          "name": "Order",
+          "startLine": 36,
+          "endLine": 43,
+          "methods": [],
+          "properties": [
+            "Spec",
+            "Status"
+          ]
+        },
+        {
+          "name": "OrderList",
+          "startLine": 48,
+          "endLine": 53,
+          "methods": [],
+          "properties": [
+            "Items"
+          ]
+        },
+        {
+          "name": "OrderSpec",
+          "startLine": 55,
+          "endLine": 97,
+          "methods": [],
+          "properties": [
+            "Request",
+            "IssuerRef",
+            "CommonName",
+            "DNSNames",
+            "IPAddresses",
+            "Duration",
+            "Profile"
+          ]
+        },
+        {
+          "name": "OrderStatus",
+          "startLine": 99,
+          "endLine": 140,
+          "methods": [],
+          "properties": [
+            "URL",
+            "FinalizeURL",
+            "Authorizations",
+            "Certificate",
+            "State",
+            "Reason",
+            "FailureTime"
+          ]
+        },
+        {
+          "name": "ACMEAuthorization",
+          "startLine": 145,
+          "endLine": 179,
+          "methods": [],
+          "properties": [
+            "URL",
+            "Identifier",
+            "Wildcard",
+            "InitialState",
+            "Challenges"
+          ]
+        },
+        {
+          "name": "ACMEChallenge",
+          "startLine": 184,
+          "endLine": 199,
+          "methods": [],
+          "properties": [
+            "URL",
+            "Token",
+            "Type"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Order",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "OrderList",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "OrderSpec",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "OrderStatus",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEAuthorization",
+          "line": 145,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallenge",
+          "line": 184,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 6,
+        "functionCount": 0,
+        "classCount": 6
+      }
+    },
+    {
+      "path": "pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 1093,
+      "nonEmptyLines": 1004,
+      "functions": [
+        {
+          "name": "DeepCopyInto",
+          "startLine": 34,
+          "endLine": 47,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 50,
+          "endLine": 57,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 60,
+          "endLine": 63,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 66,
+          "endLine": 73,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 76,
+          "endLine": 94,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 97,
+          "endLine": 104,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 107,
+          "endLine": 155,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 158,
+          "endLine": 165,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 168,
+          "endLine": 181,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 184,
+          "endLine": 191,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 194,
+          "endLine": 216,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 219,
+          "endLine": 226,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 229,
+          "endLine": 252,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 255,
+          "endLine": 262,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 265,
+          "endLine": 282,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 285,
+          "endLine": 292,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 295,
+          "endLine": 312,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 315,
+          "endLine": 322,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 325,
+          "endLine": 342,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 345,
+          "endLine": 352,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 355,
+          "endLine": 403,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 406,
+          "endLine": 413,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 416,
+          "endLine": 453,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 456,
+          "endLine": 463,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 466,
+          "endLine": 471,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 474,
+          "endLine": 481,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 484,
+          "endLine": 488,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 491,
+          "endLine": 498,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 501,
+          "endLine": 505,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 508,
+          "endLine": 515,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 518,
+          "endLine": 539,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 542,
+          "endLine": 549,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 552,
+          "endLine": 556,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 559,
+          "endLine": 566,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 569,
+          "endLine": 575,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 578,
+          "endLine": 585,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 588,
+          "endLine": 601,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 604,
+          "endLine": 611,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 614,
+          "endLine": 622,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 625,
+          "endLine": 632,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 635,
+          "endLine": 648,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 651,
+          "endLine": 658,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 661,
+          "endLine": 665,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 668,
+          "endLine": 675,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 678,
+          "endLine": 682,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 685,
+          "endLine": 692,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 695,
+          "endLine": 709,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 712,
+          "endLine": 719,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 722,
+          "endLine": 730,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 733,
+          "endLine": 740,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 743,
+          "endLine": 746,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 749,
+          "endLine": 756,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 759,
+          "endLine": 762,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 765,
+          "endLine": 772,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 775,
+          "endLine": 795,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 798,
+          "endLine": 805,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 808,
+          "endLine": 815,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 818,
+          "endLine": 825,
+          "params": []
+        },
+        {
+          "name": "DeepCopyObject",
+          "startLine": 828,
+          "endLine": 833,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 836,
+          "endLine": 848,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 851,
+          "endLine": 858,
+          "params": []
+        },
+        {
+          "name": "DeepCopyObject",
+          "startLine": 861,
+          "endLine": 866,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 869,
+          "endLine": 874,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 877,
+          "endLine": 884,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 887,
+          "endLine": 890,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 893,
+          "endLine": 900,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 903,
+          "endLine": 910,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 913,
+          "endLine": 920,
+          "params": []
+        },
+        {
+          "name": "DeepCopyObject",
+          "startLine": 923,
+          "endLine": 928,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 931,
+          "endLine": 943,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 946,
+          "endLine": 953,
+          "params": []
+        },
+        {
+          "name": "DeepCopyObject",
+          "startLine": 956,
+          "endLine": 961,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 964,
+          "endLine": 988,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 991,
+          "endLine": 998,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 1001,
+          "endLine": 1020,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 1023,
+          "endLine": 1030,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 1033,
+          "endLine": 1041,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 1044,
+          "endLine": 1051,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 1054,
+          "endLine": 1062,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 1065,
+          "endLine": 1072,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 1075,
+          "endLine": 1083,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 1086,
+          "endLine": 1093,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeepCopyInto",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 158,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 168,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 184,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 194,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 219,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 229,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 255,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 265,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 285,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 295,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 315,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 325,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 345,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 355,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 406,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 416,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 456,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 466,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 474,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 484,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 491,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 501,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 508,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 518,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 542,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 552,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 559,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 569,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 578,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 588,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 604,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 614,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 625,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 635,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 651,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 661,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 668,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 678,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 685,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 695,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 712,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 722,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 733,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 743,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 749,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 759,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 765,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 775,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 798,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 808,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 818,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyObject",
+          "line": 828,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 836,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 851,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyObject",
+          "line": 861,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 869,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 877,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 887,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 893,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 903,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 913,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyObject",
+          "line": 923,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 931,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 946,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyObject",
+          "line": 956,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 964,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 991,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 1001,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 1023,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 1033,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 1044,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 1054,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 1065,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 1075,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 1086,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 38
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 43
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 43
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 44
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 54
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 55
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 70
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 71
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 80
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 81
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 85
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 86
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 90
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 91
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 101
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 102
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 111
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 116
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 117
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 121
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 122
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 126
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 127
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 131
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 132
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 136
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 141
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 146
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 151
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 152
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 162
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 163
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 172
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 173
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 177
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 178
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 188
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 189
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 198
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 198
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 205
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 205
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in)[i].DeepCopyInto",
+          "lineNumber": 207
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 212
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 213
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 223
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 224
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 233
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 238
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 243
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 244
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 248
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 249
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 259
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 260
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 269
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 269
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 276
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 276
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 289
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 290
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 299
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 299
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 306
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 306
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 319
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 320
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 329
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 329
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "val.DeepCopy",
+          "lineNumber": 331
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 336
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 336
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "val.DeepCopy",
+          "lineNumber": 338
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 349
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 350
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 359
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 364
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 369
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 374
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 379
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 379
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 380
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 384
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 389
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 389
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 390
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 394
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 399
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 400
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 410
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 411
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 420
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 420
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 427
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 428
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 432
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 432
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in)[i].DeepCopyInto",
+          "lineNumber": 434
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 439
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 439
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 440
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 444
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 445
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 449
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 450
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 460
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 461
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.ACMEChallengeSolverHTTP01IngressPodObjectMeta.DeepCopyInto",
+          "lineNumber": 468
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Spec.DeepCopyInto",
+          "lineNumber": 469
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 478
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 479
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.ACMEChallengeSolverHTTP01IngressObjectMeta.DeepCopyInto",
+          "lineNumber": 486
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 495
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 496
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 512
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 513
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 522
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 522
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 523
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 527
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 533
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 533
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in)[i].DeepCopyInto",
+          "lineNumber": 535
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 546
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 547
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 563
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 564
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 582
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 583
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 592
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 597
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 608
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 609
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 618
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 629
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 630
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 639
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 644
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 655
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 656
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 672
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 673
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 689
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 690
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 699
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 700
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 704
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 716
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 717
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 726
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 727
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 737
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 738
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 753
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 754
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 769
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 770
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 779
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 779
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 786
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 786
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 787
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 791
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 791
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 792
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 802
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 803
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.ObjectMeta.DeepCopyInto",
+          "lineNumber": 811
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Spec.DeepCopyInto",
+          "lineNumber": 812
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 822
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 823
+        },
+        {
+          "caller": "DeepCopyObject",
+          "callee": "in.DeepCopy",
+          "lineNumber": 829
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.ListMeta.DeepCopyInto",
+          "lineNumber": 839
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 842
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 842
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in)[i].DeepCopyInto",
+          "lineNumber": 844
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 855
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 856
+        },
+        {
+          "caller": "DeepCopyObject",
+          "callee": "in.DeepCopy",
+          "lineNumber": 862
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Solver.DeepCopyInto",
+          "lineNumber": 871
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 881
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 882
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 897
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 898
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.ObjectMeta.DeepCopyInto",
+          "lineNumber": 906
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Spec.DeepCopyInto",
+          "lineNumber": 907
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Status.DeepCopyInto",
+          "lineNumber": 908
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 917
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 918
+        },
+        {
+          "caller": "DeepCopyObject",
+          "callee": "in.DeepCopy",
+          "lineNumber": 924
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.ListMeta.DeepCopyInto",
+          "lineNumber": 934
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 937
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 937
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in)[i].DeepCopyInto",
+          "lineNumber": 939
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 950
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 951
+        },
+        {
+          "caller": "DeepCopyObject",
+          "callee": "in.DeepCopy",
+          "lineNumber": 957
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 968
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 968
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 969
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 974
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 974
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 975
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 979
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 979
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 980
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 984
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 995
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 996
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 1005
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 1005
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in)[i].DeepCopyInto",
+          "lineNumber": 1007
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 1012
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 1012
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 1013
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopy",
+          "lineNumber": 1017
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 1027
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 1028
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 1037
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 1038
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 1048
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 1049
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 1058
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 1059
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 1069
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 1070
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 1079
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 1079
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 1080
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 1090
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 1091
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 82,
+        "functionCount": 82,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 71,
+      "functions": [
+        {
+          "name": "ACMEAuthorization",
+          "startLine": 37,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "WithURL",
+          "startLine": 44,
+          "endLine": 47,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithIdentifier",
+          "startLine": 52,
+          "endLine": 55,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithWildcard",
+          "startLine": 60,
+          "endLine": 63,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithInitialState",
+          "startLine": 68,
+          "endLine": 71,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithChallenges",
+          "startLine": 76,
+          "endLine": 84,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEAuthorizationApplyConfiguration",
+          "startLine": 27,
+          "endLine": 33,
+          "methods": [
+            "WithURL",
+            "WithIdentifier",
+            "WithWildcard",
+            "WithInitialState",
+            "WithChallenges"
+          ],
+          "properties": [
+            "URL",
+            "Identifier",
+            "Wildcard",
+            "InitialState",
+            "Challenges"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEAuthorizationApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEAuthorization",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "WithURL",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "WithIdentifier",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "WithWildcard",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "WithInitialState",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "WithChallenges",
+          "line": 76,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithChallenges",
+          "callee": "panic",
+          "lineNumber": 79
+        },
+        {
+          "caller": "WithChallenges",
+          "callee": "append",
+          "lineNumber": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 124,
+      "nonEmptyLines": 106,
+      "functions": [
+        {
+          "name": "ACMEChallengeSolverDNS01",
+          "startLine": 42,
+          "endLine": 44,
+          "params": []
+        },
+        {
+          "name": "WithCNAMEStrategy",
+          "startLine": 49,
+          "endLine": 52,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAkamai",
+          "startLine": 57,
+          "endLine": 60,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithCloudDNS",
+          "startLine": 65,
+          "endLine": 68,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithCloudflare",
+          "startLine": 73,
+          "endLine": 76,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithRoute53",
+          "startLine": 81,
+          "endLine": 84,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAzureDNS",
+          "startLine": 89,
+          "endLine": 92,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithDigitalOcean",
+          "startLine": 97,
+          "endLine": 100,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAcmeDNS",
+          "startLine": 105,
+          "endLine": 108,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithRFC2136",
+          "startLine": 113,
+          "endLine": 116,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithWebhook",
+          "startLine": 121,
+          "endLine": 124,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEChallengeSolverDNS01ApplyConfiguration",
+          "startLine": 27,
+          "endLine": 38,
+          "methods": [
+            "WithCNAMEStrategy",
+            "WithAkamai",
+            "WithCloudDNS",
+            "WithCloudflare",
+            "WithRoute53",
+            "WithAzureDNS",
+            "WithDigitalOcean",
+            "WithAcmeDNS",
+            "WithRFC2136",
+            "WithWebhook"
+          ],
+          "properties": [
+            "CNAMEStrategy",
+            "Akamai",
+            "CloudDNS",
+            "Cloudflare",
+            "Route53",
+            "AzureDNS",
+            "DigitalOcean",
+            "AcmeDNS",
+            "RFC2136",
+            "Webhook"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEChallengeSolverDNS01ApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverDNS01",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "WithCNAMEStrategy",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "WithAkamai",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "WithCloudDNS",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "WithCloudflare",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "WithRoute53",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "WithAzureDNS",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "WithDigitalOcean",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "WithAcmeDNS",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "WithRFC2136",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "WithWebhook",
+          "line": 121,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 12,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "ChallengeStatus",
+          "startLine": 36,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "WithProcessing",
+          "startLine": 43,
+          "endLine": 46,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithPresented",
+          "startLine": 51,
+          "endLine": 54,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithReason",
+          "startLine": 59,
+          "endLine": 62,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithState",
+          "startLine": 67,
+          "endLine": 70,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ChallengeStatusApplyConfiguration",
+          "startLine": 27,
+          "endLine": 32,
+          "methods": [
+            "WithProcessing",
+            "WithPresented",
+            "WithReason",
+            "WithState"
+          ],
+          "properties": [
+            "Processing",
+            "Presented",
+            "Reason",
+            "State"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ChallengeStatusApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "ChallengeStatus",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "WithProcessing",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "WithPresented",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "WithReason",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "WithState",
+          "line": 67,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 105,
+      "nonEmptyLines": 90,
+      "functions": [
+        {
+          "name": "OrderStatus",
+          "startLine": 40,
+          "endLine": 42,
+          "params": []
+        },
+        {
+          "name": "WithURL",
+          "startLine": 47,
+          "endLine": 50,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithFinalizeURL",
+          "startLine": 55,
+          "endLine": 58,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAuthorizations",
+          "startLine": 63,
+          "endLine": 71,
+          "params": []
+        },
+        {
+          "name": "WithCertificate",
+          "startLine": 76,
+          "endLine": 81,
+          "params": []
+        },
+        {
+          "name": "WithState",
+          "startLine": 86,
+          "endLine": 89,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithReason",
+          "startLine": 94,
+          "endLine": 97,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithFailureTime",
+          "startLine": 102,
+          "endLine": 105,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OrderStatusApplyConfiguration",
+          "startLine": 28,
+          "endLine": 36,
+          "methods": [
+            "WithURL",
+            "WithFinalizeURL",
+            "WithAuthorizations",
+            "WithCertificate",
+            "WithState",
+            "WithReason",
+            "WithFailureTime"
+          ],
+          "properties": [
+            "URL",
+            "FinalizeURL",
+            "Authorizations",
+            "Certificate",
+            "State",
+            "Reason",
+            "FailureTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OrderStatusApplyConfiguration",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "OrderStatus",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "WithURL",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "WithFinalizeURL",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "WithAuthorizations",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "WithCertificate",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "WithState",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "WithReason",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "WithFailureTime",
+          "line": 102,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithAuthorizations",
+          "callee": "panic",
+          "lineNumber": 66
+        },
+        {
+          "caller": "WithAuthorizations",
+          "callee": "append",
+          "lineNumber": 68
+        },
+        {
+          "caller": "WithCertificate",
+          "callee": "append",
+          "lineNumber": 78
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/clientset.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 133,
+      "nonEmptyLines": 111,
+      "functions": [
+        {
+          "name": "AcmeV1",
+          "startLine": 46,
+          "endLine": 48,
+          "params": []
+        },
+        {
+          "name": "CertmanagerV1",
+          "startLine": 51,
+          "endLine": 53,
+          "params": []
+        },
+        {
+          "name": "Discovery",
+          "startLine": 56,
+          "endLine": 61,
+          "params": []
+        },
+        {
+          "name": "NewForConfig",
+          "startLine": 68,
+          "endLine": 82,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "NewForConfigAndClient",
+          "startLine": 88,
+          "endLine": 113,
+          "params": [
+            "c",
+            "httpClient"
+          ]
+        },
+        {
+          "name": "NewForConfigOrDie",
+          "startLine": 117,
+          "endLine": 123,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "New",
+          "startLine": 126,
+          "endLine": 133,
+          "params": [
+            "c"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Interface",
+          "startLine": 32,
+          "endLine": 36,
+          "methods": [
+            "Discovery",
+            "AcmeV1",
+            "CertmanagerV1"
+          ],
+          "properties": []
+        },
+        {
+          "name": "Clientset",
+          "startLine": 39,
+          "endLine": 43,
+          "methods": [
+            "AcmeV1",
+            "CertmanagerV1",
+            "Discovery"
+          ],
+          "properties": [
+            "acmeV1",
+            "certmanagerV1"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Interface",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "Clientset",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "AcmeV1",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "CertmanagerV1",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "Discovery",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "NewForConfig",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "NewForConfigAndClient",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "NewForConfigOrDie",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "New",
+          "line": 126,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewForConfig",
+          "callee": "rest.DefaultKubernetesUserAgent",
+          "lineNumber": 72
+        },
+        {
+          "caller": "NewForConfig",
+          "callee": "rest.HTTPClientFor",
+          "lineNumber": 76
+        },
+        {
+          "caller": "NewForConfig",
+          "callee": "NewForConfigAndClient",
+          "lineNumber": 81
+        },
+        {
+          "caller": "NewForConfigAndClient",
+          "callee": "fmt.Errorf",
+          "lineNumber": 92
+        },
+        {
+          "caller": "NewForConfigAndClient",
+          "callee": "flowcontrol.NewTokenBucketRateLimiter",
+          "lineNumber": 94
+        },
+        {
+          "caller": "NewForConfigAndClient",
+          "callee": "acmev1.NewForConfigAndClient",
+          "lineNumber": 99
+        },
+        {
+          "caller": "NewForConfigAndClient",
+          "callee": "certmanagerv1.NewForConfigAndClient",
+          "lineNumber": 103
+        },
+        {
+          "caller": "NewForConfigAndClient",
+          "callee": "discovery.NewDiscoveryClientForConfigAndClient",
+          "lineNumber": 108
+        },
+        {
+          "caller": "NewForConfigOrDie",
+          "callee": "NewForConfig",
+          "lineNumber": 118
+        },
+        {
+          "caller": "NewForConfigOrDie",
+          "callee": "panic",
+          "lineNumber": 120
+        },
+        {
+          "caller": "New",
+          "callee": "acmev1.New",
+          "lineNumber": 128
+        },
+        {
+          "caller": "New",
+          "callee": "certmanagerv1.New",
+          "lineNumber": 129
+        },
+        {
+          "caller": "New",
+          "callee": "discovery.NewDiscoveryClient",
+          "lineNumber": 131
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 9,
+        "functionCount": 7,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/fake/register.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "init",
+          "startLine": 55,
+          "endLine": 58,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "init",
+          "callee": "v1.AddToGroupVersion",
+          "lineNumber": 56
+        },
+        {
+          "caller": "init",
+          "callee": "utilruntime.Must",
+          "lineNumber": 57
+        },
+        {
+          "caller": "init",
+          "callee": "AddToScheme",
+          "lineNumber": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 17,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/scheme/register.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "init",
+          "startLine": 55,
+          "endLine": 58,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "init",
+          "callee": "v1.AddToGroupVersion",
+          "lineNumber": 56
+        },
+        {
+          "caller": "init",
+          "callee": "utilruntime.Must",
+          "lineNumber": 57
+        },
+        {
+          "caller": "init",
+          "callee": "AddToScheme",
+          "lineNumber": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 17,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/acme/v1/acme_client.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 106,
+      "nonEmptyLines": 88,
+      "functions": [
+        {
+          "name": "Challenges",
+          "startLine": 40,
+          "endLine": 42,
+          "params": [
+            "namespace"
+          ]
+        },
+        {
+          "name": "Orders",
+          "startLine": 44,
+          "endLine": 46,
+          "params": [
+            "namespace"
+          ]
+        },
+        {
+          "name": "NewForConfig",
+          "startLine": 51,
+          "endLine": 59,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "NewForConfigAndClient",
+          "startLine": 63,
+          "endLine": 71,
+          "params": [
+            "c",
+            "h"
+          ]
+        },
+        {
+          "name": "NewForConfigOrDie",
+          "startLine": 75,
+          "endLine": 81,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "New",
+          "startLine": 84,
+          "endLine": 86,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "setConfigDefaults",
+          "startLine": 88,
+          "endLine": 97,
+          "params": [
+            "config"
+          ]
+        },
+        {
+          "name": "RESTClient",
+          "startLine": 101,
+          "endLine": 106,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AcmeV1Interface",
+          "startLine": 29,
+          "endLine": 33,
+          "methods": [
+            "RESTClient"
+          ],
+          "properties": []
+        },
+        {
+          "name": "AcmeV1Client",
+          "startLine": 36,
+          "endLine": 38,
+          "methods": [
+            "Challenges",
+            "Orders",
+            "RESTClient"
+          ],
+          "properties": [
+            "restClient"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AcmeV1Interface",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "AcmeV1Client",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "Challenges",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "Orders",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "NewForConfig",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "NewForConfigAndClient",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "NewForConfigOrDie",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "New",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "RESTClient",
+          "line": 101,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Challenges",
+          "callee": "newChallenges",
+          "lineNumber": 41
+        },
+        {
+          "caller": "Orders",
+          "callee": "newOrders",
+          "lineNumber": 45
+        },
+        {
+          "caller": "NewForConfig",
+          "callee": "setConfigDefaults",
+          "lineNumber": 53
+        },
+        {
+          "caller": "NewForConfig",
+          "callee": "rest.HTTPClientFor",
+          "lineNumber": 54
+        },
+        {
+          "caller": "NewForConfig",
+          "callee": "NewForConfigAndClient",
+          "lineNumber": 58
+        },
+        {
+          "caller": "NewForConfigAndClient",
+          "callee": "setConfigDefaults",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewForConfigAndClient",
+          "callee": "rest.RESTClientForConfigAndClient",
+          "lineNumber": 66
+        },
+        {
+          "caller": "NewForConfigOrDie",
+          "callee": "NewForConfig",
+          "lineNumber": 76
+        },
+        {
+          "caller": "NewForConfigOrDie",
+          "callee": "panic",
+          "lineNumber": 78
+        },
+        {
+          "caller": "setConfigDefaults",
+          "callee": "rest.CodecFactoryForGeneratedClient(scheme.Scheme, scheme.Codecs).WithoutConversion",
+          "lineNumber": 92
+        },
+        {
+          "caller": "setConfigDefaults",
+          "callee": "rest.CodecFactoryForGeneratedClient",
+          "lineNumber": 92
+        },
+        {
+          "caller": "setConfigDefaults",
+          "callee": "rest.DefaultKubernetesUserAgent",
+          "lineNumber": 95
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/acme/v1/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/acme/v1/fake/fake_acme_client.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "Challenges",
+          "startLine": 31,
+          "endLine": 33,
+          "params": [
+            "namespace"
+          ]
+        },
+        {
+          "name": "Orders",
+          "startLine": 35,
+          "endLine": 37,
+          "params": [
+            "namespace"
+          ]
+        },
+        {
+          "name": "RESTClient",
+          "startLine": 41,
+          "endLine": 44,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "FakeAcmeV1",
+          "startLine": 27,
+          "endLine": 29,
+          "methods": [
+            "Challenges",
+            "Orders",
+            "RESTClient"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "FakeAcmeV1",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "Challenges",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "Orders",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "RESTClient",
+          "line": 41,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Challenges",
+          "callee": "newFakeChallenges",
+          "lineNumber": 32
+        },
+        {
+          "caller": "Orders",
+          "callee": "newFakeOrders",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/acme/v1/generated_expansion.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "ChallengeExpansion",
+          "startLine": 21,
+          "endLine": 21,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "OrderExpansion",
+          "startLine": 23,
+          "endLine": 23,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ChallengeExpansion",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "OrderExpansion",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "pkg/client/informers/externalversions/acme/interface.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "New",
+          "startLine": 39,
+          "endLine": 41,
+          "params": [
+            "f",
+            "namespace",
+            "tweakListOptions"
+          ]
+        },
+        {
+          "name": "V1",
+          "startLine": 44,
+          "endLine": 46,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "Interface",
+          "startLine": 27,
+          "endLine": 30,
+          "methods": [
+            "V1"
+          ],
+          "properties": []
+        },
+        {
+          "name": "group",
+          "startLine": 32,
+          "endLine": 36,
+          "methods": [
+            "V1"
+          ],
+          "properties": [
+            "factory",
+            "namespace",
+            "tweakListOptions"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Interface",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "New",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "V1",
+          "line": 44,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "V1",
+          "callee": "v1.New",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "pkg/client/informers/externalversions/acme/v1/challenge.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 88,
+      "functions": [
+        {
+          "name": "NewChallengeInformer",
+          "startLine": 51,
+          "endLine": 53,
+          "params": [
+            "client",
+            "namespace",
+            "resyncPeriod",
+            "indexers"
+          ]
+        },
+        {
+          "name": "NewFilteredChallengeInformer",
+          "startLine": 58,
+          "endLine": 90,
+          "params": [
+            "client",
+            "namespace",
+            "resyncPeriod",
+            "indexers",
+            "tweakListOptions"
+          ]
+        },
+        {
+          "name": "defaultInformer",
+          "startLine": 92,
+          "endLine": 94,
+          "params": [
+            "client",
+            "resyncPeriod"
+          ]
+        },
+        {
+          "name": "Informer",
+          "startLine": 96,
+          "endLine": 98,
+          "params": []
+        },
+        {
+          "name": "Lister",
+          "startLine": 100,
+          "endLine": 102,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ChallengeInformer",
+          "startLine": 37,
+          "endLine": 40,
+          "methods": [
+            "Informer",
+            "Lister"
+          ],
+          "properties": []
+        },
+        {
+          "name": "challengeInformer",
+          "startLine": 42,
+          "endLine": 46,
+          "methods": [
+            "defaultInformer",
+            "Informer",
+            "Lister"
+          ],
+          "properties": [
+            "factory",
+            "tweakListOptions",
+            "namespace"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ChallengeInformer",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "NewChallengeInformer",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "NewFilteredChallengeInformer",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "Informer",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "Lister",
+          "line": 100,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewChallengeInformer",
+          "callee": "NewFilteredChallengeInformer",
+          "lineNumber": 52
+        },
+        {
+          "caller": "NewFilteredChallengeInformer",
+          "callee": "cache.NewSharedIndexInformer",
+          "lineNumber": 59
+        },
+        {
+          "caller": "NewFilteredChallengeInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 63
+        },
+        {
+          "caller": "NewFilteredChallengeInformer",
+          "callee": "client.AcmeV1().Challenges(namespace).List",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredChallengeInformer",
+          "callee": "client.AcmeV1().Challenges",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredChallengeInformer",
+          "callee": "client.AcmeV1",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredChallengeInformer",
+          "callee": "context.Background",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredChallengeInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 69
+        },
+        {
+          "caller": "NewFilteredChallengeInformer",
+          "callee": "client.AcmeV1().Challenges(namespace).Watch",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredChallengeInformer",
+          "callee": "client.AcmeV1().Challenges",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredChallengeInformer",
+          "callee": "client.AcmeV1",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredChallengeInformer",
+          "callee": "context.Background",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredChallengeInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 75
+        },
+        {
+          "caller": "NewFilteredChallengeInformer",
+          "callee": "client.AcmeV1().Challenges(namespace).List",
+          "lineNumber": 77
+        },
+        {
+          "caller": "NewFilteredChallengeInformer",
+          "callee": "client.AcmeV1().Challenges",
+          "lineNumber": 77
+        },
+        {
+          "caller": "NewFilteredChallengeInformer",
+          "callee": "client.AcmeV1",
+          "lineNumber": 77
+        },
+        {
+          "caller": "NewFilteredChallengeInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 81
+        },
+        {
+          "caller": "NewFilteredChallengeInformer",
+          "callee": "client.AcmeV1().Challenges(namespace).Watch",
+          "lineNumber": 83
+        },
+        {
+          "caller": "NewFilteredChallengeInformer",
+          "callee": "client.AcmeV1().Challenges",
+          "lineNumber": 83
+        },
+        {
+          "caller": "NewFilteredChallengeInformer",
+          "callee": "client.AcmeV1",
+          "lineNumber": 83
+        },
+        {
+          "caller": "defaultInformer",
+          "callee": "NewFilteredChallengeInformer",
+          "lineNumber": 93
+        },
+        {
+          "caller": "Informer",
+          "callee": "f.factory.InformerFor",
+          "lineNumber": 97
+        },
+        {
+          "caller": "Lister",
+          "callee": "acmev1.NewChallengeLister",
+          "lineNumber": 101
+        },
+        {
+          "caller": "Lister",
+          "callee": "f.Informer().GetIndexer",
+          "lineNumber": 101
+        },
+        {
+          "caller": "Lister",
+          "callee": "f.Informer",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "pkg/client/informers/externalversions/acme/v1/interface.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "New",
+          "startLine": 40,
+          "endLine": 42,
+          "params": [
+            "f",
+            "namespace",
+            "tweakListOptions"
+          ]
+        },
+        {
+          "name": "Challenges",
+          "startLine": 45,
+          "endLine": 47,
+          "params": []
+        },
+        {
+          "name": "Orders",
+          "startLine": 50,
+          "endLine": 52,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "Interface",
+          "startLine": 26,
+          "endLine": 31,
+          "methods": [
+            "Challenges",
+            "Orders"
+          ],
+          "properties": []
+        },
+        {
+          "name": "version",
+          "startLine": 33,
+          "endLine": 37,
+          "methods": [
+            "Challenges",
+            "Orders"
+          ],
+          "properties": [
+            "factory",
+            "namespace",
+            "tweakListOptions"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Interface",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "New",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "Challenges",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "Orders",
+          "line": 50,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "pkg/client/informers/externalversions/acme/v1/order.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 88,
+      "functions": [
+        {
+          "name": "NewOrderInformer",
+          "startLine": 51,
+          "endLine": 53,
+          "params": [
+            "client",
+            "namespace",
+            "resyncPeriod",
+            "indexers"
+          ]
+        },
+        {
+          "name": "NewFilteredOrderInformer",
+          "startLine": 58,
+          "endLine": 90,
+          "params": [
+            "client",
+            "namespace",
+            "resyncPeriod",
+            "indexers",
+            "tweakListOptions"
+          ]
+        },
+        {
+          "name": "defaultInformer",
+          "startLine": 92,
+          "endLine": 94,
+          "params": [
+            "client",
+            "resyncPeriod"
+          ]
+        },
+        {
+          "name": "Informer",
+          "startLine": 96,
+          "endLine": 98,
+          "params": []
+        },
+        {
+          "name": "Lister",
+          "startLine": 100,
+          "endLine": 102,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "OrderInformer",
+          "startLine": 37,
+          "endLine": 40,
+          "methods": [
+            "Informer",
+            "Lister"
+          ],
+          "properties": []
+        },
+        {
+          "name": "orderInformer",
+          "startLine": 42,
+          "endLine": 46,
+          "methods": [
+            "defaultInformer",
+            "Informer",
+            "Lister"
+          ],
+          "properties": [
+            "factory",
+            "tweakListOptions",
+            "namespace"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OrderInformer",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "NewOrderInformer",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "NewFilteredOrderInformer",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "Informer",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "Lister",
+          "line": 100,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewOrderInformer",
+          "callee": "NewFilteredOrderInformer",
+          "lineNumber": 52
+        },
+        {
+          "caller": "NewFilteredOrderInformer",
+          "callee": "cache.NewSharedIndexInformer",
+          "lineNumber": 59
+        },
+        {
+          "caller": "NewFilteredOrderInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 63
+        },
+        {
+          "caller": "NewFilteredOrderInformer",
+          "callee": "client.AcmeV1().Orders(namespace).List",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredOrderInformer",
+          "callee": "client.AcmeV1().Orders",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredOrderInformer",
+          "callee": "client.AcmeV1",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredOrderInformer",
+          "callee": "context.Background",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredOrderInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 69
+        },
+        {
+          "caller": "NewFilteredOrderInformer",
+          "callee": "client.AcmeV1().Orders(namespace).Watch",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredOrderInformer",
+          "callee": "client.AcmeV1().Orders",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredOrderInformer",
+          "callee": "client.AcmeV1",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredOrderInformer",
+          "callee": "context.Background",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredOrderInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 75
+        },
+        {
+          "caller": "NewFilteredOrderInformer",
+          "callee": "client.AcmeV1().Orders(namespace).List",
+          "lineNumber": 77
+        },
+        {
+          "caller": "NewFilteredOrderInformer",
+          "callee": "client.AcmeV1().Orders",
+          "lineNumber": 77
+        },
+        {
+          "caller": "NewFilteredOrderInformer",
+          "callee": "client.AcmeV1",
+          "lineNumber": 77
+        },
+        {
+          "caller": "NewFilteredOrderInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 81
+        },
+        {
+          "caller": "NewFilteredOrderInformer",
+          "callee": "client.AcmeV1().Orders(namespace).Watch",
+          "lineNumber": 83
+        },
+        {
+          "caller": "NewFilteredOrderInformer",
+          "callee": "client.AcmeV1().Orders",
+          "lineNumber": 83
+        },
+        {
+          "caller": "NewFilteredOrderInformer",
+          "callee": "client.AcmeV1",
+          "lineNumber": 83
+        },
+        {
+          "caller": "defaultInformer",
+          "callee": "NewFilteredOrderInformer",
+          "lineNumber": 93
+        },
+        {
+          "caller": "Informer",
+          "callee": "f.factory.InformerFor",
+          "lineNumber": 97
+        },
+        {
+          "caller": "Lister",
+          "callee": "acmev1.NewOrderLister",
+          "lineNumber": 101
+        },
+        {
+          "caller": "Lister",
+          "callee": "f.Informer().GetIndexer",
+          "lineNumber": 101
+        },
+        {
+          "caller": "Lister",
+          "callee": "f.Informer",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "pkg/client/informers/externalversions/certmanager/interface.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "New",
+          "startLine": 39,
+          "endLine": 41,
+          "params": [
+            "f",
+            "namespace",
+            "tweakListOptions"
+          ]
+        },
+        {
+          "name": "V1",
+          "startLine": 44,
+          "endLine": 46,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "Interface",
+          "startLine": 27,
+          "endLine": 30,
+          "methods": [
+            "V1"
+          ],
+          "properties": []
+        },
+        {
+          "name": "group",
+          "startLine": 32,
+          "endLine": 36,
+          "methods": [
+            "V1"
+          ],
+          "properties": [
+            "factory",
+            "namespace",
+            "tweakListOptions"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Interface",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "New",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "V1",
+          "line": 44,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "V1",
+          "callee": "v1.New",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "pkg/client/informers/externalversions/certmanager/v1/interface.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 53,
+      "functions": [
+        {
+          "name": "New",
+          "startLine": 44,
+          "endLine": 46,
+          "params": [
+            "f",
+            "namespace",
+            "tweakListOptions"
+          ]
+        },
+        {
+          "name": "Certificates",
+          "startLine": 49,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "CertificateRequests",
+          "startLine": 54,
+          "endLine": 56,
+          "params": []
+        },
+        {
+          "name": "ClusterIssuers",
+          "startLine": 59,
+          "endLine": 61,
+          "params": []
+        },
+        {
+          "name": "Issuers",
+          "startLine": 64,
+          "endLine": 66,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "Interface",
+          "startLine": 26,
+          "endLine": 35,
+          "methods": [
+            "Certificates",
+            "CertificateRequests",
+            "ClusterIssuers",
+            "Issuers"
+          ],
+          "properties": []
+        },
+        {
+          "name": "version",
+          "startLine": 37,
+          "endLine": 41,
+          "methods": [
+            "Certificates",
+            "CertificateRequests",
+            "ClusterIssuers",
+            "Issuers"
+          ],
+          "properties": [
+            "factory",
+            "namespace",
+            "tweakListOptions"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Interface",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "New",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "Certificates",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateRequests",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "ClusterIssuers",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "Issuers",
+          "line": 64,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "pkg/client/informers/externalversions/factory.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 268,
+      "nonEmptyLines": 227,
+      "functions": [
+        {
+          "name": "WithCustomResyncConfig",
+          "startLine": 60,
+          "endLine": 67,
+          "params": [
+            "resyncConfig"
+          ]
+        },
+        {
+          "name": "WithTweakListOptions",
+          "startLine": 70,
+          "endLine": 75,
+          "params": [
+            "tweakListOptions"
+          ]
+        },
+        {
+          "name": "WithNamespace",
+          "startLine": 78,
+          "endLine": 83,
+          "params": [
+            "namespace"
+          ]
+        },
+        {
+          "name": "WithTransform",
+          "startLine": 86,
+          "endLine": 91,
+          "params": [
+            "transform"
+          ]
+        },
+        {
+          "name": "NewSharedInformerFactory",
+          "startLine": 94,
+          "endLine": 96,
+          "params": [
+            "client",
+            "defaultResync"
+          ]
+        },
+        {
+          "name": "NewFilteredSharedInformerFactory",
+          "startLine": 102,
+          "endLine": 104,
+          "params": [
+            "client",
+            "defaultResync",
+            "namespace",
+            "tweakListOptions"
+          ]
+        },
+        {
+          "name": "NewSharedInformerFactoryWithOptions",
+          "startLine": 107,
+          "endLine": 123,
+          "params": [
+            "client",
+            "defaultResync"
+          ]
+        },
+        {
+          "name": "Start",
+          "startLine": 125,
+          "endLine": 147,
+          "params": [
+            "stopCh"
+          ]
+        },
+        {
+          "name": "Shutdown",
+          "startLine": 149,
+          "endLine": 156,
+          "params": []
+        },
+        {
+          "name": "WaitForCacheSync",
+          "startLine": 158,
+          "endLine": 177,
+          "params": [
+            "stopCh"
+          ]
+        },
+        {
+          "name": "InformerFor",
+          "startLine": 181,
+          "endLine": 201,
+          "params": [
+            "obj",
+            "newFunc"
+          ]
+        },
+        {
+          "name": "Acme",
+          "startLine": 262,
+          "endLine": 264,
+          "params": []
+        },
+        {
+          "name": "Certmanager",
+          "startLine": 266,
+          "endLine": 268,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "sharedInformerFactory",
+          "startLine": 39,
+          "endLine": 57,
+          "methods": [
+            "Start",
+            "Shutdown",
+            "WaitForCacheSync",
+            "InformerFor",
+            "Acme",
+            "Certmanager"
+          ],
+          "properties": [
+            "client",
+            "namespace",
+            "tweakListOptions",
+            "lock",
+            "defaultResync",
+            "customResync",
+            "transform",
+            "informers",
+            "startedInformers",
+            "wg",
+            "shuttingDown"
+          ]
+        },
+        {
+          "name": "SharedInformerFactory",
+          "startLine": 227,
+          "endLine": 260,
+          "methods": [
+            "Start",
+            "Shutdown",
+            "WaitForCacheSync",
+            "ForResource",
+            "InformerFor",
+            "Acme",
+            "Certmanager"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "WithCustomResyncConfig",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "WithTweakListOptions",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "WithNamespace",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "WithTransform",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "NewSharedInformerFactory",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "NewFilteredSharedInformerFactory",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "NewSharedInformerFactoryWithOptions",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "Start",
+          "line": 125,
+          "isDefault": false
+        },
+        {
+          "name": "Shutdown",
+          "line": 149,
+          "isDefault": false
+        },
+        {
+          "name": "WaitForCacheSync",
+          "line": 158,
+          "isDefault": false
+        },
+        {
+          "name": "InformerFor",
+          "line": 181,
+          "isDefault": false
+        },
+        {
+          "name": "SharedInformerFactory",
+          "line": 227,
+          "isDefault": false
+        },
+        {
+          "name": "Acme",
+          "line": 262,
+          "isDefault": false
+        },
+        {
+          "name": "Certmanager",
+          "line": 266,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithCustomResyncConfig",
+          "callee": "reflect.TypeOf",
+          "lineNumber": 63
+        },
+        {
+          "caller": "NewSharedInformerFactory",
+          "callee": "NewSharedInformerFactoryWithOptions",
+          "lineNumber": 95
+        },
+        {
+          "caller": "NewFilteredSharedInformerFactory",
+          "callee": "NewSharedInformerFactoryWithOptions",
+          "lineNumber": 103
+        },
+        {
+          "caller": "NewFilteredSharedInformerFactory",
+          "callee": "WithNamespace",
+          "lineNumber": 103
+        },
+        {
+          "caller": "NewFilteredSharedInformerFactory",
+          "callee": "WithTweakListOptions",
+          "lineNumber": 103
+        },
+        {
+          "caller": "NewSharedInformerFactoryWithOptions",
+          "callee": "make",
+          "lineNumber": 112
+        },
+        {
+          "caller": "NewSharedInformerFactoryWithOptions",
+          "callee": "make",
+          "lineNumber": 113
+        },
+        {
+          "caller": "NewSharedInformerFactoryWithOptions",
+          "callee": "make",
+          "lineNumber": 114
+        },
+        {
+          "caller": "NewSharedInformerFactoryWithOptions",
+          "callee": "opt",
+          "lineNumber": 119
+        },
+        {
+          "caller": "Start",
+          "callee": "f.lock.Lock",
+          "lineNumber": 126
+        },
+        {
+          "caller": "Start",
+          "callee": "f.lock.Unlock",
+          "lineNumber": 127
+        },
+        {
+          "caller": "Start",
+          "callee": "f.wg.Add",
+          "lineNumber": 135
+        },
+        {
+          "caller": "Start",
+          "callee": "func() {\n\t\t\t\tdefer f.wg.Done()\n\t\t\t\tinformer.Run(stopCh)\n\t\t\t}",
+          "lineNumber": 140
+        },
+        {
+          "caller": "Start",
+          "callee": "f.wg.Done",
+          "lineNumber": 141
+        },
+        {
+          "caller": "Start",
+          "callee": "informer.Run",
+          "lineNumber": 142
+        },
+        {
+          "caller": "Shutdown",
+          "callee": "f.lock.Lock",
+          "lineNumber": 150
+        },
+        {
+          "caller": "Shutdown",
+          "callee": "f.lock.Unlock",
+          "lineNumber": 152
+        },
+        {
+          "caller": "Shutdown",
+          "callee": "f.wg.Wait",
+          "lineNumber": 155
+        },
+        {
+          "caller": "WaitForCacheSync",
+          "callee": "func() map[reflect.Type]cache.SharedIndexInformer {\n\t\tf.lock.Lock()\n\t\tdefer f.lock.Unlock()\n\n\t\tinformers := map[reflect.Type]cache.SharedIndexInformer{}\n\t\tfor informerType, informer := range f.informers {\n\t\t\tif f.startedInformers[informerType] {\n\t\t\t\tinformers[informerType] = informer\n\t\t\t}\n\t\t}\n\t\treturn informers\n\t}",
+          "lineNumber": 159
+        },
+        {
+          "caller": "WaitForCacheSync",
+          "callee": "f.lock.Lock",
+          "lineNumber": 160
+        },
+        {
+          "caller": "WaitForCacheSync",
+          "callee": "f.lock.Unlock",
+          "lineNumber": 161
+        },
+        {
+          "caller": "WaitForCacheSync",
+          "callee": "cache.WaitForCacheSync",
+          "lineNumber": 174
+        },
+        {
+          "caller": "InformerFor",
+          "callee": "f.lock.Lock",
+          "lineNumber": 182
+        },
+        {
+          "caller": "InformerFor",
+          "callee": "f.lock.Unlock",
+          "lineNumber": 183
+        },
+        {
+          "caller": "InformerFor",
+          "callee": "reflect.TypeOf",
+          "lineNumber": 185
+        },
+        {
+          "caller": "InformerFor",
+          "callee": "newFunc",
+          "lineNumber": 196
+        },
+        {
+          "caller": "InformerFor",
+          "callee": "informer.SetTransform",
+          "lineNumber": 197
+        },
+        {
+          "caller": "Acme",
+          "callee": "acme.New",
+          "lineNumber": 263
+        },
+        {
+          "caller": "Certmanager",
+          "callee": "certmanager.New",
+          "lineNumber": 267
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 14,
+        "functionCount": 13,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "pkg/client/informers/externalversions/generic.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "Informer",
+          "startLine": 43,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "Lister",
+          "startLine": 48,
+          "endLine": 50,
+          "params": []
+        },
+        {
+          "name": "ForResource",
+          "startLine": 54,
+          "endLine": 75,
+          "params": [
+            "resource"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GenericInformer",
+          "startLine": 32,
+          "endLine": 35,
+          "methods": [
+            "Informer",
+            "Lister"
+          ],
+          "properties": []
+        },
+        {
+          "name": "genericInformer",
+          "startLine": 37,
+          "endLine": 40,
+          "methods": [
+            "Informer",
+            "Lister"
+          ],
+          "properties": [
+            "informer",
+            "resource"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "GenericInformer",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "Informer",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "Lister",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "ForResource",
+          "line": 54,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Lister",
+          "callee": "cache.NewGenericLister",
+          "lineNumber": 49
+        },
+        {
+          "caller": "Lister",
+          "callee": "f.Informer().GetIndexer",
+          "lineNumber": 49
+        },
+        {
+          "caller": "Lister",
+          "callee": "f.Informer",
+          "lineNumber": 49
+        },
+        {
+          "caller": "ForResource",
+          "callee": "v1.SchemeGroupVersion.WithResource",
+          "lineNumber": 57
+        },
+        {
+          "caller": "ForResource",
+          "callee": "resource.GroupResource",
+          "lineNumber": 58
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Acme().V1().Challenges().Informer",
+          "lineNumber": 58
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Acme().V1().Challenges",
+          "lineNumber": 58
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Acme().V1",
+          "lineNumber": 58
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Acme",
+          "lineNumber": 58
+        },
+        {
+          "caller": "ForResource",
+          "callee": "v1.SchemeGroupVersion.WithResource",
+          "lineNumber": 59
+        },
+        {
+          "caller": "ForResource",
+          "callee": "resource.GroupResource",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Acme().V1().Orders().Informer",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Acme().V1().Orders",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Acme().V1",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Acme",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ForResource",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithResource",
+          "lineNumber": 63
+        },
+        {
+          "caller": "ForResource",
+          "callee": "resource.GroupResource",
+          "lineNumber": 64
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Certmanager().V1().Certificates().Informer",
+          "lineNumber": 64
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Certmanager().V1().Certificates",
+          "lineNumber": 64
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Certmanager().V1",
+          "lineNumber": 64
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Certmanager",
+          "lineNumber": 64
+        },
+        {
+          "caller": "ForResource",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithResource",
+          "lineNumber": 65
+        },
+        {
+          "caller": "ForResource",
+          "callee": "resource.GroupResource",
+          "lineNumber": 66
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Certmanager().V1().CertificateRequests().Informer",
+          "lineNumber": 66
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Certmanager().V1().CertificateRequests",
+          "lineNumber": 66
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Certmanager().V1",
+          "lineNumber": 66
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Certmanager",
+          "lineNumber": 66
+        },
+        {
+          "caller": "ForResource",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithResource",
+          "lineNumber": 67
+        },
+        {
+          "caller": "ForResource",
+          "callee": "resource.GroupResource",
+          "lineNumber": 68
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Certmanager().V1().ClusterIssuers().Informer",
+          "lineNumber": 68
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Certmanager().V1().ClusterIssuers",
+          "lineNumber": 68
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Certmanager().V1",
+          "lineNumber": 68
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Certmanager",
+          "lineNumber": 68
+        },
+        {
+          "caller": "ForResource",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithResource",
+          "lineNumber": 69
+        },
+        {
+          "caller": "ForResource",
+          "callee": "resource.GroupResource",
+          "lineNumber": 70
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Certmanager().V1().Issuers().Informer",
+          "lineNumber": 70
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Certmanager().V1().Issuers",
+          "lineNumber": 70
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Certmanager().V1",
+          "lineNumber": 70
+        },
+        {
+          "caller": "ForResource",
+          "callee": "f.Certmanager",
+          "lineNumber": 70
+        },
+        {
+          "caller": "ForResource",
+          "callee": "fmt.Errorf",
+          "lineNumber": 74
+        }
+      ],
+      "metrics": {
+        "importCount": 17,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "pkg/client/informers/externalversions/internalinterfaces/factory_interfaces.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "SharedInformerFactory",
+          "startLine": 34,
+          "endLine": 37,
+          "methods": [
+            "Start",
+            "InformerFor"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SharedInformerFactory",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/listers/acme/v1/challenge.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "NewChallengeLister",
+          "startLine": 45,
+          "endLine": 47,
+          "params": [
+            "indexer"
+          ]
+        },
+        {
+          "name": "Challenges",
+          "startLine": 50,
+          "endLine": 52,
+          "params": [
+            "namespace"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ChallengeLister",
+          "startLine": 30,
+          "endLine": 37,
+          "methods": [
+            "List",
+            "Challenges"
+          ],
+          "properties": []
+        },
+        {
+          "name": "challengeLister",
+          "startLine": 40,
+          "endLine": 42,
+          "methods": [
+            "Challenges"
+          ],
+          "properties": []
+        },
+        {
+          "name": "ChallengeNamespaceLister",
+          "startLine": 56,
+          "endLine": 64,
+          "methods": [
+            "List",
+            "Get"
+          ],
+          "properties": []
+        },
+        {
+          "name": "challengeNamespaceLister",
+          "startLine": 68,
+          "endLine": 70,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ChallengeLister",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "NewChallengeLister",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "Challenges",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "ChallengeNamespaceLister",
+          "line": 56,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewChallengeLister",
+          "callee": "listers.New",
+          "lineNumber": 46
+        },
+        {
+          "caller": "NewChallengeLister",
+          "callee": "acmev1.Resource",
+          "lineNumber": 46
+        },
+        {
+          "caller": "Challenges",
+          "callee": "listers.NewNamespaced",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "pkg/client/listers/acme/v1/expansion_generated.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "ChallengeListerExpansion",
+          "startLine": 23,
+          "endLine": 23,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "ChallengeNamespaceListerExpansion",
+          "startLine": 27,
+          "endLine": 27,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "OrderListerExpansion",
+          "startLine": 31,
+          "endLine": 31,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "OrderNamespaceListerExpansion",
+          "startLine": 35,
+          "endLine": 35,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ChallengeListerExpansion",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "ChallengeNamespaceListerExpansion",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "OrderListerExpansion",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "OrderNamespaceListerExpansion",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "pkg/client/listers/acme/v1/order.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "NewOrderLister",
+          "startLine": 45,
+          "endLine": 47,
+          "params": [
+            "indexer"
+          ]
+        },
+        {
+          "name": "Orders",
+          "startLine": 50,
+          "endLine": 52,
+          "params": [
+            "namespace"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OrderLister",
+          "startLine": 30,
+          "endLine": 37,
+          "methods": [
+            "List",
+            "Orders"
+          ],
+          "properties": []
+        },
+        {
+          "name": "orderLister",
+          "startLine": 40,
+          "endLine": 42,
+          "methods": [
+            "Orders"
+          ],
+          "properties": []
+        },
+        {
+          "name": "OrderNamespaceLister",
+          "startLine": 56,
+          "endLine": 64,
+          "methods": [
+            "List",
+            "Get"
+          ],
+          "properties": []
+        },
+        {
+          "name": "orderNamespaceLister",
+          "startLine": 68,
+          "endLine": 70,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "OrderLister",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "NewOrderLister",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "Orders",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "OrderNamespaceLister",
+          "line": 56,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewOrderLister",
+          "callee": "listers.New",
+          "lineNumber": 46
+        },
+        {
+          "caller": "NewOrderLister",
+          "callee": "acmev1.Resource",
+          "lineNumber": 46
+        },
+        {
+          "caller": "Orders",
+          "callee": "listers.NewNamespaced",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "pkg/controller/acmechallenges/finalizer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "finalizerRequired",
+          "startLine": 33,
+          "endLine": 35,
+          "params": [
+            "ch"
+          ]
+        },
+        {
+          "name": "otherFinalizerPresent",
+          "startLine": 37,
+          "endLine": 41,
+          "params": [
+            "ch"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "finalizerRequired",
+          "callee": "sets.NewString(ch.Finalizers...).Has",
+          "lineNumber": 34
+        },
+        {
+          "caller": "finalizerRequired",
+          "callee": "sets.NewString",
+          "lineNumber": 34
+        },
+        {
+          "caller": "otherFinalizerPresent",
+          "callee": "sets.NewString(ch.Finalizers...).\n\t\tDelete",
+          "lineNumber": 38
+        },
+        {
+          "caller": "otherFinalizerPresent",
+          "callee": "sets.NewString",
+          "lineNumber": 38
+        },
+        {
+          "caller": "otherFinalizerPresent",
+          "callee": "len",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 242,
+      "nonEmptyLines": 206,
+      "functions": [
+        {
+          "name": "New",
+          "startLine": 42,
+          "endLine": 45,
+          "params": [
+            "ctx",
+            "l",
+            "maxConcurrentChallenges"
+          ]
+        },
+        {
+          "name": "ScheduleN",
+          "startLine": 51,
+          "endLine": 59,
+          "params": [
+            "n"
+          ]
+        },
+        {
+          "name": "scheduleN",
+          "startLine": 61,
+          "endLine": 77,
+          "params": [
+            "n",
+            "allChallenges"
+          ]
+        },
+        {
+          "name": "selectChallengesToSchedule",
+          "startLine": 82,
+          "endLine": 88,
+          "params": [
+            "candidates",
+            "n"
+          ]
+        },
+        {
+          "name": "determineChallengeCandidates",
+          "startLine": 95,
+          "endLine": 135,
+          "params": [
+            "allChallenges"
+          ]
+        },
+        {
+          "name": "sortChallengesByTimestamp",
+          "startLine": 137,
+          "endLine": 141,
+          "params": [
+            "chs"
+          ]
+        },
+        {
+          "name": "notProcessingChallenges",
+          "startLine": 145,
+          "endLine": 149,
+          "params": [
+            "chs"
+          ]
+        },
+        {
+          "name": "processingChallenges",
+          "startLine": 153,
+          "endLine": 157,
+          "params": [
+            "chs"
+          ]
+        },
+        {
+          "name": "incompleteChallenges",
+          "startLine": 161,
+          "endLine": 165,
+          "params": [
+            "chs"
+          ]
+        },
+        {
+          "name": "filterChallenges",
+          "startLine": 167,
+          "endLine": 175,
+          "params": [
+            "chs",
+            "fn"
+          ]
+        },
+        {
+          "name": "compareChallenges",
+          "startLine": 180,
+          "endLine": 202,
+          "params": [
+            "l",
+            "r"
+          ]
+        },
+        {
+          "name": "sortChallenges",
+          "startLine": 207,
+          "endLine": 225,
+          "params": [
+            "chs"
+          ]
+        },
+        {
+          "name": "dedupeChallenges",
+          "startLine": 228,
+          "endLine": 242,
+          "params": [
+            "in"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Scheduler",
+          "startLine": 35,
+          "endLine": 39,
+          "methods": [
+            "ScheduleN",
+            "scheduleN",
+            "selectChallengesToSchedule",
+            "determineChallengeCandidates"
+          ],
+          "properties": [
+            "log",
+            "challengeLister",
+            "maxConcurrentChallenges"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Scheduler",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "New",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "ScheduleN",
+          "line": 51,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "New",
+          "callee": "logs.FromContext",
+          "lineNumber": 43
+        },
+        {
+          "caller": "ScheduleN",
+          "callee": "s.challengeLister.List",
+          "lineNumber": 53
+        },
+        {
+          "caller": "ScheduleN",
+          "callee": "labels.Everything",
+          "lineNumber": 53
+        },
+        {
+          "caller": "ScheduleN",
+          "callee": "s.scheduleN",
+          "lineNumber": 58
+        },
+        {
+          "caller": "scheduleN",
+          "callee": "s.determineChallengeCandidates",
+          "lineNumber": 65
+        },
+        {
+          "caller": "scheduleN",
+          "callee": "s.selectChallengesToSchedule",
+          "lineNumber": 76
+        },
+        {
+          "caller": "selectChallengesToSchedule",
+          "callee": "len",
+          "lineNumber": 84
+        },
+        {
+          "caller": "determineChallengeCandidates",
+          "callee": "processingChallenges",
+          "lineNumber": 98
+        },
+        {
+          "caller": "determineChallengeCandidates",
+          "callee": "len",
+          "lineNumber": 99
+        },
+        {
+          "caller": "determineChallengeCandidates",
+          "callee": "s.log.V(logs.DebugLevel).Info",
+          "lineNumber": 105
+        },
+        {
+          "caller": "determineChallengeCandidates",
+          "callee": "s.log.V",
+          "lineNumber": 105
+        },
+        {
+          "caller": "determineChallengeCandidates",
+          "callee": "len",
+          "lineNumber": 105
+        },
+        {
+          "caller": "determineChallengeCandidates",
+          "callee": "incompleteChallenges",
+          "lineNumber": 110
+        },
+        {
+          "caller": "determineChallengeCandidates",
+          "callee": "notProcessingChallenges",
+          "lineNumber": 112
+        },
+        {
+          "caller": "determineChallengeCandidates",
+          "callee": "dedupeChallenges",
+          "lineNumber": 117
+        },
+        {
+          "caller": "determineChallengeCandidates",
+          "callee": "filterChallenges",
+          "lineNumber": 121
+        },
+        {
+          "caller": "determineChallengeCandidates",
+          "callee": "compareChallenges",
+          "lineNumber": 123
+        },
+        {
+          "caller": "determineChallengeCandidates",
+          "callee": "s.log.V(logs.DebugLevel).Info",
+          "lineNumber": 124
+        },
+        {
+          "caller": "determineChallengeCandidates",
+          "callee": "s.log.V",
+          "lineNumber": 124
+        },
+        {
+          "caller": "determineChallengeCandidates",
+          "callee": "sortChallengesByTimestamp",
+          "lineNumber": 132
+        },
+        {
+          "caller": "sortChallengesByTimestamp",
+          "callee": "sort.Slice",
+          "lineNumber": 138
+        },
+        {
+          "caller": "sortChallengesByTimestamp",
+          "callee": "chs[i].CreationTimestamp.Before",
+          "lineNumber": 139
+        },
+        {
+          "caller": "notProcessingChallenges",
+          "callee": "filterChallenges",
+          "lineNumber": 146
+        },
+        {
+          "caller": "processingChallenges",
+          "callee": "filterChallenges",
+          "lineNumber": 154
+        },
+        {
+          "caller": "incompleteChallenges",
+          "callee": "filterChallenges",
+          "lineNumber": 162
+        },
+        {
+          "caller": "incompleteChallenges",
+          "callee": "acme.IsFinalState",
+          "lineNumber": 163
+        },
+        {
+          "caller": "filterChallenges",
+          "callee": "fn",
+          "lineNumber": 170
+        },
+        {
+          "caller": "filterChallenges",
+          "callee": "append",
+          "lineNumber": 171
+        },
+        {
+          "caller": "sortChallenges",
+          "callee": "sort.Slice",
+          "lineNumber": 208
+        },
+        {
+          "caller": "sortChallenges",
+          "callee": "compareChallenges",
+          "lineNumber": 209
+        },
+        {
+          "caller": "sortChallenges",
+          "callee": "chs[i].CreationTimestamp.Time.UnixNano",
+          "lineNumber": 216
+        },
+        {
+          "caller": "sortChallenges",
+          "callee": "chs[j].CreationTimestamp.Time.UnixNano",
+          "lineNumber": 216
+        },
+        {
+          "caller": "sortChallenges",
+          "callee": "chs[i].CreationTimestamp.Time.UnixNano",
+          "lineNumber": 219
+        },
+        {
+          "caller": "sortChallenges",
+          "callee": "chs[j].CreationTimestamp.Time.UnixNano",
+          "lineNumber": 219
+        },
+        {
+          "caller": "dedupeChallenges",
+          "callee": "sortChallenges",
+          "lineNumber": 229
+        },
+        {
+          "caller": "dedupeChallenges",
+          "callee": "len",
+          "lineNumber": 231
+        },
+        {
+          "caller": "dedupeChallenges",
+          "callee": "compareChallenges",
+          "lineNumber": 232
+        },
+        {
+          "caller": "dedupeChallenges",
+          "callee": "len",
+          "lineNumber": 238
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 3,
+        "functionCount": 13,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/controller/acmechallenges/update.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 148,
+      "nonEmptyLines": 128,
+      "functions": [
+        {
+          "name": "newObjectUpdater",
+          "startLine": 52,
+          "endLine": 63,
+          "params": [
+            "cl",
+            "fieldManager"
+          ]
+        },
+        {
+          "name": "updateObject",
+          "startLine": 75,
+          "endLine": 123,
+          "params": [
+            "ctx",
+            "oldChallenge",
+            "newChallenge"
+          ]
+        },
+        {
+          "name": "update",
+          "startLine": 129,
+          "endLine": 131,
+          "params": [
+            "ctx",
+            "challenge"
+          ]
+        },
+        {
+          "name": "updateStatus",
+          "startLine": 133,
+          "endLine": 135,
+          "params": [
+            "ctx",
+            "challenge"
+          ]
+        },
+        {
+          "name": "update",
+          "startLine": 142,
+          "endLine": 144,
+          "params": [
+            "ctx",
+            "challenge"
+          ]
+        },
+        {
+          "name": "updateStatus",
+          "startLine": 146,
+          "endLine": 148,
+          "params": [
+            "ctx",
+            "challenge"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "objectUpdateClient",
+          "startLine": 39,
+          "endLine": 42,
+          "methods": [
+            "update",
+            "updateStatus"
+          ],
+          "properties": []
+        },
+        {
+          "name": "objectUpdater",
+          "startLine": 44,
+          "endLine": 46,
+          "methods": [
+            "updateObject"
+          ],
+          "properties": []
+        },
+        {
+          "name": "defaultObjectUpdater",
+          "startLine": 48,
+          "endLine": 50,
+          "methods": [
+            "updateObject"
+          ],
+          "properties": []
+        },
+        {
+          "name": "objectUpdateClientDefault",
+          "startLine": 125,
+          "endLine": 127,
+          "methods": [
+            "update",
+            "updateStatus"
+          ],
+          "properties": [
+            "cl"
+          ]
+        },
+        {
+          "name": "objectUpdateClientSSA",
+          "startLine": 137,
+          "endLine": 140,
+          "methods": [
+            "update",
+            "updateStatus"
+          ],
+          "properties": [
+            "cl",
+            "fieldManager"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "newObjectUpdater",
+          "callee": "utilfeature.DefaultFeatureGate.Enabled",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateObject",
+          "callee": "apiequality.Semantic.DeepEqual",
+          "lineNumber": 76
+        },
+        {
+          "caller": "updateObject",
+          "callee": "gen.ChallengeFrom",
+          "lineNumber": 77
+        },
+        {
+          "caller": "updateObject",
+          "callee": "gen.SetChallengeFinalizers",
+          "lineNumber": 77
+        },
+        {
+          "caller": "updateObject",
+          "callee": "gen.ResetChallengeStatus",
+          "lineNumber": 77
+        },
+        {
+          "caller": "updateObject",
+          "callee": "gen.ChallengeFrom",
+          "lineNumber": 78
+        },
+        {
+          "caller": "updateObject",
+          "callee": "gen.SetChallengeFinalizers",
+          "lineNumber": 78
+        },
+        {
+          "caller": "updateObject",
+          "callee": "gen.ResetChallengeStatus",
+          "lineNumber": 78
+        },
+        {
+          "caller": "updateObject",
+          "callee": "fmt.Errorf",
+          "lineNumber": 80
+        },
+        {
+          "caller": "updateObject",
+          "callee": "apiequality.Semantic.DeepEqual",
+          "lineNumber": 87
+        },
+        {
+          "caller": "updateObject",
+          "callee": "append",
+          "lineNumber": 88
+        },
+        {
+          "caller": "updateObject",
+          "callee": "o.updateStatus",
+          "lineNumber": 91
+        },
+        {
+          "caller": "updateObject",
+          "callee": "fmt.Errorf",
+          "lineNumber": 92
+        },
+        {
+          "caller": "updateObject",
+          "callee": "apiequality.Semantic.DeepEqual",
+          "lineNumber": 99
+        },
+        {
+          "caller": "updateObject",
+          "callee": "append",
+          "lineNumber": 100
+        },
+        {
+          "caller": "updateObject",
+          "callee": "o.update",
+          "lineNumber": 103
+        },
+        {
+          "caller": "updateObject",
+          "callee": "fmt.Errorf",
+          "lineNumber": 104
+        },
+        {
+          "caller": "updateObject",
+          "callee": "f",
+          "lineNumber": 113
+        },
+        {
+          "caller": "updateObject",
+          "callee": "append",
+          "lineNumber": 114
+        },
+        {
+          "caller": "updateObject",
+          "callee": "k8sErrors.IsNotFound",
+          "lineNumber": 115
+        },
+        {
+          "caller": "updateObject",
+          "callee": "utilerrors.NewAggregate",
+          "lineNumber": 122
+        },
+        {
+          "caller": "update",
+          "callee": "o.cl.AcmeV1().Challenges(challenge.Namespace).Update",
+          "lineNumber": 130
+        },
+        {
+          "caller": "update",
+          "callee": "o.cl.AcmeV1().Challenges",
+          "lineNumber": 130
+        },
+        {
+          "caller": "update",
+          "callee": "o.cl.AcmeV1",
+          "lineNumber": 130
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "o.cl.AcmeV1().Challenges(challenge.Namespace).UpdateStatus",
+          "lineNumber": 134
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "o.cl.AcmeV1().Challenges",
+          "lineNumber": 134
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "o.cl.AcmeV1",
+          "lineNumber": 134
+        },
+        {
+          "caller": "update",
+          "callee": "internalchallenges.Apply",
+          "lineNumber": 143
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "internalchallenges.ApplyStatus",
+          "lineNumber": 147
+        }
+      ],
+      "metrics": {
+        "importCount": 23,
+        "exportCount": 0,
+        "functionCount": 6,
+        "classCount": 5
+      }
+    },
+    {
+      "path": "pkg/controller/acmeorders/checks.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 69,
+      "functions": [
+        {
+          "name": "handleGenericIssuerFunc",
+          "startLine": 32,
+          "endLine": 55,
+          "params": [
+            "queue",
+            "orderLister"
+          ]
+        },
+        {
+          "name": "ordersForGenericIssuer",
+          "startLine": 57,
+          "endLine": 83,
+          "params": [
+            "iss",
+            "orderLister"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handleGenericIssuerFunc",
+          "callee": "runtime.HandleError",
+          "lineNumber": 39
+        },
+        {
+          "caller": "handleGenericIssuerFunc",
+          "callee": "fmt.Errorf",
+          "lineNumber": 39
+        },
+        {
+          "caller": "handleGenericIssuerFunc",
+          "callee": "ordersForGenericIssuer",
+          "lineNumber": 43
+        },
+        {
+          "caller": "handleGenericIssuerFunc",
+          "callee": "runtime.HandleError",
+          "lineNumber": 45
+        },
+        {
+          "caller": "handleGenericIssuerFunc",
+          "callee": "fmt.Errorf",
+          "lineNumber": 45
+        },
+        {
+          "caller": "handleGenericIssuerFunc",
+          "callee": "iss.GetObjectMeta",
+          "lineNumber": 45
+        },
+        {
+          "caller": "handleGenericIssuerFunc",
+          "callee": "iss.GetObjectMeta",
+          "lineNumber": 45
+        },
+        {
+          "caller": "handleGenericIssuerFunc",
+          "callee": "queue.Add",
+          "lineNumber": 49
+        },
+        {
+          "caller": "ordersForGenericIssuer",
+          "callee": "orderLister.List",
+          "lineNumber": 58
+        },
+        {
+          "caller": "ordersForGenericIssuer",
+          "callee": "labels.NewSelector",
+          "lineNumber": 58
+        },
+        {
+          "caller": "ordersForGenericIssuer",
+          "callee": "fmt.Errorf",
+          "lineNumber": 61
+        },
+        {
+          "caller": "ordersForGenericIssuer",
+          "callee": "err.Error",
+          "lineNumber": 61
+        },
+        {
+          "caller": "ordersForGenericIssuer",
+          "callee": "iss.GetObjectMeta",
+          "lineNumber": 72
+        },
+        {
+          "caller": "ordersForGenericIssuer",
+          "callee": "iss.GetObjectMeta",
+          "lineNumber": 76
+        },
+        {
+          "caller": "ordersForGenericIssuer",
+          "callee": "append",
+          "lineNumber": 79
+        }
+      ],
+      "metrics": {
+        "importCount": 20,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/controller/acmeorders/selectors/dns_names.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "DNSNames",
+          "startLine": 27,
+          "endLine": 31,
+          "params": [
+            "sel"
+          ]
+        },
+        {
+          "name": "Matches",
+          "startLine": 37,
+          "endLine": 47,
+          "params": [
+            "meta",
+            "dnsName"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "dnsNamesSelector",
+          "startLine": 33,
+          "endLine": 35,
+          "methods": [
+            "Matches"
+          ],
+          "properties": [
+            "allowedDNSNames"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DNSNames",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "Matches",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Matches",
+          "callee": "len",
+          "lineNumber": 38
+        },
+        {
+          "caller": "Matches",
+          "callee": "slices.Contains",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/controller/acmeorders/selectors/dns_zones.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "DNSZones",
+          "startLine": 26,
+          "endLine": 30,
+          "params": [
+            "sel"
+          ]
+        },
+        {
+          "name": "Matches",
+          "startLine": 36,
+          "endLine": 54,
+          "params": [
+            "meta",
+            "dnsName"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "dnsZonesSelector",
+          "startLine": 32,
+          "endLine": 34,
+          "methods": [
+            "Matches"
+          ],
+          "properties": [
+            "allowedDNSZones"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DNSZones",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "Matches",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Matches",
+          "callee": "len",
+          "lineNumber": 37
+        },
+        {
+          "caller": "Matches",
+          "callee": "dns.CompareDomainName",
+          "lineNumber": 43
+        },
+        {
+          "caller": "Matches",
+          "callee": "dns.CountLabel",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/controller/acmeorders/selectors/labels.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "Labels",
+          "startLine": 25,
+          "endLine": 29,
+          "params": [
+            "sel"
+          ]
+        },
+        {
+          "name": "Matches",
+          "startLine": 35,
+          "endLine": 52,
+          "params": [
+            "meta",
+            "dnsName"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "labelSelector",
+          "startLine": 31,
+          "endLine": 33,
+          "methods": [
+            "Matches"
+          ],
+          "properties": [
+            "requiredLabels"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Labels",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "Matches",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Matches",
+          "callee": "len",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    }
+  ]
+}

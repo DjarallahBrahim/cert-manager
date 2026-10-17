@@ -1,0 +1,767 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "type": "file",
+      "name": "requestmanager_controller.go",
+      "filePath": "pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "summary": "Request manager controller that creates, cleans up and tracks CertificateRequests on behalf of Certificates.",
+      "tags": [
+        "controller",
+        "certificates",
+        "certificaterequest",
+        "lifecycle"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:NewController",
+      "type": "function",
+      "name": "NewController",
+      "filePath": "pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "lineRange": [
+        80,
+        133
+      ],
+      "summary": "Constructs the request manager controller with certificate, request and Secret informers.",
+      "tags": [
+        "controller",
+        "certificates",
+        "constructor"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:ProcessItem",
+      "type": "function",
+      "name": "ProcessItem",
+      "filePath": "pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "lineRange": [
+        135,
+        229
+      ],
+      "summary": "Reconciles CertificateRequests for a Certificate, creating new requests as needed.",
+      "tags": [
+        "controller",
+        "certificates",
+        "certificaterequest"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:deleteCurrentFailedRequests",
+      "type": "function",
+      "name": "deleteCurrentFailedRequests",
+      "filePath": "pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "lineRange": [
+        231,
+        270
+      ],
+      "summary": "Deletes failed CertificateRequests belonging to the current revision.",
+      "tags": [
+        "cleanup",
+        "certificaterequest",
+        "certificates"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:deleteRequestsWithoutRevision",
+      "type": "function",
+      "name": "deleteRequestsWithoutRevision",
+      "filePath": "pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "lineRange": [
+        272,
+        297
+      ],
+      "summary": "Deletes CertificateRequests that have no revision annotation.",
+      "tags": [
+        "cleanup",
+        "certificaterequest",
+        "certificates"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:requestsWithRevision",
+      "type": "function",
+      "name": "requestsWithRevision",
+      "filePath": "pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "lineRange": [
+        299,
+        316
+      ],
+      "summary": "Filters CertificateRequests to those carrying the given revision.",
+      "tags": [
+        "utility",
+        "certificaterequest",
+        "filtering"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:deleteRequestsNotMatchingSpec",
+      "type": "function",
+      "name": "deleteRequestsNotMatchingSpec",
+      "filePath": "pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "lineRange": [
+        318,
+        357
+      ],
+      "summary": "Deletes CertificateRequests whose spec no longer matches the Certificate.",
+      "tags": [
+        "cleanup",
+        "certificaterequest",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:createNewCertificateRequest",
+      "type": "function",
+      "name": "createNewCertificateRequest",
+      "filePath": "pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "lineRange": [
+        359,
+        446
+      ],
+      "summary": "Creates a CertificateRequest for the next revision using the provided private key.",
+      "tags": [
+        "certificaterequest",
+        "creation",
+        "certificates"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:waitForCertificateRequestToExist",
+      "type": "function",
+      "name": "waitForCertificateRequestToExist",
+      "filePath": "pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "lineRange": [
+        448,
+        459
+      ],
+      "summary": "Waits until a newly created CertificateRequest is visible through the lister.",
+      "tags": [
+        "certificaterequest",
+        "wait",
+        "lister"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:Register",
+      "type": "function",
+      "name": "Register",
+      "filePath": "pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "lineRange": [
+        467,
+        475
+      ],
+      "summary": "Registers the request manager controller with the controller context.",
+      "tags": [
+        "registration",
+        "controller",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/certificates/requestmanager/requestmanager_controller.go:controller",
+      "type": "class",
+      "name": "controller",
+      "filePath": "pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "lineRange": [
+        65,
+        78
+      ],
+      "summary": "Request manager controller holding listers, client, clock and annotation copying configuration.",
+      "tags": [
+        "controller",
+        "certificaterequest",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/certificates/requestmanager/requestmanager_controller.go:controllerWrapper",
+      "type": "class",
+      "name": "controllerWrapper",
+      "filePath": "pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "lineRange": [
+        463,
+        465
+      ],
+      "summary": "Wrapper exposing Register for the request manager controller.",
+      "tags": [
+        "wrapper",
+        "controller",
+        "registration"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:NewController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:NewController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:ProcessItem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:ProcessItem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:deleteCurrentFailedRequests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:deleteRequestsWithoutRevision",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:requestsWithRevision",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:deleteRequestsNotMatchingSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:createNewCertificateRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:waitForCertificateRequestToExist",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:Register",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:Register",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "class:pkg/controller/certificates/requestmanager/requestmanager_controller.go:controller",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "class:pkg/controller/certificates/requestmanager/requestmanager_controller.go:controllerWrapper",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:internal/controller/feature/features.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/api/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/api/util/duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/api/util/issuers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/api/util/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/api/util/names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/api/util/usages.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/client/clientset/versioned/clientset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/controller/certificates/informers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/controller/certificates/listers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/feature/feature_gate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/pki/asn1_util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/pki/basicconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/pki/certificatetemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/pki/csr.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/pki/generate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/pki/keyusage.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/pki/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/pki/match.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/pki/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/pki/parse.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/pki/parse_certificate_chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/pki/renewaltime.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/pki/sans.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/pki/subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/pki/temporarycertificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/predicate/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/predicate/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/predicate/generic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "target": "file:pkg/util/predicate/predicate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:ProcessItem",
+      "target": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:deleteCurrentFailedRequests",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:ProcessItem",
+      "target": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:deleteRequestsWithoutRevision",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:ProcessItem",
+      "target": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:deleteRequestsNotMatchingSpec",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:ProcessItem",
+      "target": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:createNewCertificateRequest",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:deleteRequestsWithoutRevision",
+      "target": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:requestsWithRevision",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:createNewCertificateRequest",
+      "target": "function:pkg/controller/certificates/requestmanager/requestmanager_controller.go:waitForCertificateRequestToExist",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

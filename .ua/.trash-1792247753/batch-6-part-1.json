@@ -1,0 +1,1196 @@
+{
+  "nodes": [
+    {
+      "id": "file:internal/apis/acme/v1/conversion.go",
+      "type": "file",
+      "name": "conversion.go",
+      "filePath": "internal/apis/acme/v1/conversion.go",
+      "summary": "Declares explicit conversion entry points between the internal ACMEIssuer type and its public v1 representation, working around conversion-gen limitations when types cross API groups.",
+      "tags": [
+        "api-types",
+        "conversion",
+        "internal-api",
+        "codegen"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/acme/v1/defaults.go",
+      "type": "file",
+      "name": "defaults.go",
+      "filePath": "internal/apis/acme/v1/defaults.go",
+      "summary": "Registers and applies defaults for ACME Challenge and Order objects, filling in issuerRef kind \"Issuer\" and group \"cert-manager.io\" when unset.",
+      "tags": [
+        "api-types",
+        "defaulting",
+        "validation",
+        "internal-api"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/apis/acme/v1/register.go",
+      "type": "file",
+      "name": "register.go",
+      "filePath": "internal/apis/acme/v1/register.go",
+      "summary": "Registers the internal acme/v1 group version with the runtime scheme and exposes a Resource helper that builds GroupResource identifiers.",
+      "tags": [
+        "api-types",
+        "registration",
+        "scheme",
+        "internal-api"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/cmd/util/exit.go",
+      "type": "file",
+      "name": "exit.go",
+      "filePath": "internal/cmd/util/exit.go",
+      "summary": "Records process exit codes in a package-level channel, mapping nil/canceled contexts to success, deadlines to 124, and other errors to 1.",
+      "tags": [
+        "utility",
+        "exit-code",
+        "error-handling",
+        "cli"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/cmd/util/signal.go",
+      "type": "file",
+      "name": "signal.go",
+      "filePath": "internal/cmd/util/signal.go",
+      "summary": "Installs a process-wide shutdown handler that cancels a context on the first SIGINT/SIGTERM and force-exits with code 130 on the second, exposing an exit function that honours recorded exit codes.",
+      "tags": [
+        "utility",
+        "signal-handling",
+        "graceful-shutdown",
+        "cli"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/cmd/util/signal_posix.go",
+      "type": "file",
+      "name": "signal_posix.go",
+      "filePath": "internal/cmd/util/signal_posix.go",
+      "summary": "Build-tag-gated declaration that lists SIGINT and SIGTERM as the shutdown signals on non-Windows platforms.",
+      "tags": [
+        "utility",
+        "signal-handling",
+        "platform-specific",
+        "build-tags"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/cmd/util/signal_windows.go",
+      "type": "file",
+      "name": "signal_windows.go",
+      "filePath": "internal/cmd/util/signal_windows.go",
+      "summary": "Windows build variant of the shutdown signal list, limited to os.Interrupt.",
+      "tags": [
+        "utility",
+        "signal-handling",
+        "platform-specific",
+        "windows"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/collectors/acme_collector.go",
+      "type": "file",
+      "name": "acme_collector.go",
+      "filePath": "internal/collectors/acme_collector.go",
+      "summary": "Prometheus collector that reads ACME Challenges from an informer lister and exports their state as cert-manager challenge status metrics.",
+      "tags": [
+        "metrics",
+        "prometheus",
+        "collector",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/controller/challenges/apply.go",
+      "type": "file",
+      "name": "apply.go",
+      "filePath": "internal/controller/challenges/apply.go",
+      "summary": "Server-side apply helpers that patch ACME Challenge objects and their status through the cert-manager clientset with a fixed field manager.",
+      "tags": [
+        "controller",
+        "server-side-apply",
+        "acme",
+        "kubernetes-client"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/controller/orders/apply.go",
+      "type": "file",
+      "name": "apply.go",
+      "filePath": "internal/controller/orders/apply.go",
+      "summary": "Server-side apply helper that patches the status of ACME Order resources through the generated cert-manager clientset.",
+      "tags": [
+        "controller",
+        "server-side-apply",
+        "acme",
+        "status"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/test/paths/paths.go",
+      "type": "file",
+      "name": "paths.go",
+      "filePath": "internal/test/paths/paths.go",
+      "summary": "Test helper that derives repository-relative filesystem paths (module root, bin dirs, generated CRDs) and validates that a named CRD file exists.",
+      "tags": [
+        "test",
+        "utility",
+        "filesystem-paths",
+        "crd"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/acme/v1/defaults.go:SetObjectDefaults_Challenge",
+      "type": "function",
+      "name": "SetObjectDefaults_Challenge",
+      "filePath": "internal/apis/acme/v1/defaults.go",
+      "lineRange": [
+        33,
+        40
+      ],
+      "summary": "Defaults the issuerRef kind and group of a Challenge to Issuer and cert-manager.io.",
+      "tags": [
+        "defaulting",
+        "acme",
+        "challenge"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/acme/v1/defaults.go:SetObjectDefaults_ChallengeList",
+      "type": "function",
+      "name": "SetObjectDefaults_ChallengeList",
+      "filePath": "internal/apis/acme/v1/defaults.go",
+      "lineRange": [
+        42,
+        47
+      ],
+      "summary": "Applies Challenge defaults to every item in a ChallengeList.",
+      "tags": [
+        "defaulting",
+        "acme",
+        "list-handling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/acme/v1/defaults.go:SetObjectDefaults_Order",
+      "type": "function",
+      "name": "SetObjectDefaults_Order",
+      "filePath": "internal/apis/acme/v1/defaults.go",
+      "lineRange": [
+        49,
+        56
+      ],
+      "summary": "Defaults the issuerRef kind and group of an Order to Issuer and cert-manager.io.",
+      "tags": [
+        "defaulting",
+        "acme",
+        "order"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/acme/v1/defaults.go:SetObjectDefaults_OrderList",
+      "type": "function",
+      "name": "SetObjectDefaults_OrderList",
+      "filePath": "internal/apis/acme/v1/defaults.go",
+      "lineRange": [
+        58,
+        63
+      ],
+      "summary": "Applies Order defaults to every item in an OrderList.",
+      "tags": [
+        "defaulting",
+        "acme",
+        "list-handling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/acme/v1/register.go:Resource",
+      "type": "function",
+      "name": "Resource",
+      "filePath": "internal/apis/acme/v1/register.go",
+      "lineRange": [
+        30,
+        32
+      ],
+      "summary": "Returns the GroupResource for a named resource in the internal acme/v1 group.",
+      "tags": [
+        "utility",
+        "registration",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/cmd/util/exit.go:SetExitCode",
+      "type": "function",
+      "name": "SetExitCode",
+      "filePath": "internal/cmd/util/exit.go",
+      "lineRange": [
+        25,
+        34
+      ],
+      "summary": "Maps an error to an exit code: ignores nil and canceled contexts, uses 124 for timeouts, and 1 otherwise.",
+      "tags": [
+        "error-handling",
+        "exit-code",
+        "cli"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/cmd/util/exit.go:SetExitCodeValue",
+      "type": "function",
+      "name": "SetExitCodeValue",
+      "filePath": "internal/cmd/util/exit.go",
+      "lineRange": [
+        37,
+        46
+      ],
+      "summary": "Records a non-zero exit code in the shared channel unless one has already been set.",
+      "tags": [
+        "error-handling",
+        "exit-code",
+        "cli"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/cmd/util/signal.go:SetupExitHandler",
+      "type": "function",
+      "name": "SetupExitHandler",
+      "filePath": "internal/cmd/util/signal.go",
+      "lineRange": [
+        52,
+        80
+      ],
+      "summary": "Registers the shutdown signal handler, returns a cancelable context, and returns an exit function that applies any recorded exit code.",
+      "tags": [
+        "signal-handling",
+        "graceful-shutdown",
+        "context"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/collectors/acme_collector.go:ACMECollector",
+      "type": "class",
+      "name": "ACMECollector",
+      "filePath": "internal/collectors/acme_collector.go",
+      "lineRange": [
+        34,
+        37
+      ],
+      "summary": "Prometheus collector holding a Challenge lister and the challenge status metric descriptor.",
+      "tags": [
+        "metrics",
+        "collector",
+        "prometheus"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/collectors/acme_collector.go:NewACMECollector",
+      "type": "function",
+      "name": "NewACMECollector",
+      "filePath": "internal/collectors/acme_collector.go",
+      "lineRange": [
+        39,
+        44
+      ],
+      "summary": "Constructs an ACMECollector from the ACME informer factory.",
+      "tags": [
+        "factory",
+        "metrics",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/collectors/acme_collector.go:Collect",
+      "type": "function",
+      "name": "Collect",
+      "filePath": "internal/collectors/acme_collector.go",
+      "lineRange": [
+        50,
+        78
+      ],
+      "summary": "Lists all Challenges and emits one status metric per challenge keyed by name, namespace, and type.",
+      "tags": [
+        "metrics",
+        "prometheus",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/controller/challenges/apply.go:Apply",
+      "type": "function",
+      "name": "Apply",
+      "filePath": "internal/controller/challenges/apply.go",
+      "lineRange": [
+        36,
+        46
+      ],
+      "summary": "Applies the Challenge spec via a server-side apply patch using a fixed field manager.",
+      "tags": [
+        "server-side-apply",
+        "controller",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/controller/challenges/apply.go:ApplyStatus",
+      "type": "function",
+      "name": "ApplyStatus",
+      "filePath": "internal/controller/challenges/apply.go",
+      "lineRange": [
+        53,
+        63
+      ],
+      "summary": "Applies only the Challenge status subresource via a server-side apply patch.",
+      "tags": [
+        "server-side-apply",
+        "controller",
+        "status"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/controller/challenges/apply.go:serializeApply",
+      "type": "function",
+      "name": "serializeApply",
+      "filePath": "internal/controller/challenges/apply.go",
+      "lineRange": [
+        70,
+        82
+      ],
+      "summary": "Serializes the Challenge type metadata and spec into the JSON payload required for apply patches.",
+      "tags": [
+        "serialization",
+        "server-side-apply",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/controller/challenges/apply.go:serializeApplyStatus",
+      "type": "function",
+      "name": "serializeApplyStatus",
+      "filePath": "internal/controller/challenges/apply.go",
+      "lineRange": [
+        89,
+        101
+      ],
+      "summary": "Serializes the Challenge type metadata and status into a JSON apply payload.",
+      "tags": [
+        "serialization",
+        "server-side-apply",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/controller/orders/apply.go:ApplyStatus",
+      "type": "function",
+      "name": "ApplyStatus",
+      "filePath": "internal/controller/orders/apply.go",
+      "lineRange": [
+        37,
+        49
+      ],
+      "summary": "Applies the Order status subresource via a server-side apply patch with a fixed field manager.",
+      "tags": [
+        "server-side-apply",
+        "controller",
+        "status"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/controller/orders/apply.go:serializeApplyStatus",
+      "type": "function",
+      "name": "serializeApplyStatus",
+      "filePath": "internal/controller/orders/apply.go",
+      "lineRange": [
+        56,
+        67
+      ],
+      "summary": "Serializes the Order type metadata and status into a JSON apply payload.",
+      "tags": [
+        "serialization",
+        "server-side-apply",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/test/paths/paths.go:PathForCRD",
+      "type": "function",
+      "name": "PathForCRD",
+      "filePath": "internal/test/paths/paths.go",
+      "lineRange": [
+        51,
+        69
+      ],
+      "summary": "Resolves and validates the YAML file path for a named CRD, failing the test if it is missing or a directory.",
+      "tags": [
+        "test",
+        "utility",
+        "crd"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/test/paths/paths.go:CRDDirectory",
+      "type": "function",
+      "name": "CRDDirectory",
+      "filePath": "internal/test/paths/paths.go",
+      "lineRange": [
+        72,
+        82
+      ],
+      "summary": "Returns the generated CRD directory produced by the Makefile build.",
+      "tags": [
+        "test",
+        "utility",
+        "crd"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/test/paths/paths.go:makefileCRDDirectory",
+      "type": "function",
+      "name": "makefileCRDDirectory",
+      "filePath": "internal/test/paths/paths.go",
+      "lineRange": [
+        84,
+        93
+      ],
+      "summary": "Wraps CRD directory lookup with an existence and type check.",
+      "tags": [
+        "test",
+        "utility",
+        "filesystem-paths"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/test/paths/paths.go:checkCRDDirectory",
+      "type": "function",
+      "name": "checkCRDDirectory",
+      "filePath": "internal/test/paths/paths.go",
+      "lineRange": [
+        95,
+        106
+      ],
+      "summary": "Verifies that a path exists and is a directory, returning a descriptive error otherwise.",
+      "tags": [
+        "test",
+        "validation",
+        "filesystem-paths"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:internal/apis/acme/v1/conversion.go",
+      "target": "file:internal/apis/acme/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/conversion.go",
+      "target": "file:internal/apis/acme/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/conversion.go",
+      "target": "file:internal/apis/acme/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/conversion.go",
+      "target": "file:internal/apis/acme/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/conversion.go",
+      "target": "file:internal/apis/acme/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/conversion.go",
+      "target": "file:internal/apis/acme/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/conversion.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/conversion.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/conversion.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/conversion.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/conversion.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/conversion.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/conversion.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/conversion.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/defaults.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/defaults.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/defaults.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/defaults.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/defaults.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/defaults.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/defaults.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/defaults.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/register.go",
+      "target": "file:pkg/apis/acme/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/register.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/register.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/register.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/register.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/register.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/register.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/register.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/register.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/acme_collector.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/acme_collector.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/acme_collector.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/acme_collector.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/acme_collector.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/acme_collector.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/acme_collector.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/acme_collector.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/acme_collector.go",
+      "target": "file:pkg/client/listers/acme/v1/challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/acme_collector.go",
+      "target": "file:pkg/client/listers/acme/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/acme_collector.go",
+      "target": "file:pkg/client/listers/acme/v1/order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/challenges/apply.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/challenges/apply.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/challenges/apply.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/challenges/apply.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/challenges/apply.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/challenges/apply.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/challenges/apply.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/challenges/apply.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/challenges/apply.go",
+      "target": "file:pkg/client/clientset/versioned/clientset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/orders/apply.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/orders/apply.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/orders/apply.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/orders/apply.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/orders/apply.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/orders/apply.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/orders/apply.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/orders/apply.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/orders/apply.go",
+      "target": "file:pkg/client/clientset/versioned/clientset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/v1/defaults.go",
+      "target": "function:internal/apis/acme/v1/defaults.go:SetObjectDefaults_Challenge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/v1/defaults.go",
+      "target": "function:internal/apis/acme/v1/defaults.go:SetObjectDefaults_Challenge",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/v1/defaults.go",
+      "target": "function:internal/apis/acme/v1/defaults.go:SetObjectDefaults_ChallengeList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/v1/defaults.go",
+      "target": "function:internal/apis/acme/v1/defaults.go:SetObjectDefaults_ChallengeList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/v1/defaults.go",
+      "target": "function:internal/apis/acme/v1/defaults.go:SetObjectDefaults_Order",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/v1/defaults.go",
+      "target": "function:internal/apis/acme/v1/defaults.go:SetObjectDefaults_Order",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/v1/defaults.go",
+      "target": "function:internal/apis/acme/v1/defaults.go:SetObjectDefaults_OrderList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/v1/defaults.go",
+      "target": "function:internal/apis/acme/v1/defaults.go:SetObjectDefaults_OrderList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/v1/register.go",
+      "target": "function:internal/apis/acme/v1/register.go:Resource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/v1/register.go",
+      "target": "function:internal/apis/acme/v1/register.go:Resource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/cmd/util/exit.go",
+      "target": "function:internal/cmd/util/exit.go:SetExitCode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/cmd/util/exit.go",
+      "target": "function:internal/cmd/util/exit.go:SetExitCode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/cmd/util/exit.go",
+      "target": "function:internal/cmd/util/exit.go:SetExitCodeValue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/cmd/util/exit.go",
+      "target": "function:internal/cmd/util/exit.go:SetExitCodeValue",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/cmd/util/signal.go",
+      "target": "function:internal/cmd/util/signal.go:SetupExitHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/cmd/util/signal.go",
+      "target": "function:internal/cmd/util/signal.go:SetupExitHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/collectors/acme_collector.go",
+      "target": "class:internal/collectors/acme_collector.go:ACMECollector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/collectors/acme_collector.go",
+      "target": "class:internal/collectors/acme_collector.go:ACMECollector",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/collectors/acme_collector.go",
+      "target": "function:internal/collectors/acme_collector.go:NewACMECollector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/collectors/acme_collector.go",
+      "target": "function:internal/collectors/acme_collector.go:NewACMECollector",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/collectors/acme_collector.go",
+      "target": "function:internal/collectors/acme_collector.go:Collect",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/collectors/acme_collector.go",
+      "target": "function:internal/collectors/acme_collector.go:Collect",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/challenges/apply.go",
+      "target": "function:internal/controller/challenges/apply.go:Apply",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/challenges/apply.go",
+      "target": "function:internal/controller/challenges/apply.go:Apply",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/challenges/apply.go",
+      "target": "function:internal/controller/challenges/apply.go:ApplyStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/challenges/apply.go",
+      "target": "function:internal/controller/challenges/apply.go:ApplyStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/challenges/apply.go",
+      "target": "function:internal/controller/challenges/apply.go:serializeApply",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/challenges/apply.go",
+      "target": "function:internal/controller/challenges/apply.go:serializeApplyStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/orders/apply.go",
+      "target": "function:internal/controller/orders/apply.go:ApplyStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/orders/apply.go",
+      "target": "function:internal/controller/orders/apply.go:ApplyStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/orders/apply.go",
+      "target": "function:internal/controller/orders/apply.go:serializeApplyStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/test/paths/paths.go",
+      "target": "function:internal/test/paths/paths.go:PathForCRD",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/test/paths/paths.go",
+      "target": "function:internal/test/paths/paths.go:PathForCRD",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/test/paths/paths.go",
+      "target": "function:internal/test/paths/paths.go:CRDDirectory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/test/paths/paths.go",
+      "target": "function:internal/test/paths/paths.go:CRDDirectory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/test/paths/paths.go",
+      "target": "function:internal/test/paths/paths.go:makefileCRDDirectory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/test/paths/paths.go",
+      "target": "function:internal/test/paths/paths.go:checkCRDDirectory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

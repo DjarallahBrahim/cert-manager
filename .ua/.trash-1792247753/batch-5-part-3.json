@@ -1,0 +1,1361 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/issuer/venafi/client/api/customfield.go",
+      "type": "file",
+      "name": "customfield.go",
+      "filePath": "pkg/issuer/venafi/client/api/customfield.go",
+      "summary": "Defines the Venafi custom field type and value struct passed on certificate requests.",
+      "tags": [
+        "venafi",
+        "type-definition",
+        "api",
+        "custom-fields"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/issuer/venafi/client/api/customfield.go:CustomField",
+      "type": "class",
+      "name": "CustomField",
+      "filePath": "pkg/issuer/venafi/client/api/customfield.go",
+      "lineRange": [
+        26,
+        30
+      ],
+      "summary": "Venafi custom field with a type, name, and value.",
+      "tags": [
+        "venafi",
+        "type-definition",
+        "custom-fields"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/venafi/client/fake/venafi.go",
+      "type": "file",
+      "name": "venafi.go",
+      "filePath": "pkg/issuer/venafi/client/fake/venafi.go",
+      "summary": "In-memory fake of the Venafi client Interface with function fields for each operation.",
+      "tags": [
+        "test-double",
+        "venafi",
+        "fake",
+        "client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/issuer/venafi/client/fake/venafi.go:Venafi",
+      "type": "class",
+      "name": "Venafi",
+      "filePath": "pkg/issuer/venafi/client/fake/venafi.go",
+      "lineRange": [
+        27,
+        33
+      ],
+      "summary": "Fake Venafi client exposing function fields for every operation.",
+      "tags": [
+        "test-double",
+        "venafi",
+        "client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/fake/venafi.go:Ping",
+      "type": "function",
+      "name": "Ping",
+      "filePath": "pkg/issuer/venafi/client/fake/venafi.go",
+      "lineRange": [
+        35,
+        37
+      ],
+      "summary": "Delegates the connectivity check to PingFn.",
+      "tags": [
+        "test-double",
+        "delegation",
+        "ping"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/fake/venafi.go:RequestCertificate",
+      "type": "function",
+      "name": "RequestCertificate",
+      "filePath": "pkg/issuer/venafi/client/fake/venafi.go",
+      "lineRange": [
+        39,
+        41
+      ],
+      "summary": "Delegates certificate requests to RequestCertificateFn.",
+      "tags": [
+        "test-double",
+        "delegation",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/fake/venafi.go:RetrieveCertificate",
+      "type": "function",
+      "name": "RetrieveCertificate",
+      "filePath": "pkg/issuer/venafi/client/fake/venafi.go",
+      "lineRange": [
+        43,
+        45
+      ],
+      "summary": "Delegates certificate retrieval to RetrieveCertificateFn.",
+      "tags": [
+        "test-double",
+        "delegation",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/fake/venafi.go:ReadZoneConfiguration",
+      "type": "function",
+      "name": "ReadZoneConfiguration",
+      "filePath": "pkg/issuer/venafi/client/fake/venafi.go",
+      "lineRange": [
+        47,
+        49
+      ],
+      "summary": "Delegates zone configuration reads to ReadZoneConfigurationFn.",
+      "tags": [
+        "test-double",
+        "delegation",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/fake/venafi.go:VerifyCredentials",
+      "type": "function",
+      "name": "VerifyCredentials",
+      "filePath": "pkg/issuer/venafi/client/fake/venafi.go",
+      "lineRange": [
+        54,
+        60
+      ],
+      "summary": "Delegates credential verification to VerifyCredentialsFn.",
+      "tags": [
+        "test-double",
+        "delegation",
+        "authentication"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "type": "file",
+      "name": "instrumentedvenaficlient.go",
+      "filePath": "pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "summary": "Decorator around a Venafi connector that logs calls and records request duration metrics.",
+      "tags": [
+        "venafi",
+        "instrumentation",
+        "metrics",
+        "observability",
+        "decorator"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/issuer/venafi/client/instrumentedvenaficlient.go:instrumentedConnector",
+      "type": "class",
+      "name": "instrumentedConnector",
+      "filePath": "pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "lineRange": [
+        30,
+        34
+      ],
+      "summary": "Connector decorator adding trace logging and request duration metrics.",
+      "tags": [
+        "venafi",
+        "decorator",
+        "instrumentation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/instrumentedvenaficlient.go:ReadZoneConfiguration",
+      "type": "function",
+      "name": "ReadZoneConfiguration",
+      "filePath": "pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "lineRange": [
+        46,
+        53
+      ],
+      "summary": "Wraps zone configuration reads with trace logging and duration metrics.",
+      "tags": [
+        "venafi",
+        "metrics",
+        "logging"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/instrumentedvenaficlient.go:RequestCertificate",
+      "type": "function",
+      "name": "RequestCertificate",
+      "filePath": "pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "lineRange": [
+        55,
+        62
+      ],
+      "summary": "Wraps certificate requests with trace logging and duration metrics.",
+      "tags": [
+        "venafi",
+        "metrics",
+        "logging"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/instrumentedvenaficlient.go:RetrieveCertificate",
+      "type": "function",
+      "name": "RetrieveCertificate",
+      "filePath": "pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "lineRange": [
+        64,
+        71
+      ],
+      "summary": "Wraps certificate retrieval with trace logging and duration metrics.",
+      "tags": [
+        "venafi",
+        "metrics",
+        "logging"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/instrumentedvenaficlient.go:Ping",
+      "type": "function",
+      "name": "Ping",
+      "filePath": "pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "lineRange": [
+        73,
+        80
+      ],
+      "summary": "Wraps connectivity checks with trace logging and duration metrics.",
+      "tags": [
+        "venafi",
+        "metrics",
+        "logging"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/instrumentedvenaficlient.go:RenewCertificate",
+      "type": "function",
+      "name": "RenewCertificate",
+      "filePath": "pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "lineRange": [
+        82,
+        89
+      ],
+      "summary": "Wraps certificate renewal with trace logging and duration metrics.",
+      "tags": [
+        "venafi",
+        "metrics",
+        "logging"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/venafi/client/request.go",
+      "type": "file",
+      "name": "request.go",
+      "filePath": "pkg/issuer/venafi/client/request.go",
+      "summary": "Implements Venafi TPP certificate request and retrieval flows, converting CSR data into vcert requests and custom fields.",
+      "tags": [
+        "venafi",
+        "tpp",
+        "certificate-request",
+        "vcert",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/issuer/venafi/client/request.go:ErrCustomFieldsType",
+      "type": "class",
+      "name": "ErrCustomFieldsType",
+      "filePath": "pkg/issuer/venafi/client/request.go",
+      "lineRange": [
+        35,
+        37
+      ],
+      "summary": "Error type reported when custom field types are unsupported.",
+      "tags": [
+        "errors",
+        "venafi",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/request.go:Error",
+      "type": "function",
+      "name": "Error",
+      "filePath": "pkg/issuer/venafi/client/request.go",
+      "lineRange": [
+        39,
+        41
+      ],
+      "summary": "Formats the unsupported custom field type error.",
+      "tags": [
+        "errors",
+        "formatting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/request.go:RequestCertificate",
+      "type": "function",
+      "name": "RequestCertificate",
+      "filePath": "pkg/issuer/venafi/client/request.go",
+      "lineRange": [
+        49,
+        83
+      ],
+      "summary": "Submits a certificate request to Venafi TPP, resetting the certificate on recoverable vcert errors.",
+      "tags": [
+        "venafi",
+        "tpp",
+        "request",
+        "error-handling"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/request.go:RetrieveCertificate",
+      "type": "function",
+      "name": "RetrieveCertificate",
+      "filePath": "pkg/issuer/venafi/client/request.go",
+      "lineRange": [
+        85,
+        105
+      ],
+      "summary": "Polls Venafi for the issued certificate and assembles the PEM chain.",
+      "tags": [
+        "venafi",
+        "tpp",
+        "retrieval",
+        "pem"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/request.go:buildVReq",
+      "type": "function",
+      "name": "buildVReq",
+      "filePath": "pkg/issuer/venafi/client/request.go",
+      "lineRange": [
+        107,
+        161
+      ],
+      "summary": "Builds and validates a vcert request from the CSR, zone configuration, and custom fields.",
+      "tags": [
+        "venafi",
+        "vcert",
+        "validation",
+        "request"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/request.go:convertCustomFieldsToVcert",
+      "type": "function",
+      "name": "convertCustomFieldsToVcert",
+      "filePath": "pkg/issuer/venafi/client/request.go",
+      "lineRange": [
+        163,
+        184
+      ],
+      "summary": "Converts cert-manager custom fields into vcert custom field values.",
+      "tags": [
+        "venafi",
+        "conversion",
+        "custom-fields"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/request.go:newVRequest",
+      "type": "function",
+      "name": "newVRequest",
+      "filePath": "pkg/issuer/venafi/client/request.go",
+      "lineRange": [
+        186,
+        203
+      ],
+      "summary": "Creates a vcert request for the certificate and requested duration.",
+      "tags": [
+        "venafi",
+        "vcert",
+        "request"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/request.go:getVcertFriendlyName",
+      "type": "function",
+      "name": "getVcertFriendlyName",
+      "filePath": "pkg/issuer/venafi/client/request.go",
+      "lineRange": [
+        205,
+        222
+      ],
+      "summary": "Derives a Venafi friendly name from the certificate URI, IP, or DNS names.",
+      "tags": [
+        "venafi",
+        "naming",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "type": "file",
+      "name": "venaficlient.go",
+      "filePath": "pkg/issuer/venafi/client/venaficlient.go",
+      "summary": "Builds Venafi TPP and Cloud clients from Issuer specs, including HTTP transport, CA bundles, and credential verification.",
+      "tags": [
+        "venafi",
+        "client",
+        "configuration",
+        "authentication",
+        "tls"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:pkg/issuer/venafi/client/venaficlient.go:Interface",
+      "type": "class",
+      "name": "Interface",
+      "filePath": "pkg/issuer/venafi/client/venaficlient.go",
+      "lineRange": [
+        59,
+        66
+      ],
+      "summary": "Venafi client operations used by the issuer.",
+      "tags": [
+        "venafi",
+        "interface",
+        "client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/issuer/venafi/client/venaficlient.go:Venafi",
+      "type": "class",
+      "name": "Venafi",
+      "filePath": "pkg/issuer/venafi/client/venaficlient.go",
+      "lineRange": [
+        69,
+        80
+      ],
+      "summary": "Venafi client implementation backed by a vcert connector.",
+      "tags": [
+        "venafi",
+        "client",
+        "vcert"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/issuer/venafi/client/venaficlient.go:connector",
+      "type": "class",
+      "name": "connector",
+      "filePath": "pkg/issuer/venafi/client/venaficlient.go",
+      "lineRange": [
+        84,
+        91
+      ],
+      "summary": "Abstraction over the vcert connector operations used by the client.",
+      "tags": [
+        "venafi",
+        "vcert",
+        "abstraction"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/issuer/venafi/client/venaficlient.go:httpClientForVcertOptions",
+      "type": "class",
+      "name": "httpClientForVcertOptions",
+      "filePath": "pkg/issuer/venafi/client/venaficlient.go",
+      "lineRange": [
+        240,
+        249
+      ],
+      "summary": "Options controlling the HTTP client created for vcert.",
+      "tags": [
+        "venafi",
+        "http",
+        "configuration",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/venaficlient.go:New",
+      "type": "function",
+      "name": "New",
+      "filePath": "pkg/issuer/venafi/client/venaficlient.go",
+      "lineRange": [
+        95,
+        151
+      ],
+      "summary": "Builds a Venafi client for the given issuer, wiring credentials, metrics, and logging.",
+      "tags": [
+        "venafi",
+        "constructor",
+        "client",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/venaficlient.go:configForIssuer",
+      "type": "function",
+      "name": "configForIssuer",
+      "filePath": "pkg/issuer/venafi/client/venaficlient.go",
+      "lineRange": [
+        155,
+        236
+      ],
+      "summary": "Translates Venafi TPP or Cloud issuer configuration and referenced secrets into vcert configuration.",
+      "tags": [
+        "venafi",
+        "configuration",
+        "secrets",
+        "conversion"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/venaficlient.go:httpClientForVcert",
+      "type": "function",
+      "name": "httpClientForVcert",
+      "filePath": "pkg/issuer/venafi/client/venaficlient.go",
+      "lineRange": [
+        302,
+        348
+      ],
+      "summary": "Builds an instrumented HTTP client honoring CA bundles, proxy, and timeout settings.",
+      "tags": [
+        "venafi",
+        "http",
+        "tls",
+        "instrumentation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/venaficlient.go:caBundleForVcertTPP",
+      "type": "function",
+      "name": "caBundleForVcertTPP",
+      "filePath": "pkg/issuer/venafi/client/venaficlient.go",
+      "lineRange": [
+        356,
+        390
+      ],
+      "summary": "Loads a custom CA bundle from a ConfigMap or Secret reference for TPP connections.",
+      "tags": [
+        "venafi",
+        "tls",
+        "configmap",
+        "secrets"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/venaficlient.go:Ping",
+      "type": "function",
+      "name": "Ping",
+      "filePath": "pkg/issuer/venafi/client/venaficlient.go",
+      "lineRange": [
+        392,
+        394
+      ],
+      "summary": "Checks connectivity to the Venafi endpoint.",
+      "tags": [
+        "venafi",
+        "health-check",
+        "client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/venaficlient.go:ReadZoneConfiguration",
+      "type": "function",
+      "name": "ReadZoneConfiguration",
+      "filePath": "pkg/issuer/venafi/client/venaficlient.go",
+      "lineRange": [
+        396,
+        398
+      ],
+      "summary": "Reads the Venafi zone configuration.",
+      "tags": [
+        "venafi",
+        "configuration",
+        "client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/venaficlient.go:SetClient",
+      "type": "function",
+      "name": "SetClient",
+      "filePath": "pkg/issuer/venafi/client/venaficlient.go",
+      "lineRange": [
+        400,
+        402
+      ],
+      "summary": "Replaces the underlying vcert client, primarily for testing.",
+      "tags": [
+        "venafi",
+        "client",
+        "testing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/venaficlient.go:VerifyCredentials",
+      "type": "function",
+      "name": "VerifyCredentials",
+      "filePath": "pkg/issuer/venafi/client/venaficlient.go",
+      "lineRange": [
+        405,
+        464
+      ],
+      "summary": "Verifies the configured Venafi credentials and reports actionable errors.",
+      "tags": [
+        "venafi",
+        "authentication",
+        "validation"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/issuer/venafi/client/api/customfield.go",
+      "target": "class:pkg/issuer/venafi/client/api/customfield.go:CustomField",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/api/customfield.go",
+      "target": "class:pkg/issuer/venafi/client/api/customfield.go:CustomField",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/fake/venafi.go",
+      "target": "class:pkg/issuer/venafi/client/fake/venafi.go:Venafi",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/fake/venafi.go",
+      "target": "class:pkg/issuer/venafi/client/fake/venafi.go:Venafi",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/fake/venafi.go",
+      "target": "function:pkg/issuer/venafi/client/fake/venafi.go:Ping",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/fake/venafi.go",
+      "target": "function:pkg/issuer/venafi/client/fake/venafi.go:Ping",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/fake/venafi.go",
+      "target": "function:pkg/issuer/venafi/client/fake/venafi.go:RequestCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/fake/venafi.go",
+      "target": "function:pkg/issuer/venafi/client/fake/venafi.go:RequestCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/fake/venafi.go",
+      "target": "function:pkg/issuer/venafi/client/fake/venafi.go:RetrieveCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/fake/venafi.go",
+      "target": "function:pkg/issuer/venafi/client/fake/venafi.go:RetrieveCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/fake/venafi.go",
+      "target": "function:pkg/issuer/venafi/client/fake/venafi.go:ReadZoneConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/fake/venafi.go",
+      "target": "function:pkg/issuer/venafi/client/fake/venafi.go:ReadZoneConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/fake/venafi.go",
+      "target": "function:pkg/issuer/venafi/client/fake/venafi.go:VerifyCredentials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/fake/venafi.go",
+      "target": "function:pkg/issuer/venafi/client/fake/venafi.go:VerifyCredentials",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "target": "class:pkg/issuer/venafi/client/instrumentedvenaficlient.go:instrumentedConnector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/instrumentedvenaficlient.go:ReadZoneConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/instrumentedvenaficlient.go:ReadZoneConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/instrumentedvenaficlient.go:RequestCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/instrumentedvenaficlient.go:RequestCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/instrumentedvenaficlient.go:RetrieveCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/instrumentedvenaficlient.go:RetrieveCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/instrumentedvenaficlient.go:Ping",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/instrumentedvenaficlient.go:Ping",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/instrumentedvenaficlient.go:RenewCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/instrumentedvenaficlient.go:RenewCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "class:pkg/issuer/venafi/client/request.go:ErrCustomFieldsType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "class:pkg/issuer/venafi/client/request.go:ErrCustomFieldsType",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "function:pkg/issuer/venafi/client/request.go:Error",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "function:pkg/issuer/venafi/client/request.go:Error",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "function:pkg/issuer/venafi/client/request.go:RequestCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "function:pkg/issuer/venafi/client/request.go:RequestCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "function:pkg/issuer/venafi/client/request.go:RetrieveCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "function:pkg/issuer/venafi/client/request.go:RetrieveCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "function:pkg/issuer/venafi/client/request.go:buildVReq",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "function:pkg/issuer/venafi/client/request.go:convertCustomFieldsToVcert",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "function:pkg/issuer/venafi/client/request.go:newVRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "function:pkg/issuer/venafi/client/request.go:getVcertFriendlyName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "class:pkg/issuer/venafi/client/venaficlient.go:Interface",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "class:pkg/issuer/venafi/client/venaficlient.go:Interface",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "class:pkg/issuer/venafi/client/venaficlient.go:Venafi",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "class:pkg/issuer/venafi/client/venaficlient.go:Venafi",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "class:pkg/issuer/venafi/client/venaficlient.go:connector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "class:pkg/issuer/venafi/client/venaficlient.go:httpClientForVcertOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/venaficlient.go:New",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/venaficlient.go:New",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/venaficlient.go:configForIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/venaficlient.go:httpClientForVcert",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/venaficlient.go:caBundleForVcertTPP",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/venaficlient.go:Ping",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/venaficlient.go:Ping",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/venaficlient.go:ReadZoneConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/venaficlient.go:ReadZoneConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/venaficlient.go:SetClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/venaficlient.go:SetClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/venaficlient.go:VerifyCredentials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "function:pkg/issuer/venafi/client/venaficlient.go:VerifyCredentials",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/fake/venafi.go",
+      "target": "file:pkg/issuer/venafi/client/api/customfield.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "target": "file:pkg/metrics/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "target": "file:pkg/metrics/metrics.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "target": "file:pkg/metrics/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "file:pkg/issuer/venafi/client/api/customfield.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "file:pkg/util/pki/asn1_util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "file:pkg/util/pki/basicconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "file:pkg/util/pki/certificatetemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "file:pkg/util/pki/csr.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "file:pkg/util/pki/generate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "file:pkg/util/pki/keyusage.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "file:pkg/util/pki/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "file:pkg/util/pki/match.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "file:pkg/util/pki/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "file:pkg/util/pki/parse.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "file:pkg/util/pki/parse_certificate_chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "file:pkg/util/pki/renewaltime.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "file:pkg/util/pki/sans.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "file:pkg/util/pki/subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/request.go",
+      "target": "file:pkg/util/pki/temporarycertificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/issuer/venafi/client/api/customfield.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/metrics/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/metrics/metrics.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/metrics/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/util/useragent.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "target": "file:pkg/util/version.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

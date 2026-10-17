@@ -1,0 +1,924 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "type": "file",
+      "name": "vault.go",
+      "filePath": "pkg/controller/certificaterequests/vault/vault.go",
+      "summary": "Vault issuer implementation that authenticates to Vault and signs CertificateRequests through the Vault PKI backend.",
+      "tags": [
+        "issuer",
+        "vault",
+        "signing",
+        "certificaterequest"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificaterequests/vault/vault.go:NewVault",
+      "type": "function",
+      "name": "NewVault",
+      "filePath": "pkg/controller/certificaterequests/vault/vault.go",
+      "lineRange": [
+        62,
+        72
+      ],
+      "summary": "Constructs the Vault issuer with token creation, Secret lister and Vault client builder.",
+      "tags": [
+        "factory",
+        "issuer",
+        "vault"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/certificaterequests/vault/vault.go:Vault",
+      "type": "class",
+      "name": "Vault",
+      "filePath": "pkg/controller/certificaterequests/vault/vault.go",
+      "lineRange": [
+        43,
+        50
+      ],
+      "summary": "Vault issuer that authenticates to Vault and signs requests through its PKI backend.",
+      "tags": [
+        "issuer",
+        "vault",
+        "signing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "type": "file",
+      "name": "venafi.go",
+      "filePath": "pkg/controller/certificaterequests/venafi/venafi.go",
+      "summary": "Venafi issuer implementation that requests and retrieves certificates from Venafi TPP or Venafi Cloud.",
+      "tags": [
+        "issuer",
+        "venafi",
+        "signing",
+        "certificaterequest"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificaterequests/venafi/venafi.go:NewVenafi",
+      "type": "function",
+      "name": "NewVenafi",
+      "filePath": "pkg/controller/certificaterequests/venafi/venafi.go",
+      "lineRange": [
+        70,
+        80
+      ],
+      "summary": "Constructs the Venafi issuer with its client builder, metrics and user agent.",
+      "tags": [
+        "factory",
+        "issuer",
+        "venafi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/certificaterequests/venafi/venafi.go:Venafi",
+      "type": "class",
+      "name": "Venafi",
+      "filePath": "pkg/controller/certificaterequests/venafi/venafi.go",
+      "lineRange": [
+        47,
+        59
+      ],
+      "summary": "Venafi issuer that requests and retrieves certificates from TPP or Venafi Cloud.",
+      "tags": [
+        "issuer",
+        "venafi",
+        "signing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/certificates/informers.go",
+      "type": "file",
+      "name": "informers.go",
+      "filePath": "pkg/controller/certificates/informers.go",
+      "summary": "Informer event handler that enqueues Certificates matching a predicate set when related resources change.",
+      "tags": [
+        "controller",
+        "informer",
+        "event-handler",
+        "certificates"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificates/informers.go:EnqueueCertificatesForResourceUsingPredicates",
+      "type": "function",
+      "name": "EnqueueCertificatesForResourceUsingPredicates",
+      "filePath": "pkg/controller/certificates/informers.go",
+      "lineRange": [
+        40,
+        67
+      ],
+      "summary": "Enqueues Certificates matching a predicate set when a related resource event occurs.",
+      "tags": [
+        "informer",
+        "queue",
+        "certificates"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "function:pkg/controller/certificaterequests/vault/vault.go:NewVault",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "function:pkg/controller/certificaterequests/vault/vault.go:NewVault",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "class:pkg/controller/certificaterequests/vault/vault.go:Vault",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "class:pkg/controller/certificaterequests/vault/vault.go:Vault",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:internal/vault/vault.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/api/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/api/util/duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/api/util/issuers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/api/util/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/api/util/names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/api/util/usages.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/controller/certificaterequests/checks.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/controller/certificaterequests/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/controller/certificaterequests/sync.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/controller/certificaterequests/util/reporter.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/issuer/factory.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/issuer/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/issuer/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "target": "file:pkg/util/errors/errors.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "function:pkg/controller/certificaterequests/venafi/venafi.go:NewVenafi",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "function:pkg/controller/certificaterequests/venafi/venafi.go:NewVenafi",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "class:pkg/controller/certificaterequests/venafi/venafi.go:Venafi",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "class:pkg/controller/certificaterequests/venafi/venafi.go:Venafi",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/api/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/api/util/duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/api/util/issuers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/api/util/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/api/util/names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/api/util/usages.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/client/clientset/versioned/clientset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/controller/certificaterequests/checks.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/controller/certificaterequests/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/controller/certificaterequests/sync.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/controller/certificaterequests/util/reporter.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/issuer/factory.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/issuer/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/issuer/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/issuer/venafi/client/api/customfield.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/issuer/venafi/client/request.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/metrics/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/metrics/metrics.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/metrics/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/util/pki/asn1_util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/util/pki/basicconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/util/pki/certificatetemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/util/pki/csr.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/util/pki/generate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/util/pki/keyusage.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/util/pki/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/util/pki/match.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/util/pki/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/util/pki/parse.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/util/pki/parse_certificate_chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/util/pki/renewaltime.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/util/pki/sans.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/util/pki/subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "target": "file:pkg/util/pki/temporarycertificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/informers.go",
+      "target": "function:pkg/controller/certificates/informers.go:EnqueueCertificatesForResourceUsingPredicates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/informers.go",
+      "target": "function:pkg/controller/certificates/informers.go:EnqueueCertificatesForResourceUsingPredicates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificates/informers.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/informers.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/informers.go",
+      "target": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/informers.go",
+      "target": "file:pkg/client/listers/certmanager/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/informers.go",
+      "target": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/informers.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/informers.go",
+      "target": "file:pkg/util/predicate/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/informers.go",
+      "target": "file:pkg/util/predicate/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/informers.go",
+      "target": "file:pkg/util/predicate/generic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/informers.go",
+      "target": "file:pkg/util/predicate/predicate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

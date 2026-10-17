@@ -1,0 +1,4349 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 27,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 27,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 27,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "Setup",
+          "startLine": 32,
+          "endLine": 35,
+          "params": [
+            "_",
+            "cfg"
+          ]
+        },
+        {
+          "name": "Provision",
+          "startLine": 40,
+          "endLine": 48,
+          "params": [
+            "_"
+          ]
+        },
+        {
+          "name": "Deprovision",
+          "startLine": 50,
+          "endLine": 52,
+          "params": [
+            "_"
+          ]
+        },
+        {
+          "name": "Details",
+          "startLine": 54,
+          "endLine": 56,
+          "params": []
+        },
+        {
+          "name": "SupportsGlobal",
+          "startLine": 58,
+          "endLine": 60,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "RFC2136",
+          "startLine": 27,
+          "endLine": 30,
+          "methods": [
+            "Setup",
+            "Provision",
+            "Deprovision",
+            "Details",
+            "SupportsGlobal"
+          ],
+          "properties": [
+            "details",
+            "nameserver"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RFC2136",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "Setup",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "Provision",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "Deprovision",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "Details",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "SupportsGlobal",
+          "line": 58,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/acme/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 17,
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/acme/issuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 353,
+      "nonEmptyLines": 305,
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/ca/certificate.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 294,
+      "nonEmptyLines": 254,
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/ca/certificaterequest.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 188,
+      "nonEmptyLines": 164,
+      "functions": [
+        {
+          "name": "exampleURLs",
+          "startLine": 40,
+          "endLine": 45,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "exampleURLs",
+          "callee": "url.Parse",
+          "lineNumber": 41
+        },
+        {
+          "caller": "exampleURLs",
+          "callee": "url.Parse",
+          "lineNumber": 42
+        },
+        {
+          "caller": "exampleURLs",
+          "callee": "append",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/ca/clusterissuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 57,
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/ca/fixtures.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 346,
+      "nonEmptyLines": 319,
+      "functions": [
+        {
+          "name": "newSigningKeypairSecret",
+          "startLine": 87,
+          "endLine": 97,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "newSigningIssuer1KeypairSecret",
+          "startLine": 160,
+          "endLine": 170,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "newSigningIssuer2KeypairSecret",
+          "startLine": 233,
+          "endLine": 243,
+          "params": [
+            "name"
+          ]
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/ca/issuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 55,
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 20,
+      "metrics": {
+        "importCount": 14,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/selfsigned/certificate.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 185,
+      "nonEmptyLines": 160,
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/selfsigned/certificaterequest.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 195,
+      "nonEmptyLines": 164,
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/selfsigned/fixtures.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 142,
+      "nonEmptyLines": 119,
+      "functions": [
+        {
+          "name": "init",
+          "startLine": 31,
+          "endLine": 47,
+          "params": []
+        },
+        {
+          "name": "newPrivateKeySecret",
+          "startLine": 91,
+          "endLine": 101,
+          "params": [
+            "name",
+            "namespace",
+            "keyData"
+          ]
+        },
+        {
+          "name": "generateRSACSR",
+          "startLine": 103,
+          "endLine": 110,
+          "params": []
+        },
+        {
+          "name": "generateECCSR",
+          "startLine": 112,
+          "endLine": 119,
+          "params": []
+        },
+        {
+          "name": "generateEd25519CSR",
+          "startLine": 121,
+          "endLine": 128,
+          "params": []
+        },
+        {
+          "name": "generateCSR",
+          "startLine": 130,
+          "endLine": 142,
+          "params": [
+            "secretKey"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "init",
+          "callee": "pki.DecodePrivateKeyBytes",
+          "lineNumber": 33
+        },
+        {
+          "caller": "init",
+          "callee": "panic",
+          "lineNumber": 35
+        },
+        {
+          "caller": "init",
+          "callee": "pki.DecodePrivateKeyBytes",
+          "lineNumber": 38
+        },
+        {
+          "caller": "init",
+          "callee": "panic",
+          "lineNumber": 40
+        },
+        {
+          "caller": "init",
+          "callee": "pki.DecodePrivateKeyBytes",
+          "lineNumber": 43
+        },
+        {
+          "caller": "init",
+          "callee": "panic",
+          "lineNumber": 45
+        },
+        {
+          "caller": "generateRSACSR",
+          "callee": "generateCSR",
+          "lineNumber": 104
+        },
+        {
+          "caller": "generateECCSR",
+          "callee": "generateCSR",
+          "lineNumber": 113
+        },
+        {
+          "caller": "generateEd25519CSR",
+          "callee": "generateCSR",
+          "lineNumber": 122
+        },
+        {
+          "caller": "generateCSR",
+          "callee": "gen.CSRWithSigner",
+          "lineNumber": 131
+        },
+        {
+          "caller": "generateCSR",
+          "callee": "gen.SetCSRCommonName",
+          "lineNumber": 132
+        },
+        {
+          "caller": "generateCSR",
+          "callee": "gen.SetCSRURIsFromStrings",
+          "lineNumber": 133
+        },
+        {
+          "caller": "generateCSR",
+          "callee": "gen.SetCSRDNSNames",
+          "lineNumber": 134
+        },
+        {
+          "caller": "generateCSR",
+          "callee": "gen.SetCSRIPAddresses",
+          "lineNumber": 135
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/vault/certificate/approle.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 279,
+      "nonEmptyLines": 235,
+      "functions": [
+        {
+          "name": "runVaultAppRoleTests",
+          "startLine": 58,
+          "endLine": 279,
+          "params": [
+            "issuerKind",
+            "testWithRoot",
+            "unsupportedFeatures"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "framework.NewDefaultFramework",
+          "lineNumber": 59
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "BeforeEach",
+          "lineNumber": 71
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 72
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "vaultaddon.NewVaultInitializerAppRole",
+          "lineNumber": 79
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "addon.Base.Details",
+          "lineNumber": 80
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 81
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(setup.Init(testingCtx)).NotTo",
+          "lineNumber": 84
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 84
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.Init",
+          "lineNumber": 84
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 84
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(setup.Setup(testingCtx)).NotTo",
+          "lineNumber": 85
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 85
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.Setup",
+          "lineNumber": 85
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 85
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.CreateAppRole",
+          "lineNumber": 88
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 89
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 89
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 89
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.KubeClientSet.CoreV1().Secrets(vaultSecretNamespace).Create",
+          "lineNumber": 91
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.KubeClientSet.CoreV1().Secrets",
+          "lineNumber": 91
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.KubeClientSet.CoreV1",
+          "lineNumber": 91
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "vaultaddon.NewVaultAppRoleSecret",
+          "lineNumber": 91
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 92
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 92
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 92
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "JustAfterEach",
+          "lineNumber": 96
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 97
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(setup.Clean(testingCtx)).NotTo",
+          "lineNumber": 98
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 98
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.Clean",
+          "lineNumber": 98
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 98
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers(f.Namespace.Name).Delete",
+          "lineNumber": 101
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 101
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 101
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 102
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 102
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 102
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers().Delete",
+          "lineNumber": 104
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 104
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 104
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 105
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 105
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 105
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.KubeClientSet.CoreV1().Secrets(vaultSecretNamespace).Delete",
+          "lineNumber": 108
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.KubeClientSet.CoreV1().Secrets",
+          "lineNumber": 108
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.KubeClientSet.CoreV1",
+          "lineNumber": 108
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 109
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 109
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 109
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "It",
+          "lineNumber": 112
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 113
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 114
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Certificates",
+          "lineNumber": 116
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 116
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.IssuerWithRandomName",
+          "lineNumber": 120
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerNamespace",
+          "lineNumber": 121
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultURL",
+          "lineNumber": 122
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultPath",
+          "lineNumber": 123
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.IntermediateSignPath",
+          "lineNumber": 123
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultCABundle",
+          "lineNumber": 124
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 124
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultAppRoleAuth",
+          "lineNumber": 125
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.AppRoleAuthPath",
+          "lineNumber": 125
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers(f.Namespace.Name).Create",
+          "lineNumber": 126
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 126
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 126
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 127
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 127
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 127
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.ClusterIssuerWithRandomName",
+          "lineNumber": 131
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultURL",
+          "lineNumber": 132
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultPath",
+          "lineNumber": 133
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.IntermediateSignPath",
+          "lineNumber": 133
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultCABundle",
+          "lineNumber": 134
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 134
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultAppRoleAuth",
+          "lineNumber": 135
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.AppRoleAuthPath",
+          "lineNumber": 135
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers().Create",
+          "lineNumber": 136
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 136
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 136
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 137
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 137
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 137
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 142
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "util.WaitForIssuerCondition",
+          "lineNumber": 145
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 145
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 145
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "util.WaitForClusterIssuerCondition",
+          "lineNumber": 152
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 152
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 152
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 160
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 160
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 160
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 162
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "certClient.Create",
+          "lineNumber": 163
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "util.NewCertManagerVaultCertificate",
+          "lineNumber": 163
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 164
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 164
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 164
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 166
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.Helper().WaitForCertificateReadyAndDoneIssuing",
+          "lineNumber": 167
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.Helper",
+          "lineNumber": 167
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 168
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 168
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 168
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 170
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.Helper().ValidateCertificate",
+          "lineNumber": 171
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.Helper",
+          "lineNumber": 171
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "validation.CertificateSetForUnsupportedFeatureSet",
+          "lineNumber": 171
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 172
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 172
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 172
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "It",
+          "lineNumber": 210
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 211
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.IssuerWithRandomName",
+          "lineNumber": 215
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerNamespace",
+          "lineNumber": 216
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultURL",
+          "lineNumber": 217
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 217
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultPath",
+          "lineNumber": 218
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.IntermediateSignPath",
+          "lineNumber": 218
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultCABundle",
+          "lineNumber": 219
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 219
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultAppRoleAuth",
+          "lineNumber": 220
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.AppRoleAuthPath",
+          "lineNumber": 220
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers(f.Namespace.Name).Create",
+          "lineNumber": 221
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 221
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 221
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 222
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 222
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 222
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.ClusterIssuerWithRandomName",
+          "lineNumber": 226
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultURL",
+          "lineNumber": 227
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 227
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultPath",
+          "lineNumber": 228
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.IntermediateSignPath",
+          "lineNumber": 228
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultCABundle",
+          "lineNumber": 229
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 229
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultAppRoleAuth",
+          "lineNumber": 230
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.AppRoleAuthPath",
+          "lineNumber": 230
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers().Create",
+          "lineNumber": 231
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 231
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 231
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 232
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 232
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 232
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 237
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "util.WaitForIssuerCondition",
+          "lineNumber": 240
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 240
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 240
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "util.WaitForClusterIssuerCondition",
+          "lineNumber": 247
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 247
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 247
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 254
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 254
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 254
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 256
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Certificates(f.Namespace.Name).Create",
+          "lineNumber": 257
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Certificates",
+          "lineNumber": 257
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 257
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "util.NewCertManagerVaultCertificate",
+          "lineNumber": 257
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 258
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 258
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 258
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 260
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.Helper().WaitForCertificateReadyAndDoneIssuing",
+          "lineNumber": 261
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.Helper",
+          "lineNumber": 261
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 262
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 262
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 262
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 264
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.Helper().ValidateCertificate",
+          "lineNumber": 265
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.Helper",
+          "lineNumber": 265
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "validation.CertificateSetForUnsupportedFeatureSet",
+          "lineNumber": 265
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "unsupportedFeatures.Clone().\n\t\t\t\t\tInsert",
+          "lineNumber": 269
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "unsupportedFeatures.Clone",
+          "lineNumber": 269
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 272
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 272
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 272
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.Helper().ValidateCertificate",
+          "lineNumber": 275
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.Helper",
+          "lineNumber": 275
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "certificates.ExpectDuration",
+          "lineNumber": 275
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 276
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 276
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 276
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/vault/certificate/cert_auth.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 289,
+      "nonEmptyLines": 245,
+      "functions": [
+        {
+          "name": "runVaultClientCertAuthTest",
+          "startLine": 59,
+          "endLine": 289,
+          "params": [
+            "issuerKind",
+            "testWithRoot",
+            "unsupportedFeatures"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "framework.NewDefaultFramework",
+          "lineNumber": 60
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "BeforeEach",
+          "lineNumber": 71
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "By",
+          "lineNumber": 72
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "vaultaddon.NewVaultInitializerClientCertificate",
+          "lineNumber": 79
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "addon.Base.Details",
+          "lineNumber": 80
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 81
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(setup.Init(testingCtx)).NotTo",
+          "lineNumber": 84
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 84
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "setup.Init",
+          "lineNumber": 84
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 84
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(setup.Setup(testingCtx)).NotTo",
+          "lineNumber": 85
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 85
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "setup.Setup",
+          "lineNumber": 85
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 85
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "setup.CreateClientCertRole",
+          "lineNumber": 88
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 89
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 89
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 89
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.KubeClientSet.CoreV1().Secrets(vaultSecretNamespace).Create",
+          "lineNumber": 91
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.KubeClientSet.CoreV1().Secrets",
+          "lineNumber": 91
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.KubeClientSet.CoreV1",
+          "lineNumber": 91
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "string",
+          "lineNumber": 94
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "string",
+          "lineNumber": 95
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 98
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 98
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 98
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "JustAfterEach",
+          "lineNumber": 102
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "By",
+          "lineNumber": 103
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(setup.Clean(testingCtx)).NotTo",
+          "lineNumber": 104
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 104
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "setup.Clean",
+          "lineNumber": 104
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 104
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers(f.Namespace.Name).Delete",
+          "lineNumber": 107
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 107
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 107
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 108
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 108
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 108
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers().Delete",
+          "lineNumber": 110
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 110
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 110
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 111
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 111
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 111
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.KubeClientSet.CoreV1().Secrets(vaultSecretNamespace).Delete",
+          "lineNumber": 114
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.KubeClientSet.CoreV1().Secrets",
+          "lineNumber": 114
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.KubeClientSet.CoreV1",
+          "lineNumber": 114
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 115
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 115
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 115
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "It",
+          "lineNumber": 118
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "By",
+          "lineNumber": 119
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 120
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Certificates",
+          "lineNumber": 122
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 122
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.IssuerWithRandomName",
+          "lineNumber": 126
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.SetIssuerNamespace",
+          "lineNumber": 127
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.SetIssuerVaultURL",
+          "lineNumber": 128
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.SetIssuerVaultPath",
+          "lineNumber": 129
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "setup.IntermediateSignPath",
+          "lineNumber": 129
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.SetIssuerVaultCABundle",
+          "lineNumber": 130
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 130
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.SetIssuerVaultClientCertificateAuth",
+          "lineNumber": 131
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "setup.ClientCertificateAuthPath",
+          "lineNumber": 131
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers(f.Namespace.Name).Create",
+          "lineNumber": 133
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 133
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 133
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 134
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 134
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 134
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.ClusterIssuerWithRandomName",
+          "lineNumber": 138
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.SetIssuerVaultURL",
+          "lineNumber": 139
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.SetIssuerVaultPath",
+          "lineNumber": 140
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "setup.IntermediateSignPath",
+          "lineNumber": 140
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.SetIssuerVaultCABundle",
+          "lineNumber": 141
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 141
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.SetIssuerVaultClientCertificateAuth",
+          "lineNumber": 142
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "setup.ClientCertificateAuthPath",
+          "lineNumber": 142
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers().Create",
+          "lineNumber": 144
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 144
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 144
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 145
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 145
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 145
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "By",
+          "lineNumber": 150
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "util.WaitForIssuerCondition",
+          "lineNumber": 153
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 153
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 153
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "util.WaitForClusterIssuerCondition",
+          "lineNumber": 160
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 160
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 160
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 168
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 168
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 168
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "By",
+          "lineNumber": 170
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "certClient.Create",
+          "lineNumber": 171
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "util.NewCertManagerVaultCertificate",
+          "lineNumber": 171
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 172
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 172
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 172
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "By",
+          "lineNumber": 174
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.Helper().WaitForCertificateReadyAndDoneIssuing",
+          "lineNumber": 175
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.Helper",
+          "lineNumber": 175
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 176
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 176
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 176
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "By",
+          "lineNumber": 178
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.Helper().ValidateCertificate",
+          "lineNumber": 179
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.Helper",
+          "lineNumber": 179
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "validation.CertificateSetForUnsupportedFeatureSet",
+          "lineNumber": 179
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 180
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 180
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 180
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "It",
+          "lineNumber": 218
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "By",
+          "lineNumber": 219
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.IssuerWithRandomName",
+          "lineNumber": 223
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.SetIssuerNamespace",
+          "lineNumber": 224
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.SetIssuerVaultURL",
+          "lineNumber": 225
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 225
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.SetIssuerVaultPath",
+          "lineNumber": 226
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "setup.IntermediateSignPath",
+          "lineNumber": 226
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.SetIssuerVaultCABundle",
+          "lineNumber": 227
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 227
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.SetIssuerVaultClientCertificateAuth",
+          "lineNumber": 228
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "setup.ClientCertificateAuthPath",
+          "lineNumber": 228
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers(f.Namespace.Name).Create",
+          "lineNumber": 230
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 230
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 230
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 231
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 231
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 231
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.ClusterIssuerWithRandomName",
+          "lineNumber": 235
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.SetIssuerVaultURL",
+          "lineNumber": 236
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 236
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.SetIssuerVaultPath",
+          "lineNumber": 237
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "setup.IntermediateSignPath",
+          "lineNumber": 237
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.SetIssuerVaultCABundle",
+          "lineNumber": 238
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 238
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "gen.SetIssuerVaultClientCertificateAuth",
+          "lineNumber": 239
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "setup.ClientCertificateAuthPath",
+          "lineNumber": 239
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers().Create",
+          "lineNumber": 241
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 241
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 241
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 242
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 242
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 242
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "By",
+          "lineNumber": 247
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "util.WaitForIssuerCondition",
+          "lineNumber": 250
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 250
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 250
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "util.WaitForClusterIssuerCondition",
+          "lineNumber": 257
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 257
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 257
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 264
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 264
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 264
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "By",
+          "lineNumber": 266
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Certificates(f.Namespace.Name).Create",
+          "lineNumber": 267
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Certificates",
+          "lineNumber": 267
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 267
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "util.NewCertManagerVaultCertificate",
+          "lineNumber": 267
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 268
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 268
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 268
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "By",
+          "lineNumber": 270
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.Helper().WaitForCertificateReadyAndDoneIssuing",
+          "lineNumber": 271
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.Helper",
+          "lineNumber": 271
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 272
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 272
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 272
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "By",
+          "lineNumber": 274
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.Helper().ValidateCertificate",
+          "lineNumber": 275
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.Helper",
+          "lineNumber": 275
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "validation.CertificateSetForUnsupportedFeatureSet",
+          "lineNumber": 275
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "unsupportedFeatures.Clone().\n\t\t\t\t\tInsert",
+          "lineNumber": 279
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "unsupportedFeatures.Clone",
+          "lineNumber": 279
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 282
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 282
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 282
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.Helper().ValidateCertificate",
+          "lineNumber": 285
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "f.Helper",
+          "lineNumber": 285
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "certificates.ExpectDuration",
+          "lineNumber": 285
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 286
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "Expect",
+          "lineNumber": 286
+        },
+        {
+          "caller": "runVaultClientCertAuthTest",
+          "callee": "HaveOccurred",
+          "lineNumber": 286
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/vault/certificaterequest/approle.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 278,
+      "nonEmptyLines": 238,
+      "functions": [
+        {
+          "name": "runVaultAppRoleTests",
+          "startLine": 49,
+          "endLine": 278,
+          "params": [
+            "issuerKind"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "framework.NewDefaultFramework",
+          "lineNumber": 50
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.Helper",
+          "lineNumber": 51
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "BeforeEach",
+          "lineNumber": 70
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 71
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "vaultaddon.NewVaultInitializerAppRole",
+          "lineNumber": 78
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "addon.Base.Details",
+          "lineNumber": 79
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 80
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(setup.Init(testingCtx)).NotTo",
+          "lineNumber": 83
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 83
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.Init",
+          "lineNumber": 83
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 83
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(setup.Setup(testingCtx)).NotTo",
+          "lineNumber": 84
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 84
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.Setup",
+          "lineNumber": 84
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 84
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.CreateAppRole",
+          "lineNumber": 87
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 88
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 88
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 88
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.KubeClientSet.CoreV1().Secrets(vaultSecretNamespace).Create",
+          "lineNumber": 90
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.KubeClientSet.CoreV1().Secrets",
+          "lineNumber": 90
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.KubeClientSet.CoreV1",
+          "lineNumber": 90
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "vaultaddon.NewVaultAppRoleSecret",
+          "lineNumber": 90
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 91
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 91
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 91
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "JustAfterEach",
+          "lineNumber": 95
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 96
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(setup.Clean(testingCtx)).NotTo",
+          "lineNumber": 97
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 97
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.Clean",
+          "lineNumber": 97
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 97
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers(f.Namespace.Name).Delete",
+          "lineNumber": 100
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 100
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 100
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 101
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 101
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 101
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers().Delete",
+          "lineNumber": 103
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 103
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 103
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 104
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 104
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 104
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.KubeClientSet.CoreV1().Secrets(vaultSecretNamespace).Delete",
+          "lineNumber": 107
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.KubeClientSet.CoreV1().Secrets",
+          "lineNumber": 107
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.KubeClientSet.CoreV1",
+          "lineNumber": 107
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 108
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 108
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 108
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "It",
+          "lineNumber": 111
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 112
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 113
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().CertificateRequests",
+          "lineNumber": 115
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 115
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.IssuerWithRandomName",
+          "lineNumber": 119
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerNamespace",
+          "lineNumber": 120
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultURL",
+          "lineNumber": 121
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultPath",
+          "lineNumber": 122
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.IntermediateSignPath",
+          "lineNumber": 122
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultCABundle",
+          "lineNumber": 123
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 123
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultAppRoleAuth",
+          "lineNumber": 124
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.AppRoleAuthPath",
+          "lineNumber": 124
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers(f.Namespace.Name).Create",
+          "lineNumber": 125
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 125
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 125
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 126
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 126
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 126
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.ClusterIssuerWithRandomName",
+          "lineNumber": 130
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultURL",
+          "lineNumber": 131
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultPath",
+          "lineNumber": 132
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.IntermediateSignPath",
+          "lineNumber": 132
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultCABundle",
+          "lineNumber": 133
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 133
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultAppRoleAuth",
+          "lineNumber": 134
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.AppRoleAuthPath",
+          "lineNumber": 134
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers().Create",
+          "lineNumber": 135
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 135
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 135
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 136
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 136
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 136
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 141
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "util.WaitForIssuerCondition",
+          "lineNumber": 143
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 143
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 143
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "util.WaitForClusterIssuerCondition",
+          "lineNumber": 150
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 150
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 150
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 157
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 157
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 157
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 159
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.CSR",
+          "lineNumber": 160
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetCSRCommonName",
+          "lineNumber": 160
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetCSRDNSNames",
+          "lineNumber": 160
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetCSRIPAddresses",
+          "lineNumber": 160
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 161
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 161
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 161
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.CertificateRequest",
+          "lineNumber": 162
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetCertificateRequestNamespace",
+          "lineNumber": 163
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetCertificateRequestIssuer",
+          "lineNumber": 164
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetCertificateRequestDuration",
+          "lineNumber": 165
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetCertificateRequestCSR",
+          "lineNumber": 166
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "crClient.Create",
+          "lineNumber": 168
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 169
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 169
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 169
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 171
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "h.WaitCertificateRequestIssuedValid",
+          "lineNumber": 172
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 173
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 173
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 173
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "It",
+          "lineNumber": 205
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 206
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.IssuerWithRandomName",
+          "lineNumber": 210
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerNamespace",
+          "lineNumber": 211
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultURL",
+          "lineNumber": 212
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 212
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultPath",
+          "lineNumber": 213
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.IntermediateSignPath",
+          "lineNumber": 213
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultCABundle",
+          "lineNumber": 214
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 214
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultAppRoleAuth",
+          "lineNumber": 215
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.AppRoleAuthPath",
+          "lineNumber": 215
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers(f.Namespace.Name).Create",
+          "lineNumber": 216
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 216
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 216
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 217
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 217
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 217
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.ClusterIssuerWithRandomName",
+          "lineNumber": 221
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultURL",
+          "lineNumber": 222
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 222
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultPath",
+          "lineNumber": 223
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.IntermediateSignPath",
+          "lineNumber": 223
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultCABundle",
+          "lineNumber": 224
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "addon.Vault.Details",
+          "lineNumber": 224
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetIssuerVaultAppRoleAuth",
+          "lineNumber": 225
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "setup.AppRoleAuthPath",
+          "lineNumber": 225
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers().Create",
+          "lineNumber": 226
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 226
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 226
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 227
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 227
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 227
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 232
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "util.WaitForIssuerCondition",
+          "lineNumber": 234
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 234
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 234
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "util.WaitForClusterIssuerCondition",
+          "lineNumber": 241
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 241
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 241
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 248
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 248
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 248
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 250
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().CertificateRequests",
+          "lineNumber": 251
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 251
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.CSR",
+          "lineNumber": 253
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetCSRCommonName",
+          "lineNumber": 253
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetCSRDNSNames",
+          "lineNumber": 253
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetCSRIPAddresses",
+          "lineNumber": 253
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 254
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 254
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 254
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.CertificateRequest",
+          "lineNumber": 255
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetCertificateRequestNamespace",
+          "lineNumber": 256
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetCertificateRequestIssuer",
+          "lineNumber": 257
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetCertificateRequestDuration",
+          "lineNumber": 258
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "gen.SetCertificateRequestCSR",
+          "lineNumber": 259
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "crClient.Create",
+          "lineNumber": 261
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 262
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 262
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 262
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "h.WaitCertificateRequestIssuedValid",
+          "lineNumber": 264
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 265
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 265
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 265
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "By",
+          "lineNumber": 267
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "crClient.Get",
+          "lineNumber": 268
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 269
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 269
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 269
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "h.ValidateCertificateRequest",
+          "lineNumber": 271
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "certificaterequests.ExpectDuration",
+          "lineNumber": 274
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 275
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "Expect",
+          "lineNumber": 275
+        },
+        {
+          "caller": "runVaultAppRoleTests",
+          "callee": "HaveOccurred",
+          "lineNumber": 275
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/vault/import.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 17,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/vault/issuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 409,
+      "nonEmptyLines": 348,
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/vault/mtls.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 509,
+      "nonEmptyLines": 434,
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/venafi/cloud/setup.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 82,
+      "functions": [
+        {
+          "name": "CloudDescribe",
+          "startLine": 34,
+          "endLine": 36,
+          "params": [
+            "name",
+            "body"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CloudDescribe",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "CloudDescribe",
+          "callee": "framework.CertManagerDescribe",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/venafi/import.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 17,
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/venafi/tpp/certificate.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 105,
+      "nonEmptyLines": 85,
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/venafi/tpp/certificaterequest.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 81,
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/venafi/tpp/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "TPPDescribe",
+          "startLine": 24,
+          "endLine": 26,
+          "params": [
+            "name",
+            "body"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TPPDescribe",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "TPPDescribe",
+          "callee": "framework.CertManagerDescribe",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/issuers/venafi/tpp/setup.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 98,
+      "nonEmptyLines": 81,
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/serving/cainjector.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 510,
+      "nonEmptyLines": 461,
+      "classes": [
+        {
+          "name": "injectableTest",
+          "startLine": 46,
+          "endLine": 50,
+          "methods": [],
+          "properties": [
+            "makeInjectable",
+            "getCAs",
+            "disabled"
+          ]
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "test/e2e/util/domains.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "RandomSubdomain",
+          "startLine": 27,
+          "endLine": 29,
+          "params": [
+            "domain"
+          ]
+        },
+        {
+          "name": "RandomSubdomainLength",
+          "startLine": 34,
+          "endLine": 36,
+          "params": [
+            "domain",
+            "length"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RandomSubdomain",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "RandomSubdomainLength",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "RandomSubdomain",
+          "callee": "RandomSubdomainLength",
+          "lineNumber": 28
+        },
+        {
+          "caller": "RandomSubdomainLength",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 35
+        },
+        {
+          "caller": "RandomSubdomainLength",
+          "callee": "rand.String",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/util/util.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 427,
+      "nonEmptyLines": 378,
+      "functions": [
+        {
+          "name": "CertificateOnlyValidForDomains",
+          "startLine": 57,
+          "endLine": 62,
+          "params": [
+            "cert",
+            "commonName"
+          ]
+        },
+        {
+          "name": "WaitForIssuerStatusFunc",
+          "startLine": 64,
+          "endLine": 72,
+          "params": [
+            "ctx",
+            "client",
+            "name",
+            "fn"
+          ]
+        },
+        {
+          "name": "WaitForIssuerCondition",
+          "startLine": 76,
+          "endLine": 89,
+          "params": [
+            "ctx",
+            "client",
+            "name",
+            "condition"
+          ]
+        },
+        {
+          "name": "wrapErrorWithIssuerStatusCondition",
+          "startLine": 92,
+          "endLine": 110,
+          "params": [
+            "ctx",
+            "client",
+            "pollErr",
+            "name",
+            "conditionType"
+          ]
+        },
+        {
+          "name": "WaitForClusterIssuerCondition",
+          "startLine": 114,
+          "endLine": 127,
+          "params": [
+            "ctx",
+            "client",
+            "name",
+            "condition"
+          ]
+        },
+        {
+          "name": "wrapErrorWithClusterIssuerStatusCondition",
+          "startLine": 130,
+          "endLine": 148,
+          "params": [
+            "ctx",
+            "client",
+            "pollErr",
+            "name",
+            "conditionType"
+          ]
+        },
+        {
+          "name": "WaitForCRDToNotExist",
+          "startLine": 152,
+          "endLine": 168,
+          "params": [
+            "ctx",
+            "client",
+            "name"
+          ]
+        },
+        {
+          "name": "NewCertManagerBasicCertificateRequest",
+          "startLine": 171,
+          "endLine": 211,
+          "params": [
+            "name",
+            "namespace",
+            "issuerName",
+            "issuerKind",
+            "duration",
+            "dnsNames",
+            "ips",
+            "uris",
+            "keyAlgorithm"
+          ]
+        },
+        {
+          "name": "NewCertManagerVaultCertificate",
+          "startLine": 213,
+          "endLine": 229,
+          "params": [
+            "name",
+            "secretName",
+            "issuerName",
+            "issuerKind",
+            "duration",
+            "renewBefore"
+          ]
+        },
+        {
+          "name": "NewIngress",
+          "startLine": 231,
+          "endLine": 269,
+          "params": [
+            "name",
+            "secretName",
+            "annotations"
+          ]
+        },
+        {
+          "name": "NewV1Beta1Ingress",
+          "startLine": 271,
+          "endLine": 304,
+          "params": [
+            "name",
+            "secretName",
+            "annotations"
+          ]
+        },
+        {
+          "name": "pathTypePrefix",
+          "startLine": 306,
+          "endLine": 309,
+          "params": []
+        },
+        {
+          "name": "NewGateway",
+          "startLine": 315,
+          "endLine": 351,
+          "params": [
+            "gatewayName",
+            "ns",
+            "secretName",
+            "annotations"
+          ]
+        },
+        {
+          "name": "HasIngresses",
+          "startLine": 355,
+          "endLine": 366,
+          "params": [
+            "d",
+            "groupVersion"
+          ]
+        },
+        {
+          "name": "AddFinalizer",
+          "startLine": 370,
+          "endLine": 377,
+          "params": [
+            "g",
+            "ctx",
+            "cli",
+            "obj",
+            "finalizer"
+          ]
+        },
+        {
+          "name": "RemoveFinalizer",
+          "startLine": 383,
+          "endLine": 394,
+          "params": [
+            "g",
+            "ctx",
+            "cli",
+            "obj",
+            "finalizer"
+          ]
+        },
+        {
+          "name": "ListMatchingPredicates",
+          "startLine": 411,
+          "endLine": 427,
+          "params": [
+            "g",
+            "ctx",
+            "cli"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ObjectPtrConstraint",
+          "startLine": 398,
+          "endLine": 401,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "ObjectListPtrConstraint",
+          "startLine": 405,
+          "endLine": 408,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateOnlyValidForDomains",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "WaitForIssuerStatusFunc",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "WaitForIssuerCondition",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "WaitForClusterIssuerCondition",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "WaitForCRDToNotExist",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "NewCertManagerBasicCertificateRequest",
+          "line": 171,
+          "isDefault": false
+        },
+        {
+          "name": "NewCertManagerVaultCertificate",
+          "line": 213,
+          "isDefault": false
+        },
+        {
+          "name": "NewIngress",
+          "line": 231,
+          "isDefault": false
+        },
+        {
+          "name": "NewV1Beta1Ingress",
+          "line": 271,
+          "isDefault": false
+        },
+        {
+          "name": "NewGateway",
+          "line": 315,
+          "isDefault": false
+        },
+        {
+          "name": "HasIngresses",
+          "line": 355,
+          "isDefault": false
+        },
+        {
+          "name": "AddFinalizer",
+          "line": 370,
+          "isDefault": false
+        },
+        {
+          "name": "RemoveFinalizer",
+          "line": 383,
+          "isDefault": false
+        },
+        {
+          "name": "ObjectPtrConstraint",
+          "line": 398,
+          "isDefault": false
+        },
+        {
+          "name": "ObjectListPtrConstraint",
+          "line": 405,
+          "isDefault": false
+        },
+        {
+          "name": "ListMatchingPredicates",
+          "line": 411,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "CertificateOnlyValidForDomains",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 58
+        },
+        {
+          "caller": "WaitForIssuerStatusFunc",
+          "callee": "wait.PollUntilContextTimeout",
+          "lineNumber": 65
+        },
+        {
+          "caller": "WaitForIssuerStatusFunc",
+          "callee": "client.Get",
+          "lineNumber": 66
+        },
+        {
+          "caller": "WaitForIssuerStatusFunc",
+          "callee": "fmt.Errorf",
+          "lineNumber": 68
+        },
+        {
+          "caller": "WaitForIssuerStatusFunc",
+          "callee": "fn",
+          "lineNumber": 70
+        },
+        {
+          "caller": "WaitForIssuerCondition",
+          "callee": "log.LogBackoff",
+          "lineNumber": 77
+        },
+        {
+          "caller": "WaitForIssuerCondition",
+          "callee": "done",
+          "lineNumber": 78
+        },
+        {
+          "caller": "WaitForIssuerCondition",
+          "callee": "wait.PollUntilContextTimeout",
+          "lineNumber": 79
+        },
+        {
+          "caller": "WaitForIssuerCondition",
+          "callee": "logf",
+          "lineNumber": 80
+        },
+        {
+          "caller": "WaitForIssuerCondition",
+          "callee": "client.Get",
+          "lineNumber": 81
+        },
+        {
+          "caller": "WaitForIssuerCondition",
+          "callee": "fmt.Errorf",
+          "lineNumber": 83
+        },
+        {
+          "caller": "WaitForIssuerCondition",
+          "callee": "apiutil.IssuerHasCondition",
+          "lineNumber": 86
+        },
+        {
+          "caller": "WaitForIssuerCondition",
+          "callee": "wrapErrorWithIssuerStatusCondition",
+          "lineNumber": 88
+        },
+        {
+          "caller": "wrapErrorWithIssuerStatusCondition",
+          "callee": "client.Get",
+          "lineNumber": 97
+        },
+        {
+          "caller": "wrapErrorWithIssuerStatusCondition",
+          "callee": "issuer.GetStatus",
+          "lineNumber": 102
+        },
+        {
+          "caller": "wrapErrorWithIssuerStatusCondition",
+          "callee": "fmt.Errorf",
+          "lineNumber": 104
+        },
+        {
+          "caller": "wrapErrorWithIssuerStatusCondition",
+          "callee": "pollErr.Error",
+          "lineNumber": 104
+        },
+        {
+          "caller": "WaitForClusterIssuerCondition",
+          "callee": "log.LogBackoff",
+          "lineNumber": 115
+        },
+        {
+          "caller": "WaitForClusterIssuerCondition",
+          "callee": "done",
+          "lineNumber": 116
+        },
+        {
+          "caller": "WaitForClusterIssuerCondition",
+          "callee": "wait.PollUntilContextTimeout",
+          "lineNumber": 117
+        },
+        {
+          "caller": "WaitForClusterIssuerCondition",
+          "callee": "logf",
+          "lineNumber": 118
+        },
+        {
+          "caller": "WaitForClusterIssuerCondition",
+          "callee": "client.Get",
+          "lineNumber": 119
+        },
+        {
+          "caller": "WaitForClusterIssuerCondition",
+          "callee": "fmt.Errorf",
+          "lineNumber": 121
+        },
+        {
+          "caller": "WaitForClusterIssuerCondition",
+          "callee": "apiutil.IssuerHasCondition",
+          "lineNumber": 124
+        },
+        {
+          "caller": "WaitForClusterIssuerCondition",
+          "callee": "wrapErrorWithClusterIssuerStatusCondition",
+          "lineNumber": 126
+        },
+        {
+          "caller": "wrapErrorWithClusterIssuerStatusCondition",
+          "callee": "client.Get",
+          "lineNumber": 135
+        },
+        {
+          "caller": "wrapErrorWithClusterIssuerStatusCondition",
+          "callee": "issuer.GetStatus",
+          "lineNumber": 140
+        },
+        {
+          "caller": "wrapErrorWithClusterIssuerStatusCondition",
+          "callee": "fmt.Errorf",
+          "lineNumber": 142
+        },
+        {
+          "caller": "wrapErrorWithClusterIssuerStatusCondition",
+          "callee": "pollErr.Error",
+          "lineNumber": 142
+        },
+        {
+          "caller": "WaitForCRDToNotExist",
+          "callee": "log.LogBackoff",
+          "lineNumber": 153
+        },
+        {
+          "caller": "WaitForCRDToNotExist",
+          "callee": "done",
+          "lineNumber": 154
+        },
+        {
+          "caller": "WaitForCRDToNotExist",
+          "callee": "wait.PollUntilContextTimeout",
+          "lineNumber": 155
+        },
+        {
+          "caller": "WaitForCRDToNotExist",
+          "callee": "logf",
+          "lineNumber": 156
+        },
+        {
+          "caller": "WaitForCRDToNotExist",
+          "callee": "client.Get",
+          "lineNumber": 157
+        },
+        {
+          "caller": "WaitForCRDToNotExist",
+          "callee": "errors.IsNotFound",
+          "lineNumber": 162
+        },
+        {
+          "caller": "NewCertManagerBasicCertificateRequest",
+          "callee": "len",
+          "lineNumber": 179
+        },
+        {
+          "caller": "NewCertManagerBasicCertificateRequest",
+          "callee": "url.Parse",
+          "lineNumber": 185
+        },
+        {
+          "caller": "NewCertManagerBasicCertificateRequest",
+          "callee": "append",
+          "lineNumber": 189
+        },
+        {
+          "caller": "NewCertManagerBasicCertificateRequest",
+          "callee": "gen.CSR",
+          "lineNumber": 192
+        },
+        {
+          "caller": "NewCertManagerBasicCertificateRequest",
+          "callee": "gen.SetCSRCommonName",
+          "lineNumber": 193
+        },
+        {
+          "caller": "NewCertManagerBasicCertificateRequest",
+          "callee": "gen.SetCSRDNSNames",
+          "lineNumber": 194
+        },
+        {
+          "caller": "NewCertManagerBasicCertificateRequest",
+          "callee": "gen.SetCSRIPAddresses",
+          "lineNumber": 195
+        },
+        {
+          "caller": "NewCertManagerBasicCertificateRequest",
+          "callee": "gen.SetCSRURIs",
+          "lineNumber": 196
+        },
+        {
+          "caller": "NewCertManagerBasicCertificateRequest",
+          "callee": "gen.CertificateRequest",
+          "lineNumber": 202
+        },
+        {
+          "caller": "NewCertManagerBasicCertificateRequest",
+          "callee": "gen.SetCertificateRequestNamespace",
+          "lineNumber": 203
+        },
+        {
+          "caller": "NewCertManagerBasicCertificateRequest",
+          "callee": "gen.SetCertificateRequestDuration",
+          "lineNumber": 204
+        },
+        {
+          "caller": "NewCertManagerBasicCertificateRequest",
+          "callee": "gen.SetCertificateRequestCSR",
+          "lineNumber": 205
+        },
+        {
+          "caller": "NewCertManagerBasicCertificateRequest",
+          "callee": "gen.SetCertificateRequestIssuer",
+          "lineNumber": 206
+        },
+        {
+          "caller": "NewIngress",
+          "callee": "pathTypePrefix",
+          "lineNumber": 252
+        },
+        {
+          "caller": "NewV1Beta1Ingress",
+          "callee": "intstr.FromInt32",
+          "lineNumber": 294
+        },
+        {
+          "caller": "NewGateway",
+          "callee": "func() *gwapi.FromNamespaces { f := gwapi.NamespacesFromSame; return &f }",
+          "lineNumber": 327
+        },
+        {
+          "caller": "NewGateway",
+          "callee": "gwapi.PortNumber",
+          "lineNumber": 336
+        },
+        {
+          "caller": "NewGateway",
+          "callee": "(*gwapi.Hostname)",
+          "lineNumber": 337
+        },
+        {
+          "caller": "NewGateway",
+          "callee": "func() *gwapi.Kind { k := gwapi.Kind(\"Secret\"); return &k }",
+          "lineNumber": 341
+        },
+        {
+          "caller": "NewGateway",
+          "callee": "gwapi.Kind",
+          "lineNumber": 341
+        },
+        {
+          "caller": "NewGateway",
+          "callee": "gwapi.ObjectName",
+          "lineNumber": 342
+        },
+        {
+          "caller": "NewGateway",
+          "callee": "func() *gwapi.Group { g := gwapi.Group(corev1.GroupName); return &g }",
+          "lineNumber": 343
+        },
+        {
+          "caller": "NewGateway",
+          "callee": "gwapi.Group",
+          "lineNumber": 343
+        },
+        {
+          "caller": "NewGateway",
+          "callee": "(*gwapi.Namespace)",
+          "lineNumber": 344
+        },
+        {
+          "caller": "HasIngresses",
+          "callee": "d.ServerResourcesForGroupVersion",
+          "lineNumber": 356
+        },
+        {
+          "caller": "AddFinalizer",
+          "callee": "client.ObjectKeyFromObject",
+          "lineNumber": 371
+        },
+        {
+          "caller": "AddFinalizer",
+          "callee": "g.Expect(cli.Get(ctx, key, obj)).NotTo",
+          "lineNumber": 372
+        },
+        {
+          "caller": "AddFinalizer",
+          "callee": "g.Expect",
+          "lineNumber": 372
+        },
+        {
+          "caller": "AddFinalizer",
+          "callee": "cli.Get",
+          "lineNumber": 372
+        },
+        {
+          "caller": "AddFinalizer",
+          "callee": "HaveOccurred",
+          "lineNumber": 372
+        },
+        {
+          "caller": "AddFinalizer",
+          "callee": "controllerutil.AddFinalizer",
+          "lineNumber": 374
+        },
+        {
+          "caller": "AddFinalizer",
+          "callee": "g.Expect(cli.Update(ctx, obj)).NotTo",
+          "lineNumber": 375
+        },
+        {
+          "caller": "AddFinalizer",
+          "callee": "g.Expect",
+          "lineNumber": 375
+        },
+        {
+          "caller": "AddFinalizer",
+          "callee": "cli.Update",
+          "lineNumber": 375
+        },
+        {
+          "caller": "AddFinalizer",
+          "callee": "HaveOccurred",
+          "lineNumber": 375
+        },
+        {
+          "caller": "RemoveFinalizer",
+          "callee": "client.ObjectKeyFromObject",
+          "lineNumber": 384
+        },
+        {
+          "caller": "RemoveFinalizer",
+          "callee": "cli.Get",
+          "lineNumber": 386
+        },
+        {
+          "caller": "RemoveFinalizer",
+          "callee": "g.Expect(client.IgnoreNotFound(err)).NotTo",
+          "lineNumber": 387
+        },
+        {
+          "caller": "RemoveFinalizer",
+          "callee": "g.Expect",
+          "lineNumber": 387
+        },
+        {
+          "caller": "RemoveFinalizer",
+          "callee": "client.IgnoreNotFound",
+          "lineNumber": 387
+        },
+        {
+          "caller": "RemoveFinalizer",
+          "callee": "HaveOccurred",
+          "lineNumber": 387
+        },
+        {
+          "caller": "RemoveFinalizer",
+          "callee": "controllerutil.RemoveFinalizer",
+          "lineNumber": 391
+        },
+        {
+          "caller": "RemoveFinalizer",
+          "callee": "g.Expect(client.IgnoreNotFound(cli.Update(ctx, obj))).NotTo",
+          "lineNumber": 392
+        },
+        {
+          "caller": "RemoveFinalizer",
+          "callee": "g.Expect",
+          "lineNumber": 392
+        },
+        {
+          "caller": "RemoveFinalizer",
+          "callee": "client.IgnoreNotFound",
+          "lineNumber": 392
+        },
+        {
+          "caller": "RemoveFinalizer",
+          "callee": "cli.Update",
+          "lineNumber": 392
+        },
+        {
+          "caller": "RemoveFinalizer",
+          "callee": "HaveOccurred",
+          "lineNumber": 392
+        },
+        {
+          "caller": "ListMatchingPredicates",
+          "callee": "PL",
+          "lineNumber": 412
+        },
+        {
+          "caller": "ListMatchingPredicates",
+          "callee": "new",
+          "lineNumber": 412
+        },
+        {
+          "caller": "ListMatchingPredicates",
+          "callee": "g.Expect(cli.List(ctx, list)).ToNot",
+          "lineNumber": 413
+        },
+        {
+          "caller": "ListMatchingPredicates",
+          "callee": "g.Expect",
+          "lineNumber": 413
+        },
+        {
+          "caller": "ListMatchingPredicates",
+          "callee": "cli.List",
+          "lineNumber": 413
+        },
+        {
+          "caller": "ListMatchingPredicates",
+          "callee": "HaveOccurred",
+          "lineNumber": 413
+        },
+        {
+          "caller": "ListMatchingPredicates",
+          "callee": "predicate.Funcs",
+          "lineNumber": 416
+        },
+        {
+          "caller": "ListMatchingPredicates",
+          "callee": "make",
+          "lineNumber": 417
+        },
+        {
+          "caller": "ListMatchingPredicates",
+          "callee": "meta.EachListItem",
+          "lineNumber": 418
+        },
+        {
+          "caller": "ListMatchingPredicates",
+          "callee": "funcs.Evaluate",
+          "lineNumber": 419
+        },
+        {
+          "caller": "ListMatchingPredicates",
+          "callee": "append",
+          "lineNumber": 420
+        },
+        {
+          "caller": "ListMatchingPredicates",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 424
+        },
+        {
+          "caller": "ListMatchingPredicates",
+          "callee": "Expect",
+          "lineNumber": 424
+        },
+        {
+          "caller": "ListMatchingPredicates",
+          "callee": "HaveOccurred",
+          "lineNumber": 424
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 16,
+        "functionCount": 17,
+        "classCount": 2
+      }
+    }
+  ]
+}

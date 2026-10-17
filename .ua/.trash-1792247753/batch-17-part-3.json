@@ -1,0 +1,744 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "type": "file",
+      "name": "clientset_generated.go",
+      "filePath": "pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "summary": "Fake clientset backed by client-go object trackers, offering simple and field-managed constructors plus ACME v1 and cert-manager v1 client accessors for unit tests.",
+      "tags": [
+        "generated-code",
+        "fake-client",
+        "clientset",
+        "testing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/client/clientset/versioned/scheme/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "pkg/client/clientset/versioned/scheme/doc.go",
+      "summary": "Package documentation for the generated scheme package that registers cert-manager clientset types and codecs.",
+      "tags": [
+        "generated-code",
+        "documentation",
+        "scheme",
+        "package-doc"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "type": "file",
+      "name": "challenge.go",
+      "filePath": "pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "summary": "Generated typed client for ACME Challenge resources, defining the getter and full CRUD/apply interface backed by a gentype client.",
+      "tags": [
+        "generated-code",
+        "api-client",
+        "acme",
+        "challenge"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/client/clientset/versioned/typed/acme/v1/fake/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "pkg/client/clientset/versioned/typed/acme/v1/fake/doc.go",
+      "summary": "Package documentation for the generated fake ACME v1 typed clients.",
+      "tags": [
+        "generated-code",
+        "documentation",
+        "fake-client",
+        "package-doc"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/clientset/versioned/fake/clientset_generated.go:Clientset",
+      "type": "class",
+      "name": "Clientset",
+      "filePath": "pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "lineRange": [
+        75,
+        79
+      ],
+      "summary": "Fake clientset embedding testing.Fake with discovery and object tracker fields, satisfying the real clientset interfaces.",
+      "tags": [
+        "fake-client",
+        "clientset",
+        "testing"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Compile-time assertions below the struct verify it implements both clientset.Interface and testing.FakeClient."
+    },
+    {
+      "id": "function:pkg/client/clientset/versioned/fake/clientset_generated.go:NewSimpleClientset",
+      "type": "function",
+      "name": "NewSimpleClientset",
+      "filePath": "pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "lineRange": [
+        44,
+        70
+      ],
+      "summary": "Builds a fake clientset around a plain object tracker without field management, serving create/update/delete and watch reactors as-is.",
+      "tags": [
+        "constructor",
+        "fake-client",
+        "testing",
+        "object-tracker"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/client/clientset/versioned/fake/clientset_generated.go:NewClientset",
+      "type": "function",
+      "name": "NewClientset",
+      "filePath": "pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "lineRange": [
+        93,
+        123
+      ],
+      "summary": "Builds a fake clientset using a field-managed object tracker and apply-configuration type converter, enabling server-side apply tests.",
+      "tags": [
+        "constructor",
+        "fake-client",
+        "testing",
+        "server-side-apply"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/client/clientset/versioned/typed/acme/v1/challenge.go:ChallengesGetter",
+      "type": "class",
+      "name": "ChallengesGetter",
+      "filePath": "pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "lineRange": [
+        35,
+        37
+      ],
+      "summary": "Interface exposing the Challenges accessor that group clients must implement.",
+      "tags": [
+        "interface",
+        "api-client",
+        "acme",
+        "challenge"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/clientset/versioned/typed/acme/v1/challenge.go:ChallengeInterface",
+      "type": "class",
+      "name": "ChallengeInterface",
+      "filePath": "pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "lineRange": [
+        40,
+        55
+      ],
+      "summary": "Full client interface for ACME Challenge resources covering CRUD, watch, patch, apply and status subresource operations.",
+      "tags": [
+        "interface",
+        "api-client",
+        "acme",
+        "challenge"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/client/clientset/versioned/typed/acme/v1/challenge.go:newChallenges",
+      "type": "function",
+      "name": "newChallenges",
+      "filePath": "pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "lineRange": [
+        63,
+        74
+      ],
+      "summary": "Constructs the gentype-backed challenges client for a namespace using the parent client's REST client and scheme codec.",
+      "tags": [
+        "constructor",
+        "api-client",
+        "acme",
+        "factory"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/applyconfigurations/utils.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/clientset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/acme/v1/acme_client.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/acme/v1/fake/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/acme/v1/fake/fake_acme_client.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/acme/v1/fake/fake_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/acme/v1/fake/fake_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/acme/v1/generated_expansion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certmanager_client.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certmanager_client.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/generated_expansion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolver.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01gatewayhttproute.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingress.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingressobjectmeta.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodobjectmeta.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodresources.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodsecuritycontext.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodspec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodtemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresstemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeexternalaccountbinding.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerdns01provideracmedns.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerakamai.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerazuredns.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerclouddns.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providercloudflare.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerdigitalocean.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerrfc2136.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerroute53.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerwebhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerstatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/azuremanagedidentity.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/certificatednsnameselector.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/challengespec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/orderspec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/route53auth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/route53kubernetesauth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/serviceaccountref.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/clientset/versioned/scheme/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "file:pkg/client/clientset/versioned/scheme/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "class:pkg/client/clientset/versioned/fake/clientset_generated.go:Clientset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "class:pkg/client/clientset/versioned/fake/clientset_generated.go:Clientset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "function:pkg/client/clientset/versioned/fake/clientset_generated.go:NewSimpleClientset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "function:pkg/client/clientset/versioned/fake/clientset_generated.go:NewSimpleClientset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "function:pkg/client/clientset/versioned/fake/clientset_generated.go:NewClientset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "target": "function:pkg/client/clientset/versioned/fake/clientset_generated.go:NewClientset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "class:pkg/client/clientset/versioned/typed/acme/v1/challenge.go:ChallengesGetter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "class:pkg/client/clientset/versioned/typed/acme/v1/challenge.go:ChallengesGetter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "class:pkg/client/clientset/versioned/typed/acme/v1/challenge.go:ChallengeInterface",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "class:pkg/client/clientset/versioned/typed/acme/v1/challenge.go:ChallengeInterface",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "target": "function:pkg/client/clientset/versioned/typed/acme/v1/challenge.go:newChallenges",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,876 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/client/clientset/versioned/typed/certmanager/v1/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/doc.go",
+      "summary": "Package documentation for the generated cert-manager v1 typed clientset package.",
+      "tags": [
+        "generated-code",
+        "documentation",
+        "api-client",
+        "package-doc"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/doc.go",
+      "summary": "Package documentation for the generated fake cert-manager v1 typed clients.",
+      "tags": [
+        "generated-code",
+        "documentation",
+        "fake-client",
+        "package-doc"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "type": "file",
+      "name": "fake_certificate.go",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "summary": "Fake typed client implementation for cert-manager Certificate resources, wiring a gentype fake client with list and apply support.",
+      "tags": [
+        "generated-code",
+        "fake-client",
+        "cert-manager",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "type": "file",
+      "name": "fake_certificaterequest.go",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "summary": "Fake typed client implementation for cert-manager CertificateRequest resources, including status subresource handling.",
+      "tags": [
+        "generated-code",
+        "fake-client",
+        "cert-manager",
+        "certificate-request"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go:fakeCertificates",
+      "type": "class",
+      "name": "fakeCertificates",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "lineRange": [
+        29,
+        32
+      ],
+      "summary": "Fake Certificate client embedding a gentype fake client and the parent fake group client.",
+      "tags": [
+        "fake-client",
+        "cert-manager",
+        "certificate",
+        "testing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go:newFakeCertificates",
+      "type": "function",
+      "name": "newFakeCertificates",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "lineRange": [
+        34,
+        49
+      ],
+      "summary": "Wraps a gentype fake client as a CertificateInterface, registering the resource/kind and list conversion helpers.",
+      "tags": [
+        "constructor",
+        "fake-client",
+        "cert-manager",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go:fakeCertificateRequests",
+      "type": "class",
+      "name": "fakeCertificateRequests",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "lineRange": [
+        29,
+        32
+      ],
+      "summary": "Fake CertificateRequest client embedding a gentype fake client and the parent fake group client.",
+      "tags": [
+        "fake-client",
+        "cert-manager",
+        "certificate-request",
+        "testing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go:newFakeCertificateRequests",
+      "type": "function",
+      "name": "newFakeCertificateRequests",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "lineRange": [
+        34,
+        53
+      ],
+      "summary": "Wraps a gentype fake client as a CertificateRequestInterface, registering the resource/kind and list conversion helpers.",
+      "tags": [
+        "constructor",
+        "fake-client",
+        "cert-manager",
+        "factory"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/caissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificateadditionaloutputformat.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatecondition.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatekeystores.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificateprivatekey.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestcondition.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatestatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuercondition.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuerconfig.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuerspec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuerstatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/jkskeystore.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraintitem.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/venaficloud.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/venafitpp.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/x509subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certmanager_client.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/generated_expansion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/caissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificateadditionaloutputformat.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatecondition.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatekeystores.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificateprivatekey.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestcondition.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatestatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuercondition.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuerconfig.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuerspec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuerstatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/jkskeystore.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraintitem.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/venaficloud.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/venafitpp.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/x509subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certmanager_client.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/generated_expansion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "class:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go:fakeCertificates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "target": "function:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go:newFakeCertificates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "class:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go:fakeCertificateRequests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "target": "function:pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go:newFakeCertificateRequests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    }
+  ]
+}

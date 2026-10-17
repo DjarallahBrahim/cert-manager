@@ -1,0 +1,1126 @@
+{
+  "nodes": [
+    {
+      "id": "file:internal/cainjector/bundle/bundle.go",
+      "type": "file",
+      "name": "bundle.go",
+      "filePath": "internal/cainjector/bundle/bundle.go",
+      "summary": "Appends certificates to a PEM CA bundle for cainjector, de-duplicating entries and dropping expired certificates.",
+      "tags": [
+        "utility",
+        "pki",
+        "ca-bundle",
+        "certificates"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/cainjector/feature/features.go",
+      "type": "file",
+      "name": "features.go",
+      "filePath": "internal/cainjector/feature/features.go",
+      "summary": "Defines cainjector-specific feature gates and registers them with the shared cert-manager feature gate registry on init.",
+      "tags": [
+        "feature-gate",
+        "configuration",
+        "cainjector"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/collectors/certificate_collector.go",
+      "type": "file",
+      "name": "certificate_collector.go",
+      "filePath": "internal/collectors/certificate_collector.go",
+      "summary": "Prometheus collector that exports Certificate readiness, expiry, and renewal-time metrics read from the cert-manager lister.",
+      "tags": [
+        "monitoring",
+        "metrics",
+        "prometheus",
+        "certificates"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/controller/certificaterequests/apply.go",
+      "type": "file",
+      "name": "apply.go",
+      "filePath": "internal/controller/certificaterequests/apply.go",
+      "summary": "Provides server-side apply helpers for creating and updating CertificateRequest resources and their status subresource.",
+      "tags": [
+        "controller",
+        "server-side-apply",
+        "kubernetes",
+        "certificaterequest"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/controller/certificates/apply.go",
+      "type": "file",
+      "name": "apply.go",
+      "filePath": "internal/controller/certificates/apply.go",
+      "summary": "Server-side apply helpers for writing Certificate resources and their status updates from controllers.",
+      "tags": [
+        "controller",
+        "server-side-apply",
+        "kubernetes",
+        "certificates"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/controller/certificates/certificates.go",
+      "type": "file",
+      "name": "certificates.go",
+      "filePath": "internal/controller/certificates/certificates.go",
+      "summary": "Determines whether a Certificate owns its target Secret, preventing CertificateRequest creation runaway when multiple Certificates reference the same Secret.",
+      "tags": [
+        "controller",
+        "certificates",
+        "ownership",
+        "secrets"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/cainjector/bundle/bundle.go:AppendCertificatesToBundle",
+      "type": "function",
+      "name": "AppendCertificatesToBundle",
+      "filePath": "internal/cainjector/bundle/bundle.go",
+      "lineRange": [
+        36,
+        81
+      ],
+      "summary": "Merges additional certificates into a PEM bundle, skipping duplicates and removing expired certificates.",
+      "tags": [
+        "pki",
+        "ca-bundle",
+        "certificates"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/collectors/certificate_collector.go:NewCertificateCollector",
+      "type": "function",
+      "name": "NewCertificateCollector",
+      "filePath": "internal/collectors/certificate_collector.go",
+      "lineRange": [
+        46,
+        55
+      ],
+      "summary": "Creates a Prometheus collector backed by a Certificate lister.",
+      "tags": [
+        "metrics",
+        "prometheus",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/collectors/certificate_collector.go:Describe",
+      "type": "function",
+      "name": "Describe",
+      "filePath": "internal/collectors/certificate_collector.go",
+      "lineRange": [
+        57,
+        63
+      ],
+      "summary": "Describes the Certificate metric descriptors to the Prometheus registry.",
+      "tags": [
+        "metrics",
+        "prometheus",
+        "collector"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/collectors/certificate_collector.go:Collect",
+      "type": "function",
+      "name": "Collect",
+      "filePath": "internal/collectors/certificate_collector.go",
+      "lineRange": [
+        65,
+        78
+      ],
+      "summary": "Lists all Certificates and emits their readiness and expiry metrics.",
+      "tags": [
+        "metrics",
+        "prometheus",
+        "collector"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/collectors/certificate_collector.go:updateCertificateReadyStatus",
+      "type": "function",
+      "name": "updateCertificateReadyStatus",
+      "filePath": "internal/collectors/certificate_collector.go",
+      "lineRange": [
+        80,
+        112
+      ],
+      "summary": "Emits a gauge describing whether each Certificate has a Ready condition.",
+      "tags": [
+        "metrics",
+        "status",
+        "certificates"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/collectors/certificate_collector.go:updateCertificateNotAfter",
+      "type": "function",
+      "name": "updateCertificateNotAfter",
+      "filePath": "internal/collectors/certificate_collector.go",
+      "lineRange": [
+        114,
+        133
+      ],
+      "summary": "Emits the certificate NotAfter timestamp as a metric.",
+      "tags": [
+        "metrics",
+        "certificates",
+        "expiry"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/collectors/certificate_collector.go:updateCertificateNotBefore",
+      "type": "function",
+      "name": "updateCertificateNotBefore",
+      "filePath": "internal/collectors/certificate_collector.go",
+      "lineRange": [
+        135,
+        154
+      ],
+      "summary": "Emits the certificate NotBefore timestamp as a metric.",
+      "tags": [
+        "metrics",
+        "certificates",
+        "expiry"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/collectors/certificate_collector.go:updateCertificateExpiry",
+      "type": "function",
+      "name": "updateCertificateExpiry",
+      "filePath": "internal/collectors/certificate_collector.go",
+      "lineRange": [
+        156,
+        175
+      ],
+      "summary": "Emits the time until certificate expiry in seconds.",
+      "tags": [
+        "metrics",
+        "certificates",
+        "expiry"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/collectors/certificate_collector.go:updateCertificateRenewalTime",
+      "type": "function",
+      "name": "updateCertificateRenewalTime",
+      "filePath": "internal/collectors/certificate_collector.go",
+      "lineRange": [
+        177,
+        196
+      ],
+      "summary": "Emits the scheduled certificate renewal time as a metric.",
+      "tags": [
+        "metrics",
+        "certificates",
+        "renewal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/collectors/certificate_collector.go:CertificateCollector",
+      "type": "class",
+      "name": "CertificateCollector",
+      "filePath": "internal/collectors/certificate_collector.go",
+      "lineRange": [
+        37,
+        44
+      ],
+      "summary": "Prometheus collector implementation that reads Certificates from a lister and publishes readiness and expiry metrics.",
+      "tags": [
+        "monitoring",
+        "prometheus",
+        "collector"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificaterequests/apply.go:Apply",
+      "type": "function",
+      "name": "Apply",
+      "filePath": "internal/controller/certificaterequests/apply.go",
+      "lineRange": [
+        37,
+        46
+      ],
+      "summary": "Applies a CertificateRequest to the API server using server-side apply.",
+      "tags": [
+        "server-side-apply",
+        "certificaterequest",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificaterequests/apply.go:ApplyStatus",
+      "type": "function",
+      "name": "ApplyStatus",
+      "filePath": "internal/controller/certificaterequests/apply.go",
+      "lineRange": [
+        54,
+        66
+      ],
+      "summary": "Applies the status subresource of a CertificateRequest using server-side apply.",
+      "tags": [
+        "server-side-apply",
+        "status",
+        "certificaterequest"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificaterequests/apply.go:serializeApply",
+      "type": "function",
+      "name": "serializeApply",
+      "filePath": "internal/controller/certificaterequests/apply.go",
+      "lineRange": [
+        74,
+        88
+      ],
+      "summary": "Serializes a CertificateRequest into a server-side apply configuration.",
+      "tags": [
+        "serialization",
+        "server-side-apply",
+        "certificaterequest"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificaterequests/apply.go:serializeApplyStatus",
+      "type": "function",
+      "name": "serializeApplyStatus",
+      "filePath": "internal/controller/certificaterequests/apply.go",
+      "lineRange": [
+        98,
+        110
+      ],
+      "summary": "Serializes CertificateRequest status into a server-side apply configuration.",
+      "tags": [
+        "serialization",
+        "status",
+        "certificaterequest"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/apply.go:Apply",
+      "type": "function",
+      "name": "Apply",
+      "filePath": "internal/controller/certificates/apply.go",
+      "lineRange": [
+        38,
+        50
+      ],
+      "summary": "Applies a Certificate to the API server using server-side apply.",
+      "tags": [
+        "server-side-apply",
+        "certificates",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/apply.go:ApplyStatus",
+      "type": "function",
+      "name": "ApplyStatus",
+      "filePath": "internal/controller/certificates/apply.go",
+      "lineRange": [
+        57,
+        69
+      ],
+      "summary": "Applies the status subresource of a Certificate using server-side apply.",
+      "tags": [
+        "server-side-apply",
+        "status",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/apply.go:serializeApply",
+      "type": "function",
+      "name": "serializeApply",
+      "filePath": "internal/controller/certificates/apply.go",
+      "lineRange": [
+        75,
+        87
+      ],
+      "summary": "Serializes a Certificate into a server-side apply configuration.",
+      "tags": [
+        "serialization",
+        "server-side-apply",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/apply.go:serializeApplyStatus",
+      "type": "function",
+      "name": "serializeApplyStatus",
+      "filePath": "internal/controller/certificates/apply.go",
+      "lineRange": [
+        94,
+        105
+      ],
+      "summary": "Serializes Certificate status into a server-side apply configuration.",
+      "tags": [
+        "serialization",
+        "status",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/certificates.go:CertificateOwnsSecret",
+      "type": "function",
+      "name": "CertificateOwnsSecret",
+      "filePath": "internal/controller/certificates/certificates.go",
+      "lineRange": [
+        47,
+        113
+      ],
+      "summary": "Uses Secret annotations and namespace Certificate listings to decide which Certificate owns a Secret and reports duplicate claimants.",
+      "tags": [
+        "certificates",
+        "ownership",
+        "secrets"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:internal/cainjector/bundle/bundle.go",
+      "target": "file:pkg/util/pki/asn1_util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/cainjector/bundle/bundle.go",
+      "target": "file:pkg/util/pki/basicconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/cainjector/bundle/bundle.go",
+      "target": "file:pkg/util/pki/certificatetemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/cainjector/bundle/bundle.go",
+      "target": "file:pkg/util/pki/csr.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/cainjector/bundle/bundle.go",
+      "target": "file:pkg/util/pki/generate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/cainjector/bundle/bundle.go",
+      "target": "file:pkg/util/pki/keyusage.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/cainjector/bundle/bundle.go",
+      "target": "file:pkg/util/pki/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/cainjector/bundle/bundle.go",
+      "target": "file:pkg/util/pki/match.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/cainjector/bundle/bundle.go",
+      "target": "file:pkg/util/pki/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/cainjector/bundle/bundle.go",
+      "target": "file:pkg/util/pki/parse.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/cainjector/bundle/bundle.go",
+      "target": "file:pkg/util/pki/parse_certificate_chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/cainjector/bundle/bundle.go",
+      "target": "file:pkg/util/pki/renewaltime.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/cainjector/bundle/bundle.go",
+      "target": "file:pkg/util/pki/sans.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/cainjector/bundle/bundle.go",
+      "target": "file:pkg/util/pki/subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/cainjector/bundle/bundle.go",
+      "target": "file:pkg/util/pki/temporarycertificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/cainjector/bundle/bundle.go",
+      "target": "function:internal/cainjector/bundle/bundle.go:AppendCertificatesToBundle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/cainjector/bundle/bundle.go",
+      "target": "function:internal/cainjector/bundle/bundle.go:AppendCertificatesToBundle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/cainjector/feature/features.go",
+      "target": "file:pkg/util/feature/feature_gate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "file:pkg/client/listers/certmanager/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "function:internal/collectors/certificate_collector.go:NewCertificateCollector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "function:internal/collectors/certificate_collector.go:NewCertificateCollector",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "function:internal/collectors/certificate_collector.go:Describe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "function:internal/collectors/certificate_collector.go:Describe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "function:internal/collectors/certificate_collector.go:Collect",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "function:internal/collectors/certificate_collector.go:Collect",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "function:internal/collectors/certificate_collector.go:updateCertificateReadyStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "function:internal/collectors/certificate_collector.go:updateCertificateNotAfter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "function:internal/collectors/certificate_collector.go:updateCertificateNotBefore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "function:internal/collectors/certificate_collector.go:updateCertificateExpiry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "function:internal/collectors/certificate_collector.go:updateCertificateRenewalTime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "class:internal/collectors/certificate_collector.go:CertificateCollector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/collectors/certificate_collector.go",
+      "target": "class:internal/collectors/certificate_collector.go:CertificateCollector",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificaterequests/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificaterequests/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificaterequests/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificaterequests/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificaterequests/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificaterequests/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificaterequests/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificaterequests/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificaterequests/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificaterequests/apply.go",
+      "target": "file:pkg/client/clientset/versioned/clientset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificaterequests/apply.go",
+      "target": "function:internal/controller/certificaterequests/apply.go:Apply",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificaterequests/apply.go",
+      "target": "function:internal/controller/certificaterequests/apply.go:Apply",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificaterequests/apply.go",
+      "target": "function:internal/controller/certificaterequests/apply.go:ApplyStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificaterequests/apply.go",
+      "target": "function:internal/controller/certificaterequests/apply.go:ApplyStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificaterequests/apply.go",
+      "target": "function:internal/controller/certificaterequests/apply.go:serializeApply",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificaterequests/apply.go",
+      "target": "function:internal/controller/certificaterequests/apply.go:serializeApplyStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/apply.go",
+      "target": "file:pkg/client/clientset/versioned/clientset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/apply.go",
+      "target": "function:internal/controller/certificates/apply.go:Apply",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/apply.go",
+      "target": "function:internal/controller/certificates/apply.go:Apply",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/apply.go",
+      "target": "function:internal/controller/certificates/apply.go:ApplyStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/apply.go",
+      "target": "function:internal/controller/certificates/apply.go:ApplyStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/apply.go",
+      "target": "function:internal/controller/certificates/apply.go:serializeApply",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/apply.go",
+      "target": "function:internal/controller/certificates/apply.go:serializeApplyStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "file:pkg/client/listers/certmanager/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "function:internal/controller/certificates/certificates.go:CertificateOwnsSecret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/certificates.go",
+      "target": "function:internal/controller/certificates/certificates.go:CertificateOwnsSecret",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

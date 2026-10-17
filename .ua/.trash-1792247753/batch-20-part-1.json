@@ -1,0 +1,1028 @@
+{
+  "nodes": [
+    {
+      "id": "file:internal/apis/config/controller/zz_generated.deepcopy.go",
+      "type": "file",
+      "name": "zz_generated.deepcopy.go",
+      "filePath": "internal/apis/config/controller/zz_generated.deepcopy.go",
+      "summary": "Generated deepcopy implementations for the internal controller configuration API types, covering ControllerConfiguration and its nested IngressShim, ACME HTTP01/DNS01 and leader election structs.",
+      "tags": [
+        "code-generation",
+        "deepcopy",
+        "data-model",
+        "controller-config"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Kubernetes code-generator output; each type gets DeepCopyInto/DeepCopy plus DeepCopyObject for runtime.Object types."
+    },
+    {
+      "id": "file:internal/apis/config/shared/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "internal/apis/config/shared/doc.go",
+      "summary": "Package documentation for the shared internal configuration API, declaring the package-level deepcopy generation marker.",
+      "tags": [
+        "documentation",
+        "package-definition",
+        "deepcopy",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/shared/types_leaderelection.go",
+      "type": "file",
+      "name": "types_leaderelection.go",
+      "filePath": "internal/apis/config/shared/types_leaderelection.go",
+      "summary": "Defines the internal LeaderElectionConfig type shared by cert-manager components for leader election tuning.",
+      "tags": [
+        "data-model",
+        "configuration",
+        "leader-election",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/shared/types_tlsconfig.go",
+      "type": "file",
+      "name": "types_tlsconfig.go",
+      "filePath": "internal/apis/config/shared/types_tlsconfig.go",
+      "summary": "Defines internal TLS serving configuration types plus helpers that detect whether filesystem-based or dynamic (CA-generated) serving credentials have been configured.",
+      "tags": [
+        "data-model",
+        "tls",
+        "configuration",
+        "validation-helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "type": "file",
+      "name": "conversion.go",
+      "filePath": "internal/apis/config/shared/v1alpha1/conversion.go",
+      "summary": "Hand-written conversion functions between the internal shared config types and their v1alpha1 API representations, including pointer and duration helpers used by generated conversions.",
+      "tags": [
+        "conversion",
+        "api-versioning",
+        "tls",
+        "leader-election"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Uses k8s apimachinery conversion conventions (Convert_<from>_<to> signatures with scope) so generated registries can wire them up."
+    },
+    {
+      "id": "file:internal/apis/config/shared/v1alpha1/defaults.go",
+      "type": "file",
+      "name": "defaults.go",
+      "filePath": "internal/apis/config/shared/v1alpha1/defaults.go",
+      "summary": "Provides defaulting functions for shared v1alpha1 configuration, filling in dynamic serving leaf duration and leader election timing defaults.",
+      "tags": [
+        "defaulting",
+        "api-versioning",
+        "configuration",
+        "leader-election"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/shared/v1alpha1/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "internal/apis/config/shared/v1alpha1/doc.go",
+      "summary": "Package documentation for the shared v1alpha1 configuration API, declaring conversion, deepcopy and defaulting generation markers.",
+      "tags": [
+        "documentation",
+        "package-definition",
+        "api-versioning",
+        "code-generation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/shared/v1alpha1/register.go",
+      "type": "file",
+      "name": "register.go",
+      "filePath": "internal/apis/config/shared/v1alpha1/register.go",
+      "summary": "Registers the shared v1alpha1 configuration scheme builder by aliasing the controller v1alpha1 SchemeBuilder so shared types join the same scheme.",
+      "tags": [
+        "registration",
+        "api-versioning",
+        "scheme",
+        "barrel"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/shared/v1alpha1/zz_generated.conversion.go",
+      "type": "file",
+      "name": "zz_generated.conversion.go",
+      "filePath": "internal/apis/config/shared/v1alpha1/zz_generated.conversion.go",
+      "summary": "Generated conversion registry and auto-conversion routines wiring shared internal config types to v1alpha1, including TLS, dynamic/filesystem serving and leader election structs.",
+      "tags": [
+        "code-generation",
+        "conversion",
+        "api-versioning",
+        "tls"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:internal/apis/config/shared/v1alpha1/zz_generated.defaults.go",
+      "type": "file",
+      "name": "zz_generated.defaults.go",
+      "filePath": "internal/apis/config/shared/v1alpha1/zz_generated.defaults.go",
+      "summary": "Generated defaulting registration that installs the shared v1alpha1 defaulting functions into the scheme.",
+      "tags": [
+        "code-generation",
+        "defaulting",
+        "api-versioning",
+        "registration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/shared/validation/validation.go",
+      "type": "file",
+      "name": "validation.go",
+      "filePath": "internal/apis/config/shared/validation/validation.go",
+      "summary": "Validation helpers for shared configuration: enforces mutually exclusive filesystem/dynamic TLS sources with required fields and sane leader election timings.",
+      "tags": [
+        "validation",
+        "tls",
+        "leader-election",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/apis/config/shared/zz_generated.deepcopy.go",
+      "type": "file",
+      "name": "zz_generated.deepcopy.go",
+      "filePath": "internal/apis/config/shared/zz_generated.deepcopy.go",
+      "summary": "Generated deepcopy implementations for shared internal config types such as TLSConfig, DynamicServingConfig, FilesystemServingConfig and LeaderElectionConfig.",
+      "tags": [
+        "code-generation",
+        "deepcopy",
+        "data-model",
+        "tls"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/apis/config/webhook/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "internal/apis/config/webhook/doc.go",
+      "summary": "Package documentation for the internal webhook component configuration API, marking the package for deepcopy generation.",
+      "tags": [
+        "documentation",
+        "package-definition",
+        "deepcopy",
+        "webhook"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/config/shared/types_leaderelection.go:LeaderElectionConfig",
+      "type": "class",
+      "name": "LeaderElectionConfig",
+      "filePath": "internal/apis/config/shared/types_leaderelection.go",
+      "lineRange": [
+        21,
+        44
+      ],
+      "summary": "Internal leader election configuration controlling whether leader election is enabled plus namespace, lease duration, renew deadline and retry period.",
+      "tags": [
+        "data-model",
+        "leader-election",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/config/shared/types_tlsconfig.go:TLSConfig",
+      "type": "class",
+      "name": "TLSConfig",
+      "filePath": "internal/apis/config/shared/types_tlsconfig.go",
+      "lineRange": [
+        23,
+        43
+      ],
+      "summary": "TLS serving configuration allowing either filesystem certificate/key files or CA-generated dynamic serving credentials, with cipher suite and minimum version controls.",
+      "tags": [
+        "data-model",
+        "tls",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/shared/types_tlsconfig.go:FilesystemConfigProvided",
+      "type": "function",
+      "name": "FilesystemConfigProvided",
+      "filePath": "internal/apis/config/shared/types_tlsconfig.go",
+      "lineRange": [
+        45,
+        50
+      ],
+      "summary": "Reports whether a filesystem certificate or key file path has been set on the TLS configuration.",
+      "tags": [
+        "tls",
+        "utility",
+        "predicate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/shared/types_tlsconfig.go:DynamicConfigProvided",
+      "type": "function",
+      "name": "DynamicConfigProvided",
+      "filePath": "internal/apis/config/shared/types_tlsconfig.go",
+      "lineRange": [
+        52,
+        57
+      ],
+      "summary": "Reports whether dynamic serving has been configured by checking the secret namespace, secret name and DNS names.",
+      "tags": [
+        "tls",
+        "utility",
+        "predicate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/config/shared/types_tlsconfig.go:DynamicServingConfig",
+      "type": "class",
+      "name": "DynamicServingConfig",
+      "filePath": "internal/apis/config/shared/types_tlsconfig.go",
+      "lineRange": [
+        61,
+        75
+      ],
+      "summary": "Configuration for CA-generated dynamic serving certificates, naming the Secret that stores the CA and controlling DNS names and leaf certificate duration.",
+      "tags": [
+        "data-model",
+        "tls",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/config/shared/types_tlsconfig.go:FilesystemServingConfig",
+      "type": "class",
+      "name": "FilesystemServingConfig",
+      "filePath": "internal/apis/config/shared/types_tlsconfig.go",
+      "lineRange": [
+        79,
+        85
+      ],
+      "summary": "Configuration pointing at a certificate chain file and private key file on the local filesystem for TLS serving.",
+      "tags": [
+        "data-model",
+        "tls",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_shared_TLSConfig_To_v1alpha1_TLSConfig",
+      "type": "function",
+      "name": "Convert_shared_TLSConfig_To_v1alpha1_TLSConfig",
+      "filePath": "internal/apis/config/shared/v1alpha1/conversion.go",
+      "lineRange": [
+        32,
+        34
+      ],
+      "summary": "Converts an internal shared TLSConfig into its v1alpha1 representation via the generated auto-conversion.",
+      "tags": [
+        "conversion",
+        "tls",
+        "api-versioning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_v1alpha1_TLSConfig_To_shared_TLSConfig",
+      "type": "function",
+      "name": "Convert_v1alpha1_TLSConfig_To_shared_TLSConfig",
+      "filePath": "internal/apis/config/shared/v1alpha1/conversion.go",
+      "lineRange": [
+        38,
+        40
+      ],
+      "summary": "Converts a v1alpha1 TLSConfig back into the internal shared TLSConfig representation.",
+      "tags": [
+        "conversion",
+        "tls",
+        "api-versioning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_shared_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+      "type": "function",
+      "name": "Convert_shared_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+      "filePath": "internal/apis/config/shared/v1alpha1/conversion.go",
+      "lineRange": [
+        44,
+        46
+      ],
+      "summary": "Converts the internal leader election config into the v1alpha1 API type.",
+      "tags": [
+        "conversion",
+        "leader-election",
+        "api-versioning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_v1alpha1_LeaderElectionConfig_To_shared_LeaderElectionConfig",
+      "type": "function",
+      "name": "Convert_v1alpha1_LeaderElectionConfig_To_shared_LeaderElectionConfig",
+      "filePath": "internal/apis/config/shared/v1alpha1/conversion.go",
+      "lineRange": [
+        50,
+        52
+      ],
+      "summary": "Converts a v1alpha1 leader election config into the internal shared type.",
+      "tags": [
+        "conversion",
+        "leader-election",
+        "api-versioning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_Pointer_float32_To_float32",
+      "type": "function",
+      "name": "Convert_Pointer_float32_To_float32",
+      "filePath": "internal/apis/config/shared/v1alpha1/conversion.go",
+      "lineRange": [
+        54,
+        61
+      ],
+      "summary": "Dereferences an optional float32 pointer, returning zero when nil, for use in generated conversions.",
+      "tags": [
+        "conversion",
+        "utility",
+        "pointer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_float32_To_Pointer_float32",
+      "type": "function",
+      "name": "Convert_float32_To_Pointer_float32",
+      "filePath": "internal/apis/config/shared/v1alpha1/conversion.go",
+      "lineRange": [
+        63,
+        67
+      ],
+      "summary": "Wraps a float32 value in a newly allocated pointer for API conversion.",
+      "tags": [
+        "conversion",
+        "utility",
+        "pointer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_Pointer_int32_To_int",
+      "type": "function",
+      "name": "Convert_Pointer_int32_To_int",
+      "filePath": "internal/apis/config/shared/v1alpha1/conversion.go",
+      "lineRange": [
+        69,
+        76
+      ],
+      "summary": "Dereferences an optional int32 pointer into an int, returning zero when nil.",
+      "tags": [
+        "conversion",
+        "utility",
+        "pointer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_int_To_Pointer_int32",
+      "type": "function",
+      "name": "Convert_int_To_Pointer_int32",
+      "filePath": "internal/apis/config/shared/v1alpha1/conversion.go",
+      "lineRange": [
+        78,
+        86
+      ],
+      "summary": "Converts an int to an int32 pointer, rejecting values that overflow int32 with an error.",
+      "tags": [
+        "conversion",
+        "utility",
+        "pointer",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_Pointer_v1alpha1_Duration_To_time_Duration",
+      "type": "function",
+      "name": "Convert_Pointer_v1alpha1_Duration_To_time_Duration",
+      "filePath": "internal/apis/config/shared/v1alpha1/conversion.go",
+      "lineRange": [
+        88,
+        95
+      ],
+      "summary": "Converts an optional v1alpha1 Duration pointer into a time.Duration, returning zero when unset.",
+      "tags": [
+        "conversion",
+        "duration",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_time_Duration_To_Pointer_v1alpha1_Duration",
+      "type": "function",
+      "name": "Convert_time_Duration_To_Pointer_v1alpha1_Duration",
+      "filePath": "internal/apis/config/shared/v1alpha1/conversion.go",
+      "lineRange": [
+        97,
+        100
+      ],
+      "summary": "Converts a time.Duration into an optional v1alpha1 Duration pointer using DurationFromTime.",
+      "tags": [
+        "conversion",
+        "duration",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/shared/v1alpha1/defaults.go:SetDefaults_DynamicServingConfig",
+      "type": "function",
+      "name": "SetDefaults_DynamicServingConfig",
+      "filePath": "internal/apis/config/shared/v1alpha1/defaults.go",
+      "lineRange": [
+        35,
+        39
+      ],
+      "summary": "Defaults the dynamic serving leaf duration to one year when it has not been set.",
+      "tags": [
+        "defaulting",
+        "tls",
+        "duration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/shared/v1alpha1/defaults.go:SetDefaults_LeaderElectionConfig",
+      "type": "function",
+      "name": "SetDefaults_LeaderElectionConfig",
+      "filePath": "internal/apis/config/shared/v1alpha1/defaults.go",
+      "lineRange": [
+        41,
+        61
+      ],
+      "summary": "Applies default lease duration, renew deadline and retry period values to leader election configuration when unset.",
+      "tags": [
+        "defaulting",
+        "leader-election",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/shared/validation/validation.go:ValidateTLSConfig",
+      "type": "function",
+      "name": "ValidateTLSConfig",
+      "filePath": "internal/apis/config/shared/validation/validation.go",
+      "lineRange": [
+        25,
+        54
+      ],
+      "summary": "Ensures exactly one TLS source is configured, requiring certificate/key files for filesystem serving and secret/DNS details for dynamic serving.",
+      "tags": [
+        "validation",
+        "tls",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/config/shared/validation/validation.go:ValidateLeaderElectionConfig",
+      "type": "function",
+      "name": "ValidateLeaderElectionConfig",
+      "filePath": "internal/apis/config/shared/validation/validation.go",
+      "lineRange": [
+        56,
+        74
+      ],
+      "summary": "Checks that leader election lease duration, renew deadline and retry period values are positive and correctly ordered.",
+      "tags": [
+        "validation",
+        "leader-election",
+        "configuration"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:internal/apis/config/shared/types_leaderelection.go",
+      "target": "class:internal/apis/config/shared/types_leaderelection.go:LeaderElectionConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/types_leaderelection.go",
+      "target": "class:internal/apis/config/shared/types_leaderelection.go:LeaderElectionConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/types_tlsconfig.go",
+      "target": "class:internal/apis/config/shared/types_tlsconfig.go:TLSConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/types_tlsconfig.go",
+      "target": "class:internal/apis/config/shared/types_tlsconfig.go:TLSConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/types_tlsconfig.go",
+      "target": "function:internal/apis/config/shared/types_tlsconfig.go:FilesystemConfigProvided",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/types_tlsconfig.go",
+      "target": "function:internal/apis/config/shared/types_tlsconfig.go:FilesystemConfigProvided",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/types_tlsconfig.go",
+      "target": "function:internal/apis/config/shared/types_tlsconfig.go:DynamicConfigProvided",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/types_tlsconfig.go",
+      "target": "function:internal/apis/config/shared/types_tlsconfig.go:DynamicConfigProvided",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/types_tlsconfig.go",
+      "target": "class:internal/apis/config/shared/types_tlsconfig.go:DynamicServingConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/types_tlsconfig.go",
+      "target": "class:internal/apis/config/shared/types_tlsconfig.go:DynamicServingConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/types_tlsconfig.go",
+      "target": "class:internal/apis/config/shared/types_tlsconfig.go:FilesystemServingConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/types_tlsconfig.go",
+      "target": "class:internal/apis/config/shared/types_tlsconfig.go:FilesystemServingConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_shared_TLSConfig_To_v1alpha1_TLSConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_shared_TLSConfig_To_v1alpha1_TLSConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_v1alpha1_TLSConfig_To_shared_TLSConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_v1alpha1_TLSConfig_To_shared_TLSConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_shared_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_shared_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_v1alpha1_LeaderElectionConfig_To_shared_LeaderElectionConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_v1alpha1_LeaderElectionConfig_To_shared_LeaderElectionConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_Pointer_float32_To_float32",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_Pointer_float32_To_float32",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_float32_To_Pointer_float32",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_float32_To_Pointer_float32",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_Pointer_int32_To_int",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_Pointer_int32_To_int",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_int_To_Pointer_int32",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_int_To_Pointer_int32",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_Pointer_v1alpha1_Duration_To_time_Duration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_Pointer_v1alpha1_Duration_To_time_Duration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_time_Duration_To_Pointer_v1alpha1_Duration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_time_Duration_To_Pointer_v1alpha1_Duration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/defaults.go:SetDefaults_DynamicServingConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/defaults.go:SetDefaults_DynamicServingConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/defaults.go:SetDefaults_LeaderElectionConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/shared/v1alpha1/defaults.go:SetDefaults_LeaderElectionConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/validation/validation.go",
+      "target": "function:internal/apis/config/shared/validation/validation.go:ValidateTLSConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/validation/validation.go",
+      "target": "function:internal/apis/config/shared/validation/validation.go:ValidateTLSConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/validation/validation.go",
+      "target": "function:internal/apis/config/shared/validation/validation.go:ValidateLeaderElectionConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/shared/validation/validation.go",
+      "target": "function:internal/apis/config/shared/validation/validation.go:ValidateLeaderElectionConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "file:internal/apis/config/shared/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "file:internal/apis/config/shared/types_leaderelection.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "file:internal/apis/config/shared/types_tlsconfig.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "file:internal/apis/config/shared/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/types_duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/types_leaderelection.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/types_duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/types_leaderelection.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/types_leaderelection.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/types_tlsconfig.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/types_duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/types_leaderelection.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/v1alpha1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/validation/validation.go",
+      "target": "file:internal/apis/config/shared/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/validation/validation.go",
+      "target": "file:internal/apis/config/shared/types_leaderelection.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/validation/validation.go",
+      "target": "file:internal/apis/config/shared/types_tlsconfig.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/shared/validation/validation.go",
+      "target": "file:internal/apis/config/shared/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

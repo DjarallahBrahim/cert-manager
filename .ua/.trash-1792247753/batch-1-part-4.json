@@ -1,0 +1,1122 @@
+{
+  "nodes": [
+    {
+      "id": "file:internal/controller/issuers/apply.go",
+      "type": "file",
+      "name": "apply.go",
+      "filePath": "internal/controller/issuers/apply.go",
+      "summary": "Server-side apply helpers for updating Issuer and ClusterIssuer status subresources.",
+      "tags": [
+        "controller",
+        "server-side-apply",
+        "issuers",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/informers/core.go",
+      "type": "file",
+      "name": "core.go",
+      "filePath": "internal/informers/core.go",
+      "summary": "Defines the shared informer and lister interfaces that cert-manager controllers use for core Kubernetes resources.",
+      "tags": [
+        "informers",
+        "kubernetes",
+        "interface",
+        "type-definition"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/informers/core_basic.go",
+      "type": "file",
+      "name": "core_basic.go",
+      "filePath": "internal/informers/core_basic.go",
+      "summary": "Provides a baseline informer factory that wraps the upstream client-go shared informer factory without custom filtering.",
+      "tags": [
+        "informers",
+        "kubernetes",
+        "factory",
+        "client-go"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/informers/core_filteredsecrets.go",
+      "type": "file",
+      "name": "core_filteredsecrets.go",
+      "filePath": "internal/informers/core_filteredsecrets.go",
+      "summary": "Informer factory that filters Secrets by cert-manager labels and serves a combination of typed and metadata caches to reduce controller memory usage.",
+      "tags": [
+        "informers",
+        "kubernetes",
+        "memory-optimization",
+        "secrets"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Maintains dual typed and partial-metadata informer caches, fetching full Secrets from the API server only when needed."
+    },
+    {
+      "id": "file:internal/informers/fakes.go",
+      "type": "file",
+      "name": "fakes.go",
+      "filePath": "internal/informers/fakes.go",
+      "summary": "Hand-written fake lister and client implementations used to unit test cert-manager informer consumers.",
+      "tags": [
+        "test",
+        "fakes",
+        "informers",
+        "generated-code"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Fake types expose function fields so tests can substitute behavior without a full fake clientset."
+    },
+    {
+      "id": "file:internal/informers/transformers.go",
+      "type": "file",
+      "name": "transformers.go",
+      "filePath": "internal/informers/transformers.go",
+      "summary": "Transform function that strips managed fields and most metadata from objects to shrink informer cache memory usage.",
+      "tags": [
+        "informers",
+        "transform",
+        "memory-optimization",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/issuers/apply.go:ApplyIssuerStatus",
+      "type": "function",
+      "name": "ApplyIssuerStatus",
+      "filePath": "internal/controller/issuers/apply.go",
+      "lineRange": [
+        38,
+        50
+      ],
+      "summary": "Applies the status subresource of a namespaced Issuer using server-side apply.",
+      "tags": [
+        "server-side-apply",
+        "issuers",
+        "status"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/issuers/apply.go:ApplyClusterIssuerStatus",
+      "type": "function",
+      "name": "ApplyClusterIssuerStatus",
+      "filePath": "internal/controller/issuers/apply.go",
+      "lineRange": [
+        59,
+        71
+      ],
+      "summary": "Applies the status subresource of a ClusterIssuer using server-side apply.",
+      "tags": [
+        "server-side-apply",
+        "issuers",
+        "status"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/issuers/apply.go:serializeApplyIssuerStatus",
+      "type": "function",
+      "name": "serializeApplyIssuerStatus",
+      "filePath": "internal/controller/issuers/apply.go",
+      "lineRange": [
+        78,
+        89
+      ],
+      "summary": "Serializes Issuer status into a server-side apply configuration.",
+      "tags": [
+        "serialization",
+        "issuers",
+        "status"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/issuers/apply.go:serializeApplyClusterIssuerStatus",
+      "type": "function",
+      "name": "serializeApplyClusterIssuerStatus",
+      "filePath": "internal/controller/issuers/apply.go",
+      "lineRange": [
+        96,
+        107
+      ],
+      "summary": "Serializes ClusterIssuer status into a server-side apply configuration.",
+      "tags": [
+        "serialization",
+        "issuers",
+        "status"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/informers/core.go:KubeInformerFactory",
+      "type": "class",
+      "name": "KubeInformerFactory",
+      "filePath": "internal/informers/core.go",
+      "lineRange": [
+        44,
+        51
+      ],
+      "summary": "Interface exposing the shared informer factory methods used by cert-manager controllers.",
+      "tags": [
+        "informers",
+        "interface",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/informers/core.go:SecretInformer",
+      "type": "class",
+      "name": "SecretInformer",
+      "filePath": "internal/informers/core.go",
+      "lineRange": [
+        56,
+        61
+      ],
+      "summary": "Secret informer interface exposing an informer and a lister.",
+      "tags": [
+        "informers",
+        "interface",
+        "secrets"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/informers/core.go:SecretLister",
+      "type": "class",
+      "name": "SecretLister",
+      "filePath": "internal/informers/core.go",
+      "lineRange": [
+        64,
+        67
+      ],
+      "summary": "Minimal Secret lister interface returning a namespace-scoped lister.",
+      "tags": [
+        "informers",
+        "interface",
+        "secrets"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/informers/core.go:Informer",
+      "type": "class",
+      "name": "Informer",
+      "filePath": "internal/informers/core.go",
+      "lineRange": [
+        70,
+        77
+      ],
+      "summary": "Subset of the client-go shared informer interface used for event handling and cache sync checks.",
+      "tags": [
+        "informers",
+        "interface",
+        "client-go"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/informers/core_basic.go:NewBaseKubeInformerFactory",
+      "type": "function",
+      "name": "NewBaseKubeInformerFactory",
+      "filePath": "internal/informers/core_basic.go",
+      "lineRange": [
+        44,
+        52
+      ],
+      "summary": "Creates an informer factory backed by the upstream client-go shared informer factory.",
+      "tags": [
+        "informers",
+        "factory",
+        "client-go"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/informers/core_basic.go:baseFactory",
+      "type": "class",
+      "name": "baseFactory",
+      "filePath": "internal/informers/core_basic.go",
+      "lineRange": [
+        37,
+        42
+      ],
+      "summary": "Default KubeInformerFactory implementation delegating to the upstream client-go shared informer factory.",
+      "tags": [
+        "informers",
+        "factory",
+        "client-go"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/informers/core_basic.go:baseSecretInformer",
+      "type": "class",
+      "name": "baseSecretInformer",
+      "filePath": "internal/informers/core_basic.go",
+      "lineRange": [
+        90,
+        94
+      ],
+      "summary": "Default SecretInformer implementation wrapping the upstream client-go Secret informer.",
+      "tags": [
+        "informers",
+        "secrets",
+        "client-go"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/informers/core_filteredsecrets.go:init",
+      "type": "function",
+      "name": "init",
+      "filePath": "internal/informers/core_filteredsecrets.go",
+      "lineRange": [
+        55,
+        67
+      ],
+      "summary": "Builds the label selectors used to separate cert-manager managed Secrets from other Secrets.",
+      "tags": [
+        "informers",
+        "label-selector",
+        "initialization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/informers/core_filteredsecrets.go:NewFilteredSecretsKubeInformerFactory",
+      "type": "function",
+      "name": "NewFilteredSecretsKubeInformerFactory",
+      "filePath": "internal/informers/core_filteredsecrets.go",
+      "lineRange": [
+        77,
+        94
+      ],
+      "summary": "Creates an informer factory that filters Secrets by cert-manager labels and supports metadata-only listers.",
+      "tags": [
+        "informers",
+        "factory",
+        "secrets"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/informers/core_filteredsecrets.go:WaitForCacheSync",
+      "type": "function",
+      "name": "WaitForCacheSync",
+      "filePath": "internal/informers/core_filteredsecrets.go",
+      "lineRange": [
+        101,
+        116
+      ],
+      "summary": "Waits for both the typed and metadata informer caches to sync.",
+      "tags": [
+        "informers",
+        "cache",
+        "sync"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/informers/core_filteredsecrets.go:Secrets",
+      "type": "function",
+      "name": "Secrets",
+      "filePath": "internal/informers/core_filteredsecrets.go",
+      "lineRange": [
+        131,
+        145
+      ],
+      "summary": "Returns a filtered Secret informer that watches only cert-manager managed Secrets.",
+      "tags": [
+        "informers",
+        "secrets",
+        "filtering"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/informers/core_filteredsecrets.go:Informer",
+      "type": "function",
+      "name": "Informer",
+      "filePath": "internal/informers/core_filteredsecrets.go",
+      "lineRange": [
+        162,
+        173
+      ],
+      "summary": "Builds an informer combining the typed Secret informer and the transformed metadata informer.",
+      "tags": [
+        "informers",
+        "secrets",
+        "metadata"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/informers/core_filteredsecrets.go:Lister",
+      "type": "function",
+      "name": "Lister",
+      "filePath": "internal/informers/core_filteredsecrets.go",
+      "lineRange": [
+        175,
+        185
+      ],
+      "summary": "Builds a Secret lister backed by both typed and partial metadata caches.",
+      "tags": [
+        "informers",
+        "secrets",
+        "lister"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/informers/core_filteredsecrets.go:Get",
+      "type": "function",
+      "name": "Get",
+      "filePath": "internal/informers/core_filteredsecrets.go",
+      "lineRange": [
+        249,
+        289
+      ],
+      "summary": "Retrieves a Secret from the typed cache, metadata cache, or API server depending on where it is found.",
+      "tags": [
+        "informers",
+        "secrets",
+        "lister"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:internal/informers/core_filteredsecrets.go:List",
+      "type": "function",
+      "name": "List",
+      "filePath": "internal/informers/core_filteredsecrets.go",
+      "lineRange": [
+        291,
+        340
+      ],
+      "summary": "Lists Secrets from the typed cache and supplements them with Secrets discovered through the metadata cache.",
+      "tags": [
+        "informers",
+        "secrets",
+        "lister"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:internal/informers/core_filteredsecrets.go:filteredSecretsFactory",
+      "type": "class",
+      "name": "filteredSecretsFactory",
+      "filePath": "internal/informers/core_filteredsecrets.go",
+      "lineRange": [
+        69,
+        75
+      ],
+      "summary": "Informer factory that serves filtered Secret informers while delegating other resources to the upstream factory.",
+      "tags": [
+        "informers",
+        "factory",
+        "secrets"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/informers/core_filteredsecrets.go:filteredSecretInformer",
+      "type": "class",
+      "name": "filteredSecretInformer",
+      "filePath": "internal/informers/core_filteredsecrets.go",
+      "lineRange": [
+        149,
+        160
+      ],
+      "summary": "Secret informer that uses both typed and metadata caches for cert-manager managed Secrets.",
+      "tags": [
+        "informers",
+        "secrets",
+        "metadata"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/informers/core_filteredsecrets.go:informer",
+      "type": "class",
+      "name": "informer",
+      "filePath": "internal/informers/core_filteredsecrets.go",
+      "lineRange": [
+        188,
+        191
+      ],
+      "summary": "Informer wrapper combining typed and metadata informers for sync checks and event handlers.",
+      "tags": [
+        "informers",
+        "metadata",
+        "client-go"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/informers/core_filteredsecrets.go:secretLister",
+      "type": "class",
+      "name": "secretLister",
+      "filePath": "internal/informers/core_filteredsecrets.go",
+      "lineRange": [
+        209,
+        218
+      ],
+      "summary": "Secret lister that combines typed and partial metadata caches with API server fallbacks.",
+      "tags": [
+        "informers",
+        "secrets",
+        "lister"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/informers/core_filteredsecrets.go:secretNamespaceLister",
+      "type": "class",
+      "name": "secretNamespaceLister",
+      "filePath": "internal/informers/core_filteredsecrets.go",
+      "lineRange": [
+        238,
+        247
+      ],
+      "summary": "Namespace-scoped Secret lister that decides between typed cache, metadata cache, and API server reads.",
+      "tags": [
+        "informers",
+        "secrets",
+        "lister"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/informers/fakes.go:FakeSecretLister",
+      "type": "class",
+      "name": "FakeSecretLister",
+      "filePath": "internal/informers/fakes.go",
+      "lineRange": [
+        35,
+        38
+      ],
+      "summary": "Fake SecretLister backed by a list function and a namespace lister for tests.",
+      "tags": [
+        "test",
+        "fake",
+        "lister",
+        "secrets"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/informers/fakes.go:FakeSecretNamespaceLister",
+      "type": "class",
+      "name": "FakeSecretNamespaceLister",
+      "filePath": "internal/informers/fakes.go",
+      "lineRange": [
+        50,
+        53
+      ],
+      "summary": "Fake namespace-scoped Secret lister exposing list and get function hooks.",
+      "tags": [
+        "test",
+        "fake",
+        "lister",
+        "secrets"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/informers/fakes.go:FakeMetadataLister",
+      "type": "class",
+      "name": "FakeMetadataLister",
+      "filePath": "internal/informers/fakes.go",
+      "lineRange": [
+        65,
+        69
+      ],
+      "summary": "Fake metadata lister returning partial object metadata for tests.",
+      "tags": [
+        "test",
+        "fake",
+        "lister",
+        "metadata"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/informers/fakes.go:FakeMetadataNamespaceLister",
+      "type": "class",
+      "name": "FakeMetadataNamespaceLister",
+      "filePath": "internal/informers/fakes.go",
+      "lineRange": [
+        85,
+        88
+      ],
+      "summary": "Fake namespace-scoped metadata lister used by informer tests.",
+      "tags": [
+        "test",
+        "fake",
+        "lister",
+        "metadata"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/informers/fakes.go:FakeSecretsGetter",
+      "type": "class",
+      "name": "FakeSecretsGetter",
+      "filePath": "internal/informers/fakes.go",
+      "lineRange": [
+        100,
+        102
+      ],
+      "summary": "Fake SecretsGetter returning a FakeSecretInterface.",
+      "tags": [
+        "test",
+        "fake",
+        "secrets",
+        "client-go"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/informers/fakes.go:FakeSecretInterface",
+      "type": "class",
+      "name": "FakeSecretInterface",
+      "filePath": "internal/informers/fakes.go",
+      "lineRange": [
+        110,
+        113
+      ],
+      "summary": "Fake typed Secret client implementing CRUD, watch, patch, and apply operations for tests.",
+      "tags": [
+        "test",
+        "fake",
+        "secrets",
+        "client-go"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/informers/transformers.go:partialMetadataRemoveAll",
+      "type": "function",
+      "name": "partialMetadataRemoveAll",
+      "filePath": "internal/informers/transformers.go",
+      "lineRange": [
+        31,
+        40
+      ],
+      "summary": "Removes managed fields and unnecessary metadata from an object while preserving identity fields.",
+      "tags": [
+        "informers",
+        "transform",
+        "metadata"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:internal/controller/issuers/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/issuers/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/issuers/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/issuers/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/issuers/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/issuers/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/issuers/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/issuers/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/issuers/apply.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/issuers/apply.go",
+      "target": "file:pkg/client/clientset/versioned/clientset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/issuers/apply.go",
+      "target": "function:internal/controller/issuers/apply.go:ApplyIssuerStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/issuers/apply.go",
+      "target": "function:internal/controller/issuers/apply.go:ApplyIssuerStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/issuers/apply.go",
+      "target": "function:internal/controller/issuers/apply.go:ApplyClusterIssuerStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/issuers/apply.go",
+      "target": "function:internal/controller/issuers/apply.go:ApplyClusterIssuerStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/issuers/apply.go",
+      "target": "function:internal/controller/issuers/apply.go:serializeApplyIssuerStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/issuers/apply.go",
+      "target": "function:internal/controller/issuers/apply.go:serializeApplyClusterIssuerStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core.go",
+      "target": "class:internal/informers/core.go:KubeInformerFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core.go",
+      "target": "class:internal/informers/core.go:KubeInformerFactory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/informers/core.go",
+      "target": "class:internal/informers/core.go:SecretInformer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core.go",
+      "target": "class:internal/informers/core.go:SecretInformer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/informers/core.go",
+      "target": "class:internal/informers/core.go:SecretLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core.go",
+      "target": "class:internal/informers/core.go:SecretLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/informers/core.go",
+      "target": "class:internal/informers/core.go:Informer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core.go",
+      "target": "class:internal/informers/core.go:Informer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/informers/core_basic.go",
+      "target": "function:internal/informers/core_basic.go:NewBaseKubeInformerFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core_basic.go",
+      "target": "function:internal/informers/core_basic.go:NewBaseKubeInformerFactory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/informers/core_basic.go",
+      "target": "class:internal/informers/core_basic.go:baseFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core_basic.go",
+      "target": "class:internal/informers/core_basic.go:baseSecretInformer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "function:internal/informers/core_filteredsecrets.go:init",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "function:internal/informers/core_filteredsecrets.go:NewFilteredSecretsKubeInformerFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "function:internal/informers/core_filteredsecrets.go:NewFilteredSecretsKubeInformerFactory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "function:internal/informers/core_filteredsecrets.go:WaitForCacheSync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "function:internal/informers/core_filteredsecrets.go:WaitForCacheSync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "function:internal/informers/core_filteredsecrets.go:Secrets",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "function:internal/informers/core_filteredsecrets.go:Secrets",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "function:internal/informers/core_filteredsecrets.go:Informer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "function:internal/informers/core_filteredsecrets.go:Informer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "function:internal/informers/core_filteredsecrets.go:Lister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "function:internal/informers/core_filteredsecrets.go:Lister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "function:internal/informers/core_filteredsecrets.go:Get",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "function:internal/informers/core_filteredsecrets.go:Get",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "function:internal/informers/core_filteredsecrets.go:List",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "function:internal/informers/core_filteredsecrets.go:List",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "class:internal/informers/core_filteredsecrets.go:filteredSecretsFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "class:internal/informers/core_filteredsecrets.go:filteredSecretInformer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "class:internal/informers/core_filteredsecrets.go:informer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "class:internal/informers/core_filteredsecrets.go:secretLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/core_filteredsecrets.go",
+      "target": "class:internal/informers/core_filteredsecrets.go:secretNamespaceLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/fakes.go",
+      "target": "class:internal/informers/fakes.go:FakeSecretLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/fakes.go",
+      "target": "class:internal/informers/fakes.go:FakeSecretLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/informers/fakes.go",
+      "target": "class:internal/informers/fakes.go:FakeSecretNamespaceLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/fakes.go",
+      "target": "class:internal/informers/fakes.go:FakeSecretNamespaceLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/informers/fakes.go",
+      "target": "class:internal/informers/fakes.go:FakeMetadataLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/fakes.go",
+      "target": "class:internal/informers/fakes.go:FakeMetadataLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/informers/fakes.go",
+      "target": "class:internal/informers/fakes.go:FakeMetadataNamespaceLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/fakes.go",
+      "target": "class:internal/informers/fakes.go:FakeMetadataNamespaceLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/informers/fakes.go",
+      "target": "class:internal/informers/fakes.go:FakeSecretsGetter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/fakes.go",
+      "target": "class:internal/informers/fakes.go:FakeSecretsGetter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/informers/fakes.go",
+      "target": "class:internal/informers/fakes.go:FakeSecretInterface",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/informers/fakes.go",
+      "target": "class:internal/informers/fakes.go:FakeSecretInterface",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/informers/transformers.go",
+      "target": "function:internal/informers/transformers.go:partialMetadataRemoveAll",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

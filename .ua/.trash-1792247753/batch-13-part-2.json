@@ -1,0 +1,781 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/e2e/framework/testenv.go",
+      "type": "file",
+      "name": "testenv.go",
+      "filePath": "test/e2e/framework/testenv.go",
+      "summary": "Provisioning helpers that create and delete per-test Kubernetes namespaces and apply resource quotas to them.",
+      "tags": [
+        "test",
+        "helper",
+        "kubernetes",
+        "namespace",
+        "provisioning"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/testenv.go:CreateKubeNamespace",
+      "type": "function",
+      "name": "CreateKubeNamespace",
+      "filePath": "test/e2e/framework/testenv.go",
+      "lineRange": [
+        37,
+        45
+      ],
+      "summary": "Creates a uniquely named namespace for a test and registers cleanup.",
+      "tags": [
+        "test",
+        "kubernetes",
+        "namespace",
+        "provisioning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/testenv.go:CreateKubeResourceQuota",
+      "type": "function",
+      "name": "CreateKubeResourceQuota",
+      "filePath": "test/e2e/framework/testenv.go",
+      "lineRange": [
+        49,
+        67
+      ],
+      "summary": "Creates a resource quota in the test namespace to bound resource consumption during e2e runs.",
+      "tags": [
+        "test",
+        "kubernetes",
+        "resource-quota",
+        "provisioning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/testenv.go:DeleteKubeNamespace",
+      "type": "function",
+      "name": "DeleteKubeNamespace",
+      "filePath": "test/e2e/framework/testenv.go",
+      "lineRange": [
+        70,
+        72
+      ],
+      "summary": "Deletes the given namespace, ignoring not-found errors.",
+      "tags": [
+        "test",
+        "kubernetes",
+        "namespace",
+        "cleanup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/util.go",
+      "type": "file",
+      "name": "util.go",
+      "filePath": "test/e2e/framework/util.go",
+      "summary": "Shared e2e test utilities for failing and skipping tests, gating on feature gates, and checking RBAC access to resources.",
+      "tags": [
+        "test",
+        "helper",
+        "utility",
+        "rbac",
+        "e2e"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/util.go:Failf",
+      "type": "function",
+      "name": "Failf",
+      "filePath": "test/e2e/framework/util.go",
+      "lineRange": [
+        40,
+        44
+      ],
+      "summary": "Fails the current test with a timestamped formatted message.",
+      "tags": [
+        "test",
+        "utility",
+        "failure",
+        "logging"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/util.go:Skipf",
+      "type": "function",
+      "name": "Skipf",
+      "filePath": "test/e2e/framework/util.go",
+      "lineRange": [
+        46,
+        50
+      ],
+      "summary": "Skips the current test with a timestamped formatted message.",
+      "tags": [
+        "test",
+        "utility",
+        "skip",
+        "logging"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/util.go:RequireFeatureGate",
+      "type": "function",
+      "name": "RequireFeatureGate",
+      "filePath": "test/e2e/framework/util.go",
+      "lineRange": [
+        52,
+        56
+      ],
+      "summary": "Skips the test when the required feature gate is not enabled in the feature set.",
+      "tags": [
+        "test",
+        "utility",
+        "feature-gate",
+        "skip"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/util.go:RbacClusterRoleHasAccessToResource",
+      "type": "function",
+      "name": "RbacClusterRoleHasAccessToResource",
+      "filePath": "test/e2e/framework/util.go",
+      "lineRange": [
+        59,
+        114
+      ],
+      "summary": "Uses SelfSubjectAccessReview to assert a ClusterRole grants the given verb on a resource.",
+      "tags": [
+        "test",
+        "utility",
+        "rbac",
+        "authorization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/framework/util/config.go",
+      "type": "file",
+      "name": "config.go",
+      "filePath": "test/e2e/framework/util/config.go",
+      "summary": "Loads the e2e kubeconfig and derives a REST client configuration for a named context.",
+      "tags": [
+        "test",
+        "configuration",
+        "kubeconfig",
+        "client",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/util/config.go:RestclientConfig",
+      "type": "function",
+      "name": "RestclientConfig",
+      "filePath": "test/e2e/framework/util/config.go",
+      "lineRange": [
+        27,
+        39
+      ],
+      "summary": "Builds a rest.Config from the given client config and context, defaulting fields as needed.",
+      "tags": [
+        "test",
+        "kubeconfig",
+        "client-config",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/util/config.go:LoadConfig",
+      "type": "function",
+      "name": "LoadConfig",
+      "filePath": "test/e2e/framework/util/config.go",
+      "lineRange": [
+        41,
+        47
+      ],
+      "summary": "Loads the kubeconfig from disk and returns the REST config for the requested context.",
+      "tags": [
+        "test",
+        "kubeconfig",
+        "configuration",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/util/errors/errors.go",
+      "type": "file",
+      "name": "errors.go",
+      "filePath": "test/e2e/framework/util/errors/errors.go",
+      "summary": "Defines the skip error type shared by e2e tests and addons so they can signal that a test should be skipped.",
+      "tags": [
+        "test",
+        "errors",
+        "skip",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/util/errors/errors.go:IsSkip",
+      "type": "function",
+      "name": "IsSkip",
+      "filePath": "test/e2e/framework/util/errors/errors.go",
+      "lineRange": [
+        25,
+        30
+      ],
+      "summary": "Reports whether an error is a skip error and returns the underlying cause.",
+      "tags": [
+        "test",
+        "errors",
+        "skip",
+        "predicate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/util/errors/errors.go:NewSkip",
+      "type": "function",
+      "name": "NewSkip",
+      "filePath": "test/e2e/framework/util/errors/errors.go",
+      "lineRange": [
+        32,
+        34
+      ],
+      "summary": "Wraps an error in a skip error so callers can request that a test be skipped.",
+      "tags": [
+        "test",
+        "errors",
+        "skip",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/suite/certificaterequests/approval/approval.go",
+      "type": "file",
+      "name": "approval.go",
+      "filePath": "test/e2e/suite/certificaterequests/approval/approval.go",
+      "summary": "Ginkgo suite covering CertificateRequest approval: signer identity checks, policy violations against approved/denied requests, and approver RBAC.",
+      "tags": [
+        "test",
+        "e2e",
+        "certificate-request",
+        "approval",
+        "ginkgo"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/e2e/suite/certificaterequests/approval/approval.go:createCRD",
+      "type": "function",
+      "name": "createCRD",
+      "filePath": "test/e2e/suite/certificaterequests/approval/approval.go",
+      "lineRange": [
+        448,
+        477
+      ],
+      "summary": "Creates a test CRD cert-manager can issue for, used to exercise approval of unknown resource kinds.",
+      "tags": [
+        "test",
+        "setup",
+        "crd",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/certificaterequests/approval/approval.go:bindServiceAccountToApprove",
+      "type": "function",
+      "name": "bindServiceAccountToApprove",
+      "filePath": "test/e2e/suite/certificaterequests/approval/approval.go",
+      "lineRange": [
+        479,
+        513
+      ],
+      "summary": "Grants a service account permission to approve CertificateRequests for a specific resource name.",
+      "tags": [
+        "test",
+        "setup",
+        "rbac",
+        "approval"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/certificaterequests/approval/userinfo.go",
+      "type": "file",
+      "name": "userinfo.go",
+      "filePath": "test/e2e/suite/certificaterequests/approval/userinfo.go",
+      "summary": "Ginkgo test verifying that UserInfo fields on CertificateRequests are populated correctly and rejected when modified.",
+      "tags": [
+        "test",
+        "e2e",
+        "certificate-request",
+        "userinfo",
+        "ginkgo"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/certificaterequests/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "test/e2e/suite/certificaterequests/doc.go",
+      "summary": "Package documentation for the CertificateRequest e2e suite, importing its approval and self-signed sub-suites.",
+      "tags": [
+        "test",
+        "e2e",
+        "documentation",
+        "certificate-request",
+        "suite"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/suite/certificaterequests/selfsigned/secret.go",
+      "type": "file",
+      "name": "secret.go",
+      "filePath": "test/e2e/suite/certificaterequests/selfsigned/secret.go",
+      "summary": "Ginkgo test ensuring a self-signed CertificateRequest is still signed when its private key Secret is created after the request.",
+      "tags": [
+        "test",
+        "e2e",
+        "self-signed",
+        "certificate-request",
+        "secret"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:test/e2e/suite/certificates/additionaloutputformats.go",
+      "type": "file",
+      "name": "additionaloutputformats.go",
+      "filePath": "test/e2e/suite/certificates/additionaloutputformats.go",
+      "summary": "Ginkgo test verifying Certificate additionalOutputFormats are written to the target Secret and reconciled when the Certificate is modified.",
+      "tags": [
+        "test",
+        "e2e",
+        "certificates",
+        "additional-output-formats",
+        "ginkgo"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:test/e2e/suite/certificates/duplicatesecretname.go",
+      "type": "file",
+      "name": "duplicatesecretname.go",
+      "filePath": "test/e2e/suite/certificates/duplicatesecretname.go",
+      "summary": "Ginkgo test ensuring Certificates sharing a spec.secretName in one namespace enter a blocking state that prevents CertificateRequest runaway.",
+      "tags": [
+        "test",
+        "e2e",
+        "certificates",
+        "secret-name",
+        "ginkgo"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/e2e/framework/testenv.go",
+      "target": "function:test/e2e/framework/testenv.go:CreateKubeNamespace",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/testenv.go",
+      "target": "function:test/e2e/framework/testenv.go:CreateKubeNamespace",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/testenv.go",
+      "target": "function:test/e2e/framework/testenv.go:CreateKubeResourceQuota",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/testenv.go",
+      "target": "function:test/e2e/framework/testenv.go:CreateKubeResourceQuota",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/testenv.go",
+      "target": "function:test/e2e/framework/testenv.go:DeleteKubeNamespace",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/testenv.go",
+      "target": "function:test/e2e/framework/testenv.go:DeleteKubeNamespace",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/util.go",
+      "target": "function:test/e2e/framework/util.go:Failf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/util.go",
+      "target": "function:test/e2e/framework/util.go:Failf",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/util.go",
+      "target": "function:test/e2e/framework/util.go:Skipf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/util.go",
+      "target": "function:test/e2e/framework/util.go:Skipf",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/util.go",
+      "target": "function:test/e2e/framework/util.go:RequireFeatureGate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/util.go",
+      "target": "function:test/e2e/framework/util.go:RequireFeatureGate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/util.go",
+      "target": "function:test/e2e/framework/util.go:RbacClusterRoleHasAccessToResource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/util.go",
+      "target": "function:test/e2e/framework/util.go:RbacClusterRoleHasAccessToResource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/util.go",
+      "target": "file:test/e2e/framework/log/log.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/util/config.go",
+      "target": "function:test/e2e/framework/util/config.go:RestclientConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/util/config.go",
+      "target": "function:test/e2e/framework/util/config.go:RestclientConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/util/config.go",
+      "target": "function:test/e2e/framework/util/config.go:LoadConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/util/config.go",
+      "target": "function:test/e2e/framework/util/config.go:LoadConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/util/errors/errors.go",
+      "target": "function:test/e2e/framework/util/errors/errors.go:IsSkip",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/util/errors/errors.go",
+      "target": "function:test/e2e/framework/util/errors/errors.go:IsSkip",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/util/errors/errors.go",
+      "target": "function:test/e2e/framework/util/errors/errors.go:NewSkip",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/util/errors/errors.go",
+      "target": "function:test/e2e/framework/util/errors/errors.go:NewSkip",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/approval/approval.go",
+      "target": "function:test/e2e/suite/certificaterequests/approval/approval.go:createCRD",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/approval/approval.go",
+      "target": "function:test/e2e/suite/certificaterequests/approval/approval.go:bindServiceAccountToApprove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/approval/approval.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/approval/approval.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/approval/approval.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/approval/approval.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/approval/approval.go",
+      "target": "file:test/e2e/framework/util/config.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/approval/approval.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/approval/approval.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/approval/userinfo.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/approval/userinfo.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/approval/userinfo.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/approval/userinfo.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/approval/userinfo.go",
+      "target": "file:test/e2e/framework/util/config.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/doc.go",
+      "target": "file:test/e2e/suite/certificaterequests/approval/approval.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/doc.go",
+      "target": "file:test/e2e/suite/certificaterequests/approval/userinfo.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/doc.go",
+      "target": "file:test/e2e/suite/certificaterequests/selfsigned/secret.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/selfsigned/secret.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/selfsigned/secret.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/selfsigned/secret.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificaterequests/selfsigned/secret.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/additionaloutputformats.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/additionaloutputformats.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/additionaloutputformats.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/additionaloutputformats.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/additionaloutputformats.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/additionaloutputformats.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/duplicatesecretname.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/duplicatesecretname.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/duplicatesecretname.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/duplicatesecretname.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/duplicatesecretname.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/duplicatesecretname.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

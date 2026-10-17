@@ -1,0 +1,550 @@
+{
+  "nodes": [
+    {
+      "id": "file:internal/apis/meta/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "internal/apis/meta/doc.go",
+      "summary": "Package documentation for cert-manager's internal meta API group, enabling deepcopy generation and declaring the meta.cert-manager.io group name.",
+      "tags": [
+        "api-group",
+        "internal-api",
+        "documentation",
+        "code-generation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/meta/install/install.go",
+      "type": "file",
+      "name": "install.go",
+      "filePath": "internal/apis/meta/install/install.go",
+      "summary": "Registers the internal and v1 meta API types with a Kubernetes runtime scheme so shared reference types can be encoded and decoded.",
+      "tags": [
+        "api-installation",
+        "scheme-registration",
+        "initialization",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/meta/register.go",
+      "type": "file",
+      "name": "register.go",
+      "filePath": "internal/apis/meta/register.go",
+      "summary": "Defines scheme registration entry points for the internal meta API group and a helper for building qualified GroupResource names.",
+      "tags": [
+        "scheme-registration",
+        "api-group",
+        "type-registration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/meta/types.go",
+      "type": "file",
+      "name": "types.go",
+      "filePath": "internal/apis/meta/types.go",
+      "summary": "Defines internal meta API types — object and issuer references, secret key selectors, condition statuses, and the TLS CA data key — shared across cert-manager API groups.",
+      "tags": [
+        "data-model",
+        "type-definition",
+        "api-types",
+        "references"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/apis/meta/v1/conversion.go",
+      "type": "file",
+      "name": "conversion.go",
+      "filePath": "internal/apis/meta/v1/conversion.go",
+      "summary": "Hand-written conversion functions between internal and v1 meta reference types, working around conversion-gen limitations for cross-group types.",
+      "tags": [
+        "conversion",
+        "api-versioning",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/meta/install/install.go:Install",
+      "type": "function",
+      "name": "Install",
+      "filePath": "internal/apis/meta/install/install.go",
+      "lineRange": [
+        30,
+        33
+      ],
+      "summary": "Registers both internal and v1 meta API types in the supplied runtime scheme, panicking on registration errors.",
+      "tags": [
+        "scheme-registration",
+        "api-installation",
+        "initialization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/meta/register.go:Resource",
+      "type": "function",
+      "name": "Resource",
+      "filePath": "internal/apis/meta/register.go",
+      "lineRange": [
+        35,
+        37
+      ],
+      "summary": "Returns the fully qualified GroupResource for an unqualified meta resource name.",
+      "tags": [
+        "utility",
+        "api-group",
+        "resource-naming"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/meta/types.go:LocalObjectReference",
+      "type": "class",
+      "name": "LocalObjectReference",
+      "filePath": "internal/apis/meta/types.go",
+      "lineRange": [
+        44,
+        48
+      ],
+      "summary": "Reference to a same-namespace object by name, used for secrets and shared meta references.",
+      "tags": [
+        "data-model",
+        "reference",
+        "api-types"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/meta/types.go:IssuerReference",
+      "type": "class",
+      "name": "IssuerReference",
+      "filePath": "internal/apis/meta/types.go",
+      "lineRange": [
+        51,
+        58
+      ],
+      "summary": "Reference to an issuer by name, kind, and group, identifying which issuer signed a request.",
+      "tags": [
+        "data-model",
+        "reference",
+        "issuer",
+        "api-types"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/meta/types.go:SecretKeySelector",
+      "type": "class",
+      "name": "SecretKeySelector",
+      "filePath": "internal/apis/meta/types.go",
+      "lineRange": [
+        66,
+        74
+      ],
+      "summary": "Selector for a specific key inside a Secret, embedding a local object reference.",
+      "tags": [
+        "data-model",
+        "secret",
+        "reference",
+        "api-types"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/meta/v1/conversion.go:Convert_meta_LocalObjectReference_To_v1_LocalObjectReference",
+      "type": "function",
+      "name": "Convert_meta_LocalObjectReference_To_v1_LocalObjectReference",
+      "filePath": "internal/apis/meta/v1/conversion.go",
+      "lineRange": [
+        28,
+        30
+      ],
+      "summary": "Converts an internal LocalObjectReference to its v1 representation via the generated auto-conversion helper.",
+      "tags": [
+        "conversion",
+        "api-versioning",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/meta/v1/conversion.go:Convert_v1_LocalObjectReference_To_meta_LocalObjectReference",
+      "type": "function",
+      "name": "Convert_v1_LocalObjectReference_To_meta_LocalObjectReference",
+      "filePath": "internal/apis/meta/v1/conversion.go",
+      "lineRange": [
+        34,
+        36
+      ],
+      "summary": "Converts a v1 LocalObjectReference to its internal representation via the generated auto-conversion helper.",
+      "tags": [
+        "conversion",
+        "api-versioning",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/meta/v1/conversion.go:Convert_meta_IssuerReference_To_v1_IssuerReference",
+      "type": "function",
+      "name": "Convert_meta_IssuerReference_To_v1_IssuerReference",
+      "filePath": "internal/apis/meta/v1/conversion.go",
+      "lineRange": [
+        40,
+        42
+      ],
+      "summary": "Converts an internal IssuerReference to its v1 representation via the generated auto-conversion helper.",
+      "tags": [
+        "conversion",
+        "api-versioning",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/meta/v1/conversion.go:Convert_v1_IssuerReference_To_meta_IssuerReference",
+      "type": "function",
+      "name": "Convert_v1_IssuerReference_To_meta_IssuerReference",
+      "filePath": "internal/apis/meta/v1/conversion.go",
+      "lineRange": [
+        46,
+        48
+      ],
+      "summary": "Converts a v1 IssuerReference to its internal representation via the generated auto-conversion helper.",
+      "tags": [
+        "conversion",
+        "api-versioning",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/meta/v1/conversion.go:Convert_meta_SecretKeySelector_To_v1_SecretKeySelector",
+      "type": "function",
+      "name": "Convert_meta_SecretKeySelector_To_v1_SecretKeySelector",
+      "filePath": "internal/apis/meta/v1/conversion.go",
+      "lineRange": [
+        52,
+        54
+      ],
+      "summary": "Converts an internal SecretKeySelector to its v1 representation via the generated auto-conversion helper.",
+      "tags": [
+        "conversion",
+        "api-versioning",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/meta/v1/conversion.go:Convert_v1_SecretKeySelector_To_meta_SecretKeySelector",
+      "type": "function",
+      "name": "Convert_v1_SecretKeySelector_To_meta_SecretKeySelector",
+      "filePath": "internal/apis/meta/v1/conversion.go",
+      "lineRange": [
+        58,
+        60
+      ],
+      "summary": "Converts a v1 SecretKeySelector to its internal representation via the generated auto-conversion helper.",
+      "tags": [
+        "conversion",
+        "api-versioning",
+        "utility"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:internal/apis/meta/install/install.go",
+      "target": "function:internal/apis/meta/install/install.go:Install",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/meta/install/install.go",
+      "target": "function:internal/apis/meta/install/install.go:Install",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/meta/register.go",
+      "target": "function:internal/apis/meta/register.go:Resource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/meta/register.go",
+      "target": "function:internal/apis/meta/register.go:Resource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/meta/types.go",
+      "target": "class:internal/apis/meta/types.go:LocalObjectReference",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/meta/types.go",
+      "target": "class:internal/apis/meta/types.go:LocalObjectReference",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/meta/types.go",
+      "target": "class:internal/apis/meta/types.go:IssuerReference",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/meta/types.go",
+      "target": "class:internal/apis/meta/types.go:IssuerReference",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/meta/types.go",
+      "target": "class:internal/apis/meta/types.go:SecretKeySelector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/meta/types.go",
+      "target": "class:internal/apis/meta/types.go:SecretKeySelector",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "function:internal/apis/meta/v1/conversion.go:Convert_meta_LocalObjectReference_To_v1_LocalObjectReference",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "function:internal/apis/meta/v1/conversion.go:Convert_meta_LocalObjectReference_To_v1_LocalObjectReference",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "function:internal/apis/meta/v1/conversion.go:Convert_v1_LocalObjectReference_To_meta_LocalObjectReference",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "function:internal/apis/meta/v1/conversion.go:Convert_v1_LocalObjectReference_To_meta_LocalObjectReference",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "function:internal/apis/meta/v1/conversion.go:Convert_meta_IssuerReference_To_v1_IssuerReference",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "function:internal/apis/meta/v1/conversion.go:Convert_meta_IssuerReference_To_v1_IssuerReference",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "function:internal/apis/meta/v1/conversion.go:Convert_v1_IssuerReference_To_meta_IssuerReference",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "function:internal/apis/meta/v1/conversion.go:Convert_v1_IssuerReference_To_meta_IssuerReference",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "function:internal/apis/meta/v1/conversion.go:Convert_meta_SecretKeySelector_To_v1_SecretKeySelector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "function:internal/apis/meta/v1/conversion.go:Convert_meta_SecretKeySelector_To_v1_SecretKeySelector",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "function:internal/apis/meta/v1/conversion.go:Convert_v1_SecretKeySelector_To_meta_SecretKeySelector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "function:internal/apis/meta/v1/conversion.go:Convert_v1_SecretKeySelector_To_meta_SecretKeySelector",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/meta/install/install.go",
+      "target": "file:internal/apis/meta/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/install/install.go",
+      "target": "file:internal/apis/meta/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/install/install.go",
+      "target": "file:internal/apis/meta/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/install/install.go",
+      "target": "file:internal/apis/meta/v1/conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/install/install.go",
+      "target": "file:internal/apis/meta/v1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/install/install.go",
+      "target": "file:internal/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/install/install.go",
+      "target": "file:internal/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/install/install.go",
+      "target": "file:internal/apis/meta/v1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/install/install.go",
+      "target": "file:internal/apis/meta/v1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/install/install.go",
+      "target": "file:internal/apis/meta/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/register.go",
+      "target": "file:pkg/apis/meta/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "file:internal/apis/meta/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "file:internal/apis/meta/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "file:internal/apis/meta/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "file:internal/apis/meta/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/conversion.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

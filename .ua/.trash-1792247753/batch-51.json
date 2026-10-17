@@ -1,0 +1,836 @@
+{
+  "nodes": [
+    {
+      "id": "document:test/e2e/framework/addon/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "test/e2e/framework/addon/README.md",
+      "summary": "Empty placeholder README inside the e2e addon framework directory; it currently contains no documentation content.",
+      "tags": ["documentation", "e2e-testing", "placeholder"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:test/e2e/go.mod",
+      "type": "config",
+      "name": "go.mod",
+      "filePath": "test/e2e/go.mod",
+      "summary": "Go module definition for the cert-manager end-to-end test suite, pinning Kubernetes, controller-runtime, Ginkgo and cloud provider client versions and replacing the main module with the local checkout.",
+      "tags": ["configuration", "go-modules", "dependencies", "e2e-testing"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:test/e2e/go.sum",
+      "type": "config",
+      "name": "go.sum",
+      "filePath": "test/e2e/go.sum",
+      "summary": "Dependency checksum lock file for the e2e test module, recording hashes for every direct and indirect Go module version used by the suite.",
+      "tags": ["configuration", "go-modules", "dependency-lock", "e2e-testing"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/integration/framework/apiserver.go",
+      "type": "file",
+      "name": "apiserver.go",
+      "filePath": "test/integration/framework/apiserver.go",
+      "summary": "Bootstraps an integration-test control plane by installing cert-manager CRDs, starting envtest, registering validating and mutating webhooks, and writing a user kubeconfig with teardown hooks.",
+      "tags": ["test-framework", "integration-testing", "kubernetes", "webhook", "control-plane"],
+      "complexity": "complex",
+      "languageNotes": "Decodes CRD YAML through an internal apiextensions scheme with a versioning codec so multi-document manifests convert consistently across API versions."
+    },
+    {
+      "id": "function:test/integration/framework/apiserver.go:WithCRDDirectory",
+      "type": "function",
+      "name": "WithCRDDirectory",
+      "filePath": "test/integration/framework/apiserver.go",
+      "lineRange": [61, 65],
+      "summary": "Functional option that overrides the directory from which CRD manifests are loaded into the integration test API server.",
+      "tags": ["option-pattern", "configuration", "test-framework"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/integration/framework/apiserver.go:RunControlPlane",
+      "type": "function",
+      "name": "RunControlPlane",
+      "filePath": "test/integration/framework/apiserver.go",
+      "lineRange": [67, 148],
+      "summary": "Starts the envtest API server with CRDs, a webhook server and a user kubeconfig, then returns stop functions that tear the control plane down.",
+      "tags": ["control-plane", "test-framework", "lifecycle", "kubernetes"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/integration/framework/apiserver.go:readCustomResourcesAtPath",
+      "type": "function",
+      "name": "readCustomResourcesAtPath",
+      "filePath": "test/integration/framework/apiserver.go",
+      "lineRange": [159, 184],
+      "summary": "Walks a directory for YAML files and decodes every CustomResourceDefinition found using an internal-scheme codec.",
+      "tags": ["crd", "yaml-parsing", "file-io", "test-framework"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/integration/framework/apiserver.go:readCRDsAtPath",
+      "type": "function",
+      "name": "readCRDsAtPath",
+      "filePath": "test/integration/framework/apiserver.go",
+      "lineRange": [186, 213],
+      "summary": "Reads a YAML file, splits it into documents and converts each one into a v1 CustomResourceDefinition.",
+      "tags": ["crd", "yaml-parsing", "deserialization"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/integration/framework/apiserver.go:getValidatingWebhookConfig",
+      "type": "function",
+      "name": "getValidatingWebhookConfig",
+      "filePath": "test/integration/framework/apiserver.go",
+      "lineRange": [215, 251],
+      "summary": "Builds a ValidatingWebhookConfiguration that points cert-manager resource validation at the local test webhook server using the supplied CA bundle.",
+      "tags": ["webhook", "kubernetes", "test-framework"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/integration/framework/apiserver.go:getMutatingWebhookConfig",
+      "type": "function",
+      "name": "getMutatingWebhookConfig",
+      "filePath": "test/integration/framework/apiserver.go",
+      "lineRange": [253, 289],
+      "summary": "Builds a MutatingWebhookConfiguration that routes cert-manager defaulting requests to the local test webhook server with the supplied CA bundle.",
+      "tags": ["webhook", "kubernetes", "test-framework"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/integration/framework/helpers.go",
+      "type": "file",
+      "name": "helpers.go",
+      "filePath": "test/integration/framework/helpers.go",
+      "summary": "Shared integration-test helpers that construct Kubernetes and cert-manager clients, start informers and controllers, emit events, and wait for OpenAPI resources to be discoverable.",
+      "tags": ["test-framework", "integration-testing", "kubernetes", "controller-runtime", "helpers"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/integration/framework/helpers.go:NewEventRecorder",
+      "type": "function",
+      "name": "NewEventRecorder",
+      "filePath": "test/integration/framework/helpers.go",
+      "lineRange": [47, 51],
+      "summary": "Creates an event broadcaster and recorder bound to the current test name so integration tests can emit Kubernetes events.",
+      "tags": ["events", "test-framework", "kubernetes"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/integration/framework/helpers.go:NewClients",
+      "type": "function",
+      "name": "NewClients",
+      "filePath": "test/integration/framework/helpers.go",
+      "lineRange": [53, 79],
+      "summary": "Builds Kubernetes, cert-manager and informer clients together with a combined runtime scheme for integration tests.",
+      "tags": ["clientset", "informer", "scheme", "test-framework"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/integration/framework/helpers.go:StartInformersAndController",
+      "type": "function",
+      "name": "StartInformersAndController",
+      "filePath": "test/integration/framework/helpers.go",
+      "lineRange": [81, 83],
+      "summary": "Convenience wrapper that starts informers and a single controller through StartInformersAndControllers.",
+      "tags": ["controller", "test-framework", "lifecycle"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/integration/framework/helpers.go:StartInformersAndControllers",
+      "type": "function",
+      "name": "StartInformersAndControllers",
+      "filePath": "test/integration/framework/helpers.go",
+      "lineRange": [85, 109],
+      "summary": "Starts informer factories and runs all supplied controllers in an errgroup until the test context is cancelled.",
+      "tags": ["controller", "informer", "concurrency", "test-framework"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/integration/framework/helpers.go:WaitForOpenAPIResourcesToBeLoaded",
+      "type": "function",
+      "name": "WaitForOpenAPIResourcesToBeLoaded",
+      "filePath": "test/integration/framework/helpers.go",
+      "lineRange": [111, 133],
+      "summary": "Polls the API server's OpenAPI document until the requested GroupVersionKind becomes discoverable.",
+      "tags": ["openapi", "polling", "discovery", "test-framework"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:test/integration/go.mod",
+      "type": "config",
+      "name": "go.mod",
+      "filePath": "test/integration/go.mod",
+      "summary": "Go module definition for the cert-manager integration test suite, pinning Kubernetes, DNS, gateway-api and controller-runtime dependencies and replacing the main and webhook-binary modules with local paths.",
+      "tags": ["configuration", "go-modules", "dependencies", "integration-testing"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:test/integration/go.sum",
+      "type": "config",
+      "name": "go.sum",
+      "filePath": "test/integration/go.sum",
+      "summary": "Dependency checksum lock file for the integration test module, recording hashes for every direct and indirect Go module version used by the suite.",
+      "tags": ["configuration", "go-modules", "dependency-lock", "integration-testing"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:test/integration/rfc2136_dns01/testdata/config.json",
+      "type": "config",
+      "name": "config.json",
+      "filePath": "test/integration/rfc2136_dns01/testdata/config.json",
+      "summary": "Empty JSON object used as test data for the RFC2136 DNS-01 integration test.",
+      "tags": ["configuration", "test-data", "dns01"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:test/integration/rfc2136_dns01/testdata/rfc2136-tsig-secret.yaml",
+      "type": "config",
+      "name": "rfc2136-tsig-secret.yaml",
+      "filePath": "test/integration/rfc2136_dns01/testdata/rfc2136-tsig-secret.yaml",
+      "summary": "Kubernetes Secret manifest holding the base64-encoded TSIG key consumed by the RFC2136 DNS-01 integration test.",
+      "tags": ["configuration", "kubernetes", "secret", "dns01", "test-data"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:test/integration/validation/files/issuers.valid.yaml",
+      "type": "config",
+      "name": "issuers.valid.yaml",
+      "filePath": "test/integration/validation/files/issuers.valid.yaml",
+      "summary": "Valid Issuer manifest with an ACME solver using an empty Route53 stanza, used to verify that OpenAPI and webhook validation accept credential-less DNS-01 configuration.",
+      "tags": ["configuration", "validation", "issuer", "acme", "test-data"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/unit/coreclients/secrets.go",
+      "type": "file",
+      "name": "secrets.go",
+      "filePath": "test/unit/coreclients/secrets.go",
+      "summary": "Test doubles implementing the client-go SecretsGetter and SecretsInterface so unit tests can stub secret client behaviour with per-operation function fields.",
+      "tags": ["test", "mock", "kubernetes", "clientset", "fake"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/unit/coreclients/secrets.go:FakeSecretsGetter",
+      "type": "class",
+      "name": "FakeSecretsGetter",
+      "filePath": "test/unit/coreclients/secrets.go",
+      "lineRange": [35, 37],
+      "summary": "Mock implementation of typedcorev1.SecretsGetter that exposes a single Secrets() accessor backed by a configurable fake secret client.",
+      "tags": ["test", "mock", "clientset"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/unit/coreclients/secrets.go:fakeSecretClient",
+      "type": "class",
+      "name": "fakeSecretClient",
+      "filePath": "test/unit/coreclients/secrets.go",
+      "lineRange": [92, 104],
+      "summary": "Fake SecretsInterface whose function fields let tests override the result of each secret client operation, including create, get, list, watch, patch and apply.",
+      "tags": ["test", "mock", "clientset", "fake"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/coreclients/secrets.go:NewFakeSecretsGetterFrom",
+      "type": "function",
+      "name": "NewFakeSecretsGetterFrom",
+      "filePath": "test/unit/coreclients/secrets.go",
+      "lineRange": [43, 48],
+      "summary": "Creates a FakeSecretsGetter and applies the supplied modifier functions to customise its behaviour.",
+      "tags": ["test", "mock", "factory"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/coreclients/secrets.go:NewFakeSecretsGetter",
+      "type": "function",
+      "name": "NewFakeSecretsGetter",
+      "filePath": "test/unit/coreclients/secrets.go",
+      "lineRange": [50, 54],
+      "summary": "Returns a FakeSecretsGetter pre-wired with an empty fake secret client and optional modifiers.",
+      "tags": ["test", "mock", "factory"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/coreclients/secrets.go:SetFakeSecretsGetterCreate",
+      "type": "function",
+      "name": "SetFakeSecretsGetterCreate",
+      "filePath": "test/unit/coreclients/secrets.go",
+      "lineRange": [59, 65],
+      "summary": "Modifier that makes the fake client's Create call return a fixed secret and error.",
+      "tags": ["test", "mock", "modifier"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/coreclients/secrets.go:SetFakeSecretsGetterGet",
+      "type": "function",
+      "name": "SetFakeSecretsGetterGet",
+      "filePath": "test/unit/coreclients/secrets.go",
+      "lineRange": [70, 76],
+      "summary": "Modifier that makes the fake client's Get call return a fixed secret and error.",
+      "tags": ["test", "mock", "modifier"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/coreclients/secrets.go:SetFakeSecretsGetterApplyFn",
+      "type": "function",
+      "name": "SetFakeSecretsGetterApplyFn",
+      "filePath": "test/unit/coreclients/secrets.go",
+      "lineRange": [80, 84],
+      "summary": "Modifier that installs a custom Apply implementation on the fake secret client.",
+      "tags": ["test", "mock", "modifier"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/coreclients/secrets.go:Secrets",
+      "type": "function",
+      "name": "Secrets",
+      "filePath": "test/unit/coreclients/secrets.go",
+      "lineRange": [86, 88],
+      "summary": "Returns the underlying fake secret client as the namespace-scoped typed SecretsInterface.",
+      "tags": ["test", "mock", "accessor"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/unit/listers/secret.go",
+      "type": "file",
+      "name": "secret.go",
+      "filePath": "test/unit/listers/secret.go",
+      "summary": "Fake implementations of the client-go Secret listers, with pluggable function fields and modifier helpers for stubbing list and get behaviour in unit tests.",
+      "tags": ["test", "mock", "kubernetes", "lister", "fake"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/unit/listers/secret.go:FakeSecretLister",
+      "type": "class",
+      "name": "FakeSecretLister",
+      "filePath": "test/unit/listers/secret.go",
+      "lineRange": [31, 34],
+      "summary": "Mock SecretLister backed by pluggable ListFn and SecretsFn callbacks.",
+      "tags": ["test", "mock", "lister"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/unit/listers/secret.go:FakeSecretNamespaceLister",
+      "type": "class",
+      "name": "FakeSecretNamespaceLister",
+      "filePath": "test/unit/listers/secret.go",
+      "lineRange": [36, 39],
+      "summary": "Mock namespace-scoped secret lister backed by pluggable ListFn and GetFn callbacks plus a helper that fixes the Get result.",
+      "tags": ["test", "mock", "lister"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/listers/secret.go:NewFakeSecretLister",
+      "type": "function",
+      "name": "NewFakeSecretLister",
+      "filePath": "test/unit/listers/secret.go",
+      "lineRange": [41, 51],
+      "summary": "Creates a FakeSecretLister whose callbacks return empty results, then applies any supplied modifiers.",
+      "tags": ["test", "mock", "factory"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/listers/secret.go:NewFakeSecretNamespaceLister",
+      "type": "function",
+      "name": "NewFakeSecretNamespaceLister",
+      "filePath": "test/unit/listers/secret.go",
+      "lineRange": [53, 62],
+      "summary": "Creates a FakeSecretNamespaceLister with no-op list and get callbacks, then applies any supplied modifiers.",
+      "tags": ["test", "mock", "factory"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/listers/secret.go:FakeSecretNamespaceListerFrom",
+      "type": "function",
+      "name": "FakeSecretNamespaceListerFrom",
+      "filePath": "test/unit/listers/secret.go",
+      "lineRange": [80, 85],
+      "summary": "Applies modifier functions to an existing FakeSecretNamespaceLister and returns it.",
+      "tags": ["test", "mock", "modifier"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/listers/secret.go:FakeSecretListerFrom",
+      "type": "function",
+      "name": "FakeSecretListerFrom",
+      "filePath": "test/unit/listers/secret.go",
+      "lineRange": [96, 101],
+      "summary": "Applies modifier functions to an existing FakeSecretLister and returns it.",
+      "tags": ["test", "mock", "modifier"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/listers/secret.go:SetFakeSecretListerSecret",
+      "type": "function",
+      "name": "SetFakeSecretListerSecret",
+      "filePath": "test/unit/listers/secret.go",
+      "lineRange": [103, 107],
+      "summary": "Builds a modifier that replaces the FakeSecretLister's Secrets lookup function.",
+      "tags": ["test", "mock", "modifier"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/listers/secret.go:SetFakeSecretNamespaceListerGet",
+      "type": "function",
+      "name": "SetFakeSecretNamespaceListerGet",
+      "filePath": "test/unit/listers/secret.go",
+      "lineRange": [109, 119],
+      "summary": "Builds a modifier that makes the FakeSecretLister return a namespace lister whose Get yields a fixed secret and error.",
+      "tags": ["test", "mock", "modifier"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:third_party/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "third_party/README.md",
+      "summary": "Explains cert-manager's conventions for vendored third-party code, how to refresh it with make update-third-party, and the steps for adding a new forked sub-folder.",
+      "tags": ["documentation", "third-party", "development", "licensing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:third_party/forked/acme/PATENTS",
+      "type": "file",
+      "name": "PATENTS",
+      "filePath": "third_party/forked/acme/PATENTS",
+      "summary": "Google patent grant accompanying the forked Go ACME package, defining the patent licence terms and termination conditions for the implementation.",
+      "tags": ["license", "legal", "third-party", "patents"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:third_party/klone.yaml",
+      "type": "config",
+      "name": "klone.yaml",
+      "filePath": "third_party/klone.yaml",
+      "summary": "Klone configuration declaring the upstream cert-manager crypto fork and commit used to vendor the acme package into third_party/forked.",
+      "tags": ["configuration", "third-party", "vendoring", "build-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:tools/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "tools/README.md",
+      "summary": "Short note explaining that the tools directory is a legacy wrapper kept only for compatibility and may be removed in the future.",
+      "tags": ["documentation", "build-tooling", "legacy"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tools/setup-integration-test-dependencies.sh",
+      "type": "file",
+      "name": "setup-integration-test-dependencies.sh",
+      "filePath": "tools/setup-integration-test-dependencies.sh",
+      "summary": "Thin compatibility wrapper that delegates to the make setup-integration-tests target for installing integration test dependencies.",
+      "tags": ["build-tooling", "wrapper", "integration-testing", "shell"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/integration/framework/apiserver.go",
+      "target": "function:test/integration/framework/apiserver.go:WithCRDDirectory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/integration/framework/apiserver.go",
+      "target": "function:test/integration/framework/apiserver.go:RunControlPlane",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/integration/framework/apiserver.go",
+      "target": "function:test/integration/framework/apiserver.go:readCustomResourcesAtPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/integration/framework/apiserver.go",
+      "target": "function:test/integration/framework/apiserver.go:readCRDsAtPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/integration/framework/apiserver.go",
+      "target": "function:test/integration/framework/apiserver.go:getValidatingWebhookConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/integration/framework/apiserver.go",
+      "target": "function:test/integration/framework/apiserver.go:getMutatingWebhookConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/integration/framework/apiserver.go",
+      "target": "function:test/integration/framework/apiserver.go:WithCRDDirectory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/integration/framework/apiserver.go",
+      "target": "function:test/integration/framework/apiserver.go:RunControlPlane",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/integration/framework/helpers.go",
+      "target": "function:test/integration/framework/helpers.go:NewEventRecorder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/integration/framework/helpers.go",
+      "target": "function:test/integration/framework/helpers.go:NewClients",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/integration/framework/helpers.go",
+      "target": "function:test/integration/framework/helpers.go:StartInformersAndController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/integration/framework/helpers.go",
+      "target": "function:test/integration/framework/helpers.go:StartInformersAndControllers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/integration/framework/helpers.go",
+      "target": "function:test/integration/framework/helpers.go:WaitForOpenAPIResourcesToBeLoaded",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/integration/framework/helpers.go",
+      "target": "function:test/integration/framework/helpers.go:NewEventRecorder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/integration/framework/helpers.go",
+      "target": "function:test/integration/framework/helpers.go:NewClients",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/integration/framework/helpers.go",
+      "target": "function:test/integration/framework/helpers.go:StartInformersAndController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/integration/framework/helpers.go",
+      "target": "function:test/integration/framework/helpers.go:StartInformersAndControllers",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/integration/framework/helpers.go",
+      "target": "function:test/integration/framework/helpers.go:WaitForOpenAPIResourcesToBeLoaded",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/coreclients/secrets.go",
+      "target": "class:test/unit/coreclients/secrets.go:FakeSecretsGetter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/coreclients/secrets.go",
+      "target": "class:test/unit/coreclients/secrets.go:fakeSecretClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/coreclients/secrets.go",
+      "target": "function:test/unit/coreclients/secrets.go:NewFakeSecretsGetterFrom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/coreclients/secrets.go",
+      "target": "function:test/unit/coreclients/secrets.go:NewFakeSecretsGetter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/coreclients/secrets.go",
+      "target": "function:test/unit/coreclients/secrets.go:SetFakeSecretsGetterCreate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/coreclients/secrets.go",
+      "target": "function:test/unit/coreclients/secrets.go:SetFakeSecretsGetterGet",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/coreclients/secrets.go",
+      "target": "function:test/unit/coreclients/secrets.go:SetFakeSecretsGetterApplyFn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/coreclients/secrets.go",
+      "target": "function:test/unit/coreclients/secrets.go:Secrets",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/coreclients/secrets.go",
+      "target": "class:test/unit/coreclients/secrets.go:FakeSecretsGetter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/coreclients/secrets.go",
+      "target": "function:test/unit/coreclients/secrets.go:NewFakeSecretsGetterFrom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/coreclients/secrets.go",
+      "target": "function:test/unit/coreclients/secrets.go:NewFakeSecretsGetter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/coreclients/secrets.go",
+      "target": "function:test/unit/coreclients/secrets.go:SetFakeSecretsGetterCreate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/coreclients/secrets.go",
+      "target": "function:test/unit/coreclients/secrets.go:SetFakeSecretsGetterGet",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/coreclients/secrets.go",
+      "target": "function:test/unit/coreclients/secrets.go:SetFakeSecretsGetterApplyFn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/coreclients/secrets.go",
+      "target": "function:test/unit/coreclients/secrets.go:Secrets",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/listers/secret.go",
+      "target": "class:test/unit/listers/secret.go:FakeSecretLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/listers/secret.go",
+      "target": "class:test/unit/listers/secret.go:FakeSecretNamespaceLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/listers/secret.go",
+      "target": "function:test/unit/listers/secret.go:NewFakeSecretLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/listers/secret.go",
+      "target": "function:test/unit/listers/secret.go:NewFakeSecretNamespaceLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/listers/secret.go",
+      "target": "function:test/unit/listers/secret.go:FakeSecretNamespaceListerFrom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/listers/secret.go",
+      "target": "function:test/unit/listers/secret.go:FakeSecretListerFrom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/listers/secret.go",
+      "target": "function:test/unit/listers/secret.go:SetFakeSecretListerSecret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/listers/secret.go",
+      "target": "function:test/unit/listers/secret.go:SetFakeSecretNamespaceListerGet",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/listers/secret.go",
+      "target": "class:test/unit/listers/secret.go:FakeSecretLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/listers/secret.go",
+      "target": "class:test/unit/listers/secret.go:FakeSecretNamespaceLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/listers/secret.go",
+      "target": "function:test/unit/listers/secret.go:NewFakeSecretLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/listers/secret.go",
+      "target": "function:test/unit/listers/secret.go:NewFakeSecretNamespaceLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/listers/secret.go",
+      "target": "function:test/unit/listers/secret.go:FakeSecretNamespaceListerFrom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/listers/secret.go",
+      "target": "function:test/unit/listers/secret.go:FakeSecretListerFrom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/listers/secret.go",
+      "target": "function:test/unit/listers/secret.go:SetFakeSecretListerSecret",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/listers/secret.go",
+      "target": "function:test/unit/listers/secret.go:SetFakeSecretNamespaceListerGet",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "config:test/integration/go.mod",
+      "target": "file:test/integration/framework/apiserver.go",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:test/integration/go.mod",
+      "target": "file:test/integration/framework/helpers.go",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:test/integration/go.sum",
+      "target": "config:test/integration/go.mod",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:test/e2e/go.sum",
+      "target": "config:test/e2e/go.mod",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:third_party/README.md",
+      "target": "config:third_party/klone.yaml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:third_party/README.md",
+      "target": "file:third_party/forked/acme/PATENTS",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:third_party/klone.yaml",
+      "target": "file:third_party/forked/acme/PATENTS",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:tools/README.md",
+      "target": "file:tools/setup-integration-test-dependencies.sh",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:test/integration/rfc2136_dns01/testdata/config.json",
+      "target": "config:test/integration/rfc2136_dns01/testdata/rfc2136-tsig-secret.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

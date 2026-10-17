@@ -1,0 +1,903 @@
+{
+  "nodes": [
+    {
+      "id": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "type": "file",
+      "name": "zz_generated.conversion.go",
+      "filePath": "internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "summary": "Generated conversion functions translating between the v1alpha1 and internal cainjector configuration types, delegating shared TLS and leader-election fields to the shared conversions package.",
+      "tags": [
+        "code-generation",
+        "conversion",
+        "serialization",
+        "api-group"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "type": "file",
+      "name": "zz_generated.defaults.go",
+      "filePath": "internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "summary": "Generated defaulting registration that wires the cainjector configuration defaulter, including shared leader-election and serving-TLS defaults, into the scheme.",
+      "tags": [
+        "code-generation",
+        "defaulting",
+        "api-group",
+        "registration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/cainjector/validation/validation.go",
+      "type": "file",
+      "name": "validation.go",
+      "filePath": "internal/apis/config/cainjector/validation/validation.go",
+      "summary": "Validates the cainjector configuration, delegating logging and leader-election checks to shared validators and aggregating field errors.",
+      "tags": [
+        "validation",
+        "configuration",
+        "api-group",
+        "error-handling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/cainjector/zz_generated.deepcopy.go",
+      "type": "file",
+      "name": "zz_generated.deepcopy.go",
+      "filePath": "internal/apis/config/cainjector/zz_generated.deepcopy.go",
+      "summary": "Generated DeepCopy implementations for the internal cainjector configuration types, deep-copying slices, maps and nested logging/TLS structs.",
+      "tags": [
+        "code-generation",
+        "deepcopy",
+        "api-group",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/apis/config/controller/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "internal/apis/config/controller/doc.go",
+      "summary": "Package-level documentation for the internal controller configuration API group, declaring the group name and deepcopy code-generation markers.",
+      "tags": [
+        "package-doc",
+        "api-group",
+        "code-generation",
+        "internal-api"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/controller/fuzzer/fuzzer.go",
+      "type": "file",
+      "name": "fuzzer.go",
+      "filePath": "internal/apis/config/controller/fuzzer/fuzzer.go",
+      "summary": "Provides randfill fuzzer functions for the internal controller configuration, populating every defaulted field so API round-trip tests stay stable.",
+      "tags": [
+        "testing",
+        "fuzzing",
+        "round-trip",
+        "api-group"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/apis/config/controller/install/install.go",
+      "type": "file",
+      "name": "install.go",
+      "filePath": "internal/apis/config/controller/install/install.go",
+      "summary": "Registers the controller internal and v1alpha1 configuration types into a runtime scheme via a single exported Install helper.",
+      "tags": [
+        "scheme-registration",
+        "initialization",
+        "api-group",
+        "entry-point"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/controller/register.go",
+      "type": "file",
+      "name": "register.go",
+      "filePath": "internal/apis/config/controller/register.go",
+      "summary": "Defines the internal controller config GroupVersion, Resource helper and known-type registration for the scheme.",
+      "tags": [
+        "api-group",
+        "registration",
+        "type-definition",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/controller/scheme/scheme.go",
+      "type": "file",
+      "name": "scheme.go",
+      "filePath": "internal/apis/config/controller/scheme/scheme.go",
+      "summary": "Builds a runtime scheme and codec factory preloaded with the internal and v1alpha1 controller configuration types.",
+      "tags": [
+        "scheme",
+        "serialization",
+        "factory",
+        "api-group"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go:RegisterConversions",
+      "type": "function",
+      "name": "RegisterConversions",
+      "filePath": "internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "lineRange": [
+        41,
+        73
+      ],
+      "summary": "Registers the generated cainjector v1alpha1/internal conversion functions on the supplied conversion scheme.",
+      "tags": [
+        "conversion",
+        "registration",
+        "code-generation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go:autoConvert_v1alpha1_CAInjectorConfiguration_To_cainjector_CAInjectorConfiguration",
+      "type": "function",
+      "name": "autoConvert_v1alpha1_CAInjectorConfiguration_To_cainjector_CAInjectorConfiguration",
+      "filePath": "internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "lineRange": [
+        75,
+        96
+      ],
+      "summary": "Copies every field of the v1alpha1 cainjector configuration into the internal type, delegating shared TLS and leader-election conversions.",
+      "tags": [
+        "conversion",
+        "serialization",
+        "code-generation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go:autoConvert_cainjector_CAInjectorConfiguration_To_v1alpha1_CAInjectorConfiguration",
+      "type": "function",
+      "name": "autoConvert_cainjector_CAInjectorConfiguration_To_v1alpha1_CAInjectorConfiguration",
+      "filePath": "internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "lineRange": [
+        103,
+        124
+      ],
+      "summary": "Copies every field of the internal cainjector configuration back into the v1alpha1 type using unsafe pointer casts for maps.",
+      "tags": [
+        "conversion",
+        "serialization",
+        "code-generation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go:RegisterDefaults",
+      "type": "function",
+      "name": "RegisterDefaults",
+      "filePath": "internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "lineRange": [
+        33,
+        38
+      ],
+      "summary": "Registers the cainjector configuration object defaulter with the scheme's defaulting registry.",
+      "tags": [
+        "defaulting",
+        "registration",
+        "code-generation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go:SetObjectDefaults_CAInjectorConfiguration",
+      "type": "function",
+      "name": "SetObjectDefaults_CAInjectorConfiguration",
+      "filePath": "internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "lineRange": [
+        40,
+        46
+      ],
+      "summary": "Chains all cainjector defaulters - logging, shared leader election, data source, injectable targets and metrics TLS - for a configuration object.",
+      "tags": [
+        "defaulting",
+        "configuration",
+        "code-generation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/cainjector/validation/validation.go:ValidateCAInjectorConfiguration",
+      "type": "function",
+      "name": "ValidateCAInjectorConfiguration",
+      "filePath": "internal/apis/config/cainjector/validation/validation.go",
+      "lineRange": [
+        27,
+        34
+      ],
+      "summary": "Validates a cainjector configuration, aggregating logging and leader-election field errors into a single field.ErrorList.",
+      "tags": [
+        "validation",
+        "configuration",
+        "error-handling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/cainjector/zz_generated.deepcopy.go:DeepCopyInto",
+      "type": "function",
+      "name": "DeepCopyInto",
+      "filePath": "internal/apis/config/cainjector/zz_generated.deepcopy.go",
+      "lineRange": [
+        29,
+        45
+      ],
+      "summary": "Generated deep-copy of a cainjector configuration into an existing object, duplicating feature-gate maps and nested logging/TLS structs; repeated for each config type in the file.",
+      "tags": [
+        "deepcopy",
+        "code-generation",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/config/cainjector/zz_generated.deepcopy.go:DeepCopy",
+      "type": "function",
+      "name": "DeepCopy",
+      "filePath": "internal/apis/config/cainjector/zz_generated.deepcopy.go",
+      "lineRange": [
+        48,
+        55
+      ],
+      "summary": "Generated deep-copy constructor returning a new cainjector configuration object; defined for several config types in this file.",
+      "tags": [
+        "deepcopy",
+        "code-generation",
+        "serialization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/cainjector/zz_generated.deepcopy.go:DeepCopyObject",
+      "type": "function",
+      "name": "DeepCopyObject",
+      "filePath": "internal/apis/config/cainjector/zz_generated.deepcopy.go",
+      "lineRange": [
+        58,
+        63
+      ],
+      "summary": "Implements runtime.Object for the root cainjector configuration by returning a fresh deep copy.",
+      "tags": [
+        "deepcopy",
+        "code-generation",
+        "runtime-object"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/controller/install/install.go:Install",
+      "type": "function",
+      "name": "Install",
+      "filePath": "internal/apis/config/controller/install/install.go",
+      "lineRange": [
+        30,
+        33
+      ],
+      "summary": "Adds the controller internal and v1alpha1 configuration types to the supplied runtime scheme, panicking on registration errors.",
+      "tags": [
+        "scheme-registration",
+        "initialization",
+        "api-group"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/controller/register.go:Resource",
+      "type": "function",
+      "name": "Resource",
+      "filePath": "internal/apis/config/controller/register.go",
+      "lineRange": [
+        35,
+        37
+      ],
+      "summary": "Returns the GroupResource for a controller config resource name under the internal group version.",
+      "tags": [
+        "api-group",
+        "registration",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/controller/scheme/scheme.go:NewSchemeAndCodecs",
+      "type": "function",
+      "name": "NewSchemeAndCodecs",
+      "filePath": "internal/apis/config/controller/scheme/scheme.go",
+      "lineRange": [
+        30,
+        40
+      ],
+      "summary": "Constructs a runtime scheme populated with controller config types and returns it alongside a matching codec factory.",
+      "tags": [
+        "scheme",
+        "factory",
+        "serialization"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "function:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go:RegisterConversions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "function:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go:RegisterConversions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "function:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go:autoConvert_v1alpha1_CAInjectorConfiguration_To_cainjector_CAInjectorConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "function:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go:autoConvert_v1alpha1_CAInjectorConfiguration_To_cainjector_CAInjectorConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "function:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go:autoConvert_cainjector_CAInjectorConfiguration_To_v1alpha1_CAInjectorConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "function:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go:autoConvert_cainjector_CAInjectorConfiguration_To_v1alpha1_CAInjectorConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "target": "function:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go:RegisterDefaults",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "target": "function:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go:RegisterDefaults",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "target": "function:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go:SetObjectDefaults_CAInjectorConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "target": "function:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go:SetObjectDefaults_CAInjectorConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/validation/validation.go",
+      "target": "function:internal/apis/config/cainjector/validation/validation.go:ValidateCAInjectorConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/validation/validation.go",
+      "target": "function:internal/apis/config/cainjector/validation/validation.go:ValidateCAInjectorConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/zz_generated.deepcopy.go",
+      "target": "function:internal/apis/config/cainjector/zz_generated.deepcopy.go:DeepCopyInto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/zz_generated.deepcopy.go",
+      "target": "function:internal/apis/config/cainjector/zz_generated.deepcopy.go:DeepCopyInto",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/zz_generated.deepcopy.go",
+      "target": "function:internal/apis/config/cainjector/zz_generated.deepcopy.go:DeepCopy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/zz_generated.deepcopy.go",
+      "target": "function:internal/apis/config/cainjector/zz_generated.deepcopy.go:DeepCopy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/zz_generated.deepcopy.go",
+      "target": "function:internal/apis/config/cainjector/zz_generated.deepcopy.go:DeepCopyObject",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/zz_generated.deepcopy.go",
+      "target": "function:internal/apis/config/cainjector/zz_generated.deepcopy.go:DeepCopyObject",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/install/install.go",
+      "target": "function:internal/apis/config/controller/install/install.go:Install",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/install/install.go",
+      "target": "function:internal/apis/config/controller/install/install.go:Install",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/register.go",
+      "target": "function:internal/apis/config/controller/register.go:Resource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/register.go",
+      "target": "function:internal/apis/config/controller/register.go:Resource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/scheme/scheme.go",
+      "target": "function:internal/apis/config/controller/scheme/scheme.go:NewSchemeAndCodecs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/scheme/scheme.go",
+      "target": "function:internal/apis/config/controller/scheme/scheme.go:NewSchemeAndCodecs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/cainjector/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/cainjector/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/cainjector/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/cainjector/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/config/cainjector/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/config/cainjector/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/config/cainjector/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/config/cainjector/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "target": "file:pkg/apis/config/cainjector/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "target": "file:pkg/apis/config/cainjector/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "target": "file:pkg/apis/config/cainjector/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "target": "file:pkg/apis/config/cainjector/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/validation/validation.go",
+      "target": "file:internal/apis/config/cainjector/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/validation/validation.go",
+      "target": "file:internal/apis/config/cainjector/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/validation/validation.go",
+      "target": "file:internal/apis/config/cainjector/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/validation/validation.go",
+      "target": "file:internal/apis/config/cainjector/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/validation/validation.go",
+      "target": "file:internal/apis/config/shared/validation/validation.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/config/controller/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/config/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/config/controller/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/config/controller/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/install/install.go",
+      "target": "file:internal/apis/config/controller/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/install/install.go",
+      "target": "file:internal/apis/config/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/install/install.go",
+      "target": "file:internal/apis/config/controller/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/install/install.go",
+      "target": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/install/install.go",
+      "target": "file:internal/apis/config/controller/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/install/install.go",
+      "target": "file:internal/apis/config/controller/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/install/install.go",
+      "target": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/install/install.go",
+      "target": "file:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/install/install.go",
+      "target": "file:internal/apis/config/controller/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/register.go",
+      "target": "file:pkg/apis/config/controller/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/scheme/scheme.go",
+      "target": "file:internal/apis/config/controller/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/scheme/scheme.go",
+      "target": "file:internal/apis/config/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/scheme/scheme.go",
+      "target": "file:internal/apis/config/controller/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/scheme/scheme.go",
+      "target": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/scheme/scheme.go",
+      "target": "file:internal/apis/config/controller/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/scheme/scheme.go",
+      "target": "file:internal/apis/config/controller/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/scheme/scheme.go",
+      "target": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/scheme/scheme.go",
+      "target": "file:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/scheme/scheme.go",
+      "target": "file:internal/apis/config/controller/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go:SetObjectDefaults_CAInjectorConfiguration",
+      "target": "function:internal/apis/config/shared/v1alpha1/defaults.go:SetDefaults_LeaderElectionConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go:SetObjectDefaults_CAInjectorConfiguration",
+      "target": "function:internal/apis/config/shared/v1alpha1/defaults.go:SetDefaults_DynamicServingConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/config/cainjector/validation/validation.go:ValidateCAInjectorConfiguration",
+      "target": "function:internal/apis/config/shared/validation/validation.go:ValidateLeaderElectionConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go:autoConvert_v1alpha1_CAInjectorConfiguration_To_cainjector_CAInjectorConfiguration",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_v1alpha1_LeaderElectionConfig_To_shared_LeaderElectionConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go:autoConvert_v1alpha1_CAInjectorConfiguration_To_cainjector_CAInjectorConfiguration",
+      "target": "function:internal/apis/config/shared/v1alpha1/conversion.go:Convert_v1alpha1_TLSConfig_To_shared_TLSConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

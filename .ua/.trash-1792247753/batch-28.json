@@ -1,0 +1,215 @@
+{
+  "nodes": [
+    {
+      "id": "config:.clomonitor.yml",
+      "type": "config",
+      "name": ".clomonitor.yml",
+      "filePath": ".clomonitor.yml",
+      "summary": "CLOMonitor configuration that points the CNCF project-health scanner at cert-manager's license scanning results so the license check passes.",
+      "tags": ["configuration", "monitoring", "license-compliance", "cncf"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.golangci.yaml",
+      "type": "config",
+      "name": ".golangci.yaml",
+      "filePath": ".golangci.yaml",
+      "summary": "golangci-lint v2 configuration enabling a large curated set of Go linters with exclusions for generated code and third-party paths, plus gci/gofmt import formatting ordered by cert-manager prefix.",
+      "tags": ["configuration", "linting", "go", "code-quality", "build-system"],
+      "complexity": "moderate",
+      "languageNotes": "Uses golangci-lint v2 schema with `linters.default: none`, explicitly opting in to each linter; gci sections group cert-manager imports after standard and default imports."
+    },
+    {
+      "id": "document:CODE_OF_CONDUCT.md",
+      "type": "document",
+      "name": "CODE_OF_CONDUCT.md",
+      "filePath": "CODE_OF_CONDUCT.md",
+      "summary": "Stub document redirecting readers to the cert-manager organisation Code of Conduct in the community repository.",
+      "tags": ["documentation", "community", "governance"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:CONTRIBUTING.md",
+      "type": "document",
+      "name": "CONTRIBUTING.md",
+      "filePath": "CONTRIBUTING.md",
+      "summary": "Stub document pointing contributors to the cert-manager website's contributing guide.",
+      "tags": ["documentation", "contributing", "development"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:GOVERNANCE.md",
+      "type": "document",
+      "name": "GOVERNANCE.md",
+      "filePath": "GOVERNANCE.md",
+      "summary": "Stub document redirecting readers to the cert-manager organisation governance file in the community repository.",
+      "tags": ["documentation", "governance", "community"],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:Makefile",
+      "type": "service",
+      "name": "Makefile",
+      "filePath": "Makefile",
+      "summary": "Auto-generated root Makefile that bootstraps the cert-manager build: sets host OS/arch and git version variables, defines the _bin/artifacts directories, a clean target, and includes the repository-specific and shared make modules.",
+      "tags": ["build-system", "infrastructure", "makefile", "tooling"],
+      "complexity": "moderate",
+      "languageNotes": "Uses .SECONDEXPANSION and last-moment variable evaluation so module-provided dependency variables resolve late; shared logic lives in make/_shared and is cloned via klone."
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Primary project README describing what cert-manager does, its supported issuers, documentation and installation pointers, development and contribution guidance, Go module compatibility caveats, and security reporting instructions.",
+      "tags": ["documentation", "entry-point", "overview", "kubernetes"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:RELEASE.md",
+      "type": "document",
+      "name": "RELEASE.md",
+      "filePath": "RELEASE.md",
+      "summary": "Release documentation covering the release schedule, links to the detailed release process, and the artifacts produced per release: container images, Helm chart, and binaries.",
+      "tags": ["documentation", "release", "deployment", "artifacts"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:ROADMAP.md",
+      "type": "document",
+      "name": "ROADMAP.md",
+      "filePath": "ROADMAP.md",
+      "summary": "Minimal roadmap stub noting that the project roadmap has moved to the cert-manager community repository.",
+      "tags": ["documentation", "roadmap", "community"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:SECURITY.md",
+      "type": "document",
+      "name": "SECURITY.md",
+      "filePath": "SECURITY.md",
+      "summary": "Security policy stub directing vulnerability reporters to the cert-manager organisation security document.",
+      "tags": ["documentation", "security", "vulnerability-reporting"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:SECURITY_CONTACTS.md",
+      "type": "document",
+      "name": "SECURITY_CONTACTS.md",
+      "filePath": "SECURITY_CONTACTS.md",
+      "summary": "Stub document pointing to the cert-manager organisation security contacts list used for private vulnerability reports.",
+      "tags": ["documentation", "security", "contacts"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:USERS.md",
+      "type": "document",
+      "name": "USERS.md",
+      "filePath": "USERS.md",
+      "summary": "Stub document redirecting to the cert-manager organisation users list maintained in the community repository.",
+      "tags": ["documentation", "community", "adopters"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:go.mod",
+      "type": "config",
+      "name": "go.mod",
+      "filePath": "go.mod",
+      "summary": "Go module definition for github.com/cert-manager/cert-manager on Go 1.25, pinning Kubernetes, controller-runtime, cloud provider SDKs, Vault, Venafi, and other dependencies required by the certificate issuance components.",
+      "tags": ["configuration", "go", "dependencies", "build-system"],
+      "complexity": "moderate",
+      "languageNotes": "Split into direct and indirect require blocks with `// indirect` markers; a comment reserves the top of the file for replace directives."
+    },
+    {
+      "id": "config:go.sum",
+      "type": "config",
+      "name": "go.sum",
+      "filePath": "go.sum",
+      "summary": "Generated Go checksum lock file recording module hashes for every direct and transitive dependency in the cert-manager module graph.",
+      "tags": ["configuration", "go", "dependencies", "lockfile"],
+      "complexity": "moderate",
+      "languageNotes": "Generated by the Go toolchain; must not be hand-edited."
+    },
+    {
+      "id": "config:klone.yaml",
+      "type": "config",
+      "name": "klone.yaml",
+      "filePath": "klone.yaml",
+      "summary": "Klone manifest declaring which cert-manager makefile-modules (boilerplate, go, help, licenses, repository-base, tools, helm) are cloned into make/_shared and at which pinned commit, driving the root Makefile includes.",
+      "tags": ["configuration", "build-system", "makefile", "dependency-pinning"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:README.md",
+      "target": "document:SECURITY.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:CONTRIBUTING.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:.clomonitor.yml",
+      "target": "document:README.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "service:Makefile",
+      "target": "config:klone.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:.golangci.yaml",
+      "target": "config:go.mod",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:go.mod",
+      "target": "file:cmd/controller/main.go",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:go.mod",
+      "target": "file:cmd/webhook/main.go",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:go.mod",
+      "target": "file:cmd/cainjector/main.go",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:go.mod",
+      "target": "file:cmd/acmesolver/main.go",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:go.mod",
+      "target": "file:cmd/startupapicheck/main.go",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

@@ -1,0 +1,1136 @@
+{
+  "nodes": [
+    {
+      "id": "file:internal/apis/certmanager/validation/issuer.go",
+      "type": "file",
+      "name": "issuer.go",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "summary": "Comprehensive validation of Issuer and ClusterIssuer specs, covering ACME, CA, self-signed, Vault, and Venafi configurations and their credentials.",
+      "tags": [
+        "validation",
+        "admission",
+        "issuer",
+        "acme"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuer",
+      "type": "function",
+      "name": "ValidateIssuer",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        38,
+        42
+      ],
+      "summary": "Entry point that validates an Issuer spec on admission.",
+      "tags": [
+        "validation",
+        "admission",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:ValidateUpdateIssuer",
+      "type": "function",
+      "name": "ValidateUpdateIssuer",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        44,
+        49
+      ],
+      "summary": "Validates Issuer updates through the shared issuer spec validation.",
+      "tags": [
+        "validation",
+        "admission",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuerSpec",
+      "type": "function",
+      "name": "ValidateIssuerSpec",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        51,
+        53
+      ],
+      "summary": "Validates an issuer specification by delegating to the selected issuer configuration validator.",
+      "tags": [
+        "validation",
+        "issuer",
+        "dispatch"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuerConfig",
+      "type": "function",
+      "name": "ValidateIssuerConfig",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        55,
+        105
+      ],
+      "summary": "Checks that exactly one issuer backend is configured and dispatches to its dedicated validator.",
+      "tags": [
+        "validation",
+        "issuer",
+        "dispatch"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerConfig",
+      "type": "function",
+      "name": "ValidateACMEIssuerConfig",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        107,
+        150
+      ],
+      "summary": "Validates ACME issuer server, credentials, and challenge solver configuration.",
+      "tags": [
+        "validation",
+        "issuer",
+        "acme"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverConfig",
+      "type": "function",
+      "name": "ValidateACMEIssuerChallengeSolverConfig",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        152,
+        173
+      ],
+      "summary": "Validates a challenge solver selector and its HTTP-01 or DNS-01 configuration.",
+      "tags": [
+        "validation",
+        "acme",
+        "solver"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverHTTP01Config",
+      "type": "function",
+      "name": "ValidateACMEIssuerChallengeSolverHTTP01Config",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        175,
+        195
+      ],
+      "summary": "Validates HTTP-01 solver configuration, requiring exactly one of ingress or gateway.",
+      "tags": [
+        "validation",
+        "acme",
+        "http01"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverHTTP01IngressConfig",
+      "type": "function",
+      "name": "ValidateACMEIssuerChallengeSolverHTTP01IngressConfig",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        197,
+        232
+      ],
+      "summary": "Validates ingress-based HTTP-01 solver settings such as service type and ingress class.",
+      "tags": [
+        "validation",
+        "acme",
+        "http01"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverHTTP01GatewayConfig",
+      "type": "function",
+      "name": "ValidateACMEIssuerChallengeSolverHTTP01GatewayConfig",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        234,
+        246
+      ],
+      "summary": "Validates Gateway API HTTPRoute-based HTTP-01 solver settings.",
+      "tags": [
+        "validation",
+        "acme",
+        "http01"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:ValidateCAIssuerConfig",
+      "type": "function",
+      "name": "ValidateCAIssuerConfig",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        248,
+        264
+      ],
+      "summary": "Validates CA issuer secret references and CRL distribution points.",
+      "tags": [
+        "validation",
+        "issuer",
+        "ca"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:ValidateSelfSignedIssuerConfig",
+      "type": "function",
+      "name": "ValidateSelfSignedIssuerConfig",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        266,
+        268
+      ],
+      "summary": "Accepts self-signed issuer configuration, which has no required fields.",
+      "tags": [
+        "validation",
+        "issuer",
+        "self-signed"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:ValidateVaultIssuerConfig",
+      "type": "function",
+      "name": "ValidateVaultIssuerConfig",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        270,
+        303
+      ],
+      "summary": "Validates Vault issuer server, path, namespace, and authentication settings.",
+      "tags": [
+        "validation",
+        "issuer",
+        "vault"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:ValidateVaultIssuerAuth",
+      "type": "function",
+      "name": "ValidateVaultIssuerAuth",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        305,
+        367
+      ],
+      "summary": "Validates that exactly one Vault authentication method is configured and that its required fields are present.",
+      "tags": [
+        "validation",
+        "vault",
+        "authentication"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:ValidateVenafiTPP",
+      "type": "function",
+      "name": "ValidateVenafiTPP",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        369,
+        380
+      ],
+      "summary": "Validates Venafi TPP URL and access credentials.",
+      "tags": [
+        "validation",
+        "issuer",
+        "venafi"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:validateVenafiTPPCABundleUnique",
+      "type": "function",
+      "name": "validateVenafiTPPCABundleUnique",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        382,
+        396
+      ],
+      "summary": "Ensures a Venafi TPP CA bundle is not provided in more than one field.",
+      "tags": [
+        "validation",
+        "venafi",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:ValidateVenafiCloud",
+      "type": "function",
+      "name": "ValidateVenafiCloud",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        398,
+        400
+      ],
+      "summary": "Accepts Venafi Cloud configuration for further validation by the shared Venafi validator.",
+      "tags": [
+        "validation",
+        "issuer",
+        "venafi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:ValidateVenafiIssuerConfig",
+      "type": "function",
+      "name": "ValidateVenafiIssuerConfig",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        402,
+        424
+      ],
+      "summary": "Validates that exactly one Venafi backend (TPP or Cloud) is configured.",
+      "tags": [
+        "validation",
+        "issuer",
+        "venafi"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEChallengeSolverDNS01",
+      "type": "function",
+      "name": "ValidateACMEChallengeSolverDNS01",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        434,
+        628
+      ],
+      "summary": "Validates DNS-01 provider credentials and ensures only one provider is configured.",
+      "tags": [
+        "validation",
+        "acme",
+        "dns"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:ValidateSecretKeySelector",
+      "type": "function",
+      "name": "ValidateSecretKeySelector",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        630,
+        639
+      ],
+      "summary": "Validates a secret key selector used for issuer credentials.",
+      "tags": [
+        "validation",
+        "secret",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/issuer.go:validateCABundleNotEmpty",
+      "type": "function",
+      "name": "validateCABundleNotEmpty",
+      "filePath": "internal/apis/certmanager/validation/issuer.go",
+      "lineRange": [
+        645,
+        658
+      ],
+      "summary": "Rejects an explicitly empty CA bundle value.",
+      "tags": [
+        "validation",
+        "utility",
+        "certificate"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/apis/certmanager/validation/util/conditions.go",
+      "type": "file",
+      "name": "conditions.go",
+      "filePath": "internal/apis/certmanager/validation/util/conditions.go",
+      "summary": "Utility helper for locating a CertificateRequest condition by its condition type.",
+      "tags": [
+        "utility",
+        "conditions",
+        "certificaterequest",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/util/conditions.go:GetCertificateRequestCondition",
+      "type": "function",
+      "name": "GetCertificateRequestCondition",
+      "filePath": "internal/apis/certmanager/validation/util/conditions.go",
+      "lineRange": [
+        23,
+        30
+      ],
+      "summary": "Returns the CertificateRequest condition matching the given type, or nil when it is absent.",
+      "tags": [
+        "utility",
+        "conditions",
+        "certificaterequest"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/certmanager/validation/util/nameserver.go",
+      "type": "file",
+      "name": "nameserver.go",
+      "filePath": "internal/apis/certmanager/validation/util/nameserver.go",
+      "summary": "Validates and normalizes RFC2136 nameserver addresses into host:port form, defaulting the port to 53.",
+      "tags": [
+        "utility",
+        "validation",
+        "dns",
+        "rfc2136"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/util/nameserver.go:ValidNameserver",
+      "type": "function",
+      "name": "ValidNameserver",
+      "filePath": "internal/apis/certmanager/validation/util/nameserver.go",
+      "lineRange": [
+        28,
+        66
+      ],
+      "summary": "Normalizes and validates an RFC2136 nameserver address, defaulting the port to 53 and returning host:port form.",
+      "tags": [
+        "utility",
+        "validation",
+        "dns"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/apis/certmanager/validation/warnings.go",
+      "type": "file",
+      "name": "warnings.go",
+      "filePath": "internal/apis/certmanager/validation/warnings.go",
+      "summary": "Defines the warning message constants emitted by the cert-manager validating webhook, including ACME EAB deprecation and private key rotation policy notices.",
+      "tags": [
+        "constants",
+        "validation",
+        "admission",
+        "warnings"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/certmanager/zz_generated.deepcopy.go",
+      "type": "file",
+      "name": "zz_generated.deepcopy.go",
+      "filePath": "internal/apis/certmanager/zz_generated.deepcopy.go",
+      "summary": "Generated deepcopy implementations for every internal cert-manager API type, supporting safe object caching and scheme registration.",
+      "tags": [
+        "generated",
+        "deepcopy",
+        "api-group",
+        "cert-manager"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/acme/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/acme/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/acme/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/acme/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/acme/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/acme/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/certmanager/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/certmanager/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/certmanager/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/certmanager/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/certmanager/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/certmanager/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/certmanager/validation/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/certmanager/validation/util/nameserver.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/certmanager/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/meta/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/meta/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/meta/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "file:internal/apis/meta/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/util/conditions.go",
+      "target": "file:internal/apis/certmanager/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/util/conditions.go",
+      "target": "file:internal/apis/certmanager/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/util/conditions.go",
+      "target": "file:internal/apis/certmanager/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/util/conditions.go",
+      "target": "file:internal/apis/certmanager/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/util/conditions.go",
+      "target": "file:internal/apis/certmanager/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/util/conditions.go",
+      "target": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/util/conditions.go",
+      "target": "file:internal/apis/certmanager/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/util/conditions.go",
+      "target": "file:internal/apis/certmanager/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/zz_generated.deepcopy.go",
+      "target": "file:internal/apis/acme/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/zz_generated.deepcopy.go",
+      "target": "file:internal/apis/acme/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/zz_generated.deepcopy.go",
+      "target": "file:internal/apis/acme/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/zz_generated.deepcopy.go",
+      "target": "file:internal/apis/acme/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/zz_generated.deepcopy.go",
+      "target": "file:internal/apis/acme/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/zz_generated.deepcopy.go",
+      "target": "file:internal/apis/acme/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/zz_generated.deepcopy.go",
+      "target": "file:internal/apis/meta/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/zz_generated.deepcopy.go",
+      "target": "file:internal/apis/meta/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/zz_generated.deepcopy.go",
+      "target": "file:internal/apis/meta/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/zz_generated.deepcopy.go",
+      "target": "file:internal/apis/meta/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateUpdateIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuerSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuerConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverHTTP01Config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverHTTP01IngressConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverHTTP01GatewayConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateCAIssuerConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateSelfSignedIssuerConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateVaultIssuerConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateVaultIssuerAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateVenafiTPP",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:validateVenafiTPPCABundleUnique",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateVenafiCloud",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateVenafiIssuerConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEChallengeSolverDNS01",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateSecretKeySelector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:validateCABundleNotEmpty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/util/conditions.go",
+      "target": "function:internal/apis/certmanager/validation/util/conditions.go:GetCertificateRequestCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/util/nameserver.go",
+      "target": "function:internal/apis/certmanager/validation/util/nameserver.go:ValidNameserver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateUpdateIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuerSpec",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuerConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverHTTP01Config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverHTTP01IngressConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverHTTP01GatewayConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateCAIssuerConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateSelfSignedIssuerConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateVaultIssuerConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateVaultIssuerAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateVenafiTPP",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateVenafiCloud",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateVenafiIssuerConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEChallengeSolverDNS01",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/issuer.go",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateSecretKeySelector",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/util/conditions.go",
+      "target": "function:internal/apis/certmanager/validation/util/conditions.go:GetCertificateRequestCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/util/nameserver.go",
+      "target": "function:internal/apis/certmanager/validation/util/nameserver.go:ValidNameserver",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuer",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuerSpec",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/issuer.go:ValidateUpdateIssuer",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuerSpec",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuerSpec",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuerConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuerConfig",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuerConfig",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateCAIssuerConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuerConfig",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateSelfSignedIssuerConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuerConfig",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateVaultIssuerConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuerConfig",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateVenafiIssuerConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerConfig",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverConfig",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverHTTP01Config",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverConfig",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEChallengeSolverDNS01",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverHTTP01Config",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverHTTP01IngressConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverHTTP01Config",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEIssuerChallengeSolverHTTP01GatewayConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/issuer.go:ValidateVaultIssuerConfig",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateVaultIssuerAuth",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/issuer.go:ValidateVenafiIssuerConfig",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateVenafiTPP",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/issuer.go:ValidateVenafiIssuerConfig",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateVenafiCloud",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/issuer.go:ValidateVenafiTPP",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:validateVenafiTPPCABundleUnique",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/issuer.go:ValidateACMEChallengeSolverDNS01",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateSecretKeySelector",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

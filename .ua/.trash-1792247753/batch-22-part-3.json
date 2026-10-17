@@ -1,0 +1,1727 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/issuer/acme/setup.go",
+      "type": "file",
+      "name": "setup.go",
+      "filePath": "pkg/issuer/acme/setup.go",
+      "summary": "ACME issuer setup that loads or generates the account key, registers or verifies the ACME account, and configures the shared client registry.",
+      "tags": [
+        "issuer",
+        "acme",
+        "setup",
+        "kubernetes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/setup.go:Setup",
+      "type": "function",
+      "name": "Setup",
+      "filePath": "pkg/issuer/acme/setup.go",
+      "lineRange": [
+        72,
+        84
+      ],
+      "summary": "Entry point that sets up the ACME account for an issuer and translates the result into issuer status conditions and events.",
+      "tags": [
+        "issuer",
+        "acme",
+        "entry-point"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/setup.go:setup",
+      "type": "function",
+      "name": "setup",
+      "filePath": "pkg/issuer/acme/setup.go",
+      "lineRange": [
+        94,
+        432
+      ],
+      "summary": "Validates issuer configuration, resolves the account private key Secret, creates the ACME client, and registers or verifies the account.",
+      "tags": [
+        "issuer",
+        "acme",
+        "account",
+        "orchestration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/setup.go:ensureEmailUpToDate",
+      "type": "function",
+      "name": "ensureEmailUpToDate",
+      "filePath": "pkg/issuer/acme/setup.go",
+      "lineRange": [
+        434,
+        463
+      ],
+      "summary": "Updates the registered ACME account contact address when it differs from the issuer spec.",
+      "tags": [
+        "acme",
+        "account",
+        "update"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/setup.go:registerAccount",
+      "type": "function",
+      "name": "registerAccount",
+      "filePath": "pkg/issuer/acme/setup.go",
+      "lineRange": [
+        469,
+        495
+      ],
+      "summary": "Registers a new ACME account or retrieves the existing account when the private key is already registered.",
+      "tags": [
+        "acme",
+        "account",
+        "registration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/setup.go:getEABKey",
+      "type": "function",
+      "name": "getEABKey",
+      "filePath": "pkg/issuer/acme/setup.go",
+      "lineRange": [
+        497,
+        523
+      ],
+      "summary": "Reads and base64-decodes the external account binding key from a Kubernetes Secret.",
+      "tags": [
+        "acme",
+        "kubernetes",
+        "secret",
+        "eab"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/setup.go:createAccountPrivateKey",
+      "type": "function",
+      "name": "createAccountPrivateKey",
+      "filePath": "pkg/issuer/acme/setup.go",
+      "lineRange": [
+        527,
+        552
+      ],
+      "summary": "Generates an RSA account key and persists it in a cert-manager managed Kubernetes Secret.",
+      "tags": [
+        "acme",
+        "key-management",
+        "kubernetes",
+        "secret"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:third_party/forked/acme/acme.go",
+      "type": "file",
+      "name": "acme.go",
+      "filePath": "third_party/forked/acme/acme.go",
+      "summary": "Forked golang.org/x/crypto/acme client implementing RFC 8555 discovery, accounts, authorizations, challenges, nonces, and TLS-ALPN certificate handling.",
+      "tags": [
+        "acme",
+        "vendor",
+        "client",
+        "rfc8555"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:third_party/forked/acme/acme.go:Client",
+      "type": "class",
+      "name": "Client",
+      "filePath": "third_party/forked/acme/acme.go",
+      "lineRange": [
+        84,
+        134
+      ],
+      "summary": "ACME client holding the account key, directory state, nonce cache, user agent, and retry/backoff configuration.",
+      "tags": [
+        "acme",
+        "client",
+        "state"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/acme.go:accountKID",
+      "type": "function",
+      "name": "accountKID",
+      "filePath": "third_party/forked/acme/acme.go",
+      "lineRange": [
+        145,
+        157
+      ],
+      "summary": "Resolves the account key identifier from the cached account or by looking up the registered account.",
+      "tags": [
+        "acme",
+        "account",
+        "authentication"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/acme.go:Discover",
+      "type": "function",
+      "name": "Discover",
+      "filePath": "third_party/forked/acme/acme.go",
+      "lineRange": [
+        166,
+        215
+      ],
+      "summary": "Fetches and caches the ACME directory, validates RFC 8555 support, and records nonces from the response.",
+      "tags": [
+        "acme",
+        "discovery",
+        "directory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/acme.go:authorize",
+      "type": "function",
+      "name": "authorize",
+      "filePath": "third_party/forked/acme/acme.go",
+      "lineRange": [
+        353,
+        387
+      ],
+      "summary": "Creates a new authorization for a domain or IP identifier and returns the resulting authorization URL.",
+      "tags": [
+        "acme",
+        "authorization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/acme.go:GetAuthorization",
+      "type": "function",
+      "name": "GetAuthorization",
+      "filePath": "third_party/forked/acme/acme.go",
+      "lineRange": [
+        393,
+        408
+      ],
+      "summary": "Retrieves an authorization resource using POST-as-GET.",
+      "tags": [
+        "acme",
+        "authorization",
+        "lookup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/acme.go:RevokeAuthorization",
+      "type": "function",
+      "name": "RevokeAuthorization",
+      "filePath": "third_party/forked/acme/acme.go",
+      "lineRange": [
+        419,
+        439
+      ],
+      "summary": "Deactivates an authorization by posting a deactivated status to its URL.",
+      "tags": [
+        "acme",
+        "authorization",
+        "revocation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/acme.go:WaitAuthorization",
+      "type": "function",
+      "name": "WaitAuthorization",
+      "filePath": "third_party/forked/acme/acme.go",
+      "lineRange": [
+        448,
+        490
+      ],
+      "summary": "Polls an authorization until it reaches a final state, honoring context cancellation and retryable transport errors.",
+      "tags": [
+        "acme",
+        "authorization",
+        "polling"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/acme.go:GetChallenge",
+      "type": "function",
+      "name": "GetChallenge",
+      "filePath": "third_party/forked/acme/acme.go",
+      "lineRange": [
+        495,
+        511
+      ],
+      "summary": "Retrieves a challenge resource using POST-as-GET.",
+      "tags": [
+        "acme",
+        "challenge",
+        "lookup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/acme.go:Accept",
+      "type": "function",
+      "name": "Accept",
+      "filePath": "third_party/forked/acme/acme.go",
+      "lineRange": [
+        517,
+        540
+      ],
+      "summary": "Notifies the ACME server that a challenge is ready for validation.",
+      "tags": [
+        "acme",
+        "challenge",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/acme.go:TLSALPN01ChallengeCert",
+      "type": "function",
+      "name": "TLSALPN01ChallengeCert",
+      "filePath": "third_party/forked/acme/acme.go",
+      "lineRange": [
+        611,
+        642
+      ],
+      "summary": "Builds a self-signed tls-alpn-01 challenge certificate for the identifier and token.",
+      "tags": [
+        "acme",
+        "tls-alpn",
+        "certificate",
+        "challenge"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/acme.go:popNonce",
+      "type": "function",
+      "name": "popNonce",
+      "filePath": "third_party/forked/acme/acme.go",
+      "lineRange": [
+        648,
+        668
+      ],
+      "summary": "Returns and removes a cached nonce, fetching a fresh one from the directory or previous response when the cache is empty.",
+      "tags": [
+        "acme",
+        "nonce",
+        "replay-protection"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/acme.go:addNonce",
+      "type": "function",
+      "name": "addNonce",
+      "filePath": "third_party/forked/acme/acme.go",
+      "lineRange": [
+        678,
+        692
+      ],
+      "summary": "Adds replay nonces from response headers to the bounded nonce cache.",
+      "tags": [
+        "acme",
+        "nonce",
+        "cache"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/acme.go:fetchNonce",
+      "type": "function",
+      "name": "fetchNonce",
+      "filePath": "third_party/forked/acme/acme.go",
+      "lineRange": [
+        694,
+        712
+      ],
+      "summary": "Requests a new nonce from the ACME server using a HEAD request.",
+      "tags": [
+        "acme",
+        "nonce",
+        "http"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/acme.go:linkHeader",
+      "type": "function",
+      "name": "linkHeader",
+      "filePath": "third_party/forked/acme/acme.go",
+      "lineRange": [
+        721,
+        736
+      ],
+      "summary": "Parses HTTP Link headers and returns URLs matching the requested relation.",
+      "tags": [
+        "http",
+        "parsing",
+        "pagination"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/acme.go:tlsChallengeCert",
+      "type": "function",
+      "name": "tlsChallengeCert",
+      "filePath": "third_party/forked/acme/acme.go",
+      "lineRange": [
+        767,
+        807
+      ],
+      "summary": "Creates a tls-alpn-01 challenge certificate containing the acmeIdentifier extension using supplied key and template options.",
+      "tags": [
+        "acme",
+        "tls-alpn",
+        "certificate"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:third_party/forked/acme/http.go",
+      "type": "file",
+      "name": "http.go",
+      "filePath": "third_party/forked/acme/http.go",
+      "summary": "HTTP transport layer for the forked ACME client, implementing retries, backoff, nonce-aware JWS POSTs, status validation, and structured error responses.",
+      "tags": [
+        "acme",
+        "http-client",
+        "retry",
+        "vendor"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:third_party/forked/acme/http.go:retryTimer",
+      "type": "class",
+      "name": "retryTimer",
+      "filePath": "third_party/forked/acme/http.go",
+      "lineRange": [
+        26,
+        32
+      ],
+      "summary": "Tracks retry attempts and sleeps according to the client's backoff function.",
+      "tags": [
+        "retry",
+        "backoff"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:third_party/forked/acme/http.go:backoff",
+      "type": "function",
+      "name": "backoff",
+      "filePath": "third_party/forked/acme/http.go",
+      "lineRange": [
+        39,
+        52
+      ],
+      "summary": "Sleeps for the configured backoff duration or returns an error when retries are exhausted or the context is cancelled.",
+      "tags": [
+        "retry",
+        "backoff",
+        "context"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/http.go:defaultBackoff",
+      "type": "function",
+      "name": "defaultBackoff",
+      "filePath": "third_party/forked/acme/http.go",
+      "lineRange": [
+        68,
+        90
+      ],
+      "summary": "Provides the default truncated exponential backoff with jitter for retried requests.",
+      "tags": [
+        "retry",
+        "backoff"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/http.go:retryAfter",
+      "type": "function",
+      "name": "retryAfter",
+      "filePath": "third_party/forked/acme/http.go",
+      "lineRange": [
+        95,
+        104
+      ],
+      "summary": "Parses a Retry-After header value into a duration.",
+      "tags": [
+        "http",
+        "parsing",
+        "retry"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:third_party/forked/acme/http.go:wantStatus",
+      "type": "function",
+      "name": "wantStatus",
+      "filePath": "third_party/forked/acme/http.go",
+      "lineRange": [
+        112,
+        121
+      ],
+      "summary": "Returns a response validator that accepts only the listed HTTP status codes.",
+      "tags": [
+        "http",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:third_party/forked/acme/http.go:get",
+      "type": "function",
+      "name": "get",
+      "filePath": "third_party/forked/acme/http.go",
+      "lineRange": [
+        128,
+        155
+      ],
+      "summary": "Performs an HTTP GET with retry handling and returns the response after validating its status.",
+      "tags": [
+        "http",
+        "retry"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/http.go:post",
+      "type": "function",
+      "name": "post",
+      "filePath": "third_party/forked/acme/http.go",
+      "lineRange": [
+        172,
+        200
+      ],
+      "summary": "Signs and sends a JWS POST request with nonce handling and configurable retries.",
+      "tags": [
+        "http",
+        "jws",
+        "nonce",
+        "retry"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/http.go:postNoRetry",
+      "type": "function",
+      "name": "postNoRetry",
+      "filePath": "third_party/forked/acme/http.go",
+      "lineRange": [
+        214,
+        242
+      ],
+      "summary": "Sends a signed JWS POST request exactly once without retrying.",
+      "tags": [
+        "http",
+        "jws"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/http.go:doNoRetry",
+      "type": "function",
+      "name": "doNoRetry",
+      "filePath": "third_party/forked/acme/http.go",
+      "lineRange": [
+        245,
+        262
+      ],
+      "summary": "Executes an HTTP request once and maps transport failures to ACME errors.",
+      "tags": [
+        "http",
+        "error-handling"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/http.go:init",
+      "type": "function",
+      "name": "init",
+      "filePath": "third_party/forked/acme/http.go",
+      "lineRange": [
+        275,
+        291
+      ],
+      "summary": "Resolves the module version at startup for inclusion in the User-Agent header.",
+      "tags": [
+        "initialization",
+        "build-info"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:third_party/forked/acme/http.go:responseError",
+      "type": "function",
+      "name": "responseError",
+      "filePath": "third_party/forked/acme/http.go",
+      "lineRange": [
+        326,
+        341
+      ],
+      "summary": "Converts an HTTP response into a structured ACME Error carrying problem details.",
+      "tags": [
+        "http",
+        "error-handling"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/http.go:userAgent",
+      "type": "function",
+      "name": "userAgent",
+      "filePath": "third_party/forked/acme/http.go",
+      "lineRange": [
+        295,
+        304
+      ],
+      "summary": "Builds the User-Agent header from the forked package path, module version, and configured user agent.",
+      "tags": [
+        "http",
+        "user-agent"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:third_party/forked/acme/internal/acmeprobe/prober.go",
+      "type": "file",
+      "name": "prober.go",
+      "filePath": "third_party/forked/acme/internal/acmeprobe/prober.go",
+      "summary": "Standalone ACME probing tool that exercises order and pre-authorization flows against a live CA using http-01, dns-01, or tls-alpn-01 challenges.",
+      "tags": [
+        "tool",
+        "acme",
+        "testing",
+        "cli"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:third_party/forked/acme/internal/acmeprobe/prober.go:prober",
+      "type": "class",
+      "name": "prober",
+      "filePath": "third_party/forked/acme/internal/acmeprobe/prober.go",
+      "lineRange": [
+        137,
+        144
+      ],
+      "summary": "Coordinates an ACME probe run, carrying flow options and an error callback.",
+      "tags": [
+        "acme",
+        "testing",
+        "orchestration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:third_party/forked/acme/internal/acmeprobe/prober.go:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "third_party/forked/acme/internal/acmeprobe/prober.go",
+      "lineRange": [
+        67,
+        135
+      ],
+      "summary": "Parses command-line flags, configures a prober run, and executes the selected ACME flow.",
+      "tags": [
+        "cli",
+        "entry-point",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/internal/acmeprobe/prober.go:runOrder",
+      "type": "function",
+      "name": "runOrder",
+      "filePath": "third_party/forked/acme/internal/acmeprobe/prober.go",
+      "lineRange": [
+        152,
+        209
+      ],
+      "summary": "Runs a full order flow: creates an order, fulfills its challenges, finalizes it, and validates the certificate.",
+      "tags": [
+        "acme",
+        "order",
+        "testing"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:third_party/forked/acme/internal/acmeprobe/prober.go:runPreauthz",
+      "type": "function",
+      "name": "runPreauthz",
+      "filePath": "third_party/forked/acme/internal/acmeprobe/prober.go",
+      "lineRange": [
+        211,
+        274
+      ],
+      "summary": "Runs a pre-authorization flow, fulfilling each authorization and checking the resulting certificates.",
+      "tags": [
+        "acme",
+        "authorization",
+        "testing"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:third_party/forked/acme/internal/acmeprobe/prober.go:fulfill",
+      "type": "function",
+      "name": "fulfill",
+      "filePath": "third_party/forked/acme/internal/acmeprobe/prober.go",
+      "lineRange": [
+        276,
+        299
+      ],
+      "summary": "Dispatches challenge fulfillment to the tls-alpn-01, http-01, or dns-01 handler.",
+      "tags": [
+        "acme",
+        "challenge",
+        "dispatch"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/internal/acmeprobe/prober.go:runTLSALPN01",
+      "type": "function",
+      "name": "runTLSALPN01",
+      "filePath": "third_party/forked/acme/internal/acmeprobe/prober.go",
+      "lineRange": [
+        301,
+        328
+      ],
+      "summary": "Serves the tls-alpn-01 challenge certificate and accepts challenge validation.",
+      "tags": [
+        "acme",
+        "tls-alpn",
+        "testing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/internal/acmeprobe/prober.go:runHTTP01",
+      "type": "function",
+      "name": "runHTTP01",
+      "filePath": "third_party/forked/acme/internal/acmeprobe/prober.go",
+      "lineRange": [
+        330,
+        354
+      ],
+      "summary": "Serves the http-01 key authorization token from a local HTTP server.",
+      "tags": [
+        "acme",
+        "http-01",
+        "testing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/internal/acmeprobe/prober.go:runDNS01",
+      "type": "function",
+      "name": "runDNS01",
+      "filePath": "third_party/forked/acme/internal/acmeprobe/prober.go",
+      "lineRange": [
+        356,
+        376
+      ],
+      "summary": "Invokes an external script to provision the dns-01 TXT record.",
+      "tags": [
+        "acme",
+        "dns-01",
+        "testing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/internal/acmeprobe/prober.go:checkCert",
+      "type": "function",
+      "name": "checkCert",
+      "filePath": "third_party/forked/acme/internal/acmeprobe/prober.go",
+      "lineRange": [
+        385,
+        410
+      ],
+      "summary": "Verifies that a returned certificate chain is valid for the requested identifier.",
+      "tags": [
+        "certificate",
+        "validation",
+        "testing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/internal/acmeprobe/prober.go:newCSR",
+      "type": "function",
+      "name": "newCSR",
+      "filePath": "third_party/forked/acme/internal/acmeprobe/prober.go",
+      "lineRange": [
+        412,
+        433
+      ],
+      "summary": "Generates an ECDSA key and CSR covering the requested domain and IP identifiers.",
+      "tags": [
+        "csr",
+        "key-management",
+        "testing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:third_party/forked/acme/jws.go",
+      "type": "file",
+      "name": "jws.go",
+      "filePath": "third_party/forked/acme/jws.go",
+      "summary": "Implements JWS signing for ACME requests, including JWK encoding, HMAC and asymmetric signing, and JWK thumbprints.",
+      "tags": [
+        "acme",
+        "jws",
+        "cryptography",
+        "vendor"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:third_party/forked/acme/jws.go:jwsEncodeJSON",
+      "type": "function",
+      "name": "jwsEncodeJSON",
+      "filePath": "third_party/forked/acme/jws.go",
+      "lineRange": [
+        62,
+        118
+      ],
+      "summary": "Builds a flattened JWS JSON object with protected headers, nonce, URL, and a signed claim set.",
+      "tags": [
+        "jws",
+        "cryptography",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/jws.go:jwsWithMAC",
+      "type": "function",
+      "name": "jwsWithMAC",
+      "filePath": "third_party/forked/acme/jws.go",
+      "lineRange": [
+        123,
+        155
+      ],
+      "summary": "Produces a JWS using a symmetric MAC key, used for external account binding.",
+      "tags": [
+        "jws",
+        "hmac",
+        "eab"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/jws.go:jwkEncode",
+      "type": "function",
+      "name": "jwkEncode",
+      "filePath": "third_party/forked/acme/jws.go",
+      "lineRange": [
+        160,
+        196
+      ],
+      "summary": "Serializes an RSA or ECDSA public key as canonical JWK JSON.",
+      "tags": [
+        "jwk",
+        "serialization",
+        "cryptography"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/jws.go:jwsSign",
+      "type": "function",
+      "name": "jwsSign",
+      "filePath": "third_party/forked/acme/jws.go",
+      "lineRange": [
+        200,
+        226
+      ],
+      "summary": "Signs a digest with RSA or ECDSA keys and returns the signature bytes.",
+      "tags": [
+        "jws",
+        "signing",
+        "cryptography"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/jws.go:JWKThumbprint",
+      "type": "function",
+      "name": "JWKThumbprint",
+      "filePath": "third_party/forked/acme/jws.go",
+      "lineRange": [
+        250,
+        257
+      ],
+      "summary": "Computes the RFC 7638 SHA-256 thumbprint of a public key's JWK.",
+      "tags": [
+        "jwk",
+        "hashing",
+        "cryptography"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "function:pkg/issuer/acme/setup.go:Setup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "function:pkg/issuer/acme/setup.go:Setup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "function:pkg/issuer/acme/setup.go:setup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "function:pkg/issuer/acme/setup.go:ensureEmailUpToDate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "function:pkg/issuer/acme/setup.go:registerAccount",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "function:pkg/issuer/acme/setup.go:getEABKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "function:pkg/issuer/acme/setup.go:createAccountPrivateKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/acme/accounts/client.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/acme/accounts/registry.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/acme/client/fake.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/acme/client/http.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/acme/client/interfaces.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/acme/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/api/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/api/util/duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/api/util/issuers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/api/util/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/api/util/names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/api/util/usages.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/util/errors/errors.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/util/pki/asn1_util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/util/pki/basicconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/util/pki/certificatetemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/util/pki/csr.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/util/pki/generate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/util/pki/keyusage.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/util/pki/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/util/pki/match.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/util/pki/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/util/pki/parse.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/util/pki/parse_certificate_chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/util/pki/renewaltime.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/util/pki/sans.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/util/pki/subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:pkg/util/pki/temporarycertificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:third_party/forked/acme/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:third_party/forked/acme/http.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:third_party/forked/acme/jws.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:third_party/forked/acme/rfc8555.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/setup.go",
+      "target": "file:third_party/forked/acme/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/issuer/acme/setup.go:setup",
+      "target": "function:pkg/acme/accounts/client.go:NewClient",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/issuer/acme/setup.go:createAccountPrivateKey",
+      "target": "function:pkg/util/pki/generate.go:GenerateRSAPrivateKey",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "class:third_party/forked/acme/acme.go:Client",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "class:third_party/forked/acme/acme.go:Client",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:accountKID",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:Discover",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:Discover",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:authorize",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:GetAuthorization",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:GetAuthorization",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:RevokeAuthorization",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:RevokeAuthorization",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:WaitAuthorization",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:WaitAuthorization",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:GetChallenge",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:GetChallenge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:Accept",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:Accept",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:TLSALPN01ChallengeCert",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:TLSALPN01ChallengeCert",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:popNonce",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:addNonce",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:fetchNonce",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:linkHeader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/acme.go",
+      "target": "function:third_party/forked/acme/acme.go:tlsChallengeCert",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:third_party/forked/acme/acme.go:Discover",
+      "target": "function:third_party/forked/acme/http.go:get",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:third_party/forked/acme/acme.go:Discover",
+      "target": "function:third_party/forked/acme/acme.go:addNonce",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:third_party/forked/acme/acme.go:authorize",
+      "target": "function:third_party/forked/acme/http.go:post",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:third_party/forked/acme/acme.go:GetAuthorization",
+      "target": "function:third_party/forked/acme/http.go:post",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:third_party/forked/acme/acme.go:WaitAuthorization",
+      "target": "function:third_party/forked/acme/http.go:post",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:third_party/forked/acme/acme.go:Accept",
+      "target": "function:third_party/forked/acme/http.go:post",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:third_party/forked/acme/acme.go:popNonce",
+      "target": "function:third_party/forked/acme/acme.go:fetchNonce",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:third_party/forked/acme/acme.go:TLSALPN01ChallengeCert",
+      "target": "function:third_party/forked/acme/acme.go:tlsChallengeCert",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/http.go",
+      "target": "class:third_party/forked/acme/http.go:retryTimer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/http.go",
+      "target": "function:third_party/forked/acme/http.go:backoff",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/http.go",
+      "target": "function:third_party/forked/acme/http.go:defaultBackoff",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/http.go",
+      "target": "function:third_party/forked/acme/http.go:retryAfter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/http.go",
+      "target": "function:third_party/forked/acme/http.go:wantStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/http.go",
+      "target": "function:third_party/forked/acme/http.go:get",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/http.go",
+      "target": "function:third_party/forked/acme/http.go:post",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/http.go",
+      "target": "function:third_party/forked/acme/http.go:postNoRetry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/http.go",
+      "target": "function:third_party/forked/acme/http.go:doNoRetry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/http.go",
+      "target": "function:third_party/forked/acme/http.go:init",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/http.go",
+      "target": "function:third_party/forked/acme/http.go:responseError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/http.go",
+      "target": "function:third_party/forked/acme/http.go:userAgent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/internal/acmeprobe/prober.go",
+      "target": "class:third_party/forked/acme/internal/acmeprobe/prober.go:prober",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/internal/acmeprobe/prober.go",
+      "target": "function:third_party/forked/acme/internal/acmeprobe/prober.go:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/internal/acmeprobe/prober.go",
+      "target": "function:third_party/forked/acme/internal/acmeprobe/prober.go:runOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/internal/acmeprobe/prober.go",
+      "target": "function:third_party/forked/acme/internal/acmeprobe/prober.go:runPreauthz",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/internal/acmeprobe/prober.go",
+      "target": "function:third_party/forked/acme/internal/acmeprobe/prober.go:fulfill",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/internal/acmeprobe/prober.go",
+      "target": "function:third_party/forked/acme/internal/acmeprobe/prober.go:runTLSALPN01",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/internal/acmeprobe/prober.go",
+      "target": "function:third_party/forked/acme/internal/acmeprobe/prober.go:runHTTP01",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/internal/acmeprobe/prober.go",
+      "target": "function:third_party/forked/acme/internal/acmeprobe/prober.go:runDNS01",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/internal/acmeprobe/prober.go",
+      "target": "function:third_party/forked/acme/internal/acmeprobe/prober.go:checkCert",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/internal/acmeprobe/prober.go",
+      "target": "function:third_party/forked/acme/internal/acmeprobe/prober.go:newCSR",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/internal/acmeprobe/prober.go",
+      "target": "file:third_party/forked/acme/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:third_party/forked/acme/internal/acmeprobe/prober.go",
+      "target": "file:third_party/forked/acme/http.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:third_party/forked/acme/internal/acmeprobe/prober.go",
+      "target": "file:third_party/forked/acme/jws.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:third_party/forked/acme/internal/acmeprobe/prober.go",
+      "target": "file:third_party/forked/acme/rfc8555.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:third_party/forked/acme/internal/acmeprobe/prober.go",
+      "target": "file:third_party/forked/acme/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:third_party/forked/acme/jws.go",
+      "target": "function:third_party/forked/acme/jws.go:jwsEncodeJSON",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/jws.go",
+      "target": "function:third_party/forked/acme/jws.go:jwsWithMAC",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/jws.go",
+      "target": "function:third_party/forked/acme/jws.go:jwkEncode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/jws.go",
+      "target": "function:third_party/forked/acme/jws.go:jwsSign",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/jws.go",
+      "target": "function:third_party/forked/acme/jws.go:JWKThumbprint",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/jws.go",
+      "target": "function:third_party/forked/acme/jws.go:JWKThumbprint",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/e2e/framework/config/config.go",
+      "type": "file",
+      "name": "config.go",
+      "filePath": "test/e2e/framework/config/config.go",
+      "summary": "Root e2e configuration object plus flag registration and cross-field validation for the test suite.",
+      "tags": [
+        "configuration",
+        "test",
+        "flags",
+        "validation",
+        "entry-point"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/e2e/framework/config/config.go:Config",
+      "type": "class",
+      "name": "Config",
+      "filePath": "test/e2e/framework/config/config.go",
+      "lineRange": [
+        35,
+        50
+      ],
+      "summary": "Root suite configuration aggregating Kubernetes, cleanup, repo-root, Ginkgo, addon, and suite settings.",
+      "tags": [
+        "configuration",
+        "root",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/config/config.go:Validate",
+      "type": "function",
+      "name": "Validate",
+      "filePath": "test/e2e/framework/config/config.go",
+      "lineRange": [
+        52,
+        74
+      ],
+      "summary": "Validates the root configuration, feature gates, and nested addon and suite settings.",
+      "tags": [
+        "validation",
+        "configuration",
+        "feature-gate"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/config/config.go:AddFlags",
+      "type": "function",
+      "name": "AddFlags",
+      "filePath": "test/e2e/framework/config/config.go",
+      "lineRange": [
+        77,
+        104
+      ],
+      "summary": "Registers root, Kubernetes, and feature-gate flags and delegates to nested configurations.",
+      "tags": [
+        "flags",
+        "configuration",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/framework/config/gateway.go",
+      "type": "file",
+      "name": "gateway.go",
+      "filePath": "test/e2e/framework/config/gateway.go",
+      "summary": "Gateway API configuration (domain and HTTPRoute labels) used by ACME HTTP-01 solver tests.",
+      "tags": [
+        "configuration",
+        "test",
+        "gateway-api",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/framework/config/gateway.go:Gateway",
+      "type": "class",
+      "name": "Gateway",
+      "filePath": "test/e2e/framework/config/gateway.go",
+      "lineRange": [
+        21,
+        31
+      ],
+      "summary": "Holds the Gateway API test domain and labels applied to solver HTTPRoutes.",
+      "tags": [
+        "gateway-api",
+        "configuration",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/config/gateway.go:AddFlags",
+      "type": "function",
+      "name": "AddFlags",
+      "filePath": "test/e2e/framework/config/gateway.go",
+      "lineRange": [
+        33,
+        48
+      ],
+      "summary": "Registers Gateway API domain and HTTPRoute label flags.",
+      "tags": [
+        "gateway-api",
+        "flags",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/config/ginkgo.go",
+      "type": "file",
+      "name": "ginkgo.go",
+      "filePath": "test/e2e/framework/config/ginkgo.go",
+      "summary": "Ginkgo report directory configuration for e2e test output.",
+      "tags": [
+        "configuration",
+        "test",
+        "ginkgo",
+        "reporting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/framework/config/ginkgo.go:Ginkgo",
+      "type": "class",
+      "name": "Ginkgo",
+      "filePath": "test/e2e/framework/config/ginkgo.go",
+      "lineRange": [
+        23,
+        25
+      ],
+      "summary": "Holds the optional directory used for Ginkgo JUnit reports.",
+      "tags": [
+        "ginkgo",
+        "configuration",
+        "reporting",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/config/helm.go",
+      "type": "file",
+      "name": "helm.go",
+      "filePath": "test/e2e/framework/config/helm.go",
+      "summary": "Helm binary path configuration and validation for e2e addon installs.",
+      "tags": [
+        "configuration",
+        "test",
+        "helm",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/framework/config/helm.go:Helm",
+      "type": "class",
+      "name": "Helm",
+      "filePath": "test/e2e/framework/config/helm.go",
+      "lineRange": [
+        24,
+        27
+      ],
+      "summary": "Holds the path to the Helm binary used by chart addons.",
+      "tags": [
+        "helm",
+        "configuration",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/config/ingress_controller.go",
+      "type": "file",
+      "name": "ingress_controller.go",
+      "filePath": "test/e2e/framework/config/ingress_controller.go",
+      "summary": "Ingress controller domain and class configuration used by ACME HTTP-01 tests.",
+      "tags": [
+        "configuration",
+        "test",
+        "ingress",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/framework/config/ingress_controller.go:IngressController",
+      "type": "class",
+      "name": "IngressController",
+      "filePath": "test/e2e/framework/config/ingress_controller.go",
+      "lineRange": [
+        23,
+        32
+      ],
+      "summary": "Holds the ingress domain and ingress class under test for HTTP-01 validation.",
+      "tags": [
+        "ingress",
+        "configuration",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/config/ingress_controller.go:AddFlags",
+      "type": "function",
+      "name": "AddFlags",
+      "filePath": "test/e2e/framework/config/ingress_controller.go",
+      "lineRange": [
+        34,
+        38
+      ],
+      "summary": "Registers ingress controller domain and class flags.",
+      "tags": [
+        "ingress",
+        "flags",
+        "configuration"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/e2e/framework/config/config.go",
+      "target": "class:test/e2e/framework/config/config.go:Config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/config.go",
+      "target": "class:test/e2e/framework/config/config.go:Config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/config.go",
+      "target": "function:test/e2e/framework/config/config.go:Validate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/config.go",
+      "target": "function:test/e2e/framework/config/config.go:Validate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/config.go",
+      "target": "function:test/e2e/framework/config/config.go:AddFlags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/config.go",
+      "target": "function:test/e2e/framework/config/config.go:AddFlags",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/gateway.go",
+      "target": "class:test/e2e/framework/config/gateway.go:Gateway",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/gateway.go",
+      "target": "class:test/e2e/framework/config/gateway.go:Gateway",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/gateway.go",
+      "target": "function:test/e2e/framework/config/gateway.go:AddFlags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/gateway.go",
+      "target": "function:test/e2e/framework/config/gateway.go:AddFlags",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/ginkgo.go",
+      "target": "class:test/e2e/framework/config/ginkgo.go:Ginkgo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/ginkgo.go",
+      "target": "class:test/e2e/framework/config/ginkgo.go:Ginkgo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/helm.go",
+      "target": "class:test/e2e/framework/config/helm.go:Helm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/helm.go",
+      "target": "class:test/e2e/framework/config/helm.go:Helm",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/ingress_controller.go",
+      "target": "class:test/e2e/framework/config/ingress_controller.go:IngressController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/ingress_controller.go",
+      "target": "class:test/e2e/framework/config/ingress_controller.go:IngressController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/ingress_controller.go",
+      "target": "function:test/e2e/framework/config/ingress_controller.go:AddFlags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/ingress_controller.go",
+      "target": "function:test/e2e/framework/config/ingress_controller.go:AddFlags",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

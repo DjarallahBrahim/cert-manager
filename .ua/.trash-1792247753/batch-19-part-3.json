@@ -1,0 +1,1349 @@
+{
+  "nodes": [
+    {
+      "id": "file:internal/apis/config/controller/types.go",
+      "type": "file",
+      "name": "types.go",
+      "filePath": "internal/apis/config/controller/types.go",
+      "summary": "Defines the internal ControllerConfiguration type together with its leader-election, ingress-shim, ACME HTTP01 and ACME DNS01 sub-configurations.",
+      "tags": [
+        "data-model",
+        "configuration",
+        "api-group",
+        "type-definition"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "type": "file",
+      "name": "defaults.go",
+      "filePath": "internal/apis/config/controller/v1alpha1/defaults.go",
+      "summary": "Implements defaulting for the controller v1alpha1 configuration, applying cert-manager's default addresses, controller list, worker counts and ACME solver settings.",
+      "tags": [
+        "defaulting",
+        "configuration",
+        "api-group",
+        "acme"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:internal/apis/config/controller/v1alpha1/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "internal/apis/config/controller/v1alpha1/doc.go",
+      "summary": "Versioned package documentation for controller config v1alpha1 that declares the conversion, defaulter and group-name code-generation directives.",
+      "tags": [
+        "package-doc",
+        "api-group",
+        "code-generation",
+        "versioning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/controller/v1alpha1/register.go",
+      "type": "file",
+      "name": "register.go",
+      "filePath": "internal/apis/config/controller/v1alpha1/register.go",
+      "summary": "Registers the controller config v1alpha1 GroupVersion, its Resource helper and the local scheme builder used for conversions and defaulting.",
+      "tags": [
+        "api-group",
+        "registration",
+        "scheme",
+        "versioning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "type": "file",
+      "name": "zz_generated.conversion.go",
+      "filePath": "internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "summary": "Generated conversion functions translating every v1alpha1 controller configuration type to and from its internal counterpart, delegating shared TLS and leader-election fields.",
+      "tags": [
+        "code-generation",
+        "conversion",
+        "serialization",
+        "api-group"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "type": "file",
+      "name": "zz_generated.defaults.go",
+      "filePath": "internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "summary": "Generated defaulting registration that chains the controller, leader-election, ingress-shim and ACME solver defaulters into the scheme.",
+      "tags": [
+        "code-generation",
+        "defaulting",
+        "api-group",
+        "registration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/controller/validation/validation.go",
+      "type": "file",
+      "name": "validation.go",
+      "filePath": "internal/apis/config/controller/validation/validation.go",
+      "summary": "Validates the controller configuration, checking logging, metrics TLS, leader election, ingress-shim defaults and ACME HTTP01/DNS01 solver fields.",
+      "tags": [
+        "validation",
+        "configuration",
+        "api-group",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/config/controller/types.go:ControllerConfiguration",
+      "type": "class",
+      "name": "ControllerConfiguration",
+      "filePath": "internal/apis/config/controller/types.go",
+      "lineRange": [
+        30,
+        136
+      ],
+      "summary": "Root internal controller configuration object covering API server access, controller enablement, leader election, metrics, feature gates and ACME settings.",
+      "tags": [
+        "data-model",
+        "configuration",
+        "root-object",
+        "api-group"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:internal/apis/config/controller/types.go:LeaderElectionConfig",
+      "type": "class",
+      "name": "LeaderElectionConfig",
+      "filePath": "internal/apis/config/controller/types.go",
+      "lineRange": [
+        138,
+        144
+      ],
+      "summary": "Extends the shared leader-election configuration with a healthz timeout used while the lease is valid.",
+      "tags": [
+        "data-model",
+        "configuration",
+        "leader-election"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/config/controller/types.go:IngressShimConfig",
+      "type": "class",
+      "name": "IngressShimConfig",
+      "filePath": "internal/apis/config/controller/types.go",
+      "lineRange": [
+        146,
+        167
+      ],
+      "summary": "Holds the default issuer name, kind, group and annotation filters used by the ingress-shim controller.",
+      "tags": [
+        "data-model",
+        "configuration",
+        "ingress-shim"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/config/controller/types.go:ACMEHTTP01Config",
+      "type": "class",
+      "name": "ACMEHTTP01Config",
+      "filePath": "internal/apis/config/controller/types.go",
+      "lineRange": [
+        169,
+        200
+      ],
+      "summary": "Configures the ACME HTTP01 solver image, resource requests/limits, nameservers and non-root execution.",
+      "tags": [
+        "data-model",
+        "configuration",
+        "acme",
+        "http01"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/config/controller/types.go:ACMEDNS01Config",
+      "type": "class",
+      "name": "ACMEDNS01Config",
+      "filePath": "internal/apis/config/controller/types.go",
+      "lineRange": [
+        202,
+        225
+      ],
+      "summary": "Configures ACME DNS01 self-checks: recursive nameservers, nameserver-only mode and propagation retry period.",
+      "tags": [
+        "data-model",
+        "configuration",
+        "acme",
+        "dns01"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/config/controller/v1alpha1/defaults.go:SetDefaults_ControllerConfiguration",
+      "type": "function",
+      "name": "SetDefaults_ControllerConfiguration",
+      "filePath": "internal/apis/config/controller/v1alpha1/defaults.go",
+      "lineRange": [
+        186,
+        260
+      ],
+      "summary": "Fills every unset controller configuration field - API server address, kubeconfig, QPS/burst, namespace, controller list, worker counts, metrics/healthz addresses, profiling and logging - with cert-manager defaults.",
+      "tags": [
+        "defaulting",
+        "configuration",
+        "api-group"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:internal/apis/config/controller/v1alpha1/defaults.go:SetDefaults_LeaderElectionConfig",
+      "type": "function",
+      "name": "SetDefaults_LeaderElectionConfig",
+      "filePath": "internal/apis/config/controller/v1alpha1/defaults.go",
+      "lineRange": [
+        262,
+        266
+      ],
+      "summary": "Defaults the leader-election healthz timeout from the shared duration helper when unset.",
+      "tags": [
+        "defaulting",
+        "leader-election",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/controller/v1alpha1/defaults.go:SetDefaults_IngressShimConfig",
+      "type": "function",
+      "name": "SetDefaults_IngressShimConfig",
+      "filePath": "internal/apis/config/controller/v1alpha1/defaults.go",
+      "lineRange": [
+        268,
+        288
+      ],
+      "summary": "Defaults the ingress-shim issuer name, kind, group and auto-certificate annotations used for TLS-enabled ingresses.",
+      "tags": [
+        "defaulting",
+        "ingress-shim",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/config/controller/v1alpha1/defaults.go:SetDefaults_ACMEHTTP01Config",
+      "type": "function",
+      "name": "SetDefaults_ACMEHTTP01Config",
+      "filePath": "internal/apis/config/controller/v1alpha1/defaults.go",
+      "lineRange": [
+        290,
+        318
+      ],
+      "summary": "Defaults the ACME HTTP01 solver image, resource requests/limits and nameservers for challenge solver pods.",
+      "tags": [
+        "defaulting",
+        "acme",
+        "http01"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/config/controller/v1alpha1/defaults.go:SetDefaults_ACMEDNS01Config",
+      "type": "function",
+      "name": "SetDefaults_ACMEDNS01Config",
+      "filePath": "internal/apis/config/controller/v1alpha1/defaults.go",
+      "lineRange": [
+        320,
+        332
+      ],
+      "summary": "Defaults the ACME DNS01 check retry period and recursive nameservers used for propagation self-checks.",
+      "tags": [
+        "defaulting",
+        "acme",
+        "dns01"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/controller/v1alpha1/register.go:Resource",
+      "type": "function",
+      "name": "Resource",
+      "filePath": "internal/apis/config/controller/v1alpha1/register.go",
+      "lineRange": [
+        30,
+        32
+      ],
+      "summary": "Returns the GroupResource for a controller config resource name under the v1alpha1 group version.",
+      "tags": [
+        "api-group",
+        "registration",
+        "utility",
+        "versioning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go:RegisterConversions",
+      "type": "function",
+      "name": "RegisterConversions",
+      "filePath": "internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "lineRange": [
+        41,
+        93
+      ],
+      "summary": "Registers all generated controller v1alpha1/internal conversion functions on the supplied conversion scheme.",
+      "tags": [
+        "conversion",
+        "registration",
+        "code-generation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go:autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+      "type": "function",
+      "name": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+      "filePath": "internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "lineRange": [
+        163,
+        218
+      ],
+      "summary": "Converts the full v1alpha1 controller configuration into the internal type, recursing into leader-election, ingress-shim and ACME solver sub-configs.",
+      "tags": [
+        "conversion",
+        "serialization",
+        "code-generation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go:autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+      "type": "function",
+      "name": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+      "filePath": "internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "lineRange": [
+        225,
+        280
+      ],
+      "summary": "Converts the full internal controller configuration back into the v1alpha1 type, copying pointer and slice fields via unsafe casts where safe.",
+      "tags": [
+        "conversion",
+        "serialization",
+        "code-generation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go:RegisterDefaults",
+      "type": "function",
+      "name": "RegisterDefaults",
+      "filePath": "internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "lineRange": [
+        33,
+        38
+      ],
+      "summary": "Registers the controller configuration object defaulter with the scheme's defaulting registry.",
+      "tags": [
+        "defaulting",
+        "registration",
+        "code-generation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go:SetObjectDefaults_ControllerConfiguration",
+      "type": "function",
+      "name": "SetObjectDefaults_ControllerConfiguration",
+      "filePath": "internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "lineRange": [
+        40,
+        48
+      ],
+      "summary": "Chains the controller, leader-election, ingress-shim and ACME HTTP01/DNS01 defaulters for a configuration object.",
+      "tags": [
+        "defaulting",
+        "configuration",
+        "code-generation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/controller/validation/validation.go:ValidateControllerConfiguration",
+      "type": "function",
+      "name": "ValidateControllerConfiguration",
+      "filePath": "internal/apis/config/controller/validation/validation.go",
+      "lineRange": [
+        33,
+        97
+      ],
+      "summary": "Validates the controller configuration: logging, metrics TLS, leader election, ingress-shim issuer defaults, ACME HTTP01 solver settings and DNS01 retry/nameserver options.",
+      "tags": [
+        "validation",
+        "configuration",
+        "acme"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:internal/apis/config/controller/types.go",
+      "target": "class:internal/apis/config/controller/types.go:ControllerConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/types.go",
+      "target": "class:internal/apis/config/controller/types.go:ControllerConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/types.go",
+      "target": "class:internal/apis/config/controller/types.go:LeaderElectionConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/types.go",
+      "target": "class:internal/apis/config/controller/types.go:LeaderElectionConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/types.go",
+      "target": "class:internal/apis/config/controller/types.go:IngressShimConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/types.go",
+      "target": "class:internal/apis/config/controller/types.go:IngressShimConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/types.go",
+      "target": "class:internal/apis/config/controller/types.go:ACMEHTTP01Config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/types.go",
+      "target": "class:internal/apis/config/controller/types.go:ACMEHTTP01Config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/types.go",
+      "target": "class:internal/apis/config/controller/types.go:ACMEDNS01Config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/types.go",
+      "target": "class:internal/apis/config/controller/types.go:ACMEDNS01Config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/defaults.go:SetDefaults_ControllerConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/defaults.go:SetDefaults_ControllerConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/defaults.go:SetDefaults_LeaderElectionConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/defaults.go:SetDefaults_LeaderElectionConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/defaults.go:SetDefaults_IngressShimConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/defaults.go:SetDefaults_IngressShimConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/defaults.go:SetDefaults_ACMEHTTP01Config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/defaults.go:SetDefaults_ACMEHTTP01Config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/defaults.go:SetDefaults_ACMEDNS01Config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/defaults.go:SetDefaults_ACMEDNS01Config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/register.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/register.go:Resource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/register.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/register.go:Resource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go:RegisterConversions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go:RegisterConversions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go:autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go:autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go:autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go:autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go:RegisterDefaults",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go:RegisterDefaults",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go:SetObjectDefaults_ControllerConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "target": "function:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go:SetObjectDefaults_ControllerConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/validation/validation.go",
+      "target": "function:internal/apis/config/controller/validation/validation.go:ValidateControllerConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/controller/validation/validation.go",
+      "target": "function:internal/apis/config/controller/validation/validation.go:ValidateControllerConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/controller/types.go",
+      "target": "file:internal/apis/config/shared/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/types.go",
+      "target": "file:internal/apis/config/shared/types_leaderelection.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/types.go",
+      "target": "file:internal/apis/config/shared/types_tlsconfig.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/types.go",
+      "target": "file:internal/apis/config/shared/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/certmanager/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/types_duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/types_leaderelection.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/acmechallenges/checks.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/acmechallenges/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/acmechallenges/finalizer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/acmechallenges/sync.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/acmechallenges/update.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/acmeorders/checks.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/acmeorders/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/acmeorders/sync.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/acmeorders/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificaterequests/acme/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificaterequests/selfsigned/checks.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificaterequests/selfsigned/selfsigned.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificaterequests/vault/vault.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificaterequests/venafi/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificates/issuing/issuing_controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificates/issuing/secret_manager.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificates/issuing/temporary.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificates/metrics/certificates.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificates/readiness/readiness_controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificates/revisionmanager/revisionmanager_controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificates/trigger/trigger_controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificatesigningrequests/acme/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificatesigningrequests/ca/ca.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificatesigningrequests/vault/vault.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/certificatesigningrequests/venafi/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/clusterissuers/checks.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/clusterissuers/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/clusterissuers/sync.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/issuers/checks.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/issuers/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/controller/issuers/sync.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/util/useragent.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "target": "file:pkg/util/version.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/controller/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/controller/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/controller/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/controller/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "target": "file:pkg/apis/config/controller/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/validation/validation.go",
+      "target": "file:internal/apis/config/controller/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/validation/validation.go",
+      "target": "file:internal/apis/config/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/validation/validation.go",
+      "target": "file:internal/apis/config/controller/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/validation/validation.go",
+      "target": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/validation/validation.go",
+      "target": "file:internal/apis/config/controller/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/validation/validation.go",
+      "target": "file:internal/apis/config/controller/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/validation/validation.go",
+      "target": "file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/validation/validation.go",
+      "target": "file:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/validation/validation.go",
+      "target": "file:internal/apis/config/controller/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/controller/validation/validation.go",
+      "target": "file:internal/apis/config/shared/validation/validation.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go:SetObjectDefaults_ControllerConfiguration",
+      "target": "function:internal/apis/config/shared/v1alpha1/defaults.go:SetDefaults_LeaderElectionConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go:SetObjectDefaults_ControllerConfiguration",
+      "target": "function:internal/apis/config/shared/v1alpha1/defaults.go:SetDefaults_DynamicServingConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/config/controller/v1alpha1/defaults.go:SetDefaults_LeaderElectionConfig",
+      "target": "function:pkg/apis/config/shared/v1alpha1/types_duration.go:DurationFromTime",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/config/controller/v1alpha1/defaults.go:SetDefaults_ACMEDNS01Config",
+      "target": "function:pkg/apis/config/shared/v1alpha1/types_duration.go:DurationFromTime",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/config/controller/validation/validation.go:ValidateControllerConfiguration",
+      "target": "function:internal/apis/config/shared/validation/validation.go:ValidateTLSConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/config/controller/validation/validation.go:ValidateControllerConfiguration",
+      "target": "function:internal/apis/config/shared/validation/validation.go:ValidateLeaderElectionConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

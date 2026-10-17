@@ -1,0 +1,179 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 9,
+  "filesSkipped": [
+    "hack/boilerplate-go.txt",
+    "hack/boilerplate-sh.txt",
+    "hack/boilerplate-yaml.txt"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 9,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 9
+    }
+  },
+  "results": [
+    {
+      "path": "hack/artifact-metadata.template.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "sha256",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "os",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "architecture",
+          "level": 1,
+          "line": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "hack/concat-yaml.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 44,
+      "nonEmptyLines": 37,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "hack/k8s-codegen.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 262,
+      "nonEmptyLines": 236,
+      "functions": [
+        {
+          "name": "clean",
+          "startLine": 93,
+          "endLine": 100,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "hack/latest-base-images.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 47,
+      "nonEmptyLines": 36,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "hack/latest-kind-images.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 58,
+      "nonEmptyLines": 47,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "hack/latest-kubebuilder-shas.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 52,
+      "nonEmptyLines": 39,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "hack/verify-chart-version.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 49,
+      "nonEmptyLines": 39,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "hack/verify-errexit.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 59,
+      "nonEmptyLines": 47,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "hack/verify-upgrade.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 212,
+      "nonEmptyLines": 150,
+      "functions": [
+        {
+          "name": "usage_and_exit",
+          "startLine": 35,
+          "endLine": 38,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

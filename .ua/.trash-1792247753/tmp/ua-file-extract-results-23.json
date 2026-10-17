@@ -1,0 +1,987 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 4,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 4,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "cmd/cainjector/app/cainjector.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 179,
+      "nonEmptyLines": 146,
+      "functions": [
+        {
+          "name": "NewCAInjectorCommand",
+          "startLine": 39,
+          "endLine": 52,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "newCAInjectorCommand",
+          "startLine": 54,
+          "endLine": 124,
+          "params": [
+            "setupCtx",
+            "run",
+            "allArgs"
+          ]
+        },
+        {
+          "name": "loadConfigFromFile",
+          "startLine": 134,
+          "endLine": 179,
+          "params": [
+            "cmd",
+            "allArgs",
+            "configFilePath",
+            "cfg",
+            "newConfigHook"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewCAInjectorCommand",
+          "line": 39,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewCAInjectorCommand",
+          "callee": "newCAInjectorCommand",
+          "lineNumber": 40
+        },
+        {
+          "caller": "NewCAInjectorCommand",
+          "callee": "logf.FromContext",
+          "lineNumber": 43
+        },
+        {
+          "caller": "NewCAInjectorCommand",
+          "callee": "util.VersionInfo",
+          "lineNumber": 45
+        },
+        {
+          "caller": "NewCAInjectorCommand",
+          "callee": "log.Info",
+          "lineNumber": 46
+        },
+        {
+          "caller": "NewCAInjectorCommand",
+          "callee": "Run",
+          "lineNumber": 48
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "logf.FromContext",
+          "lineNumber": 59
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "options.NewCAInjectorFlags",
+          "lineNumber": 61
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "options.NewCAInjectorConfiguration",
+          "lineNumber": 62
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "log.Error",
+          "lineNumber": 64
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "os.Exit",
+          "lineNumber": 65
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "loadConfigFromFile",
+          "lineNumber": 82
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "utilfeature.DefaultMutableFeatureGate.SetFromMap",
+          "lineNumber": 86
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "fmt.Errorf",
+          "lineNumber": 87
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "validation.ValidateCAInjectorConfiguration",
+          "lineNumber": 96
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "len",
+          "lineNumber": 96
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "fmt.Errorf",
+          "lineNumber": 97
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "err.ToAggregate",
+          "lineNumber": 97
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "logf.ValidateAndApply",
+          "lineNumber": 104
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "fmt.Errorf",
+          "lineNumber": 105
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "run",
+          "lineNumber": 112
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "cmd.Context",
+          "lineNumber": 112
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "cainjectorFlags.AddFlags",
+          "lineNumber": 116
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "cmd.Flags",
+          "lineNumber": 116
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "options.AddConfigFlags",
+          "lineNumber": 117
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "cmd.Flags",
+          "lineNumber": 117
+        },
+        {
+          "caller": "newCAInjectorCommand",
+          "callee": "cmd.SetArgs",
+          "lineNumber": 121
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "newConfigHook",
+          "lineNumber": 141
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "len",
+          "lineNumber": 145
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "filepath.Abs",
+          "lineNumber": 147
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "fmt.Errorf",
+          "lineNumber": 149
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "configfile.NewConfigurationFSLoader",
+          "lineNumber": 152
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "fmt.Errorf",
+          "lineNumber": 154
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "cainjectorconfigfile.New",
+          "lineNumber": 157
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "loader.Load",
+          "lineNumber": 158
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "fmt.Errorf",
+          "lineNumber": 159
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "cainjectorConfigFromFile.Config.DeepCopyInto",
+          "lineNumber": 162
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "cmd.Root().Find",
+          "lineNumber": 164
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "cmd.Root",
+          "lineNumber": 164
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "fmt.Errorf",
+          "lineNumber": 166
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "cmd.ParseFlags",
+          "lineNumber": 169
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "fmt.Errorf",
+          "lineNumber": 170
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "newConfigHook",
+          "lineNumber": 173
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cmd/cainjector/app/controller.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 317,
+      "nonEmptyLines": 283,
+      "functions": [
+        {
+          "name": "Run",
+          "startLine": 67,
+          "endLine": 253,
+          "params": [
+            "opts",
+            "ctx"
+          ]
+        },
+        {
+          "name": "Start",
+          "startLine": 257,
+          "endLine": 259,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "NeedLeaderElection",
+          "startLine": 261,
+          "endLine": 265,
+          "params": []
+        },
+        {
+          "name": "buildMetricsServerOptions",
+          "startLine": 271,
+          "endLine": 294,
+          "params": [
+            "opts",
+            "cs"
+          ]
+        },
+        {
+          "name": "buildCertificateSource",
+          "startLine": 296,
+          "endLine": 317,
+          "params": [
+            "tlsConfig",
+            "restCfg"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Run",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "Start",
+          "line": 257,
+          "isDefault": false
+        },
+        {
+          "name": "NeedLeaderElection",
+          "line": 261,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Run",
+          "callee": "logf.FromContext",
+          "lineNumber": 68
+        },
+        {
+          "caller": "Run",
+          "callee": "util.RestConfigWithUserAgent",
+          "lineNumber": 70
+        },
+        {
+          "caller": "Run",
+          "callee": "ctrl.GetConfigOrDie",
+          "lineNumber": 70
+        },
+        {
+          "caller": "Run",
+          "callee": "buildCertificateSource",
+          "lineNumber": 80
+        },
+        {
+          "caller": "Run",
+          "callee": "buildMetricsServerOptions",
+          "lineNumber": 81
+        },
+        {
+          "caller": "Run",
+          "callee": "runtime.NewScheme",
+          "lineNumber": 86
+        },
+        {
+          "caller": "Run",
+          "callee": "utilruntime.Must",
+          "lineNumber": 87
+        },
+        {
+          "caller": "Run",
+          "callee": "kscheme.AddToScheme",
+          "lineNumber": 87
+        },
+        {
+          "caller": "Run",
+          "callee": "utilruntime.Must",
+          "lineNumber": 88
+        },
+        {
+          "caller": "Run",
+          "callee": "cmscheme.AddToScheme",
+          "lineNumber": 88
+        },
+        {
+          "caller": "Run",
+          "callee": "utilruntime.Must",
+          "lineNumber": 89
+        },
+        {
+          "caller": "Run",
+          "callee": "apiext.AddToScheme",
+          "lineNumber": 89
+        },
+        {
+          "caller": "Run",
+          "callee": "utilruntime.Must",
+          "lineNumber": 90
+        },
+        {
+          "caller": "Run",
+          "callee": "apireg.AddToScheme",
+          "lineNumber": 90
+        },
+        {
+          "caller": "Run",
+          "callee": "ctrl.NewManager",
+          "lineNumber": 92
+        },
+        {
+          "caller": "Run",
+          "callee": "fmt.Errorf",
+          "lineNumber": 151
+        },
+        {
+          "caller": "Run",
+          "callee": "mgr.Add",
+          "lineNumber": 155
+        },
+        {
+          "caller": "Run",
+          "callee": "lc.Listen",
+          "lineNumber": 163
+        },
+        {
+          "caller": "Run",
+          "callee": "http.NewServeMux",
+          "lineNumber": 168
+        },
+        {
+          "caller": "Run",
+          "callee": "profiling.Install",
+          "lineNumber": 170
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V(logf.InfoLevel).Info",
+          "lineNumber": 171
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V",
+          "lineNumber": 171
+        },
+        {
+          "caller": "Run",
+          "callee": "mgr.Add",
+          "lineNumber": 177
+        },
+        {
+          "caller": "Run",
+          "callee": "runnableNoLeaderElectionFunc",
+          "lineNumber": 177
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.Done",
+          "lineNumber": 178
+        },
+        {
+          "caller": "Run",
+          "callee": "context.WithTimeout",
+          "lineNumber": 181
+        },
+        {
+          "caller": "Run",
+          "callee": "context.Background",
+          "lineNumber": 181
+        },
+        {
+          "caller": "Run",
+          "callee": "cancel",
+          "lineNumber": 182
+        },
+        {
+          "caller": "Run",
+          "callee": "server.Shutdown",
+          "lineNumber": 185
+        },
+        {
+          "caller": "Run",
+          "callee": "mgr.Add",
+          "lineNumber": 190
+        },
+        {
+          "caller": "Run",
+          "callee": "runnableNoLeaderElectionFunc",
+          "lineNumber": 190
+        },
+        {
+          "caller": "Run",
+          "callee": "server.Serve",
+          "lineNumber": 191
+        },
+        {
+          "caller": "Run",
+          "callee": "client.New",
+          "lineNumber": 204
+        },
+        {
+          "caller": "Run",
+          "callee": "mgr.GetConfig",
+          "lineNumber": 204
+        },
+        {
+          "caller": "Run",
+          "callee": "mgr.GetScheme",
+          "lineNumber": 205
+        },
+        {
+          "caller": "Run",
+          "callee": "mgr.GetRESTMapper",
+          "lineNumber": 206
+        },
+        {
+          "caller": "Run",
+          "callee": "fmt.Errorf",
+          "lineNumber": 209
+        },
+        {
+          "caller": "Run",
+          "callee": "wait.PollUntilContextTimeout",
+          "lineNumber": 211
+        },
+        {
+          "caller": "Run",
+          "callee": "directClient.Get",
+          "lineNumber": 214
+        },
+        {
+          "caller": "Run",
+          "callee": "apierrors.IsNotFound",
+          "lineNumber": 215
+        },
+        {
+          "caller": "Run",
+          "callee": "log.Info",
+          "lineNumber": 216
+        },
+        {
+          "caller": "Run",
+          "callee": "log.Error",
+          "lineNumber": 219
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V(logf.DebugLevel).Info",
+          "lineNumber": 222
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V",
+          "lineNumber": 222
+        },
+        {
+          "caller": "Run",
+          "callee": "log.Error",
+          "lineNumber": 226
+        },
+        {
+          "caller": "Run",
+          "callee": "cainjector.RegisterAllInjectors",
+          "lineNumber": 242
+        },
+        {
+          "caller": "Run",
+          "callee": "log.Error",
+          "lineNumber": 244
+        },
+        {
+          "caller": "Run",
+          "callee": "mgr.Start",
+          "lineNumber": 248
+        },
+        {
+          "caller": "Run",
+          "callee": "fmt.Errorf",
+          "lineNumber": 249
+        },
+        {
+          "caller": "Start",
+          "callee": "r",
+          "lineNumber": 258
+        },
+        {
+          "caller": "buildMetricsServerOptions",
+          "callee": "ciphers.TLSCipherSuites",
+          "lineNumber": 276
+        },
+        {
+          "caller": "buildMetricsServerOptions",
+          "callee": "ciphers.TLSVersion",
+          "lineNumber": 280
+        },
+        {
+          "caller": "buildCertificateSource",
+          "callee": "tlsConfig.FilesystemConfigProvided",
+          "lineNumber": 298
+        },
+        {
+          "caller": "buildCertificateSource",
+          "callee": "tlsConfig.DynamicConfigProvided",
+          "lineNumber": 304
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cmd/cainjector/app/options/options.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 141,
+      "nonEmptyLines": 121,
+      "functions": [
+        {
+          "name": "NewCAInjectorFlags",
+          "startLine": 40,
+          "endLine": 42,
+          "params": []
+        },
+        {
+          "name": "AddFlags",
+          "startLine": 44,
+          "endLine": 46,
+          "params": [
+            "fs"
+          ]
+        },
+        {
+          "name": "NewCAInjectorConfiguration",
+          "startLine": 48,
+          "endLine": 60,
+          "params": []
+        },
+        {
+          "name": "AddConfigFlags",
+          "startLine": 62,
+          "endLine": 141,
+          "params": [
+            "fs",
+            "c"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CAInjectorFlags",
+          "startLine": 35,
+          "endLine": 38,
+          "methods": [
+            "AddFlags"
+          ],
+          "properties": [
+            "Config"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CAInjectorFlags",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "NewCAInjectorFlags",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "AddFlags",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "NewCAInjectorConfiguration",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "AddConfigFlags",
+          "line": 62,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AddFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 45
+        },
+        {
+          "caller": "NewCAInjectorConfiguration",
+          "callee": "configscheme.NewSchemeAndCodecs",
+          "lineNumber": 49
+        },
+        {
+          "caller": "NewCAInjectorConfiguration",
+          "callee": "scheme.Default",
+          "lineNumber": 54
+        },
+        {
+          "caller": "NewCAInjectorConfiguration",
+          "callee": "scheme.Convert",
+          "lineNumber": 56
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 63
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 65
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.BoolVar",
+          "lineNumber": 69
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 72
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.DurationVar",
+          "lineNumber": 74
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.DurationVar",
+          "lineNumber": 80
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.DurationVar",
+          "lineNumber": 84
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.BoolVar",
+          "lineNumber": 88
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.BoolVar",
+          "lineNumber": 92
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.BoolVar",
+          "lineNumber": 95
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.BoolVar",
+          "lineNumber": 98
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.BoolVar",
+          "lineNumber": 101
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.BoolVar",
+          "lineNumber": 105
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 107
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.Var",
+          "lineNumber": 110
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "cliflag.NewMapStringBool",
+          "lineNumber": 110
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "strings.Join",
+          "lineNumber": 111
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "utilfeature.DefaultFeatureGate.KnownFeatures",
+          "lineNumber": 111
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "logf.AddFlags",
+          "lineNumber": 113
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 115
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 116
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 117
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.DurationVar",
+          "lineNumber": 119
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 120
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 121
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringSliceVar",
+          "lineNumber": 122
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "cliflag.TLSCipherPossibleValues",
+          "lineNumber": 124
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringSliceVar",
+          "lineNumber": 125
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "strings.Join",
+          "lineNumber": 128
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "cliflag.TLSPossibleVersions",
+          "lineNumber": 129
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 130
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "strings.Join",
+          "lineNumber": 132
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "ctrlconfig.RegisterFlags",
+          "lineNumber": 137
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "controllerRuntimeFlags.VisitAll",
+          "lineNumber": 138
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.AddGoFlag",
+          "lineNumber": 139
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "cmd/cainjector/main.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 29,
+          "endLine": 46,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "util.SetupExitHandler",
+          "lineNumber": 32
+        },
+        {
+          "caller": "main",
+          "callee": "context.Background",
+          "lineNumber": 32
+        },
+        {
+          "caller": "main",
+          "callee": "exit",
+          "lineNumber": 33
+        },
+        {
+          "caller": "main",
+          "callee": "logf.InitLogs",
+          "lineNumber": 35
+        },
+        {
+          "caller": "main",
+          "callee": "logf.FlushLogs",
+          "lineNumber": 36
+        },
+        {
+          "caller": "main",
+          "callee": "ctrl.SetLogger",
+          "lineNumber": 37
+        },
+        {
+          "caller": "main",
+          "callee": "logf.NewContext",
+          "lineNumber": 38
+        },
+        {
+          "caller": "main",
+          "callee": "app.NewCAInjectorCommand",
+          "lineNumber": 40
+        },
+        {
+          "caller": "main",
+          "callee": "cmd.ExecuteContext",
+          "lineNumber": 42
+        },
+        {
+          "caller": "main",
+          "callee": "logf.Log.Error",
+          "lineNumber": 43
+        },
+        {
+          "caller": "main",
+          "callee": "util.SetExitCode",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

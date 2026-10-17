@@ -1,0 +1,291 @@
+{
+  "projectRoot": "/Users/samtyga/Desktop/work/cert-manager",
+  "batchFiles": [
+    {
+      "path": "pkg/acme/accounts/client.go",
+      "language": "go",
+      "sizeLines": 111,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/acme/accounts/registry.go",
+      "language": "go",
+      "sizeLines": 218,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/acme/accounts/test/registry.go",
+      "language": "go",
+      "sizeLines": 55,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/acme/client/fake.go",
+      "language": "go",
+      "sizeLines": 163,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/acme/client/http.go",
+      "language": "go",
+      "sizeLines": 103,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/acme/client/interfaces.go",
+      "language": "go",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/acme/client/middleware/logger.go",
+      "language": "go",
+      "sizeLines": 154,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/acme/util/util.go",
+      "language": "go",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/controller/acmechallenges/sync.go",
+      "language": "go",
+      "sizeLines": 411,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/controller/acmeorders/sync.go",
+      "language": "go",
+      "sizeLines": 817,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/issuer/acme/setup.go",
+      "language": "go",
+      "sizeLines": 567,
+      "fileCategory": "code"
+    },
+    {
+      "path": "third_party/forked/acme/acme.go",
+      "language": "go",
+      "sizeLines": 810,
+      "fileCategory": "code"
+    },
+    {
+      "path": "third_party/forked/acme/http.go",
+      "language": "go",
+      "sizeLines": 341,
+      "fileCategory": "code"
+    },
+    {
+      "path": "third_party/forked/acme/internal/acmeprobe/prober.go",
+      "language": "go",
+      "sizeLines": 433,
+      "fileCategory": "code"
+    },
+    {
+      "path": "third_party/forked/acme/jws.go",
+      "language": "go",
+      "sizeLines": 257,
+      "fileCategory": "code"
+    },
+    {
+      "path": "third_party/forked/acme/rfc8555.go",
+      "language": "go",
+      "sizeLines": 486,
+      "fileCategory": "code"
+    },
+    {
+      "path": "third_party/forked/acme/types.go",
+      "language": "go",
+      "sizeLines": 673,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "pkg/acme/accounts/client.go": [
+      "pkg/acme/client/fake.go",
+      "pkg/acme/client/http.go",
+      "pkg/acme/client/interfaces.go",
+      "pkg/acme/client/middleware/logger.go",
+      "pkg/acme/util/util.go",
+      "pkg/metrics/acme.go",
+      "pkg/metrics/metrics.go",
+      "pkg/metrics/venafi.go",
+      "third_party/forked/acme/acme.go",
+      "third_party/forked/acme/http.go",
+      "third_party/forked/acme/jws.go",
+      "third_party/forked/acme/rfc8555.go",
+      "third_party/forked/acme/types.go"
+    ],
+    "pkg/acme/accounts/registry.go": [
+      "pkg/acme/client/fake.go",
+      "pkg/acme/client/http.go",
+      "pkg/acme/client/interfaces.go"
+    ],
+    "pkg/acme/accounts/test/registry.go": [
+      "pkg/acme/accounts/client.go",
+      "pkg/acme/accounts/registry.go",
+      "pkg/acme/client/fake.go",
+      "pkg/acme/client/http.go",
+      "pkg/acme/client/interfaces.go"
+    ],
+    "pkg/acme/client/fake.go": [
+      "third_party/forked/acme/acme.go",
+      "third_party/forked/acme/http.go",
+      "third_party/forked/acme/jws.go",
+      "third_party/forked/acme/rfc8555.go",
+      "third_party/forked/acme/types.go"
+    ],
+    "pkg/acme/client/http.go": [
+      "pkg/metrics/acme.go",
+      "pkg/metrics/metrics.go",
+      "pkg/metrics/venafi.go"
+    ],
+    "pkg/acme/client/interfaces.go": [
+      "pkg/acme/util/util.go",
+      "third_party/forked/acme/acme.go",
+      "third_party/forked/acme/http.go",
+      "third_party/forked/acme/jws.go",
+      "third_party/forked/acme/rfc8555.go",
+      "third_party/forked/acme/types.go"
+    ],
+    "pkg/acme/client/middleware/logger.go": [
+      "pkg/acme/client/fake.go",
+      "pkg/acme/client/http.go",
+      "pkg/acme/client/interfaces.go",
+      "pkg/logs/logs.go",
+      "third_party/forked/acme/acme.go",
+      "third_party/forked/acme/http.go",
+      "third_party/forked/acme/jws.go",
+      "third_party/forked/acme/rfc8555.go",
+      "third_party/forked/acme/types.go"
+    ],
+    "pkg/acme/util/util.go": [],
+    "pkg/controller/acmechallenges/sync.go": [
+      "pkg/acme/client/fake.go",
+      "pkg/acme/client/http.go",
+      "pkg/acme/client/interfaces.go",
+      "pkg/acme/util.go",
+      "pkg/apis/acme/v1/const.go",
+      "pkg/apis/acme/v1/doc.go",
+      "pkg/apis/acme/v1/register.go",
+      "pkg/apis/acme/v1/types.go",
+      "pkg/apis/acme/v1/types_challenge.go",
+      "pkg/apis/acme/v1/types_issuer.go",
+      "pkg/apis/acme/v1/types_order.go",
+      "pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "pkg/apis/certmanager/v1/const.go",
+      "pkg/apis/certmanager/v1/doc.go",
+      "pkg/apis/certmanager/v1/generic_issuer.go",
+      "pkg/apis/certmanager/v1/register.go",
+      "pkg/apis/certmanager/v1/types.go",
+      "pkg/apis/certmanager/v1/types_certificate.go",
+      "pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "pkg/apis/certmanager/v1/types_issuer.go",
+      "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "pkg/logs/logs.go",
+      "third_party/forked/acme/acme.go",
+      "third_party/forked/acme/http.go",
+      "third_party/forked/acme/jws.go",
+      "third_party/forked/acme/rfc8555.go",
+      "third_party/forked/acme/types.go"
+    ],
+    "pkg/controller/acmeorders/sync.go": [
+      "internal/controller/feature/features.go",
+      "internal/controller/orders/apply.go",
+      "internal/pem/decode.go",
+      "pkg/acme/client/fake.go",
+      "pkg/acme/client/http.go",
+      "pkg/acme/client/interfaces.go",
+      "pkg/acme/util.go",
+      "pkg/apis/acme/v1/const.go",
+      "pkg/apis/acme/v1/doc.go",
+      "pkg/apis/acme/v1/register.go",
+      "pkg/apis/acme/v1/types.go",
+      "pkg/apis/acme/v1/types_challenge.go",
+      "pkg/apis/acme/v1/types_issuer.go",
+      "pkg/apis/acme/v1/types_order.go",
+      "pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "pkg/apis/certmanager/v1/const.go",
+      "pkg/apis/certmanager/v1/doc.go",
+      "pkg/apis/certmanager/v1/generic_issuer.go",
+      "pkg/apis/certmanager/v1/register.go",
+      "pkg/apis/certmanager/v1/types.go",
+      "pkg/apis/certmanager/v1/types_certificate.go",
+      "pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "pkg/apis/certmanager/v1/types_issuer.go",
+      "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "pkg/logs/logs.go",
+      "pkg/util/feature/feature_gate.go",
+      "third_party/forked/acme/acme.go",
+      "third_party/forked/acme/http.go",
+      "third_party/forked/acme/jws.go",
+      "third_party/forked/acme/rfc8555.go",
+      "third_party/forked/acme/types.go"
+    ],
+    "pkg/issuer/acme/setup.go": [
+      "pkg/acme/accounts/client.go",
+      "pkg/acme/accounts/registry.go",
+      "pkg/acme/client/fake.go",
+      "pkg/acme/client/http.go",
+      "pkg/acme/client/interfaces.go",
+      "pkg/acme/util.go",
+      "pkg/api/util/conditions.go",
+      "pkg/api/util/duration.go",
+      "pkg/api/util/issuers.go",
+      "pkg/api/util/kube.go",
+      "pkg/api/util/names.go",
+      "pkg/api/util/usages.go",
+      "pkg/apis/certmanager/v1/const.go",
+      "pkg/apis/certmanager/v1/doc.go",
+      "pkg/apis/certmanager/v1/generic_issuer.go",
+      "pkg/apis/certmanager/v1/register.go",
+      "pkg/apis/certmanager/v1/types.go",
+      "pkg/apis/certmanager/v1/types_certificate.go",
+      "pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "pkg/apis/certmanager/v1/types_issuer.go",
+      "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "pkg/apis/meta/v1/doc.go",
+      "pkg/apis/meta/v1/register.go",
+      "pkg/apis/meta/v1/types.go",
+      "pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "pkg/logs/logs.go",
+      "pkg/util/errors/errors.go",
+      "pkg/util/pki/asn1_util.go",
+      "pkg/util/pki/basicconstraints.go",
+      "pkg/util/pki/certificatetemplate.go",
+      "pkg/util/pki/csr.go",
+      "pkg/util/pki/generate.go",
+      "pkg/util/pki/keyusage.go",
+      "pkg/util/pki/kube.go",
+      "pkg/util/pki/match.go",
+      "pkg/util/pki/nameconstraints.go",
+      "pkg/util/pki/parse.go",
+      "pkg/util/pki/parse_certificate_chain.go",
+      "pkg/util/pki/renewaltime.go",
+      "pkg/util/pki/sans.go",
+      "pkg/util/pki/subject.go",
+      "pkg/util/pki/temporarycertificate.go",
+      "third_party/forked/acme/acme.go",
+      "third_party/forked/acme/http.go",
+      "third_party/forked/acme/jws.go",
+      "third_party/forked/acme/rfc8555.go",
+      "third_party/forked/acme/types.go"
+    ],
+    "third_party/forked/acme/acme.go": [],
+    "third_party/forked/acme/http.go": [],
+    "third_party/forked/acme/internal/acmeprobe/prober.go": [
+      "third_party/forked/acme/acme.go",
+      "third_party/forked/acme/http.go",
+      "third_party/forked/acme/jws.go",
+      "third_party/forked/acme/rfc8555.go",
+      "third_party/forked/acme/types.go"
+    ],
+    "third_party/forked/acme/jws.go": [],
+    "third_party/forked/acme/rfc8555.go": [],
+    "third_party/forked/acme/types.go": []
+  }
+}

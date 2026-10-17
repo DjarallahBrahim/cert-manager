@@ -1,0 +1,512 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 4,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 4,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "cmd/startupapicheck/main.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 32,
+          "endLine": 79,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "util.SetupExitHandler",
+          "lineNumber": 33
+        },
+        {
+          "caller": "main",
+          "callee": "context.Background",
+          "lineNumber": 33
+        },
+        {
+          "caller": "main",
+          "callee": "exit",
+          "lineNumber": 34
+        },
+        {
+          "caller": "main",
+          "callee": "logf.InitLogs",
+          "lineNumber": 36
+        },
+        {
+          "caller": "main",
+          "callee": "logf.FlushLogs",
+          "lineNumber": 37
+        },
+        {
+          "caller": "main",
+          "callee": "ctrl.SetLogger",
+          "lineNumber": 38
+        },
+        {
+          "caller": "main",
+          "callee": "logf.NewContext",
+          "lineNumber": 39
+        },
+        {
+          "caller": "main",
+          "callee": "logs.NewOptions",
+          "lineNumber": 41
+        },
+        {
+          "caller": "main",
+          "callee": "logf.ValidateAndApply",
+          "lineNumber": 48
+        },
+        {
+          "caller": "main",
+          "callee": "logf.AddFlagsNonDeprecated",
+          "lineNumber": 57
+        },
+        {
+          "caller": "main",
+          "callee": "logFlags.VisitAll",
+          "lineNumber": 59
+        },
+        {
+          "caller": "main",
+          "callee": "cmd.PersistentFlags().AddFlag",
+          "lineNumber": 66
+        },
+        {
+          "caller": "main",
+          "callee": "cmd.PersistentFlags",
+          "lineNumber": 66
+        },
+        {
+          "caller": "main",
+          "callee": "cmd.PersistentFlags().AddFlag",
+          "lineNumber": 68
+        },
+        {
+          "caller": "main",
+          "callee": "cmd.PersistentFlags",
+          "lineNumber": 68
+        },
+        {
+          "caller": "main",
+          "callee": "cmd.AddCommand",
+          "lineNumber": 73
+        },
+        {
+          "caller": "main",
+          "callee": "check.NewCmdCheck",
+          "lineNumber": 73
+        },
+        {
+          "caller": "main",
+          "callee": "cmd.ExecuteContext",
+          "lineNumber": 75
+        },
+        {
+          "caller": "main",
+          "callee": "logf.Log.Error",
+          "lineNumber": 76
+        },
+        {
+          "caller": "main",
+          "callee": "util.SetExitCode",
+          "lineNumber": 77
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cmd/startupapicheck/pkg/check/api/api.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 133,
+      "nonEmptyLines": 106,
+      "functions": [
+        {
+          "name": "Complete",
+          "startLine": 51,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "NewCmdCheckApi",
+          "startLine": 66,
+          "endLine": 91,
+          "params": [
+            "setupCtx"
+          ]
+        },
+        {
+          "name": "Run",
+          "startLine": 94,
+          "endLine": 133,
+          "params": [
+            "ctx",
+            "out"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Options",
+          "startLine": 36,
+          "endLine": 48,
+          "methods": [
+            "Complete",
+            "Run"
+          ],
+          "properties": [
+            "APIChecker",
+            "Wait",
+            "Interval"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Options",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "Complete",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "NewCmdCheckApi",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "Run",
+          "line": 94,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Complete",
+          "callee": "cmapichecker.New",
+          "lineNumber": 54
+        },
+        {
+          "caller": "NewCmdCheckApi",
+          "callee": "o.Complete",
+          "lineNumber": 78
+        },
+        {
+          "caller": "NewCmdCheckApi",
+          "callee": "o.Run",
+          "lineNumber": 82
+        },
+        {
+          "caller": "NewCmdCheckApi",
+          "callee": "cmd.Context",
+          "lineNumber": 82
+        },
+        {
+          "caller": "NewCmdCheckApi",
+          "callee": "cmd.OutOrStdout",
+          "lineNumber": 82
+        },
+        {
+          "caller": "NewCmdCheckApi",
+          "callee": "cmd.Flags().DurationVar",
+          "lineNumber": 85
+        },
+        {
+          "caller": "NewCmdCheckApi",
+          "callee": "cmd.Flags",
+          "lineNumber": 85
+        },
+        {
+          "caller": "NewCmdCheckApi",
+          "callee": "cmd.Flags().DurationVar",
+          "lineNumber": 86
+        },
+        {
+          "caller": "NewCmdCheckApi",
+          "callee": "cmd.Flags",
+          "lineNumber": 86
+        },
+        {
+          "caller": "NewCmdCheckApi",
+          "callee": "factory.New",
+          "lineNumber": 88
+        },
+        {
+          "caller": "Run",
+          "callee": "logf.FromContext",
+          "lineNumber": 95
+        },
+        {
+          "caller": "Run",
+          "callee": "time.Now",
+          "lineNumber": 97
+        },
+        {
+          "caller": "Run",
+          "callee": "wait.PollUntilContextCancel",
+          "lineNumber": 99
+        },
+        {
+          "caller": "Run",
+          "callee": "o.APIChecker.Check",
+          "lineNumber": 100
+        },
+        {
+          "caller": "Run",
+          "callee": "cmapichecker.TranslateToSimpleError",
+          "lineNumber": 101
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V(2).Info",
+          "lineNumber": 103
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V",
+          "lineNumber": 103
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V(2).Info",
+          "lineNumber": 106
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V",
+          "lineNumber": 106
+        },
+        {
+          "caller": "Run",
+          "callee": "time.Since",
+          "lineNumber": 110
+        },
+        {
+          "caller": "Run",
+          "callee": "errors.Is",
+          "lineNumber": 120
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V(2).Info",
+          "lineNumber": 121
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V",
+          "lineNumber": 121
+        },
+        {
+          "caller": "Run",
+          "callee": "cmcmdutil.SetExitCode",
+          "lineNumber": 122
+        },
+        {
+          "caller": "Run",
+          "callee": "cmcmdutil.SetExitCode",
+          "lineNumber": 124
+        },
+        {
+          "caller": "Run",
+          "callee": "fmt.Fprintln",
+          "lineNumber": 130
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "cmd/startupapicheck/pkg/check/check.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "NewCmdCheck",
+          "startLine": 28,
+          "endLine": 33,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "NewCmdCreateBare",
+          "startLine": 36,
+          "endLine": 42,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewCmdCheck",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "NewCmdCreateBare",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewCmdCheck",
+          "callee": "NewCmdCreateBare",
+          "lineNumber": 29
+        },
+        {
+          "caller": "NewCmdCheck",
+          "callee": "cmds.AddCommand",
+          "lineNumber": 30
+        },
+        {
+          "caller": "NewCmdCheck",
+          "callee": "api.NewCmdCheckApi",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cmd/startupapicheck/pkg/factory/factory.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "New",
+          "startLine": 52,
+          "endLine": 75,
+          "params": [
+            "cmd"
+          ]
+        },
+        {
+          "name": "complete",
+          "startLine": 79,
+          "endLine": 93,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "Factory",
+          "startLine": 31,
+          "endLine": 45,
+          "methods": [
+            "complete"
+          ],
+          "properties": [
+            "restClientGetter",
+            "Namespace",
+            "EnforceNamespace",
+            "RESTConfig"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Factory",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "New",
+          "line": 52,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "New",
+          "callee": "new",
+          "lineNumber": 53
+        },
+        {
+          "caller": "New",
+          "callee": "genericclioptions.NewConfigFlags",
+          "lineNumber": 55
+        },
+        {
+          "caller": "New",
+          "callee": "kubeConfigFlags.AddFlags",
+          "lineNumber": 58
+        },
+        {
+          "caller": "New",
+          "callee": "cmd.Flags",
+          "lineNumber": 58
+        },
+        {
+          "caller": "New",
+          "callee": "f.complete",
+          "lineNumber": 64
+        },
+        {
+          "caller": "New",
+          "callee": "existingPreRun",
+          "lineNumber": 69
+        },
+        {
+          "caller": "complete",
+          "callee": "f.restClientGetter.ToRawKubeConfigLoader().Namespace",
+          "lineNumber": 82
+        },
+        {
+          "caller": "complete",
+          "callee": "f.restClientGetter.ToRawKubeConfigLoader",
+          "lineNumber": 82
+        },
+        {
+          "caller": "complete",
+          "callee": "f.restClientGetter.ToRESTConfig",
+          "lineNumber": 87
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    }
+  ]
+}

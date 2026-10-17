@@ -1,0 +1,5632 @@
+{
+  "role": "file-analyzer",
+  "agentDefinition": "/Users/samtyga/.understand-anything/repo/understand-anything-plugin/agents/file-analyzer.md",
+  "projectRoot": "/Users/samtyga/Desktop/work/cert-manager",
+  "projectName": "cert-manager",
+  "projectDescription": "cert-manager adds certificates and certificate issuers as resource types in Kubernetes clusters, and simplifies obtaining, renewing, and using those certificates.",
+  "languages": [
+    "go",
+    "json",
+    "json5",
+    "makefile",
+    "markdown",
+    "mod",
+    "shell",
+    "sum",
+    "txt",
+    "yaml"
+  ],
+  "skillDir": "/Users/samtyga/.agents/skills/understand",
+  "dataDir": "/Users/samtyga/Desktop/work/cert-manager/.ua",
+  "batchIndex": 10,
+  "totalBatches": 51,
+  "languageDirective": "Generate all textual content (summaries, tags, titles, descriptions, languageNotes) in English.",
+  "outputDir": "/Users/samtyga/Desktop/work/cert-manager/.ua/intermediate",
+  "files": [
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/route53auth.go",
+      "language": "go",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/route53kubernetesauth.go",
+      "language": "go",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/serviceaccountref.go",
+      "language": "go",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/caissuer.go",
+      "language": "go",
+      "sizeLines": 72,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificate.go",
+      "language": "go",
+      "sizeLines": 281,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificateadditionaloutputformat.go",
+      "language": "go",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificatekeystores.go",
+      "language": "go",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificateprivatekey.go",
+      "language": "go",
+      "sizeLines": 70,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificaterequest.go",
+      "language": "go",
+      "sizeLines": 281,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "language": "go",
+      "sizeLines": 129,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "language": "go",
+      "sizeLines": 79,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "language": "go",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "language": "go",
+      "sizeLines": 263,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificatestatus.go",
+      "language": "go",
+      "sizeLines": 111,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/clusterissuer.go",
+      "language": "go",
+      "sizeLines": 279,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/issuer.go",
+      "language": "go",
+      "sizeLines": 281,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/issuerconfig.go",
+      "language": "go",
+      "sizeLines": 79,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/issuerspec.go",
+      "language": "go",
+      "sizeLines": 75,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/issuerstatus.go",
+      "language": "go",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/jkskeystore.go",
+      "language": "go",
+      "sizeLines": 70,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/nameconstraintitem.go",
+      "language": "go",
+      "sizeLines": 74,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "language": "go",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "language": "go",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "language": "go",
+      "sizeLines": 71,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go",
+      "language": "go",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "language": "go",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "language": "go",
+      "sizeLines": 61,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "language": "go",
+      "sizeLines": 70,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "language": "go",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "language": "go",
+      "sizeLines": 117,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "pkg/client/applyconfigurations/acme/v1/route53auth.go": [],
+    "pkg/client/applyconfigurations/acme/v1/route53kubernetesauth.go": [],
+    "pkg/client/applyconfigurations/acme/v1/serviceaccountref.go": [],
+    "pkg/client/applyconfigurations/certmanager/v1/caissuer.go": [],
+    "pkg/client/applyconfigurations/certmanager/v1/certificate.go": [
+      "pkg/apis/certmanager/v1/const.go",
+      "pkg/apis/certmanager/v1/doc.go",
+      "pkg/apis/certmanager/v1/generic_issuer.go",
+      "pkg/apis/certmanager/v1/register.go",
+      "pkg/apis/certmanager/v1/types.go",
+      "pkg/apis/certmanager/v1/types_certificate.go",
+      "pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "pkg/apis/certmanager/v1/types_issuer.go",
+      "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "pkg/client/applyconfigurations/internal/internal.go"
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/certificateadditionaloutputformat.go": [
+      "pkg/apis/certmanager/v1/const.go",
+      "pkg/apis/certmanager/v1/doc.go",
+      "pkg/apis/certmanager/v1/generic_issuer.go",
+      "pkg/apis/certmanager/v1/register.go",
+      "pkg/apis/certmanager/v1/types.go",
+      "pkg/apis/certmanager/v1/types_certificate.go",
+      "pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "pkg/apis/certmanager/v1/types_issuer.go",
+      "pkg/apis/certmanager/v1/zz_generated.deepcopy.go"
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/certificatekeystores.go": [],
+    "pkg/client/applyconfigurations/certmanager/v1/certificateprivatekey.go": [
+      "pkg/apis/certmanager/v1/const.go",
+      "pkg/apis/certmanager/v1/doc.go",
+      "pkg/apis/certmanager/v1/generic_issuer.go",
+      "pkg/apis/certmanager/v1/register.go",
+      "pkg/apis/certmanager/v1/types.go",
+      "pkg/apis/certmanager/v1/types_certificate.go",
+      "pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "pkg/apis/certmanager/v1/types_issuer.go",
+      "pkg/apis/certmanager/v1/zz_generated.deepcopy.go"
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/certificaterequest.go": [
+      "pkg/apis/certmanager/v1/const.go",
+      "pkg/apis/certmanager/v1/doc.go",
+      "pkg/apis/certmanager/v1/generic_issuer.go",
+      "pkg/apis/certmanager/v1/register.go",
+      "pkg/apis/certmanager/v1/types.go",
+      "pkg/apis/certmanager/v1/types_certificate.go",
+      "pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "pkg/apis/certmanager/v1/types_issuer.go",
+      "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "pkg/client/applyconfigurations/internal/internal.go"
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go": [
+      "pkg/apis/certmanager/v1/const.go",
+      "pkg/apis/certmanager/v1/doc.go",
+      "pkg/apis/certmanager/v1/generic_issuer.go",
+      "pkg/apis/certmanager/v1/register.go",
+      "pkg/apis/certmanager/v1/types.go",
+      "pkg/apis/certmanager/v1/types_certificate.go",
+      "pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "pkg/apis/certmanager/v1/types_issuer.go",
+      "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "pkg/client/applyconfigurations/meta/v1/secretkeyselector.go"
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go": [],
+    "pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go": [],
+    "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go": [
+      "pkg/apis/certmanager/v1/const.go",
+      "pkg/apis/certmanager/v1/doc.go",
+      "pkg/apis/certmanager/v1/generic_issuer.go",
+      "pkg/apis/certmanager/v1/register.go",
+      "pkg/apis/certmanager/v1/types.go",
+      "pkg/apis/certmanager/v1/types_certificate.go",
+      "pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "pkg/apis/certmanager/v1/types_issuer.go",
+      "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "pkg/client/applyconfigurations/meta/v1/secretkeyselector.go"
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/certificatestatus.go": [],
+    "pkg/client/applyconfigurations/certmanager/v1/clusterissuer.go": [
+      "pkg/apis/certmanager/v1/const.go",
+      "pkg/apis/certmanager/v1/doc.go",
+      "pkg/apis/certmanager/v1/generic_issuer.go",
+      "pkg/apis/certmanager/v1/register.go",
+      "pkg/apis/certmanager/v1/types.go",
+      "pkg/apis/certmanager/v1/types_certificate.go",
+      "pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "pkg/apis/certmanager/v1/types_issuer.go",
+      "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "pkg/client/applyconfigurations/internal/internal.go"
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/issuer.go": [
+      "pkg/apis/certmanager/v1/const.go",
+      "pkg/apis/certmanager/v1/doc.go",
+      "pkg/apis/certmanager/v1/generic_issuer.go",
+      "pkg/apis/certmanager/v1/register.go",
+      "pkg/apis/certmanager/v1/types.go",
+      "pkg/apis/certmanager/v1/types_certificate.go",
+      "pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "pkg/apis/certmanager/v1/types_issuer.go",
+      "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "pkg/client/applyconfigurations/internal/internal.go"
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/issuerconfig.go": [
+      "pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallenge.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolver.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01gatewayhttproute.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingress.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingressobjectmeta.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodobjectmeta.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodresources.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodsecuritycontext.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodspec.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodtemplate.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresstemplate.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeexternalaccountbinding.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuer.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01provideracmedns.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerakamai.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerazuredns.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerclouddns.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providercloudflare.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerdigitalocean.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerrfc2136.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerroute53.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerwebhook.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerstatus.go",
+      "pkg/client/applyconfigurations/acme/v1/azuremanagedidentity.go",
+      "pkg/client/applyconfigurations/acme/v1/certificatednsnameselector.go",
+      "pkg/client/applyconfigurations/acme/v1/challenge.go",
+      "pkg/client/applyconfigurations/acme/v1/challengespec.go",
+      "pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+      "pkg/client/applyconfigurations/acme/v1/order.go",
+      "pkg/client/applyconfigurations/acme/v1/orderspec.go",
+      "pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+      "pkg/client/applyconfigurations/acme/v1/route53auth.go",
+      "pkg/client/applyconfigurations/acme/v1/route53kubernetesauth.go",
+      "pkg/client/applyconfigurations/acme/v1/serviceaccountref.go"
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/issuerspec.go": [
+      "pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallenge.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolver.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01gatewayhttproute.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingress.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingressobjectmeta.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodobjectmeta.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodresources.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodsecuritycontext.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodspec.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodtemplate.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresstemplate.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeexternalaccountbinding.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuer.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01provideracmedns.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerakamai.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerazuredns.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerclouddns.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providercloudflare.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerdigitalocean.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerrfc2136.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerroute53.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerwebhook.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerstatus.go",
+      "pkg/client/applyconfigurations/acme/v1/azuremanagedidentity.go",
+      "pkg/client/applyconfigurations/acme/v1/certificatednsnameselector.go",
+      "pkg/client/applyconfigurations/acme/v1/challenge.go",
+      "pkg/client/applyconfigurations/acme/v1/challengespec.go",
+      "pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+      "pkg/client/applyconfigurations/acme/v1/order.go",
+      "pkg/client/applyconfigurations/acme/v1/orderspec.go",
+      "pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+      "pkg/client/applyconfigurations/acme/v1/route53auth.go",
+      "pkg/client/applyconfigurations/acme/v1/route53kubernetesauth.go",
+      "pkg/client/applyconfigurations/acme/v1/serviceaccountref.go"
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/issuerstatus.go": [
+      "pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallenge.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolver.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01gatewayhttproute.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingress.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingressobjectmeta.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodobjectmeta.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodresources.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodsecuritycontext.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodspec.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodtemplate.go",
+      "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresstemplate.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeexternalaccountbinding.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuer.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01provideracmedns.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerakamai.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerazuredns.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerclouddns.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providercloudflare.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerdigitalocean.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerrfc2136.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerroute53.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerwebhook.go",
+      "pkg/client/applyconfigurations/acme/v1/acmeissuerstatus.go",
+      "pkg/client/applyconfigurations/acme/v1/azuremanagedidentity.go",
+      "pkg/client/applyconfigurations/acme/v1/certificatednsnameselector.go",
+      "pkg/client/applyconfigurations/acme/v1/challenge.go",
+      "pkg/client/applyconfigurations/acme/v1/challengespec.go",
+      "pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+      "pkg/client/applyconfigurations/acme/v1/order.go",
+      "pkg/client/applyconfigurations/acme/v1/orderspec.go",
+      "pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+      "pkg/client/applyconfigurations/acme/v1/route53auth.go",
+      "pkg/client/applyconfigurations/acme/v1/route53kubernetesauth.go",
+      "pkg/client/applyconfigurations/acme/v1/serviceaccountref.go"
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/jkskeystore.go": [
+      "pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "pkg/client/applyconfigurations/meta/v1/secretkeyselector.go"
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/nameconstraintitem.go": [],
+    "pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go": [],
+    "pkg/client/applyconfigurations/certmanager/v1/othername.go": [],
+    "pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go": [
+      "pkg/apis/certmanager/v1/const.go",
+      "pkg/apis/certmanager/v1/doc.go",
+      "pkg/apis/certmanager/v1/generic_issuer.go",
+      "pkg/apis/certmanager/v1/register.go",
+      "pkg/apis/certmanager/v1/types.go",
+      "pkg/apis/certmanager/v1/types_certificate.go",
+      "pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "pkg/apis/certmanager/v1/types_issuer.go",
+      "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "pkg/client/applyconfigurations/meta/v1/secretkeyselector.go"
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go": [],
+    "pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go": [],
+    "pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go": [
+      "pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "pkg/client/applyconfigurations/meta/v1/secretkeyselector.go"
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/vaultauth.go": [
+      "pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "pkg/client/applyconfigurations/meta/v1/secretkeyselector.go"
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go": [],
+    "pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go": [
+      "pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "pkg/client/applyconfigurations/meta/v1/secretkeyselector.go"
+    ]
+  },
+  "neighborMap": {
+    "pkg/client/applyconfigurations/acme/v1/route53auth.go": [
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ChallengesGetter",
+          "ChallengeInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/acme/v1/fake/fake_challenge.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/acme/v1/fake/fake_order.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/acme/v1/order.go",
+        "batchIndex": 17,
+        "symbols": [
+          "OrdersGetter",
+          "OrderInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/acme/v1/route53kubernetesauth.go": [
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ChallengesGetter",
+          "ChallengeInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/acme/v1/fake/fake_challenge.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/acme/v1/fake/fake_order.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/acme/v1/order.go",
+        "batchIndex": 17,
+        "symbols": [
+          "OrdersGetter",
+          "OrderInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/acme/v1/serviceaccountref.go": [
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ChallengesGetter",
+          "ChallengeInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/acme/v1/fake/fake_challenge.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/acme/v1/fake/fake_order.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/acme/v1/order.go",
+        "batchIndex": 17,
+        "symbols": [
+          "OrdersGetter",
+          "OrderInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/caissuer.go": [
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/certificate.go": [
+      {
+        "path": "pkg/apis/certmanager/v1/const.go",
+        "batchIndex": 2,
+        "symbols": []
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/doc.go",
+        "batchIndex": 2,
+        "symbols": []
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/generic_issuer.go",
+        "batchIndex": 2,
+        "symbols": [
+          "GenericIssuer",
+          "GetObjectMeta",
+          "GetSpec",
+          "GetStatus",
+          "SetSpec",
+          "SetStatus",
+          "Copy",
+          "GetObjectMeta",
+          "GetSpec",
+          "GetStatus",
+          "SetSpec",
+          "SetStatus",
+          "Copy",
+          "ACMEStatus"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/register.go",
+        "batchIndex": 2,
+        "symbols": [
+          "Resource"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types.go",
+        "batchIndex": 2,
+        "symbols": [
+          "DefaultKeyUsages"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_certificate.go",
+        "batchIndex": 2,
+        "symbols": [
+          "Certificate",
+          "CertificateList",
+          "CertificateSpec",
+          "OtherName",
+          "CertificatePrivateKey",
+          "CertificateAdditionalOutputFormat",
+          "X509Subject",
+          "CertificateKeystores",
+          "JKSKeystore",
+          "PKCS12Keystore",
+          "CertificateStatus",
+          "CertificateCondition",
+          "CertificateSecretTemplate",
+          "NameConstraints",
+          "NameConstraintItem"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_certificaterequest.go",
+        "batchIndex": 2,
+        "symbols": [
+          "CertificateRequest",
+          "CertificateRequestList",
+          "CertificateRequestSpec",
+          "CertificateRequestStatus",
+          "CertificateRequestCondition"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_issuer.go",
+        "batchIndex": 2,
+        "symbols": [
+          "ClusterIssuer",
+          "ClusterIssuerList",
+          "Issuer",
+          "IssuerList",
+          "IssuerSpec",
+          "IssuerConfig",
+          "VenafiIssuer",
+          "VenafiTPP",
+          "VenafiCloud",
+          "SelfSignedIssuer",
+          "VaultIssuer",
+          "VaultAuth",
+          "VaultAppRole",
+          "VaultClientCertificateAuth",
+          "VaultKubernetesAuth",
+          "ServiceAccountRef",
+          "CAIssuer",
+          "IssuerStatus",
+          "IssuerCondition"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+        "batchIndex": 2,
+        "symbols": [
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/internal/internal.go",
+        "batchIndex": 17,
+        "symbols": [
+          "Parser"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/certificateadditionaloutputformat.go": [
+      {
+        "path": "pkg/apis/certmanager/v1/const.go",
+        "batchIndex": 2,
+        "symbols": []
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/doc.go",
+        "batchIndex": 2,
+        "symbols": []
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/generic_issuer.go",
+        "batchIndex": 2,
+        "symbols": [
+          "GenericIssuer",
+          "GetObjectMeta",
+          "GetSpec",
+          "GetStatus",
+          "SetSpec",
+          "SetStatus",
+          "Copy",
+          "GetObjectMeta",
+          "GetSpec",
+          "GetStatus",
+          "SetSpec",
+          "SetStatus",
+          "Copy",
+          "ACMEStatus"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/register.go",
+        "batchIndex": 2,
+        "symbols": [
+          "Resource"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types.go",
+        "batchIndex": 2,
+        "symbols": [
+          "DefaultKeyUsages"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_certificate.go",
+        "batchIndex": 2,
+        "symbols": [
+          "Certificate",
+          "CertificateList",
+          "CertificateSpec",
+          "OtherName",
+          "CertificatePrivateKey",
+          "CertificateAdditionalOutputFormat",
+          "X509Subject",
+          "CertificateKeystores",
+          "JKSKeystore",
+          "PKCS12Keystore",
+          "CertificateStatus",
+          "CertificateCondition",
+          "CertificateSecretTemplate",
+          "NameConstraints",
+          "NameConstraintItem"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_certificaterequest.go",
+        "batchIndex": 2,
+        "symbols": [
+          "CertificateRequest",
+          "CertificateRequestList",
+          "CertificateRequestSpec",
+          "CertificateRequestStatus",
+          "CertificateRequestCondition"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_issuer.go",
+        "batchIndex": 2,
+        "symbols": [
+          "ClusterIssuer",
+          "ClusterIssuerList",
+          "Issuer",
+          "IssuerList",
+          "IssuerSpec",
+          "IssuerConfig",
+          "VenafiIssuer",
+          "VenafiTPP",
+          "VenafiCloud",
+          "SelfSignedIssuer",
+          "VaultIssuer",
+          "VaultAuth",
+          "VaultAppRole",
+          "VaultClientCertificateAuth",
+          "VaultKubernetesAuth",
+          "ServiceAccountRef",
+          "CAIssuer",
+          "IssuerStatus",
+          "IssuerCondition"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+        "batchIndex": 2,
+        "symbols": [
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/certificatekeystores.go": [
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/certificateprivatekey.go": [
+      {
+        "path": "pkg/apis/certmanager/v1/const.go",
+        "batchIndex": 2,
+        "symbols": []
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/doc.go",
+        "batchIndex": 2,
+        "symbols": []
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/generic_issuer.go",
+        "batchIndex": 2,
+        "symbols": [
+          "GenericIssuer",
+          "GetObjectMeta",
+          "GetSpec",
+          "GetStatus",
+          "SetSpec",
+          "SetStatus",
+          "Copy",
+          "GetObjectMeta",
+          "GetSpec",
+          "GetStatus",
+          "SetSpec",
+          "SetStatus",
+          "Copy",
+          "ACMEStatus"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/register.go",
+        "batchIndex": 2,
+        "symbols": [
+          "Resource"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types.go",
+        "batchIndex": 2,
+        "symbols": [
+          "DefaultKeyUsages"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_certificate.go",
+        "batchIndex": 2,
+        "symbols": [
+          "Certificate",
+          "CertificateList",
+          "CertificateSpec",
+          "OtherName",
+          "CertificatePrivateKey",
+          "CertificateAdditionalOutputFormat",
+          "X509Subject",
+          "CertificateKeystores",
+          "JKSKeystore",
+          "PKCS12Keystore",
+          "CertificateStatus",
+          "CertificateCondition",
+          "CertificateSecretTemplate",
+          "NameConstraints",
+          "NameConstraintItem"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_certificaterequest.go",
+        "batchIndex": 2,
+        "symbols": [
+          "CertificateRequest",
+          "CertificateRequestList",
+          "CertificateRequestSpec",
+          "CertificateRequestStatus",
+          "CertificateRequestCondition"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_issuer.go",
+        "batchIndex": 2,
+        "symbols": [
+          "ClusterIssuer",
+          "ClusterIssuerList",
+          "Issuer",
+          "IssuerList",
+          "IssuerSpec",
+          "IssuerConfig",
+          "VenafiIssuer",
+          "VenafiTPP",
+          "VenafiCloud",
+          "SelfSignedIssuer",
+          "VaultIssuer",
+          "VaultAuth",
+          "VaultAppRole",
+          "VaultClientCertificateAuth",
+          "VaultKubernetesAuth",
+          "ServiceAccountRef",
+          "CAIssuer",
+          "IssuerStatus",
+          "IssuerCondition"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+        "batchIndex": 2,
+        "symbols": [
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/certificaterequest.go": [
+      {
+        "path": "pkg/apis/certmanager/v1/const.go",
+        "batchIndex": 2,
+        "symbols": []
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/doc.go",
+        "batchIndex": 2,
+        "symbols": []
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/generic_issuer.go",
+        "batchIndex": 2,
+        "symbols": [
+          "GenericIssuer",
+          "GetObjectMeta",
+          "GetSpec",
+          "GetStatus",
+          "SetSpec",
+          "SetStatus",
+          "Copy",
+          "GetObjectMeta",
+          "GetSpec",
+          "GetStatus",
+          "SetSpec",
+          "SetStatus",
+          "Copy",
+          "ACMEStatus"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/register.go",
+        "batchIndex": 2,
+        "symbols": [
+          "Resource"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types.go",
+        "batchIndex": 2,
+        "symbols": [
+          "DefaultKeyUsages"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_certificate.go",
+        "batchIndex": 2,
+        "symbols": [
+          "Certificate",
+          "CertificateList",
+          "CertificateSpec",
+          "OtherName",
+          "CertificatePrivateKey",
+          "CertificateAdditionalOutputFormat",
+          "X509Subject",
+          "CertificateKeystores",
+          "JKSKeystore",
+          "PKCS12Keystore",
+          "CertificateStatus",
+          "CertificateCondition",
+          "CertificateSecretTemplate",
+          "NameConstraints",
+          "NameConstraintItem"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_certificaterequest.go",
+        "batchIndex": 2,
+        "symbols": [
+          "CertificateRequest",
+          "CertificateRequestList",
+          "CertificateRequestSpec",
+          "CertificateRequestStatus",
+          "CertificateRequestCondition"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_issuer.go",
+        "batchIndex": 2,
+        "symbols": [
+          "ClusterIssuer",
+          "ClusterIssuerList",
+          "Issuer",
+          "IssuerList",
+          "IssuerSpec",
+          "IssuerConfig",
+          "VenafiIssuer",
+          "VenafiTPP",
+          "VenafiCloud",
+          "SelfSignedIssuer",
+          "VaultIssuer",
+          "VaultAuth",
+          "VaultAppRole",
+          "VaultClientCertificateAuth",
+          "VaultKubernetesAuth",
+          "ServiceAccountRef",
+          "CAIssuer",
+          "IssuerStatus",
+          "IssuerCondition"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+        "batchIndex": 2,
+        "symbols": [
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/internal/internal.go",
+        "batchIndex": 17,
+        "symbols": [
+          "Parser"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go": [
+      {
+        "path": "pkg/apis/certmanager/v1/const.go",
+        "batchIndex": 2,
+        "symbols": []
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/doc.go",
+        "batchIndex": 2,
+        "symbols": []
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/generic_issuer.go",
+        "batchIndex": 2,
+        "symbols": [
+          "GenericIssuer",
+          "GetObjectMeta",
+          "GetSpec",
+          "GetStatus",
+          "SetSpec",
+          "SetStatus",
+          "Copy",
+          "GetObjectMeta",
+          "GetSpec",
+          "GetStatus",
+          "SetSpec",
+          "SetStatus",
+          "Copy",
+          "ACMEStatus"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/register.go",
+        "batchIndex": 2,
+        "symbols": [
+          "Resource"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types.go",
+        "batchIndex": 2,
+        "symbols": [
+          "DefaultKeyUsages"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_certificate.go",
+        "batchIndex": 2,
+        "symbols": [
+          "Certificate",
+          "CertificateList",
+          "CertificateSpec",
+          "OtherName",
+          "CertificatePrivateKey",
+          "CertificateAdditionalOutputFormat",
+          "X509Subject",
+          "CertificateKeystores",
+          "JKSKeystore",
+          "PKCS12Keystore",
+          "CertificateStatus",
+          "CertificateCondition",
+          "CertificateSecretTemplate",
+          "NameConstraints",
+          "NameConstraintItem"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_certificaterequest.go",
+        "batchIndex": 2,
+        "symbols": [
+          "CertificateRequest",
+          "CertificateRequestList",
+          "CertificateRequestSpec",
+          "CertificateRequestStatus",
+          "CertificateRequestCondition"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_issuer.go",
+        "batchIndex": 2,
+        "symbols": [
+          "ClusterIssuer",
+          "ClusterIssuerList",
+          "Issuer",
+          "IssuerList",
+          "IssuerSpec",
+          "IssuerConfig",
+          "VenafiIssuer",
+          "VenafiTPP",
+          "VenafiCloud",
+          "SelfSignedIssuer",
+          "VaultIssuer",
+          "VaultAuth",
+          "VaultAppRole",
+          "VaultClientCertificateAuth",
+          "VaultKubernetesAuth",
+          "ServiceAccountRef",
+          "CAIssuer",
+          "IssuerStatus",
+          "IssuerCondition"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+        "batchIndex": 2,
+        "symbols": [
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuerReferenceApplyConfiguration",
+          "IssuerReference",
+          "WithName",
+          "WithKind",
+          "WithGroup"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+        "batchIndex": 17,
+        "symbols": [
+          "LocalObjectReferenceApplyConfiguration",
+          "LocalObjectReference",
+          "WithName"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+        "batchIndex": 17,
+        "symbols": [
+          "SecretKeySelectorApplyConfiguration",
+          "SecretKeySelector",
+          "WithName",
+          "WithKey"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go": [
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go": [
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go": [
+      {
+        "path": "pkg/apis/certmanager/v1/const.go",
+        "batchIndex": 2,
+        "symbols": []
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/doc.go",
+        "batchIndex": 2,
+        "symbols": []
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/generic_issuer.go",
+        "batchIndex": 2,
+        "symbols": [
+          "GenericIssuer",
+          "GetObjectMeta",
+          "GetSpec",
+          "GetStatus",
+          "SetSpec",
+          "SetStatus",
+          "Copy",
+          "GetObjectMeta",
+          "GetSpec",
+          "GetStatus",
+          "SetSpec",
+          "SetStatus",
+          "Copy",
+          "ACMEStatus"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/register.go",
+        "batchIndex": 2,
+        "symbols": [
+          "Resource"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types.go",
+        "batchIndex": 2,
+        "symbols": [
+          "DefaultKeyUsages"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_certificate.go",
+        "batchIndex": 2,
+        "symbols": [
+          "Certificate",
+          "CertificateList",
+          "CertificateSpec",
+          "OtherName",
+          "CertificatePrivateKey",
+          "CertificateAdditionalOutputFormat",
+          "X509Subject",
+          "CertificateKeystores",
+          "JKSKeystore",
+          "PKCS12Keystore",
+          "CertificateStatus",
+          "CertificateCondition",
+          "CertificateSecretTemplate",
+          "NameConstraints",
+          "NameConstraintItem"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_certificaterequest.go",
+        "batchIndex": 2,
+        "symbols": [
+          "CertificateRequest",
+          "CertificateRequestList",
+          "CertificateRequestSpec",
+          "CertificateRequestStatus",
+          "CertificateRequestCondition"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_issuer.go",
+        "batchIndex": 2,
+        "symbols": [
+          "ClusterIssuer",
+          "ClusterIssuerList",
+          "Issuer",
+          "IssuerList",
+          "IssuerSpec",
+          "IssuerConfig",
+          "VenafiIssuer",
+          "VenafiTPP",
+          "VenafiCloud",
+          "SelfSignedIssuer",
+          "VaultIssuer",
+          "VaultAuth",
+          "VaultAppRole",
+          "VaultClientCertificateAuth",
+          "VaultKubernetesAuth",
+          "ServiceAccountRef",
+          "CAIssuer",
+          "IssuerStatus",
+          "IssuerCondition"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+        "batchIndex": 2,
+        "symbols": [
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuerReferenceApplyConfiguration",
+          "IssuerReference",
+          "WithName",
+          "WithKind",
+          "WithGroup"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+        "batchIndex": 17,
+        "symbols": [
+          "LocalObjectReferenceApplyConfiguration",
+          "LocalObjectReference",
+          "WithName"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+        "batchIndex": 17,
+        "symbols": [
+          "SecretKeySelectorApplyConfiguration",
+          "SecretKeySelector",
+          "WithName",
+          "WithKey"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/certificatestatus.go": [
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/clusterissuer.go": [
+      {
+        "path": "pkg/apis/certmanager/v1/const.go",
+        "batchIndex": 2,
+        "symbols": []
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/doc.go",
+        "batchIndex": 2,
+        "symbols": []
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/generic_issuer.go",
+        "batchIndex": 2,
+        "symbols": [
+          "GenericIssuer",
+          "GetObjectMeta",
+          "GetSpec",
+          "GetStatus",
+          "SetSpec",
+          "SetStatus",
+          "Copy",
+          "GetObjectMeta",
+          "GetSpec",
+          "GetStatus",
+          "SetSpec",
+          "SetStatus",
+          "Copy",
+          "ACMEStatus"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/register.go",
+        "batchIndex": 2,
+        "symbols": [
+          "Resource"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types.go",
+        "batchIndex": 2,
+        "symbols": [
+          "DefaultKeyUsages"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_certificate.go",
+        "batchIndex": 2,
+        "symbols": [
+          "Certificate",
+          "CertificateList",
+          "CertificateSpec",
+          "OtherName",
+          "CertificatePrivateKey",
+          "CertificateAdditionalOutputFormat",
+          "X509Subject",
+          "CertificateKeystores",
+          "JKSKeystore",
+          "PKCS12Keystore",
+          "CertificateStatus",
+          "CertificateCondition",
+          "CertificateSecretTemplate",
+          "NameConstraints",
+          "NameConstraintItem"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_certificaterequest.go",
+        "batchIndex": 2,
+        "symbols": [
+          "CertificateRequest",
+          "CertificateRequestList",
+          "CertificateRequestSpec",
+          "CertificateRequestStatus",
+          "CertificateRequestCondition"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_issuer.go",
+        "batchIndex": 2,
+        "symbols": [
+          "ClusterIssuer",
+          "ClusterIssuerList",
+          "Issuer",
+          "IssuerList",
+          "IssuerSpec",
+          "IssuerConfig",
+          "VenafiIssuer",
+          "VenafiTPP",
+          "VenafiCloud",
+          "SelfSignedIssuer",
+          "VaultIssuer",
+          "VaultAuth",
+          "VaultAppRole",
+          "VaultClientCertificateAuth",
+          "VaultKubernetesAuth",
+          "ServiceAccountRef",
+          "CAIssuer",
+          "IssuerStatus",
+          "IssuerCondition"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+        "batchIndex": 2,
+        "symbols": [
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/internal/internal.go",
+        "batchIndex": 17,
+        "symbols": [
+          "Parser"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/issuer.go": [
+      {
+        "path": "pkg/apis/certmanager/v1/const.go",
+        "batchIndex": 2,
+        "symbols": []
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/doc.go",
+        "batchIndex": 2,
+        "symbols": []
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/generic_issuer.go",
+        "batchIndex": 2,
+        "symbols": [
+          "GenericIssuer",
+          "GetObjectMeta",
+          "GetSpec",
+          "GetStatus",
+          "SetSpec",
+          "SetStatus",
+          "Copy",
+          "GetObjectMeta",
+          "GetSpec",
+          "GetStatus",
+          "SetSpec",
+          "SetStatus",
+          "Copy",
+          "ACMEStatus"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/register.go",
+        "batchIndex": 2,
+        "symbols": [
+          "Resource"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types.go",
+        "batchIndex": 2,
+        "symbols": [
+          "DefaultKeyUsages"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_certificate.go",
+        "batchIndex": 2,
+        "symbols": [
+          "Certificate",
+          "CertificateList",
+          "CertificateSpec",
+          "OtherName",
+          "CertificatePrivateKey",
+          "CertificateAdditionalOutputFormat",
+          "X509Subject",
+          "CertificateKeystores",
+          "JKSKeystore",
+          "PKCS12Keystore",
+          "CertificateStatus",
+          "CertificateCondition",
+          "CertificateSecretTemplate",
+          "NameConstraints",
+          "NameConstraintItem"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_certificaterequest.go",
+        "batchIndex": 2,
+        "symbols": [
+          "CertificateRequest",
+          "CertificateRequestList",
+          "CertificateRequestSpec",
+          "CertificateRequestStatus",
+          "CertificateRequestCondition"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_issuer.go",
+        "batchIndex": 2,
+        "symbols": [
+          "ClusterIssuer",
+          "ClusterIssuerList",
+          "Issuer",
+          "IssuerList",
+          "IssuerSpec",
+          "IssuerConfig",
+          "VenafiIssuer",
+          "VenafiTPP",
+          "VenafiCloud",
+          "SelfSignedIssuer",
+          "VaultIssuer",
+          "VaultAuth",
+          "VaultAppRole",
+          "VaultClientCertificateAuth",
+          "VaultKubernetesAuth",
+          "ServiceAccountRef",
+          "CAIssuer",
+          "IssuerStatus",
+          "IssuerCondition"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+        "batchIndex": 2,
+        "symbols": [
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/internal/internal.go",
+        "batchIndex": 17,
+        "symbols": [
+          "Parser"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/issuerconfig.go": [
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+        "batchIndex": 7,
+        "symbols": [
+          "ACMEAuthorizationApplyConfiguration",
+          "ACMEAuthorization",
+          "WithURL",
+          "WithIdentifier",
+          "WithWildcard",
+          "WithInitialState",
+          "WithChallenges"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallenge.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeApplyConfiguration",
+          "ACMEChallenge",
+          "WithURL",
+          "WithToken",
+          "WithType"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolver.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverApplyConfiguration",
+          "ACMEChallengeSolver",
+          "WithSelector",
+          "WithHTTP01",
+          "WithDNS01"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+        "batchIndex": 7,
+        "symbols": [
+          "ACMEChallengeSolverDNS01ApplyConfiguration",
+          "ACMEChallengeSolverDNS01",
+          "WithCNAMEStrategy",
+          "WithAkamai",
+          "WithCloudDNS",
+          "WithCloudflare",
+          "WithRoute53",
+          "WithAzureDNS",
+          "WithDigitalOcean",
+          "WithAcmeDNS",
+          "WithRFC2136",
+          "WithWebhook"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01ApplyConfiguration",
+          "ACMEChallengeSolverHTTP01",
+          "WithIngress",
+          "WithGatewayHTTPRoute"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01gatewayhttproute.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01GatewayHTTPRouteApplyConfiguration",
+          "ACMEChallengeSolverHTTP01GatewayHTTPRoute",
+          "WithServiceType",
+          "WithLabels",
+          "WithParentRefs",
+          "WithPodTemplate"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingress.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressApplyConfiguration",
+          "ACMEChallengeSolverHTTP01Ingress",
+          "WithServiceType",
+          "WithIngressClassName",
+          "WithClass",
+          "WithName",
+          "WithPodTemplate",
+          "WithIngressTemplate"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingressobjectmeta.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressObjectMetaApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressObjectMeta",
+          "WithAnnotations",
+          "WithLabels"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodobjectmeta.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressPodObjectMetaApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressPodObjectMeta",
+          "WithAnnotations",
+          "WithLabels"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodresources.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressPodResourcesApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressPodResources",
+          "WithLimits",
+          "WithRequests"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodsecuritycontext.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressPodSecurityContextApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressPodSecurityContext",
+          "WithSELinuxOptions",
+          "WithRunAsUser",
+          "WithRunAsGroup",
+          "WithRunAsNonRoot",
+          "WithSupplementalGroups",
+          "WithFSGroup",
+          "WithSysctls",
+          "WithFSGroupChangePolicy",
+          "WithSeccompProfile"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodspec.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressPodSpecApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressPodSpec",
+          "WithNodeSelector",
+          "WithAffinity",
+          "WithTolerations",
+          "WithPriorityClassName",
+          "WithServiceAccountName",
+          "WithImagePullSecrets",
+          "WithSecurityContext",
+          "WithResources"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodtemplate.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressPodTemplateApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressPodTemplate",
+          "WithAnnotations",
+          "WithLabels",
+          "WithSpec"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresstemplate.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressTemplateApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressTemplate",
+          "WithAnnotations",
+          "WithLabels"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeexternalaccountbinding.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEExternalAccountBindingApplyConfiguration",
+          "ACMEExternalAccountBinding",
+          "WithKeyID",
+          "WithKey",
+          "WithKeyAlgorithm"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuer.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerApplyConfiguration",
+          "ACMEIssuer",
+          "WithEmail",
+          "WithServer",
+          "WithPreferredChain",
+          "WithCABundle",
+          "WithSkipTLSVerify",
+          "WithExternalAccountBinding",
+          "WithPrivateKey",
+          "WithSolvers",
+          "WithDisableAccountKeyGeneration",
+          "WithEnableDurationFeature",
+          "WithProfile"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01provideracmedns.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderAcmeDNSApplyConfiguration",
+          "ACMEIssuerDNS01ProviderAcmeDNS",
+          "WithHost",
+          "WithAccountSecret"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerakamai.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderAkamaiApplyConfiguration",
+          "ACMEIssuerDNS01ProviderAkamai",
+          "WithServiceConsumerDomain",
+          "WithClientToken",
+          "WithClientSecret",
+          "WithAccessToken"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerazuredns.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderAzureDNSApplyConfiguration",
+          "ACMEIssuerDNS01ProviderAzureDNS",
+          "WithClientID",
+          "WithClientSecret",
+          "WithSubscriptionID",
+          "WithTenantID",
+          "WithResourceGroupName",
+          "WithHostedZoneName",
+          "WithEnvironment",
+          "WithManagedIdentity"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerclouddns.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderCloudDNSApplyConfiguration",
+          "ACMEIssuerDNS01ProviderCloudDNS",
+          "WithServiceAccount",
+          "WithProject",
+          "WithHostedZoneName"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providercloudflare.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderCloudflareApplyConfiguration",
+          "ACMEIssuerDNS01ProviderCloudflare",
+          "WithEmail",
+          "WithAPIKey",
+          "WithAPIToken"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerdigitalocean.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderDigitalOceanApplyConfiguration",
+          "ACMEIssuerDNS01ProviderDigitalOcean",
+          "WithToken"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerrfc2136.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderRFC2136ApplyConfiguration",
+          "ACMEIssuerDNS01ProviderRFC2136",
+          "WithNameserver",
+          "WithTSIGSecret",
+          "WithTSIGKeyName",
+          "WithTSIGAlgorithm",
+          "WithProtocol"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerroute53.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderRoute53ApplyConfiguration",
+          "ACMEIssuerDNS01ProviderRoute53",
+          "WithAuth",
+          "WithAccessKeyID",
+          "WithSecretAccessKeyID",
+          "WithSecretAccessKey",
+          "WithRole",
+          "WithHostedZoneID",
+          "WithRegion"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerwebhook.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderWebhookApplyConfiguration",
+          "ACMEIssuerDNS01ProviderWebhook",
+          "WithGroupName",
+          "WithSolverName",
+          "WithConfig"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerstatus.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerStatusApplyConfiguration",
+          "ACMEIssuerStatus",
+          "WithURI",
+          "WithLastRegisteredEmail",
+          "WithLastPrivateKeyHash"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/azuremanagedidentity.go",
+        "batchIndex": 9,
+        "symbols": [
+          "AzureManagedIdentityApplyConfiguration",
+          "AzureManagedIdentity",
+          "WithClientID",
+          "WithResourceID",
+          "WithTenantID"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/certificatednsnameselector.go",
+        "batchIndex": 9,
+        "symbols": [
+          "CertificateDNSNameSelectorApplyConfiguration",
+          "CertificateDNSNameSelector",
+          "WithMatchLabels",
+          "WithDNSNames",
+          "WithDNSZones"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/challenge.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ChallengeApplyConfiguration",
+          "Challenge",
+          "ExtractChallenge",
+          "ExtractChallengeStatus",
+          "IsApplyConfiguration",
+          "WithKind",
+          "WithAPIVersion",
+          "WithName",
+          "WithGenerateName",
+          "WithNamespace",
+          "WithUID",
+          "WithResourceVersion",
+          "WithGeneration",
+          "WithCreationTimestamp",
+          "WithDeletionTimestamp",
+          "WithDeletionGracePeriodSeconds",
+          "WithLabels",
+          "WithAnnotations",
+          "WithOwnerReferences",
+          "WithFinalizers",
+          "WithSpec",
+          "WithStatus",
+          "GetKind",
+          "GetAPIVersion",
+          "GetName",
+          "GetNamespace"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/challengespec.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ChallengeSpecApplyConfiguration",
+          "ChallengeSpec",
+          "WithURL",
+          "WithAuthorizationURL",
+          "WithDNSName",
+          "WithWildcard",
+          "WithType",
+          "WithToken",
+          "WithKey",
+          "WithSolver",
+          "WithIssuerRef"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+        "batchIndex": 7,
+        "symbols": [
+          "ChallengeStatusApplyConfiguration",
+          "ChallengeStatus",
+          "WithProcessing",
+          "WithPresented",
+          "WithReason",
+          "WithState"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/order.go",
+        "batchIndex": 9,
+        "symbols": [
+          "OrderApplyConfiguration",
+          "Order",
+          "ExtractOrder",
+          "ExtractOrderStatus",
+          "IsApplyConfiguration",
+          "WithKind",
+          "WithAPIVersion",
+          "WithName",
+          "WithGenerateName",
+          "WithNamespace",
+          "WithUID",
+          "WithResourceVersion",
+          "WithGeneration",
+          "WithCreationTimestamp",
+          "WithDeletionTimestamp",
+          "WithDeletionGracePeriodSeconds",
+          "WithLabels",
+          "WithAnnotations",
+          "WithOwnerReferences",
+          "WithFinalizers",
+          "WithSpec",
+          "WithStatus",
+          "GetKind",
+          "GetAPIVersion",
+          "GetName",
+          "GetNamespace"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/orderspec.go",
+        "batchIndex": 9,
+        "symbols": [
+          "OrderSpecApplyConfiguration",
+          "OrderSpec",
+          "WithRequest",
+          "WithIssuerRef",
+          "WithCommonName",
+          "WithDNSNames",
+          "WithIPAddresses",
+          "WithDuration",
+          "WithProfile"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+        "batchIndex": 7,
+        "symbols": [
+          "OrderStatusApplyConfiguration",
+          "OrderStatus",
+          "WithURL",
+          "WithFinalizeURL",
+          "WithAuthorizations",
+          "WithCertificate",
+          "WithState",
+          "WithReason",
+          "WithFailureTime"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/issuerspec.go": [
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+        "batchIndex": 7,
+        "symbols": [
+          "ACMEAuthorizationApplyConfiguration",
+          "ACMEAuthorization",
+          "WithURL",
+          "WithIdentifier",
+          "WithWildcard",
+          "WithInitialState",
+          "WithChallenges"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallenge.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeApplyConfiguration",
+          "ACMEChallenge",
+          "WithURL",
+          "WithToken",
+          "WithType"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolver.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverApplyConfiguration",
+          "ACMEChallengeSolver",
+          "WithSelector",
+          "WithHTTP01",
+          "WithDNS01"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+        "batchIndex": 7,
+        "symbols": [
+          "ACMEChallengeSolverDNS01ApplyConfiguration",
+          "ACMEChallengeSolverDNS01",
+          "WithCNAMEStrategy",
+          "WithAkamai",
+          "WithCloudDNS",
+          "WithCloudflare",
+          "WithRoute53",
+          "WithAzureDNS",
+          "WithDigitalOcean",
+          "WithAcmeDNS",
+          "WithRFC2136",
+          "WithWebhook"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01ApplyConfiguration",
+          "ACMEChallengeSolverHTTP01",
+          "WithIngress",
+          "WithGatewayHTTPRoute"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01gatewayhttproute.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01GatewayHTTPRouteApplyConfiguration",
+          "ACMEChallengeSolverHTTP01GatewayHTTPRoute",
+          "WithServiceType",
+          "WithLabels",
+          "WithParentRefs",
+          "WithPodTemplate"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingress.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressApplyConfiguration",
+          "ACMEChallengeSolverHTTP01Ingress",
+          "WithServiceType",
+          "WithIngressClassName",
+          "WithClass",
+          "WithName",
+          "WithPodTemplate",
+          "WithIngressTemplate"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingressobjectmeta.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressObjectMetaApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressObjectMeta",
+          "WithAnnotations",
+          "WithLabels"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodobjectmeta.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressPodObjectMetaApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressPodObjectMeta",
+          "WithAnnotations",
+          "WithLabels"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodresources.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressPodResourcesApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressPodResources",
+          "WithLimits",
+          "WithRequests"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodsecuritycontext.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressPodSecurityContextApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressPodSecurityContext",
+          "WithSELinuxOptions",
+          "WithRunAsUser",
+          "WithRunAsGroup",
+          "WithRunAsNonRoot",
+          "WithSupplementalGroups",
+          "WithFSGroup",
+          "WithSysctls",
+          "WithFSGroupChangePolicy",
+          "WithSeccompProfile"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodspec.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressPodSpecApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressPodSpec",
+          "WithNodeSelector",
+          "WithAffinity",
+          "WithTolerations",
+          "WithPriorityClassName",
+          "WithServiceAccountName",
+          "WithImagePullSecrets",
+          "WithSecurityContext",
+          "WithResources"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodtemplate.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressPodTemplateApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressPodTemplate",
+          "WithAnnotations",
+          "WithLabels",
+          "WithSpec"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresstemplate.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressTemplateApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressTemplate",
+          "WithAnnotations",
+          "WithLabels"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeexternalaccountbinding.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEExternalAccountBindingApplyConfiguration",
+          "ACMEExternalAccountBinding",
+          "WithKeyID",
+          "WithKey",
+          "WithKeyAlgorithm"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuer.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerApplyConfiguration",
+          "ACMEIssuer",
+          "WithEmail",
+          "WithServer",
+          "WithPreferredChain",
+          "WithCABundle",
+          "WithSkipTLSVerify",
+          "WithExternalAccountBinding",
+          "WithPrivateKey",
+          "WithSolvers",
+          "WithDisableAccountKeyGeneration",
+          "WithEnableDurationFeature",
+          "WithProfile"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01provideracmedns.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderAcmeDNSApplyConfiguration",
+          "ACMEIssuerDNS01ProviderAcmeDNS",
+          "WithHost",
+          "WithAccountSecret"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerakamai.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderAkamaiApplyConfiguration",
+          "ACMEIssuerDNS01ProviderAkamai",
+          "WithServiceConsumerDomain",
+          "WithClientToken",
+          "WithClientSecret",
+          "WithAccessToken"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerazuredns.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderAzureDNSApplyConfiguration",
+          "ACMEIssuerDNS01ProviderAzureDNS",
+          "WithClientID",
+          "WithClientSecret",
+          "WithSubscriptionID",
+          "WithTenantID",
+          "WithResourceGroupName",
+          "WithHostedZoneName",
+          "WithEnvironment",
+          "WithManagedIdentity"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerclouddns.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderCloudDNSApplyConfiguration",
+          "ACMEIssuerDNS01ProviderCloudDNS",
+          "WithServiceAccount",
+          "WithProject",
+          "WithHostedZoneName"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providercloudflare.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderCloudflareApplyConfiguration",
+          "ACMEIssuerDNS01ProviderCloudflare",
+          "WithEmail",
+          "WithAPIKey",
+          "WithAPIToken"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerdigitalocean.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderDigitalOceanApplyConfiguration",
+          "ACMEIssuerDNS01ProviderDigitalOcean",
+          "WithToken"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerrfc2136.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderRFC2136ApplyConfiguration",
+          "ACMEIssuerDNS01ProviderRFC2136",
+          "WithNameserver",
+          "WithTSIGSecret",
+          "WithTSIGKeyName",
+          "WithTSIGAlgorithm",
+          "WithProtocol"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerroute53.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderRoute53ApplyConfiguration",
+          "ACMEIssuerDNS01ProviderRoute53",
+          "WithAuth",
+          "WithAccessKeyID",
+          "WithSecretAccessKeyID",
+          "WithSecretAccessKey",
+          "WithRole",
+          "WithHostedZoneID",
+          "WithRegion"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerwebhook.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderWebhookApplyConfiguration",
+          "ACMEIssuerDNS01ProviderWebhook",
+          "WithGroupName",
+          "WithSolverName",
+          "WithConfig"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerstatus.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerStatusApplyConfiguration",
+          "ACMEIssuerStatus",
+          "WithURI",
+          "WithLastRegisteredEmail",
+          "WithLastPrivateKeyHash"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/azuremanagedidentity.go",
+        "batchIndex": 9,
+        "symbols": [
+          "AzureManagedIdentityApplyConfiguration",
+          "AzureManagedIdentity",
+          "WithClientID",
+          "WithResourceID",
+          "WithTenantID"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/certificatednsnameselector.go",
+        "batchIndex": 9,
+        "symbols": [
+          "CertificateDNSNameSelectorApplyConfiguration",
+          "CertificateDNSNameSelector",
+          "WithMatchLabels",
+          "WithDNSNames",
+          "WithDNSZones"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/challenge.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ChallengeApplyConfiguration",
+          "Challenge",
+          "ExtractChallenge",
+          "ExtractChallengeStatus",
+          "IsApplyConfiguration",
+          "WithKind",
+          "WithAPIVersion",
+          "WithName",
+          "WithGenerateName",
+          "WithNamespace",
+          "WithUID",
+          "WithResourceVersion",
+          "WithGeneration",
+          "WithCreationTimestamp",
+          "WithDeletionTimestamp",
+          "WithDeletionGracePeriodSeconds",
+          "WithLabels",
+          "WithAnnotations",
+          "WithOwnerReferences",
+          "WithFinalizers",
+          "WithSpec",
+          "WithStatus",
+          "GetKind",
+          "GetAPIVersion",
+          "GetName",
+          "GetNamespace"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/challengespec.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ChallengeSpecApplyConfiguration",
+          "ChallengeSpec",
+          "WithURL",
+          "WithAuthorizationURL",
+          "WithDNSName",
+          "WithWildcard",
+          "WithType",
+          "WithToken",
+          "WithKey",
+          "WithSolver",
+          "WithIssuerRef"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+        "batchIndex": 7,
+        "symbols": [
+          "ChallengeStatusApplyConfiguration",
+          "ChallengeStatus",
+          "WithProcessing",
+          "WithPresented",
+          "WithReason",
+          "WithState"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/order.go",
+        "batchIndex": 9,
+        "symbols": [
+          "OrderApplyConfiguration",
+          "Order",
+          "ExtractOrder",
+          "ExtractOrderStatus",
+          "IsApplyConfiguration",
+          "WithKind",
+          "WithAPIVersion",
+          "WithName",
+          "WithGenerateName",
+          "WithNamespace",
+          "WithUID",
+          "WithResourceVersion",
+          "WithGeneration",
+          "WithCreationTimestamp",
+          "WithDeletionTimestamp",
+          "WithDeletionGracePeriodSeconds",
+          "WithLabels",
+          "WithAnnotations",
+          "WithOwnerReferences",
+          "WithFinalizers",
+          "WithSpec",
+          "WithStatus",
+          "GetKind",
+          "GetAPIVersion",
+          "GetName",
+          "GetNamespace"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/orderspec.go",
+        "batchIndex": 9,
+        "symbols": [
+          "OrderSpecApplyConfiguration",
+          "OrderSpec",
+          "WithRequest",
+          "WithIssuerRef",
+          "WithCommonName",
+          "WithDNSNames",
+          "WithIPAddresses",
+          "WithDuration",
+          "WithProfile"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+        "batchIndex": 7,
+        "symbols": [
+          "OrderStatusApplyConfiguration",
+          "OrderStatus",
+          "WithURL",
+          "WithFinalizeURL",
+          "WithAuthorizations",
+          "WithCertificate",
+          "WithState",
+          "WithReason",
+          "WithFailureTime"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/issuerstatus.go": [
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+        "batchIndex": 7,
+        "symbols": [
+          "ACMEAuthorizationApplyConfiguration",
+          "ACMEAuthorization",
+          "WithURL",
+          "WithIdentifier",
+          "WithWildcard",
+          "WithInitialState",
+          "WithChallenges"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallenge.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeApplyConfiguration",
+          "ACMEChallenge",
+          "WithURL",
+          "WithToken",
+          "WithType"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolver.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverApplyConfiguration",
+          "ACMEChallengeSolver",
+          "WithSelector",
+          "WithHTTP01",
+          "WithDNS01"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+        "batchIndex": 7,
+        "symbols": [
+          "ACMEChallengeSolverDNS01ApplyConfiguration",
+          "ACMEChallengeSolverDNS01",
+          "WithCNAMEStrategy",
+          "WithAkamai",
+          "WithCloudDNS",
+          "WithCloudflare",
+          "WithRoute53",
+          "WithAzureDNS",
+          "WithDigitalOcean",
+          "WithAcmeDNS",
+          "WithRFC2136",
+          "WithWebhook"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01ApplyConfiguration",
+          "ACMEChallengeSolverHTTP01",
+          "WithIngress",
+          "WithGatewayHTTPRoute"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01gatewayhttproute.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01GatewayHTTPRouteApplyConfiguration",
+          "ACMEChallengeSolverHTTP01GatewayHTTPRoute",
+          "WithServiceType",
+          "WithLabels",
+          "WithParentRefs",
+          "WithPodTemplate"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingress.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressApplyConfiguration",
+          "ACMEChallengeSolverHTTP01Ingress",
+          "WithServiceType",
+          "WithIngressClassName",
+          "WithClass",
+          "WithName",
+          "WithPodTemplate",
+          "WithIngressTemplate"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingressobjectmeta.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressObjectMetaApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressObjectMeta",
+          "WithAnnotations",
+          "WithLabels"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodobjectmeta.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressPodObjectMetaApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressPodObjectMeta",
+          "WithAnnotations",
+          "WithLabels"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodresources.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressPodResourcesApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressPodResources",
+          "WithLimits",
+          "WithRequests"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodsecuritycontext.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressPodSecurityContextApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressPodSecurityContext",
+          "WithSELinuxOptions",
+          "WithRunAsUser",
+          "WithRunAsGroup",
+          "WithRunAsNonRoot",
+          "WithSupplementalGroups",
+          "WithFSGroup",
+          "WithSysctls",
+          "WithFSGroupChangePolicy",
+          "WithSeccompProfile"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodspec.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressPodSpecApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressPodSpec",
+          "WithNodeSelector",
+          "WithAffinity",
+          "WithTolerations",
+          "WithPriorityClassName",
+          "WithServiceAccountName",
+          "WithImagePullSecrets",
+          "WithSecurityContext",
+          "WithResources"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodtemplate.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressPodTemplateApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressPodTemplate",
+          "WithAnnotations",
+          "WithLabels",
+          "WithSpec"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresstemplate.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEChallengeSolverHTTP01IngressTemplateApplyConfiguration",
+          "ACMEChallengeSolverHTTP01IngressTemplate",
+          "WithAnnotations",
+          "WithLabels"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeexternalaccountbinding.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEExternalAccountBindingApplyConfiguration",
+          "ACMEExternalAccountBinding",
+          "WithKeyID",
+          "WithKey",
+          "WithKeyAlgorithm"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuer.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerApplyConfiguration",
+          "ACMEIssuer",
+          "WithEmail",
+          "WithServer",
+          "WithPreferredChain",
+          "WithCABundle",
+          "WithSkipTLSVerify",
+          "WithExternalAccountBinding",
+          "WithPrivateKey",
+          "WithSolvers",
+          "WithDisableAccountKeyGeneration",
+          "WithEnableDurationFeature",
+          "WithProfile"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01provideracmedns.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderAcmeDNSApplyConfiguration",
+          "ACMEIssuerDNS01ProviderAcmeDNS",
+          "WithHost",
+          "WithAccountSecret"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerakamai.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderAkamaiApplyConfiguration",
+          "ACMEIssuerDNS01ProviderAkamai",
+          "WithServiceConsumerDomain",
+          "WithClientToken",
+          "WithClientSecret",
+          "WithAccessToken"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerazuredns.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderAzureDNSApplyConfiguration",
+          "ACMEIssuerDNS01ProviderAzureDNS",
+          "WithClientID",
+          "WithClientSecret",
+          "WithSubscriptionID",
+          "WithTenantID",
+          "WithResourceGroupName",
+          "WithHostedZoneName",
+          "WithEnvironment",
+          "WithManagedIdentity"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerclouddns.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderCloudDNSApplyConfiguration",
+          "ACMEIssuerDNS01ProviderCloudDNS",
+          "WithServiceAccount",
+          "WithProject",
+          "WithHostedZoneName"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providercloudflare.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderCloudflareApplyConfiguration",
+          "ACMEIssuerDNS01ProviderCloudflare",
+          "WithEmail",
+          "WithAPIKey",
+          "WithAPIToken"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerdigitalocean.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderDigitalOceanApplyConfiguration",
+          "ACMEIssuerDNS01ProviderDigitalOcean",
+          "WithToken"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerrfc2136.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderRFC2136ApplyConfiguration",
+          "ACMEIssuerDNS01ProviderRFC2136",
+          "WithNameserver",
+          "WithTSIGSecret",
+          "WithTSIGKeyName",
+          "WithTSIGAlgorithm",
+          "WithProtocol"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerroute53.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderRoute53ApplyConfiguration",
+          "ACMEIssuerDNS01ProviderRoute53",
+          "WithAuth",
+          "WithAccessKeyID",
+          "WithSecretAccessKeyID",
+          "WithSecretAccessKey",
+          "WithRole",
+          "WithHostedZoneID",
+          "WithRegion"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerwebhook.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerDNS01ProviderWebhookApplyConfiguration",
+          "ACMEIssuerDNS01ProviderWebhook",
+          "WithGroupName",
+          "WithSolverName",
+          "WithConfig"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerstatus.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ACMEIssuerStatusApplyConfiguration",
+          "ACMEIssuerStatus",
+          "WithURI",
+          "WithLastRegisteredEmail",
+          "WithLastPrivateKeyHash"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/azuremanagedidentity.go",
+        "batchIndex": 9,
+        "symbols": [
+          "AzureManagedIdentityApplyConfiguration",
+          "AzureManagedIdentity",
+          "WithClientID",
+          "WithResourceID",
+          "WithTenantID"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/certificatednsnameselector.go",
+        "batchIndex": 9,
+        "symbols": [
+          "CertificateDNSNameSelectorApplyConfiguration",
+          "CertificateDNSNameSelector",
+          "WithMatchLabels",
+          "WithDNSNames",
+          "WithDNSZones"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/challenge.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ChallengeApplyConfiguration",
+          "Challenge",
+          "ExtractChallenge",
+          "ExtractChallengeStatus",
+          "IsApplyConfiguration",
+          "WithKind",
+          "WithAPIVersion",
+          "WithName",
+          "WithGenerateName",
+          "WithNamespace",
+          "WithUID",
+          "WithResourceVersion",
+          "WithGeneration",
+          "WithCreationTimestamp",
+          "WithDeletionTimestamp",
+          "WithDeletionGracePeriodSeconds",
+          "WithLabels",
+          "WithAnnotations",
+          "WithOwnerReferences",
+          "WithFinalizers",
+          "WithSpec",
+          "WithStatus",
+          "GetKind",
+          "GetAPIVersion",
+          "GetName",
+          "GetNamespace"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/challengespec.go",
+        "batchIndex": 9,
+        "symbols": [
+          "ChallengeSpecApplyConfiguration",
+          "ChallengeSpec",
+          "WithURL",
+          "WithAuthorizationURL",
+          "WithDNSName",
+          "WithWildcard",
+          "WithType",
+          "WithToken",
+          "WithKey",
+          "WithSolver",
+          "WithIssuerRef"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+        "batchIndex": 7,
+        "symbols": [
+          "ChallengeStatusApplyConfiguration",
+          "ChallengeStatus",
+          "WithProcessing",
+          "WithPresented",
+          "WithReason",
+          "WithState"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/order.go",
+        "batchIndex": 9,
+        "symbols": [
+          "OrderApplyConfiguration",
+          "Order",
+          "ExtractOrder",
+          "ExtractOrderStatus",
+          "IsApplyConfiguration",
+          "WithKind",
+          "WithAPIVersion",
+          "WithName",
+          "WithGenerateName",
+          "WithNamespace",
+          "WithUID",
+          "WithResourceVersion",
+          "WithGeneration",
+          "WithCreationTimestamp",
+          "WithDeletionTimestamp",
+          "WithDeletionGracePeriodSeconds",
+          "WithLabels",
+          "WithAnnotations",
+          "WithOwnerReferences",
+          "WithFinalizers",
+          "WithSpec",
+          "WithStatus",
+          "GetKind",
+          "GetAPIVersion",
+          "GetName",
+          "GetNamespace"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/orderspec.go",
+        "batchIndex": 9,
+        "symbols": [
+          "OrderSpecApplyConfiguration",
+          "OrderSpec",
+          "WithRequest",
+          "WithIssuerRef",
+          "WithCommonName",
+          "WithDNSNames",
+          "WithIPAddresses",
+          "WithDuration",
+          "WithProfile"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+        "batchIndex": 7,
+        "symbols": [
+          "OrderStatusApplyConfiguration",
+          "OrderStatus",
+          "WithURL",
+          "WithFinalizeURL",
+          "WithAuthorizations",
+          "WithCertificate",
+          "WithState",
+          "WithReason",
+          "WithFailureTime"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/jkskeystore.go": [
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuerReferenceApplyConfiguration",
+          "IssuerReference",
+          "WithName",
+          "WithKind",
+          "WithGroup"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+        "batchIndex": 17,
+        "symbols": [
+          "LocalObjectReferenceApplyConfiguration",
+          "LocalObjectReference",
+          "WithName"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+        "batchIndex": 17,
+        "symbols": [
+          "SecretKeySelectorApplyConfiguration",
+          "SecretKeySelector",
+          "WithName",
+          "WithKey"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/nameconstraintitem.go": [
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go": [
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/othername.go": [
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go": [
+      {
+        "path": "pkg/apis/certmanager/v1/const.go",
+        "batchIndex": 2,
+        "symbols": []
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/doc.go",
+        "batchIndex": 2,
+        "symbols": []
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/generic_issuer.go",
+        "batchIndex": 2,
+        "symbols": [
+          "GenericIssuer",
+          "GetObjectMeta",
+          "GetSpec",
+          "GetStatus",
+          "SetSpec",
+          "SetStatus",
+          "Copy",
+          "GetObjectMeta",
+          "GetSpec",
+          "GetStatus",
+          "SetSpec",
+          "SetStatus",
+          "Copy",
+          "ACMEStatus"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/register.go",
+        "batchIndex": 2,
+        "symbols": [
+          "Resource"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types.go",
+        "batchIndex": 2,
+        "symbols": [
+          "DefaultKeyUsages"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_certificate.go",
+        "batchIndex": 2,
+        "symbols": [
+          "Certificate",
+          "CertificateList",
+          "CertificateSpec",
+          "OtherName",
+          "CertificatePrivateKey",
+          "CertificateAdditionalOutputFormat",
+          "X509Subject",
+          "CertificateKeystores",
+          "JKSKeystore",
+          "PKCS12Keystore",
+          "CertificateStatus",
+          "CertificateCondition",
+          "CertificateSecretTemplate",
+          "NameConstraints",
+          "NameConstraintItem"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_certificaterequest.go",
+        "batchIndex": 2,
+        "symbols": [
+          "CertificateRequest",
+          "CertificateRequestList",
+          "CertificateRequestSpec",
+          "CertificateRequestStatus",
+          "CertificateRequestCondition"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/types_issuer.go",
+        "batchIndex": 2,
+        "symbols": [
+          "ClusterIssuer",
+          "ClusterIssuerList",
+          "Issuer",
+          "IssuerList",
+          "IssuerSpec",
+          "IssuerConfig",
+          "VenafiIssuer",
+          "VenafiTPP",
+          "VenafiCloud",
+          "SelfSignedIssuer",
+          "VaultIssuer",
+          "VaultAuth",
+          "VaultAppRole",
+          "VaultClientCertificateAuth",
+          "VaultKubernetesAuth",
+          "ServiceAccountRef",
+          "CAIssuer",
+          "IssuerStatus",
+          "IssuerCondition"
+        ]
+      },
+      {
+        "path": "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+        "batchIndex": 2,
+        "symbols": [
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyObject",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy",
+          "DeepCopyInto",
+          "DeepCopy"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuerReferenceApplyConfiguration",
+          "IssuerReference",
+          "WithName",
+          "WithKind",
+          "WithGroup"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+        "batchIndex": 17,
+        "symbols": [
+          "LocalObjectReferenceApplyConfiguration",
+          "LocalObjectReference",
+          "WithName"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+        "batchIndex": 17,
+        "symbols": [
+          "SecretKeySelectorApplyConfiguration",
+          "SecretKeySelector",
+          "WithName",
+          "WithKey"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go": [
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go": [
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go": [
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuerReferenceApplyConfiguration",
+          "IssuerReference",
+          "WithName",
+          "WithKind",
+          "WithGroup"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+        "batchIndex": 17,
+        "symbols": [
+          "LocalObjectReferenceApplyConfiguration",
+          "LocalObjectReference",
+          "WithName"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+        "batchIndex": 17,
+        "symbols": [
+          "SecretKeySelectorApplyConfiguration",
+          "SecretKeySelector",
+          "WithName",
+          "WithKey"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/vaultauth.go": [
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuerReferenceApplyConfiguration",
+          "IssuerReference",
+          "WithName",
+          "WithKind",
+          "WithGroup"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+        "batchIndex": 17,
+        "symbols": [
+          "LocalObjectReferenceApplyConfiguration",
+          "LocalObjectReference",
+          "WithName"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+        "batchIndex": 17,
+        "symbols": [
+          "SecretKeySelectorApplyConfiguration",
+          "SecretKeySelector",
+          "WithName",
+          "WithKey"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go": [
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ],
+    "pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go": [
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuerReferenceApplyConfiguration",
+          "IssuerReference",
+          "WithName",
+          "WithKind",
+          "WithGroup"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+        "batchIndex": 17,
+        "symbols": [
+          "LocalObjectReferenceApplyConfiguration",
+          "LocalObjectReference",
+          "WithName"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+        "batchIndex": 17,
+        "symbols": [
+          "SecretKeySelectorApplyConfiguration",
+          "SecretKeySelector",
+          "WithName",
+          "WithKey"
+        ]
+      },
+      {
+        "path": "pkg/client/applyconfigurations/utils.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ForKind",
+          "NewTypeConverter"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificatesGetter",
+          "CertificateInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": [
+          "CertificateRequestsGetter",
+          "CertificateRequestInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "ClusterIssuersGetter",
+          "ClusterIssuerInterface"
+        ]
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+        "batchIndex": 17,
+        "symbols": []
+      },
+      {
+        "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+        "batchIndex": 17,
+        "symbols": [
+          "IssuersGetter",
+          "IssuerInterface"
+        ]
+      }
+    ]
+  }
+}

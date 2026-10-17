@@ -1,0 +1,132 @@
+{
+  "nodes": [
+    {
+      "id": "document:deploy/crds/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "deploy/crds/README.md",
+      "summary": "Short reference note explaining that the CRD YAML files in deploy/crds are source material used to build the officially supported deployment manifests (e.g. the Helm chart) and are not intended for direct use by end users.",
+      "tags": ["documentation", "custom-resources", "deployment", "warning"],
+      "complexity": "simple",
+      "languageNotes": "Uses GitHub blockquote syntax for the end-user warning admonition."
+    },
+    {
+      "id": "config:deploy/crds/acme.cert-manager.io_challenges.yaml",
+      "type": "config",
+      "name": "acme.cert-manager.io_challenges.yaml",
+      "filePath": "deploy/crds/acme.cert-manager.io_challenges.yaml",
+      "summary": "CustomResourceDefinition for the ACME Challenge resource (challenges.acme.cert-manager.io, v1) defining the full OpenAPI schema for in-flight ACME challenge validation, including solver configuration, DNS-01/HTTP-01 status fields, and challenge state.",
+      "tags": ["configuration", "custom-resource-definition", "acme", "validation", "schema-definition"],
+      "complexity": "complex",
+      "languageNotes": "Large generated structural schema (3,476 lines) with deeply nested per-solver properties and x-kubernetes-preserve-unknown-fields free-form blocks."
+    },
+    {
+      "id": "config:deploy/crds/acme.cert-manager.io_orders.yaml",
+      "type": "config",
+      "name": "acme.cert-manager.io_orders.yaml",
+      "filePath": "deploy/crds/acme.cert-manager.io_orders.yaml",
+      "summary": "CustomResourceDefinition for the ACME Order resource (orders.acme.cert-manager.io, v1) describing the schema of an ACME order, its authorizations, identifiers, and certificate request references.",
+      "tags": ["configuration", "custom-resource-definition", "acme", "orders", "schema-definition"],
+      "complexity": "moderate",
+      "languageNotes": "Compact generated CRD with a single served/storage version and nested status subresource schema."
+    },
+    {
+      "id": "config:deploy/crds/cert-manager.io_certificaterequests.yaml",
+      "type": "config",
+      "name": "cert-manager.io_certificaterequests.yaml",
+      "filePath": "deploy/crds/cert-manager.io_certificaterequests.yaml",
+      "summary": "CustomResourceDefinition for the CertificateRequest resource (certificaterequests.cert-manager.io, v1), defining the CSR payload, issuer reference, and issued certificate response schema.",
+      "tags": ["configuration", "custom-resource-definition", "certificates", "csr", "schema-definition"],
+      "complexity": "moderate",
+      "languageNotes": "Includes shortNames for kubectl and a status subresource carrying base64-encoded certificate data."
+    },
+    {
+      "id": "config:deploy/crds/cert-manager.io_certificates.yaml",
+      "type": "config",
+      "name": "cert-manager.io_certificates.yaml",
+      "filePath": "deploy/crds/cert-manager.io_certificates.yaml",
+      "summary": "CustomResourceDefinition for the Certificate resource (certificates.cert-manager.io, v1) covering desired certificate specs such as secretName, dnsNames, issuers, keystores, and renewal policy along with status conditions.",
+      "tags": ["configuration", "custom-resource-definition", "certificates", "lifecycle", "schema-definition"],
+      "complexity": "complex",
+      "languageNotes": "Nested keystore and secret template schemas show heavy use of x-kubernetes-preserve-unknown-fields for user-supplied labels and annotations."
+    },
+    {
+      "id": "config:deploy/crds/cert-manager.io_clusterissuers.yaml",
+      "type": "config",
+      "name": "cert-manager.io_clusterissuers.yaml",
+      "filePath": "deploy/crds/cert-manager.io_clusterissuers.yaml",
+      "summary": "CustomResourceDefinition for the ClusterIssuer resource (clusterissuers.cert-manager.io, v1), defining the cluster-scoped issuer schema with ACME, CA, Vault, Venafi, and self-signed issuer configurations.",
+      "tags": ["configuration", "custom-resource-definition", "issuers", "certificates", "schema-definition"],
+      "complexity": "complex",
+      "languageNotes": "Largest CRD in the batch (4,068 lines) mirroring the namespaced Issuer schema with deeply nested per-issuer-type configuration and solver selectors."
+    },
+    {
+      "id": "config:deploy/crds/cert-manager.io_issuers.yaml",
+      "type": "config",
+      "name": "cert-manager.io_issuers.yaml",
+      "filePath": "deploy/crds/cert-manager.io_issuers.yaml",
+      "summary": "CustomResourceDefinition for the namespaced Issuer resource (issuers.cert-manager.io, v1), defining issuer backend configuration for ACME, CA, Vault, Venafi, and self-signed issuers plus their status conditions.",
+      "tags": ["configuration", "custom-resource-definition", "issuers", "certificates", "schema-definition"],
+      "complexity": "complex",
+      "languageNotes": "Nearly identical in size and structure to the ClusterIssuer CRD, differing mainly in scope and metadata."
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:deploy/crds/README.md",
+      "target": "config:deploy/crds/acme.cert-manager.io_challenges.yaml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:deploy/crds/README.md",
+      "target": "config:deploy/crds/acme.cert-manager.io_orders.yaml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:deploy/crds/README.md",
+      "target": "config:deploy/crds/cert-manager.io_certificaterequests.yaml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:deploy/crds/README.md",
+      "target": "config:deploy/crds/cert-manager.io_certificates.yaml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:deploy/crds/README.md",
+      "target": "config:deploy/crds/cert-manager.io_clusterissuers.yaml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:deploy/crds/README.md",
+      "target": "config:deploy/crds/cert-manager.io_issuers.yaml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:deploy/crds/cert-manager.io_clusterissuers.yaml",
+      "target": "config:deploy/crds/cert-manager.io_issuers.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:deploy/crds/acme.cert-manager.io_challenges.yaml",
+      "target": "config:deploy/crds/acme.cert-manager.io_orders.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

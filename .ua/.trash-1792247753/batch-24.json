@@ -1,0 +1,409 @@
+{
+  "nodes": [
+    {
+      "id": "file:cmd/controller/app/controller.go",
+      "type": "file",
+      "name": "controller.go",
+      "filePath": "cmd/controller/app/controller.go",
+      "summary": "Bootstrap for the cert-manager controller manager: builds the controller context, starts metrics, profiling and healthz servers, acquires leader election, launches informers, and runs the enabled controllers.",
+      "tags": ["entry-point", "controller-manager", "bootstrap", "kubernetes", "leader-election"],
+      "complexity": "complex",
+      "languageNotes": "Uses errgroup for coordinated goroutine shutdown and a context factory to build per-controller contexts."
+    },
+    {
+      "id": "file:cmd/controller/app/options/options.go",
+      "type": "file",
+      "name": "options.go",
+      "filePath": "cmd/controller/app/options/options.go",
+      "summary": "Defines the controller CLI flags and constructs the default ControllerConfiguration, then resolves the set of enabled controllers from options and feature gates.",
+      "tags": ["configuration", "cli-flags", "options", "controller", "feature-gates"],
+      "complexity": "moderate",
+      "languageNotes": "Registers pflag options directly onto the versioned config struct and hides deprecated flags with MarkHidden."
+    },
+    {
+      "id": "file:cmd/controller/app/start.go",
+      "type": "file",
+      "name": "start.go",
+      "filePath": "cmd/controller/app/start.go",
+      "summary": "Builds the controller's cobra server command, loads and validates the ControllerConfiguration from flags or a config file, and invokes the run function. Blank imports register all controller and issuer implementations.",
+      "tags": ["cli", "command", "configuration", "entry-point", "validation"],
+      "complexity": "moderate",
+      "languageNotes": "Uses blank imports as a registration mechanism so each controller package's init hooks run at startup."
+    },
+    {
+      "id": "file:cmd/controller/main.go",
+      "type": "file",
+      "name": "main.go",
+      "filePath": "cmd/controller/main.go",
+      "summary": "Entry point for the cert-manager controller binary: sets up graceful shutdown handling and logging, constructs the server command, and maps execution errors to exit codes.",
+      "tags": ["entry-point", "main", "cli", "controller"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:cmd/controller/app/controller.go:Run",
+      "type": "function",
+      "name": "Run",
+      "filePath": "cmd/controller/app/controller.go",
+      "lineRange": [66, 276],
+      "summary": "Runs the controller manager for the lifetime of the context: starts the certificate source, metrics/profiling/healthz servers, leader election, informers, and all enabled controllers, coordinating shutdown with an errgroup.",
+      "tags": ["controller-manager", "lifecycle", "orchestration", "leader-election"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:cmd/controller/app/controller.go:buildControllerContextFactory",
+      "type": "function",
+      "name": "buildControllerContextFactory",
+      "filePath": "cmd/controller/app/controller.go",
+      "lineRange": [280, 369],
+      "summary": "Validates DNS nameserver and resource quantity options and constructs the controller ContextFactory used to build the shared informer and client context.",
+      "tags": ["context-factory", "configuration", "validation", "kubernetes"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cmd/controller/app/controller.go:startLeaderElection",
+      "type": "function",
+      "name": "startLeaderElection",
+      "filePath": "cmd/controller/app/controller.go",
+      "lineRange": [371, 414],
+      "summary": "Creates a Kubernetes resource lock from the hostname and runs the leader election loop, invoking the supplied start and stop callbacks when leadership changes.",
+      "tags": ["leader-election", "kubernetes", "high-availability", "lifecycle"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cmd/controller/app/controller.go:buildCertificateSource",
+      "type": "function",
+      "name": "buildCertificateSource",
+      "filePath": "cmd/controller/app/controller.go",
+      "lineRange": [416, 440],
+      "summary": "Selects and returns the TLS certificate source for the metrics server based on whether filesystem or dynamic certificate configuration was provided.",
+      "tags": ["tls", "certificates", "metrics", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:cmd/controller/app/options/options.go:ControllerFlags",
+      "type": "class",
+      "name": "ControllerFlags",
+      "filePath": "cmd/controller/app/options/options.go",
+      "lineRange": [39, 42],
+      "summary": "Holds options that can only be configured via command-line flags, currently the path to a ControllerConfiguration file.",
+      "tags": ["options", "struct", "cli-flags", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:cmd/controller/app/options/options.go:NewControllerFlags",
+      "type": "function",
+      "name": "NewControllerFlags",
+      "filePath": "cmd/controller/app/options/options.go",
+      "lineRange": [44, 46],
+      "summary": "Allocates and returns an empty ControllerFlags instance for flag registration.",
+      "tags": ["constructor", "options", "cli-flags"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:cmd/controller/app/options/options.go:AddFlags",
+      "type": "function",
+      "name": "AddFlags",
+      "filePath": "cmd/controller/app/options/options.go",
+      "lineRange": [48, 50],
+      "summary": "Registers the --config flag on the given flag set, binding it to the ControllerFlags config path.",
+      "tags": ["cli-flags", "configuration", "flag-registration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:cmd/controller/app/options/options.go:NewControllerConfiguration",
+      "type": "function",
+      "name": "NewControllerConfiguration",
+      "filePath": "cmd/controller/app/options/options.go",
+      "lineRange": [52, 64],
+      "summary": "Builds the default ControllerConfiguration by defaulting the v1alpha1 versioned config and converting it into the internal API type.",
+      "tags": ["configuration", "defaults", "scheme-conversion", "constructor"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:cmd/controller/app/options/options.go:AddConfigFlags",
+      "type": "function",
+      "name": "AddConfigFlags",
+      "filePath": "cmd/controller/app/options/options.go",
+      "lineRange": [66, 232],
+      "summary": "Registers the full set of controller configuration flags (API server, kubeconfig, leader election, controllers, TLS, logging and more) onto the supplied flag set.",
+      "tags": ["cli-flags", "configuration", "flag-registration", "tls"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:cmd/controller/app/options/options.go:EnabledControllers",
+      "type": "function",
+      "name": "EnabledControllers",
+      "filePath": "cmd/controller/app/options/options.go",
+      "lineRange": [234, 279],
+      "summary": "Computes the set of controllers to run from explicitly enabled/disabled controller names and feature-gate defaults, logging the resulting list.",
+      "tags": ["feature-gates", "controller-selection", "configuration", "sets"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cmd/controller/app/start.go:NewServerCommand",
+      "type": "function",
+      "name": "NewServerCommand",
+      "filePath": "cmd/controller/app/start.go",
+      "lineRange": [51, 57],
+      "summary": "Creates the controller server command using the process arguments and the app Run function as its execution callback.",
+      "tags": ["constructor", "cobra-command", "cli", "entry-point"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:cmd/controller/app/start.go:newServerCommand",
+      "type": "function",
+      "name": "newServerCommand",
+      "filePath": "cmd/controller/app/start.go",
+      "lineRange": [59, 128],
+      "summary": "Assembles the cobra command: binds controller and config flags, loads config from file, applies feature gates and log validation, validates the configuration, and invokes the supplied run function.",
+      "tags": ["cobra-command", "configuration", "validation", "cli"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cmd/controller/app/start.go:loadConfigFromFile",
+      "type": "function",
+      "name": "loadConfigFromFile",
+      "filePath": "cmd/controller/app/start.go",
+      "lineRange": [138, 183],
+      "summary": "Loads a ControllerConfiguration from the --config file, deep-copies it into the target config, then re-parses command-line flags so they override file values.",
+      "tags": ["configuration", "file-loading", "flag-parsing", "overrides"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cmd/controller/main.go:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "cmd/controller/main.go",
+      "lineRange": [28, 43],
+      "summary": "Initializes logging and graceful shutdown, builds the controller command, executes it with the signal-aware context, and records a non-zero exit code on failure.",
+      "tags": ["entry-point", "main", "error-handling", "logging"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:cmd/controller/app/controller.go",
+      "target": "file:cmd/controller/app/options/options.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:cmd/controller/app/start.go",
+      "target": "file:cmd/controller/app/options/options.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:cmd/controller/main.go",
+      "target": "file:cmd/controller/app/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:cmd/controller/main.go",
+      "target": "file:cmd/controller/app/start.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:cmd/controller/app/controller.go",
+      "target": "function:cmd/controller/app/controller.go:Run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/controller/app/controller.go",
+      "target": "function:cmd/controller/app/controller.go:buildControllerContextFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/controller/app/controller.go",
+      "target": "function:cmd/controller/app/controller.go:startLeaderElection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/controller/app/controller.go",
+      "target": "function:cmd/controller/app/controller.go:buildCertificateSource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/controller/app/options/options.go",
+      "target": "class:cmd/controller/app/options/options.go:ControllerFlags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/controller/app/options/options.go",
+      "target": "function:cmd/controller/app/options/options.go:NewControllerFlags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/controller/app/options/options.go",
+      "target": "function:cmd/controller/app/options/options.go:AddFlags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/controller/app/options/options.go",
+      "target": "function:cmd/controller/app/options/options.go:NewControllerConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/controller/app/options/options.go",
+      "target": "function:cmd/controller/app/options/options.go:AddConfigFlags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/controller/app/options/options.go",
+      "target": "function:cmd/controller/app/options/options.go:EnabledControllers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/controller/app/start.go",
+      "target": "function:cmd/controller/app/start.go:NewServerCommand",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/controller/app/start.go",
+      "target": "function:cmd/controller/app/start.go:newServerCommand",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/controller/app/start.go",
+      "target": "function:cmd/controller/app/start.go:loadConfigFromFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/controller/main.go",
+      "target": "function:cmd/controller/main.go:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/controller/app/controller.go",
+      "target": "function:cmd/controller/app/controller.go:Run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:cmd/controller/app/options/options.go",
+      "target": "class:cmd/controller/app/options/options.go:ControllerFlags",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:cmd/controller/app/options/options.go",
+      "target": "function:cmd/controller/app/options/options.go:NewControllerFlags",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:cmd/controller/app/options/options.go",
+      "target": "function:cmd/controller/app/options/options.go:AddFlags",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:cmd/controller/app/options/options.go",
+      "target": "function:cmd/controller/app/options/options.go:NewControllerConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:cmd/controller/app/options/options.go",
+      "target": "function:cmd/controller/app/options/options.go:AddConfigFlags",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:cmd/controller/app/options/options.go",
+      "target": "function:cmd/controller/app/options/options.go:EnabledControllers",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:cmd/controller/app/start.go",
+      "target": "function:cmd/controller/app/start.go:NewServerCommand",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:cmd/controller/app/controller.go:Run",
+      "target": "function:cmd/controller/app/options/options.go:EnabledControllers",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:cmd/controller/app/start.go:newServerCommand",
+      "target": "function:cmd/controller/app/options/options.go:NewControllerFlags",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:cmd/controller/app/start.go:newServerCommand",
+      "target": "function:cmd/controller/app/options/options.go:NewControllerConfiguration",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:cmd/controller/app/start.go:newServerCommand",
+      "target": "function:cmd/controller/app/options/options.go:AddFlags",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:cmd/controller/app/start.go:newServerCommand",
+      "target": "function:cmd/controller/app/options/options.go:AddConfigFlags",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:cmd/controller/main.go:main",
+      "target": "function:cmd/controller/app/start.go:NewServerCommand",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

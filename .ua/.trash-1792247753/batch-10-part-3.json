@@ -1,0 +1,1668 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "type": "file",
+      "name": "certificaterequestspec.go",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "summary": "Generated apply configuration for CertificateRequestSpec, exposing duration, issuer reference, CSR bytes, usages, and requester identity fields.",
+      "tags": [
+        "apply-configuration",
+        "generated",
+        "kubernetes",
+        "certificate-request",
+        "data-model"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows the generated client-go applyconfiguration pattern: With* builders mutate and return the receiver, Extract* converts live objects."
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:CertificateRequestSpecApplyConfiguration",
+      "type": "class",
+      "name": "CertificateRequestSpecApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "lineRange": [
+        29,
+        39
+      ],
+      "summary": "Declarative apply-configuration struct for CertificateRequestSpec with 9 builder/accessor methods and fields: Duration, IssuerRef, Request, IsCA, Usages, Username, UID, Groups, Extra.",
+      "tags": [
+        "apply-configuration",
+        "data-model",
+        "kubernetes",
+        "generated"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:CertificateRequestSpec",
+      "type": "function",
+      "name": "CertificateRequestSpec",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "lineRange": [
+        43,
+        45
+      ],
+      "summary": "Constructs an empty CertificateRequestSpec apply configuration for use with Kubernetes server-side apply.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithDuration",
+      "type": "function",
+      "name": "WithDuration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "lineRange": [
+        50,
+        53
+      ],
+      "summary": "Sets the Duration field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithIssuerRef",
+      "type": "function",
+      "name": "WithIssuerRef",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "lineRange": [
+        58,
+        61
+      ],
+      "summary": "Sets the IssuerRef field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithRequest",
+      "type": "function",
+      "name": "WithRequest",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "lineRange": [
+        66,
+        71
+      ],
+      "summary": "Sets the Request field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithIsCA",
+      "type": "function",
+      "name": "WithIsCA",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "lineRange": [
+        76,
+        79
+      ],
+      "summary": "Sets the IsCA field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithUsages",
+      "type": "function",
+      "name": "WithUsages",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "lineRange": [
+        84,
+        89
+      ],
+      "summary": "Sets the Usages field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithUsername",
+      "type": "function",
+      "name": "WithUsername",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "lineRange": [
+        94,
+        97
+      ],
+      "summary": "Sets the Username field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithUID",
+      "type": "function",
+      "name": "WithUID",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "lineRange": [
+        102,
+        105
+      ],
+      "summary": "Sets the UID field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithGroups",
+      "type": "function",
+      "name": "WithGroups",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "lineRange": [
+        110,
+        115
+      ],
+      "summary": "Sets the Groups field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithExtra",
+      "type": "function",
+      "name": "WithExtra",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "lineRange": [
+        121,
+        129
+      ],
+      "summary": "Sets the Extra field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "type": "file",
+      "name": "certificaterequeststatus.go",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "summary": "Generated apply configuration for CertificateRequestStatus, exposing conditions, the issued certificate, the CA bundle, and failure time.",
+      "tags": [
+        "apply-configuration",
+        "generated",
+        "kubernetes",
+        "certificate-request",
+        "status"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows the generated client-go applyconfiguration pattern: With* builders mutate and return the receiver, Extract* converts live objects."
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go:CertificateRequestStatusApplyConfiguration",
+      "type": "class",
+      "name": "CertificateRequestStatusApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "lineRange": [
+        27,
+        32
+      ],
+      "summary": "Declarative apply-configuration struct for CertificateRequestStatus with 4 builder/accessor methods and fields: Conditions, Certificate, CA, FailureTime.",
+      "tags": [
+        "apply-configuration",
+        "data-model",
+        "kubernetes",
+        "generated"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go:CertificateRequestStatus",
+      "type": "function",
+      "name": "CertificateRequestStatus",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "lineRange": [
+        36,
+        38
+      ],
+      "summary": "Constructs an empty CertificateRequestStatus apply configuration for use with Kubernetes server-side apply.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go:WithConditions",
+      "type": "function",
+      "name": "WithConditions",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "lineRange": [
+        43,
+        51
+      ],
+      "summary": "Sets the Conditions field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go:WithCertificate",
+      "type": "function",
+      "name": "WithCertificate",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "lineRange": [
+        56,
+        61
+      ],
+      "summary": "Sets the Certificate field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go:WithCA",
+      "type": "function",
+      "name": "WithCA",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "lineRange": [
+        66,
+        71
+      ],
+      "summary": "Sets the CA field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go:WithFailureTime",
+      "type": "function",
+      "name": "WithFailureTime",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "lineRange": [
+        76,
+        79
+      ],
+      "summary": "Sets the FailureTime field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "type": "file",
+      "name": "certificatesecrettemplate.go",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "summary": "Generated apply configuration for CertificateSecretTemplate, carrying the annotations and labels copied onto the issued Secret.",
+      "tags": [
+        "apply-configuration",
+        "generated",
+        "kubernetes",
+        "certificate",
+        "secret"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows the generated client-go applyconfiguration pattern: With* builders mutate and return the receiver, Extract* converts live objects."
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go:CertificateSecretTemplateApplyConfiguration",
+      "type": "class",
+      "name": "CertificateSecretTemplateApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "lineRange": [
+        23,
+        26
+      ],
+      "summary": "Declarative apply-configuration struct for CertificateSecretTemplate with 2 builder/accessor methods and fields: Annotations, Labels.",
+      "tags": [
+        "apply-configuration",
+        "data-model",
+        "kubernetes",
+        "generated"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go:CertificateSecretTemplate",
+      "type": "function",
+      "name": "CertificateSecretTemplate",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "lineRange": [
+        30,
+        32
+      ],
+      "summary": "Constructs an empty CertificateSecretTemplate apply configuration for use with Kubernetes server-side apply.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go:WithAnnotations",
+      "type": "function",
+      "name": "WithAnnotations",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "lineRange": [
+        38,
+        46
+      ],
+      "summary": "Sets the Annotations field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go:WithLabels",
+      "type": "function",
+      "name": "WithLabels",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "lineRange": [
+        52,
+        60
+      ],
+      "summary": "Sets the Labels field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "type": "file",
+      "name": "certificatespec.go",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "summary": "Generated apply configuration for CertificateSpec, the large builder covering subject, SANs, secret name, keystores, issuer reference, usages, private key, and name constraints.",
+      "tags": [
+        "apply-configuration",
+        "generated",
+        "kubernetes",
+        "certificate",
+        "data-model"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Follows the generated client-go applyconfiguration pattern: With* builders mutate and return the receiver, Extract* converts live objects."
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:CertificateSpecApplyConfiguration",
+      "type": "class",
+      "name": "CertificateSpecApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        29,
+        53
+      ],
+      "summary": "Declarative apply-configuration struct for CertificateSpec with 23 builder/accessor methods and fields: Subject, LiteralSubject, CommonName, Duration, RenewBefore, RenewBeforePercentage, DNSNames, IPAddresses, URIs, OtherNames, EmailAddresses, SecretName, SecretTemplate, Keystores, IssuerRef, IsCA, Usages, PrivateKey, SignatureAlgorithm, EncodeUsagesInRequest, RevisionHistoryLimit, AdditionalOutputFormats, NameConstraints.",
+      "tags": [
+        "apply-configuration",
+        "data-model",
+        "kubernetes",
+        "generated"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:CertificateSpec",
+      "type": "function",
+      "name": "CertificateSpec",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        57,
+        59
+      ],
+      "summary": "Constructs an empty CertificateSpec apply configuration for use with Kubernetes server-side apply.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithSubject",
+      "type": "function",
+      "name": "WithSubject",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        64,
+        67
+      ],
+      "summary": "Sets the Subject field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithLiteralSubject",
+      "type": "function",
+      "name": "WithLiteralSubject",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        72,
+        75
+      ],
+      "summary": "Sets the LiteralSubject field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithCommonName",
+      "type": "function",
+      "name": "WithCommonName",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        80,
+        83
+      ],
+      "summary": "Sets the CommonName field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithDuration",
+      "type": "function",
+      "name": "WithDuration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        88,
+        91
+      ],
+      "summary": "Sets the Duration field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithRenewBefore",
+      "type": "function",
+      "name": "WithRenewBefore",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        96,
+        99
+      ],
+      "summary": "Sets the RenewBefore field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithRenewBeforePercentage",
+      "type": "function",
+      "name": "WithRenewBeforePercentage",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        104,
+        107
+      ],
+      "summary": "Sets the RenewBeforePercentage field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithDNSNames",
+      "type": "function",
+      "name": "WithDNSNames",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        112,
+        117
+      ],
+      "summary": "Sets the DNSNames field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithIPAddresses",
+      "type": "function",
+      "name": "WithIPAddresses",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        122,
+        127
+      ],
+      "summary": "Sets the IPAddresses field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithURIs",
+      "type": "function",
+      "name": "WithURIs",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        132,
+        137
+      ],
+      "summary": "Sets the URIs field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithOtherNames",
+      "type": "function",
+      "name": "WithOtherNames",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        142,
+        150
+      ],
+      "summary": "Sets the OtherNames field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithEmailAddresses",
+      "type": "function",
+      "name": "WithEmailAddresses",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        155,
+        160
+      ],
+      "summary": "Sets the EmailAddresses field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithSecretName",
+      "type": "function",
+      "name": "WithSecretName",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        165,
+        168
+      ],
+      "summary": "Sets the SecretName field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithSecretTemplate",
+      "type": "function",
+      "name": "WithSecretTemplate",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        173,
+        176
+      ],
+      "summary": "Sets the SecretTemplate field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithKeystores",
+      "type": "function",
+      "name": "WithKeystores",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        181,
+        184
+      ],
+      "summary": "Sets the Keystores field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithIssuerRef",
+      "type": "function",
+      "name": "WithIssuerRef",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        189,
+        192
+      ],
+      "summary": "Sets the IssuerRef field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithIsCA",
+      "type": "function",
+      "name": "WithIsCA",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        197,
+        200
+      ],
+      "summary": "Sets the IsCA field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithUsages",
+      "type": "function",
+      "name": "WithUsages",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        205,
+        210
+      ],
+      "summary": "Sets the Usages field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithPrivateKey",
+      "type": "function",
+      "name": "WithPrivateKey",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        215,
+        218
+      ],
+      "summary": "Sets the PrivateKey field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithSignatureAlgorithm",
+      "type": "function",
+      "name": "WithSignatureAlgorithm",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        223,
+        226
+      ],
+      "summary": "Sets the SignatureAlgorithm field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithEncodeUsagesInRequest",
+      "type": "function",
+      "name": "WithEncodeUsagesInRequest",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        231,
+        234
+      ],
+      "summary": "Sets the EncodeUsagesInRequest field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithRevisionHistoryLimit",
+      "type": "function",
+      "name": "WithRevisionHistoryLimit",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        239,
+        242
+      ],
+      "summary": "Sets the RevisionHistoryLimit field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithAdditionalOutputFormats",
+      "type": "function",
+      "name": "WithAdditionalOutputFormats",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        247,
+        255
+      ],
+      "summary": "Sets the AdditionalOutputFormats field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithNameConstraints",
+      "type": "function",
+      "name": "WithNameConstraints",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "lineRange": [
+        260,
+        263
+      ],
+      "summary": "Sets the NameConstraints field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:CertificateRequestSpecApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:CertificateRequestSpecApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:CertificateRequestSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:CertificateRequestSpec",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithDuration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithDuration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithIssuerRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithIssuerRef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithIsCA",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithIsCA",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithUsages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithUsages",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithUsername",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithUsername",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithUID",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithUID",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithGroups",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithGroups",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithExtra",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go:WithExtra",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go:CertificateRequestStatusApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go:CertificateRequestStatusApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go:CertificateRequestStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go:CertificateRequestStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go:WithConditions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go:WithConditions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go:WithCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go:WithCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go:WithCA",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go:WithCA",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go:WithFailureTime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go:WithFailureTime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go:CertificateSecretTemplateApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go:CertificateSecretTemplateApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go:CertificateSecretTemplate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go:CertificateSecretTemplate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go:WithAnnotations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go:WithAnnotations",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go:WithLabels",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go:WithLabels",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:CertificateSpecApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:CertificateSpecApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:CertificateSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:CertificateSpec",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithSubject",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithSubject",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithLiteralSubject",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithLiteralSubject",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithCommonName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithCommonName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithDuration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithDuration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithRenewBefore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithRenewBefore",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithRenewBeforePercentage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithRenewBeforePercentage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithDNSNames",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithDNSNames",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithIPAddresses",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithIPAddresses",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithURIs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithURIs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithOtherNames",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithOtherNames",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithEmailAddresses",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithEmailAddresses",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithSecretName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithSecretName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithSecretTemplate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithSecretTemplate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithKeystores",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithKeystores",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithIssuerRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithIssuerRef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithIsCA",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithIsCA",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithUsages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithUsages",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithPrivateKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithPrivateKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithSignatureAlgorithm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithSignatureAlgorithm",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithEncodeUsagesInRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithEncodeUsagesInRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithRevisionHistoryLimit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithRevisionHistoryLimit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithAdditionalOutputFormats",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithAdditionalOutputFormats",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithNameConstraints",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go:WithNameConstraints",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

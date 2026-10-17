@@ -1,0 +1,56 @@
+{
+  "nodes": [
+    {
+      "id": "config:make/_shared_new/helm/crd.template.footer.yaml",
+      "type": "config",
+      "name": "crd.template.footer.yaml",
+      "filePath": "make/_shared_new/helm/crd.template.footer.yaml",
+      "summary": "One-line Helm template footer that closes the conditional block opened by the CRD header template.",
+      "tags": ["configuration", "helm", "template", "code-generation"],
+      "complexity": "simple",
+      "languageNotes": "Contains only a Go template end action, so it is meaningful solely in combination with the header template."
+    },
+    {
+      "id": "config:make/_shared_new/helm/crd.template.header.yaml",
+      "type": "config",
+      "name": "crd.template.header.yaml",
+      "filePath": "make/_shared_new/helm/crd.template.header.yaml",
+      "summary": "Helm template header that generates a CustomResourceDefinition, conditionally adding the keep resource-policy annotation and standard labels.",
+      "tags": ["configuration", "helm", "custom-resource-definition", "code-generation"],
+      "complexity": "simple",
+      "languageNotes": "Uses REPLACE_* placeholder tokens that the build system substitutes per CRD."
+    },
+    {
+      "id": "document:make/_shared_new/helm/crds_dir.README.md",
+      "type": "document",
+      "name": "crds_dir.README.md",
+      "filePath": "make/_shared_new/helm/crds_dir.README.md",
+      "summary": "Warns that the CRDs directory holds source definitions for reference and development only, consumed by officially supported deployment methods such as the Helm chart.",
+      "tags": ["documentation", "custom-resource-definition", "helm", "warning"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:make/_shared_new/helm/crd.template.header.yaml",
+      "target": "config:make/_shared_new/helm/crd.template.footer.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:make/_shared_new/helm/crds_dir.README.md",
+      "target": "config:make/_shared_new/helm/crd.template.header.yaml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:make/_shared_new/helm/crds_dir.README.md",
+      "target": "config:make/_shared_new/helm/crd.template.footer.yaml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

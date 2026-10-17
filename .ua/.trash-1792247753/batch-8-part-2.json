@@ -1,0 +1,1740 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/util/pki/parse_certificate_chain.go",
+      "type": "file",
+      "name": "parse_certificate_chain.go",
+      "filePath": "pkg/util/pki/parse_certificate_chain.go",
+      "summary": "Parses a certificate chain into leaf, chain and CA PEM bundles by building an issuer graph and locating the self-signed root.",
+      "tags": [
+        "pki",
+        "certificate-chain",
+        "parsing",
+        "x509"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:pkg/util/pki/parse_certificate_chain.go:PEMBundle",
+      "type": "class",
+      "name": "PEMBundle",
+      "filePath": "pkg/util/pki/parse_certificate_chain.go",
+      "lineRange": [
+        30,
+        33
+      ],
+      "summary": "Holds the PEM-encoded leaf chain and the optional CA certificate extracted from a bundle.",
+      "tags": [
+        "pki",
+        "certificate-chain",
+        "parsing",
+        "x509",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/util/pki/parse_certificate_chain.go:chainNode",
+      "type": "class",
+      "name": "chainNode",
+      "filePath": "pkg/util/pki/parse_certificate_chain.go",
+      "lineRange": [
+        35,
+        38
+      ],
+      "summary": "Node in the issuer graph linking a certificate to the node that issued it.",
+      "tags": [
+        "pki",
+        "certificate-chain",
+        "parsing",
+        "x509",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/parse_certificate_chain.go:ParseSingleCertificateChainPEM",
+      "type": "function",
+      "name": "ParseSingleCertificateChainPEM",
+      "filePath": "pkg/util/pki/parse_certificate_chain.go",
+      "lineRange": [
+        42,
+        48
+      ],
+      "summary": "Decodes a PEM bundle before parsing it into a single certificate chain and CA.",
+      "tags": [
+        "pki",
+        "certificate-chain",
+        "parsing",
+        "x509"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/parse_certificate_chain.go:ParseSingleCertificateChain",
+      "type": "function",
+      "name": "ParseSingleCertificateChain",
+      "filePath": "pkg/util/pki/parse_certificate_chain.go",
+      "lineRange": [
+        69,
+        149
+      ],
+      "summary": "Builds an issuer graph, selects the highest certificate as CA, and returns ordered chain PEM plus CA PEM.",
+      "tags": [
+        "pki",
+        "certificate-chain",
+        "parsing",
+        "x509"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/util/pki/parse_certificate_chain.go:toBundleAndCA",
+      "type": "function",
+      "name": "toBundleAndCA",
+      "filePath": "pkg/util/pki/parse_certificate_chain.go",
+      "lineRange": [
+        152,
+        209
+      ],
+      "summary": "Walks a chain node to produce the PEM-encoded chain and CA, separating a self-signed root when present.",
+      "tags": [
+        "pki",
+        "certificate-chain",
+        "parsing",
+        "x509"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/util/pki/parse_certificate_chain.go:tryMergeChain",
+      "type": "function",
+      "name": "tryMergeChain",
+      "filePath": "pkg/util/pki/parse_certificate_chain.go",
+      "lineRange": [
+        235,
+        256
+      ],
+      "summary": "Attempts to attach a partial chain to the existing graph and reports whether it was merged.",
+      "tags": [
+        "pki",
+        "certificate-chain",
+        "parsing",
+        "x509"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/util/pki/renewaltime.go",
+      "type": "file",
+      "name": "renewaltime.go",
+      "filePath": "pkg/util/pki/renewaltime.go",
+      "summary": "Computes certificate renewal times from notBefore and notAfter, supporting both fixed renewal windows and percentage-based renewal.",
+      "tags": [
+        "pki",
+        "renewal",
+        "scheduling",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/util/pki/renewaltime.go:RenewalTime",
+      "type": "function",
+      "name": "RenewalTime",
+      "filePath": "pkg/util/pki/renewaltime.go",
+      "lineRange": [
+        35,
+        55
+      ],
+      "summary": "Calculates the renewal time from validity bounds using an explicit renewBefore or a percentage of lifetime.",
+      "tags": [
+        "pki",
+        "renewal",
+        "scheduling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/renewaltime.go:RenewBefore",
+      "type": "function",
+      "name": "RenewBefore",
+      "filePath": "pkg/util/pki/renewaltime.go",
+      "lineRange": [
+        64,
+        76
+      ],
+      "summary": "Resolves the effective renewBefore duration from either an explicit duration or a percentage of the certificate lifetime.",
+      "tags": [
+        "pki",
+        "renewal",
+        "scheduling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/util/pki/sans.go",
+      "type": "file",
+      "name": "sans.go",
+      "filePath": "pkg/util/pki/sans.go",
+      "summary": "Marshals and unmarshals X.509 Subject Alternative Name extensions, including DNS, IP, email, URI, otherName and EDI party names.",
+      "tags": [
+        "cryptography",
+        "x509",
+        "asn1",
+        "san",
+        "pki"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Uses cryptobyte for precise ASN.1 encoding of GeneralNames, which the standard library cannot fully represent."
+    },
+    {
+      "id": "class:pkg/util/pki/sans.go:OtherName",
+      "type": "class",
+      "name": "OtherName",
+      "filePath": "pkg/util/pki/sans.go",
+      "lineRange": [
+        40,
+        43
+      ],
+      "summary": "ASN.1 representation of an otherName GeneralName entry with a type ID and explicit value.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "san",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/util/pki/sans.go:EDIPartyName",
+      "type": "class",
+      "name": "EDIPartyName",
+      "filePath": "pkg/util/pki/sans.go",
+      "lineRange": [
+        52,
+        55
+      ],
+      "summary": "ASN.1 representation of an EDI party name SAN entry.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "san",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/util/pki/sans.go:GeneralNames",
+      "type": "class",
+      "name": "GeneralNames",
+      "filePath": "pkg/util/pki/sans.go",
+      "lineRange": [
+        83,
+        93
+      ],
+      "summary": "Collection of SAN entries to be marshalled into a subject alternative name extension.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "san",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/sans.go:Empty",
+      "type": "function",
+      "name": "Empty",
+      "filePath": "pkg/util/pki/sans.go",
+      "lineRange": [
+        95,
+        105
+      ],
+      "summary": "Reports whether the GeneralNames collection has no entries.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "san"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/sans.go:UnmarshalSANs",
+      "type": "function",
+      "name": "UnmarshalSANs",
+      "filePath": "pkg/util/pki/sans.go",
+      "lineRange": [
+        108,
+        171
+      ],
+      "summary": "Decodes SANs from a raw extension value into DNS, IP, email, URI, otherName and EDI party name lists.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "san"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/util/pki/sans.go:forEachSAN",
+      "type": "function",
+      "name": "forEachSAN",
+      "filePath": "pkg/util/pki/sans.go",
+      "lineRange": [
+        173,
+        199
+      ],
+      "summary": "Iterates the GeneralNames in an extension, invoking a callback with each ASN.1 tag and value.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "san"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/sans.go:MarshalSANs",
+      "type": "function",
+      "name": "MarshalSANs",
+      "filePath": "pkg/util/pki/sans.go",
+      "lineRange": [
+        204,
+        284
+      ],
+      "summary": "Encodes DNS, IP, email, URI, otherName and EDI party names into an ASN.1 subject alternative name extension.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "san"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/util/pki/subject.go",
+      "type": "file",
+      "name": "subject.go",
+      "filePath": "pkg/util/pki/subject.go",
+      "summary": "Converts between X.509 subject strings or DER bytes and pkix RDN sequences, and extracts common names for certificates and CSRs.",
+      "tags": [
+        "pki",
+        "x509",
+        "subject",
+        "asn1",
+        "parsing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/util/pki/subject.go:UnmarshalSubjectStringToRDNSequence",
+      "type": "function",
+      "name": "UnmarshalSubjectStringToRDNSequence",
+      "filePath": "pkg/util/pki/subject.go",
+      "lineRange": [
+        68,
+        101
+      ],
+      "summary": "Parses an RFC 2253 subject string into a pkix RDN sequence using the appropriate ASN.1 string types.",
+      "tags": [
+        "pki",
+        "x509",
+        "subject",
+        "asn1"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/subject.go:IsASN1SubjectEmpty",
+      "type": "function",
+      "name": "IsASN1SubjectEmpty",
+      "filePath": "pkg/util/pki/subject.go",
+      "lineRange": [
+        103,
+        109
+      ],
+      "summary": "Reports whether an ASN.1 subject contains no attributes.",
+      "tags": [
+        "pki",
+        "x509",
+        "subject",
+        "asn1"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/subject.go:MarshalRDNSequenceToRawDERBytes",
+      "type": "function",
+      "name": "MarshalRDNSequenceToRawDERBytes",
+      "filePath": "pkg/util/pki/subject.go",
+      "lineRange": [
+        111,
+        113
+      ],
+      "summary": "Marshals an RDN sequence into raw DER bytes.",
+      "tags": [
+        "pki",
+        "x509",
+        "subject",
+        "asn1"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/subject.go:UnmarshalRawDerBytesToRDNSequence",
+      "type": "function",
+      "name": "UnmarshalRawDerBytesToRDNSequence",
+      "filePath": "pkg/util/pki/subject.go",
+      "lineRange": [
+        115,
+        125
+      ],
+      "summary": "Unmarshals raw DER bytes into a pkix RDN sequence.",
+      "tags": [
+        "pki",
+        "x509",
+        "subject",
+        "asn1"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/subject.go:ExtractCommonNameFromRDNSequence",
+      "type": "function",
+      "name": "ExtractCommonNameFromRDNSequence",
+      "filePath": "pkg/util/pki/subject.go",
+      "lineRange": [
+        127,
+        139
+      ],
+      "summary": "Finds and returns the common name attribute from an RDN sequence.",
+      "tags": [
+        "pki",
+        "x509",
+        "subject",
+        "asn1"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/util/pki/temporarycertificate.go",
+      "type": "file",
+      "name": "temporarycertificate.go",
+      "filePath": "pkg/util/pki/temporarycertificate.go",
+      "summary": "Generates a short-lived, locally signed temporary certificate using a throwaway CA while real certificate issuance is pending.",
+      "tags": [
+        "pki",
+        "certificate",
+        "temporary",
+        "self-signed"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/util/pki/temporarycertificate.go:GenerateLocallySignedTemporaryCertificate",
+      "type": "function",
+      "name": "GenerateLocallySignedTemporaryCertificate",
+      "filePath": "pkg/util/pki/temporarycertificate.go",
+      "lineRange": [
+        30,
+        68
+      ],
+      "summary": "Creates a throwaway CA and uses it to sign a short-lived certificate matching the Certificate spec and supplied key.",
+      "tags": [
+        "pki",
+        "certificate",
+        "temporary"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/util/predicate/certificate.go",
+      "type": "file",
+      "name": "certificate.go",
+      "filePath": "pkg/util/predicate/certificate.go",
+      "summary": "Provides index predicates mapping Certificate objects to their target secret name and next private key secret name.",
+      "tags": [
+        "kubernetes",
+        "predicate",
+        "indexer",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/predicate/certificate.go:CertificateSecretName",
+      "type": "function",
+      "name": "CertificateSecretName",
+      "filePath": "pkg/util/predicate/certificate.go",
+      "lineRange": [
+        27,
+        32
+      ],
+      "summary": "Builds an index predicate returning the secret name targeted by a Certificate.",
+      "tags": [
+        "kubernetes",
+        "predicate",
+        "indexer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/predicate/certificate.go:CertificateNextPrivateKeySecretName",
+      "type": "function",
+      "name": "CertificateNextPrivateKeySecretName",
+      "filePath": "pkg/util/predicate/certificate.go",
+      "lineRange": [
+        38,
+        46
+      ],
+      "summary": "Builds an index predicate returning the next private key secret name of a Certificate.",
+      "tags": [
+        "kubernetes",
+        "predicate",
+        "indexer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/util/predicate/certificaterequest.go",
+      "type": "file",
+      "name": "certificaterequest.go",
+      "filePath": "pkg/util/predicate/certificaterequest.go",
+      "summary": "Provides an index predicate mapping CertificateRequest objects to their revision number annotation.",
+      "tags": [
+        "kubernetes",
+        "predicate",
+        "indexer",
+        "certificate-request"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/predicate/certificaterequest.go:CertificateRequestRevision",
+      "type": "function",
+      "name": "CertificateRequestRevision",
+      "filePath": "pkg/util/predicate/certificaterequest.go",
+      "lineRange": [
+        29,
+        37
+      ],
+      "summary": "Builds an index predicate returning the revision annotation value of a CertificateRequest.",
+      "tags": [
+        "kubernetes",
+        "predicate",
+        "indexer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/util/predicate/generic.go",
+      "type": "file",
+      "name": "generic.go",
+      "filePath": "pkg/util/predicate/generic.go",
+      "summary": "Generic ownership predicates for filtering Kubernetes objects by their owning resource.",
+      "tags": [
+        "kubernetes",
+        "predicate",
+        "ownership",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/predicate/generic.go:ResourceOwnedBy",
+      "type": "function",
+      "name": "ResourceOwnedBy",
+      "filePath": "pkg/util/predicate/generic.go",
+      "lineRange": [
+        26,
+        30
+      ],
+      "summary": "Builds a predicate that matches objects owned by the given owner reference.",
+      "tags": [
+        "kubernetes",
+        "predicate",
+        "ownership"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/predicate/generic.go:ResourceOwnerOf",
+      "type": "function",
+      "name": "ResourceOwnerOf",
+      "filePath": "pkg/util/predicate/generic.go",
+      "lineRange": [
+        34,
+        38
+      ],
+      "summary": "Returns the owning resource reference for an object, or nil when it has no controller owner.",
+      "tags": [
+        "kubernetes",
+        "predicate",
+        "ownership"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/util/predicate/predicate.go",
+      "type": "file",
+      "name": "predicate.go",
+      "filePath": "pkg/util/predicate/predicate.go",
+      "summary": "Defines the base predicate interface and evaluation helpers used by controller index functions.",
+      "tags": [
+        "kubernetes",
+        "predicate",
+        "interface",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/predicate/predicate.go:Evaluate",
+      "type": "function",
+      "name": "Evaluate",
+      "filePath": "pkg/util/predicate/predicate.go",
+      "lineRange": [
+        32,
+        39
+      ],
+      "summary": "Applies a predicate to an object and reports whether it matches.",
+      "tags": [
+        "kubernetes",
+        "predicate",
+        "interface"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/predicate/predicate.go:ExtractResourceName",
+      "type": "function",
+      "name": "ExtractResourceName",
+      "filePath": "pkg/util/predicate/predicate.go",
+      "lineRange": [
+        53,
+        58
+      ],
+      "summary": "Extracts the resource name portion from a namespaced or cluster-scoped object key.",
+      "tags": [
+        "kubernetes",
+        "predicate",
+        "interface"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/util/useragent.go",
+      "type": "file",
+      "name": "useragent.go",
+      "filePath": "pkg/util/useragent.go",
+      "summary": "Builds cert-manager user-agent strings and applies them to Kubernetes REST clients through a round tripper.",
+      "tags": [
+        "kubernetes",
+        "user-agent",
+        "http",
+        "client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/useragent.go:RestConfigWithUserAgent",
+      "type": "function",
+      "name": "RestConfigWithUserAgent",
+      "filePath": "pkg/util/useragent.go",
+      "lineRange": [
+        33,
+        39
+      ],
+      "summary": "Returns a copy of a Kubernetes REST config with the cert-manager user-agent round tripper installed.",
+      "tags": [
+        "kubernetes",
+        "user-agent",
+        "client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/useragent.go:PrefixFromUserAgent",
+      "type": "function",
+      "name": "PrefixFromUserAgent",
+      "filePath": "pkg/util/useragent.go",
+      "lineRange": [
+        46,
+        61
+      ],
+      "summary": "Extracts the leading product prefix from a user-agent string, defaulting when it is empty.",
+      "tags": [
+        "kubernetes",
+        "user-agent",
+        "client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/useragent.go:RoundTrip",
+      "type": "function",
+      "name": "RoundTrip",
+      "filePath": "pkg/util/useragent.go",
+      "lineRange": [
+        80,
+        83
+      ],
+      "summary": "Adds the configured user-agent header to every outgoing HTTP request.",
+      "tags": [
+        "kubernetes",
+        "user-agent",
+        "client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/util/util.go",
+      "type": "file",
+      "name": "util.go",
+      "filePath": "pkg/util/util.go",
+      "summary": "Order-insensitive slice equality helpers plus CSV join and split utilities that honor backslash escaping.",
+      "tags": [
+        "utility",
+        "comparison",
+        "csv",
+        "collections"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/util/util.go:genericEqualUnsorted",
+      "type": "function",
+      "name": "genericEqualUnsorted",
+      "filePath": "pkg/util/util.go",
+      "lineRange": [
+        37,
+        53
+      ],
+      "summary": "Compares two slices ignoring order using a caller-supplied comparison function.",
+      "tags": [
+        "utility",
+        "comparison",
+        "csv"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/util.go:EqualUnsorted",
+      "type": "function",
+      "name": "EqualUnsorted",
+      "filePath": "pkg/util/util.go",
+      "lineRange": [
+        55,
+        57
+      ],
+      "summary": "Reports whether two string slices contain the same elements regardless of order.",
+      "tags": [
+        "utility",
+        "comparison",
+        "csv"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/util.go:EqualURLsUnsorted",
+      "type": "function",
+      "name": "EqualURLsUnsorted",
+      "filePath": "pkg/util/util.go",
+      "lineRange": [
+        60,
+        64
+      ],
+      "summary": "Reports whether two URL slices contain the same values regardless of order.",
+      "tags": [
+        "utility",
+        "comparison",
+        "csv"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/util.go:EqualOtherNamesUnsorted",
+      "type": "function",
+      "name": "EqualOtherNamesUnsorted",
+      "filePath": "pkg/util/util.go",
+      "lineRange": [
+        67,
+        75
+      ],
+      "summary": "Reports whether two otherName slices match regardless of order.",
+      "tags": [
+        "utility",
+        "comparison",
+        "csv"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/util.go:EqualIPsUnsorted",
+      "type": "function",
+      "name": "EqualIPsUnsorted",
+      "filePath": "pkg/util/util.go",
+      "lineRange": [
+        78,
+        88
+      ],
+      "summary": "Reports whether two IP slices match regardless of order.",
+      "tags": [
+        "utility",
+        "comparison",
+        "csv"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/util.go:EqualKeyUsagesUnsorted",
+      "type": "function",
+      "name": "EqualKeyUsagesUnsorted",
+      "filePath": "pkg/util/util.go",
+      "lineRange": [
+        91,
+        95
+      ],
+      "summary": "Reports whether two key usage slices match regardless of order.",
+      "tags": [
+        "utility",
+        "comparison",
+        "csv"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/util.go:JoinWithEscapeCSV",
+      "type": "function",
+      "name": "JoinWithEscapeCSV",
+      "filePath": "pkg/util/util.go",
+      "lineRange": [
+        99,
+        115
+      ],
+      "summary": "Joins strings with commas while escaping embedded commas and backslashes.",
+      "tags": [
+        "utility",
+        "comparison",
+        "csv"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/util.go:SplitWithEscapeCSV",
+      "type": "function",
+      "name": "SplitWithEscapeCSV",
+      "filePath": "pkg/util/util.go",
+      "lineRange": [
+        123,
+        138
+      ],
+      "summary": "Splits an escaped comma-separated string back into its individual values.",
+      "tags": [
+        "utility",
+        "comparison",
+        "csv"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/util/version.go",
+      "type": "file",
+      "name": "version.go",
+      "filePath": "pkg/util/version.go",
+      "summary": "Defines the build version struct and populates it from linker-injected variables and Go runtime information.",
+      "tags": [
+        "versioning",
+        "build-info",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/util/version.go:Version",
+      "type": "class",
+      "name": "Version",
+      "filePath": "pkg/util/version.go",
+      "lineRange": [
+        24,
+        31
+      ],
+      "summary": "Build metadata struct exposed by the version command and API.",
+      "tags": [
+        "versioning",
+        "build-info",
+        "utility",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/version.go:VersionInfo",
+      "type": "function",
+      "name": "VersionInfo",
+      "filePath": "pkg/util/version.go",
+      "lineRange": [
+        40,
+        49
+      ],
+      "summary": "Populates a Version struct from linker variables and the Go runtime.",
+      "tags": [
+        "versioning",
+        "build-info",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/version.go:version",
+      "type": "function",
+      "name": "version",
+      "filePath": "pkg/util/version.go",
+      "lineRange": [
+        51,
+        60
+      ],
+      "summary": "Formats the version information into a human-readable multi-line string.",
+      "tags": [
+        "versioning",
+        "build-info",
+        "utility"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/util/pki/parse_certificate_chain.go",
+      "target": "file:pkg/util/errors/errors.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/parse_certificate_chain.go",
+      "target": "class:pkg/util/pki/parse_certificate_chain.go:PEMBundle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/parse_certificate_chain.go",
+      "target": "class:pkg/util/pki/parse_certificate_chain.go:PEMBundle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/parse_certificate_chain.go",
+      "target": "class:pkg/util/pki/parse_certificate_chain.go:chainNode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/parse_certificate_chain.go",
+      "target": "function:pkg/util/pki/parse_certificate_chain.go:ParseSingleCertificateChainPEM",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/parse_certificate_chain.go",
+      "target": "function:pkg/util/pki/parse_certificate_chain.go:ParseSingleCertificateChainPEM",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/parse_certificate_chain.go",
+      "target": "function:pkg/util/pki/parse_certificate_chain.go:ParseSingleCertificateChain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/parse_certificate_chain.go",
+      "target": "function:pkg/util/pki/parse_certificate_chain.go:ParseSingleCertificateChain",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/parse_certificate_chain.go",
+      "target": "function:pkg/util/pki/parse_certificate_chain.go:toBundleAndCA",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/parse_certificate_chain.go",
+      "target": "function:pkg/util/pki/parse_certificate_chain.go:tryMergeChain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/renewaltime.go",
+      "target": "function:pkg/util/pki/renewaltime.go:RenewalTime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/renewaltime.go",
+      "target": "function:pkg/util/pki/renewaltime.go:RenewalTime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/renewaltime.go",
+      "target": "function:pkg/util/pki/renewaltime.go:RenewBefore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/renewaltime.go",
+      "target": "function:pkg/util/pki/renewaltime.go:RenewBefore",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/sans.go",
+      "target": "class:pkg/util/pki/sans.go:OtherName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/sans.go",
+      "target": "class:pkg/util/pki/sans.go:OtherName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/sans.go",
+      "target": "class:pkg/util/pki/sans.go:EDIPartyName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/sans.go",
+      "target": "class:pkg/util/pki/sans.go:EDIPartyName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/sans.go",
+      "target": "class:pkg/util/pki/sans.go:GeneralNames",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/sans.go",
+      "target": "class:pkg/util/pki/sans.go:GeneralNames",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/sans.go",
+      "target": "function:pkg/util/pki/sans.go:Empty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/sans.go",
+      "target": "function:pkg/util/pki/sans.go:Empty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/sans.go",
+      "target": "function:pkg/util/pki/sans.go:UnmarshalSANs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/sans.go",
+      "target": "function:pkg/util/pki/sans.go:UnmarshalSANs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/sans.go",
+      "target": "function:pkg/util/pki/sans.go:forEachSAN",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/sans.go",
+      "target": "function:pkg/util/pki/sans.go:MarshalSANs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/sans.go",
+      "target": "function:pkg/util/pki/sans.go:MarshalSANs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/subject.go",
+      "target": "function:pkg/util/pki/subject.go:UnmarshalSubjectStringToRDNSequence",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/subject.go",
+      "target": "function:pkg/util/pki/subject.go:UnmarshalSubjectStringToRDNSequence",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/subject.go",
+      "target": "function:pkg/util/pki/subject.go:IsASN1SubjectEmpty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/subject.go",
+      "target": "function:pkg/util/pki/subject.go:IsASN1SubjectEmpty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/subject.go",
+      "target": "function:pkg/util/pki/subject.go:MarshalRDNSequenceToRawDERBytes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/subject.go",
+      "target": "function:pkg/util/pki/subject.go:MarshalRDNSequenceToRawDERBytes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/subject.go",
+      "target": "function:pkg/util/pki/subject.go:UnmarshalRawDerBytesToRDNSequence",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/subject.go",
+      "target": "function:pkg/util/pki/subject.go:UnmarshalRawDerBytesToRDNSequence",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/subject.go",
+      "target": "function:pkg/util/pki/subject.go:ExtractCommonNameFromRDNSequence",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/subject.go",
+      "target": "function:pkg/util/pki/subject.go:ExtractCommonNameFromRDNSequence",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/temporarycertificate.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/temporarycertificate.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/temporarycertificate.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/temporarycertificate.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/temporarycertificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/temporarycertificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/temporarycertificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/temporarycertificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/temporarycertificate.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/temporarycertificate.go",
+      "target": "function:pkg/util/pki/temporarycertificate.go:GenerateLocallySignedTemporaryCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/temporarycertificate.go",
+      "target": "function:pkg/util/pki/temporarycertificate.go:GenerateLocallySignedTemporaryCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/predicate/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/predicate/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/predicate/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/predicate/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/predicate/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/predicate/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/predicate/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/predicate/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/predicate/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/predicate/certificate.go",
+      "target": "function:pkg/util/predicate/certificate.go:CertificateSecretName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/predicate/certificate.go",
+      "target": "function:pkg/util/predicate/certificate.go:CertificateSecretName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/predicate/certificate.go",
+      "target": "function:pkg/util/predicate/certificate.go:CertificateNextPrivateKeySecretName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/predicate/certificate.go",
+      "target": "function:pkg/util/predicate/certificate.go:CertificateNextPrivateKeySecretName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/predicate/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/predicate/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/predicate/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/predicate/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/predicate/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/predicate/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/predicate/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/predicate/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/predicate/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/predicate/certificaterequest.go",
+      "target": "function:pkg/util/predicate/certificaterequest.go:CertificateRequestRevision",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/predicate/certificaterequest.go",
+      "target": "function:pkg/util/predicate/certificaterequest.go:CertificateRequestRevision",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/predicate/generic.go",
+      "target": "function:pkg/util/predicate/generic.go:ResourceOwnedBy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/predicate/generic.go",
+      "target": "function:pkg/util/predicate/generic.go:ResourceOwnedBy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/predicate/generic.go",
+      "target": "function:pkg/util/predicate/generic.go:ResourceOwnerOf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/predicate/generic.go",
+      "target": "function:pkg/util/predicate/generic.go:ResourceOwnerOf",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/predicate/predicate.go",
+      "target": "function:pkg/util/predicate/predicate.go:Evaluate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/predicate/predicate.go",
+      "target": "function:pkg/util/predicate/predicate.go:Evaluate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/predicate/predicate.go",
+      "target": "function:pkg/util/predicate/predicate.go:ExtractResourceName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/predicate/predicate.go",
+      "target": "function:pkg/util/predicate/predicate.go:ExtractResourceName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/useragent.go",
+      "target": "function:pkg/util/useragent.go:RestConfigWithUserAgent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/useragent.go",
+      "target": "function:pkg/util/useragent.go:RestConfigWithUserAgent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/useragent.go",
+      "target": "function:pkg/util/useragent.go:PrefixFromUserAgent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/useragent.go",
+      "target": "function:pkg/util/useragent.go:PrefixFromUserAgent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/useragent.go",
+      "target": "function:pkg/util/useragent.go:RoundTrip",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/useragent.go",
+      "target": "function:pkg/util/useragent.go:RoundTrip",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "function:pkg/util/util.go:genericEqualUnsorted",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "function:pkg/util/util.go:EqualUnsorted",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "function:pkg/util/util.go:EqualUnsorted",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "function:pkg/util/util.go:EqualURLsUnsorted",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "function:pkg/util/util.go:EqualURLsUnsorted",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "function:pkg/util/util.go:EqualOtherNamesUnsorted",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "function:pkg/util/util.go:EqualOtherNamesUnsorted",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "function:pkg/util/util.go:EqualIPsUnsorted",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "function:pkg/util/util.go:EqualIPsUnsorted",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "function:pkg/util/util.go:EqualKeyUsagesUnsorted",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "function:pkg/util/util.go:EqualKeyUsagesUnsorted",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "function:pkg/util/util.go:JoinWithEscapeCSV",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "function:pkg/util/util.go:JoinWithEscapeCSV",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "function:pkg/util/util.go:SplitWithEscapeCSV",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/util.go",
+      "target": "function:pkg/util/util.go:SplitWithEscapeCSV",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/version.go",
+      "target": "class:pkg/util/version.go:Version",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/version.go",
+      "target": "class:pkg/util/version.go:Version",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/version.go",
+      "target": "function:pkg/util/version.go:VersionInfo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/version.go",
+      "target": "function:pkg/util/version.go:VersionInfo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/version.go",
+      "target": "function:pkg/util/version.go:version",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "function:pkg/util/pki/parse_certificate_chain.go:ParseSingleCertificateChainPEM",
+      "target": "function:pkg/util/pki/parse.go:DecodeX509CertificateChainBytes",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/util/pki/temporarycertificate.go:GenerateLocallySignedTemporaryCertificate",
+      "target": "function:pkg/util/pki/generate.go:GenerateECPrivateKey",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/util/pki/temporarycertificate.go:GenerateLocallySignedTemporaryCertificate",
+      "target": "function:pkg/util/pki/parse.go:DecodePrivateKeyBytes",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

@@ -1,0 +1,1598 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/util/pki/generate.go",
+      "type": "file",
+      "name": "generate.go",
+      "filePath": "pkg/util/pki/generate.go",
+      "summary": "Generates and encodes private keys for cert-manager Certificate resources, covering RSA, ECDSA and Ed25519 key creation plus PEM encoding helpers.",
+      "tags": [
+        "cryptography",
+        "key-generation",
+        "pki",
+        "utility"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Uses Go's crypto.Signer abstraction so callers can sign with RSA, ECDSA or Ed25519 keys interchangeably."
+    },
+    {
+      "id": "function:pkg/util/pki/generate.go:GeneratePrivateKeyForCertificate",
+      "type": "function",
+      "name": "GeneratePrivateKeyForCertificate",
+      "filePath": "pkg/util/pki/generate.go",
+      "lineRange": [
+        54,
+        81
+      ],
+      "summary": "Generates an RSA, ECDSA or Ed25519 private key honoring the Certificate's privateKey spec and defaults.",
+      "tags": [
+        "pki",
+        "key-generation",
+        "cryptography",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/generate.go:GenerateRSAPrivateKey",
+      "type": "function",
+      "name": "GenerateRSAPrivateKey",
+      "filePath": "pkg/util/pki/generate.go",
+      "lineRange": [
+        85,
+        96
+      ],
+      "summary": "Generates an RSA private key after validating the requested size against the MinRSAKeySize and MaxRSAKeySize bounds.",
+      "tags": [
+        "pki",
+        "key-generation",
+        "cryptography",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/generate.go:GenerateECPrivateKey",
+      "type": "function",
+      "name": "GenerateECPrivateKey",
+      "filePath": "pkg/util/pki/generate.go",
+      "lineRange": [
+        100,
+        115
+      ],
+      "summary": "Generates an ECDSA private key for the P-256, P-384 or P-521 curve selected by key size.",
+      "tags": [
+        "pki",
+        "key-generation",
+        "cryptography",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/generate.go:GenerateEd25519PrivateKey",
+      "type": "function",
+      "name": "GenerateEd25519PrivateKey",
+      "filePath": "pkg/util/pki/generate.go",
+      "lineRange": [
+        118,
+        122
+      ],
+      "summary": "Generates an Ed25519 private key using crypto/rand.",
+      "tags": [
+        "pki",
+        "key-generation",
+        "cryptography",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/generate.go:EncodePrivateKey",
+      "type": "function",
+      "name": "EncodePrivateKey",
+      "filePath": "pkg/util/pki/generate.go",
+      "lineRange": [
+        127,
+        145
+      ],
+      "summary": "PEM-encodes a crypto.Signer using the PKCS#1, PKCS#8 or SEC1 encoding requested in the key spec.",
+      "tags": [
+        "pki",
+        "key-generation",
+        "cryptography",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/generate.go:EncodePKCS1PrivateKey",
+      "type": "function",
+      "name": "EncodePKCS1PrivateKey",
+      "filePath": "pkg/util/pki/generate.go",
+      "lineRange": [
+        148,
+        152
+      ],
+      "summary": "PEM-encodes an RSA key in PKCS#1 form with the RSA PRIVATE KEY block type.",
+      "tags": [
+        "pki",
+        "key-generation",
+        "cryptography",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/generate.go:EncodePKCS8PrivateKey",
+      "type": "function",
+      "name": "EncodePKCS8PrivateKey",
+      "filePath": "pkg/util/pki/generate.go",
+      "lineRange": [
+        155,
+        163
+      ],
+      "summary": "PEM-encodes any private key in PKCS#8 form with the PRIVATE KEY block type.",
+      "tags": [
+        "pki",
+        "key-generation",
+        "cryptography",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/generate.go:EncodeECPrivateKey",
+      "type": "function",
+      "name": "EncodeECPrivateKey",
+      "filePath": "pkg/util/pki/generate.go",
+      "lineRange": [
+        166,
+        174
+      ],
+      "summary": "PEM-encodes an ECDSA key in SEC1 form with the EC PRIVATE KEY block type.",
+      "tags": [
+        "pki",
+        "key-generation",
+        "cryptography",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/generate.go:PublicKeyForPrivateKey",
+      "type": "function",
+      "name": "PublicKeyForPrivateKey",
+      "filePath": "pkg/util/pki/generate.go",
+      "lineRange": [
+        178,
+        189
+      ],
+      "summary": "Returns the public key corresponding to a crypto.Signer, unwrapping the certificate if needed.",
+      "tags": [
+        "pki",
+        "key-generation",
+        "cryptography",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/generate.go:PublicKeyMatchesCertificate",
+      "type": "function",
+      "name": "PublicKeyMatchesCertificate",
+      "filePath": "pkg/util/pki/generate.go",
+      "lineRange": [
+        196,
+        198
+      ],
+      "summary": "Reports whether a signer's public key equals the public key in an X.509 certificate.",
+      "tags": [
+        "pki",
+        "key-generation",
+        "cryptography",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/generate.go:PublicKeyMatchesCSR",
+      "type": "function",
+      "name": "PublicKeyMatchesCSR",
+      "filePath": "pkg/util/pki/generate.go",
+      "lineRange": [
+        205,
+        207
+      ],
+      "summary": "Reports whether a signer's public key equals the public key in a certificate request.",
+      "tags": [
+        "pki",
+        "key-generation",
+        "cryptography",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/generate.go:PublicKeysEqual",
+      "type": "function",
+      "name": "PublicKeysEqual",
+      "filePath": "pkg/util/pki/generate.go",
+      "lineRange": [
+        213,
+        224
+      ],
+      "summary": "Compares two public keys, supporting RSA, ECDSA and Ed25519 key types.",
+      "tags": [
+        "pki",
+        "key-generation",
+        "cryptography",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/util/pki/keyusage.go",
+      "type": "file",
+      "name": "keyusage.go",
+      "filePath": "pkg/util/pki/keyusage.go",
+      "summary": "Marshals and unmarshals X.509 key usage and extended key usage extensions to and from ASN.1 BIT STRING values.",
+      "tags": [
+        "cryptography",
+        "x509",
+        "asn1",
+        "key-usage",
+        "pki"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/util/pki/keyusage.go:OIDFromExtKeyUsage",
+      "type": "function",
+      "name": "OIDFromExtKeyUsage",
+      "filePath": "pkg/util/pki/keyusage.go",
+      "lineRange": [
+        83,
+        90
+      ],
+      "summary": "Maps an x509.ExtKeyUsage value to its ASN.1 object identifier.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/keyusage.go:ExtKeyUsageFromOID",
+      "type": "function",
+      "name": "ExtKeyUsageFromOID",
+      "filePath": "pkg/util/pki/keyusage.go",
+      "lineRange": [
+        92,
+        99
+      ],
+      "summary": "Maps an ASN.1 object identifier back to an x509.ExtKeyUsage value.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/keyusage.go:asn1BitLength",
+      "type": "function",
+      "name": "asn1BitLength",
+      "filePath": "pkg/util/pki/keyusage.go",
+      "lineRange": [
+        104,
+        119
+      ],
+      "summary": "Computes the number of significant bits in an ASN.1 bit string.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/keyusage.go:MarshalKeyUsage",
+      "type": "function",
+      "name": "MarshalKeyUsage",
+      "filePath": "pkg/util/pki/keyusage.go",
+      "lineRange": [
+        130,
+        146
+      ],
+      "summary": "Encodes x509.KeyUsage flags as an ASN.1 BIT STRING extension value.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/keyusage.go:UnmarshalKeyUsage",
+      "type": "function",
+      "name": "UnmarshalKeyUsage",
+      "filePath": "pkg/util/pki/keyusage.go",
+      "lineRange": [
+        148,
+        166
+      ],
+      "summary": "Decodes an ASN.1 BIT STRING extension value into x509.KeyUsage flags.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/keyusage.go:MarshalExtKeyUsage",
+      "type": "function",
+      "name": "MarshalExtKeyUsage",
+      "filePath": "pkg/util/pki/keyusage.go",
+      "lineRange": [
+        169,
+        186
+      ],
+      "summary": "Encodes extended key usage OIDs into an ASN.1 SEQUENCE, reporting unsupported usages separately.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/keyusage.go:UnmarshalExtKeyUsage",
+      "type": "function",
+      "name": "UnmarshalExtKeyUsage",
+      "filePath": "pkg/util/pki/keyusage.go",
+      "lineRange": [
+        188,
+        207
+      ],
+      "summary": "Decodes an ASN.1 SEQUENCE of OIDs into extended key usage values.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/util/pki/kube.go",
+      "type": "file",
+      "name": "kube.go",
+      "filePath": "pkg/util/pki/kube.go",
+      "summary": "Bridges cert-manager PKI types to Kubernetes CSR key usages and parses CertificateSigningRequest expiration durations.",
+      "tags": [
+        "kubernetes",
+        "pki",
+        "key-usage",
+        "compatibility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/kube.go:DurationFromCertificateSigningRequest",
+      "type": "function",
+      "name": "DurationFromCertificateSigningRequest",
+      "filePath": "pkg/util/pki/kube.go",
+      "lineRange": [
+        38,
+        57
+      ],
+      "summary": "Reads the cert-manager duration annotation from a Kubernetes CertificateSigningRequest and parses it as a duration.",
+      "tags": [
+        "pki",
+        "kubernetes",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/kube.go:BuildKeyUsagesKube",
+      "type": "function",
+      "name": "BuildKeyUsagesKube",
+      "filePath": "pkg/util/pki/kube.go",
+      "lineRange": [
+        60,
+        86
+      ],
+      "summary": "Converts cert-manager key usage strings into Kubernetes CSR key usage and extended key usage values.",
+      "tags": [
+        "pki",
+        "kubernetes",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/util/pki/match.go",
+      "type": "file",
+      "name": "match.go",
+      "filePath": "pkg/util/pki/match.go",
+      "summary": "Verifies that private keys, CSRs and X.509 certificates match a Certificate spec, including SAN, issuer and otherName comparisons.",
+      "tags": [
+        "pki",
+        "validation",
+        "x509",
+        "matching"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/util/pki/match.go:PrivateKeyMatchesSpec",
+      "type": "function",
+      "name": "PrivateKeyMatchesSpec",
+      "filePath": "pkg/util/pki/match.go",
+      "lineRange": [
+        44,
+        61
+      ],
+      "summary": "Checks that a private key's algorithm and size satisfy the Certificate private key spec.",
+      "tags": [
+        "pki",
+        "validation",
+        "x509",
+        "matching"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/match.go:rsaPrivateKeyMatchesSpec",
+      "type": "function",
+      "name": "rsaPrivateKeyMatchesSpec",
+      "filePath": "pkg/util/pki/match.go",
+      "lineRange": [
+        63,
+        82
+      ],
+      "summary": "Validates an RSA key's size against the requested spec, applying the default size when unset.",
+      "tags": [
+        "pki",
+        "validation",
+        "x509",
+        "matching"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/match.go:ecdsaPrivateKeyMatchesSpec",
+      "type": "function",
+      "name": "ecdsaPrivateKeyMatchesSpec",
+      "filePath": "pkg/util/pki/match.go",
+      "lineRange": [
+        84,
+        103
+      ],
+      "summary": "Validates an ECDSA key's curve against the requested key size.",
+      "tags": [
+        "pki",
+        "validation",
+        "x509",
+        "matching"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/match.go:RequestMatchesSpec",
+      "type": "function",
+      "name": "RequestMatchesSpec",
+      "filePath": "pkg/util/pki/match.go",
+      "lineRange": [
+        128,
+        255
+      ],
+      "summary": "Compares a CSR's subject, SANs, key usages, duration and issuer attributes against a Certificate spec.",
+      "tags": [
+        "pki",
+        "validation",
+        "x509",
+        "matching"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/util/pki/match.go:matchOtherNames",
+      "type": "function",
+      "name": "matchOtherNames",
+      "filePath": "pkg/util/pki/match.go",
+      "lineRange": [
+        292,
+        335
+      ],
+      "summary": "Compares the otherName SAN extension entries with the otherNames requested in the spec.",
+      "tags": [
+        "pki",
+        "validation",
+        "x509",
+        "matching"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/match.go:FuzzyX509AltNamesMatchSpec",
+      "type": "function",
+      "name": "FuzzyX509AltNamesMatchSpec",
+      "filePath": "pkg/util/pki/match.go",
+      "lineRange": [
+        346,
+        386
+      ],
+      "summary": "Checks that an issued certificate's SANs cover all DNS, IP, email and URI names in the spec.",
+      "tags": [
+        "pki",
+        "validation",
+        "x509",
+        "matching"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/match.go:extractSANExtension",
+      "type": "function",
+      "name": "extractSANExtension",
+      "filePath": "pkg/util/pki/match.go",
+      "lineRange": [
+        388,
+        398
+      ],
+      "summary": "Finds and returns the raw subject alternative name extension from an extension list.",
+      "tags": [
+        "pki",
+        "validation",
+        "x509",
+        "matching"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/util/pki/nameconstraints.go",
+      "type": "file",
+      "name": "nameconstraints.go",
+      "filePath": "pkg/util/pki/nameconstraints.go",
+      "summary": "Implements ASN.1 marshal and unmarshal support for the X.509 NameConstraints extension across DNS, IP, email and URI constraint types.",
+      "tags": [
+        "cryptography",
+        "x509",
+        "asn1",
+        "name-constraints",
+        "pki"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Hand-written ASN.1 encoding adapted from crypto/x509 because Go's standard library does not expose name constraint encoding."
+    },
+    {
+      "id": "class:pkg/util/pki/nameconstraints.go:NameConstraints",
+      "type": "class",
+      "name": "NameConstraints",
+      "filePath": "pkg/util/pki/nameconstraints.go",
+      "lineRange": [
+        35,
+        44
+      ],
+      "summary": "Represents the DNS, IP, email and URI permitted and excluded entries of an X.509 NameConstraints extension.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "name-constraints",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/nameconstraints.go:IsEmpty",
+      "type": "function",
+      "name": "IsEmpty",
+      "filePath": "pkg/util/pki/nameconstraints.go",
+      "lineRange": [
+        46,
+        55
+      ],
+      "summary": "Reports whether every permitted and excluded name constraint list is empty.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "name-constraints"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/nameconstraints.go:MarshalNameConstraints",
+      "type": "function",
+      "name": "MarshalNameConstraints",
+      "filePath": "pkg/util/pki/nameconstraints.go",
+      "lineRange": [
+        58,
+        155
+      ],
+      "summary": "Encodes NameConstraints into a pkix.Extension using ASN.1, optionally marking it critical.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "name-constraints"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/util/pki/nameconstraints.go:parseCIDRs",
+      "type": "function",
+      "name": "parseCIDRs",
+      "filePath": "pkg/util/pki/nameconstraints.go",
+      "lineRange": [
+        157,
+        170
+      ],
+      "summary": "Parses CIDR strings into net.IPNet values for IP name constraints.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "name-constraints"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/nameconstraints.go:UnmarshalNameConstraints",
+      "type": "function",
+      "name": "UnmarshalNameConstraints",
+      "filePath": "pkg/util/pki/nameconstraints.go",
+      "lineRange": [
+        173,
+        291
+      ],
+      "summary": "Decodes a raw NameConstraints extension value into DNS, IP, email and URI constraint lists.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "name-constraints"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/util/pki/nameconstraints.go:isValidIPMask",
+      "type": "function",
+      "name": "isValidIPMask",
+      "filePath": "pkg/util/pki/nameconstraints.go",
+      "lineRange": [
+        294,
+        316
+      ],
+      "summary": "Validates that an IP mask is contiguous and suitable for an ASN.1 name constraint.",
+      "tags": [
+        "pki",
+        "x509",
+        "asn1",
+        "name-constraints"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/util/pki/parse.go",
+      "type": "file",
+      "name": "parse.go",
+      "filePath": "pkg/util/pki/parse.go",
+      "summary": "Decodes PEM-encoded private keys, certificate chains, certificate sets and CSRs into Go crypto types with cert-manager error wrapping.",
+      "tags": [
+        "pki",
+        "parsing",
+        "pem",
+        "x509",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/util/pki/parse.go:DecodePrivateKeyBytes",
+      "type": "function",
+      "name": "DecodePrivateKeyBytes",
+      "filePath": "pkg/util/pki/parse.go",
+      "lineRange": [
+        30,
+        70
+      ],
+      "summary": "Decodes PEM private key blocks in PKCS#1, PKCS#8, SEC1 and encrypted forms into a crypto.Signer.",
+      "tags": [
+        "pki",
+        "parsing",
+        "pem",
+        "x509"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/parse.go:decodeMultipleCerts",
+      "type": "function",
+      "name": "decodeMultipleCerts",
+      "filePath": "pkg/util/pki/parse.go",
+      "lineRange": [
+        72,
+        104
+      ],
+      "summary": "Repeatedly decodes PEM blocks with the supplied decoder until the input is exhausted.",
+      "tags": [
+        "pki",
+        "parsing",
+        "pem",
+        "x509"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/parse.go:DecodeX509CertificateChainBytes",
+      "type": "function",
+      "name": "DecodeX509CertificateChainBytes",
+      "filePath": "pkg/util/pki/parse.go",
+      "lineRange": [
+        109,
+        111
+      ],
+      "summary": "Decodes a PEM bundle into a slice of X.509 certificates, requiring at least one certificate.",
+      "tags": [
+        "pki",
+        "parsing",
+        "pem",
+        "x509"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/parse.go:DecodeX509CertificateSetBytes",
+      "type": "function",
+      "name": "DecodeX509CertificateSetBytes",
+      "filePath": "pkg/util/pki/parse.go",
+      "lineRange": [
+        116,
+        118
+      ],
+      "summary": "Decodes a PEM bundle into an unordered set of X.509 certificates.",
+      "tags": [
+        "pki",
+        "parsing",
+        "pem",
+        "x509"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/parse.go:DecodeX509CertificateBytes",
+      "type": "function",
+      "name": "DecodeX509CertificateBytes",
+      "filePath": "pkg/util/pki/parse.go",
+      "lineRange": [
+        121,
+        128
+      ],
+      "summary": "Decodes a PEM bundle that must contain exactly one certificate.",
+      "tags": [
+        "pki",
+        "parsing",
+        "pem",
+        "x509"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/pki/parse.go:DecodeX509CertificateRequestBytes",
+      "type": "function",
+      "name": "DecodeX509CertificateRequestBytes",
+      "filePath": "pkg/util/pki/parse.go",
+      "lineRange": [
+        131,
+        143
+      ],
+      "summary": "Decodes a PEM-encoded PKCS#10 certificate request.",
+      "tags": [
+        "pki",
+        "parsing",
+        "pem",
+        "x509"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:GeneratePrivateKeyForCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:GeneratePrivateKeyForCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:GenerateRSAPrivateKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:GenerateRSAPrivateKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:GenerateECPrivateKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:GenerateECPrivateKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:GenerateEd25519PrivateKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:GenerateEd25519PrivateKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:EncodePrivateKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:EncodePrivateKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:EncodePKCS1PrivateKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:EncodePKCS1PrivateKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:EncodePKCS8PrivateKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:EncodePKCS8PrivateKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:EncodeECPrivateKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:EncodeECPrivateKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:PublicKeyForPrivateKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:PublicKeyForPrivateKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:PublicKeyMatchesCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:PublicKeyMatchesCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:PublicKeyMatchesCSR",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:PublicKeyMatchesCSR",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:PublicKeysEqual",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/generate.go",
+      "target": "function:pkg/util/pki/generate.go:PublicKeysEqual",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/keyusage.go",
+      "target": "function:pkg/util/pki/keyusage.go:OIDFromExtKeyUsage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/keyusage.go",
+      "target": "function:pkg/util/pki/keyusage.go:OIDFromExtKeyUsage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/keyusage.go",
+      "target": "function:pkg/util/pki/keyusage.go:ExtKeyUsageFromOID",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/keyusage.go",
+      "target": "function:pkg/util/pki/keyusage.go:ExtKeyUsageFromOID",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/keyusage.go",
+      "target": "function:pkg/util/pki/keyusage.go:asn1BitLength",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/keyusage.go",
+      "target": "function:pkg/util/pki/keyusage.go:MarshalKeyUsage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/keyusage.go",
+      "target": "function:pkg/util/pki/keyusage.go:MarshalKeyUsage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/keyusage.go",
+      "target": "function:pkg/util/pki/keyusage.go:UnmarshalKeyUsage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/keyusage.go",
+      "target": "function:pkg/util/pki/keyusage.go:UnmarshalKeyUsage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/keyusage.go",
+      "target": "function:pkg/util/pki/keyusage.go:MarshalExtKeyUsage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/keyusage.go",
+      "target": "function:pkg/util/pki/keyusage.go:MarshalExtKeyUsage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/keyusage.go",
+      "target": "function:pkg/util/pki/keyusage.go:UnmarshalExtKeyUsage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/keyusage.go",
+      "target": "function:pkg/util/pki/keyusage.go:UnmarshalExtKeyUsage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "file:pkg/api/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "file:pkg/api/util/duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "file:pkg/api/util/issuers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "file:pkg/api/util/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "file:pkg/api/util/names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "file:pkg/api/util/usages.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "file:pkg/apis/experimental/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "function:pkg/util/pki/kube.go:DurationFromCertificateSigningRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "function:pkg/util/pki/kube.go:DurationFromCertificateSigningRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "function:pkg/util/pki/kube.go:BuildKeyUsagesKube",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/kube.go",
+      "target": "function:pkg/util/pki/kube.go:BuildKeyUsagesKube",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "file:pkg/apis/certmanager/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "file:pkg/util/useragent.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "file:pkg/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "file:pkg/util/version.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "function:pkg/util/pki/match.go:PrivateKeyMatchesSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "function:pkg/util/pki/match.go:PrivateKeyMatchesSpec",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "function:pkg/util/pki/match.go:rsaPrivateKeyMatchesSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "function:pkg/util/pki/match.go:ecdsaPrivateKeyMatchesSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "function:pkg/util/pki/match.go:RequestMatchesSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "function:pkg/util/pki/match.go:RequestMatchesSpec",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "function:pkg/util/pki/match.go:matchOtherNames",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "function:pkg/util/pki/match.go:FuzzyX509AltNamesMatchSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "function:pkg/util/pki/match.go:FuzzyX509AltNamesMatchSpec",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/match.go",
+      "target": "function:pkg/util/pki/match.go:extractSANExtension",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/nameconstraints.go",
+      "target": "class:pkg/util/pki/nameconstraints.go:NameConstraints",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/nameconstraints.go",
+      "target": "class:pkg/util/pki/nameconstraints.go:NameConstraints",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/nameconstraints.go",
+      "target": "function:pkg/util/pki/nameconstraints.go:IsEmpty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/nameconstraints.go",
+      "target": "function:pkg/util/pki/nameconstraints.go:IsEmpty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/nameconstraints.go",
+      "target": "function:pkg/util/pki/nameconstraints.go:MarshalNameConstraints",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/nameconstraints.go",
+      "target": "function:pkg/util/pki/nameconstraints.go:MarshalNameConstraints",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/nameconstraints.go",
+      "target": "function:pkg/util/pki/nameconstraints.go:parseCIDRs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/nameconstraints.go",
+      "target": "function:pkg/util/pki/nameconstraints.go:UnmarshalNameConstraints",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/nameconstraints.go",
+      "target": "function:pkg/util/pki/nameconstraints.go:UnmarshalNameConstraints",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/nameconstraints.go",
+      "target": "function:pkg/util/pki/nameconstraints.go:isValidIPMask",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/parse.go",
+      "target": "file:internal/pem/decode.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/parse.go",
+      "target": "file:pkg/util/errors/errors.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/pki/parse.go",
+      "target": "function:pkg/util/pki/parse.go:DecodePrivateKeyBytes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/parse.go",
+      "target": "function:pkg/util/pki/parse.go:DecodePrivateKeyBytes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/parse.go",
+      "target": "function:pkg/util/pki/parse.go:decodeMultipleCerts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/parse.go",
+      "target": "function:pkg/util/pki/parse.go:DecodeX509CertificateChainBytes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/parse.go",
+      "target": "function:pkg/util/pki/parse.go:DecodeX509CertificateChainBytes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/parse.go",
+      "target": "function:pkg/util/pki/parse.go:DecodeX509CertificateSetBytes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/parse.go",
+      "target": "function:pkg/util/pki/parse.go:DecodeX509CertificateSetBytes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/parse.go",
+      "target": "function:pkg/util/pki/parse.go:DecodeX509CertificateBytes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/parse.go",
+      "target": "function:pkg/util/pki/parse.go:DecodeX509CertificateBytes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/pki/parse.go",
+      "target": "function:pkg/util/pki/parse.go:DecodeX509CertificateRequestBytes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/pki/parse.go",
+      "target": "function:pkg/util/pki/parse.go:DecodeX509CertificateRequestBytes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

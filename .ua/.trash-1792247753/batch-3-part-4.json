@@ -1,0 +1,964 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "type": "file",
+      "name": "ca.go",
+      "filePath": "pkg/controller/certificaterequests/ca/ca.go",
+      "summary": "CA issuer implementation that signs CertificateRequests with a CA key pair stored in a Secret.",
+      "tags": [
+        "issuer",
+        "ca",
+        "signing",
+        "certificaterequest"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificaterequests/ca/ca.go:NewCA",
+      "type": "function",
+      "name": "NewCA",
+      "filePath": "pkg/controller/certificaterequests/ca/ca.go",
+      "lineRange": [
+        62,
+        70
+      ],
+      "summary": "Constructs the CA issuer with the Secret lister, reporter and default certificate signing function.",
+      "tags": [
+        "factory",
+        "issuer",
+        "ca"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/certificaterequests/ca/ca.go:CA",
+      "type": "class",
+      "name": "CA",
+      "filePath": "pkg/controller/certificaterequests/ca/ca.go",
+      "lineRange": [
+        47,
+        60
+      ],
+      "summary": "CA issuer that signs CertificateRequests with a CA key pair read from a Secret.",
+      "tags": [
+        "issuer",
+        "ca",
+        "signing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/certificaterequests/checks.go",
+      "type": "file",
+      "name": "checks.go",
+      "filePath": "pkg/controller/certificaterequests/checks.go",
+      "summary": "Event handler helpers that enqueue CertificateRequests when a generic Issuer they reference changes.",
+      "tags": [
+        "controller",
+        "event-handler",
+        "issuer",
+        "certificaterequest"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificaterequests/checks.go:handleGenericIssuer",
+      "type": "function",
+      "name": "handleGenericIssuer",
+      "filePath": "pkg/controller/certificaterequests/checks.go",
+      "lineRange": [
+        29,
+        50
+      ],
+      "summary": "Event handler that enqueues CertificateRequests when a referenced generic Issuer changes.",
+      "tags": [
+        "event-handler",
+        "issuer",
+        "certificaterequest"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificaterequests/checks.go:certificatesRequestsForGenericIssuer",
+      "type": "function",
+      "name": "certificatesRequestsForGenericIssuer",
+      "filePath": "pkg/controller/certificaterequests/checks.go",
+      "lineRange": [
+        52,
+        78
+      ],
+      "summary": "Lists CertificateRequests that reference the given generic issuer.",
+      "tags": [
+        "list",
+        "issuer",
+        "certificaterequest"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/controller/certificaterequests/controller.go",
+      "type": "file",
+      "name": "controller.go",
+      "filePath": "pkg/controller/certificaterequests/controller.go",
+      "summary": "Generic CertificateRequest controller framework that owns the work queue and informers and delegates signing to an issuer-specific implementation.",
+      "tags": [
+        "controller",
+        "certificaterequest",
+        "framework",
+        "kubernetes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/certificaterequests/controller.go:New",
+      "type": "function",
+      "name": "New",
+      "filePath": "pkg/controller/certificaterequests/controller.go",
+      "lineRange": [
+        114,
+        120
+      ],
+      "summary": "Creates a CertificateRequest controller bound to a specific issuer type and issuer constructor.",
+      "tags": [
+        "factory",
+        "controller",
+        "certificaterequest"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/certificaterequests/controller.go:Register",
+      "type": "function",
+      "name": "Register",
+      "filePath": "pkg/controller/certificaterequests/controller.go",
+      "lineRange": [
+        125,
+        205
+      ],
+      "summary": "Registers the generic CertificateRequest controller with informers, queue and the issuer implementation.",
+      "tags": [
+        "controller",
+        "registration",
+        "certificaterequest"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/certificaterequests/controller.go:ProcessItem",
+      "type": "function",
+      "name": "ProcessItem",
+      "filePath": "pkg/controller/certificaterequests/controller.go",
+      "lineRange": [
+        209,
+        225
+      ],
+      "summary": "Dequeues a CertificateRequest key and delegates handling to the controller sync.",
+      "tags": [
+        "controller",
+        "queue",
+        "certificaterequest"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/certificaterequests/controller.go:Issuer",
+      "type": "class",
+      "name": "Issuer",
+      "filePath": "pkg/controller/certificaterequests/controller.go",
+      "lineRange": [
+        43,
+        45
+      ],
+      "summary": "Interface implemented by issuer backends that sign CertificateRequests.",
+      "tags": [
+        "interface",
+        "issuer",
+        "signing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/certificaterequests/controller.go:Controller",
+      "type": "class",
+      "name": "Controller",
+      "filePath": "pkg/controller/certificaterequests/controller.go",
+      "lineRange": [
+        60,
+        102
+      ],
+      "summary": "Generic CertificateRequest controller wiring listers, client, recorder and issuer backend.",
+      "tags": [
+        "controller",
+        "certificaterequest",
+        "framework"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "function:pkg/controller/certificaterequests/ca/ca.go:NewCA",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "function:pkg/controller/certificaterequests/ca/ca.go:NewCA",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "class:pkg/controller/certificaterequests/ca/ca.go:CA",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "class:pkg/controller/certificaterequests/ca/ca.go:CA",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/api/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/api/util/duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/api/util/issuers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/api/util/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/api/util/names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/api/util/usages.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/controller/certificaterequests/checks.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/controller/certificaterequests/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/controller/certificaterequests/sync.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/controller/certificaterequests/util/reporter.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/issuer/factory.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/issuer/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/issuer/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/util/errors/errors.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/util/kube/pki.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/util/pki/asn1_util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/util/pki/basicconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/util/pki/certificatetemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/util/pki/csr.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/util/pki/generate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/util/pki/keyusage.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/util/pki/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/util/pki/match.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/util/pki/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/util/pki/parse.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/util/pki/parse_certificate_chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/util/pki/renewaltime.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/util/pki/sans.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/util/pki/subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/ca/ca.go",
+      "target": "file:pkg/util/pki/temporarycertificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/checks.go",
+      "target": "function:pkg/controller/certificaterequests/checks.go:handleGenericIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/checks.go",
+      "target": "function:pkg/controller/certificaterequests/checks.go:certificatesRequestsForGenericIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/checks.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "function:pkg/controller/certificaterequests/controller.go:New",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "function:pkg/controller/certificaterequests/controller.go:New",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "function:pkg/controller/certificaterequests/controller.go:Register",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "function:pkg/controller/certificaterequests/controller.go:Register",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "function:pkg/controller/certificaterequests/controller.go:ProcessItem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "function:pkg/controller/certificaterequests/controller.go:ProcessItem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "class:pkg/controller/certificaterequests/controller.go:Issuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "class:pkg/controller/certificaterequests/controller.go:Issuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "class:pkg/controller/certificaterequests/controller.go:Controller",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "class:pkg/controller/certificaterequests/controller.go:Controller",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/client/clientset/versioned/clientset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/controller/certificaterequests/util/reporter.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/issuer/factory.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/issuer/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/issuer/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/controller.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/controller/certificaterequests/checks.go:handleGenericIssuer",
+      "target": "function:pkg/controller/certificaterequests/checks.go:certificatesRequestsForGenericIssuer",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

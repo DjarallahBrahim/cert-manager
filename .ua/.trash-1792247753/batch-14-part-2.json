@@ -1,0 +1,1211 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/e2e/suite/conformance/certificatesigningrequests/suite.go",
+      "type": "file",
+      "name": "suite.go",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/suite.go",
+      "summary": "Defines the reusable CertificateSigningRequest conformance suite, including issuer, provisioning and cleanup callbacks plus the feature-set overrides and iteration helpers.",
+      "tags": [
+        "test",
+        "conformance",
+        "test-harness",
+        "certificatesigningrequest",
+        "e2e"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/conformance/certificatesigningrequests/tests.go",
+      "type": "file",
+      "name": "tests.go",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/tests.go",
+      "summary": "Implements the CertificateSigningRequest conformance test matrix, asserting approval, denial, signing outcomes, key usages, SANs and durations across issuer implementations.",
+      "tags": [
+        "test",
+        "conformance",
+        "certificatesigningrequest",
+        "e2e",
+        "test-harness"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "type": "file",
+      "name": "approle.go",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "summary": "Sets up a Vault AppRole-authenticated issuer, including PKI mounts and role bindings, for the CertificateSigningRequest conformance suite.",
+      "tags": [
+        "test",
+        "conformance",
+        "vault",
+        "approle",
+        "certificatesigningrequest"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "type": "file",
+      "name": "kubernetes.go",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "summary": "Sets up a Vault issuer using Kubernetes service-account authentication for the CertificateSigningRequest conformance suite.",
+      "tags": [
+        "test",
+        "conformance",
+        "vault",
+        "kubernetes-auth",
+        "certificatesigningrequest"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go",
+      "type": "file",
+      "name": "cloud.go",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go",
+      "summary": "Provides the Venafi Cloud issuer lifecycle used by the CertificateSigningRequest conformance suite.",
+      "tags": [
+        "test",
+        "conformance",
+        "venafi",
+        "cloud",
+        "certificatesigningrequest"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go",
+      "type": "file",
+      "name": "tpp.go",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go",
+      "summary": "Provides the Venafi TPP issuer lifecycle used by the CertificateSigningRequest conformance suite.",
+      "tags": [
+        "test",
+        "conformance",
+        "venafi",
+        "tpp",
+        "certificatesigningrequest"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/conformance/import.go",
+      "type": "file",
+      "name": "import.go",
+      "filePath": "test/e2e/suite/conformance/import.go",
+      "summary": "Blank-import aggregator that pulls every certificate, CertificateSigningRequest and RBAC conformance package into the e2e test binary.",
+      "tags": [
+        "entry-point",
+        "barrel",
+        "test",
+        "conformance",
+        "e2e"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/suite/conformance/rbac/certificate.go",
+      "type": "file",
+      "name": "certificate.go",
+      "filePath": "test/e2e/suite/conformance/rbac/certificate.go",
+      "summary": "RBAC conformance tests asserting which verbs the built-in view, edit and admin ClusterRoles grant for Certificate resources.",
+      "tags": [
+        "test",
+        "conformance",
+        "rbac",
+        "certificate",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/conformance/rbac/certificaterequest.go",
+      "type": "file",
+      "name": "certificaterequest.go",
+      "filePath": "test/e2e/suite/conformance/rbac/certificaterequest.go",
+      "summary": "RBAC conformance tests asserting which verbs the built-in view, edit and admin ClusterRoles grant for CertificateRequest resources.",
+      "tags": [
+        "test",
+        "conformance",
+        "rbac",
+        "certificaterequest",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/conformance/rbac/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "test/e2e/suite/conformance/rbac/doc.go",
+      "summary": "Declares the RBACDescribe Ginkgo helper used to label and skip RBAC conformance specs.",
+      "tags": [
+        "test",
+        "conformance",
+        "rbac",
+        "test-harness",
+        "e2e"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Go doc-only package file whose imports exist solely to register Ginkgo specs or expose helpers."
+    },
+    {
+      "id": "class:test/e2e/suite/conformance/certificatesigningrequests/suite.go:Suite",
+      "type": "class",
+      "name": "Suite",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/suite.go",
+      "lineRange": [
+        35,
+        92
+      ],
+      "summary": "Reusable CertificateSigningRequest conformance suite definition with issuer, provisioning and cleanup callbacks, feature-set overrides and validation state.",
+      "tags": [
+        "test-harness",
+        "conformance",
+        "certificatesigningrequest",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificatesigningrequests/tests.go:Define",
+      "type": "function",
+      "name": "Define",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/tests.go",
+      "lineRange": [
+        51,
+        502
+      ],
+      "summary": "Registers the CertificateSigningRequest conformance spec tree, iterating over key algorithms, SAN combinations and expected approval or denial outcomes for the configured signer.",
+      "tags": [
+        "test-harness",
+        "conformance",
+        "certificatesigningrequest",
+        "ginkgo"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go:createIssuer",
+      "type": "function",
+      "name": "createIssuer",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "lineRange": [
+        116,
+        142
+      ],
+      "summary": "Creates a namespaced Vault Issuer authenticated with AppRole for CSR conformance tests.",
+      "tags": [
+        "vault",
+        "approle",
+        "issuer",
+        "test-setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go:createClusterIssuer",
+      "type": "function",
+      "name": "createClusterIssuer",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "lineRange": [
+        144,
+        170
+      ],
+      "summary": "Creates a cluster-scoped Vault ClusterIssuer using AppRole authentication.",
+      "tags": [
+        "vault",
+        "approle",
+        "cluster-issuer",
+        "test-setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go:initVault",
+      "type": "function",
+      "name": "initVault",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "lineRange": [
+        172,
+        189
+      ],
+      "summary": "Configures the Vault PKI mounts and AppRole policies needed for CSR signing.",
+      "tags": [
+        "vault",
+        "approle",
+        "pki",
+        "test-setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go:createIssuerSpec",
+      "type": "function",
+      "name": "createIssuerSpec",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "lineRange": [
+        191,
+        213
+      ],
+      "summary": "Builds the Vault issuer spec with server URL, CA bundle and AppRole secret references.",
+      "tags": [
+        "vault",
+        "approle",
+        "configuration",
+        "test-setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go:createIssuer",
+      "type": "function",
+      "name": "createIssuer",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "lineRange": [
+        78,
+        97
+      ],
+      "summary": "Creates a namespaced Vault Issuer that authenticates via Kubernetes service-account tokens.",
+      "tags": [
+        "vault",
+        "kubernetes-auth",
+        "issuer",
+        "test-setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go:createClusterIssuer",
+      "type": "function",
+      "name": "createClusterIssuer",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "lineRange": [
+        99,
+        117
+      ],
+      "summary": "Creates a cluster-scoped Vault ClusterIssuer using Kubernetes service-account authentication.",
+      "tags": [
+        "vault",
+        "kubernetes-auth",
+        "cluster-issuer",
+        "test-setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go:initVault",
+      "type": "function",
+      "name": "initVault",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "lineRange": [
+        138,
+        160
+      ],
+      "summary": "Configures Vault Kubernetes auth roles and PKI mounts for CSR conformance signing.",
+      "tags": [
+        "vault",
+        "kubernetes-auth",
+        "pki",
+        "test-setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go:issuerSpec",
+      "type": "function",
+      "name": "issuerSpec",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "lineRange": [
+        162,
+        183
+      ],
+      "summary": "Builds the Vault issuer spec referencing the Kubernetes auth mount path and service account role.",
+      "tags": [
+        "vault",
+        "kubernetes-auth",
+        "configuration",
+        "test-setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go:createIssuer",
+      "type": "function",
+      "name": "createIssuer",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go",
+      "lineRange": [
+        90,
+        115
+      ],
+      "summary": "Creates a namespaced Venafi Cloud Issuer for CSR conformance tests.",
+      "tags": [
+        "venafi",
+        "cloud",
+        "issuer",
+        "test-setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go:createClusterIssuer",
+      "type": "function",
+      "name": "createClusterIssuer",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go",
+      "lineRange": [
+        120,
+        145
+      ],
+      "summary": "Creates a cluster-scoped Venafi Cloud ClusterIssuer for CSR conformance tests.",
+      "tags": [
+        "venafi",
+        "cloud",
+        "cluster-issuer",
+        "test-setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go:createIssuer",
+      "type": "function",
+      "name": "createIssuer",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go",
+      "lineRange": [
+        92,
+        112
+      ],
+      "summary": "Creates a namespaced Venafi TPP Issuer for CSR conformance tests.",
+      "tags": [
+        "venafi",
+        "tpp",
+        "issuer",
+        "test-setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go:createClusterIssuer",
+      "type": "function",
+      "name": "createClusterIssuer",
+      "filePath": "test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go",
+      "lineRange": [
+        114,
+        134
+      ],
+      "summary": "Creates a cluster-scoped Venafi TPP ClusterIssuer for CSR conformance tests.",
+      "tags": [
+        "venafi",
+        "tpp",
+        "cluster-issuer",
+        "test-setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/rbac/doc.go:RBACDescribe",
+      "type": "function",
+      "name": "RBACDescribe",
+      "filePath": "test/e2e/suite/conformance/rbac/doc.go",
+      "lineRange": [
+        24,
+        26
+      ],
+      "summary": "Ginkgo Describe wrapper that labels RBAC conformance specs and skips them when RBAC testing is disabled.",
+      "tags": [
+        "test-harness",
+        "rbac",
+        "ginkgo",
+        "conformance"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/suite.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/suite.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/suite.go",
+      "target": "file:test/e2e/framework/helper/featureset/featureset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/suite.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/suite.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/tests.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/tests.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/tests.go",
+      "target": "file:test/e2e/framework/helper/featureset/featureset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/tests.go",
+      "target": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/tests.go",
+      "target": "file:test/e2e/framework/helper/validation/validation.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/tests.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/tests.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/tests.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/tests.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "target": "file:test/e2e/framework/addon/globals.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "target": "file:test/e2e/framework/addon/vault/proxy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "target": "file:test/e2e/framework/addon/vault/setup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "target": "file:test/e2e/framework/addon/vault/vault.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "target": "file:test/e2e/framework/helper/featureset/featureset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "target": "file:test/e2e/suite/conformance/certificatesigningrequests/suite.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "target": "file:test/e2e/suite/conformance/certificatesigningrequests/tests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "target": "file:test/e2e/framework/addon/globals.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "target": "file:test/e2e/framework/addon/vault/proxy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "target": "file:test/e2e/framework/addon/vault/setup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "target": "file:test/e2e/framework/addon/vault/vault.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "target": "file:test/e2e/framework/helper/featureset/featureset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "target": "file:test/e2e/suite/conformance/certificatesigningrequests/suite.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "target": "file:test/e2e/suite/conformance/certificatesigningrequests/tests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go",
+      "target": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go",
+      "target": "file:test/e2e/framework/addon/venafi/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go",
+      "target": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go",
+      "target": "file:test/e2e/framework/helper/featureset/featureset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go",
+      "target": "file:test/e2e/framework/util/errors/errors.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go",
+      "target": "file:test/e2e/suite/conformance/certificatesigningrequests/suite.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go",
+      "target": "file:test/e2e/suite/conformance/certificatesigningrequests/tests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go",
+      "target": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go",
+      "target": "file:test/e2e/framework/addon/venafi/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go",
+      "target": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go",
+      "target": "file:test/e2e/framework/helper/featureset/featureset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go",
+      "target": "file:test/e2e/framework/util/errors/errors.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go",
+      "target": "file:test/e2e/suite/conformance/certificatesigningrequests/suite.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go",
+      "target": "file:test/e2e/suite/conformance/certificatesigningrequests/tests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/certificates/ca/ca.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/certificates/external/external.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/certificates/vault/vault_approle.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/certificates/venafi/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/certificates/venaficloud/cloud.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/certificatesigningrequests/acme/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/certificatesigningrequests/acme/dns01.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/certificatesigningrequests/acme/http01.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/certificatesigningrequests/ca/ca.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/certificatesigningrequests/selfsigned/selfsigned.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/rbac/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/rbac/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/rbac/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/import.go",
+      "target": "file:test/e2e/suite/conformance/rbac/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/rbac/certificate.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/rbac/certificate.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/rbac/certificate.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/rbac/certificate.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/rbac/certificaterequest.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/rbac/certificaterequest.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/rbac/certificaterequest.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/rbac/certificaterequest.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/rbac/doc.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/rbac/doc.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/rbac/doc.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/rbac/doc.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/suite.go",
+      "target": "class:test/e2e/suite/conformance/certificatesigningrequests/suite.go:Suite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/tests.go",
+      "target": "function:test/e2e/suite/conformance/certificatesigningrequests/tests.go:Define",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "target": "function:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go:createIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "target": "function:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go:createClusterIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "target": "function:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go:initVault",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go",
+      "target": "function:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go:createIssuerSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "target": "function:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go:createIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "target": "function:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go:createClusterIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "target": "function:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go:initVault",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go",
+      "target": "function:test/e2e/suite/conformance/certificatesigningrequests/vault/kubernetes.go:issuerSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go",
+      "target": "function:test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go:createIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go",
+      "target": "function:test/e2e/suite/conformance/certificatesigningrequests/venafi/cloud.go:createClusterIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go",
+      "target": "function:test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go:createIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go",
+      "target": "function:test/e2e/suite/conformance/certificatesigningrequests/venafi/tpp.go:createClusterIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/rbac/doc.go",
+      "target": "function:test/e2e/suite/conformance/rbac/doc.go:RBACDescribe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/suite.go",
+      "target": "class:test/e2e/suite/conformance/certificatesigningrequests/suite.go:Suite",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificatesigningrequests/tests.go",
+      "target": "function:test/e2e/suite/conformance/certificatesigningrequests/tests.go:Define",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/rbac/doc.go",
+      "target": "function:test/e2e/suite/conformance/rbac/doc.go:RBACDescribe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/suite/conformance/certificatesigningrequests/tests.go:Define",
+      "target": "function:test/e2e/framework/framework.go:NewDefaultFramework",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/suite/conformance/certificatesigningrequests/tests.go:Define",
+      "target": "function:test/e2e/framework/helper/validation/validation.go:CertificateSigningRequestSetForUnsupportedFeatureSet",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/suite/conformance/certificatesigningrequests/tests.go:Define",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectValidCertificate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/suite/conformance/certificatesigningrequests/vault/approle.go:initVault",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:CreateAppRole",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

@@ -1,0 +1,1097 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/controller/controller.go",
+      "type": "file",
+      "name": "controller.go",
+      "filePath": "pkg/controller/controller.go",
+      "summary": "Generic queueing controller providing the shared Run/worker loop, metrics and duration hooks used by cert-manager controllers.",
+      "tags": [
+        "controller",
+        "workqueue",
+        "concurrency",
+        "framework",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/controller/controller.go:queueingController",
+      "type": "class",
+      "name": "queueingController",
+      "filePath": "pkg/controller/controller.go",
+      "lineRange": [
+        43,
+        46
+      ],
+      "summary": "Minimal interface for controllers that can register a workqueue and process queued items.",
+      "tags": [
+        "interface",
+        "controller",
+        "workqueue"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/controller.go:controller",
+      "type": "class",
+      "name": "controller",
+      "filePath": "pkg/controller/controller.go",
+      "lineRange": [
+        66,
+        90
+      ],
+      "summary": "Generic controller state holding the name, sync handler, queue, metrics and run hooks.",
+      "tags": [
+        "controller",
+        "state",
+        "workqueue",
+        "framework"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/controller.go:NewController",
+      "type": "function",
+      "name": "NewController",
+      "filePath": "pkg/controller/controller.go",
+      "lineRange": [
+        48,
+        64
+      ],
+      "summary": "Creates a generic controller from a name, metrics, sync function, queue and duration hooks.",
+      "tags": [
+        "factory",
+        "controller",
+        "framework",
+        "workqueue"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/controller.go:Run",
+      "type": "function",
+      "name": "Run",
+      "filePath": "pkg/controller/controller.go",
+      "lineRange": [
+        93,
+        128
+      ],
+      "summary": "Runs the controller worker pool until the context is cancelled, executing startup hooks and waiting for clean shutdown.",
+      "tags": [
+        "concurrency",
+        "controller-loop",
+        "lifecycle",
+        "workqueue"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/controller.go:worker",
+      "type": "function",
+      "name": "worker",
+      "filePath": "pkg/controller/controller.go",
+      "lineRange": [
+        130,
+        169
+      ],
+      "summary": "Consumes queue items, invokes the sync handler with timeout and metrics and requeues failed items with rate limiting.",
+      "tags": [
+        "worker",
+        "workqueue",
+        "error-handling",
+        "metrics"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/controller/globals/timeout.go",
+      "type": "file",
+      "name": "timeout.go",
+      "filePath": "pkg/controller/globals/timeout.go",
+      "summary": "Package-level constant defining the default per-sync context timeout applied to issuer controllers.",
+      "tags": [
+        "constants",
+        "timeout",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/helper.go",
+      "type": "file",
+      "name": "helper.go",
+      "filePath": "pkg/controller/helper.go",
+      "summary": "Helpers that resolve the resource namespace and ambient credential settings for Issuer and ClusterIssuer objects.",
+      "tags": [
+        "utility",
+        "issuer",
+        "namespace",
+        "credentials"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/helper.go:ResourceNamespace",
+      "type": "function",
+      "name": "ResourceNamespace",
+      "filePath": "pkg/controller/helper.go",
+      "lineRange": [
+        26,
+        32
+      ],
+      "summary": "Returns the namespace in which an Issuer’s referenced resources live, or the cluster resource namespace for ClusterIssuers.",
+      "tags": [
+        "namespace",
+        "issuer",
+        "clusterissuer",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/helper.go:ResourceNamespaceRef",
+      "type": "function",
+      "name": "ResourceNamespaceRef",
+      "filePath": "pkg/controller/helper.go",
+      "lineRange": [
+        39,
+        47
+      ],
+      "summary": "Resolves the effective namespace for a secret reference, defaulting to the challenge namespace.",
+      "tags": [
+        "namespace",
+        "secret-reference",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/helper.go:CanUseAmbientCredentials",
+      "type": "function",
+      "name": "CanUseAmbientCredentials",
+      "filePath": "pkg/controller/helper.go",
+      "lineRange": [
+        51,
+        59
+      ],
+      "summary": "Reports whether an issuer may use ambient credentials, honouring per-issuer overrides and defaults.",
+      "tags": [
+        "credentials",
+        "issuer",
+        "configuration",
+        "predicate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/helper.go:CanUseAmbientCredentialsFromRef",
+      "type": "function",
+      "name": "CanUseAmbientCredentialsFromRef",
+      "filePath": "pkg/controller/helper.go",
+      "lineRange": [
+        66,
+        74
+      ],
+      "summary": "Resolves ambient credential usage for a reference, applying the default when no override is set.",
+      "tags": [
+        "credentials",
+        "issuer-reference",
+        "configuration",
+        "predicate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/issuers/checks.go",
+      "type": "file",
+      "name": "checks.go",
+      "filePath": "pkg/controller/issuers/checks.go",
+      "summary": "Event-handler predicate that maps Secret changes to the namespaced Issuers referencing them.",
+      "tags": [
+        "event-handler",
+        "issuer",
+        "secret",
+        "informer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/issuers/checks.go:issuersForSecret",
+      "type": "function",
+      "name": "issuersForSecret",
+      "filePath": "pkg/controller/issuers/checks.go",
+      "lineRange": [
+        28,
+        107
+      ],
+      "summary": "Returns the namespaced Issuers whose configuration references the changed Secret.",
+      "tags": [
+        "lookup",
+        "issuer",
+        "secret",
+        "event-handler"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/controller/issuers/controller.go",
+      "type": "file",
+      "name": "controller.go",
+      "filePath": "pkg/controller/issuers/controller.go",
+      "summary": "Controller that reconciles namespaced Issuer resources by watching Secrets and enqueuing the affected issuers.",
+      "tags": [
+        "controller",
+        "issuer",
+        "reconciliation",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/controller/issuers/controller.go:controller",
+      "type": "class",
+      "name": "controller",
+      "filePath": "pkg/controller/issuers/controller.go",
+      "lineRange": [
+        38,
+        61
+      ],
+      "summary": "Issuer controller state holding listers, queue, client, factory and recorder.",
+      "tags": [
+        "controller",
+        "issuer",
+        "state",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/issuers/controller.go:Register",
+      "type": "function",
+      "name": "Register",
+      "filePath": "pkg/controller/issuers/controller.go",
+      "lineRange": [
+        66,
+        107
+      ],
+      "summary": "Sets up Issuer and Secret informers and event handlers and registers the controller with the run loop.",
+      "tags": [
+        "controller-setup",
+        "informer",
+        "registration",
+        "issuer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/issuers/controller.go:secretEvent",
+      "type": "function",
+      "name": "secretEvent",
+      "filePath": "pkg/controller/issuers/controller.go",
+      "lineRange": [
+        110,
+        130
+      ],
+      "summary": "Maps a Secret event to the namespaced Issuers that reference it and enqueues them.",
+      "tags": [
+        "event-handler",
+        "secret",
+        "issuer",
+        "queue"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/issuers/controller.go:ProcessItem",
+      "type": "function",
+      "name": "ProcessItem",
+      "filePath": "pkg/controller/issuers/controller.go",
+      "lineRange": [
+        132,
+        147
+      ],
+      "summary": "Fetches an Issuer from the lister and runs Sync on it.",
+      "tags": [
+        "reconcile",
+        "sync",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/issuers/sync.go",
+      "type": "file",
+      "name": "sync.go",
+      "filePath": "pkg/controller/issuers/sync.go",
+      "summary": "Sync logic that verifies Issuer configuration, runs issuer-specific setup and updates its status conditions.",
+      "tags": [
+        "sync",
+        "issuer",
+        "status",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/issuers/sync.go:Sync",
+      "type": "function",
+      "name": "Sync",
+      "filePath": "pkg/controller/issuers/sync.go",
+      "lineRange": [
+        41,
+        68
+      ],
+      "summary": "Runs issuer setup for an Issuer and updates its status conditions, adding a backoff hint on failure.",
+      "tags": [
+        "sync",
+        "issuer",
+        "setup",
+        "status"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/issuers/sync.go:updateIssuerStatus",
+      "type": "function",
+      "name": "updateIssuerStatus",
+      "filePath": "pkg/controller/issuers/sync.go",
+      "lineRange": [
+        70,
+        81
+      ],
+      "summary": "Persists changed Issuer status when it differs from the stored object.",
+      "tags": [
+        "status-update",
+        "issuer",
+        "persistence"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/register.go",
+      "type": "file",
+      "name": "register.go",
+      "filePath": "pkg/controller/register.go",
+      "summary": "Controller registry that lets controllers register constructors by name and the runner instantiate them from a ContextFactory.",
+      "tags": [
+        "registry",
+        "controller",
+        "framework",
+        "entry-point"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/register.go:Interface",
+      "type": "class",
+      "name": "Interface",
+      "filePath": "pkg/controller/register.go",
+      "lineRange": [
+        25,
+        32
+      ],
+      "summary": "Interface for runnable controllers exposing a blocking Run method with a worker count.",
+      "tags": [
+        "interface",
+        "controller",
+        "lifecycle"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/register.go:Known",
+      "type": "function",
+      "name": "Known",
+      "filePath": "pkg/controller/register.go",
+      "lineRange": [
+        43,
+        45
+      ],
+      "summary": "Returns the map of controller constructors registered by name.",
+      "tags": [
+        "registry",
+        "lookup",
+        "controller"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/register.go:Register",
+      "type": "function",
+      "name": "Register",
+      "filePath": "pkg/controller/register.go",
+      "lineRange": [
+        48,
+        50
+      ],
+      "summary": "Registers a controller constructor under a name in the global registry.",
+      "tags": [
+        "registry",
+        "registration",
+        "controller"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/controller/controller.go",
+      "target": "class:pkg/controller/controller.go:queueingController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/controller.go",
+      "target": "class:pkg/controller/controller.go:controller",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/controller.go",
+      "target": "function:pkg/controller/controller.go:NewController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/controller.go",
+      "target": "function:pkg/controller/controller.go:NewController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/controller.go",
+      "target": "function:pkg/controller/controller.go:Run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/controller.go",
+      "target": "function:pkg/controller/controller.go:Run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/controller.go",
+      "target": "function:pkg/controller/controller.go:worker",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/controller.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/controller.go",
+      "target": "file:pkg/metrics/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/controller.go",
+      "target": "file:pkg/metrics/metrics.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/controller.go",
+      "target": "file:pkg/metrics/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/controller/controller.go:Run",
+      "target": "function:pkg/controller/controller.go:worker",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "function:pkg/controller/helper.go:ResourceNamespace",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "function:pkg/controller/helper.go:ResourceNamespace",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "function:pkg/controller/helper.go:ResourceNamespaceRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "function:pkg/controller/helper.go:ResourceNamespaceRef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "function:pkg/controller/helper.go:CanUseAmbientCredentials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "function:pkg/controller/helper.go:CanUseAmbientCredentials",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "function:pkg/controller/helper.go:CanUseAmbientCredentialsFromRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "function:pkg/controller/helper.go:CanUseAmbientCredentialsFromRef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/helper.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/checks.go",
+      "target": "function:pkg/controller/issuers/checks.go:issuersForSecret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/issuers/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "class:pkg/controller/issuers/controller.go:controller",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "function:pkg/controller/issuers/controller.go:Register",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "function:pkg/controller/issuers/controller.go:Register",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "function:pkg/controller/issuers/controller.go:secretEvent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "function:pkg/controller/issuers/controller.go:ProcessItem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "function:pkg/controller/issuers/controller.go:ProcessItem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:pkg/client/clientset/versioned/clientset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:pkg/issuer/factory.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:pkg/issuer/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:pkg/issuer/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/controller.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/controller/issuers/controller.go:ProcessItem",
+      "target": "function:pkg/controller/issuers/sync.go:Sync",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/issuers/sync.go",
+      "target": "function:pkg/controller/issuers/sync.go:Sync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/issuers/sync.go",
+      "target": "function:pkg/controller/issuers/sync.go:Sync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/issuers/sync.go",
+      "target": "function:pkg/controller/issuers/sync.go:updateIssuerStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/issuers/sync.go",
+      "target": "file:internal/controller/feature/features.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/sync.go",
+      "target": "file:internal/controller/issuers/apply.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/sync.go",
+      "target": "file:pkg/controller/globals/timeout.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/sync.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/issuers/sync.go",
+      "target": "file:pkg/util/feature/feature_gate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/register.go",
+      "target": "class:pkg/controller/register.go:Interface",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/register.go",
+      "target": "class:pkg/controller/register.go:Interface",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/register.go",
+      "target": "function:pkg/controller/register.go:Known",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/register.go",
+      "target": "function:pkg/controller/register.go:Known",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/register.go",
+      "target": "function:pkg/controller/register.go:Register",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/register.go",
+      "target": "function:pkg/controller/register.go:Register",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

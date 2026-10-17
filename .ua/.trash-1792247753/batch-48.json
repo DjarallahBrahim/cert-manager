@@ -1,0 +1,428 @@
+{
+  "nodes": [
+    {
+      "id": "file:make/_shared/licenses/00_mod.mk",
+      "type": "file",
+      "name": "00_mod.mk",
+      "filePath": "make/_shared/licenses/00_mod.mk",
+      "summary": "Defines the shared configuration defaults for the license-generation module, currently exposing the empty `license_ignore` allowlist that callers can override.",
+      "tags": ["configuration", "license", "build-system", "makefile-modules"],
+      "complexity": "simple",
+      "languageNotes": "Uses the `?=` operator so downstream repositories can override defaults without editing the vendored module."
+    },
+    {
+      "id": "file:make/_shared/licenses/01_mod.mk",
+      "type": "file",
+      "name": "01_mod.mk",
+      "filePath": "make/_shared/licenses/01_mod.mk",
+      "summary": "Generates per-module LICENSES files with go-licenses and packages them as OCI image layers so release artifacts carry dependency license information.",
+      "tags": ["license", "code-generation", "build-system", "go", "container-image"],
+      "complexity": "moderate",
+      "languageNotes": "Creates a scratch go.work file so go-licenses resolves local modules correctly, and uses `define`/`eval` macros to template a rule per Go module."
+    },
+    {
+      "id": "file:make/_shared/licenses/licenses.tmpl",
+      "type": "file",
+      "name": "licenses.tmpl",
+      "filePath": "make/_shared/licenses/licenses.tmpl",
+      "summary": "go-licenses text/template that renders the header guidance plus a dependency-name/license-name table into each generated LICENSES file.",
+      "tags": ["template", "license", "go-licenses", "documentation", "generated-file"],
+      "complexity": "simple",
+      "languageNotes": "Go template syntax with `range`/trim markers; the tool appends one `Name,LicenseName` row per dependency."
+    },
+    {
+      "id": "file:make/_shared/repository-base/01_mod.mk",
+      "type": "file",
+      "name": "01_mod.mk",
+      "filePath": "make/_shared/repository-base/01_mod.mk",
+      "summary": "Provides the `generate-base` target that copies the repository-base template tree into the consuming repo, substituting the GitHub repository name and bootstrapping a Renovate config when absent.",
+      "tags": ["scaffolding", "template", "build-system", "bootstrap"],
+      "complexity": "simple",
+      "languageNotes": "Requires `repo_name` to be set and rewrites the `{{REPLACE:GH-REPOSITORY}}` placeholder in every copied file with sed."
+    },
+    {
+      "id": "config:make/_shared/repository-base/base/.github/chainguard/make-self-upgrade.sts.yaml",
+      "type": "config",
+      "name": "make-self-upgrade.sts.yaml",
+      "filePath": "make/_shared/repository-base/base/.github/chainguard/make-self-upgrade.sts.yaml",
+      "summary": "Chainguard Octo STS trust policy that lets the make-self-upgrade workflow on main or master exchange its OIDC token for a GitHub token with contents, pull request, and workflow write access.",
+      "tags": ["configuration", "security", "ci-cd", "supply-chain"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:make/_shared/repository-base/base/.github/chainguard/renovate.sts.yaml",
+      "type": "config",
+      "name": "renovate.sts.yaml",
+      "filePath": "make/_shared/repository-base/base/.github/chainguard/renovate.sts.yaml",
+      "summary": "Octo STS trust policy granting the Renovate workflow broad repository permissions (administration read, contents/issues/PR/workflow write, statuses) for automated dependency updates.",
+      "tags": ["configuration", "security", "dependency-management", "ci-cd"],
+      "complexity": "simple"
+    },
+    {
+      "id": "pipeline:make/_shared/repository-base/base/.github/workflows/make-self-upgrade.yaml",
+      "type": "pipeline",
+      "name": "make-self-upgrade.yaml",
+      "filePath": "make/_shared/repository-base/base/.github/workflows/make-self-upgrade.yaml",
+      "summary": "Scheduled GitHub Actions workflow that bumps the vendored makefile-modules via `make upgrade-klone` and `make generate`, then pushes a self-upgrade branch and opens a labelled pull request.",
+      "tags": ["ci-cd", "automation", "dependency-management", "deployment"],
+      "complexity": "moderate",
+      "languageNotes": "Uses Octo STS token exchange plus actions/github-script to create and label the automated PR."
+    },
+    {
+      "id": "pipeline:make/_shared/repository-base/base/.github/workflows/renovate.yaml",
+      "type": "pipeline",
+      "name": "renovate.yaml",
+      "filePath": "make/_shared/repository-base/base/.github/workflows/renovate.yaml",
+      "summary": "Nightly GitHub Actions workflow that runs a self-hosted Renovate bot with a short-lived Octo STS token to keep dependencies of the repository up to date.",
+      "tags": ["ci-cd", "dependency-management", "automation", "security"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "pipeline:make/_shared/repository-base/base/Makefile",
+      "type": "pipeline",
+      "name": "Makefile",
+      "filePath": "make/_shared/repository-base/base/Makefile",
+      "summary": "Generated repository-base Makefile prelude that configures strict make/shell behaviour, derives host, git and artifact variables, and includes the repository's modular make fragments.",
+      "tags": ["makefile", "build-system", "infrastructure", "generated-file"],
+      "complexity": "moderate",
+      "languageNotes": "Relies on `.SECONDEXPANSION` and `--warn-undefined-variables` so tool targets are resolved late and undefined variables fail loudly."
+    },
+    {
+      "id": "file:make/_shared/repository-base/base/OWNERS_ALIASES",
+      "type": "file",
+      "name": "OWNERS_ALIASES",
+      "filePath": "make/_shared/repository-base/base/OWNERS_ALIASES",
+      "summary": "Generated Kubernetes OWNERS alias file mapping the `cm-maintainers` alias to the list of cert-manager maintainer GitHub handles.",
+      "tags": ["ownership", "governance", "kubernetes", "generated-file"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:make/_shared/repository-base/renovate-bootstrap-config.json5",
+      "type": "file",
+      "name": "renovate-bootstrap-config.json5",
+      "filePath": "make/_shared/repository-base/renovate-bootstrap-config.json5",
+      "summary": "Minimal JSON5 Renovate bootstrap config that extends the shared cert-manager Renovate preset and is copied to `.github/renovate.json5` when a repo has none.",
+      "tags": ["configuration", "dependency-management", "renovate", "bootstrap"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:make/_shared/tools/00_mod.mk",
+      "type": "file",
+      "name": "00_mod.mk",
+      "filePath": "make/_shared/tools/00_mod.mk",
+      "summary": "Central tooling module that pins every CLI and Go tool version, downloads and symlinks them into `_bin/tools`, and defines go-version, vendoring, and tool-listing targets used by all other make fragments.",
+      "tags": ["build-system", "tooling", "dependency-management", "makefile-modules", "supply-chain"],
+      "complexity": "complex",
+      "languageNotes": "Renovate annotations above each version pin drive automated bumps; binaries live in a shared cache and are exposed through versioned symlinks on PATH."
+    },
+    {
+      "id": "file:make/_shared_new/helm/01_mod.mk",
+      "type": "file",
+      "name": "01_mod.mk",
+      "filePath": "make/_shared_new/helm/01_mod.mk",
+      "summary": "Include-only aggregator for the newer Helm module set, pulling in CRD generation unless disabled and always including the chart and deploy fragments.",
+      "tags": ["barrel", "helm", "build-system", "includes"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:make/_shared_new/helm/crds.mk",
+      "type": "file",
+      "name": "crds.mk",
+      "filePath": "make/_shared_new/helm/crds.mk",
+      "summary": "Defines `generate-crds`, which runs controller-gen across Go packages and wraps each CRD in Helm templating before writing manifests into the chart and deploy/crds directory.",
+      "tags": ["code-generation", "crds", "helm", "kubernetes", "build-system"],
+      "complexity": "moderate",
+      "languageNotes": "Copies the chart source to a temp dir per build and uses BSD/GNU-compatible in-place sed detection based on HOST_OS."
+    },
+    {
+      "id": "file:make/_shared_new/helm/deploy.mk",
+      "type": "file",
+      "name": "deploy.mk",
+      "filePath": "make/_shared_new/helm/deploy.mk",
+      "summary": "Adds `install`, `uninstall`, and `template` targets that drive Helm against the current Kubernetes cluster using the packaged chart archive.",
+      "tags": ["deployment", "helm", "kubernetes", "developer-tooling"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:make/_shared_new/helm/helm.mk",
+      "type": "file",
+      "name": "helm.mk",
+      "filePath": "make/_shared_new/helm/helm.mk",
+      "summary": "Packages, publishes, documents, and verifies the Helm chart, including OCI push, values schema/docs generation, linting, kubeconform validation, and Kyverno pod-security checks.",
+      "tags": ["helm", "packaging", "verification", "publishing", "build-system"],
+      "complexity": "moderate",
+      "languageNotes": "Fails fast on a missing `v` prefix in the chart version, then rewrites Chart.yaml annotations before `helm package`."
+    },
+    {
+      "id": "file:make/base_images.mk",
+      "type": "file",
+      "name": "base_images.mk",
+      "filePath": "make/base_images.mk",
+      "summary": "Autogenerated variable definitions pinning digest-addressed distroless static and dynamic base images for each supported CPU architecture.",
+      "tags": ["configuration", "container-images", "supply-chain", "generated-file"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:make/ci.mk",
+      "type": "file",
+      "name": "ci.mk",
+      "filePath": "make/ci.mk",
+      "summary": "Repository-specific CI targets that verify Go modules and the chart, run errexit checks, regenerate Kubernetes codegen, and produce Helm docs and values schema.",
+      "tags": ["ci-cd", "verification", "code-generation", "build-system"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:make/config/kind/cluster.yaml",
+      "type": "config",
+      "name": "cluster.yaml",
+      "filePath": "make/config/kind/cluster.yaml",
+      "summary": "Unversioned kind cluster configuration used by end-to-end tests, tuning a single control-plane node with a fixed service subnet and etcd fsync disabled for speed.",
+      "tags": ["configuration", "testing", "kubernetes", "kind", "infrastructure"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:make/config/kyverno/kustomization.yaml",
+      "type": "config",
+      "name": "kustomization.yaml",
+      "filePath": "make/config/kyverno/kustomization.yaml",
+      "summary": "Kustomize overlay that pulls upstream Kyverno pod-security and best-practice policies and patches them to Enforce mode while excluding non-compliant E2E test namespaces.",
+      "tags": ["configuration", "security", "kyverno", "kustomize", "testing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:make/config/kyverno/policy.yaml",
+      "type": "config",
+      "name": "policy.yaml",
+      "filePath": "make/config/kyverno/policy.yaml",
+      "summary": "Generated multi-document bundle of Kyverno ClusterPolicies enforcing Kubernetes Pod Security Standards and best practices, with exceptions for end-to-end test namespaces.",
+      "tags": ["security", "policy", "kyverno", "pod-security", "generated-file"],
+      "complexity": "complex",
+      "languageNotes": "Contains roughly nineteen `---`-separated ClusterPolicy documents that must be regenerated with `kustomize build`, never edited by hand."
+    },
+    {
+      "id": "file:make/config/lib.sh",
+      "type": "file",
+      "name": "lib.sh",
+      "filePath": "make/config/lib.sh",
+      "summary": "Bash helper library sourced by E2E scripts that defines the shared IP layout and provides colorized output and command tracing utilities.",
+      "tags": ["utility", "bash", "e2e-testing", "logging"],
+      "complexity": "moderate",
+      "languageNotes": "Enables nounset/errexit/pipefail and silently disables ANSI colors when CI=true or NO_COLOR is set."
+    },
+    {
+      "id": "function:make/config/lib.sh:should_color",
+      "type": "function",
+      "name": "should_color",
+      "filePath": "make/config/lib.sh",
+      "lineRange": [40, 48],
+      "summary": "Returns success when colored terminal output is appropriate, refusing color under CI or when NO_COLOR is set.",
+      "tags": ["utility", "bash", "terminal-colors"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/config/lib.sh:color",
+      "type": "function",
+      "name": "color",
+      "filePath": "make/config/lib.sh",
+      "lineRange": [68, 86],
+      "summary": "Streams stdin line by line, stripping pre-existing ANSI escapes and re-emitting each line wrapped in the requested color code.",
+      "tags": ["utility", "bash", "terminal-colors", "stream-processing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/config/lib.sh:trace",
+      "type": "function",
+      "name": "trace",
+      "filePath": "make/config/lib.sh",
+      "lineRange": [95, 103],
+      "summary": "Echoes a quoted, colorized representation of a command and its arguments with awk, then executes it.",
+      "tags": ["utility", "bash", "debugging", "command-runner"],
+      "complexity": "simple",
+      "languageNotes": "The awk program double-quotes arguments containing spaces, braces, globs, or question marks for shell-safe display."
+    },
+    {
+      "id": "service:make/config/pebble/Containerfile.pebble",
+      "type": "service",
+      "name": "Containerfile.pebble",
+      "filePath": "make/config/pebble/Containerfile.pebble",
+      "summary": "Minimal container image definition that layers the pebble ACME test server binary onto a caller-supplied base image and runs it as the non-root user 1000.",
+      "tags": ["containerization", "infrastructure", "pebble", "e2e-testing"],
+      "complexity": "simple",
+      "languageNotes": "Uses a build ARG for the base image so the same Containerfile works with the digest-pinned distroless images."
+    },
+    {
+      "id": "file:make/config/pebble/chart/.helmignore",
+      "type": "file",
+      "name": ".helmignore",
+      "filePath": "make/config/pebble/chart/.helmignore",
+      "summary": "Helm packaging ignore list that excludes VCS metadata, editor files, backups, and OS artifacts from the pebble chart archive.",
+      "tags": ["helm", "packaging", "ignore-rules", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:make/config/pebble/chart/Chart.yaml",
+      "type": "config",
+      "name": "Chart.yaml",
+      "filePath": "make/config/pebble/chart/Chart.yaml",
+      "summary": "Metadata for the pebble Helm chart used to run the mock ACME server during end-to-end tests.",
+      "tags": ["configuration", "helm", "testing", "packaging"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:make/_shared/licenses/01_mod.mk",
+      "target": "file:make/_shared/licenses/00_mod.mk",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/_shared/licenses/01_mod.mk",
+      "target": "file:make/_shared/licenses/licenses.tmpl",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/_shared/repository-base/01_mod.mk",
+      "target": "pipeline:make/_shared/repository-base/base/Makefile",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/_shared/repository-base/01_mod.mk",
+      "target": "file:make/_shared/repository-base/base/OWNERS_ALIASES",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/_shared/repository-base/01_mod.mk",
+      "target": "file:make/_shared/repository-base/renovate-bootstrap-config.json5",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "pipeline:make/_shared/repository-base/base/.github/workflows/make-self-upgrade.yaml",
+      "target": "config:make/_shared/repository-base/base/.github/chainguard/make-self-upgrade.sts.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "pipeline:make/_shared/repository-base/base/.github/workflows/make-self-upgrade.yaml",
+      "target": "pipeline:make/_shared/repository-base/base/Makefile",
+      "type": "triggers",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "pipeline:make/_shared/repository-base/base/.github/workflows/renovate.yaml",
+      "target": "config:make/_shared/repository-base/base/.github/chainguard/renovate.sts.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "pipeline:make/_shared/repository-base/base/.github/workflows/renovate.yaml",
+      "target": "file:make/_shared/repository-base/renovate-bootstrap-config.json5",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/_shared_new/helm/01_mod.mk",
+      "target": "file:make/_shared_new/helm/crds.mk",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/_shared_new/helm/01_mod.mk",
+      "target": "file:make/_shared_new/helm/helm.mk",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/_shared_new/helm/01_mod.mk",
+      "target": "file:make/_shared_new/helm/deploy.mk",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/_shared_new/helm/deploy.mk",
+      "target": "file:make/_shared_new/helm/helm.mk",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/_shared_new/helm/crds.mk",
+      "target": "file:make/_shared_new/helm/helm.mk",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:make/config/lib.sh",
+      "target": "function:make/config/lib.sh:should_color",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:make/config/lib.sh",
+      "target": "function:make/config/lib.sh:color",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:make/config/lib.sh",
+      "target": "function:make/config/lib.sh:trace",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:make/config/lib.sh",
+      "target": "function:make/config/lib.sh:should_color",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:make/config/lib.sh",
+      "target": "function:make/config/lib.sh:color",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:make/config/lib.sh",
+      "target": "function:make/config/lib.sh:trace",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "config:make/config/kyverno/kustomization.yaml",
+      "target": "config:make/config/kyverno/policy.yaml",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "service:make/config/pebble/Containerfile.pebble",
+      "target": "config:make/config/pebble/chart/Chart.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

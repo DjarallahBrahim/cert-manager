@@ -1,0 +1,1205 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/e2e/suite/issuers/venafi/cloud/setup.go",
+      "type": "file",
+      "name": "setup.go",
+      "filePath": "test/e2e/suite/issuers/venafi/cloud/setup.go",
+      "summary": "Validates a properly configured Venafi Cloud Issuer becomes Ready and defines the CloudDescribe helper wrapping the shared framework.",
+      "tags": [
+        "test",
+        "e2e",
+        "venafi",
+        "cloud",
+        "issuer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/venafi/import.go",
+      "type": "file",
+      "name": "import.go",
+      "filePath": "test/e2e/suite/issuers/venafi/import.go",
+      "summary": "Blank-import barrel registering the Venafi Cloud and TPP issuer test suites.",
+      "tags": [
+        "test",
+        "barrel",
+        "entry-point",
+        "venafi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/venafi/tpp/certificate.go",
+      "type": "file",
+      "name": "certificate.go",
+      "filePath": "test/e2e/suite/issuers/venafi/tpp/certificate.go",
+      "summary": "End-to-end tests issuing Certificates through a properly configured Venafi TPP Issuer and validating the resulting TLS secret.",
+      "tags": [
+        "test",
+        "e2e",
+        "venafi",
+        "tpp",
+        "certificate"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/venafi/tpp/certificaterequest.go",
+      "type": "file",
+      "name": "certificaterequest.go",
+      "filePath": "test/e2e/suite/issuers/venafi/tpp/certificaterequest.go",
+      "summary": "End-to-end tests submitting CertificateRequests to a Venafi TPP Issuer and checking the signed certificate contents.",
+      "tags": [
+        "test",
+        "e2e",
+        "venafi",
+        "tpp",
+        "certificate-request"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/venafi/tpp/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "test/e2e/suite/issuers/venafi/tpp/doc.go",
+      "summary": "Package documentation for the Venafi TPP test suite and the TPPDescribe helper that delegates to the shared framework.",
+      "tags": [
+        "test",
+        "venafi",
+        "tpp",
+        "documentation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/venafi/tpp/setup.go",
+      "type": "file",
+      "name": "setup.go",
+      "filePath": "test/e2e/suite/issuers/venafi/tpp/setup.go",
+      "summary": "Verifies a properly configured Venafi TPP Issuer is created and becomes Ready, with cleanup of the issuer and addon afterwards.",
+      "tags": [
+        "test",
+        "e2e",
+        "venafi",
+        "tpp",
+        "issuer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/serving/cainjector.go",
+      "type": "file",
+      "name": "cainjector.go",
+      "filePath": "test/e2e/suite/serving/cainjector.go",
+      "summary": "End-to-end cainjector tests that inject CA bundles into webhook configurations, APIServices and CRD conversion webhooks and check propagation.",
+      "tags": [
+        "test",
+        "e2e",
+        "cainjector",
+        "ca-injection",
+        "serving"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:test/e2e/util/domains.go",
+      "type": "file",
+      "name": "domains.go",
+      "filePath": "test/e2e/util/domains.go",
+      "summary": "Provides helpers that generate random subdomains of a base domain for e2e test hostnames.",
+      "tags": [
+        "test",
+        "utility",
+        "domains",
+        "randomization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/util/util.go",
+      "type": "file",
+      "name": "util.go",
+      "filePath": "test/e2e/util/util.go",
+      "summary": "Shared e2e utility library with issuer condition waiters, certificate/ingress/gateway builders, finalizer helpers and generic list predicates.",
+      "tags": [
+        "test",
+        "utility",
+        "kubernetes",
+        "waiters",
+        "test-helpers"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/venafi/cloud/setup.go:CloudDescribe",
+      "type": "function",
+      "name": "CloudDescribe",
+      "filePath": "test/e2e/suite/issuers/venafi/cloud/setup.go",
+      "lineRange": [
+        34,
+        36
+      ],
+      "summary": "Thin wrapper that registers Venafi Cloud tests through the shared CertManagerDescribe helper.",
+      "tags": [
+        "test",
+        "venafi",
+        "cloud",
+        "wrapper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/venafi/tpp/doc.go:TPPDescribe",
+      "type": "function",
+      "name": "TPPDescribe",
+      "filePath": "test/e2e/suite/issuers/venafi/tpp/doc.go",
+      "lineRange": [
+        24,
+        26
+      ],
+      "summary": "Thin wrapper that registers Venafi TPP tests through the shared CertManagerDescribe helper.",
+      "tags": [
+        "test",
+        "venafi",
+        "tpp",
+        "wrapper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/util/domains.go:RandomSubdomain",
+      "type": "function",
+      "name": "RandomSubdomain",
+      "filePath": "test/e2e/util/domains.go",
+      "lineRange": [
+        27,
+        29
+      ],
+      "summary": "Returns a random five-character subdomain of the supplied base domain.",
+      "tags": [
+        "test",
+        "utility",
+        "domains"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/util/domains.go:RandomSubdomainLength",
+      "type": "function",
+      "name": "RandomSubdomainLength",
+      "filePath": "test/e2e/util/domains.go",
+      "lineRange": [
+        34,
+        36
+      ],
+      "summary": "Returns a random subdomain of the supplied base domain with a configurable label length.",
+      "tags": [
+        "test",
+        "utility",
+        "domains",
+        "randomization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/util/util.go:CertificateOnlyValidForDomains",
+      "type": "function",
+      "name": "CertificateOnlyValidForDomains",
+      "filePath": "test/e2e/util/util.go",
+      "lineRange": [
+        57,
+        62
+      ],
+      "summary": "Reports whether a parsed certificate is valid only for the supplied common name and DNS names.",
+      "tags": [
+        "test",
+        "validation",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/util/util.go:WaitForIssuerStatusFunc",
+      "type": "function",
+      "name": "WaitForIssuerStatusFunc",
+      "filePath": "test/e2e/util/util.go",
+      "lineRange": [
+        64,
+        72
+      ],
+      "summary": "Polls an Issuer until the supplied status predicate succeeds or the context is cancelled.",
+      "tags": [
+        "test",
+        "waiters",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/util/util.go:WaitForIssuerCondition",
+      "type": "function",
+      "name": "WaitForIssuerCondition",
+      "filePath": "test/e2e/util/util.go",
+      "lineRange": [
+        76,
+        89
+      ],
+      "summary": "Waits for an Issuer to reach a specific condition, logging API status while polling.",
+      "tags": [
+        "test",
+        "waiters",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/util/util.go:wrapErrorWithIssuerStatusCondition",
+      "type": "function",
+      "name": "wrapErrorWithIssuerStatusCondition",
+      "filePath": "test/e2e/util/util.go",
+      "lineRange": [
+        92,
+        110
+      ],
+      "summary": "Decorates a polling error with the Issuer's current status conditions for diagnostics.",
+      "tags": [
+        "test",
+        "error-handling",
+        "issuer",
+        "diagnostics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/util/util.go:WaitForClusterIssuerCondition",
+      "type": "function",
+      "name": "WaitForClusterIssuerCondition",
+      "filePath": "test/e2e/util/util.go",
+      "lineRange": [
+        114,
+        127
+      ],
+      "summary": "Waits for a ClusterIssuer to reach a specific condition, logging status while polling.",
+      "tags": [
+        "test",
+        "waiters",
+        "clusterissuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/util/util.go:wrapErrorWithClusterIssuerStatusCondition",
+      "type": "function",
+      "name": "wrapErrorWithClusterIssuerStatusCondition",
+      "filePath": "test/e2e/util/util.go",
+      "lineRange": [
+        130,
+        148
+      ],
+      "summary": "Decorates a polling error with the ClusterIssuer's current status conditions for diagnostics.",
+      "tags": [
+        "test",
+        "error-handling",
+        "clusterissuer",
+        "diagnostics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/util/util.go:WaitForCRDToNotExist",
+      "type": "function",
+      "name": "WaitForCRDToNotExist",
+      "filePath": "test/e2e/util/util.go",
+      "lineRange": [
+        152,
+        168
+      ],
+      "summary": "Polls until the named CustomResourceDefinition is deleted, failing with the last observed status.",
+      "tags": [
+        "test",
+        "waiters",
+        "crd"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/util/util.go:NewCertManagerBasicCertificateRequest",
+      "type": "function",
+      "name": "NewCertManagerBasicCertificateRequest",
+      "filePath": "test/e2e/util/util.go",
+      "lineRange": [
+        171,
+        211
+      ],
+      "summary": "Builds a CertificateRequest object with the supplied subject, DNS names, IPs, URIs, key usages and duration fields.",
+      "tags": [
+        "test",
+        "factory",
+        "certificate-request",
+        "fixtures"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/util/util.go:NewCertManagerVaultCertificate",
+      "type": "function",
+      "name": "NewCertManagerVaultCertificate",
+      "filePath": "test/e2e/util/util.go",
+      "lineRange": [
+        213,
+        229
+      ],
+      "summary": "Builds a Certificate bound to a Vault issuer with optional duration and renewBefore values.",
+      "tags": [
+        "test",
+        "factory",
+        "certificate",
+        "vault"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/util/util.go:NewIngress",
+      "type": "function",
+      "name": "NewIngress",
+      "filePath": "test/e2e/util/util.go",
+      "lineRange": [
+        231,
+        269
+      ],
+      "summary": "Creates a networking/v1 Ingress exposing TLS for the given secret and DNS names.",
+      "tags": [
+        "test",
+        "factory",
+        "networking",
+        "ingress"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/util/util.go:NewV1Beta1Ingress",
+      "type": "function",
+      "name": "NewV1Beta1Ingress",
+      "filePath": "test/e2e/util/util.go",
+      "lineRange": [
+        271,
+        304
+      ],
+      "summary": "Creates a networking/v1beta1 Ingress exposing TLS for the given secret and DNS names.",
+      "tags": [
+        "test",
+        "factory",
+        "networking",
+        "ingress"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/util/util.go:NewGateway",
+      "type": "function",
+      "name": "NewGateway",
+      "filePath": "test/e2e/util/util.go",
+      "lineRange": [
+        315,
+        351
+      ],
+      "summary": "Builds a Gateway API Gateway with an HTTPS listener referencing the supplied TLS secret and hostnames.",
+      "tags": [
+        "test",
+        "factory",
+        "gateway-api",
+        "networking"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/util/util.go:HasIngresses",
+      "type": "function",
+      "name": "HasIngresses",
+      "filePath": "test/e2e/util/util.go",
+      "lineRange": [
+        355,
+        366
+      ],
+      "summary": "Checks via API discovery whether the target cluster serves the Ingress resource for a group version.",
+      "tags": [
+        "test",
+        "discovery",
+        "networking",
+        "ingress"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/util/util.go:AddFinalizer",
+      "type": "function",
+      "name": "AddFinalizer",
+      "filePath": "test/e2e/util/util.go",
+      "lineRange": [
+        370,
+        377
+      ],
+      "summary": "Adds a finalizer to an object through the controller-runtime client, updating and retrying on conflict.",
+      "tags": [
+        "test",
+        "kubernetes",
+        "finalizer",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/util/util.go:RemoveFinalizer",
+      "type": "function",
+      "name": "RemoveFinalizer",
+      "filePath": "test/e2e/util/util.go",
+      "lineRange": [
+        383,
+        394
+      ],
+      "summary": "Removes a finalizer from an object through the controller-runtime client with conflict-safe updates.",
+      "tags": [
+        "test",
+        "kubernetes",
+        "finalizer",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/util/util.go:ListMatchingPredicates",
+      "type": "function",
+      "name": "ListMatchingPredicates",
+      "filePath": "test/e2e/util/util.go",
+      "lineRange": [
+        411,
+        427
+      ],
+      "summary": "Lists objects matching all supplied predicates and converts them to the requested pointer type using generics.",
+      "tags": [
+        "test",
+        "generic",
+        "predicates",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/e2e/util/util.go:ObjectPtrConstraint",
+      "type": "class",
+      "name": "ObjectPtrConstraint",
+      "filePath": "test/e2e/util/util.go",
+      "lineRange": [
+        398,
+        401
+      ],
+      "summary": "Generic type constraint describing a pointer type that can yield a typed object value.",
+      "tags": [
+        "test",
+        "type-definition",
+        "generic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/util/util.go:ObjectListPtrConstraint",
+      "type": "class",
+      "name": "ObjectListPtrConstraint",
+      "filePath": "test/e2e/util/util.go",
+      "lineRange": [
+        405,
+        408
+      ],
+      "summary": "Generic type constraint describing a pointer to a list type that can yield typed list items.",
+      "tags": [
+        "test",
+        "type-definition",
+        "generic"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/cloud/setup.go",
+      "target": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/cloud/setup.go",
+      "target": "file:test/e2e/framework/addon/venafi/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/cloud/setup.go",
+      "target": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/cloud/setup.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/cloud/setup.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/cloud/setup.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/cloud/setup.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/cloud/setup.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/cloud/setup.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/import.go",
+      "target": "file:test/e2e/suite/issuers/venafi/cloud/setup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/import.go",
+      "target": "file:test/e2e/suite/issuers/venafi/tpp/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/import.go",
+      "target": "file:test/e2e/suite/issuers/venafi/tpp/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/import.go",
+      "target": "file:test/e2e/suite/issuers/venafi/tpp/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/import.go",
+      "target": "file:test/e2e/suite/issuers/venafi/tpp/setup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/certificate.go",
+      "target": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/certificate.go",
+      "target": "file:test/e2e/framework/addon/venafi/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/certificate.go",
+      "target": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/certificate.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/certificate.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/certificate.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/certificate.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/certificate.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/certificate.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/certificaterequest.go",
+      "target": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/certificaterequest.go",
+      "target": "file:test/e2e/framework/addon/venafi/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/certificaterequest.go",
+      "target": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/certificaterequest.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/certificaterequest.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/certificaterequest.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/certificaterequest.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/certificaterequest.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/certificaterequest.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/doc.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/doc.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/doc.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/doc.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/setup.go",
+      "target": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/setup.go",
+      "target": "file:test/e2e/framework/addon/venafi/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/setup.go",
+      "target": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/setup.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/setup.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/setup.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/setup.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/setup.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/setup.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/serving/cainjector.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/serving/cainjector.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/serving/cainjector.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/serving/cainjector.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/serving/cainjector.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/serving/cainjector.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "file:test/e2e/framework/log/log.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/cloud/setup.go",
+      "target": "function:test/e2e/suite/issuers/venafi/cloud/setup.go:CloudDescribe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/doc.go",
+      "target": "function:test/e2e/suite/issuers/venafi/tpp/doc.go:TPPDescribe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/domains.go",
+      "target": "function:test/e2e/util/domains.go:RandomSubdomain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/domains.go",
+      "target": "function:test/e2e/util/domains.go:RandomSubdomainLength",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:CertificateOnlyValidForDomains",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:WaitForIssuerStatusFunc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:WaitForIssuerCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:wrapErrorWithIssuerStatusCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:WaitForClusterIssuerCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:wrapErrorWithClusterIssuerStatusCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:WaitForCRDToNotExist",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:NewCertManagerBasicCertificateRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:NewCertManagerVaultCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:NewIngress",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:NewV1Beta1Ingress",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:NewGateway",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:HasIngresses",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:AddFinalizer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:RemoveFinalizer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:ListMatchingPredicates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "class:test/e2e/util/util.go:ObjectPtrConstraint",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "class:test/e2e/util/util.go:ObjectListPtrConstraint",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/cloud/setup.go",
+      "target": "function:test/e2e/suite/issuers/venafi/cloud/setup.go:CloudDescribe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/venafi/tpp/doc.go",
+      "target": "function:test/e2e/suite/issuers/venafi/tpp/doc.go:TPPDescribe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/util/domains.go",
+      "target": "function:test/e2e/util/domains.go:RandomSubdomain",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/util/domains.go",
+      "target": "function:test/e2e/util/domains.go:RandomSubdomainLength",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:CertificateOnlyValidForDomains",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:WaitForIssuerStatusFunc",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:WaitForIssuerCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:WaitForClusterIssuerCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:WaitForCRDToNotExist",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:NewCertManagerBasicCertificateRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:NewCertManagerVaultCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:NewIngress",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:NewV1Beta1Ingress",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:NewGateway",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:HasIngresses",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:AddFinalizer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:RemoveFinalizer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "function:test/e2e/util/util.go:ListMatchingPredicates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "class:test/e2e/util/util.go:ObjectPtrConstraint",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/util/util.go",
+      "target": "class:test/e2e/util/util.go:ObjectListPtrConstraint",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/util/util.go:WaitForIssuerCondition",
+      "target": "function:test/e2e/framework/log/log.go:LogBackoff",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/util/util.go:WaitForClusterIssuerCondition",
+      "target": "function:test/e2e/framework/log/log.go:LogBackoff",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/util/util.go:WaitForCRDToNotExist",
+      "target": "function:test/e2e/framework/log/log.go:LogBackoff",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

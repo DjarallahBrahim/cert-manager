@@ -1,0 +1,979 @@
+{
+  "nodes": [
+    {
+      "id": "file:internal/webhook/webhook.go",
+      "type": "file",
+      "name": "webhook.go",
+      "filePath": "internal/webhook/webhook.go",
+      "summary": "Constructs the cert-manager webhook server: builds the Kubernetes client, installs API schemes, assembles the admission plugin chain, and selects the TLS certificate source.",
+      "tags": [
+        "entry-point",
+        "webhook",
+        "bootstrap",
+        "tls",
+        "composition-root"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/apis/meta/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "pkg/apis/meta/doc.go",
+      "summary": "Declares the public meta API group name (meta.cert-manager.io) and documents the shared meta types package.",
+      "tags": [
+        "api-group",
+        "documentation",
+        "constants"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "type": "file",
+      "name": "rfc2136.go",
+      "filePath": "pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "summary": "DNS-01 solver implementing RFC 2136 dynamic DNS updates with optional TSIG authentication, used to create and remove ACME TXT challenge records.",
+      "tags": [
+        "dns-provider",
+        "acme",
+        "dns01",
+        "integration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/server/listener.go",
+      "type": "file",
+      "name": "listener.go",
+      "filePath": "pkg/server/listener.go",
+      "summary": "Creates TCP listeners with optional TLS wrapping, configurable certificate source, cipher suites, and minimum TLS version.",
+      "tags": [
+        "networking",
+        "tls",
+        "listener",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/server/tls/file_source.go",
+      "type": "file",
+      "name": "file_source.go",
+      "filePath": "pkg/server/tls/file_source.go",
+      "summary": "TLS certificate source that periodically reloads certificate and key files from disk, caching them for the HTTPS server and reporting health.",
+      "tags": [
+        "tls",
+        "certificate-management",
+        "file-watch",
+        "hot-reload"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/webhook/webhook.go:NewCertManagerWebhookServer",
+      "type": "function",
+      "name": "NewCertManagerWebhookServer",
+      "filePath": "internal/webhook/webhook.go",
+      "lineRange": [
+        50,
+        93
+      ],
+      "summary": "Builds a fully configured webhook server with client config, admission chain, API schemes, and TLS certificate sources.",
+      "tags": [
+        "factory",
+        "bootstrap",
+        "webhook",
+        "tls"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/webhook/webhook.go:buildAdmissionChain",
+      "type": "function",
+      "name": "buildAdmissionChain",
+      "filePath": "internal/webhook/webhook.go",
+      "lineRange": [
+        95,
+        120
+      ],
+      "summary": "Creates the authorizer and assembles the identity, approval, and resource-validation admission plugins into a chain.",
+      "tags": [
+        "composition",
+        "admission-webhook",
+        "authorization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/webhook/webhook.go:buildCertificateSource",
+      "type": "function",
+      "name": "buildCertificateSource",
+      "filePath": "internal/webhook/webhook.go",
+      "lineRange": [
+        122,
+        147
+      ],
+      "summary": "Selects a filesystem or dynamic TLS certificate source from configuration, returning nil for insecure serving.",
+      "tags": [
+        "tls",
+        "configuration",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:WithNetwork",
+      "type": "function",
+      "name": "WithNetwork",
+      "filePath": "pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "lineRange": [
+        58,
+        65
+      ],
+      "summary": "Provider option that sets the DNS transport network, defaulting to UDP and normalizing to lowercase.",
+      "tags": [
+        "configuration",
+        "option",
+        "dns"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:NewDNSProviderCredentials",
+      "type": "function",
+      "name": "NewDNSProviderCredentials",
+      "filePath": "pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "lineRange": [
+        71,
+        116
+      ],
+      "summary": "Validates the nameserver and TSIG settings and constructs an RFC 2136 DNS provider, logging masked credentials.",
+      "tags": [
+        "factory",
+        "validation",
+        "tsig",
+        "dns"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:Present",
+      "type": "function",
+      "name": "Present",
+      "filePath": "pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "lineRange": [
+        119,
+        121
+      ],
+      "summary": "Creates a TXT record for the ACME DNS-01 challenge via a dynamic DNS update.",
+      "tags": [
+        "acme",
+        "dns01",
+        "dns-update"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:CleanUp",
+      "type": "function",
+      "name": "CleanUp",
+      "filePath": "pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "lineRange": [
+        124,
+        126
+      ],
+      "summary": "Removes the TXT record created for the ACME DNS-01 challenge.",
+      "tags": [
+        "acme",
+        "dns01",
+        "cleanup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:changeRecord",
+      "type": "function",
+      "name": "changeRecord",
+      "filePath": "pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "lineRange": [
+        128,
+        166
+      ],
+      "summary": "Builds and sends an RFC 2136 update message inserting or removing a TXT record, optionally TSIG-signed.",
+      "tags": [
+        "dns-update",
+        "tsig",
+        "networking"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:Nameserver",
+      "type": "function",
+      "name": "Nameserver",
+      "filePath": "pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "lineRange": [
+        169,
+        171
+      ],
+      "summary": "Returns the configured nameserver address.",
+      "tags": [
+        "accessor",
+        "dns",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:TSIGAlgorithm",
+      "type": "function",
+      "name": "TSIGAlgorithm",
+      "filePath": "pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "lineRange": [
+        174,
+        176
+      ],
+      "summary": "Returns the configured TSIG algorithm.",
+      "tags": [
+        "accessor",
+        "tsig",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/issuer/acme/dns/rfc2136/rfc2136.go:DNSProvider",
+      "type": "class",
+      "name": "DNSProvider",
+      "filePath": "pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "lineRange": [
+        45,
+        51
+      ],
+      "summary": "RFC 2136 DNS provider holding nameserver, network, and TSIG credentials for dynamic TXT record updates.",
+      "tags": [
+        "dns-provider",
+        "acme",
+        "stateful"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/server/listener.go:Listen",
+      "type": "function",
+      "name": "Listen",
+      "filePath": "pkg/server/listener.go",
+      "lineRange": [
+        42,
+        65
+      ],
+      "summary": "Creates a TCP listener and optionally wraps it in TLS using the supplied listener options.",
+      "tags": [
+        "listener",
+        "tls",
+        "networking"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/server/listener.go:WithCertificateSource",
+      "type": "function",
+      "name": "WithCertificateSource",
+      "filePath": "pkg/server/listener.go",
+      "lineRange": [
+        69,
+        77
+      ],
+      "summary": "Listener option enabling TLS and sourcing certificates from the given CertificateSource.",
+      "tags": [
+        "tls",
+        "configuration",
+        "option"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/server/listener.go:WithTLSCipherSuites",
+      "type": "function",
+      "name": "WithTLSCipherSuites",
+      "filePath": "pkg/server/listener.go",
+      "lineRange": [
+        81,
+        94
+      ],
+      "summary": "Listener option converting configured cipher suite names into Go TLS cipher suite IDs.",
+      "tags": [
+        "tls",
+        "configuration",
+        "option"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/server/listener.go:WithTLSMinVersion",
+      "type": "function",
+      "name": "WithTLSMinVersion",
+      "filePath": "pkg/server/listener.go",
+      "lineRange": [
+        98,
+        111
+      ],
+      "summary": "Listener option converting a minimum TLS version string into the Go TLS constant.",
+      "tags": [
+        "tls",
+        "configuration",
+        "option"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/server/tls/file_source.go:Start",
+      "type": "function",
+      "name": "Start",
+      "filePath": "pkg/server/tls/file_source.go",
+      "lineRange": [
+        69,
+        106
+      ],
+      "summary": "Loads the certificate immediately then reloads it on a ticker, failing after too many consecutive read errors.",
+      "tags": [
+        "lifecycle",
+        "hot-reload",
+        "tls"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/server/tls/file_source.go:GetCertificate",
+      "type": "function",
+      "name": "GetCertificate",
+      "filePath": "pkg/server/tls/file_source.go",
+      "lineRange": [
+        108,
+        115
+      ],
+      "summary": "Returns the cached certificate under lock or ErrNotAvailable if none has been loaded.",
+      "tags": [
+        "tls",
+        "accessor",
+        "concurrency"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/server/tls/file_source.go:Healthy",
+      "type": "function",
+      "name": "Healthy",
+      "filePath": "pkg/server/tls/file_source.go",
+      "lineRange": [
+        117,
+        119
+      ],
+      "summary": "Reports whether a certificate has been successfully loaded.",
+      "tags": [
+        "health-check",
+        "tls",
+        "accessor"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/server/tls/file_source.go:updateCertificateFromDisk",
+      "type": "function",
+      "name": "updateCertificateFromDisk",
+      "filePath": "pkg/server/tls/file_source.go",
+      "lineRange": [
+        123,
+        152
+      ],
+      "summary": "Reads key and certificate files, compares them with the cache, and reloads the TLS key pair when changed.",
+      "tags": [
+        "hot-reload",
+        "file-io",
+        "tls"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/server/tls/file_source.go:FileCertificateSource",
+      "type": "class",
+      "name": "FileCertificateSource",
+      "filePath": "pkg/server/tls/file_source.go",
+      "lineRange": [
+        35,
+        62
+      ],
+      "summary": "Periodically reloading TLS certificate source backed by certificate and key files on disk.",
+      "tags": [
+        "tls",
+        "certificate-management",
+        "hot-reload",
+        "stateful"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "function:internal/webhook/webhook.go:NewCertManagerWebhookServer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "function:internal/webhook/webhook.go:NewCertManagerWebhookServer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "function:internal/webhook/webhook.go:buildAdmissionChain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "function:internal/webhook/webhook.go:buildCertificateSource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:WithNetwork",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:WithNetwork",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:NewDNSProviderCredentials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:NewDNSProviderCredentials",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:Present",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:Present",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:CleanUp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:CleanUp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:changeRecord",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:Nameserver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:Nameserver",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:TSIGAlgorithm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:TSIGAlgorithm",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "target": "class:pkg/issuer/acme/dns/rfc2136/rfc2136.go:DNSProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "target": "class:pkg/issuer/acme/dns/rfc2136/rfc2136.go:DNSProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/listener.go",
+      "target": "function:pkg/server/listener.go:Listen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/server/listener.go",
+      "target": "function:pkg/server/listener.go:Listen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/listener.go",
+      "target": "function:pkg/server/listener.go:WithCertificateSource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/server/listener.go",
+      "target": "function:pkg/server/listener.go:WithCertificateSource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/listener.go",
+      "target": "function:pkg/server/listener.go:WithTLSCipherSuites",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/server/listener.go",
+      "target": "function:pkg/server/listener.go:WithTLSCipherSuites",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/listener.go",
+      "target": "function:pkg/server/listener.go:WithTLSMinVersion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/server/listener.go",
+      "target": "function:pkg/server/listener.go:WithTLSMinVersion",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/tls/file_source.go",
+      "target": "function:pkg/server/tls/file_source.go:Start",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/server/tls/file_source.go",
+      "target": "function:pkg/server/tls/file_source.go:Start",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/tls/file_source.go",
+      "target": "function:pkg/server/tls/file_source.go:GetCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/server/tls/file_source.go",
+      "target": "function:pkg/server/tls/file_source.go:GetCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/tls/file_source.go",
+      "target": "function:pkg/server/tls/file_source.go:Healthy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/server/tls/file_source.go",
+      "target": "function:pkg/server/tls/file_source.go:Healthy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/tls/file_source.go",
+      "target": "function:pkg/server/tls/file_source.go:updateCertificateFromDisk",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/server/tls/file_source.go",
+      "target": "class:pkg/server/tls/file_source.go:FileCertificateSource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/server/tls/file_source.go",
+      "target": "class:pkg/server/tls/file_source.go:FileCertificateSource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:internal/apis/acme/install/install.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:internal/apis/certmanager/install/install.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:internal/apis/config/shared/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:internal/apis/config/shared/types_leaderelection.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:internal/apis/config/shared/types_tlsconfig.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:internal/apis/config/shared/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:internal/apis/config/webhook/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:internal/apis/config/webhook/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:internal/apis/config/webhook/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:internal/apis/config/webhook/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:internal/apis/meta/install/install.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:internal/kube/config.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:pkg/server/tls/authority/authority.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:pkg/server/tls/dynamic_source.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:pkg/server/tls/file_source.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:pkg/server/tls/source.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:pkg/webhook/admission/chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:pkg/webhook/admission/custom_decoder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:pkg/webhook/admission/custom_mutation_webhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:pkg/webhook/admission/custom_validator_webhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:pkg/webhook/admission/handler.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:pkg/webhook/admission/interfaces.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/webhook.go",
+      "target": "file:pkg/webhook/server/server.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "target": "file:internal/apis/certmanager/validation/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "target": "file:internal/apis/certmanager/validation/util/nameserver.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/listener.go",
+      "target": "file:pkg/server/tls/dynamic_source.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/listener.go",
+      "target": "file:pkg/server/tls/file_source.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/listener.go",
+      "target": "file:pkg/server/tls/source.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/file_source.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:internal/webhook/webhook.go:NewCertManagerWebhookServer",
+      "target": "function:internal/kube/config.go:BuildClientConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/webhook/webhook.go:NewCertManagerWebhookServer",
+      "target": "function:internal/webhook/webhook.go:buildAdmissionChain",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/webhook/webhook.go:NewCertManagerWebhookServer",
+      "target": "function:internal/webhook/webhook.go:buildCertificateSource",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/webhook/webhook.go:buildAdmissionChain",
+      "target": "function:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:NewPlugin",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/webhook/webhook.go:buildAdmissionChain",
+      "target": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:NewPlugin",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/webhook/webhook.go:buildAdmissionChain",
+      "target": "function:internal/webhook/admission/resourcevalidation/resourcevalidation.go:NewPlugin",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:NewDNSProviderCredentials",
+      "target": "function:internal/apis/certmanager/validation/util/nameserver.go:ValidNameserver",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:Present",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:changeRecord",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:CleanUp",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/rfc2136.go:changeRecord",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/server/tls/file_source.go:Start",
+      "target": "function:pkg/server/tls/file_source.go:updateCertificateFromDisk",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

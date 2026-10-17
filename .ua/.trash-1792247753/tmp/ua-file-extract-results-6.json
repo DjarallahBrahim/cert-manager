@@ -1,0 +1,4623 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 32,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 32,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 32,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "internal/apis/acme/v1/conversion.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "Convert_acme_ACMEIssuer_To_v1_ACMEIssuer",
+          "startLine": 28,
+          "endLine": 30,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_v1_ACMEIssuer_To_acme_ACMEIssuer",
+          "startLine": 34,
+          "endLine": 36,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Convert_acme_ACMEIssuer_To_v1_ACMEIssuer",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_v1_ACMEIssuer_To_acme_ACMEIssuer",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Convert_acme_ACMEIssuer_To_v1_ACMEIssuer",
+          "callee": "autoConvert_acme_ACMEIssuer_To_v1_ACMEIssuer",
+          "lineNumber": 29
+        },
+        {
+          "caller": "Convert_v1_ACMEIssuer_To_acme_ACMEIssuer",
+          "callee": "autoConvert_v1_ACMEIssuer_To_acme_ACMEIssuer",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 14,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/acme/v1/defaults.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "addDefaultingFuncs",
+          "startLine": 25,
+          "endLine": 31,
+          "params": [
+            "scheme"
+          ]
+        },
+        {
+          "name": "SetObjectDefaults_Challenge",
+          "startLine": 33,
+          "endLine": 40,
+          "params": [
+            "in"
+          ]
+        },
+        {
+          "name": "SetObjectDefaults_ChallengeList",
+          "startLine": 42,
+          "endLine": 47,
+          "params": [
+            "in"
+          ]
+        },
+        {
+          "name": "SetObjectDefaults_Order",
+          "startLine": 49,
+          "endLine": 56,
+          "params": [
+            "in"
+          ]
+        },
+        {
+          "name": "SetObjectDefaults_OrderList",
+          "startLine": 58,
+          "endLine": 63,
+          "params": [
+            "in"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SetObjectDefaults_Challenge",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "SetObjectDefaults_ChallengeList",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "SetObjectDefaults_Order",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "SetObjectDefaults_OrderList",
+          "line": 58,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "addDefaultingFuncs",
+          "callee": "scheme.AddTypeDefaultingFunc",
+          "lineNumber": 26
+        },
+        {
+          "caller": "addDefaultingFuncs",
+          "callee": "SetObjectDefaults_Challenge",
+          "lineNumber": 26
+        },
+        {
+          "caller": "addDefaultingFuncs",
+          "callee": "scheme.AddTypeDefaultingFunc",
+          "lineNumber": 27
+        },
+        {
+          "caller": "addDefaultingFuncs",
+          "callee": "SetObjectDefaults_ChallengeList",
+          "lineNumber": 27
+        },
+        {
+          "caller": "addDefaultingFuncs",
+          "callee": "scheme.AddTypeDefaultingFunc",
+          "lineNumber": 28
+        },
+        {
+          "caller": "addDefaultingFuncs",
+          "callee": "SetObjectDefaults_Order",
+          "lineNumber": 28
+        },
+        {
+          "caller": "addDefaultingFuncs",
+          "callee": "scheme.AddTypeDefaultingFunc",
+          "lineNumber": 29
+        },
+        {
+          "caller": "addDefaultingFuncs",
+          "callee": "SetObjectDefaults_OrderList",
+          "lineNumber": 29
+        },
+        {
+          "caller": "addDefaultingFuncs",
+          "callee": "RegisterDefaults",
+          "lineNumber": 30
+        },
+        {
+          "caller": "SetObjectDefaults_ChallengeList",
+          "callee": "SetObjectDefaults_Challenge",
+          "lineNumber": 45
+        },
+        {
+          "caller": "SetObjectDefaults_OrderList",
+          "callee": "SetObjectDefaults_Order",
+          "lineNumber": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 4,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/acme/v1/register.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "Resource",
+          "startLine": 30,
+          "endLine": 32,
+          "params": [
+            "resource"
+          ]
+        },
+        {
+          "name": "init",
+          "startLine": 39,
+          "endLine": 44,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Resource",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource(resource).GroupResource",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource",
+          "lineNumber": 31
+        },
+        {
+          "caller": "init",
+          "callee": "localSchemeBuilder.Register",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/cmd/util/exit.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "SetExitCode",
+          "startLine": 25,
+          "endLine": 34,
+          "params": [
+            "err"
+          ]
+        },
+        {
+          "name": "SetExitCodeValue",
+          "startLine": 37,
+          "endLine": 46,
+          "params": [
+            "code"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SetExitCode",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "SetExitCodeValue",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SetExitCode",
+          "callee": "errors.Is",
+          "lineNumber": 27
+        },
+        {
+          "caller": "SetExitCode",
+          "callee": "errors.Is",
+          "lineNumber": 29
+        },
+        {
+          "caller": "SetExitCode",
+          "callee": "SetExitCodeValue",
+          "lineNumber": 30
+        },
+        {
+          "caller": "SetExitCode",
+          "callee": "SetExitCodeValue",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/cmd/util/signal.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 80,
+      "nonEmptyLines": 68,
+      "functions": [
+        {
+          "name": "SetupExitHandler",
+          "startLine": 52,
+          "endLine": 80,
+          "params": [
+            "parentCtx",
+            "exitBehavior"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SetupExitHandler",
+          "line": 52,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SetupExitHandler",
+          "callee": "close",
+          "lineNumber": 53
+        },
+        {
+          "caller": "SetupExitHandler",
+          "callee": "context.WithCancelCause",
+          "lineNumber": 55
+        },
+        {
+          "caller": "SetupExitHandler",
+          "callee": "make",
+          "lineNumber": 56
+        },
+        {
+          "caller": "SetupExitHandler",
+          "callee": "signal.Notify",
+          "lineNumber": 57
+        },
+        {
+          "caller": "SetupExitHandler",
+          "callee": "func() {\n\t\t// first signal. Cancel context and pass exit code to errorExitCodeChannel.\n\t\tsignalInt := int((<-c).(syscall.Signal))\n\t\tif exitBehavior == AlwaysErrCode {\n\t\t\terrorExitCodeChannel <- (128 + signalInt)\n\t\t}\n\t\tcancel(fmt.Errorf(\"received signal %d\", signalInt))\n\t\t// second signal. Exit directly.\n\t\t<-c\n\t\tos.Exit(130)\n\t}",
+          "lineNumber": 58
+        },
+        {
+          "caller": "SetupExitHandler",
+          "callee": "int",
+          "lineNumber": 60
+        },
+        {
+          "caller": "SetupExitHandler",
+          "callee": "cancel",
+          "lineNumber": 64
+        },
+        {
+          "caller": "SetupExitHandler",
+          "callee": "fmt.Errorf",
+          "lineNumber": 64
+        },
+        {
+          "caller": "SetupExitHandler",
+          "callee": "os.Exit",
+          "lineNumber": 67
+        },
+        {
+          "caller": "SetupExitHandler",
+          "callee": "os.Exit",
+          "lineNumber": 73
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/cmd/util/signal_posix.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 19,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/cmd/util/signal_windows.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/collectors/acme_collector.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "NewACMECollector",
+          "startLine": 39,
+          "endLine": 44,
+          "params": [
+            "acmeInformers"
+          ]
+        },
+        {
+          "name": "Describe",
+          "startLine": 46,
+          "endLine": 48,
+          "params": [
+            "ch"
+          ]
+        },
+        {
+          "name": "Collect",
+          "startLine": 50,
+          "endLine": 78,
+          "params": [
+            "ch"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMECollector",
+          "startLine": 34,
+          "endLine": 37,
+          "methods": [
+            "Describe",
+            "Collect"
+          ],
+          "properties": [
+            "challengesLister",
+            "certificateChallengeStatusMetric"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMECollector",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "NewACMECollector",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "Describe",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "Collect",
+          "line": 50,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Collect",
+          "callee": "ac.challengesLister.List",
+          "lineNumber": 51
+        },
+        {
+          "caller": "Collect",
+          "callee": "labels.Everything",
+          "lineNumber": 51
+        },
+        {
+          "caller": "Collect",
+          "callee": "string",
+          "lineNumber": 59
+        },
+        {
+          "caller": "Collect",
+          "callee": "string",
+          "lineNumber": 59
+        },
+        {
+          "caller": "Collect",
+          "callee": "prometheus.MustNewConstMetric",
+          "lineNumber": 63
+        },
+        {
+          "caller": "Collect",
+          "callee": "string",
+          "lineNumber": 66
+        },
+        {
+          "caller": "Collect",
+          "callee": "fmt.Sprint",
+          "lineNumber": 69
+        },
+        {
+          "caller": "Collect",
+          "callee": "string",
+          "lineNumber": 72
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "internal/controller/challenges/apply.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 101,
+      "nonEmptyLines": 88,
+      "functions": [
+        {
+          "name": "Apply",
+          "startLine": 36,
+          "endLine": 46,
+          "params": [
+            "ctx",
+            "cl",
+            "fieldManager",
+            "challenge"
+          ]
+        },
+        {
+          "name": "ApplyStatus",
+          "startLine": 53,
+          "endLine": 63,
+          "params": [
+            "ctx",
+            "cl",
+            "fieldManager",
+            "challenge"
+          ]
+        },
+        {
+          "name": "serializeApply",
+          "startLine": 70,
+          "endLine": 82,
+          "params": [
+            "challenge"
+          ]
+        },
+        {
+          "name": "serializeApplyStatus",
+          "startLine": 89,
+          "endLine": 101,
+          "params": [
+            "challenge"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Apply",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "ApplyStatus",
+          "line": 53,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Apply",
+          "callee": "serializeApply",
+          "lineNumber": 37
+        },
+        {
+          "caller": "Apply",
+          "callee": "cl.AcmeV1().Challenges(challenge.Namespace).Patch",
+          "lineNumber": 42
+        },
+        {
+          "caller": "Apply",
+          "callee": "cl.AcmeV1().Challenges",
+          "lineNumber": 42
+        },
+        {
+          "caller": "Apply",
+          "callee": "cl.AcmeV1",
+          "lineNumber": 42
+        },
+        {
+          "caller": "Apply",
+          "callee": "ptr.To",
+          "lineNumber": 44
+        },
+        {
+          "caller": "ApplyStatus",
+          "callee": "serializeApplyStatus",
+          "lineNumber": 54
+        },
+        {
+          "caller": "ApplyStatus",
+          "callee": "cl.AcmeV1().Challenges(challenge.Namespace).Patch",
+          "lineNumber": 59
+        },
+        {
+          "caller": "ApplyStatus",
+          "callee": "cl.AcmeV1().Challenges",
+          "lineNumber": 59
+        },
+        {
+          "caller": "ApplyStatus",
+          "callee": "cl.AcmeV1",
+          "lineNumber": 59
+        },
+        {
+          "caller": "ApplyStatus",
+          "callee": "ptr.To",
+          "lineNumber": 61
+        },
+        {
+          "caller": "serializeApply",
+          "callee": "cmacme.SchemeGroupVersion.Identifier",
+          "lineNumber": 72
+        },
+        {
+          "caller": "serializeApply",
+          "callee": "challenge.ObjectMeta.DeepCopy",
+          "lineNumber": 73
+        },
+        {
+          "caller": "serializeApply",
+          "callee": "challenge.Spec.DeepCopy",
+          "lineNumber": 74
+        },
+        {
+          "caller": "serializeApply",
+          "callee": "json.Marshal",
+          "lineNumber": 77
+        },
+        {
+          "caller": "serializeApply",
+          "callee": "fmt.Errorf",
+          "lineNumber": 79
+        },
+        {
+          "caller": "serializeApplyStatus",
+          "callee": "cmacme.SchemeGroupVersion.Identifier",
+          "lineNumber": 91
+        },
+        {
+          "caller": "serializeApplyStatus",
+          "callee": "challenge.Status.DeepCopy",
+          "lineNumber": 94
+        },
+        {
+          "caller": "serializeApplyStatus",
+          "callee": "json.Marshal",
+          "lineNumber": 96
+        },
+        {
+          "caller": "serializeApplyStatus",
+          "callee": "fmt.Errorf",
+          "lineNumber": 98
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/controller/orders/apply.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 56,
+      "functions": [
+        {
+          "name": "ApplyStatus",
+          "startLine": 37,
+          "endLine": 49,
+          "params": [
+            "ctx",
+            "cl",
+            "fieldManager",
+            "order"
+          ]
+        },
+        {
+          "name": "serializeApplyStatus",
+          "startLine": 56,
+          "endLine": 67,
+          "params": [
+            "order"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ApplyStatus",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ApplyStatus",
+          "callee": "serializeApplyStatus",
+          "lineNumber": 38
+        },
+        {
+          "caller": "ApplyStatus",
+          "callee": "cl.AcmeV1().Orders(order.Namespace).Patch",
+          "lineNumber": 43
+        },
+        {
+          "caller": "ApplyStatus",
+          "callee": "cl.AcmeV1().Orders",
+          "lineNumber": 43
+        },
+        {
+          "caller": "ApplyStatus",
+          "callee": "cl.AcmeV1",
+          "lineNumber": 43
+        },
+        {
+          "caller": "ApplyStatus",
+          "callee": "ptr.To",
+          "lineNumber": 45
+        },
+        {
+          "caller": "serializeApplyStatus",
+          "callee": "cmacme.SchemeGroupVersion.Identifier",
+          "lineNumber": 58
+        },
+        {
+          "caller": "serializeApplyStatus",
+          "callee": "json.Marshal",
+          "lineNumber": 62
+        },
+        {
+          "caller": "serializeApplyStatus",
+          "callee": "fmt.Errorf",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/test/paths/paths.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 106,
+      "nonEmptyLines": 82,
+      "functions": [
+        {
+          "name": "PathForCRD",
+          "startLine": 51,
+          "endLine": 69,
+          "params": [
+            "t",
+            "name"
+          ]
+        },
+        {
+          "name": "CRDDirectory",
+          "startLine": 72,
+          "endLine": 82,
+          "params": []
+        },
+        {
+          "name": "makefileCRDDirectory",
+          "startLine": 84,
+          "endLine": 93,
+          "params": []
+        },
+        {
+          "name": "checkCRDDirectory",
+          "startLine": 95,
+          "endLine": 106,
+          "params": [
+            "path"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PathForCRD",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "CRDDirectory",
+          "line": 72,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PathForCRD",
+          "callee": "CRDDirectory",
+          "lineNumber": 52
+        },
+        {
+          "caller": "PathForCRD",
+          "callee": "t.Fatalf",
+          "lineNumber": 54
+        },
+        {
+          "caller": "PathForCRD",
+          "callee": "filepath.Join",
+          "lineNumber": 57
+        },
+        {
+          "caller": "PathForCRD",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 57
+        },
+        {
+          "caller": "PathForCRD",
+          "callee": "os.Stat",
+          "lineNumber": 59
+        },
+        {
+          "caller": "PathForCRD",
+          "callee": "t.Fatal",
+          "lineNumber": 61
+        },
+        {
+          "caller": "PathForCRD",
+          "callee": "info.IsDir",
+          "lineNumber": 64
+        },
+        {
+          "caller": "PathForCRD",
+          "callee": "t.Fatalf",
+          "lineNumber": 65
+        },
+        {
+          "caller": "CRDDirectory",
+          "callee": "makefileCRDDirectory",
+          "lineNumber": 76
+        },
+        {
+          "caller": "CRDDirectory",
+          "callee": "fmt.Errorf",
+          "lineNumber": 81
+        },
+        {
+          "caller": "makefileCRDDirectory",
+          "callee": "checkCRDDirectory",
+          "lineNumber": 87
+        },
+        {
+          "caller": "checkCRDDirectory",
+          "callee": "os.Stat",
+          "lineNumber": 96
+        },
+        {
+          "caller": "checkCRDDirectory",
+          "callee": "info.IsDir",
+          "lineNumber": 101
+        },
+        {
+          "caller": "checkCRDDirectory",
+          "callee": "fmt.Errorf",
+          "lineNumber": 102
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "make/config/samplewebhook/sample/main.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 162,
+      "nonEmptyLines": 139,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 33,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "Name",
+          "startLine": 92,
+          "endLine": 94,
+          "params": []
+        },
+        {
+          "name": "Present",
+          "startLine": 101,
+          "endLine": 112,
+          "params": [
+            "ch"
+          ]
+        },
+        {
+          "name": "CleanUp",
+          "startLine": 120,
+          "endLine": 123,
+          "params": [
+            "ch"
+          ]
+        },
+        {
+          "name": "Initialize",
+          "startLine": 134,
+          "endLine": 147,
+          "params": [
+            "kubeClientConfig",
+            "stopCh"
+          ]
+        },
+        {
+          "name": "loadConfig",
+          "startLine": 151,
+          "endLine": 162,
+          "params": [
+            "cfgJSON"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "customDNSProviderSolver",
+          "startLine": 52,
+          "endLine": 60,
+          "methods": [
+            "Name",
+            "Present",
+            "CleanUp",
+            "Initialize"
+          ],
+          "properties": []
+        },
+        {
+          "name": "customDNSProviderConfig",
+          "startLine": 76,
+          "endLine": 84,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Name",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "Present",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "CleanUp",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "Initialize",
+          "line": 134,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "panic",
+          "lineNumber": 35
+        },
+        {
+          "caller": "main",
+          "callee": "cmd.RunWebhookServer",
+          "lineNumber": 43
+        },
+        {
+          "caller": "Present",
+          "callee": "loadConfig",
+          "lineNumber": 102
+        },
+        {
+          "caller": "Present",
+          "callee": "fmt.Fprintf",
+          "lineNumber": 108
+        },
+        {
+          "caller": "loadConfig",
+          "callee": "json.Unmarshal",
+          "lineNumber": 157
+        },
+        {
+          "caller": "loadConfig",
+          "callee": "fmt.Errorf",
+          "lineNumber": 158
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 4,
+        "functionCount": 6,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "pkg/acme/util.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "IsFinalState",
+          "startLine": 30,
+          "endLine": 35,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "IsFailureState",
+          "startLine": 37,
+          "endLine": 44,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "PrivateKeySelector",
+          "startLine": 48,
+          "endLine": 53,
+          "params": [
+            "sel"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IsFinalState",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "IsFailureState",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "PrivateKeySelector",
+          "line": 48,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "IsFinalState",
+          "callee": "IsFailureState",
+          "lineNumber": 34
+        },
+        {
+          "caller": "PrivateKeySelector",
+          "callee": "len",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/acme/webhook/apis/acme/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 18,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/acme/webhook/apis/acme/v1alpha1/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 18,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/acme/webhook/apis/acme/v1alpha1/register.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 46,
+      "functions": [
+        {
+          "name": "Resource",
+          "startLine": 31,
+          "endLine": 33,
+          "params": [
+            "resource"
+          ]
+        },
+        {
+          "name": "init",
+          "startLine": 43,
+          "endLine": 48,
+          "params": []
+        },
+        {
+          "name": "addKnownTypes",
+          "startLine": 51,
+          "endLine": 57,
+          "params": [
+            "scheme"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Resource",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource(resource).GroupResource",
+          "lineNumber": 32
+        },
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource",
+          "lineNumber": 32
+        },
+        {
+          "caller": "init",
+          "callee": "localSchemeBuilder.Register",
+          "lineNumber": 47
+        },
+        {
+          "caller": "addKnownTypes",
+          "callee": "scheme.AddKnownTypes",
+          "lineNumber": 52
+        },
+        {
+          "caller": "addKnownTypes",
+          "callee": "metav1.AddToGroupVersion",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 139,
+      "nonEmptyLines": 115,
+      "classes": [
+        {
+          "name": "ChallengePayload",
+          "startLine": 29,
+          "endLine": 39,
+          "methods": [],
+          "properties": [
+            "Request",
+            "Response"
+          ]
+        },
+        {
+          "name": "ChallengeRequest",
+          "startLine": 43,
+          "endLine": 112,
+          "methods": [],
+          "properties": [
+            "UID",
+            "Action",
+            "Type",
+            "DNSName",
+            "Key",
+            "ResourceNamespace",
+            "ResolvedFQDN",
+            "ResolvedZone",
+            "AllowAmbientCredentials",
+            "Config"
+          ]
+        },
+        {
+          "name": "ChallengeResponse",
+          "startLine": 126,
+          "endLine": 139,
+          "methods": [],
+          "properties": [
+            "UID",
+            "Success",
+            "Result"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ChallengePayload",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "ChallengeRequest",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "ChallengeResponse",
+          "line": 126,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "pkg/acme/webhook/apis/acme/v1alpha1/zz_generated.deepcopy.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 105,
+      "nonEmptyLines": 91,
+      "functions": [
+        {
+          "name": "DeepCopyInto",
+          "startLine": 31,
+          "endLine": 45,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 48,
+          "endLine": 55,
+          "params": []
+        },
+        {
+          "name": "DeepCopyObject",
+          "startLine": 58,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 66,
+          "endLine": 74,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 77,
+          "endLine": 84,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 87,
+          "endLine": 95,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 98,
+          "endLine": 105,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeepCopyInto",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyObject",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 98,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 36
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 37
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 41
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 42
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 52
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 53
+        },
+        {
+          "caller": "DeepCopyObject",
+          "callee": "in.DeepCopy",
+          "lineNumber": 59
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 70
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 71
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 81
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 82
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 91
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 92
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 102
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 103
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/acme/webhook/apiserver/apiserver.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 205,
+      "nonEmptyLines": 171,
+      "functions": [
+        {
+          "name": "init",
+          "startLine": 45,
+          "endLine": 61,
+          "params": []
+        },
+        {
+          "name": "Complete",
+          "startLine": 95,
+          "endLine": 105,
+          "params": []
+        },
+        {
+          "name": "New",
+          "startLine": 111,
+          "endLine": 171,
+          "params": []
+        },
+        {
+          "name": "postStartHookName",
+          "startLine": 173,
+          "endLine": 180,
+          "params": [
+            "hook"
+          ]
+        },
+        {
+          "name": "appendUniqueGroupVersion",
+          "startLine": 182,
+          "endLine": 195,
+          "params": [
+            "slice"
+          ]
+        },
+        {
+          "name": "solversByName",
+          "startLine": 197,
+          "endLine": 205,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "Config",
+          "startLine": 63,
+          "endLine": 66,
+          "methods": [
+            "Complete"
+          ],
+          "properties": [
+            "GenericConfig",
+            "ExtraConfig"
+          ]
+        },
+        {
+          "name": "ExtraConfig",
+          "startLine": 68,
+          "endLine": 75,
+          "methods": [],
+          "properties": [
+            "SolverGroup",
+            "Solvers"
+          ]
+        },
+        {
+          "name": "ChallengeServer",
+          "startLine": 78,
+          "endLine": 80,
+          "methods": [],
+          "properties": [
+            "GenericAPIServer"
+          ]
+        },
+        {
+          "name": "completedConfig",
+          "startLine": 82,
+          "endLine": 87,
+          "methods": [
+            "New"
+          ],
+          "properties": [
+            "GenericConfig",
+            "ExtraConfig",
+            "restConfig"
+          ]
+        },
+        {
+          "name": "CompletedConfig",
+          "startLine": 89,
+          "endLine": 92,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Config",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "ExtraConfig",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "ChallengeServer",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "CompletedConfig",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "Complete",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "New",
+          "line": 111,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "init",
+          "callee": "utilruntime.Must",
+          "lineNumber": 46
+        },
+        {
+          "caller": "init",
+          "callee": "whapi.AddToScheme",
+          "lineNumber": 46
+        },
+        {
+          "caller": "init",
+          "callee": "metav1.AddToGroupVersion",
+          "lineNumber": 50
+        },
+        {
+          "caller": "init",
+          "callee": "Scheme.AddUnversionedTypes",
+          "lineNumber": 54
+        },
+        {
+          "caller": "Complete",
+          "callee": "basecompatibility.NewEffectiveVersionFromString",
+          "lineNumber": 96
+        },
+        {
+          "caller": "Complete",
+          "callee": "genericapiserver.DefaultOpenAPIConfig",
+          "lineNumber": 97
+        },
+        {
+          "caller": "Complete",
+          "callee": "openapi.NewDefinitionNamer",
+          "lineNumber": 97
+        },
+        {
+          "caller": "Complete",
+          "callee": "genericapiserver.DefaultOpenAPIV3Config",
+          "lineNumber": 98
+        },
+        {
+          "caller": "Complete",
+          "callee": "openapi.NewDefinitionNamer",
+          "lineNumber": 98
+        },
+        {
+          "caller": "Complete",
+          "callee": "c.GenericConfig.Complete",
+          "lineNumber": 101
+        },
+        {
+          "caller": "New",
+          "callee": "c.GenericConfig.New",
+          "lineNumber": 112
+        },
+        {
+          "caller": "New",
+          "callee": "genericapiserver.NewEmptyDelegate",
+          "lineNumber": 112
+        },
+        {
+          "caller": "New",
+          "callee": "solversByName",
+          "lineNumber": 132
+        },
+        {
+          "caller": "New",
+          "callee": "solver.Name",
+          "lineNumber": 136
+        },
+        {
+          "caller": "New",
+          "callee": "challengepayload.NewREST",
+          "lineNumber": 139
+        },
+        {
+          "caller": "New",
+          "callee": "appendUniqueGroupVersion",
+          "lineNumber": 141
+        },
+        {
+          "caller": "New",
+          "callee": "s.GenericAPIServer.InstallAPIGroup",
+          "lineNumber": 153
+        },
+        {
+          "caller": "New",
+          "callee": "fmt.Errorf",
+          "lineNumber": 154
+        },
+        {
+          "caller": "New",
+          "callee": "postStartHookName",
+          "lineNumber": 159
+        },
+        {
+          "caller": "New",
+          "callee": "len",
+          "lineNumber": 160
+        },
+        {
+          "caller": "New",
+          "callee": "s.GenericAPIServer.AddPostStartHookOrDie",
+          "lineNumber": 163
+        },
+        {
+          "caller": "New",
+          "callee": "solver.Initialize",
+          "lineNumber": 165
+        },
+        {
+          "caller": "New",
+          "callee": "context.Done",
+          "lineNumber": 165
+        },
+        {
+          "caller": "postStartHookName",
+          "callee": "append",
+          "lineNumber": 175
+        },
+        {
+          "caller": "postStartHookName",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 175
+        },
+        {
+          "caller": "postStartHookName",
+          "callee": "hook.Name",
+          "lineNumber": 175
+        },
+        {
+          "caller": "postStartHookName",
+          "callee": "len",
+          "lineNumber": 176
+        },
+        {
+          "caller": "postStartHookName",
+          "callee": "strings.Join",
+          "lineNumber": 179
+        },
+        {
+          "caller": "postStartHookName",
+          "callee": "append",
+          "lineNumber": 179
+        },
+        {
+          "caller": "appendUniqueGroupVersion",
+          "callee": "make",
+          "lineNumber": 190
+        },
+        {
+          "caller": "appendUniqueGroupVersion",
+          "callee": "len",
+          "lineNumber": 190
+        },
+        {
+          "caller": "appendUniqueGroupVersion",
+          "callee": "append",
+          "lineNumber": 192
+        },
+        {
+          "caller": "solversByName",
+          "callee": "s.Name",
+          "lineNumber": 201
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 5
+      }
+    },
+    {
+      "path": "pkg/acme/webhook/cmd/cmd.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "RunWebhookServer",
+          "startLine": 38,
+          "endLine": 57,
+          "params": [
+            "groupName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RunWebhookServer",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "RunWebhookServer",
+          "callee": "util.SetupExitHandler",
+          "lineNumber": 39
+        },
+        {
+          "caller": "RunWebhookServer",
+          "callee": "context.Background",
+          "lineNumber": 39
+        },
+        {
+          "caller": "RunWebhookServer",
+          "callee": "exit",
+          "lineNumber": 40
+        },
+        {
+          "caller": "RunWebhookServer",
+          "callee": "logs.InitLogs",
+          "lineNumber": 42
+        },
+        {
+          "caller": "RunWebhookServer",
+          "callee": "logs.FlushLogs",
+          "lineNumber": 43
+        },
+        {
+          "caller": "RunWebhookServer",
+          "callee": "ctrl.SetLogger",
+          "lineNumber": 44
+        },
+        {
+          "caller": "RunWebhookServer",
+          "callee": "logf.NewContext",
+          "lineNumber": 45
+        },
+        {
+          "caller": "RunWebhookServer",
+          "callee": "len",
+          "lineNumber": 47
+        },
+        {
+          "caller": "RunWebhookServer",
+          "callee": "os.Getenv",
+          "lineNumber": 47
+        },
+        {
+          "caller": "RunWebhookServer",
+          "callee": "runtime.GOMAXPROCS",
+          "lineNumber": 48
+        },
+        {
+          "caller": "RunWebhookServer",
+          "callee": "runtime.NumCPU",
+          "lineNumber": 48
+        },
+        {
+          "caller": "RunWebhookServer",
+          "callee": "server.NewCommandStartWebhookServer",
+          "lineNumber": 51
+        },
+        {
+          "caller": "RunWebhookServer",
+          "callee": "cmd.ExecuteContext",
+          "lineNumber": 53
+        },
+        {
+          "caller": "RunWebhookServer",
+          "callee": "logf.Log.Error",
+          "lineNumber": 54
+        },
+        {
+          "caller": "RunWebhookServer",
+          "callee": "util.SetExitCode",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/acme/webhook/cmd/server/start.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 146,
+      "nonEmptyLines": 118,
+      "functions": [
+        {
+          "name": "NewWebhookServerOptions",
+          "startLine": 44,
+          "endLine": 61,
+          "params": [
+            "groupName"
+          ]
+        },
+        {
+          "name": "NewCommandStartWebhookServer",
+          "startLine": 63,
+          "endLine": 91,
+          "params": [
+            "_",
+            "groupName"
+          ]
+        },
+        {
+          "name": "Validate",
+          "startLine": 93,
+          "endLine": 103,
+          "params": [
+            "args"
+          ]
+        },
+        {
+          "name": "Complete",
+          "startLine": 105,
+          "endLine": 107,
+          "params": []
+        },
+        {
+          "name": "Config",
+          "startLine": 112,
+          "endLine": 131,
+          "params": []
+        },
+        {
+          "name": "RunWebhookServer",
+          "startLine": 135,
+          "endLine": 146,
+          "params": [
+            "ctx"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WebhookServerOptions",
+          "startLine": 35,
+          "endLine": 42,
+          "methods": [
+            "Validate",
+            "Complete",
+            "Config",
+            "RunWebhookServer"
+          ],
+          "properties": [
+            "Logging",
+            "RecommendedOptions",
+            "SolverGroup",
+            "Solvers"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WebhookServerOptions",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "NewWebhookServerOptions",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "NewCommandStartWebhookServer",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "Validate",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "Complete",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "Config",
+          "line": 112,
+          "isDefault": false
+        },
+        {
+          "name": "RunWebhookServer",
+          "line": 135,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewWebhookServerOptions",
+          "callee": "logs.NewOptions",
+          "lineNumber": 46
+        },
+        {
+          "caller": "NewWebhookServerOptions",
+          "callee": "genericoptions.NewRecommendedOptions",
+          "lineNumber": 48
+        },
+        {
+          "caller": "NewWebhookServerOptions",
+          "callee": "apiserver.Codecs.LegacyCodec",
+          "lineNumber": 50
+        },
+        {
+          "caller": "NewCommandStartWebhookServer",
+          "callee": "NewWebhookServerOptions",
+          "lineNumber": 64
+        },
+        {
+          "caller": "NewCommandStartWebhookServer",
+          "callee": "c.Context",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewCommandStartWebhookServer",
+          "callee": "o.Complete",
+          "lineNumber": 73
+        },
+        {
+          "caller": "NewCommandStartWebhookServer",
+          "callee": "o.Validate",
+          "lineNumber": 76
+        },
+        {
+          "caller": "NewCommandStartWebhookServer",
+          "callee": "o.RunWebhookServer",
+          "lineNumber": 79
+        },
+        {
+          "caller": "NewCommandStartWebhookServer",
+          "callee": "cmd.Flags",
+          "lineNumber": 86
+        },
+        {
+          "caller": "NewCommandStartWebhookServer",
+          "callee": "logf.AddFlags",
+          "lineNumber": 87
+        },
+        {
+          "caller": "NewCommandStartWebhookServer",
+          "callee": "o.RecommendedOptions.AddFlags",
+          "lineNumber": 88
+        },
+        {
+          "caller": "Validate",
+          "callee": "logf.ValidateAndApply",
+          "lineNumber": 94
+        },
+        {
+          "caller": "Validate",
+          "callee": "o.RecommendedOptions.Validate",
+          "lineNumber": 98
+        },
+        {
+          "caller": "Validate",
+          "callee": "len",
+          "lineNumber": 98
+        },
+        {
+          "caller": "Validate",
+          "callee": "fmt.Errorf",
+          "lineNumber": 99
+        },
+        {
+          "caller": "Config",
+          "callee": "o.RecommendedOptions.SecureServing.MaybeDefaultWithSelfSignedCerts",
+          "lineNumber": 114
+        },
+        {
+          "caller": "Config",
+          "callee": "net.ParseIP",
+          "lineNumber": 114
+        },
+        {
+          "caller": "Config",
+          "callee": "fmt.Errorf",
+          "lineNumber": 115
+        },
+        {
+          "caller": "Config",
+          "callee": "genericapiserver.NewRecommendedConfig",
+          "lineNumber": 118
+        },
+        {
+          "caller": "Config",
+          "callee": "o.RecommendedOptions.ApplyTo",
+          "lineNumber": 119
+        },
+        {
+          "caller": "RunWebhookServer",
+          "callee": "o.Config",
+          "lineNumber": 136
+        },
+        {
+          "caller": "RunWebhookServer",
+          "callee": "config.Complete().New",
+          "lineNumber": 141
+        },
+        {
+          "caller": "RunWebhookServer",
+          "callee": "config.Complete",
+          "lineNumber": 141
+        },
+        {
+          "caller": "RunWebhookServer",
+          "callee": "server.GenericAPIServer.PrepareRun().RunWithContext",
+          "lineNumber": 145
+        },
+        {
+          "caller": "RunWebhookServer",
+          "callee": "server.GenericAPIServer.PrepareRun",
+          "lineNumber": 145
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/acme/webhook/openapi/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 13,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/acme/webhook/openapi/zz_generated.openapi.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 4389,
+      "nonEmptyLines": 4298,
+      "functions": [
+        {
+          "name": "GetOpenAPIDefinitions",
+          "startLine": 31,
+          "endLine": 117,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_webhook_apis_acme_v1alpha1_ChallengePayload",
+          "startLine": 119,
+          "endLine": 158,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_webhook_apis_acme_v1alpha1_ChallengeRequest",
+          "startLine": 160,
+          "endLine": 250,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_webhook_apis_acme_v1alpha1_ChallengeResponse",
+          "startLine": 252,
+          "endLine": 288,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_ConversionRequest",
+          "startLine": 290,
+          "endLine": 338,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_ConversionResponse",
+          "startLine": 340,
+          "endLine": 387,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_ConversionReview",
+          "startLine": 389,
+          "endLine": 428,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_CustomResourceColumnDefinition",
+          "startLine": 430,
+          "endLine": 487,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_CustomResourceConversion",
+          "startLine": 489,
+          "endLine": 517,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinition",
+          "startLine": 519,
+          "endLine": 568,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionCondition",
+          "startLine": 570,
+          "endLine": 620,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionList",
+          "startLine": 622,
+          "endLine": 671,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionNames",
+          "startLine": 673,
+          "endLine": 755,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionSpec",
+          "startLine": 757,
+          "endLine": 826,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionStatus",
+          "startLine": 828,
+          "endLine": 890,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionVersion",
+          "startLine": 892,
+          "endLine": 994,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_CustomResourceSubresourceScale",
+          "startLine": 996,
+          "endLine": 1031,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_CustomResourceSubresourceStatus",
+          "startLine": 1033,
+          "endLine": 1042,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_CustomResourceSubresources",
+          "startLine": 1044,
+          "endLine": 1069,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_CustomResourceValidation",
+          "startLine": 1071,
+          "endLine": 1090,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_ExternalDocumentation",
+          "startLine": 1092,
+          "endLine": 1115,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_JSON",
+          "startLine": 1117,
+          "endLine": 1127,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_JSONSchemaProps",
+          "startLine": 1129,
+          "endLine": 1529,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_JSONSchemaPropsOrArray",
+          "startLine": 1531,
+          "endLine": 1541,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_JSONSchemaPropsOrBool",
+          "startLine": 1543,
+          "endLine": 1553,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_JSONSchemaPropsOrStringArray",
+          "startLine": 1555,
+          "endLine": 1565,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_SelectableField",
+          "startLine": 1567,
+          "endLine": 1587,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_ServiceReference",
+          "startLine": 1589,
+          "endLine": 1631,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_ValidationRule",
+          "startLine": 1633,
+          "endLine": 1689,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_WebhookClientConfig",
+          "startLine": 1691,
+          "endLine": 1724,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_apiextensions_v1_WebhookConversion",
+          "startLine": 1726,
+          "endLine": 1766,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_APIGroup",
+          "startLine": 1768,
+          "endLine": 1849,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_APIGroupList",
+          "startLine": 1851,
+          "endLine": 1898,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_APIResource",
+          "startLine": 1900,
+          "endLine": 2020,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_APIResourceList",
+          "startLine": 2022,
+          "endLine": 2077,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_APIVersions",
+          "startLine": 2079,
+          "endLine": 2146,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_ApplyOptions",
+          "startLine": 2148,
+          "endLine": 2210,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_Condition",
+          "startLine": 2212,
+          "endLine": 2271,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_CreateOptions",
+          "startLine": 2273,
+          "endLine": 2332,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_DeleteOptions",
+          "startLine": 2334,
+          "endLine": 2415,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_Duration",
+          "startLine": 2417,
+          "endLine": 2427,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_FieldSelectorRequirement",
+          "startLine": 2429,
+          "endLine": 2477,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_FieldsV1",
+          "startLine": 2479,
+          "endLine": 2488,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_GetOptions",
+          "startLine": 2490,
+          "endLine": 2522,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_GroupKind",
+          "startLine": 2524,
+          "endLine": 2550,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_GroupResource",
+          "startLine": 2552,
+          "endLine": 2578,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_GroupVersion",
+          "startLine": 2580,
+          "endLine": 2606,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_GroupVersionForDiscovery",
+          "startLine": 2608,
+          "endLine": 2636,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_GroupVersionKind",
+          "startLine": 2638,
+          "endLine": 2671,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_GroupVersionResource",
+          "startLine": 2673,
+          "endLine": 2706,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_InternalEvent",
+          "startLine": 2708,
+          "endLine": 2732,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_LabelSelector",
+          "startLine": 2734,
+          "endLine": 2787,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_LabelSelectorRequirement",
+          "startLine": 2789,
+          "endLine": 2837,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_List",
+          "startLine": 2839,
+          "endLine": 2887,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_ListMeta",
+          "startLine": 2889,
+          "endLine": 2928,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_ListOptions",
+          "startLine": 2930,
+          "endLine": 3025,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_ManagedFieldsEntry",
+          "startLine": 3027,
+          "endLine": 3087,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_MicroTime",
+          "startLine": 3089,
+          "endLine": 3099,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_ObjectMeta",
+          "startLine": 3101,
+          "endLine": 3278,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_OwnerReference",
+          "startLine": 3280,
+          "endLine": 3343,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_PartialObjectMetadata",
+          "startLine": 3345,
+          "endLine": 3379,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_PartialObjectMetadataList",
+          "startLine": 3381,
+          "endLine": 3430,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_Patch",
+          "startLine": 3432,
+          "endLine": 3441,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_PatchOptions",
+          "startLine": 3443,
+          "endLine": 3509,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_Preconditions",
+          "startLine": 3511,
+          "endLine": 3536,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_RootPaths",
+          "startLine": 3538,
+          "endLine": 3570,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_ServerAddressByClientCIDR",
+          "startLine": 3572,
+          "endLine": 3600,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_Status",
+          "startLine": 3602,
+          "endLine": 3675,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_StatusCause",
+          "startLine": 3677,
+          "endLine": 3709,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_StatusDetails",
+          "startLine": 3711,
+          "endLine": 3778,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_Table",
+          "startLine": 3780,
+          "endLine": 3853,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_TableColumnDefinition",
+          "startLine": 3855,
+          "endLine": 3907,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_TableOptions",
+          "startLine": 3909,
+          "endLine": 3941,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_TableRow",
+          "startLine": 3943,
+          "endLine": 4001,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_TableRowCondition",
+          "startLine": 4003,
+          "endLine": 4045,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_Time",
+          "startLine": 4047,
+          "endLine": 4057,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_Timestamp",
+          "startLine": 4059,
+          "endLine": 4087,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_TypeMeta",
+          "startLine": 4089,
+          "endLine": 4114,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_UpdateOptions",
+          "startLine": 4116,
+          "endLine": 4175,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_pkg_apis_meta_v1_WatchEvent",
+          "startLine": 4177,
+          "endLine": 4204,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_k8sio_apimachinery_pkg_runtime_RawExtension",
+          "startLine": 4206,
+          "endLine": 4215,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_k8sio_apimachinery_pkg_runtime_TypeMeta",
+          "startLine": 4217,
+          "endLine": 4240,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_k8sio_apimachinery_pkg_runtime_Unknown",
+          "startLine": 4242,
+          "endLine": 4282,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "schema_k8sio_apimachinery_pkg_version_Info",
+          "startLine": 4284,
+          "endLine": 4389,
+          "params": [
+            "ref"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "GetOpenAPIDefinitions",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_webhook_apis_acme_v1alpha1_ChallengePayload",
+          "lineNumber": 33
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_webhook_apis_acme_v1alpha1_ChallengeRequest",
+          "lineNumber": 34
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_webhook_apis_acme_v1alpha1_ChallengeResponse",
+          "lineNumber": 35
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_ConversionRequest",
+          "lineNumber": 36
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_ConversionResponse",
+          "lineNumber": 37
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_ConversionReview",
+          "lineNumber": 38
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_CustomResourceColumnDefinition",
+          "lineNumber": 39
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_CustomResourceConversion",
+          "lineNumber": 40
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinition",
+          "lineNumber": 41
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionCondition",
+          "lineNumber": 42
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionList",
+          "lineNumber": 43
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionNames",
+          "lineNumber": 44
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionSpec",
+          "lineNumber": 45
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionStatus",
+          "lineNumber": 46
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionVersion",
+          "lineNumber": 47
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_CustomResourceSubresourceScale",
+          "lineNumber": 48
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_CustomResourceSubresourceStatus",
+          "lineNumber": 49
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_CustomResourceSubresources",
+          "lineNumber": 50
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_CustomResourceValidation",
+          "lineNumber": 51
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_ExternalDocumentation",
+          "lineNumber": 52
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_JSON",
+          "lineNumber": 53
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_JSONSchemaProps",
+          "lineNumber": 54
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_JSONSchemaPropsOrArray",
+          "lineNumber": 55
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_JSONSchemaPropsOrBool",
+          "lineNumber": 56
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_JSONSchemaPropsOrStringArray",
+          "lineNumber": 57
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_SelectableField",
+          "lineNumber": 58
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_ServiceReference",
+          "lineNumber": 59
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_ValidationRule",
+          "lineNumber": 60
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_WebhookClientConfig",
+          "lineNumber": 61
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_apiextensions_v1_WebhookConversion",
+          "lineNumber": 62
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_APIGroup",
+          "lineNumber": 63
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_APIGroupList",
+          "lineNumber": 64
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_APIResource",
+          "lineNumber": 65
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_APIResourceList",
+          "lineNumber": 66
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_APIVersions",
+          "lineNumber": 67
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_ApplyOptions",
+          "lineNumber": 68
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_Condition",
+          "lineNumber": 69
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_CreateOptions",
+          "lineNumber": 70
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_DeleteOptions",
+          "lineNumber": 71
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_Duration",
+          "lineNumber": 72
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_FieldSelectorRequirement",
+          "lineNumber": 73
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_FieldsV1",
+          "lineNumber": 74
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_GetOptions",
+          "lineNumber": 75
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_GroupKind",
+          "lineNumber": 76
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_GroupResource",
+          "lineNumber": 77
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_GroupVersion",
+          "lineNumber": 78
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_GroupVersionForDiscovery",
+          "lineNumber": 79
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_GroupVersionKind",
+          "lineNumber": 80
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_GroupVersionResource",
+          "lineNumber": 81
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_InternalEvent",
+          "lineNumber": 82
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_LabelSelector",
+          "lineNumber": 83
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_LabelSelectorRequirement",
+          "lineNumber": 84
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_List",
+          "lineNumber": 85
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_ListMeta",
+          "lineNumber": 86
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_ListOptions",
+          "lineNumber": 87
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_ManagedFieldsEntry",
+          "lineNumber": 88
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_MicroTime",
+          "lineNumber": 89
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_ObjectMeta",
+          "lineNumber": 90
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_OwnerReference",
+          "lineNumber": 91
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_PartialObjectMetadata",
+          "lineNumber": 92
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_PartialObjectMetadataList",
+          "lineNumber": 93
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_Patch",
+          "lineNumber": 94
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_PatchOptions",
+          "lineNumber": 95
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_Preconditions",
+          "lineNumber": 96
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_RootPaths",
+          "lineNumber": 97
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_ServerAddressByClientCIDR",
+          "lineNumber": 98
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_Status",
+          "lineNumber": 99
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_StatusCause",
+          "lineNumber": 100
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_StatusDetails",
+          "lineNumber": 101
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_Table",
+          "lineNumber": 102
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_TableColumnDefinition",
+          "lineNumber": 103
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_TableOptions",
+          "lineNumber": 104
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_TableRow",
+          "lineNumber": 105
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_TableRowCondition",
+          "lineNumber": 106
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_Time",
+          "lineNumber": 107
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_Timestamp",
+          "lineNumber": 108
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_TypeMeta",
+          "lineNumber": 109
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_UpdateOptions",
+          "lineNumber": 110
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_pkg_apis_meta_v1_WatchEvent",
+          "lineNumber": 111
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_k8sio_apimachinery_pkg_runtime_RawExtension",
+          "lineNumber": 112
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_k8sio_apimachinery_pkg_runtime_TypeMeta",
+          "lineNumber": 113
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_k8sio_apimachinery_pkg_runtime_Unknown",
+          "lineNumber": 114
+        },
+        {
+          "caller": "GetOpenAPIDefinitions",
+          "callee": "schema_k8sio_apimachinery_pkg_version_Info",
+          "lineNumber": 115
+        },
+        {
+          "caller": "schema_webhook_apis_acme_v1alpha1_ChallengePayload",
+          "callee": "ref",
+          "lineNumber": 143
+        },
+        {
+          "caller": "schema_webhook_apis_acme_v1alpha1_ChallengePayload",
+          "callee": "ref",
+          "lineNumber": 149
+        },
+        {
+          "caller": "schema_webhook_apis_acme_v1alpha1_ChallengeRequest",
+          "callee": "ref",
+          "lineNumber": 240
+        },
+        {
+          "caller": "schema_webhook_apis_acme_v1alpha1_ChallengeResponse",
+          "callee": "ref",
+          "lineNumber": 278
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_ConversionRequest",
+          "callee": "ref",
+          "lineNumber": 325
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_ConversionResponse",
+          "callee": "ref",
+          "lineNumber": 367
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_ConversionResponse",
+          "callee": "ref",
+          "lineNumber": 377
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_ConversionReview",
+          "callee": "ref",
+          "lineNumber": 413
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_ConversionReview",
+          "callee": "ref",
+          "lineNumber": 419
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_CustomResourceConversion",
+          "callee": "ref",
+          "lineNumber": 507
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinition",
+          "callee": "ref",
+          "lineNumber": 544
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinition",
+          "callee": "ref",
+          "lineNumber": 551
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinition",
+          "callee": "ref",
+          "lineNumber": 558
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionCondition",
+          "callee": "ref",
+          "lineNumber": 596
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionList",
+          "callee": "ref",
+          "lineNumber": 647
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionList",
+          "callee": "ref",
+          "lineNumber": 658
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionSpec",
+          "callee": "ref",
+          "lineNumber": 776
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionSpec",
+          "callee": "ref",
+          "lineNumber": 800
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionSpec",
+          "callee": "ref",
+          "lineNumber": 809
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionStatus",
+          "callee": "ref",
+          "lineNumber": 851
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionStatus",
+          "callee": "ref",
+          "lineNumber": 861
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionVersion",
+          "callee": "ref",
+          "lineNumber": 940
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionVersion",
+          "callee": "ref",
+          "lineNumber": 946
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionVersion",
+          "callee": "ref",
+          "lineNumber": 962
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionVersion",
+          "callee": "ref",
+          "lineNumber": 981
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_CustomResourceSubresources",
+          "callee": "ref",
+          "lineNumber": 1054
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_CustomResourceSubresources",
+          "callee": "ref",
+          "lineNumber": 1060
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_CustomResourceValidation",
+          "callee": "ref",
+          "lineNumber": 1081
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSON",
+          "callee": "v1.JSON{}.OpenAPISchemaType",
+          "lineNumber": 1122
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSON",
+          "callee": "v1.JSON{}.OpenAPISchemaFormat",
+          "lineNumber": 1123
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaProps",
+          "callee": "ref",
+          "lineNumber": 1182
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaProps",
+          "callee": "ref",
+          "lineNumber": 1262
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaProps",
+          "callee": "ref",
+          "lineNumber": 1301
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaProps",
+          "callee": "ref",
+          "lineNumber": 1316
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaProps",
+          "callee": "ref",
+          "lineNumber": 1334
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaProps",
+          "callee": "ref",
+          "lineNumber": 1352
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaProps",
+          "callee": "ref",
+          "lineNumber": 1360
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaProps",
+          "callee": "ref",
+          "lineNumber": 1371
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaProps",
+          "callee": "ref",
+          "lineNumber": 1379
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaProps",
+          "callee": "ref",
+          "lineNumber": 1390
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaProps",
+          "callee": "ref",
+          "lineNumber": 1403
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaProps",
+          "callee": "ref",
+          "lineNumber": 1411
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaProps",
+          "callee": "ref",
+          "lineNumber": 1422
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaProps",
+          "callee": "ref",
+          "lineNumber": 1430
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaProps",
+          "callee": "ref",
+          "lineNumber": 1435
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaProps",
+          "callee": "ref",
+          "lineNumber": 1517
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaPropsOrArray",
+          "callee": "v1.JSONSchemaPropsOrArray{}.OpenAPISchemaType",
+          "lineNumber": 1536
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaPropsOrArray",
+          "callee": "v1.JSONSchemaPropsOrArray{}.OpenAPISchemaFormat",
+          "lineNumber": 1537
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaPropsOrBool",
+          "callee": "v1.JSONSchemaPropsOrBool{}.OpenAPISchemaType",
+          "lineNumber": 1548
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaPropsOrBool",
+          "callee": "v1.JSONSchemaPropsOrBool{}.OpenAPISchemaFormat",
+          "lineNumber": 1549
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaPropsOrStringArray",
+          "callee": "v1.JSONSchemaPropsOrStringArray{}.OpenAPISchemaType",
+          "lineNumber": 1560
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_JSONSchemaPropsOrStringArray",
+          "callee": "v1.JSONSchemaPropsOrStringArray{}.OpenAPISchemaFormat",
+          "lineNumber": 1561
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_WebhookClientConfig",
+          "callee": "ref",
+          "lineNumber": 1708
+        },
+        {
+          "caller": "schema_pkg_apis_apiextensions_v1_WebhookConversion",
+          "callee": "ref",
+          "lineNumber": 1736
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_APIGroup",
+          "callee": "ref",
+          "lineNumber": 1810
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_APIGroup",
+          "callee": "ref",
+          "lineNumber": 1820
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_APIGroup",
+          "callee": "ref",
+          "lineNumber": 1836
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_APIGroupList",
+          "callee": "ref",
+          "lineNumber": 1885
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_APIResourceList",
+          "callee": "ref",
+          "lineNumber": 2064
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_APIVersions",
+          "callee": "ref",
+          "lineNumber": 2133
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_Condition",
+          "callee": "ref",
+          "lineNumber": 2245
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_DeleteOptions",
+          "callee": "ref",
+          "lineNumber": 2365
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_Duration",
+          "callee": "metav1.Duration{}.OpenAPISchemaType",
+          "lineNumber": 2422
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_Duration",
+          "callee": "metav1.Duration{}.OpenAPISchemaFormat",
+          "lineNumber": 2423
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_LabelSelector",
+          "callee": "ref",
+          "lineNumber": 2770
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_List",
+          "callee": "ref",
+          "lineNumber": 2864
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_List",
+          "callee": "ref",
+          "lineNumber": 2874
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_ManagedFieldsEntry",
+          "callee": "ref",
+          "lineNumber": 3058
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_ManagedFieldsEntry",
+          "callee": "ref",
+          "lineNumber": 3071
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_MicroTime",
+          "callee": "metav1.MicroTime{}.OpenAPISchemaType",
+          "lineNumber": 3094
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_MicroTime",
+          "callee": "metav1.MicroTime{}.OpenAPISchemaFormat",
+          "lineNumber": 3095
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_ObjectMeta",
+          "callee": "ref",
+          "lineNumber": 3160
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_ObjectMeta",
+          "callee": "ref",
+          "lineNumber": 3166
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_ObjectMeta",
+          "callee": "ref",
+          "lineNumber": 3226
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_ObjectMeta",
+          "callee": "ref",
+          "lineNumber": 3266
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_PartialObjectMetadata",
+          "callee": "ref",
+          "lineNumber": 3370
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_PartialObjectMetadataList",
+          "callee": "ref",
+          "lineNumber": 3406
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_PartialObjectMetadataList",
+          "callee": "ref",
+          "lineNumber": 3417
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_Status",
+          "callee": "ref",
+          "lineNumber": 3627
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_Status",
+          "callee": "ref",
+          "lineNumber": 3659
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_StatusDetails",
+          "callee": "ref",
+          "lineNumber": 3759
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_Table",
+          "callee": "ref",
+          "lineNumber": 3805
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_Table",
+          "callee": "ref",
+          "lineNumber": 3821
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_Table",
+          "callee": "ref",
+          "lineNumber": 3840
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_TableRow",
+          "callee": "ref",
+          "lineNumber": 3982
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_TableRow",
+          "callee": "ref",
+          "lineNumber": 3991
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_Time",
+          "callee": "metav1.Time{}.OpenAPISchemaType",
+          "lineNumber": 4052
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_Time",
+          "callee": "metav1.Time{}.OpenAPISchemaFormat",
+          "lineNumber": 4053
+        },
+        {
+          "caller": "schema_pkg_apis_meta_v1_WatchEvent",
+          "callee": "ref",
+          "lineNumber": 4194
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 84,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/acme/webhook/registry/challengepayload/challenge_payload.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 113,
+      "nonEmptyLines": 96,
+      "functions": [
+        {
+          "name": "NewREST",
+          "startLine": 41,
+          "endLine": 45,
+          "params": [
+            "hookFn"
+          ]
+        },
+        {
+          "name": "New",
+          "startLine": 47,
+          "endLine": 49,
+          "params": []
+        },
+        {
+          "name": "GetSingularName",
+          "startLine": 50,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "GroupVersionKind",
+          "startLine": 54,
+          "endLine": 56,
+          "params": [
+            "containingGV"
+          ]
+        },
+        {
+          "name": "NamespaceScoped",
+          "startLine": 58,
+          "endLine": 60,
+          "params": []
+        },
+        {
+          "name": "Create",
+          "startLine": 62,
+          "endLine": 76,
+          "params": [
+            "ctx",
+            "obj",
+            "_",
+            "_"
+          ]
+        },
+        {
+          "name": "callSolver",
+          "startLine": 80,
+          "endLine": 106,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "Destroy",
+          "startLine": 112,
+          "endLine": 113,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "REST",
+          "startLine": 32,
+          "endLine": 34,
+          "methods": [
+            "New",
+            "GetSingularName",
+            "GroupVersionKind",
+            "NamespaceScoped",
+            "Create",
+            "callSolver",
+            "Destroy"
+          ],
+          "properties": [
+            "hookFn"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "REST",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "NewREST",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "New",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "GetSingularName",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "GroupVersionKind",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "NamespaceScoped",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "Create",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "Destroy",
+          "line": 112,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GroupVersionKind",
+          "callee": "v1alpha1.SchemeGroupVersion.WithKind",
+          "lineNumber": 55
+        },
+        {
+          "caller": "Create",
+          "callee": "fmt.Errorf",
+          "lineNumber": 65
+        },
+        {
+          "caller": "Create",
+          "callee": "fmt.Errorf",
+          "lineNumber": 68
+        },
+        {
+          "caller": "Create",
+          "callee": "r.callSolver",
+          "lineNumber": 70
+        },
+        {
+          "caller": "callSolver",
+          "callee": "fmt.Errorf",
+          "lineNumber": 88
+        },
+        {
+          "caller": "callSolver",
+          "callee": "fn",
+          "lineNumber": 90
+        },
+        {
+          "caller": "callSolver",
+          "callee": "err.Error",
+          "lineNumber": 102
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 8,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/acme/webhook/webhook.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 38,
+      "classes": [
+        {
+          "name": "Solver",
+          "startLine": 30,
+          "endLine": 48,
+          "methods": [
+            "Name",
+            "Present",
+            "CleanUp",
+            "Initialize"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Solver",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/apis/acme/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/acme/v1/const.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 17,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/acme/v1/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 17,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/acme/v1/register.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "Resource",
+          "startLine": 31,
+          "endLine": 33,
+          "params": [
+            "resource"
+          ]
+        },
+        {
+          "name": "init",
+          "startLine": 41,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "addKnownTypes",
+          "startLine": 49,
+          "endLine": 58,
+          "params": [
+            "scheme"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Resource",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource(resource).GroupResource",
+          "lineNumber": 32
+        },
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource",
+          "lineNumber": 32
+        },
+        {
+          "caller": "init",
+          "callee": "localSchemeBuilder.Register",
+          "lineNumber": 45
+        },
+        {
+          "caller": "addKnownTypes",
+          "callee": "scheme.AddKnownTypes",
+          "lineNumber": 50
+        },
+        {
+          "caller": "addKnownTypes",
+          "callee": "metav1.AddToGroupVersion",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/acme/v1/types.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 46,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/acme/v1/types_challenge.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 145,
+      "nonEmptyLines": 117,
+      "classes": [
+        {
+          "name": "Challenge",
+          "startLine": 36,
+          "endLine": 43,
+          "methods": [],
+          "properties": [
+            "Spec",
+            "Status"
+          ]
+        },
+        {
+          "name": "ChallengeList",
+          "startLine": 48,
+          "endLine": 53,
+          "methods": [],
+          "properties": [
+            "Items"
+          ]
+        },
+        {
+          "name": "ChallengeSpec",
+          "startLine": 55,
+          "endLine": 101,
+          "methods": [],
+          "properties": [
+            "URL",
+            "AuthorizationURL",
+            "DNSName",
+            "Wildcard",
+            "Type",
+            "Token",
+            "Key",
+            "Solver",
+            "IssuerRef"
+          ]
+        },
+        {
+          "name": "ChallengeStatus",
+          "startLine": 117,
+          "endLine": 145,
+          "methods": [],
+          "properties": [
+            "Processing",
+            "Presented",
+            "Reason",
+            "State"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Challenge",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "ChallengeList",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "ChallengeSpec",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "ChallengeStatus",
+          "line": 117,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "pkg/apis/acme/v1/types_issuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 863,
+      "nonEmptyLines": 747,
+      "classes": [
+        {
+          "name": "ACMEIssuer",
+          "startLine": 31,
+          "endLine": 123,
+          "methods": [],
+          "properties": [
+            "Email",
+            "Server",
+            "PreferredChain",
+            "CABundle",
+            "SkipTLSVerify",
+            "ExternalAccountBinding",
+            "PrivateKey",
+            "Solvers",
+            "DisableAccountKeyGeneration",
+            "EnableDurationFeature",
+            "Profile"
+          ]
+        },
+        {
+          "name": "ACMEExternalAccountBinding",
+          "startLine": 127,
+          "endLine": 145,
+          "methods": [],
+          "properties": [
+            "KeyID",
+            "Key",
+            "KeyAlgorithm"
+          ]
+        },
+        {
+          "name": "ACMEChallengeSolver",
+          "startLine": 160,
+          "endLine": 180,
+          "methods": [],
+          "properties": [
+            "Selector",
+            "HTTP01",
+            "DNS01"
+          ]
+        },
+        {
+          "name": "CertificateDNSNameSelector",
+          "startLine": 186,
+          "endLine": 215,
+          "methods": [],
+          "properties": [
+            "MatchLabels",
+            "DNSNames",
+            "DNSZones"
+          ]
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01",
+          "startLine": 223,
+          "endLine": 237,
+          "methods": [],
+          "properties": [
+            "Ingress",
+            "GatewayHTTPRoute"
+          ]
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01Ingress",
+          "startLine": 239,
+          "endLine": 277,
+          "methods": [],
+          "properties": [
+            "ServiceType",
+            "IngressClassName",
+            "Class",
+            "Name",
+            "PodTemplate",
+            "IngressTemplate"
+          ]
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01GatewayHTTPRoute",
+          "startLine": 281,
+          "endLine": 304,
+          "methods": [],
+          "properties": [
+            "ServiceType",
+            "Labels",
+            "ParentRefs",
+            "PodTemplate"
+          ]
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodTemplate",
+          "startLine": 306,
+          "endLine": 319,
+          "methods": [],
+          "properties": [
+            "Spec"
+          ]
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodObjectMeta",
+          "startLine": 321,
+          "endLine": 329,
+          "methods": [],
+          "properties": [
+            "Annotations",
+            "Labels"
+          ]
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodSpec",
+          "startLine": 331,
+          "endLine": 375,
+          "methods": [],
+          "properties": [
+            "NodeSelector",
+            "Affinity",
+            "Tolerations",
+            "PriorityClassName",
+            "ServiceAccountName",
+            "ImagePullSecrets",
+            "SecurityContext",
+            "Resources"
+          ]
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressTemplate",
+          "startLine": 377,
+          "endLine": 384,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressObjectMeta",
+          "startLine": 386,
+          "endLine": 394,
+          "methods": [],
+          "properties": [
+            "Annotations",
+            "Labels"
+          ]
+        },
+        {
+          "name": "ACMEChallengeSolverDNS01",
+          "startLine": 399,
+          "endLine": 443,
+          "methods": [],
+          "properties": [
+            "CNAMEStrategy",
+            "Akamai",
+            "CloudDNS",
+            "Cloudflare",
+            "Route53",
+            "AzureDNS",
+            "DigitalOcean",
+            "AcmeDNS",
+            "RFC2136",
+            "Webhook"
+          ]
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodSecurityContext",
+          "startLine": 445,
+          "endLine": 519,
+          "methods": [],
+          "properties": [
+            "SELinuxOptions",
+            "RunAsUser",
+            "RunAsGroup",
+            "RunAsNonRoot",
+            "SupplementalGroups",
+            "FSGroup",
+            "Sysctls",
+            "FSGroupChangePolicy",
+            "SeccompProfile"
+          ]
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodResources",
+          "startLine": 523,
+          "endLine": 534,
+          "methods": [],
+          "properties": [
+            "Limits",
+            "Requests"
+          ]
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderAkamai",
+          "startLine": 557,
+          "endLine": 562,
+          "methods": [],
+          "properties": [
+            "ServiceConsumerDomain",
+            "ClientToken",
+            "ClientSecret",
+            "AccessToken"
+          ]
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderCloudDNS",
+          "startLine": 566,
+          "endLine": 576,
+          "methods": [],
+          "properties": [
+            "ServiceAccount",
+            "Project",
+            "HostedZoneName"
+          ]
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderCloudflare",
+          "startLine": 581,
+          "endLine": 595,
+          "methods": [],
+          "properties": [
+            "Email",
+            "APIKey",
+            "APIToken"
+          ]
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderDigitalOcean",
+          "startLine": 599,
+          "endLine": 601,
+          "methods": [],
+          "properties": [
+            "Token"
+          ]
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderRoute53",
+          "startLine": 605,
+          "endLine": 668,
+          "methods": [],
+          "properties": [
+            "Auth",
+            "AccessKeyID",
+            "SecretAccessKeyID",
+            "SecretAccessKey",
+            "Role",
+            "HostedZoneID",
+            "Region"
+          ]
+        },
+        {
+          "name": "Route53Auth",
+          "startLine": 671,
+          "endLine": 675,
+          "methods": [],
+          "properties": [
+            "Kubernetes"
+          ]
+        },
+        {
+          "name": "Route53KubernetesAuth",
+          "startLine": 679,
+          "endLine": 684,
+          "methods": [],
+          "properties": [
+            "ServiceAccountRef"
+          ]
+        },
+        {
+          "name": "ServiceAccountRef",
+          "startLine": 688,
+          "endLine": 699,
+          "methods": [],
+          "properties": [
+            "Name",
+            "TokenAudiences"
+          ]
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderAzureDNS",
+          "startLine": 703,
+          "endLine": 741,
+          "methods": [],
+          "properties": [
+            "ClientID",
+            "ClientSecret",
+            "SubscriptionID",
+            "TenantID",
+            "ResourceGroupName",
+            "HostedZoneName",
+            "Environment",
+            "ManagedIdentity"
+          ]
+        },
+        {
+          "name": "AzureManagedIdentity",
+          "startLine": 746,
+          "endLine": 759,
+          "methods": [],
+          "properties": [
+            "ClientID",
+            "ResourceID",
+            "TenantID"
+          ]
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderAcmeDNS",
+          "startLine": 773,
+          "endLine": 777,
+          "methods": [],
+          "properties": [
+            "Host",
+            "AccountSecret"
+          ]
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderRFC2136",
+          "startLine": 781,
+          "endLine": 808,
+          "methods": [],
+          "properties": [
+            "Nameserver",
+            "TSIGSecret",
+            "TSIGKeyName",
+            "TSIGAlgorithm",
+            "Protocol"
+          ]
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderWebhook",
+          "startLine": 822,
+          "endLine": 844,
+          "methods": [],
+          "properties": [
+            "GroupName",
+            "SolverName",
+            "Config"
+          ]
+        },
+        {
+          "name": "ACMEIssuerStatus",
+          "startLine": 846,
+          "endLine": 863,
+          "methods": [],
+          "properties": [
+            "URI",
+            "LastRegisteredEmail",
+            "LastPrivateKeyHash"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEIssuer",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEExternalAccountBinding",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolver",
+          "line": 160,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateDNSNameSelector",
+          "line": 186,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01",
+          "line": 223,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01Ingress",
+          "line": 239,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01GatewayHTTPRoute",
+          "line": 281,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodTemplate",
+          "line": 306,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodObjectMeta",
+          "line": 321,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodSpec",
+          "line": 331,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressTemplate",
+          "line": 377,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressObjectMeta",
+          "line": 386,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverDNS01",
+          "line": 399,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodSecurityContext",
+          "line": 445,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodResources",
+          "line": 523,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderAkamai",
+          "line": 557,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderCloudDNS",
+          "line": 566,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderCloudflare",
+          "line": 581,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderDigitalOcean",
+          "line": 599,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderRoute53",
+          "line": 605,
+          "isDefault": false
+        },
+        {
+          "name": "Route53Auth",
+          "line": 671,
+          "isDefault": false
+        },
+        {
+          "name": "Route53KubernetesAuth",
+          "line": 679,
+          "isDefault": false
+        },
+        {
+          "name": "ServiceAccountRef",
+          "line": 688,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderAzureDNS",
+          "line": 703,
+          "isDefault": false
+        },
+        {
+          "name": "AzureManagedIdentity",
+          "line": 746,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderAcmeDNS",
+          "line": 773,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderRFC2136",
+          "line": 781,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderWebhook",
+          "line": 822,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerStatus",
+          "line": 846,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 29,
+        "functionCount": 0,
+        "classCount": 29
+      }
+    }
+  ]
+}

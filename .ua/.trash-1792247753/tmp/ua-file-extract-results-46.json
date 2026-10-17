@@ -1,0 +1,1257 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 10,
+  "filesSkipped": [
+    "cmd/webhook/LICENSES",
+    "cmd/webhook/go.mod",
+    "cmd/webhook/go.sum",
+    "deploy/OWNERS",
+    "deploy/charts/cert-manager/.helmignore",
+    "deploy/charts/cert-manager/templates/_helpers.tpl",
+    "deploy/charts/cert-manager/values.linter.exceptions",
+    "design/OWNERS",
+    "hack/containers/Containerfile.acmesolver",
+    "hack/containers/Containerfile.cainjector",
+    "hack/containers/Containerfile.controller",
+    "hack/containers/Containerfile.startupapicheck",
+    "hack/containers/Containerfile.webhook",
+    "hack/openapi_reports/acme.txt",
+    "hack/openapi_reports/client.txt"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 10,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 4,
+      "failed": 0,
+      "skipped": 6
+    }
+  },
+  "results": [
+    {
+      "path": "cmd/webhook/app/webhook.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 184,
+      "nonEmptyLines": 150,
+      "functions": [
+        {
+          "name": "NewServerCommand",
+          "startLine": 40,
+          "endLine": 58,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "newServerCommand",
+          "startLine": 60,
+          "endLine": 129,
+          "params": [
+            "setupCtx",
+            "run",
+            "allArgs"
+          ]
+        },
+        {
+          "name": "loadConfigFromFile",
+          "startLine": 139,
+          "endLine": 184,
+          "params": [
+            "cmd",
+            "allArgs",
+            "configFilePath",
+            "cfg",
+            "newConfigHook"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewServerCommand",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewServerCommand",
+          "callee": "newServerCommand",
+          "lineNumber": 41
+        },
+        {
+          "caller": "NewServerCommand",
+          "callee": "logf.FromContext",
+          "lineNumber": 44
+        },
+        {
+          "caller": "NewServerCommand",
+          "callee": "util.VersionInfo",
+          "lineNumber": 46
+        },
+        {
+          "caller": "NewServerCommand",
+          "callee": "log.Info",
+          "lineNumber": 47
+        },
+        {
+          "caller": "NewServerCommand",
+          "callee": "cmwebhook.NewCertManagerWebhookServer",
+          "lineNumber": 49
+        },
+        {
+          "caller": "NewServerCommand",
+          "callee": "srv.Run",
+          "lineNumber": 54
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "logf.FromContext",
+          "lineNumber": 65
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "options.NewWebhookFlags",
+          "lineNumber": 67
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "options.NewWebhookConfiguration",
+          "lineNumber": 68
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "log.Error",
+          "lineNumber": 70
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "os.Exit",
+          "lineNumber": 71
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "loadConfigFromFile",
+          "lineNumber": 87
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "utilfeature.DefaultMutableFeatureGate.SetFromMap",
+          "lineNumber": 91
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "fmt.Errorf",
+          "lineNumber": 92
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "validation.ValidateWebhookConfiguration",
+          "lineNumber": 101
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "len",
+          "lineNumber": 101
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "fmt.Errorf",
+          "lineNumber": 102
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "err.ToAggregate",
+          "lineNumber": 102
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "logf.ValidateAndApply",
+          "lineNumber": 109
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "fmt.Errorf",
+          "lineNumber": 110
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "run",
+          "lineNumber": 117
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "cmd.Context",
+          "lineNumber": 117
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "webhookFlags.AddFlags",
+          "lineNumber": 121
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "cmd.Flags",
+          "lineNumber": 121
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "options.AddConfigFlags",
+          "lineNumber": 122
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "cmd.Flags",
+          "lineNumber": 122
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "cmd.SetArgs",
+          "lineNumber": 126
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "newConfigHook",
+          "lineNumber": 146
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "len",
+          "lineNumber": 150
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "filepath.Abs",
+          "lineNumber": 152
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "fmt.Errorf",
+          "lineNumber": 154
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "configfile.NewConfigurationFSLoader",
+          "lineNumber": 157
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "fmt.Errorf",
+          "lineNumber": 159
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "webhookconfigfile.New",
+          "lineNumber": 162
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "loader.Load",
+          "lineNumber": 163
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "fmt.Errorf",
+          "lineNumber": 164
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "webhookConfigFromFile.Config.DeepCopyInto",
+          "lineNumber": 167
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "cmd.Root().Find",
+          "lineNumber": 169
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "cmd.Root",
+          "lineNumber": 169
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "fmt.Errorf",
+          "lineNumber": 171
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "cmd.ParseFlags",
+          "lineNumber": 174
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "fmt.Errorf",
+          "lineNumber": 175
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "newConfigHook",
+          "lineNumber": 178
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cmd/webhook/main.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 29,
+          "endLine": 44,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "util.SetupExitHandler",
+          "lineNumber": 30
+        },
+        {
+          "caller": "main",
+          "callee": "context.Background",
+          "lineNumber": 30
+        },
+        {
+          "caller": "main",
+          "callee": "exit",
+          "lineNumber": 31
+        },
+        {
+          "caller": "main",
+          "callee": "logf.InitLogs",
+          "lineNumber": 33
+        },
+        {
+          "caller": "main",
+          "callee": "logf.FlushLogs",
+          "lineNumber": 34
+        },
+        {
+          "caller": "main",
+          "callee": "ctrl.SetLogger",
+          "lineNumber": 35
+        },
+        {
+          "caller": "main",
+          "callee": "logf.NewContext",
+          "lineNumber": 36
+        },
+        {
+          "caller": "main",
+          "callee": "app.NewServerCommand",
+          "lineNumber": 38
+        },
+        {
+          "caller": "main",
+          "callee": "cmd.ExecuteContext",
+          "lineNumber": 40
+        },
+        {
+          "caller": "main",
+          "callee": "logf.Log.Error",
+          "lineNumber": 41
+        },
+        {
+          "caller": "main",
+          "callee": "util.SetExitCode",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "docs/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 9,
+      "nonEmptyLines": 6,
+      "sections": [
+        {
+          "heading": "Documentation",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Contributing",
+          "level": 2,
+          "line": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "gcb/build_cert_manager.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 43,
+      "nonEmptyLines": 34,
+      "sections": [
+        {
+          "heading": "timeout",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "steps",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 28
+        },
+        {
+          "heading": "substitutions",
+          "level": 1,
+          "line": 32
+        },
+        {
+          "heading": "options",
+          "level": 1,
+          "line": 36
+        },
+        {
+          "heading": "serviceAccount",
+          "level": 1,
+          "line": 42
+        },
+        {
+          "heading": "logsBucket",
+          "level": 1,
+          "line": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "hack/extractcrd/main.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 112,
+      "nonEmptyLines": 90,
+      "functions": [
+        {
+          "name": "crdDecoder",
+          "startLine": 34,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "main",
+          "startLine": 42,
+          "endLine": 112,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "crdDecoder",
+          "callee": "runtime.NewScheme",
+          "lineNumber": 35
+        },
+        {
+          "caller": "crdDecoder",
+          "callee": "install.Install",
+          "lineNumber": 36
+        },
+        {
+          "caller": "crdDecoder",
+          "callee": "serializer.NewCodecFactory",
+          "lineNumber": 38
+        },
+        {
+          "caller": "crdDecoder",
+          "callee": "cf.UniversalDecoder",
+          "lineNumber": 39
+        },
+        {
+          "caller": "main",
+          "callee": "log.New",
+          "lineNumber": 43
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 45
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 45
+        },
+        {
+          "caller": "main",
+          "callee": "logger.Printf",
+          "lineNumber": 46
+        },
+        {
+          "caller": "main",
+          "callee": "logger.Printf",
+          "lineNumber": 47
+        },
+        {
+          "caller": "main",
+          "callee": "os.Exit",
+          "lineNumber": 48
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 53
+        },
+        {
+          "caller": "main",
+          "callee": "strings.ToLower",
+          "lineNumber": 54
+        },
+        {
+          "caller": "main",
+          "callee": "os.ReadFile",
+          "lineNumber": 58
+        },
+        {
+          "caller": "main",
+          "callee": "logger.Printf",
+          "lineNumber": 60
+        },
+        {
+          "caller": "main",
+          "callee": "os.Exit",
+          "lineNumber": 61
+        },
+        {
+          "caller": "main",
+          "callee": "docSeparatorRegexp.Split",
+          "lineNumber": 66
+        },
+        {
+          "caller": "main",
+          "callee": "string",
+          "lineNumber": 66
+        },
+        {
+          "caller": "main",
+          "callee": "crdDecoder",
+          "lineNumber": 68
+        },
+        {
+          "caller": "main",
+          "callee": "decoder.Decode",
+          "lineNumber": 73
+        },
+        {
+          "caller": "main",
+          "callee": "logger.Printf",
+          "lineNumber": 81
+        },
+        {
+          "caller": "main",
+          "callee": "strings.TrimPrefix",
+          "lineNumber": 85
+        },
+        {
+          "caller": "main",
+          "callee": "strings.TrimSpace",
+          "lineNumber": 86
+        },
+        {
+          "caller": "main",
+          "callee": "fmt.Fprintln",
+          "lineNumber": 90
+        },
+        {
+          "caller": "main",
+          "callee": "fmt.Fprintln",
+          "lineNumber": 92
+        },
+        {
+          "caller": "main",
+          "callee": "strings.ToLower",
+          "lineNumber": 96
+        },
+        {
+          "caller": "main",
+          "callee": "fmt.Fprintln",
+          "lineNumber": 98
+        },
+        {
+          "caller": "main",
+          "callee": "logger.Printf",
+          "lineNumber": 106
+        },
+        {
+          "caller": "main",
+          "callee": "logger.Printf",
+          "lineNumber": 108
+        },
+        {
+          "caller": "main",
+          "callee": "os.Exit",
+          "lineNumber": 110
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "hack/prune-junit-xml/prunexml.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 237,
+      "nonEmptyLines": 210,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 95,
+          "endLine": 128,
+          "params": []
+        },
+        {
+          "name": "pruneXML",
+          "startLine": 130,
+          "endLine": 201,
+          "params": [
+            "logger",
+            "suites",
+            "maxBytes"
+          ]
+        },
+        {
+          "name": "incrementTime",
+          "startLine": 203,
+          "endLine": 213,
+          "params": [
+            "total",
+            "delta"
+          ]
+        },
+        {
+          "name": "fetchXML",
+          "startLine": 215,
+          "endLine": 223,
+          "params": [
+            "xmlReader"
+          ]
+        },
+        {
+          "name": "streamXML",
+          "startLine": 225,
+          "endLine": 237,
+          "params": [
+            "writer",
+            "in"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "JUnitTestSuites",
+          "startLine": 47,
+          "endLine": 50,
+          "methods": [],
+          "properties": [
+            "XMLName",
+            "Suites"
+          ]
+        },
+        {
+          "name": "JUnitTestSuite",
+          "startLine": 54,
+          "endLine": 63,
+          "methods": [],
+          "properties": [
+            "XMLName",
+            "Tests",
+            "Failures",
+            "Time",
+            "Name",
+            "Properties",
+            "TestCases",
+            "Timestamp"
+          ]
+        },
+        {
+          "name": "JUnitTestCase",
+          "startLine": 66,
+          "endLine": 73,
+          "methods": [],
+          "properties": [
+            "XMLName",
+            "Classname",
+            "Name",
+            "Time",
+            "SkipMessage",
+            "Failure"
+          ]
+        },
+        {
+          "name": "JUnitSkipMessage",
+          "startLine": 76,
+          "endLine": 78,
+          "methods": [],
+          "properties": [
+            "Message"
+          ]
+        },
+        {
+          "name": "JUnitProperty",
+          "startLine": 81,
+          "endLine": 84,
+          "methods": [],
+          "properties": [
+            "Name",
+            "Value"
+          ]
+        },
+        {
+          "name": "JUnitFailure",
+          "startLine": 87,
+          "endLine": 91,
+          "methods": [],
+          "properties": [
+            "Message",
+            "Type",
+            "Contents"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "JUnitTestSuites",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "JUnitTestSuite",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "JUnitTestCase",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "JUnitSkipMessage",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "JUnitProperty",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "JUnitFailure",
+          "line": 87,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "log.New",
+          "lineNumber": 96
+        },
+        {
+          "caller": "main",
+          "callee": "flag.Int",
+          "lineNumber": 98
+        },
+        {
+          "caller": "main",
+          "callee": "flag.Parse",
+          "lineNumber": 99
+        },
+        {
+          "caller": "main",
+          "callee": "flag.NArg",
+          "lineNumber": 101
+        },
+        {
+          "caller": "main",
+          "callee": "flag.Args",
+          "lineNumber": 102
+        },
+        {
+          "caller": "main",
+          "callee": "logger.Printf",
+          "lineNumber": 103
+        },
+        {
+          "caller": "main",
+          "callee": "os.Open",
+          "lineNumber": 104
+        },
+        {
+          "caller": "main",
+          "callee": "panic",
+          "lineNumber": 106
+        },
+        {
+          "caller": "main",
+          "callee": "xmlReader.Close",
+          "lineNumber": 108
+        },
+        {
+          "caller": "main",
+          "callee": "fetchXML",
+          "lineNumber": 109
+        },
+        {
+          "caller": "main",
+          "callee": "panic",
+          "lineNumber": 111
+        },
+        {
+          "caller": "main",
+          "callee": "pruneXML",
+          "lineNumber": 114
+        },
+        {
+          "caller": "main",
+          "callee": "os.OpenFile",
+          "lineNumber": 116
+        },
+        {
+          "caller": "main",
+          "callee": "panic",
+          "lineNumber": 118
+        },
+        {
+          "caller": "main",
+          "callee": "xmlWriter.Close",
+          "lineNumber": 120
+        },
+        {
+          "caller": "main",
+          "callee": "streamXML",
+          "lineNumber": 121
+        },
+        {
+          "caller": "main",
+          "callee": "panic",
+          "lineNumber": 123
+        },
+        {
+          "caller": "main",
+          "callee": "logger.Println",
+          "lineNumber": 125
+        },
+        {
+          "caller": "pruneXML",
+          "callee": "len",
+          "lineNumber": 134
+        },
+        {
+          "caller": "pruneXML",
+          "callee": "append",
+          "lineNumber": 135
+        },
+        {
+          "caller": "pruneXML",
+          "callee": "fuzzNameRegex.FindStringSubmatch",
+          "lineNumber": 146
+        },
+        {
+          "caller": "pruneXML",
+          "callee": "len",
+          "lineNumber": 147
+        },
+        {
+          "caller": "pruneXML",
+          "callee": "incrementTime",
+          "lineNumber": 156
+        },
+        {
+          "caller": "pruneXML",
+          "callee": "append",
+          "lineNumber": 160
+        },
+        {
+          "caller": "pruneXML",
+          "callee": "append",
+          "lineNumber": 163
+        },
+        {
+          "caller": "pruneXML",
+          "callee": "append",
+          "lineNumber": 171
+        },
+        {
+          "caller": "pruneXML",
+          "callee": "append",
+          "lineNumber": 178
+        },
+        {
+          "caller": "pruneXML",
+          "callee": "len",
+          "lineNumber": 186
+        },
+        {
+          "caller": "pruneXML",
+          "callee": "logger.Printf",
+          "lineNumber": 187
+        },
+        {
+          "caller": "pruneXML",
+          "callee": "len",
+          "lineNumber": 189
+        },
+        {
+          "caller": "pruneXML",
+          "callee": "len",
+          "lineNumber": 193
+        },
+        {
+          "caller": "pruneXML",
+          "callee": "logger.Printf",
+          "lineNumber": 194
+        },
+        {
+          "caller": "pruneXML",
+          "callee": "len",
+          "lineNumber": 196
+        },
+        {
+          "caller": "incrementTime",
+          "callee": "strconv.ParseFloat",
+          "lineNumber": 204
+        },
+        {
+          "caller": "incrementTime",
+          "callee": "strconv.ParseFloat",
+          "lineNumber": 208
+        },
+        {
+          "caller": "incrementTime",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 212
+        },
+        {
+          "caller": "fetchXML",
+          "callee": "xml.NewDecoder",
+          "lineNumber": 216
+        },
+        {
+          "caller": "fetchXML",
+          "callee": "decoder.Decode",
+          "lineNumber": 218
+        },
+        {
+          "caller": "streamXML",
+          "callee": "writer.Write",
+          "lineNumber": 226
+        },
+        {
+          "caller": "streamXML",
+          "callee": "xml.NewEncoder",
+          "lineNumber": 230
+        },
+        {
+          "caller": "streamXML",
+          "callee": "encoder.Indent",
+          "lineNumber": 231
+        },
+        {
+          "caller": "streamXML",
+          "callee": "encoder.Encode",
+          "lineNumber": 232
+        },
+        {
+          "caller": "streamXML",
+          "callee": "encoder.Flush",
+          "lineNumber": 236
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 6
+      }
+    },
+    {
+      "path": "hack/util/hash.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/cainjector/v1alpha1/testdata/defaults.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 40,
+      "nonEmptyLines": 40,
+      "sections": [
+        {
+          "heading": "leaderElectionConfig",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "enableDataSourceConfig",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "enableInjectableConfig",
+          "level": 1,
+          "line": 12
+        },
+        {
+          "heading": "enablePprof",
+          "level": 1,
+          "line": 18
+        },
+        {
+          "heading": "pprofAddress",
+          "level": 1,
+          "line": 19
+        },
+        {
+          "heading": "logging",
+          "level": 1,
+          "line": 20
+        },
+        {
+          "heading": "metricsListenAddress",
+          "level": 1,
+          "line": 33
+        },
+        {
+          "heading": "metricsTLSConfig",
+          "level": 1,
+          "line": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "internal/apis/config/controller/v1alpha1/testdata/defaults.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 70,
+      "nonEmptyLines": 70,
+      "sections": [
+        {
+          "heading": "kubernetesAPIQPS",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "kubernetesAPIBurst",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "clusterResourceNamespace",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "leaderElectionConfig",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "controllers",
+          "level": 1,
+          "line": 13
+        },
+        {
+          "heading": "issuerAmbientCredentials",
+          "level": 1,
+          "line": 16
+        },
+        {
+          "heading": "clusterIssuerAmbientCredentials",
+          "level": 1,
+          "line": 17
+        },
+        {
+          "heading": "enableCertificateOwnerRef",
+          "level": 1,
+          "line": 18
+        },
+        {
+          "heading": "enableGatewayAPI",
+          "level": 1,
+          "line": 19
+        },
+        {
+          "heading": "copiedAnnotationPrefixes",
+          "level": 1,
+          "line": 20
+        },
+        {
+          "heading": "numberOfConcurrentWorkers",
+          "level": 1,
+          "line": 26
+        },
+        {
+          "heading": "maxConcurrentChallenges",
+          "level": 1,
+          "line": 27
+        },
+        {
+          "heading": "metricsListenAddress",
+          "level": 1,
+          "line": 28
+        },
+        {
+          "heading": "metricsTLSConfig",
+          "level": 1,
+          "line": 29
+        },
+        {
+          "heading": "healthzListenAddress",
+          "level": 1,
+          "line": 35
+        },
+        {
+          "heading": "enablePprof",
+          "level": 1,
+          "line": 36
+        },
+        {
+          "heading": "pprofAddress",
+          "level": 1,
+          "line": 37
+        },
+        {
+          "heading": "logging",
+          "level": 1,
+          "line": 38
+        },
+        {
+          "heading": "ingressShimConfig",
+          "level": 1,
+          "line": 51
+        },
+        {
+          "heading": "acmeHTTP01Config",
+          "level": 1,
+          "line": 58
+        },
+        {
+          "heading": "acmeDNS01Config",
+          "level": 1,
+          "line": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 21
+      }
+    },
+    {
+      "path": "internal/apis/config/webhook/v1alpha1/testdata/defaults.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 32,
+      "nonEmptyLines": 32,
+      "sections": [
+        {
+          "heading": "securePort",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "healthzPort",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "tlsConfig",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "enablePprof",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "pprofAddress",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "logging",
+          "level": 1,
+          "line": 12
+        },
+        {
+          "heading": "metricsListenAddress",
+          "level": 1,
+          "line": 25
+        },
+        {
+          "heading": "metricsTLSConfig",
+          "level": 1,
+          "line": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    }
+  ]
+}

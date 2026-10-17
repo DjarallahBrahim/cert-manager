@@ -1,0 +1,739 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/apiserver/apiserver.go",
+      "type": "file",
+      "name": "apiserver.go",
+      "filePath": "test/apiserver/apiserver.go",
+      "summary": "Helper that starts a bare Kubernetes API server for integration tests.",
+      "tags": [
+        "test",
+        "kubernetes",
+        "api-server",
+        "infrastructure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/apiserver/apiserver.go:RunBareControlPlane",
+      "type": "function",
+      "name": "RunBareControlPlane",
+      "filePath": "test/apiserver/apiserver.go",
+      "lineRange": [
+        37,
+        56
+      ],
+      "summary": "Starts a bare Kubernetes control plane for a test and registers cleanup.",
+      "tags": [
+        "test",
+        "api-server",
+        "setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/apiserver/envs.go",
+      "type": "file",
+      "name": "envs.go",
+      "filePath": "test/apiserver/envs.go",
+      "summary": "Environment helpers that locate and expose the envtest binaries required by API server tests.",
+      "tags": [
+        "test",
+        "envtest",
+        "configuration",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/apiserver/envs.go:maybeSetEnv",
+      "type": "function",
+      "name": "maybeSetEnv",
+      "filePath": "test/apiserver/envs.go",
+      "lineRange": [
+        36,
+        46
+      ],
+      "summary": "Sets an environment variable to the located binary path when it is unset.",
+      "tags": [
+        "test",
+        "environment",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/apiserver/envs.go:getPath",
+      "type": "function",
+      "name": "getPath",
+      "filePath": "test/apiserver/envs.go",
+      "lineRange": [
+        48,
+        63
+      ],
+      "summary": "Finds an envtest binary in the configured asset directories.",
+      "tags": [
+        "test",
+        "filesystem",
+        "lookup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/unit/gen/challenge.go",
+      "type": "file",
+      "name": "challenge.go",
+      "filePath": "test/unit/gen/challenge.go",
+      "summary": "Builder helpers that generate Challenge resources with varied fields for unit tests.",
+      "tags": [
+        "test",
+        "factory",
+        "challenge",
+        "fixtures"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/unit/gen/challenge.go:Challenge",
+      "type": "function",
+      "name": "Challenge",
+      "filePath": "test/unit/gen/challenge.go",
+      "lineRange": [
+        29,
+        38
+      ],
+      "summary": "Creates a minimal Challenge resource for tests.",
+      "tags": [
+        "factory",
+        "test",
+        "challenge"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/challenge.go:ChallengeFrom",
+      "type": "function",
+      "name": "ChallengeFrom",
+      "filePath": "test/unit/gen/challenge.go",
+      "lineRange": [
+        40,
+        47
+      ],
+      "summary": "Copies an existing Challenge into a new test fixture object.",
+      "tags": [
+        "factory",
+        "test",
+        "challenge"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/unit/gen/order.go",
+      "type": "file",
+      "name": "order.go",
+      "filePath": "test/unit/gen/order.go",
+      "summary": "Builder helpers that generate Order resources with varied fields for unit tests.",
+      "tags": [
+        "test",
+        "factory",
+        "order",
+        "fixtures"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/unit/gen/order.go:Order",
+      "type": "function",
+      "name": "Order",
+      "filePath": "test/unit/gen/order.go",
+      "lineRange": [
+        31,
+        40
+      ],
+      "summary": "Creates a minimal Order resource for tests.",
+      "tags": [
+        "factory",
+        "test",
+        "order"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/order.go:OrderFrom",
+      "type": "function",
+      "name": "OrderFrom",
+      "filePath": "test/unit/gen/order.go",
+      "lineRange": [
+        42,
+        49
+      ],
+      "summary": "Copies an existing Order into a new test fixture object.",
+      "tags": [
+        "factory",
+        "test",
+        "order"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/unit/listers/order.go",
+      "type": "file",
+      "name": "order.go",
+      "filePath": "test/unit/listers/order.go",
+      "summary": "Fake Order listers used by unit tests to stub lister behaviour.",
+      "tags": [
+        "test",
+        "fake",
+        "lister",
+        "fixtures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/unit/listers/order.go:FakeOrderLister",
+      "type": "class",
+      "name": "FakeOrderLister",
+      "filePath": "test/unit/listers/order.go",
+      "lineRange": [
+        29,
+        32
+      ],
+      "summary": "Fake lister exposing function hooks for Order list operations in tests.",
+      "tags": [
+        "test",
+        "fake",
+        "lister"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/unit/listers/order.go:FakeOrderNamespaceLister",
+      "type": "class",
+      "name": "FakeOrderNamespaceLister",
+      "filePath": "test/unit/listers/order.go",
+      "lineRange": [
+        34,
+        37
+      ],
+      "summary": "Fake namespace-scoped lister for Order resources in tests.",
+      "tags": [
+        "test",
+        "fake",
+        "lister"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/listers/order.go:NewFakeOrderLister",
+      "type": "function",
+      "name": "NewFakeOrderLister",
+      "filePath": "test/unit/listers/order.go",
+      "lineRange": [
+        39,
+        49
+      ],
+      "summary": "Creates a fake Order lister backed by the provided list function.",
+      "tags": [
+        "factory",
+        "test",
+        "lister"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/unit/listers/order.go:NewFakeOrderNamespaceLister",
+      "type": "function",
+      "name": "NewFakeOrderNamespaceLister",
+      "filePath": "test/unit/listers/order.go",
+      "lineRange": [
+        51,
+        60
+      ],
+      "summary": "Creates a fake namespace-scoped Order lister backed by the provided functions.",
+      "tags": [
+        "factory",
+        "test",
+        "lister"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/apiserver/apiserver.go",
+      "target": "function:test/apiserver/apiserver.go:RunBareControlPlane",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/apiserver/apiserver.go",
+      "target": "function:test/apiserver/apiserver.go:RunBareControlPlane",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/apiserver/envs.go",
+      "target": "function:test/apiserver/envs.go:maybeSetEnv",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/apiserver/envs.go",
+      "target": "function:test/apiserver/envs.go:getPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "function:test/unit/gen/challenge.go:Challenge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "function:test/unit/gen/challenge.go:Challenge",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "function:test/unit/gen/challenge.go:ChallengeFrom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "function:test/unit/gen/challenge.go:ChallengeFrom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "function:test/unit/gen/order.go:Order",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "function:test/unit/gen/order.go:Order",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "function:test/unit/gen/order.go:OrderFrom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "function:test/unit/gen/order.go:OrderFrom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/listers/order.go",
+      "target": "class:test/unit/listers/order.go:FakeOrderLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/unit/listers/order.go",
+      "target": "class:test/unit/listers/order.go:FakeOrderLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/listers/order.go",
+      "target": "class:test/unit/listers/order.go:FakeOrderNamespaceLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/unit/listers/order.go",
+      "target": "class:test/unit/listers/order.go:FakeOrderNamespaceLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/listers/order.go",
+      "target": "function:test/unit/listers/order.go:NewFakeOrderLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/unit/listers/order.go",
+      "target": "function:test/unit/listers/order.go:NewFakeOrderLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/listers/order.go",
+      "target": "function:test/unit/listers/order.go:NewFakeOrderNamespaceLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/unit/listers/order.go",
+      "target": "function:test/unit/listers/order.go:NewFakeOrderNamespaceLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/apiserver/envs.go",
+      "target": "file:internal/test/paths/paths.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "file:internal/apis/acme/v1/conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "file:internal/apis/acme/v1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "file:internal/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "file:internal/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "file:internal/apis/acme/v1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "file:internal/apis/acme/v1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/challenge.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "file:internal/apis/acme/v1/conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "file:internal/apis/acme/v1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "file:internal/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "file:internal/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "file:internal/apis/acme/v1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "file:internal/apis/acme/v1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/order.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/listers/order.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/listers/order.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/listers/order.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/listers/order.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/listers/order.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/listers/order.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/listers/order.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/listers/order.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/listers/order.go",
+      "target": "file:pkg/client/listers/acme/v1/challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/listers/order.go",
+      "target": "file:pkg/client/listers/acme/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/listers/order.go",
+      "target": "file:pkg/client/listers/acme/v1/order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

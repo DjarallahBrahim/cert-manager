@@ -1,0 +1,2642 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 25,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 25,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "internal/apis/config/controller/zz_generated.deepcopy.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 159,
+      "nonEmptyLines": 141,
+      "functions": [
+        {
+          "name": "DeepCopyInto",
+          "startLine": 29,
+          "endLine": 37,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 40,
+          "endLine": 47,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 50,
+          "endLine": 58,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 61,
+          "endLine": 68,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 71,
+          "endLine": 98,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 101,
+          "endLine": 108,
+          "params": []
+        },
+        {
+          "name": "DeepCopyObject",
+          "startLine": 111,
+          "endLine": 116,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 119,
+          "endLine": 132,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 135,
+          "endLine": 142,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 145,
+          "endLine": 149,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 152,
+          "endLine": 159,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeepCopyInto",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyObject",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 135,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 145,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 152,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 33
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 33
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 34
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 44
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 45
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 54
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 54
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 55
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 65
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 66
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 77
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 77
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 78
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 82
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 82
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 83
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.MetricsTLSConfig.DeepCopyInto",
+          "lineNumber": 85
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Logging.DeepCopyInto",
+          "lineNumber": 86
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 89
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 89
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.IngressShimConfig.DeepCopyInto",
+          "lineNumber": 94
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.ACMEHTTP01Config.DeepCopyInto",
+          "lineNumber": 95
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.ACMEDNS01Config.DeepCopyInto",
+          "lineNumber": 96
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 105
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 106
+        },
+        {
+          "caller": "DeepCopyObject",
+          "callee": "in.DeepCopy",
+          "lineNumber": 112
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 123
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 123
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 124
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 128
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 128
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 129
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 139
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 140
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 156
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 157
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/shared/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/shared/types_leaderelection.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "LeaderElectionConfig",
+          "startLine": 21,
+          "endLine": 44,
+          "methods": [],
+          "properties": [
+            "Enabled",
+            "Namespace",
+            "LeaseDuration",
+            "RenewDeadline",
+            "RetryPeriod"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LeaderElectionConfig",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "internal/apis/config/shared/types_tlsconfig.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 68,
+      "functions": [
+        {
+          "name": "FilesystemConfigProvided",
+          "startLine": 45,
+          "endLine": 50,
+          "params": []
+        },
+        {
+          "name": "DynamicConfigProvided",
+          "startLine": 52,
+          "endLine": 57,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "TLSConfig",
+          "startLine": 23,
+          "endLine": 43,
+          "methods": [
+            "FilesystemConfigProvided",
+            "DynamicConfigProvided"
+          ],
+          "properties": [
+            "CipherSuites",
+            "MinTLSVersion",
+            "Filesystem",
+            "Dynamic"
+          ]
+        },
+        {
+          "name": "DynamicServingConfig",
+          "startLine": 61,
+          "endLine": 75,
+          "methods": [],
+          "properties": [
+            "SecretNamespace",
+            "SecretName",
+            "DNSNames",
+            "LeafDuration"
+          ]
+        },
+        {
+          "name": "FilesystemServingConfig",
+          "startLine": 79,
+          "endLine": 85,
+          "methods": [],
+          "properties": [
+            "CertFile",
+            "KeyFile"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TLSConfig",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "FilesystemConfigProvided",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "DynamicConfigProvided",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "DynamicServingConfig",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "FilesystemServingConfig",
+          "line": 79,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DynamicConfigProvided",
+          "callee": "len",
+          "lineNumber": 53
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 2,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "internal/apis/config/shared/v1alpha1/conversion.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 83,
+      "functions": [
+        {
+          "name": "Convert_shared_TLSConfig_To_v1alpha1_TLSConfig",
+          "startLine": 32,
+          "endLine": 34,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_v1alpha1_TLSConfig_To_shared_TLSConfig",
+          "startLine": 38,
+          "endLine": 40,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_shared_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "startLine": 44,
+          "endLine": 46,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_v1alpha1_LeaderElectionConfig_To_shared_LeaderElectionConfig",
+          "startLine": 50,
+          "endLine": 52,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_Pointer_float32_To_float32",
+          "startLine": 54,
+          "endLine": 61,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_float32_To_Pointer_float32",
+          "startLine": 63,
+          "endLine": 67,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_Pointer_int32_To_int",
+          "startLine": 69,
+          "endLine": 76,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_int_To_Pointer_int32",
+          "startLine": 78,
+          "endLine": 86,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_Pointer_v1alpha1_Duration_To_time_Duration",
+          "startLine": 88,
+          "endLine": 95,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_time_Duration_To_Pointer_v1alpha1_Duration",
+          "startLine": 97,
+          "endLine": 100,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Convert_shared_TLSConfig_To_v1alpha1_TLSConfig",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_v1alpha1_TLSConfig_To_shared_TLSConfig",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_shared_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_v1alpha1_LeaderElectionConfig_To_shared_LeaderElectionConfig",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_Pointer_float32_To_float32",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_float32_To_Pointer_float32",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_Pointer_int32_To_int",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_int_To_Pointer_int32",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_Pointer_v1alpha1_Duration_To_time_Duration",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_time_Duration_To_Pointer_v1alpha1_Duration",
+          "line": 97,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Convert_shared_TLSConfig_To_v1alpha1_TLSConfig",
+          "callee": "autoConvert_shared_TLSConfig_To_v1alpha1_TLSConfig",
+          "lineNumber": 33
+        },
+        {
+          "caller": "Convert_v1alpha1_TLSConfig_To_shared_TLSConfig",
+          "callee": "autoConvert_v1alpha1_TLSConfig_To_shared_TLSConfig",
+          "lineNumber": 39
+        },
+        {
+          "caller": "Convert_shared_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "callee": "autoConvert_shared_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "lineNumber": 45
+        },
+        {
+          "caller": "Convert_v1alpha1_LeaderElectionConfig_To_shared_LeaderElectionConfig",
+          "callee": "autoConvert_v1alpha1_LeaderElectionConfig_To_shared_LeaderElectionConfig",
+          "lineNumber": 51
+        },
+        {
+          "caller": "Convert_Pointer_float32_To_float32",
+          "callee": "float32",
+          "lineNumber": 59
+        },
+        {
+          "caller": "Convert_float32_To_Pointer_float32",
+          "callee": "float32",
+          "lineNumber": 64
+        },
+        {
+          "caller": "Convert_Pointer_int32_To_int",
+          "callee": "int",
+          "lineNumber": 74
+        },
+        {
+          "caller": "Convert_int_To_Pointer_int32",
+          "callee": "fmt.Errorf",
+          "lineNumber": 81
+        },
+        {
+          "caller": "Convert_int_To_Pointer_int32",
+          "callee": "int32",
+          "lineNumber": 83
+        },
+        {
+          "caller": "Convert_time_Duration_To_Pointer_v1alpha1_Duration",
+          "callee": "v1alpha1.DurationFromTime",
+          "lineNumber": 98
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 10,
+        "functionCount": 10,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/shared/v1alpha1/defaults.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "SetDefaults_DynamicServingConfig",
+          "startLine": 35,
+          "endLine": 39,
+          "params": [
+            "obj"
+          ]
+        },
+        {
+          "name": "SetDefaults_LeaderElectionConfig",
+          "startLine": 41,
+          "endLine": 61,
+          "params": [
+            "obj"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SetDefaults_DynamicServingConfig",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "SetDefaults_LeaderElectionConfig",
+          "line": 41,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SetDefaults_DynamicServingConfig",
+          "callee": "obj.LeafDuration.IsZero",
+          "lineNumber": 36
+        },
+        {
+          "caller": "SetDefaults_DynamicServingConfig",
+          "callee": "v1alpha1.DurationFromTime",
+          "lineNumber": 37
+        },
+        {
+          "caller": "SetDefaults_LeaderElectionConfig",
+          "callee": "obj.LeaseDuration.IsZero",
+          "lineNumber": 50
+        },
+        {
+          "caller": "SetDefaults_LeaderElectionConfig",
+          "callee": "v1alpha1.DurationFromTime",
+          "lineNumber": 51
+        },
+        {
+          "caller": "SetDefaults_LeaderElectionConfig",
+          "callee": "obj.RenewDeadline.IsZero",
+          "lineNumber": 54
+        },
+        {
+          "caller": "SetDefaults_LeaderElectionConfig",
+          "callee": "v1alpha1.DurationFromTime",
+          "lineNumber": 55
+        },
+        {
+          "caller": "SetDefaults_LeaderElectionConfig",
+          "callee": "obj.RetryPeriod.IsZero",
+          "lineNumber": 58
+        },
+        {
+          "caller": "SetDefaults_LeaderElectionConfig",
+          "callee": "v1alpha1.DurationFromTime",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/shared/v1alpha1/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 17,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/shared/v1alpha1/register.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 19,
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/shared/v1alpha1/zz_generated.conversion.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 223,
+      "nonEmptyLines": 201,
+      "functions": [
+        {
+          "name": "init",
+          "startLine": 35,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "RegisterConversions",
+          "startLine": 41,
+          "endLine": 113,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_v1alpha1_DynamicServingConfig_To_shared_DynamicServingConfig",
+          "startLine": 115,
+          "endLine": 123,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_v1alpha1_DynamicServingConfig_To_shared_DynamicServingConfig",
+          "startLine": 126,
+          "endLine": 128,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_shared_DynamicServingConfig_To_v1alpha1_DynamicServingConfig",
+          "startLine": 130,
+          "endLine": 138,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_shared_DynamicServingConfig_To_v1alpha1_DynamicServingConfig",
+          "startLine": 141,
+          "endLine": 143,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_v1alpha1_FilesystemServingConfig_To_shared_FilesystemServingConfig",
+          "startLine": 145,
+          "endLine": 149,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_v1alpha1_FilesystemServingConfig_To_shared_FilesystemServingConfig",
+          "startLine": 152,
+          "endLine": 154,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_shared_FilesystemServingConfig_To_v1alpha1_FilesystemServingConfig",
+          "startLine": 156,
+          "endLine": 160,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_shared_FilesystemServingConfig_To_v1alpha1_FilesystemServingConfig",
+          "startLine": 163,
+          "endLine": 165,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_v1alpha1_LeaderElectionConfig_To_shared_LeaderElectionConfig",
+          "startLine": 167,
+          "endLine": 182,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_shared_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "startLine": 184,
+          "endLine": 199,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_v1alpha1_TLSConfig_To_shared_TLSConfig",
+          "startLine": 201,
+          "endLine": 211,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_shared_TLSConfig_To_v1alpha1_TLSConfig",
+          "startLine": 213,
+          "endLine": 223,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RegisterConversions",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_v1alpha1_DynamicServingConfig_To_shared_DynamicServingConfig",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_shared_DynamicServingConfig_To_v1alpha1_DynamicServingConfig",
+          "line": 141,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_v1alpha1_FilesystemServingConfig_To_shared_FilesystemServingConfig",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_shared_FilesystemServingConfig_To_v1alpha1_FilesystemServingConfig",
+          "line": 163,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "init",
+          "callee": "localSchemeBuilder.Register",
+          "lineNumber": 36
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 42
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*sharedv1alpha1.DynamicServingConfig)",
+          "lineNumber": 42
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*shared.DynamicServingConfig)",
+          "lineNumber": 42
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_v1alpha1_DynamicServingConfig_To_shared_DynamicServingConfig",
+          "lineNumber": 43
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 47
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*shared.DynamicServingConfig)",
+          "lineNumber": 47
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*sharedv1alpha1.DynamicServingConfig)",
+          "lineNumber": 47
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_shared_DynamicServingConfig_To_v1alpha1_DynamicServingConfig",
+          "lineNumber": 48
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 52
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*sharedv1alpha1.FilesystemServingConfig)",
+          "lineNumber": 52
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*shared.FilesystemServingConfig)",
+          "lineNumber": 52
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_v1alpha1_FilesystemServingConfig_To_shared_FilesystemServingConfig",
+          "lineNumber": 53
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 57
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*shared.FilesystemServingConfig)",
+          "lineNumber": 57
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*sharedv1alpha1.FilesystemServingConfig)",
+          "lineNumber": 57
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_shared_FilesystemServingConfig_To_v1alpha1_FilesystemServingConfig",
+          "lineNumber": 58
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddConversionFunc",
+          "lineNumber": 62
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(**float32)",
+          "lineNumber": 62
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*float32)",
+          "lineNumber": 62
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_Pointer_float32_To_float32",
+          "lineNumber": 63
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddConversionFunc",
+          "lineNumber": 67
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(**int32)",
+          "lineNumber": 67
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*int)",
+          "lineNumber": 67
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_Pointer_int32_To_int",
+          "lineNumber": 68
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddConversionFunc",
+          "lineNumber": 72
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(**sharedv1alpha1.Duration)",
+          "lineNumber": 72
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*time.Duration)",
+          "lineNumber": 72
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_Pointer_v1alpha1_Duration_To_time_Duration",
+          "lineNumber": 73
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddConversionFunc",
+          "lineNumber": 77
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*float32)",
+          "lineNumber": 77
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(**float32)",
+          "lineNumber": 77
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_float32_To_Pointer_float32",
+          "lineNumber": 78
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddConversionFunc",
+          "lineNumber": 82
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*int)",
+          "lineNumber": 82
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(**int32)",
+          "lineNumber": 82
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_int_To_Pointer_int32",
+          "lineNumber": 83
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddConversionFunc",
+          "lineNumber": 87
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*shared.LeaderElectionConfig)",
+          "lineNumber": 87
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*sharedv1alpha1.LeaderElectionConfig)",
+          "lineNumber": 87
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_shared_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "lineNumber": 88
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddConversionFunc",
+          "lineNumber": 92
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*shared.TLSConfig)",
+          "lineNumber": 92
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*sharedv1alpha1.TLSConfig)",
+          "lineNumber": 92
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_shared_TLSConfig_To_v1alpha1_TLSConfig",
+          "lineNumber": 93
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddConversionFunc",
+          "lineNumber": 97
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*time.Duration)",
+          "lineNumber": 97
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(**sharedv1alpha1.Duration)",
+          "lineNumber": 97
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_time_Duration_To_Pointer_v1alpha1_Duration",
+          "lineNumber": 98
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddConversionFunc",
+          "lineNumber": 102
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*sharedv1alpha1.LeaderElectionConfig)",
+          "lineNumber": 102
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*shared.LeaderElectionConfig)",
+          "lineNumber": 102
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_v1alpha1_LeaderElectionConfig_To_shared_LeaderElectionConfig",
+          "lineNumber": 103
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddConversionFunc",
+          "lineNumber": 107
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*sharedv1alpha1.TLSConfig)",
+          "lineNumber": 107
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*shared.TLSConfig)",
+          "lineNumber": 107
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_v1alpha1_TLSConfig_To_shared_TLSConfig",
+          "lineNumber": 108
+        },
+        {
+          "caller": "autoConvert_v1alpha1_DynamicServingConfig_To_shared_DynamicServingConfig",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 118
+        },
+        {
+          "caller": "autoConvert_v1alpha1_DynamicServingConfig_To_shared_DynamicServingConfig",
+          "callee": "Convert_Pointer_v1alpha1_Duration_To_time_Duration",
+          "lineNumber": 119
+        },
+        {
+          "caller": "Convert_v1alpha1_DynamicServingConfig_To_shared_DynamicServingConfig",
+          "callee": "autoConvert_v1alpha1_DynamicServingConfig_To_shared_DynamicServingConfig",
+          "lineNumber": 127
+        },
+        {
+          "caller": "autoConvert_shared_DynamicServingConfig_To_v1alpha1_DynamicServingConfig",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 133
+        },
+        {
+          "caller": "autoConvert_shared_DynamicServingConfig_To_v1alpha1_DynamicServingConfig",
+          "callee": "Convert_time_Duration_To_Pointer_v1alpha1_Duration",
+          "lineNumber": 134
+        },
+        {
+          "caller": "Convert_shared_DynamicServingConfig_To_v1alpha1_DynamicServingConfig",
+          "callee": "autoConvert_shared_DynamicServingConfig_To_v1alpha1_DynamicServingConfig",
+          "lineNumber": 142
+        },
+        {
+          "caller": "Convert_v1alpha1_FilesystemServingConfig_To_shared_FilesystemServingConfig",
+          "callee": "autoConvert_v1alpha1_FilesystemServingConfig_To_shared_FilesystemServingConfig",
+          "lineNumber": 153
+        },
+        {
+          "caller": "Convert_shared_FilesystemServingConfig_To_v1alpha1_FilesystemServingConfig",
+          "callee": "autoConvert_shared_FilesystemServingConfig_To_v1alpha1_FilesystemServingConfig",
+          "lineNumber": 164
+        },
+        {
+          "caller": "autoConvert_v1alpha1_LeaderElectionConfig_To_shared_LeaderElectionConfig",
+          "callee": "v1.Convert_Pointer_bool_To_bool",
+          "lineNumber": 168
+        },
+        {
+          "caller": "autoConvert_v1alpha1_LeaderElectionConfig_To_shared_LeaderElectionConfig",
+          "callee": "Convert_Pointer_v1alpha1_Duration_To_time_Duration",
+          "lineNumber": 172
+        },
+        {
+          "caller": "autoConvert_v1alpha1_LeaderElectionConfig_To_shared_LeaderElectionConfig",
+          "callee": "Convert_Pointer_v1alpha1_Duration_To_time_Duration",
+          "lineNumber": 175
+        },
+        {
+          "caller": "autoConvert_v1alpha1_LeaderElectionConfig_To_shared_LeaderElectionConfig",
+          "callee": "Convert_Pointer_v1alpha1_Duration_To_time_Duration",
+          "lineNumber": 178
+        },
+        {
+          "caller": "autoConvert_shared_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "callee": "v1.Convert_bool_To_Pointer_bool",
+          "lineNumber": 185
+        },
+        {
+          "caller": "autoConvert_shared_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "callee": "Convert_time_Duration_To_Pointer_v1alpha1_Duration",
+          "lineNumber": 189
+        },
+        {
+          "caller": "autoConvert_shared_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "callee": "Convert_time_Duration_To_Pointer_v1alpha1_Duration",
+          "lineNumber": 192
+        },
+        {
+          "caller": "autoConvert_shared_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "callee": "Convert_time_Duration_To_Pointer_v1alpha1_Duration",
+          "lineNumber": 195
+        },
+        {
+          "caller": "autoConvert_v1alpha1_TLSConfig_To_shared_TLSConfig",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 202
+        },
+        {
+          "caller": "autoConvert_v1alpha1_TLSConfig_To_shared_TLSConfig",
+          "callee": "Convert_v1alpha1_FilesystemServingConfig_To_shared_FilesystemServingConfig",
+          "lineNumber": 204
+        },
+        {
+          "caller": "autoConvert_v1alpha1_TLSConfig_To_shared_TLSConfig",
+          "callee": "Convert_v1alpha1_DynamicServingConfig_To_shared_DynamicServingConfig",
+          "lineNumber": 207
+        },
+        {
+          "caller": "autoConvert_shared_TLSConfig_To_v1alpha1_TLSConfig",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 214
+        },
+        {
+          "caller": "autoConvert_shared_TLSConfig_To_v1alpha1_TLSConfig",
+          "callee": "Convert_shared_FilesystemServingConfig_To_v1alpha1_FilesystemServingConfig",
+          "lineNumber": 216
+        },
+        {
+          "caller": "autoConvert_shared_TLSConfig_To_v1alpha1_TLSConfig",
+          "callee": "Convert_shared_DynamicServingConfig_To_v1alpha1_DynamicServingConfig",
+          "lineNumber": 219
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 5,
+        "functionCount": 14,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/shared/v1alpha1/zz_generated.defaults.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "RegisterDefaults",
+          "startLine": 31,
+          "endLine": 33,
+          "params": [
+            "scheme"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RegisterDefaults",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/shared/validation/validation.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 61,
+      "functions": [
+        {
+          "name": "ValidateTLSConfig",
+          "startLine": 25,
+          "endLine": 54,
+          "params": [
+            "tlsConfig",
+            "fldPath"
+          ]
+        },
+        {
+          "name": "ValidateLeaderElectionConfig",
+          "startLine": 56,
+          "endLine": 74,
+          "params": [
+            "leaderElectionConfig",
+            "fldPath"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ValidateTLSConfig",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "ValidateLeaderElectionConfig",
+          "line": 56,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "tlsConfig.FilesystemConfigProvided",
+          "lineNumber": 28
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "tlsConfig.DynamicConfigProvided",
+          "lineNumber": 28
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "append",
+          "lineNumber": 29
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "field.Invalid",
+          "lineNumber": 29
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "tlsConfig.FilesystemConfigProvided",
+          "lineNumber": 31
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "fldPath.Child",
+          "lineNumber": 32
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "append",
+          "lineNumber": 34
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "field.Required",
+          "lineNumber": 34
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "fileSystemPath.Child",
+          "lineNumber": 34
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "append",
+          "lineNumber": 37
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "field.Required",
+          "lineNumber": 37
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "fileSystemPath.Child",
+          "lineNumber": 37
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "tlsConfig.DynamicConfigProvided",
+          "lineNumber": 39
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "fldPath.Child",
+          "lineNumber": 40
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "append",
+          "lineNumber": 42
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "field.Required",
+          "lineNumber": 42
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "dynamicPath.Child",
+          "lineNumber": 42
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "append",
+          "lineNumber": 45
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "field.Required",
+          "lineNumber": 45
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "dynamicPath.Child",
+          "lineNumber": 45
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "len",
+          "lineNumber": 47
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "append",
+          "lineNumber": 48
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "field.Required",
+          "lineNumber": 48
+        },
+        {
+          "caller": "ValidateTLSConfig",
+          "callee": "dynamicPath.Child",
+          "lineNumber": 48
+        },
+        {
+          "caller": "ValidateLeaderElectionConfig",
+          "callee": "append",
+          "lineNumber": 64
+        },
+        {
+          "caller": "ValidateLeaderElectionConfig",
+          "callee": "field.Invalid",
+          "lineNumber": 64
+        },
+        {
+          "caller": "ValidateLeaderElectionConfig",
+          "callee": "fldPath.Child",
+          "lineNumber": 64
+        },
+        {
+          "caller": "ValidateLeaderElectionConfig",
+          "callee": "append",
+          "lineNumber": 67
+        },
+        {
+          "caller": "ValidateLeaderElectionConfig",
+          "callee": "field.Invalid",
+          "lineNumber": 67
+        },
+        {
+          "caller": "ValidateLeaderElectionConfig",
+          "callee": "fldPath.Child",
+          "lineNumber": 67
+        },
+        {
+          "caller": "ValidateLeaderElectionConfig",
+          "callee": "append",
+          "lineNumber": 70
+        },
+        {
+          "caller": "ValidateLeaderElectionConfig",
+          "callee": "field.Invalid",
+          "lineNumber": 70
+        },
+        {
+          "caller": "ValidateLeaderElectionConfig",
+          "callee": "fldPath.Child",
+          "lineNumber": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/shared/zz_generated.deepcopy.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 98,
+      "nonEmptyLines": 84,
+      "functions": [
+        {
+          "name": "DeepCopyInto",
+          "startLine": 25,
+          "endLine": 33,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 36,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 46,
+          "endLine": 49,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 52,
+          "endLine": 59,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 62,
+          "endLine": 65,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 68,
+          "endLine": 75,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 78,
+          "endLine": 88,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 91,
+          "endLine": 98,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeepCopyInto",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 91,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 29
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 29
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 30
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 40
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 41
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 56
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 57
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 72
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 73
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 82
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 82
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 83
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Dynamic.DeepCopyInto",
+          "lineNumber": 86
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 95
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 96
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/webhook/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/webhook/fuzzer/fuzzer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 34,
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/webhook/install/install.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "Install",
+          "startLine": 30,
+          "endLine": 33,
+          "params": [
+            "scheme"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Install",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Install",
+          "callee": "utilruntime.Must",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Install",
+          "callee": "webhook.AddToScheme",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Install",
+          "callee": "utilruntime.Must",
+          "lineNumber": 32
+        },
+        {
+          "caller": "Install",
+          "callee": "v1alpha1.AddToScheme",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/webhook/register.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "Resource",
+          "startLine": 35,
+          "endLine": 37,
+          "params": [
+            "resource"
+          ]
+        },
+        {
+          "name": "addKnownTypes",
+          "startLine": 40,
+          "endLine": 46,
+          "params": [
+            "scheme"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Resource",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource(resource).GroupResource",
+          "lineNumber": 36
+        },
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource",
+          "lineNumber": 36
+        },
+        {
+          "caller": "addKnownTypes",
+          "callee": "scheme.AddKnownTypes",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/webhook/scheme/scheme.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "NewSchemeAndCodecs",
+          "startLine": 30,
+          "endLine": 40,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewSchemeAndCodecs",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewSchemeAndCodecs",
+          "callee": "runtime.NewScheme",
+          "lineNumber": 31
+        },
+        {
+          "caller": "NewSchemeAndCodecs",
+          "callee": "config.AddToScheme",
+          "lineNumber": 32
+        },
+        {
+          "caller": "NewSchemeAndCodecs",
+          "callee": "configv1alpha1.AddToScheme",
+          "lineNumber": 35
+        },
+        {
+          "caller": "NewSchemeAndCodecs",
+          "callee": "serializer.NewCodecFactory",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/webhook/types.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 54,
+      "classes": [
+        {
+          "name": "WebhookConfiguration",
+          "startLine": 28,
+          "endLine": 73,
+          "methods": [],
+          "properties": [
+            "SecurePort",
+            "HealthzPort",
+            "TLSConfig",
+            "KubeConfig",
+            "APIServerHost",
+            "EnablePprof",
+            "PprofAddress",
+            "Logging",
+            "FeatureGates",
+            "MetricsListenAddress",
+            "MetricsTLSConfig"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WebhookConfiguration",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "internal/apis/config/webhook/v1alpha1/defaults.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "addDefaultingFuncs",
+          "startLine": 29,
+          "endLine": 31,
+          "params": [
+            "scheme"
+          ]
+        },
+        {
+          "name": "SetDefaults_WebhookConfiguration",
+          "startLine": 33,
+          "endLine": 49,
+          "params": [
+            "obj"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SetDefaults_WebhookConfiguration",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "addDefaultingFuncs",
+          "callee": "RegisterDefaults",
+          "lineNumber": 30
+        },
+        {
+          "caller": "SetDefaults_WebhookConfiguration",
+          "callee": "ptr.To",
+          "lineNumber": 35
+        },
+        {
+          "caller": "SetDefaults_WebhookConfiguration",
+          "callee": "int32",
+          "lineNumber": 35
+        },
+        {
+          "caller": "SetDefaults_WebhookConfiguration",
+          "callee": "ptr.To",
+          "lineNumber": 38
+        },
+        {
+          "caller": "SetDefaults_WebhookConfiguration",
+          "callee": "int32",
+          "lineNumber": 38
+        },
+        {
+          "caller": "SetDefaults_WebhookConfiguration",
+          "callee": "logsapi.SetRecommendedLoggingConfiguration",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/webhook/v1alpha1/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 18,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/webhook/v1alpha1/register.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "Resource",
+          "startLine": 30,
+          "endLine": 32,
+          "params": [
+            "resource"
+          ]
+        },
+        {
+          "name": "init",
+          "startLine": 39,
+          "endLine": 44,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Resource",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource(resource).GroupResource",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource",
+          "lineNumber": 31
+        },
+        {
+          "caller": "init",
+          "callee": "localSchemeBuilder.Register",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 109,
+      "nonEmptyLines": 95,
+      "functions": [
+        {
+          "name": "init",
+          "startLine": 35,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "RegisterConversions",
+          "startLine": 41,
+          "endLine": 53,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_v1alpha1_WebhookConfiguration_To_webhook_WebhookConfiguration",
+          "startLine": 55,
+          "endLine": 76,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_v1alpha1_WebhookConfiguration_To_webhook_WebhookConfiguration",
+          "startLine": 79,
+          "endLine": 81,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_webhook_WebhookConfiguration_To_v1alpha1_WebhookConfiguration",
+          "startLine": 83,
+          "endLine": 104,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_webhook_WebhookConfiguration_To_v1alpha1_WebhookConfiguration",
+          "startLine": 107,
+          "endLine": 109,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RegisterConversions",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_v1alpha1_WebhookConfiguration_To_webhook_WebhookConfiguration",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_webhook_WebhookConfiguration_To_v1alpha1_WebhookConfiguration",
+          "line": 107,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "init",
+          "callee": "localSchemeBuilder.Register",
+          "lineNumber": 36
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 42
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*webhookv1alpha1.WebhookConfiguration)",
+          "lineNumber": 42
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*webhook.WebhookConfiguration)",
+          "lineNumber": 42
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_v1alpha1_WebhookConfiguration_To_webhook_WebhookConfiguration",
+          "lineNumber": 43
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 47
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*webhook.WebhookConfiguration)",
+          "lineNumber": 47
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*webhookv1alpha1.WebhookConfiguration)",
+          "lineNumber": 47
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_webhook_WebhookConfiguration_To_v1alpha1_WebhookConfiguration",
+          "lineNumber": 48
+        },
+        {
+          "caller": "autoConvert_v1alpha1_WebhookConfiguration_To_webhook_WebhookConfiguration",
+          "callee": "v1.Convert_Pointer_int32_To_int32",
+          "lineNumber": 56
+        },
+        {
+          "caller": "autoConvert_v1alpha1_WebhookConfiguration_To_webhook_WebhookConfiguration",
+          "callee": "v1.Convert_Pointer_int32_To_int32",
+          "lineNumber": 59
+        },
+        {
+          "caller": "autoConvert_v1alpha1_WebhookConfiguration_To_webhook_WebhookConfiguration",
+          "callee": "sharedv1alpha1.Convert_v1alpha1_TLSConfig_To_shared_TLSConfig",
+          "lineNumber": 62
+        },
+        {
+          "caller": "autoConvert_v1alpha1_WebhookConfiguration_To_webhook_WebhookConfiguration",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 70
+        },
+        {
+          "caller": "autoConvert_v1alpha1_WebhookConfiguration_To_webhook_WebhookConfiguration",
+          "callee": "sharedv1alpha1.Convert_v1alpha1_TLSConfig_To_shared_TLSConfig",
+          "lineNumber": 72
+        },
+        {
+          "caller": "Convert_v1alpha1_WebhookConfiguration_To_webhook_WebhookConfiguration",
+          "callee": "autoConvert_v1alpha1_WebhookConfiguration_To_webhook_WebhookConfiguration",
+          "lineNumber": 80
+        },
+        {
+          "caller": "autoConvert_webhook_WebhookConfiguration_To_v1alpha1_WebhookConfiguration",
+          "callee": "v1.Convert_int32_To_Pointer_int32",
+          "lineNumber": 84
+        },
+        {
+          "caller": "autoConvert_webhook_WebhookConfiguration_To_v1alpha1_WebhookConfiguration",
+          "callee": "v1.Convert_int32_To_Pointer_int32",
+          "lineNumber": 87
+        },
+        {
+          "caller": "autoConvert_webhook_WebhookConfiguration_To_v1alpha1_WebhookConfiguration",
+          "callee": "sharedv1alpha1.Convert_shared_TLSConfig_To_v1alpha1_TLSConfig",
+          "lineNumber": 90
+        },
+        {
+          "caller": "autoConvert_webhook_WebhookConfiguration_To_v1alpha1_WebhookConfiguration",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 98
+        },
+        {
+          "caller": "autoConvert_webhook_WebhookConfiguration_To_v1alpha1_WebhookConfiguration",
+          "callee": "sharedv1alpha1.Convert_shared_TLSConfig_To_v1alpha1_TLSConfig",
+          "lineNumber": 100
+        },
+        {
+          "caller": "Convert_webhook_WebhookConfiguration_To_v1alpha1_WebhookConfiguration",
+          "callee": "autoConvert_webhook_WebhookConfiguration_To_v1alpha1_WebhookConfiguration",
+          "lineNumber": 108
+        }
+      ],
+      "metrics": {
+        "importCount": 14,
+        "exportCount": 3,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/webhook/v1alpha1/zz_generated.defaults.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "RegisterDefaults",
+          "startLine": 33,
+          "endLine": 38,
+          "params": [
+            "scheme"
+          ]
+        },
+        {
+          "name": "SetObjectDefaults_WebhookConfiguration",
+          "startLine": 40,
+          "endLine": 44,
+          "params": [
+            "in"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RegisterDefaults",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "SetObjectDefaults_WebhookConfiguration",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "RegisterDefaults",
+          "callee": "scheme.AddTypeDefaultingFunc",
+          "lineNumber": 34
+        },
+        {
+          "caller": "RegisterDefaults",
+          "callee": "SetObjectDefaults_WebhookConfiguration",
+          "lineNumber": 35
+        },
+        {
+          "caller": "SetObjectDefaults_WebhookConfiguration",
+          "callee": "SetDefaults_WebhookConfiguration",
+          "lineNumber": 41
+        },
+        {
+          "caller": "SetObjectDefaults_WebhookConfiguration",
+          "callee": "sharedv1alpha1.SetDefaults_DynamicServingConfig",
+          "lineNumber": 42
+        },
+        {
+          "caller": "SetObjectDefaults_WebhookConfiguration",
+          "callee": "sharedv1alpha1.SetDefaults_DynamicServingConfig",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/webhook/validation/validation.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "ValidateWebhookConfiguration",
+          "startLine": 27,
+          "endLine": 41,
+          "params": [
+            "cfg",
+            "fldPath"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ValidateWebhookConfiguration",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ValidateWebhookConfiguration",
+          "callee": "append",
+          "lineNumber": 30
+        },
+        {
+          "caller": "ValidateWebhookConfiguration",
+          "callee": "logsapi.Validate",
+          "lineNumber": 30
+        },
+        {
+          "caller": "ValidateWebhookConfiguration",
+          "callee": "fldPath.Child",
+          "lineNumber": 30
+        },
+        {
+          "caller": "ValidateWebhookConfiguration",
+          "callee": "append",
+          "lineNumber": 31
+        },
+        {
+          "caller": "ValidateWebhookConfiguration",
+          "callee": "sharedvalidation.ValidateTLSConfig",
+          "lineNumber": 31
+        },
+        {
+          "caller": "ValidateWebhookConfiguration",
+          "callee": "fldPath.Child",
+          "lineNumber": 31
+        },
+        {
+          "caller": "ValidateWebhookConfiguration",
+          "callee": "append",
+          "lineNumber": 34
+        },
+        {
+          "caller": "ValidateWebhookConfiguration",
+          "callee": "field.Invalid",
+          "lineNumber": 34
+        },
+        {
+          "caller": "ValidateWebhookConfiguration",
+          "callee": "fldPath.Child",
+          "lineNumber": 34
+        },
+        {
+          "caller": "ValidateWebhookConfiguration",
+          "callee": "append",
+          "lineNumber": 37
+        },
+        {
+          "caller": "ValidateWebhookConfiguration",
+          "callee": "field.Invalid",
+          "lineNumber": 37
+        },
+        {
+          "caller": "ValidateWebhookConfiguration",
+          "callee": "fldPath.Child",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/webhook/zz_generated.deepcopy.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "DeepCopyInto",
+          "startLine": 29,
+          "endLine": 43,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 46,
+          "endLine": 53,
+          "params": []
+        },
+        {
+          "name": "DeepCopyObject",
+          "startLine": 56,
+          "endLine": 61,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeepCopyInto",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyObject",
+          "line": 56,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.TLSConfig.DeepCopyInto",
+          "lineNumber": 32
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Logging.DeepCopyInto",
+          "lineNumber": 33
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 36
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 36
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.MetricsTLSConfig.DeepCopyInto",
+          "lineNumber": 41
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 50
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 51
+        },
+        {
+          "caller": "DeepCopyObject",
+          "callee": "in.DeepCopy",
+          "lineNumber": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    }
+  ]
+}

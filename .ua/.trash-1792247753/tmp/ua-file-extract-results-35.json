@@ -1,0 +1,2101 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 17,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 17,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 17
+    }
+  },
+  "results": [
+    {
+      "path": "design/20190708.certificate-request-crd.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 525,
+      "nonEmptyLines": 419,
+      "sections": [
+        {
+          "heading": "Certificate Request CRD",
+          "level": 1,
+          "line": 18
+        },
+        {
+          "heading": "Table of Contents",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "Summary",
+          "level": 2,
+          "line": 59
+        },
+        {
+          "heading": "Motivation",
+          "level": 2,
+          "line": 72
+        },
+        {
+          "heading": "Goals",
+          "level": 3,
+          "line": 96
+        },
+        {
+          "heading": "Non-Goals",
+          "level": 3,
+          "line": 109
+        },
+        {
+          "heading": "Proposal",
+          "level": 2,
+          "line": 121
+        },
+        {
+          "heading": "API Changes",
+          "level": 3,
+          "line": 123
+        },
+        {
+          "heading": "Approved and Denied Conditions",
+          "level": 4,
+          "line": 195
+        },
+        {
+          "heading": "Behaviour",
+          "level": 5,
+          "line": 207
+        },
+        {
+          "heading": "RBAC",
+          "level": 5,
+          "line": 233
+        },
+        {
+          "heading": "Scope",
+          "level": 6,
+          "line": 288
+        },
+        {
+          "heading": "apiGroup",
+          "level": 6,
+          "line": 298
+        },
+        {
+          "heading": "resource",
+          "level": 6,
+          "line": 304
+        },
+        {
+          "heading": "verbs",
+          "level": 6,
+          "line": 310
+        },
+        {
+          "heading": "resourceNames",
+          "level": 6,
+          "line": 315
+        },
+        {
+          "heading": "Webhook signer string building",
+          "level": 5,
+          "line": 353
+        },
+        {
+          "heading": "cert-manager Approver",
+          "level": 5,
+          "line": 370
+        },
+        {
+          "heading": "Controller Behaviour",
+          "level": 3,
+          "line": 394
+        },
+        {
+          "heading": "ACME",
+          "level": 4,
+          "line": 426
+        },
+        {
+          "heading": "Issuing Controller",
+          "level": 4,
+          "line": 435
+        },
+        {
+          "heading": "Failure",
+          "level": 3,
+          "line": 446
+        },
+        {
+          "heading": "Internal API Resource Behaviour",
+          "level": 3,
+          "line": 453
+        },
+        {
+          "heading": "CertificateRequest Annotations",
+          "level": 3,
+          "line": 463
+        },
+        {
+          "heading": "Test Plan",
+          "level": 3,
+          "line": 482
+        },
+        {
+          "heading": "Risks and Mitigations",
+          "level": 3,
+          "line": 489
+        },
+        {
+          "heading": "Graduation Criteria",
+          "level": 3,
+          "line": 502
+        },
+        {
+          "heading": "Alpha",
+          "level": 5,
+          "line": 504
+        },
+        {
+          "heading": "Alpha -> Beta Graduation",
+          "level": 5,
+          "line": 510
+        },
+        {
+          "heading": "Beta -> GA Graduation",
+          "level": 5,
+          "line": 517
+        },
+        {
+          "heading": "Removing a deprecated flag",
+          "level": 5,
+          "line": 523
+        },
+        {
+          "heading": "Version Skew Strategy",
+          "level": 3,
+          "line": 525
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 32
+      }
+    },
+    {
+      "path": "design/20191218-security-context-deprecation.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 178,
+      "nonEmptyLines": 118,
+      "sections": [
+        {
+          "heading": "Logic for deprecating securityContext.enabled",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Pseudo-code logic",
+          "level": 2,
+          "line": 16
+        },
+        {
+          "heading": "Test cases",
+          "level": 2,
+          "line": 35
+        },
+        {
+          "heading": "Test case 1",
+          "level": 3,
+          "line": 37
+        },
+        {
+          "heading": "Test case 2",
+          "level": 3,
+          "line": 49
+        },
+        {
+          "heading": "Test case 3",
+          "level": 3,
+          "line": 68
+        },
+        {
+          "heading": "Test case 4:",
+          "level": 3,
+          "line": 89
+        },
+        {
+          "heading": "Test case 5:",
+          "level": 3,
+          "line": 104
+        },
+        {
+          "heading": "Test case 6:",
+          "level": 3,
+          "line": 126
+        },
+        {
+          "heading": "Test case 7:",
+          "level": 3,
+          "line": 144
+        },
+        {
+          "heading": "Test case 8:",
+          "level": 3,
+          "line": 160
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "design/20200326.extensible-certificate-controller.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 388,
+      "nonEmptyLines": 321,
+      "sections": [
+        {
+          "heading": "Improved and extensible Certificate controller",
+          "level": 1,
+          "line": 16
+        },
+        {
+          "heading": "Summary",
+          "level": 2,
+          "line": 37
+        },
+        {
+          "heading": "Motivation",
+          "level": 2,
+          "line": 57
+        },
+        {
+          "heading": "Goals",
+          "level": 3,
+          "line": 73
+        },
+        {
+          "heading": "Non-goals",
+          "level": 3,
+          "line": 79
+        },
+        {
+          "heading": "Proposal",
+          "level": 2,
+          "line": 83
+        },
+        {
+          "heading": "API changes",
+          "level": 3,
+          "line": 102
+        },
+        {
+          "heading": "Keymanager API fields",
+          "level": 4,
+          "line": 185
+        },
+        {
+          "heading": "Controller behaviour",
+          "level": 3,
+          "line": 202
+        },
+        {
+          "heading": "keymanager",
+          "level": 4,
+          "line": 211
+        },
+        {
+          "heading": "requestmanager",
+          "level": 4,
+          "line": 284
+        },
+        {
+          "heading": "issuing",
+          "level": 3,
+          "line": 316
+        },
+        {
+          "heading": "trigger",
+          "level": 4,
+          "line": 356
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    },
+    {
+      "path": "design/20210203.certificate-request-identity.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 188,
+      "nonEmptyLines": 151,
+      "sections": [
+        {
+          "heading": "Identity",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "Table of Contents",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Summary",
+          "level": 2,
+          "line": 32
+        },
+        {
+          "heading": "Motivation",
+          "level": 2,
+          "line": 41
+        },
+        {
+          "heading": "Goals",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "Non-Goals",
+          "level": 3,
+          "line": 73
+        },
+        {
+          "heading": "Proposal",
+          "level": 2,
+          "line": 82
+        },
+        {
+          "heading": "API Changes",
+          "level": 3,
+          "line": 103
+        },
+        {
+          "heading": "Upgrading",
+          "level": 3,
+          "line": 142
+        },
+        {
+          "heading": "Test Plan",
+          "level": 3,
+          "line": 154
+        },
+        {
+          "heading": "Risks and Mitigations",
+          "level": 3,
+          "line": 162
+        },
+        {
+          "heading": "Certificate Identity Pass Down",
+          "level": 3,
+          "line": 173
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": "design/20210209.certificates.k8s.io-adoption.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 335,
+      "nonEmptyLines": 257,
+      "sections": [
+        {
+          "heading": "certificates.k8s.io Adoption",
+          "level": 1,
+          "line": 16
+        },
+        {
+          "heading": "Table of Contents",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "Summary",
+          "level": 2,
+          "line": 43
+        },
+        {
+          "heading": "Motivation",
+          "level": 2,
+          "line": 54
+        },
+        {
+          "heading": "Third Party Projects",
+          "level": 3,
+          "line": 56
+        },
+        {
+          "heading": "Security",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "cert-manager Webhook Dependency",
+          "level": 3,
+          "line": 72
+        },
+        {
+          "heading": "CertificateSigningRequest Migration Path",
+          "level": 3,
+          "line": 94
+        },
+        {
+          "heading": "Goals",
+          "level": 3,
+          "line": 101
+        },
+        {
+          "heading": "Non-Goals",
+          "level": 3,
+          "line": 107
+        },
+        {
+          "heading": "Reasons for Approach",
+          "level": 2,
+          "line": 114
+        },
+        {
+          "heading": "Read all access to CertificateSigningRequests",
+          "level": 3,
+          "line": 120
+        },
+        {
+          "heading": "Namespaced issuers referenced by CertificateSigningRequest",
+          "level": 3,
+          "line": 131
+        },
+        {
+          "heading": "Duration Field",
+          "level": 3,
+          "line": 166
+        },
+        {
+          "heading": "CA Field",
+          "level": 3,
+          "line": 179
+        },
+        {
+          "heading": "External Issuers",
+          "level": 3,
+          "line": 194
+        },
+        {
+          "heading": "Proposal",
+          "level": 2,
+          "line": 206
+        },
+        {
+          "heading": "Signers",
+          "level": 3,
+          "line": 248
+        },
+        {
+          "heading": "Conditions",
+          "level": 3,
+          "line": 270
+        },
+        {
+          "heading": "API Changes",
+          "level": 3,
+          "line": 291
+        },
+        {
+          "heading": "Upgrading",
+          "level": 3,
+          "line": 318
+        },
+        {
+          "heading": "Graduation",
+          "level": 3,
+          "line": 322
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 22
+      }
+    },
+    {
+      "path": "design/20220118.certificate-issuance-exponential-backoff.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 231,
+      "nonEmptyLines": 157,
+      "sections": [
+        {
+          "heading": "Exponential Backoff for Certificate Issuance",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "Table of Contents",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Summary",
+          "level": 2,
+          "line": 39
+        },
+        {
+          "heading": "Motivation",
+          "level": 2,
+          "line": 47
+        },
+        {
+          "heading": "Goals",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "Non-Goals",
+          "level": 3,
+          "line": 59
+        },
+        {
+          "heading": "Must Not",
+          "level": 3,
+          "line": 67
+        },
+        {
+          "heading": "Proposal",
+          "level": 2,
+          "line": 74
+        },
+        {
+          "heading": "API changes",
+          "level": 3,
+          "line": 85
+        },
+        {
+          "heading": "Examples",
+          "level": 3,
+          "line": 101
+        },
+        {
+          "heading": "Issuance fails then succeeds:",
+          "level": 4,
+          "line": 105
+        },
+        {
+          "heading": "Manually triggered reissuance succeeds",
+          "level": 4,
+          "line": 119
+        },
+        {
+          "heading": "Manually triggered reissuance fails",
+          "level": 4,
+          "line": 135
+        },
+        {
+          "heading": "Example certificate statuses",
+          "level": 4,
+          "line": 152
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "design/20220118.server-side-apply.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 242,
+      "nonEmptyLines": 194,
+      "sections": [
+        {
+          "heading": "Server-Side Apply",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "Table of Contents",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Summary",
+          "level": 2,
+          "line": 37
+        },
+        {
+          "heading": "Conflicts",
+          "level": 3,
+          "line": 60
+        },
+        {
+          "heading": "Deleting Fields",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "Field Manager and User Agent",
+          "level": 2,
+          "line": 87
+        },
+        {
+          "heading": "Known Field Managers",
+          "level": 4,
+          "line": 102
+        },
+        {
+          "heading": "Scheme",
+          "level": 3,
+          "line": 121
+        },
+        {
+          "heading": "Field Manager",
+          "level": 3,
+          "line": 123
+        },
+        {
+          "heading": "User Agent",
+          "level": 3,
+          "line": 138
+        },
+        {
+          "heading": "Implementation Consideration",
+          "level": 2,
+          "line": 154
+        },
+        {
+          "heading": "API Call Code Changes",
+          "level": 3,
+          "line": 156
+        },
+        {
+          "heading": "Force parameter",
+          "level": 3,
+          "line": 167
+        },
+        {
+          "heading": "client-go Testing",
+          "level": 3,
+          "line": 196
+        },
+        {
+          "heading": "API Changes",
+          "level": 3,
+          "line": 206
+        },
+        {
+          "heading": "Feature Gate",
+          "level": 2,
+          "line": 217
+        },
+        {
+          "heading": "Migration",
+          "level": 2,
+          "line": 231
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 17
+      }
+    },
+    {
+      "path": "design/20220614-timeouts.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 317,
+      "nonEmptyLines": 211,
+      "sections": [
+        {
+          "heading": "Increasing Timeouts for Issuer Operations",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Release Signoff Checklist",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Summary",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "Motivation",
+          "level": 2,
+          "line": 49
+        },
+        {
+          "heading": "Goals",
+          "level": 3,
+          "line": 63
+        },
+        {
+          "heading": "Remain Good Cluster Citizens",
+          "level": 4,
+          "line": 65
+        },
+        {
+          "heading": "Merge Before 1.9 and Backport",
+          "level": 4,
+          "line": 73
+        },
+        {
+          "heading": "Non-Goals",
+          "level": 3,
+          "line": 79
+        },
+        {
+          "heading": "Individually Configurable Timeouts for Every Operation or API Call",
+          "level": 4,
+          "line": 81
+        },
+        {
+          "heading": "Adding New Timeouts Where We Don't Currently Have Them",
+          "level": 4,
+          "line": 86
+        },
+        {
+          "heading": "Proposal",
+          "level": 2,
+          "line": 92
+        },
+        {
+          "heading": "Increase Some Existing Controller Timeouts",
+          "level": 3,
+          "line": 109
+        },
+        {
+          "heading": "Remove Middleware Timeouts",
+          "level": 3,
+          "line": 120
+        },
+        {
+          "heading": "Increase ACME HTTP Timeouts",
+          "level": 3,
+          "line": 149
+        },
+        {
+          "heading": "Risks and Mitigations",
+          "level": 3,
+          "line": 164
+        },
+        {
+          "heading": "Design Details",
+          "level": 2,
+          "line": 174
+        },
+        {
+          "heading": "Justification",
+          "level": 3,
+          "line": 186
+        },
+        {
+          "heading": "Crossplane",
+          "level": 4,
+          "line": 188
+        },
+        {
+          "heading": "Kubernetes",
+          "level": 4,
+          "line": 224
+        },
+        {
+          "heading": "User Reports",
+          "level": 4,
+          "line": 230
+        },
+        {
+          "heading": "General Justifications",
+          "level": 4,
+          "line": 240
+        },
+        {
+          "heading": "Test Plan",
+          "level": 3,
+          "line": 250
+        },
+        {
+          "heading": "Graduation Criteria",
+          "level": 3,
+          "line": 257
+        },
+        {
+          "heading": "Upgrade / Downgrade Strategy",
+          "level": 3,
+          "line": 261
+        },
+        {
+          "heading": "Supported Versions",
+          "level": 3,
+          "line": 268
+        },
+        {
+          "heading": "Production Readiness",
+          "level": 2,
+          "line": 274
+        },
+        {
+          "heading": "How can this feature be enabled / disabled for an existing cert-manager installation?",
+          "level": 3,
+          "line": 276
+        },
+        {
+          "heading": "Does this feature depend on any specific services running in the cluster?",
+          "level": 3,
+          "line": 280
+        },
+        {
+          "heading": "Will enabling / using this feature result in new API calls (i.e to Kubernetes apiserver or external services)?",
+          "level": 3,
+          "line": 284
+        },
+        {
+          "heading": "Will enabling / using this feature result in increasing size or count of the existing API objects?",
+          "level": 3,
+          "line": 292
+        },
+        {
+          "heading": "Will enabling / using this feature result in significant increase of resource usage? (CPU, RAM...)",
+          "level": 3,
+          "line": 296
+        },
+        {
+          "heading": "Drawbacks",
+          "level": 2,
+          "line": 302
+        },
+        {
+          "heading": "Alternatives",
+          "level": 2,
+          "line": 309
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 33
+      }
+    },
+    {
+      "path": "design/20221205-memory-management.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 725,
+      "nonEmptyLines": 468,
+      "sections": [
+        {
+          "heading": "Memory consumption reduction",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Release Signoff Checklist",
+          "level": 2,
+          "line": 50
+        },
+        {
+          "heading": "Summary",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "Motivation",
+          "level": 2,
+          "line": 69
+        },
+        {
+          "heading": "Goals",
+          "level": 3,
+          "line": 71
+        },
+        {
+          "heading": "Non-Goals",
+          "level": 3,
+          "line": 79
+        },
+        {
+          "heading": "Nice to have",
+          "level": 4,
+          "line": 87
+        },
+        {
+          "heading": "Must not",
+          "level": 4,
+          "line": 109
+        },
+        {
+          "heading": "Proposal",
+          "level": 2,
+          "line": 119
+        },
+        {
+          "heading": "Background",
+          "level": 3,
+          "line": 127
+        },
+        {
+          "heading": "User Stories",
+          "level": 3,
+          "line": 145
+        },
+        {
+          "heading": "Story 1",
+          "level": 4,
+          "line": 147
+        },
+        {
+          "heading": "Risks and Mitigations",
+          "level": 3,
+          "line": 154
+        },
+        {
+          "heading": "Design details",
+          "level": 2,
+          "line": 170
+        },
+        {
+          "heading": "Implementation",
+          "level": 3,
+          "line": 171
+        },
+        {
+          "heading": "Metrics",
+          "level": 3,
+          "line": 311
+        },
+        {
+          "heading": "Cluster with large cert-manager unrelated secrets",
+          "level": 4,
+          "line": 316
+        },
+        {
+          "heading": "cert-manager v1.11",
+          "level": 5,
+          "line": 320
+        },
+        {
+          "heading": "partial metadata prototype",
+          "level": 5,
+          "line": 338
+        },
+        {
+          "heading": "Issuance of a large number of `Certificate`s",
+          "level": 4,
+          "line": 356
+        },
+        {
+          "heading": "latest cert-manager",
+          "level": 5,
+          "line": 363
+        },
+        {
+          "heading": "partial metadata",
+          "level": 5,
+          "line": 375
+        },
+        {
+          "heading": "Pros",
+          "level": 3,
+          "line": 394
+        },
+        {
+          "heading": "Cons",
+          "level": 3,
+          "line": 402
+        },
+        {
+          "heading": "Test Plan",
+          "level": 3,
+          "line": 407
+        },
+        {
+          "heading": "Graduation Criteria",
+          "level": 3,
+          "line": 415
+        },
+        {
+          "heading": "Upgrade / Downgrade Strategy",
+          "level": 3,
+          "line": 435
+        },
+        {
+          "heading": "Supported Versions",
+          "level": 3,
+          "line": 439
+        },
+        {
+          "heading": "Notes",
+          "level": 3,
+          "line": 446
+        },
+        {
+          "heading": "Current state",
+          "level": 4,
+          "line": 447
+        },
+        {
+          "heading": "Secrets for Certificates",
+          "level": 5,
+          "line": 451
+        },
+        {
+          "heading": "Secrets for [Cluster]Issuers",
+          "level": 5,
+          "line": 457
+        },
+        {
+          "heading": "Upstream mechanisms",
+          "level": 4,
+          "line": 525
+        },
+        {
+          "heading": "Partial object metadata",
+          "level": 5,
+          "line": 536
+        },
+        {
+          "heading": "Transform functions",
+          "level": 5,
+          "line": 544
+        },
+        {
+          "heading": "Future changes",
+          "level": 5,
+          "line": 553
+        },
+        {
+          "heading": "Production Readiness",
+          "level": 2,
+          "line": 559
+        },
+        {
+          "heading": "How can this feature be enabled / disabled for an existing cert-manager installation?",
+          "level": 3,
+          "line": 565
+        },
+        {
+          "heading": "Does this feature depend on any specific services running in the cluster?",
+          "level": 3,
+          "line": 578
+        },
+        {
+          "heading": "Will enabling / using this feature result in new API calls (i.e to Kubernetes apiserver or external services)?",
+          "level": 3,
+          "line": 582
+        },
+        {
+          "heading": "Will enabling / using this feature result in increasing size or count of the existing API objects?",
+          "level": 3,
+          "line": 588
+        },
+        {
+          "heading": "Will enabling / using this feature result in significant increase of resource usage? (CPU, RAM...)",
+          "level": 3,
+          "line": 592
+        },
+        {
+          "heading": "Alternatives",
+          "level": 2,
+          "line": 596
+        },
+        {
+          "heading": "Use transform functions to remove `data` for non-labelled `Secret`s before adding them to informers cache",
+          "level": 3,
+          "line": 598
+        },
+        {
+          "heading": "Drawbacks",
+          "level": 4,
+          "line": 622
+        },
+        {
+          "heading": "Use PartialMetadata only",
+          "level": 3,
+          "line": 643
+        },
+        {
+          "heading": "Drawbacks",
+          "level": 4,
+          "line": 649
+        },
+        {
+          "heading": "Use paging to limit the memory spike when controller starts up",
+          "level": 3,
+          "line": 669
+        },
+        {
+          "heading": "Filter the Secrets to watch with a label",
+          "level": 3,
+          "line": 682
+        },
+        {
+          "heading": "Drawbacks",
+          "level": 4,
+          "line": 690
+        },
+        {
+          "heading": "Allow users to pass a custom filter",
+          "level": 3,
+          "line": 698
+        },
+        {
+          "heading": "Drawbacks",
+          "level": 4,
+          "line": 706
+        },
+        {
+          "heading": "Use a standalone typed cache populated from different sources",
+          "level": 3,
+          "line": 712
+        },
+        {
+          "heading": "Drawbacks",
+          "level": 4,
+          "line": 719
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 54
+      }
+    },
+    {
+      "path": "design/20230302.gomod.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 366,
+      "nonEmptyLines": 264,
+      "sections": [
+        {
+          "heading": "Design: More Modules",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "In Short",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Assumptions / Axioms",
+          "level": 3,
+          "line": 9
+        },
+        {
+          "heading": "Solution",
+          "level": 3,
+          "line": 16
+        },
+        {
+          "heading": "Pros",
+          "level": 3,
+          "line": 26
+        },
+        {
+          "heading": "Cons",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "Longer Form Problem Statement",
+          "level": 2,
+          "line": 64
+        },
+        {
+          "heading": "Problem Example",
+          "level": 3,
+          "line": 83
+        },
+        {
+          "heading": "Proposed Solution: Go Module Proliferation",
+          "level": 2,
+          "line": 101
+        },
+        {
+          "heading": "Terminology",
+          "level": 3,
+          "line": 112
+        },
+        {
+          "heading": "Solution Detail",
+          "level": 3,
+          "line": 119
+        },
+        {
+          "heading": "Workflow Example: Changing a Binary",
+          "level": 3,
+          "line": 162
+        },
+        {
+          "heading": "Potential Issues",
+          "level": 2,
+          "line": 194
+        },
+        {
+          "heading": "Importing cert-manager / Development Experience",
+          "level": 3,
+          "line": 196
+        },
+        {
+          "heading": "Potential Solution for Developer Experience: Dynamic `go.work`",
+          "level": 4,
+          "line": 224
+        },
+        {
+          "heading": "Running Tests",
+          "level": 3,
+          "line": 233
+        },
+        {
+          "heading": "Test Modules",
+          "level": 3,
+          "line": 247
+        },
+        {
+          "heading": "Solution: Split Test Code",
+          "level": 4,
+          "line": 265
+        },
+        {
+          "heading": "Increased Time to Patch Everything",
+          "level": 3,
+          "line": 277
+        },
+        {
+          "heading": "Other Considered Approaches",
+          "level": 2,
+          "line": 283
+        },
+        {
+          "heading": "Being Less Conservative",
+          "level": 3,
+          "line": 285
+        },
+        {
+          "heading": "Aggressively Reducing Dependencies",
+          "level": 3,
+          "line": 297
+        },
+        {
+          "heading": "Addendum: Groundwork for `pkg/apis` Module",
+          "level": 2,
+          "line": 311
+        },
+        {
+          "heading": "Footnotes",
+          "level": 2,
+          "line": 322
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 24
+      }
+    },
+    {
+      "path": "design/20230601.gateway-route-hostnames.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 214,
+      "nonEmptyLines": 157,
+      "sections": [
+        {
+          "heading": "Inferring TLS Hostnames From Gateway Routes",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Release Signoff Checklist",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "Summary",
+          "level": 2,
+          "line": 37
+        },
+        {
+          "heading": "Motivation",
+          "level": 2,
+          "line": 42
+        },
+        {
+          "heading": "Goals",
+          "level": 3,
+          "line": 55
+        },
+        {
+          "heading": "Non-Goals",
+          "level": 3,
+          "line": 61
+        },
+        {
+          "heading": "Proposal",
+          "level": 2,
+          "line": 65
+        },
+        {
+          "heading": "User Stories",
+          "level": 3,
+          "line": 133
+        },
+        {
+          "heading": "Risks and Mitigations",
+          "level": 3,
+          "line": 138
+        },
+        {
+          "heading": "Design Details",
+          "level": 2,
+          "line": 145
+        },
+        {
+          "heading": "Test Plan",
+          "level": 3,
+          "line": 161
+        },
+        {
+          "heading": "Graduation Criteria",
+          "level": 3,
+          "line": 166
+        },
+        {
+          "heading": "Upgrade / Downgrade Strategy",
+          "level": 3,
+          "line": 170
+        },
+        {
+          "heading": "Supported Versions",
+          "level": 3,
+          "line": 178
+        },
+        {
+          "heading": "Production Readiness",
+          "level": 2,
+          "line": 182
+        },
+        {
+          "heading": "How can this feature be enabled / disabled for an existing cert-manager installation?",
+          "level": 3,
+          "line": 184
+        },
+        {
+          "heading": "Does this feature depend on any specific services running in the cluster?",
+          "level": 3,
+          "line": 191
+        },
+        {
+          "heading": "Will enabling / using this feature result in new API calls (i.e. to Kubernetes apiserver or external services)?",
+          "level": 3,
+          "line": 195
+        },
+        {
+          "heading": "Will enabling / using this feature result in increasing size or count of the existing API objects?",
+          "level": 3,
+          "line": 199
+        },
+        {
+          "heading": "Will enabling / using this feature result in significant increase of resource usage? (CPU, RAM...)",
+          "level": 3,
+          "line": 204
+        },
+        {
+          "heading": "Drawbacks",
+          "level": 2,
+          "line": 208
+        },
+        {
+          "heading": "Alternatives",
+          "level": 2,
+          "line": 212
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 22
+      }
+    },
+    {
+      "path": "design/20240122.scarf.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 62,
+      "nonEmptyLines": 44,
+      "sections": [
+        {
+          "heading": "Proposal: Scarf.sh integration",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Summary",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "What is Scarf?",
+          "level": 3,
+          "line": 26
+        },
+        {
+          "heading": "Motivation",
+          "level": 2,
+          "line": 30
+        },
+        {
+          "heading": "Goals",
+          "level": 3,
+          "line": 32
+        },
+        {
+          "heading": "Proposal",
+          "level": 2,
+          "line": 39
+        },
+        {
+          "heading": "How will this change impact our users?",
+          "level": 3,
+          "line": 54
+        },
+        {
+          "heading": "Known issues/limitations",
+          "level": 3,
+          "line": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "design/20240206.helm-resource-policy.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 137,
+      "nonEmptyLines": 100,
+      "sections": [
+        {
+          "heading": "Proposal: add \"helm.sh/resource-policy: keep\" CRD annotation and uniformise CRD options.",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "Release Signoff Checklist",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Summary",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "Motivation",
+          "level": 2,
+          "line": 35
+        },
+        {
+          "heading": "Goals",
+          "level": 3,
+          "line": 44
+        },
+        {
+          "heading": "Non-Goals",
+          "level": 3,
+          "line": 60
+        },
+        {
+          "heading": "Proposal",
+          "level": 2,
+          "line": 69
+        },
+        {
+          "heading": "Design Details",
+          "level": 2,
+          "line": 99
+        },
+        {
+          "heading": "Drawbacks",
+          "level": 2,
+          "line": 117
+        },
+        {
+          "heading": "Alternatives",
+          "level": 2,
+          "line": 128
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "design/20240518.push-to-multiple-registries.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 289,
+      "nonEmptyLines": 206,
+      "sections": [
+        {
+          "heading": "Push image artifacts to multiple repositories",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "Release Signoff Checklist",
+          "level": 2,
+          "line": 30
+        },
+        {
+          "heading": "Summary",
+          "level": 2,
+          "line": 42
+        },
+        {
+          "heading": "Motivation",
+          "level": 2,
+          "line": 54
+        },
+        {
+          "heading": "Goals",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "Non-Goals",
+          "level": 3,
+          "line": 74
+        },
+        {
+          "heading": "Proposal",
+          "level": 2,
+          "line": 83
+        },
+        {
+          "heading": "User Stories (Optional)",
+          "level": 3,
+          "line": 93
+        },
+        {
+          "heading": "Story 1",
+          "level": 4,
+          "line": 102
+        },
+        {
+          "heading": "Story 2",
+          "level": 4,
+          "line": 111
+        },
+        {
+          "heading": "Notes/Constraints/Caveats (Optional)",
+          "level": 3,
+          "line": 120
+        },
+        {
+          "heading": "Risks and Mitigations",
+          "level": 3,
+          "line": 129
+        },
+        {
+          "heading": "Design Details",
+          "level": 2,
+          "line": 143
+        },
+        {
+          "heading": "Test Plan",
+          "level": 3,
+          "line": 159
+        },
+        {
+          "heading": "Graduation Criteria",
+          "level": 3,
+          "line": 166
+        },
+        {
+          "heading": "Upgrade / Downgrade Strategy",
+          "level": 3,
+          "line": 213
+        },
+        {
+          "heading": "Supported Versions",
+          "level": 3,
+          "line": 220
+        },
+        {
+          "heading": "Production Readiness",
+          "level": 2,
+          "line": 227
+        },
+        {
+          "heading": "How can this feature be enabled / disabled for an existing cert-manager installation?",
+          "level": 3,
+          "line": 233
+        },
+        {
+          "heading": "Does this feature depend on any specific services running in the cluster?",
+          "level": 3,
+          "line": 247
+        },
+        {
+          "heading": "Will enabling / using this feature result in new API calls (i.e to Kubernetes apiserver or external services)?",
+          "level": 3,
+          "line": 254
+        },
+        {
+          "heading": "Will enabling / using this feature result in increasing size or count of the existing API objects?",
+          "level": 3,
+          "line": 261
+        },
+        {
+          "heading": "Will enabling / using this feature result in significant increase of resource usage? (CPU, RAM...)",
+          "level": 3,
+          "line": 268
+        },
+        {
+          "heading": "Drawbacks",
+          "level": 2,
+          "line": 275
+        },
+        {
+          "heading": "Alternatives",
+          "level": 2,
+          "line": 282
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 25
+      }
+    },
+    {
+      "path": "design/20240625.push-charts-to-oci.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 257,
+      "nonEmptyLines": 181,
+      "sections": [
+        {
+          "heading": "Push cert-manager Helm Charts to an OCI Registry",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "Release Signoff Checklist",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "Summary",
+          "level": 2,
+          "line": 35
+        },
+        {
+          "heading": "Motivation",
+          "level": 2,
+          "line": 51
+        },
+        {
+          "heading": "Goals",
+          "level": 3,
+          "line": 86
+        },
+        {
+          "heading": "Non-Goals",
+          "level": 3,
+          "line": 96
+        },
+        {
+          "heading": "Proposal",
+          "level": 2,
+          "line": 106
+        },
+        {
+          "heading": "Risks and Mitigations",
+          "level": 3,
+          "line": 116
+        },
+        {
+          "heading": "Risk 1",
+          "level": 3,
+          "line": 124
+        },
+        {
+          "heading": "Risk 2",
+          "level": 3,
+          "line": 137
+        },
+        {
+          "heading": "Design Details",
+          "level": 2,
+          "line": 146
+        },
+        {
+          "heading": "Test Plan",
+          "level": 3,
+          "line": 162
+        },
+        {
+          "heading": "Graduation Criteria",
+          "level": 3,
+          "line": 171
+        },
+        {
+          "heading": "Upgrade / Downgrade Strategy",
+          "level": 3,
+          "line": 179
+        },
+        {
+          "heading": "Supported Versions",
+          "level": 3,
+          "line": 187
+        },
+        {
+          "heading": "Production Readiness",
+          "level": 2,
+          "line": 195
+        },
+        {
+          "heading": "Does this feature depend on any specific services running in the cluster?",
+          "level": 3,
+          "line": 202
+        },
+        {
+          "heading": "Will enabling / using this feature result in new API calls (i.e to Kubernetes apiserver or external services)?",
+          "level": 3,
+          "line": 210
+        },
+        {
+          "heading": "Will enabling / using this feature result in increasing size or count of the existing API objects?",
+          "level": 3,
+          "line": 219
+        },
+        {
+          "heading": "Will enabling / using this feature result in significant increase of resource usage? (CPU, RAM...)",
+          "level": 3,
+          "line": 227
+        },
+        {
+          "heading": "Drawbacks",
+          "level": 2,
+          "line": 235
+        },
+        {
+          "heading": "Alternatives",
+          "level": 2,
+          "line": 243
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 22
+      }
+    },
+    {
+      "path": "design/acme-orders-challenges-crd.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 472,
+      "nonEmptyLines": 358,
+      "sections": [
+        {
+          "heading": "ACME Order & Challenge CRDs to handle Order flow",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Problem",
+          "level": 2,
+          "line": 6
+        },
+        {
+          "heading": "Proposed solution",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "Required changes",
+          "level": 2,
+          "line": 38
+        },
+        {
+          "heading": "API changes",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "New types",
+          "level": 4,
+          "line": 44
+        },
+        {
+          "heading": "Order",
+          "level": 5,
+          "line": 46
+        },
+        {
+          "heading": "Challenge",
+          "level": 5,
+          "line": 196
+        },
+        {
+          "heading": "Changes to existing types",
+          "level": 4,
+          "line": 287
+        },
+        {
+          "heading": "Controllers",
+          "level": 3,
+          "line": 308
+        },
+        {
+          "heading": "ACME Issuer",
+          "level": 4,
+          "line": 316
+        },
+        {
+          "heading": "Order controller",
+          "level": 4,
+          "line": 346
+        },
+        {
+          "heading": "Challenge controller",
+          "level": 4,
+          "line": 398
+        },
+        {
+          "heading": "Refactoring",
+          "level": 3,
+          "line": 429
+        },
+        {
+          "heading": "Risks & mitigations",
+          "level": 2,
+          "line": 439
+        },
+        {
+          "heading": "Introducing new resource types creates more cognitive overhead for users, and a steeper 'on-boarding' curve w.r.t. debugging issues.",
+          "level": 4,
+          "line": 441
+        },
+        {
+          "heading": "Alternatives considered",
+          "level": 2,
+          "line": 457
+        },
+        {
+          "heading": "Expanding the `certificate.status.acme` stanza to include more fields tracking the state of the current order",
+          "level": 4,
+          "line": 459
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    },
+    {
+      "path": "design/template.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 238,
+      "nonEmptyLines": 165,
+      "sections": [
+        {
+          "heading": "CHANGEME: Title",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "Release Signoff Checklist",
+          "level": 2,
+          "line": 30
+        },
+        {
+          "heading": "Summary",
+          "level": 2,
+          "line": 42
+        },
+        {
+          "heading": "Motivation",
+          "level": 2,
+          "line": 53
+        },
+        {
+          "heading": "Goals",
+          "level": 3,
+          "line": 62
+        },
+        {
+          "heading": "Non-Goals",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "Proposal",
+          "level": 2,
+          "line": 76
+        },
+        {
+          "heading": "User Stories (Optional)",
+          "level": 3,
+          "line": 86
+        },
+        {
+          "heading": "Story 1",
+          "level": 4,
+          "line": 95
+        },
+        {
+          "heading": "Story 2",
+          "level": 4,
+          "line": 97
+        },
+        {
+          "heading": "Notes/Constraints/Caveats (Optional)",
+          "level": 3,
+          "line": 99
+        },
+        {
+          "heading": "Risks and Mitigations",
+          "level": 3,
+          "line": 108
+        },
+        {
+          "heading": "Design Details",
+          "level": 2,
+          "line": 117
+        },
+        {
+          "heading": "Test Plan",
+          "level": 3,
+          "line": 126
+        },
+        {
+          "heading": "Graduation Criteria",
+          "level": 3,
+          "line": 134
+        },
+        {
+          "heading": "Upgrade / Downgrade Strategy",
+          "level": 3,
+          "line": 171
+        },
+        {
+          "heading": "Supported Versions",
+          "level": 3,
+          "line": 177
+        },
+        {
+          "heading": "Production Readiness",
+          "level": 2,
+          "line": 183
+        },
+        {
+          "heading": "How can this feature be enabled / disabled for an existing cert-manager installation?",
+          "level": 3,
+          "line": 189
+        },
+        {
+          "heading": "Does this feature depend on any specific services running in the cluster?",
+          "level": 3,
+          "line": 202
+        },
+        {
+          "heading": "Will enabling / using this feature result in new API calls (i.e to Kubernetes apiserver or external services)?",
+          "level": 3,
+          "line": 208
+        },
+        {
+          "heading": "Will enabling / using this feature result in increasing size or count of the existing API objects?",
+          "level": 3,
+          "line": 214
+        },
+        {
+          "heading": "Will enabling / using this feature result in significant increase of resource usage? (CPU, RAM...)",
+          "level": 3,
+          "line": 220
+        },
+        {
+          "heading": "Drawbacks",
+          "level": 2,
+          "line": 226
+        },
+        {
+          "heading": "Alternatives",
+          "level": 2,
+          "line": 232
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 25
+      }
+    }
+  ]
+}

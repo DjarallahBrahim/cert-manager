@@ -1,0 +1,994 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/issuer/acme/http/http.go",
+      "type": "file",
+      "name": "http.go",
+      "filePath": "pkg/issuer/acme/http/http.go",
+      "summary": "HTTP-01 challenge solver that creates and cleans up solver pods, services and Ingress/HTTPRoute resources and verifies challenge reachability.",
+      "tags": [
+        "acme",
+        "http01",
+        "solver",
+        "kubernetes",
+        "networking"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:pkg/issuer/acme/http/http.go:Solver",
+      "type": "class",
+      "name": "Solver",
+      "filePath": "pkg/issuer/acme/http/http.go",
+      "lineRange": [
+        64,
+        74
+      ],
+      "summary": "HTTP-01 solver embedded in the controller context with listers for pods, services, ingresses and HTTPRoutes.",
+      "tags": [
+        "acme",
+        "http01",
+        "solver",
+        "state"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/http.go:NewSolver",
+      "type": "function",
+      "name": "NewSolver",
+      "filePath": "pkg/issuer/acme/http/http.go",
+      "lineRange": [
+        79,
+        89
+      ],
+      "summary": "Creates the HTTP-01 solver with generic pod/service listers, Ingress and HTTPRoute listers and a reachability test.",
+      "tags": [
+        "factory",
+        "acme",
+        "http01",
+        "solver"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/http.go:Present",
+      "type": "function",
+      "name": "Present",
+      "filePath": "pkg/issuer/acme/http/http.go",
+      "lineRange": [
+        112,
+        144
+      ],
+      "summary": "Creates the solver pod, service and Ingress or HTTPRoute that expose the challenge token for the domain.",
+      "tags": [
+        "acme",
+        "http01",
+        "provisioning",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/http.go:Check",
+      "type": "function",
+      "name": "Check",
+      "filePath": "pkg/issuer/acme/http/http.go",
+      "lineRange": [
+        146,
+        187
+      ],
+      "summary": "Polls the challenge URL until the expected key is served and reports whether the challenge has propagated.",
+      "tags": [
+        "acme",
+        "http01",
+        "reachability",
+        "polling"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/http.go:CleanUp",
+      "type": "function",
+      "name": "CleanUp",
+      "filePath": "pkg/issuer/acme/http/http.go",
+      "lineRange": [
+        191,
+        197
+      ],
+      "summary": "Removes the solver resources created for an HTTP-01 challenge.",
+      "tags": [
+        "acme",
+        "http01",
+        "cleanup",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/http.go:buildChallengeUrl",
+      "type": "function",
+      "name": "buildChallengeUrl",
+      "filePath": "pkg/issuer/acme/http/http.go",
+      "lineRange": [
+        199,
+        211
+      ],
+      "summary": "Builds the HTTP-01 challenge URL for a domain and token using the well-known challenge path.",
+      "tags": [
+        "acme",
+        "http01",
+        "url",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/http.go:testReachability",
+      "type": "function",
+      "name": "testReachability",
+      "filePath": "pkg/issuer/acme/http/http.go",
+      "lineRange": [
+        215,
+        333
+      ],
+      "summary": "Performs repeated HTTP GET requests against the challenge URL with a bounded body size and custom DNS resolvers.",
+      "tags": [
+        "acme",
+        "http01",
+        "http-client",
+        "reachability"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:pkg/issuer/acme/http/solver/constants.go",
+      "type": "file",
+      "name": "constants.go",
+      "filePath": "pkg/issuer/acme/http/solver/constants.go",
+      "summary": "Constants defining the well-known HTTP path used for ACME HTTP-01 challenge responses.",
+      "tags": [
+        "constants",
+        "acme",
+        "http01",
+        "solver"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/acme/http/solver/solver.go",
+      "type": "file",
+      "name": "solver.go",
+      "filePath": "pkg/issuer/acme/http/solver/solver.go",
+      "summary": "Minimal in-cluster HTTP server that serves ACME HTTP-01 challenge tokens for a single domain and key pair.",
+      "tags": [
+        "acme",
+        "http01",
+        "solver",
+        "http-server"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/issuer/acme/http/solver/solver.go:HTTP01Solver",
+      "type": "class",
+      "name": "HTTP01Solver",
+      "filePath": "pkg/issuer/acme/http/solver/solver.go",
+      "lineRange": [
+        41,
+        49
+      ],
+      "summary": "HTTP-01 solver configuration holding listen port, domain, challenge token and key.",
+      "tags": [
+        "acme",
+        "http01",
+        "solver",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/solver/solver.go:Listen",
+      "type": "function",
+      "name": "Listen",
+      "filePath": "pkg/issuer/acme/http/solver/solver.go",
+      "lineRange": [
+        51,
+        66
+      ],
+      "summary": "Starts an HTTP server on the solver port and routes challenge requests to the handler.",
+      "tags": [
+        "acme",
+        "http01",
+        "http-server",
+        "solver"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/solver/solver.go:challengeHandler",
+      "type": "function",
+      "name": "challengeHandler",
+      "filePath": "pkg/issuer/acme/http/solver/solver.go",
+      "lineRange": [
+        68,
+        117
+      ],
+      "summary": "Serves the challenge token when the request host and path match the configured domain and well-known path.",
+      "tags": [
+        "acme",
+        "http01",
+        "http-handler",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/solver/solver.go:parseHost",
+      "type": "function",
+      "name": "parseHost",
+      "filePath": "pkg/issuer/acme/http/solver/solver.go",
+      "lineRange": [
+        119,
+        131
+      ],
+      "summary": "Strips the port from a Host header value, handling bracketed IPv6 addresses.",
+      "tags": [
+        "parsing",
+        "http",
+        "utility",
+        "host"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/ca/ca.go",
+      "type": "file",
+      "name": "ca.go",
+      "filePath": "pkg/issuer/ca/ca.go",
+      "summary": "CA issuer implementation that signs certificate requests with a CA key pair stored in a Kubernetes Secret.",
+      "tags": [
+        "issuer",
+        "ca",
+        "certificate",
+        "signing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/issuer/ca/ca.go:CA",
+      "type": "class",
+      "name": "CA",
+      "filePath": "pkg/issuer/ca/ca.go",
+      "lineRange": [
+        29,
+        32
+      ],
+      "summary": "CA issuer state holding the Secret lister used to load the signing key pair.",
+      "tags": [
+        "issuer",
+        "ca",
+        "state",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/ca/ca.go:NewCA",
+      "type": "function",
+      "name": "NewCA",
+      "filePath": "pkg/issuer/ca/ca.go",
+      "lineRange": [
+        34,
+        41
+      ],
+      "summary": "Constructs the CA issuer from the controller context.",
+      "tags": [
+        "factory",
+        "issuer",
+        "ca",
+        "context"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/ca/setup.go",
+      "type": "file",
+      "name": "setup.go",
+      "filePath": "pkg/issuer/ca/setup.go",
+      "summary": "Setup routine that validates the CA issuer’s signing key pair and marks the Issuer ready or failed.",
+      "tags": [
+        "issuer",
+        "ca",
+        "validation",
+        "status"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/ca/setup.go:Setup",
+      "type": "function",
+      "name": "Setup",
+      "filePath": "pkg/issuer/ca/setup.go",
+      "lineRange": [
+        43,
+        81
+      ],
+      "summary": "Loads the CA certificate and key from the referenced Secret, verifies the certificate is a CA and updates issuer conditions.",
+      "tags": [
+        "issuer",
+        "ca",
+        "validation",
+        "status"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "class:pkg/issuer/acme/http/http.go:Solver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "class:pkg/issuer/acme/http/http.go:Solver",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "function:pkg/issuer/acme/http/http.go:NewSolver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "function:pkg/issuer/acme/http/http.go:NewSolver",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "function:pkg/issuer/acme/http/http.go:Present",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "function:pkg/issuer/acme/http/http.go:Present",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "function:pkg/issuer/acme/http/http.go:Check",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "function:pkg/issuer/acme/http/http.go:Check",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "function:pkg/issuer/acme/http/http.go:CleanUp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "function:pkg/issuer/acme/http/http.go:CleanUp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "function:pkg/issuer/acme/http/http.go:buildChallengeUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "function:pkg/issuer/acme/http/http.go:buildChallengeUrl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "function:pkg/issuer/acme/http/http.go:testReachability",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/issuer/acme/http/solver/constants.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/issuer/acme/http/solver/solver.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/http.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/issuer/acme/http/http.go:Present",
+      "target": "function:pkg/issuer/acme/http/http.go:buildChallengeUrl",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/issuer/acme/http/http.go:Check",
+      "target": "function:pkg/issuer/acme/http/http.go:testReachability",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/solver/solver.go",
+      "target": "class:pkg/issuer/acme/http/solver/solver.go:HTTP01Solver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/solver/solver.go",
+      "target": "class:pkg/issuer/acme/http/solver/solver.go:HTTP01Solver",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/solver/solver.go",
+      "target": "function:pkg/issuer/acme/http/solver/solver.go:Listen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/solver/solver.go",
+      "target": "function:pkg/issuer/acme/http/solver/solver.go:Listen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/solver/solver.go",
+      "target": "function:pkg/issuer/acme/http/solver/solver.go:challengeHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/solver/solver.go",
+      "target": "function:pkg/issuer/acme/http/solver/solver.go:parseHost",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:pkg/issuer/acme/http/solver/solver.go:Listen",
+      "target": "function:pkg/issuer/acme/http/solver/solver.go:challengeHandler",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "class:pkg/issuer/ca/ca.go:CA",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "class:pkg/issuer/ca/ca.go:CA",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "function:pkg/issuer/ca/ca.go:NewCA",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "function:pkg/issuer/ca/ca.go:NewCA",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:pkg/api/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:pkg/api/util/duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:pkg/api/util/issuers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:pkg/api/util/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:pkg/api/util/names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:pkg/api/util/usages.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:pkg/issuer/factory.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:pkg/issuer/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/ca.go",
+      "target": "file:pkg/issuer/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "function:pkg/issuer/ca/setup.go:Setup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "function:pkg/issuer/ca/setup.go:Setup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/api/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/api/util/duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/api/util/issuers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/api/util/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/api/util/names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/api/util/usages.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/ca/setup.go",
+      "target": "file:pkg/util/kube/pki.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

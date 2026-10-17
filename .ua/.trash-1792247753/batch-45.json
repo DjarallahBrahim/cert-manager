@@ -1,0 +1,373 @@
+{
+  "nodes": [
+    {
+      "id": "document:.github/ISSUE_TEMPLATE/bug.md",
+      "type": "document",
+      "name": "bug.md",
+      "filePath": ".github/ISSUE_TEMPLATE/bug.md",
+      "summary": "GitHub issue template that guides reporters through describing a cert-manager bug, expected behaviour, reproduction steps, and environment details.",
+      "tags": ["documentation", "issue-template", "bug-report", "community"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.github/ISSUE_TEMPLATE/feature-request.md",
+      "type": "document",
+      "name": "feature-request.md",
+      "filePath": ".github/ISSUE_TEMPLATE/feature-request.md",
+      "summary": "GitHub issue template for proposing cert-manager features, covering problem statement, desired solution, alternatives, and environment context.",
+      "tags": ["documentation", "issue-template", "feature-request", "community"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.github/PULL_REQUEST_TEMPLATE.md",
+      "type": "document",
+      "name": "PULL_REQUEST_TEMPLATE.md",
+      "filePath": ".github/PULL_REQUEST_TEMPLATE.md",
+      "summary": "Pull request template with sections for motivation, change kind, and release notes to standardize cert-manager contributions.",
+      "tags": ["documentation", "pull-request", "contributing", "release-notes"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.github/chainguard/make-self-upgrade.sts.yaml",
+      "type": "config",
+      "name": "make-self-upgrade.sts.yaml",
+      "filePath": ".github/chainguard/make-self-upgrade.sts.yaml",
+      "summary": "Chainguard Security Token Service policy granting write access to contents, pull requests, and workflows for the automated self-upgrade workflow on main branches.",
+      "tags": ["configuration", "security", "ci-cd", "authentication"],
+      "complexity": "simple",
+      "languageNotes": "Generated file; subject_pattern restricts token issuance to the repository's main/master refs."
+    },
+    {
+      "id": "config:.github/chainguard/renovate.sts.yaml",
+      "type": "config",
+      "name": "renovate.sts.yaml",
+      "filePath": ".github/chainguard/renovate.sts.yaml",
+      "summary": "Chainguard STS policy that lets the Renovate bot obtain GitHub tokens with contents, issues, pull request, and workflow permissions on main branches.",
+      "tags": ["configuration", "security", "dependency-management", "authentication"],
+      "complexity": "simple",
+      "languageNotes": "Generated file; permissions are scoped to a subject_pattern matching main/master refs."
+    },
+    {
+      "id": "file:.github/renovate.json5",
+      "type": "file",
+      "name": "renovate.json5",
+      "filePath": ".github/renovate.json5",
+      "summary": "Renovate configuration that extends the cert-manager shared preset, adds custom regex managers for base images and kind versions, and restricts update types on release branches.",
+      "tags": ["configuration", "dependency-management", "automation", "json5"],
+      "complexity": "moderate",
+      "languageNotes": "JSON5 syntax allows comments and unquoted keys, used for Renovate's configuration format."
+    },
+    {
+      "id": "file:.trivyignore",
+      "type": "file",
+      "name": ".trivyignore",
+      "filePath": ".trivyignore",
+      "summary": "Trivy ignore list documenting a single accepted CVE (CVE-2020-8559) that is a false positive for this repository.",
+      "tags": ["security", "vulnerability-scanning", "configuration", "suppressions"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:LICENSES",
+      "type": "file",
+      "name": "LICENSES",
+      "filePath": "LICENSES",
+      "summary": "Generated inventory of dependency licenses for the root module, documenting the CNCF allowlist policy and how to inspect license texts for released artifacts.",
+      "tags": ["documentation", "licensing", "compliance", "generated"],
+      "complexity": "complex",
+      "languageNotes": "Produced by the go-licenses tool via the makefile-modules licenses module; must not be edited by hand."
+    },
+    {
+      "id": "file:OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "OWNERS",
+      "summary": "Repository-level Kubernetes OWNERS file listing approvers and reviewers for cert-manager changes.",
+      "tags": ["governance", "code-review", "configuration", "owners"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:OWNERS_ALIASES",
+      "type": "file",
+      "name": "OWNERS_ALIASES",
+      "filePath": "OWNERS_ALIASES",
+      "summary": "Generated alias map defining the cm-maintainers group used by OWNERS files throughout the repository.",
+      "tags": ["governance", "code-review", "configuration", "generated"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:cmd/acmesolver/LICENSES",
+      "type": "file",
+      "name": "LICENSES",
+      "filePath": "cmd/acmesolver/LICENSES",
+      "summary": "Generated license inventory for the acmesolver binary module, mirroring the go.mod dependency set for release compliance.",
+      "tags": ["documentation", "licensing", "compliance", "generated"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:cmd/acmesolver/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "cmd/acmesolver/OWNERS",
+      "summary": "Directory OWNERS file assigning the area/acme label to acmesolver command changes.",
+      "tags": ["governance", "code-review", "configuration", "owners"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:cmd/acmesolver/app/app.go",
+      "type": "file",
+      "name": "app.go",
+      "filePath": "cmd/acmesolver/app/app.go",
+      "summary": "Builds the acmesolver cobra command that runs the HTTP-01 challenge solver with graceful shutdown on context cancellation.",
+      "tags": ["entry-point", "cli", "acme", "http-server"],
+      "complexity": "moderate",
+      "languageNotes": "Go cobra command wiring with a goroutine that waits for context cancellation and shuts down the HTTP server with a 5 second timeout."
+    },
+    {
+      "id": "function:cmd/acmesolver/app/app.go:NewACMESolverCommand",
+      "type": "function",
+      "name": "NewACMESolverCommand",
+      "filePath": "cmd/acmesolver/app/app.go",
+      "lineRange": [33, 89],
+      "summary": "Constructs the acmesolver cobra command, registering listen-port, domain, token, and key flags and running the solver until shutdown.",
+      "tags": ["factory", "cli", "acme", "command"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:cmd/acmesolver/go.mod",
+      "type": "config",
+      "name": "go.mod",
+      "filePath": "cmd/acmesolver/go.mod",
+      "summary": "Go module definition for the acmesolver binary, pinning cobra, component-base, and a replace directive that points the cert-manager dependency at the repository root.",
+      "tags": ["configuration", "go-module", "dependencies", "build-system"],
+      "complexity": "moderate",
+      "languageNotes": "Separate Go module per binary with a relative replace directive to the root module."
+    },
+    {
+      "id": "config:cmd/acmesolver/go.sum",
+      "type": "config",
+      "name": "go.sum",
+      "filePath": "cmd/acmesolver/go.sum",
+      "summary": "Go module checksum database for acmesolver dependencies, ensuring reproducible builds and supply-chain integrity.",
+      "tags": ["configuration", "go-module", "checksums", "dependencies"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:cmd/acmesolver/main.go",
+      "type": "file",
+      "name": "main.go",
+      "filePath": "cmd/acmesolver/main.go",
+      "summary": "Entry point of the acmesolver binary that initializes logging, sets up graceful shutdown, and executes the acmesolver cobra command.",
+      "tags": ["entry-point", "cli", "acme", "binary"],
+      "complexity": "simple",
+      "languageNotes": "Uses the shared internal cmd util exit handler so the process exits with an appropriate status code."
+    },
+    {
+      "id": "function:cmd/acmesolver/main.go:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "cmd/acmesolver/main.go",
+      "lineRange": [31, 45],
+      "summary": "Sets up the exit handler and logger context, builds the acmesolver command, and reports execution errors with a non-zero exit code.",
+      "tags": ["entry-point", "bootstrap", "logging", "cli"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:cmd/cainjector/LICENSES",
+      "type": "file",
+      "name": "LICENSES",
+      "filePath": "cmd/cainjector/LICENSES",
+      "summary": "Generated license inventory for the cainjector binary module, listing licenses of its Kubernetes and controller-runtime dependencies.",
+      "tags": ["documentation", "licensing", "compliance", "generated"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:cmd/cainjector/go.mod",
+      "type": "config",
+      "name": "go.mod",
+      "filePath": "cmd/cainjector/go.mod",
+      "summary": "Go module definition for the cainjector binary, requiring client-go, apiextensions-apiserver, kube-aggregator, and controller-runtime with a replace to the root module.",
+      "tags": ["configuration", "go-module", "dependencies", "build-system"],
+      "complexity": "moderate",
+      "languageNotes": "Separate Go module per binary with a relative replace directive to the root module."
+    },
+    {
+      "id": "config:cmd/cainjector/go.sum",
+      "type": "config",
+      "name": "go.sum",
+      "filePath": "cmd/cainjector/go.sum",
+      "summary": "Go module checksum database for cainjector dependencies, ensuring reproducible builds and supply-chain integrity.",
+      "tags": ["configuration", "go-module", "checksums", "dependencies"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:cmd/controller/LICENSES",
+      "type": "file",
+      "name": "LICENSES",
+      "filePath": "cmd/controller/LICENSES",
+      "summary": "Generated license inventory for the controller binary module, covering the broad set of cloud DNS and Kubernetes dependencies it imports.",
+      "tags": ["documentation", "licensing", "compliance", "generated"],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:cmd/controller/go.mod",
+      "type": "config",
+      "name": "go.mod",
+      "filePath": "cmd/controller/go.mod",
+      "summary": "Go module definition for the cert-manager controller binary, pinning cloud DNS SDKs, client-go, and cobra while replacing the cert-manager dependency with the repository root.",
+      "tags": ["configuration", "go-module", "dependencies", "build-system"],
+      "complexity": "complex",
+      "languageNotes": "Separate Go module per binary with a relative replace directive to the root module."
+    },
+    {
+      "id": "config:cmd/controller/go.sum",
+      "type": "config",
+      "name": "go.sum",
+      "filePath": "cmd/controller/go.sum",
+      "summary": "Large Go module checksum database for controller dependencies, ensuring reproducible builds and supply-chain integrity.",
+      "tags": ["configuration", "go-module", "checksums", "dependencies"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:cmd/startupapicheck/LICENSES",
+      "type": "file",
+      "name": "LICENSES",
+      "filePath": "cmd/startupapicheck/LICENSES",
+      "summary": "Generated license inventory for the startupapicheck binary module, listing licenses of its CLI-runtime and Kubernetes dependencies.",
+      "tags": ["documentation", "licensing", "compliance", "generated"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:cmd/startupapicheck/go.mod",
+      "type": "config",
+      "name": "go.mod",
+      "filePath": "cmd/startupapicheck/go.mod",
+      "summary": "Go module definition for the startupapicheck binary, requiring cli-runtime, client-go, controller-runtime, and cobra with a replace to the root module.",
+      "tags": ["configuration", "go-module", "dependencies", "build-system"],
+      "complexity": "moderate",
+      "languageNotes": "Separate Go module per binary with a relative replace directive to the root module."
+    },
+    {
+      "id": "config:cmd/startupapicheck/go.sum",
+      "type": "config",
+      "name": "go.sum",
+      "filePath": "cmd/startupapicheck/go.sum",
+      "summary": "Go module checksum database for startupapicheck dependencies, ensuring reproducible builds and supply-chain integrity.",
+      "tags": ["configuration", "go-module", "checksums", "dependencies"],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:cmd/acmesolver/main.go",
+      "target": "file:cmd/acmesolver/app/app.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:cmd/acmesolver/app/app.go",
+      "target": "function:cmd/acmesolver/app/app.go:NewACMESolverCommand",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/acmesolver/app/app.go",
+      "target": "function:cmd/acmesolver/app/app.go:NewACMESolverCommand",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:cmd/acmesolver/main.go",
+      "target": "function:cmd/acmesolver/main.go:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "function:cmd/acmesolver/main.go:main",
+      "target": "function:cmd/acmesolver/app/app.go:NewACMESolverCommand",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:OWNERS_ALIASES",
+      "target": "file:OWNERS",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:.github/chainguard/renovate.sts.yaml",
+      "target": "file:.github/renovate.json5",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:.github/renovate.json5",
+      "target": "config:.github/chainguard/renovate.sts.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:cmd/acmesolver/go.sum",
+      "target": "config:cmd/acmesolver/go.mod",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:cmd/cainjector/go.sum",
+      "target": "config:cmd/cainjector/go.mod",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:cmd/controller/go.sum",
+      "target": "config:cmd/controller/go.mod",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:cmd/startupapicheck/go.sum",
+      "target": "config:cmd/startupapicheck/go.mod",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:cmd/acmesolver/LICENSES",
+      "target": "config:cmd/acmesolver/go.mod",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:cmd/cainjector/LICENSES",
+      "target": "config:cmd/cainjector/go.mod",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:cmd/controller/LICENSES",
+      "target": "config:cmd/controller/go.mod",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:cmd/startupapicheck/LICENSES",
+      "target": "config:cmd/startupapicheck/go.mod",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

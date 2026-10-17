@@ -1,0 +1,526 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/controller/certificate-shim/helper.go",
+      "type": "file",
+      "name": "helper.go",
+      "filePath": "pkg/controller/certificate-shim/helper.go",
+      "summary": "Translates ingress and Gateway annotations into Certificate spec fields and per-issuer configuration overrides.",
+      "tags": [
+        "shim",
+        "annotations",
+        "translation",
+        "certificates"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Annotation parsing uses CSV splitting with escaping and validates each value before mutating the Certificate spec."
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/helper.go:translateAnnotations",
+      "type": "function",
+      "name": "translateAnnotations",
+      "filePath": "pkg/controller/certificate-shim/helper.go",
+      "lineRange": [
+        65,
+        302
+      ],
+      "summary": "Parses cert-manager annotations on Ingress/Gateway resources and applies them to a Certificate spec.",
+      "tags": [
+        "annotations",
+        "parsing",
+        "certificates"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "type": "file",
+      "name": "controller.go",
+      "filePath": "pkg/controller/certificate-shim/ingresses/controller.go",
+      "summary": "Registers and runs the Ingress shim controller that synchronizes Certificates from Ingress TLS blocks.",
+      "tags": [
+        "controller",
+        "ingress",
+        "shim",
+        "certificates"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/ingresses/controller.go:Register",
+      "type": "function",
+      "name": "Register",
+      "filePath": "pkg/controller/certificate-shim/ingresses/controller.go",
+      "lineRange": [
+        46,
+        95
+      ],
+      "summary": "Registers the Ingress shim controller with the shared context and wires Ingress and Certificate informers.",
+      "tags": [
+        "controller",
+        "ingress",
+        "registration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/ingresses/controller.go:ProcessItem",
+      "type": "function",
+      "name": "ProcessItem",
+      "filePath": "pkg/controller/certificate-shim/ingresses/controller.go",
+      "lineRange": [
+        97,
+        110
+      ],
+      "summary": "Processes a queued Ingress key, skipping deleted Ingresses and invoking the shim sync function.",
+      "tags": [
+        "controller",
+        "queue",
+        "ingress"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/ingresses/controller.go:certificateHandler",
+      "type": "function",
+      "name": "certificateHandler",
+      "filePath": "pkg/controller/certificate-shim/ingresses/controller.go",
+      "lineRange": [
+        127,
+        151
+      ],
+      "summary": "Informer event handler that enqueues the owning Ingress when a shim-managed Certificate changes.",
+      "tags": [
+        "event-handler",
+        "ingress",
+        "queue"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/controller/certificate-shim/ingresses/controller.go:controller",
+      "type": "class",
+      "name": "controller",
+      "filePath": "pkg/controller/certificate-shim/ingresses/controller.go",
+      "lineRange": [
+        41,
+        44
+      ],
+      "summary": "Ingress shim controller holding the Ingress lister and the sync function used to reconcile TLS blocks.",
+      "tags": [
+        "controller",
+        "ingress",
+        "shim"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "function:pkg/controller/certificate-shim/helper.go:translateAnnotations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/api/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/api/util/duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/api/util/issuers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/api/util/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/api/util/names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/api/util/usages.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/util/pki/asn1_util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/util/pki/basicconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/util/pki/certificatetemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/util/pki/csr.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/util/pki/generate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/util/pki/keyusage.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/util/pki/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/util/pki/match.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/util/pki/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/util/pki/parse.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/util/pki/parse_certificate_chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/util/pki/renewaltime.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/util/pki/sans.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/util/pki/subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/util/pki/temporarycertificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/util/useragent.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/helper.go",
+      "target": "file:pkg/util/version.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "function:pkg/controller/certificate-shim/ingresses/controller.go:Register",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "function:pkg/controller/certificate-shim/ingresses/controller.go:Register",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "function:pkg/controller/certificate-shim/ingresses/controller.go:ProcessItem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "function:pkg/controller/certificate-shim/ingresses/controller.go:ProcessItem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "function:pkg/controller/certificate-shim/ingresses/controller.go:certificateHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "class:pkg/controller/certificate-shim/ingresses/controller.go:controller",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "file:pkg/controller/certificate-shim/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "file:pkg/controller/certificate-shim/sync.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/ingresses/controller.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

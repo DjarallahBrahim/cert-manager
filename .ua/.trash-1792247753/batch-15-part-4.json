@@ -1,0 +1,1984 @@
+{
+  "nodes": [
+    {
+      "id": "file:internal/apis/certmanager/types.go",
+      "type": "file",
+      "name": "types.go",
+      "filePath": "internal/apis/certmanager/types.go",
+      "summary": "Declares annotation keys, resource kind constants, key usage values, and signature algorithm constants shared across the internal cert-manager APIs.",
+      "tags": [
+        "constants",
+        "api-type",
+        "cert-manager",
+        "annotations"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/apis/certmanager/types_certificate.go",
+      "type": "file",
+      "name": "types_certificate.go",
+      "filePath": "internal/apis/certmanager/types_certificate.go",
+      "summary": "Internal API types for Certificate resources, covering the certificate spec, private key settings, keystores, name constraints, status, and conditions.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificate",
+        "cert-manager"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificate.go:Certificate",
+      "type": "class",
+      "name": "Certificate",
+      "filePath": "internal/apis/certmanager/types_certificate.go",
+      "lineRange": [
+        31,
+        46
+      ],
+      "summary": "Certificate resource requesting an X.509 certificate and storing the resulting key pair in a Secret.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificate",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificate.go:CertificateList",
+      "type": "class",
+      "name": "CertificateList",
+      "filePath": "internal/apis/certmanager/types_certificate.go",
+      "lineRange": [
+        51,
+        59
+      ],
+      "summary": "List wrapper for Certificate resources.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificate",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificate.go:CertificateSpec",
+      "type": "class",
+      "name": "CertificateSpec",
+      "filePath": "internal/apis/certmanager/types_certificate.go",
+      "lineRange": [
+        102,
+        270
+      ],
+      "summary": "Desired certificate properties: subject and SANs, issuer reference, duration, renewal, private key, keystores, and output formats.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificate",
+        "cert-manager"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificate.go:OtherName",
+      "type": "class",
+      "name": "OtherName",
+      "filePath": "internal/apis/certmanager/types_certificate.go",
+      "lineRange": [
+        272,
+        281
+      ],
+      "summary": "Additional subject alternative name encoded as an OID and value pair.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificate",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificate.go:CertificatePrivateKey",
+      "type": "class",
+      "name": "CertificatePrivateKey",
+      "filePath": "internal/apis/certmanager/types_certificate.go",
+      "lineRange": [
+        287,
+        327
+      ],
+      "summary": "Private key algorithm, size, encoding, rotation policy, and re-use settings for issued certificates.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificate",
+        "cert-manager"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificate.go:CertificateAdditionalOutputFormat",
+      "type": "class",
+      "name": "CertificateAdditionalOutputFormat",
+      "filePath": "internal/apis/certmanager/types_certificate.go",
+      "lineRange": [
+        372,
+        376
+      ],
+      "summary": "Additional output format (for example PKCS#12 or JKS) requested for the issued certificate.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificate",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificate.go:X509Subject",
+      "type": "class",
+      "name": "X509Subject",
+      "filePath": "internal/apis/certmanager/types_certificate.go",
+      "lineRange": [
+        379,
+        396
+      ],
+      "summary": "X.509 subject fields such as organization, country, locality, and serial number.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificate",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificate.go:CertificateKeystores",
+      "type": "class",
+      "name": "CertificateKeystores",
+      "filePath": "internal/apis/certmanager/types_certificate.go",
+      "lineRange": [
+        400,
+        408
+      ],
+      "summary": "Keystore outputs (JKS and PKCS#12) generated alongside the certificate.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificate",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificate.go:JKSKeystore",
+      "type": "class",
+      "name": "JKSKeystore",
+      "filePath": "internal/apis/certmanager/types_certificate.go",
+      "lineRange": [
+        412,
+        441
+      ],
+      "summary": "JKS keystore configuration including the password secret reference, alias, and creation policy.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificate",
+        "cert-manager"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificate.go:PKCS12Keystore",
+      "type": "class",
+      "name": "PKCS12Keystore",
+      "filePath": "internal/apis/certmanager/types_certificate.go",
+      "lineRange": [
+        446,
+        480
+      ],
+      "summary": "PKCS#12 keystore configuration including the password secret reference, profile, and creation policy.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificate",
+        "cert-manager"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificate.go:CertificateStatus",
+      "type": "class",
+      "name": "CertificateStatus",
+      "filePath": "internal/apis/certmanager/types_certificate.go",
+      "lineRange": [
+        496,
+        551
+      ],
+      "summary": "Observed certificate state: conditions, renewal time, revision, and failure information.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificate",
+        "cert-manager"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificate.go:CertificateCondition",
+      "type": "class",
+      "name": "CertificateCondition",
+      "filePath": "internal/apis/certmanager/types_certificate.go",
+      "lineRange": [
+        554,
+        579
+      ],
+      "summary": "A single condition describing the lifecycle state of a Certificate.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificate",
+        "cert-manager"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificate.go:CertificateSecretTemplate",
+      "type": "class",
+      "name": "CertificateSecretTemplate",
+      "filePath": "internal/apis/certmanager/types_certificate.go",
+      "lineRange": [
+        614,
+        622
+      ],
+      "summary": "Annotations and labels applied to the Secret that holds the issued certificate.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificate",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificate.go:NameConstraints",
+      "type": "class",
+      "name": "NameConstraints",
+      "filePath": "internal/apis/certmanager/types_certificate.go",
+      "lineRange": [
+        625,
+        640
+      ],
+      "summary": "X.509 name constraints listing permitted and excluded DNS names and IP ranges.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificate",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificate.go:NameConstraintItem",
+      "type": "class",
+      "name": "NameConstraintItem",
+      "filePath": "internal/apis/certmanager/types_certificate.go",
+      "lineRange": [
+        642,
+        660
+      ],
+      "summary": "A single permitted or excluded name-constraint entry.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificate",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "type": "file",
+      "name": "types_certificaterequest.go",
+      "filePath": "internal/apis/certmanager/types_certificaterequest.go",
+      "summary": "Internal API types for CertificateRequest resources, including the CSR spec, status, and approval/denial conditions.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificaterequest",
+        "cert-manager"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificaterequest.go:CertificateRequest",
+      "type": "class",
+      "name": "CertificateRequest",
+      "filePath": "internal/apis/certmanager/types_certificaterequest.go",
+      "lineRange": [
+        56,
+        71
+      ],
+      "summary": "CertificateRequest resource carrying a certificate signing request for an issuer to sign.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificaterequest",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificaterequest.go:CertificateRequestList",
+      "type": "class",
+      "name": "CertificateRequestList",
+      "filePath": "internal/apis/certmanager/types_certificaterequest.go",
+      "lineRange": [
+        76,
+        84
+      ],
+      "summary": "List wrapper for CertificateRequest resources.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificaterequest",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificaterequest.go:CertificateRequestSpec",
+      "type": "class",
+      "name": "CertificateRequestSpec",
+      "filePath": "internal/apis/certmanager/types_certificaterequest.go",
+      "lineRange": [
+        93,
+        150
+      ],
+      "summary": "Signing request details: CSR bytes, issuer reference, duration, key usages, and username/groups.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificaterequest",
+        "cert-manager"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificaterequest.go:CertificateRequestStatus",
+      "type": "class",
+      "name": "CertificateRequestStatus",
+      "filePath": "internal/apis/certmanager/types_certificaterequest.go",
+      "lineRange": [
+        154,
+        175
+      ],
+      "summary": "Observed request state: conditions, issued certificate, CA flag, and failure time.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificaterequest",
+        "cert-manager"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_certificaterequest.go:CertificateRequestCondition",
+      "type": "class",
+      "name": "CertificateRequestCondition",
+      "filePath": "internal/apis/certmanager/types_certificaterequest.go",
+      "lineRange": [
+        178,
+        197
+      ],
+      "summary": "A single condition on a CertificateRequest such as approved, denied, or ready.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "certificaterequest",
+        "cert-manager"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/apis/certmanager/types_issuer.go",
+      "type": "file",
+      "name": "types_issuer.go",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "summary": "Internal API types for Issuer and ClusterIssuer resources and their backends, including ACME, CA, Vault, Venafi, and self-signed configurations.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_issuer.go:ClusterIssuer",
+      "type": "class",
+      "name": "ClusterIssuer",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "lineRange": [
+        33,
+        42
+      ],
+      "summary": "Cluster-scoped issuer resource that can sign certificate requests for any namespace.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_issuer.go:ClusterIssuerList",
+      "type": "class",
+      "name": "ClusterIssuerList",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "lineRange": [
+        47,
+        52
+      ],
+      "summary": "List wrapper for ClusterIssuer resources.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_issuer.go:Issuer",
+      "type": "class",
+      "name": "Issuer",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "lineRange": [
+        60,
+        69
+      ],
+      "summary": "Namespaced issuer resource that signs certificate requests.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_issuer.go:IssuerList",
+      "type": "class",
+      "name": "IssuerList",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "lineRange": [
+        74,
+        79
+      ],
+      "summary": "List wrapper for Issuer resources.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_issuer.go:IssuerSpec",
+      "type": "class",
+      "name": "IssuerSpec",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "lineRange": [
+        83,
+        85
+      ],
+      "summary": "Issuer specification holding the selected issuer backend configuration.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_issuer.go:IssuerConfig",
+      "type": "class",
+      "name": "IssuerConfig",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "lineRange": [
+        88,
+        109
+      ],
+      "summary": "Union of supported issuer backends: ACME, CA, Vault, Venafi, and self-signed.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_issuer.go:VenafiIssuer",
+      "type": "class",
+      "name": "VenafiIssuer",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "lineRange": [
+        113,
+        127
+      ],
+      "summary": "Venafi issuer configuration selecting either the TPP or Cloud backend.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_issuer.go:VenafiTPP",
+      "type": "class",
+      "name": "VenafiTPP",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "lineRange": [
+        130,
+        152
+      ],
+      "summary": "Venafi TPP endpoint and access credentials.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_issuer.go:VenafiCloud",
+      "type": "class",
+      "name": "VenafiCloud",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "lineRange": [
+        155,
+        162
+      ],
+      "summary": "Venafi Cloud endpoint and access credentials.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_issuer.go:SelfSignedIssuer",
+      "type": "class",
+      "name": "SelfSignedIssuer",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "lineRange": [
+        166,
+        171
+      ],
+      "summary": "Self-signed issuer configuration, which requires no additional fields.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_issuer.go:VaultIssuer",
+      "type": "class",
+      "name": "VaultIssuer",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "lineRange": [
+        175,
+        221
+      ],
+      "summary": "HashiCorp Vault issuer configuration including server, path, namespace, and authentication.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_issuer.go:VaultAuth",
+      "type": "class",
+      "name": "VaultAuth",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "lineRange": [
+        225,
+        242
+      ],
+      "summary": "Union of Vault authentication methods: token secret, AppRole, Kubernetes, or client certificate.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_issuer.go:VaultAppRole",
+      "type": "class",
+      "name": "VaultAppRole",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "lineRange": [
+        246,
+        260
+      ],
+      "summary": "Vault AppRole authentication credentials with role ID and secret reference.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_issuer.go:VaultClientCertificateAuth",
+      "type": "class",
+      "name": "VaultClientCertificateAuth",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "lineRange": [
+        264,
+        282
+      ],
+      "summary": "Vault client certificate authentication with mount path and secret reference.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_issuer.go:VaultKubernetesAuth",
+      "type": "class",
+      "name": "VaultKubernetesAuth",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "lineRange": [
+        286,
+        311
+      ],
+      "summary": "Vault Kubernetes authentication using a service account and role.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_issuer.go:ServiceAccountRef",
+      "type": "class",
+      "name": "ServiceAccountRef",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "lineRange": [
+        318,
+        326
+      ],
+      "summary": "Reference to a Kubernetes service account used for authentication.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_issuer.go:CAIssuer",
+      "type": "class",
+      "name": "CAIssuer",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "lineRange": [
+        333,
+        355
+      ],
+      "summary": "CA issuer configuration with a signing secret and optional CRL distribution points.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_issuer.go:IssuerStatus",
+      "type": "class",
+      "name": "IssuerStatus",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "lineRange": [
+        358,
+        367
+      ],
+      "summary": "Observed issuer state and conditions.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/certmanager/types_issuer.go:IssuerCondition",
+      "type": "class",
+      "name": "IssuerCondition",
+      "filePath": "internal/apis/certmanager/types_issuer.go",
+      "lineRange": [
+        370,
+        395
+      ],
+      "summary": "A single condition describing the readiness of an Issuer.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "issuer",
+        "cert-manager"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "type": "file",
+      "name": "zz_generated.conversion.go",
+      "filePath": "internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "summary": "Generated conversion functions translating between internal cert-manager types and the public v1 API types, including scheme registration.",
+      "tags": [
+        "serialization",
+        "conversion",
+        "generated",
+        "api-group"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:internal/apis/certmanager/v1/zz_generated.conversion.go:RegisterConversions",
+      "type": "function",
+      "name": "RegisterConversions",
+      "filePath": "internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "lineRange": [
+        46,
+        438
+      ],
+      "summary": "Registers the generated conversion functions between internal and v1 cert-manager API types with the conversion scheme.",
+      "tags": [
+        "serialization",
+        "conversion",
+        "generated"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:internal/apis/certmanager/validation/clusterissuer.go",
+      "type": "file",
+      "name": "clusterissuer.go",
+      "filePath": "internal/apis/certmanager/validation/clusterissuer.go",
+      "summary": "Admission validation entry points for ClusterIssuer resources that delegate to the shared issuer spec validation.",
+      "tags": [
+        "validation",
+        "admission",
+        "issuer",
+        "clusterissuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/clusterissuer.go:ValidateClusterIssuer",
+      "type": "function",
+      "name": "ValidateClusterIssuer",
+      "filePath": "internal/apis/certmanager/validation/clusterissuer.go",
+      "lineRange": [
+        29,
+        33
+      ],
+      "summary": "Validates a ClusterIssuer spec through the shared issuer spec validation.",
+      "tags": [
+        "validation",
+        "admission",
+        "clusterissuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/certmanager/validation/clusterissuer.go:ValidateUpdateClusterIssuer",
+      "type": "function",
+      "name": "ValidateUpdateClusterIssuer",
+      "filePath": "internal/apis/certmanager/validation/clusterissuer.go",
+      "lineRange": [
+        35,
+        39
+      ],
+      "summary": "Validates updates to a ClusterIssuer using the shared issuer spec validation.",
+      "tags": [
+        "validation",
+        "admission",
+        "clusterissuer"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "file:internal/apis/meta/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "file:internal/apis/meta/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "file:internal/apis/meta/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "file:internal/apis/meta/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "target": "file:internal/apis/meta/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "target": "file:internal/apis/meta/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "target": "file:internal/apis/meta/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "target": "file:internal/apis/meta/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "file:internal/apis/acme/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "file:internal/apis/acme/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "file:internal/apis/acme/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "file:internal/apis/acme/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "file:internal/apis/acme/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "file:internal/apis/acme/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "file:internal/apis/meta/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "file:internal/apis/meta/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "file:internal/apis/meta/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "file:internal/apis/meta/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/acme/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/acme/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/acme/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/acme/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/acme/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/acme/v1/conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/acme/v1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/acme/v1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/acme/v1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/acme/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/certmanager/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/certmanager/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/certmanager/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/certmanager/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/certmanager/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/certmanager/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/certmanager/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/meta/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/meta/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/meta/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/meta/v1/conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/meta/v1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/meta/v1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/meta/v1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/meta/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/clusterissuer.go",
+      "target": "file:internal/apis/certmanager/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/clusterissuer.go",
+      "target": "file:internal/apis/certmanager/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/clusterissuer.go",
+      "target": "file:internal/apis/certmanager/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/clusterissuer.go",
+      "target": "file:internal/apis/certmanager/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/clusterissuer.go",
+      "target": "file:internal/apis/certmanager/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/clusterissuer.go",
+      "target": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/clusterissuer.go",
+      "target": "file:internal/apis/certmanager/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/clusterissuer.go",
+      "target": "file:internal/apis/certmanager/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:Certificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:CertificateList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:CertificateSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:OtherName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:CertificatePrivateKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:CertificateAdditionalOutputFormat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:X509Subject",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:CertificateKeystores",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:JKSKeystore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:PKCS12Keystore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:CertificateStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:CertificateCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:CertificateSecretTemplate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:NameConstraints",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:NameConstraintItem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "target": "class:internal/apis/certmanager/types_certificaterequest.go:CertificateRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "target": "class:internal/apis/certmanager/types_certificaterequest.go:CertificateRequestList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "target": "class:internal/apis/certmanager/types_certificaterequest.go:CertificateRequestSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "target": "class:internal/apis/certmanager/types_certificaterequest.go:CertificateRequestStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "target": "class:internal/apis/certmanager/types_certificaterequest.go:CertificateRequestCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:ClusterIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:ClusterIssuerList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:Issuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:IssuerList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:IssuerSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:IssuerConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:VenafiIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:VenafiTPP",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:VenafiCloud",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:SelfSignedIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:VaultIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:VaultAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:VaultAppRole",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:VaultClientCertificateAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:VaultKubernetesAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:ServiceAccountRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:CAIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:IssuerStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:IssuerCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "function:internal/apis/certmanager/v1/zz_generated.conversion.go:RegisterConversions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/clusterissuer.go",
+      "target": "function:internal/apis/certmanager/validation/clusterissuer.go:ValidateClusterIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/clusterissuer.go",
+      "target": "function:internal/apis/certmanager/validation/clusterissuer.go:ValidateUpdateClusterIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:Certificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:CertificateList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:CertificateSpec",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:OtherName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:CertificatePrivateKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:CertificateAdditionalOutputFormat",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:X509Subject",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:CertificateKeystores",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:JKSKeystore",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:PKCS12Keystore",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:CertificateStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:CertificateCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:CertificateSecretTemplate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:NameConstraints",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificate.go",
+      "target": "class:internal/apis/certmanager/types_certificate.go:NameConstraintItem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "target": "class:internal/apis/certmanager/types_certificaterequest.go:CertificateRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "target": "class:internal/apis/certmanager/types_certificaterequest.go:CertificateRequestList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "target": "class:internal/apis/certmanager/types_certificaterequest.go:CertificateRequestSpec",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "target": "class:internal/apis/certmanager/types_certificaterequest.go:CertificateRequestStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "target": "class:internal/apis/certmanager/types_certificaterequest.go:CertificateRequestCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:ClusterIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:ClusterIssuerList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:Issuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:IssuerList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:IssuerSpec",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:IssuerConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:VenafiIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:VenafiTPP",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:VenafiCloud",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:SelfSignedIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:VaultIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:VaultAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:VaultAppRole",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:VaultClientCertificateAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:VaultKubernetesAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:ServiceAccountRef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:CAIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:IssuerStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/types_issuer.go",
+      "target": "class:internal/apis/certmanager/types_issuer.go:IssuerCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "target": "function:internal/apis/certmanager/v1/zz_generated.conversion.go:RegisterConversions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/clusterissuer.go",
+      "target": "function:internal/apis/certmanager/validation/clusterissuer.go:ValidateClusterIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/validation/clusterissuer.go",
+      "target": "function:internal/apis/certmanager/validation/clusterissuer.go:ValidateUpdateClusterIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/clusterissuer.go:ValidateClusterIssuer",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuerSpec",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/apis/certmanager/validation/clusterissuer.go:ValidateUpdateClusterIssuer",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuerSpec",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

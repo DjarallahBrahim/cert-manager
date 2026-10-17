@@ -1,0 +1,1280 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/issuer/venafi/setup.go",
+      "type": "file",
+      "name": "setup.go",
+      "filePath": "pkg/issuer/venafi/setup.go",
+      "summary": "Pings the Venafi endpoint and verifies credentials during issuer setup, recording Ready conditions.",
+      "tags": [
+        "venafi",
+        "setup",
+        "conditions",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/setup.go:Setup",
+      "type": "function",
+      "name": "Setup",
+      "filePath": "pkg/issuer/venafi/setup.go",
+      "lineRange": [
+        31,
+        69
+      ],
+      "summary": "Builds the client, pings the API, and verifies credentials while setting issuer conditions.",
+      "tags": [
+        "venafi",
+        "setup",
+        "conditions",
+        "authentication"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/issuer/venafi/venafi.go",
+      "type": "file",
+      "name": "venafi.go",
+      "filePath": "pkg/issuer/venafi/venafi.go",
+      "summary": "Venafi issuer implementation wiring the client builder, secret lister, and user agent; registers with the issuer factory.",
+      "tags": [
+        "venafi",
+        "issuer",
+        "registration",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/issuer/venafi/venafi.go:Venafi",
+      "type": "class",
+      "name": "Venafi",
+      "filePath": "pkg/issuer/venafi/venafi.go",
+      "lineRange": [
+        31,
+        42
+      ],
+      "summary": "Venafi issuer implementation with a client builder, logger, and user agent.",
+      "tags": [
+        "venafi",
+        "issuer",
+        "client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/venafi.go:NewVenafi",
+      "type": "function",
+      "name": "NewVenafi",
+      "filePath": "pkg/issuer/venafi/venafi.go",
+      "lineRange": [
+        44,
+        52
+      ],
+      "summary": "Constructs the Venafi issuer from the controller context.",
+      "tags": [
+        "venafi",
+        "constructor",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/logs/logs.go",
+      "type": "file",
+      "name": "logs.go",
+      "filePath": "pkg/logs/logs.go",
+      "summary": "Central logging package built on klog and logr: flag handling, context injection, and resource-scoped loggers.",
+      "tags": [
+        "logging",
+        "observability",
+        "context",
+        "configuration",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/logs/logs.go:LogWithFormat",
+      "type": "class",
+      "name": "LogWithFormat",
+      "filePath": "pkg/logs/logs.go",
+      "lineRange": [
+        175,
+        177
+      ],
+      "summary": "Logr wrapper exposing an Infof-style formatting helper.",
+      "tags": [
+        "logging",
+        "wrapper",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/logs/logs.go:InitLogs",
+      "type": "function",
+      "name": "InitLogs",
+      "filePath": "pkg/logs/logs.go",
+      "lineRange": [
+        52,
+        56
+      ],
+      "summary": "Initializes klog logging with the configured options.",
+      "tags": [
+        "logging",
+        "initialization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/logs/logs.go:AddFlagsNonDeprecated",
+      "type": "function",
+      "name": "AddFlagsNonDeprecated",
+      "filePath": "pkg/logs/logs.go",
+      "lineRange": [
+        58,
+        68
+      ],
+      "summary": "Registers only the non-deprecated logging flags.",
+      "tags": [
+        "logging",
+        "flags",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/logs/logs.go:AddFlags",
+      "type": "function",
+      "name": "AddFlags",
+      "filePath": "pkg/logs/logs.go",
+      "lineRange": [
+        70,
+        86
+      ],
+      "summary": "Registers the full logging flag set and deprecation shims.",
+      "tags": [
+        "logging",
+        "flags",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/logs/logs.go:ValidateAndApply",
+      "type": "function",
+      "name": "ValidateAndApply",
+      "filePath": "pkg/logs/logs.go",
+      "lineRange": [
+        88,
+        90
+      ],
+      "summary": "Validates the logging configuration and applies it.",
+      "tags": [
+        "logging",
+        "validation",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/logs/logs.go:FlushLogs",
+      "type": "function",
+      "name": "FlushLogs",
+      "filePath": "pkg/logs/logs.go",
+      "lineRange": [
+        93,
+        95
+      ],
+      "summary": "Flushes buffered log output.",
+      "tags": [
+        "logging",
+        "lifecycle"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/logs/logs.go:WithResource",
+      "type": "function",
+      "name": "WithResource",
+      "filePath": "pkg/logs/logs.go",
+      "lineRange": [
+        109,
+        125
+      ],
+      "summary": "Adds resource name, namespace, kind, and group to a logger.",
+      "tags": [
+        "logging",
+        "kubernetes",
+        "context"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/logs/logs.go:WithRelatedResource",
+      "type": "function",
+      "name": "WithRelatedResource",
+      "filePath": "pkg/logs/logs.go",
+      "lineRange": [
+        127,
+        143
+      ],
+      "summary": "Adds a related object's identifying fields to a logger.",
+      "tags": [
+        "logging",
+        "kubernetes",
+        "context"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/logs/logs.go:WithRelatedResourceName",
+      "type": "function",
+      "name": "WithRelatedResourceName",
+      "filePath": "pkg/logs/logs.go",
+      "lineRange": [
+        145,
+        151
+      ],
+      "summary": "Adds a related resource identified by name, namespace, and kind.",
+      "tags": [
+        "logging",
+        "kubernetes",
+        "context"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/logs/logs.go:FromContext",
+      "type": "function",
+      "name": "FromContext",
+      "filePath": "pkg/logs/logs.go",
+      "lineRange": [
+        153,
+        162
+      ],
+      "summary": "Retrieves the logger stored in a context, falling back when absent.",
+      "tags": [
+        "logging",
+        "context"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/logs/logs.go:NewContext",
+      "type": "function",
+      "name": "NewContext",
+      "filePath": "pkg/logs/logs.go",
+      "lineRange": [
+        164,
+        169
+      ],
+      "summary": "Returns a context carrying the given logger.",
+      "tags": [
+        "logging",
+        "context"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/logs/logs.go:WithInfof",
+      "type": "function",
+      "name": "WithInfof",
+      "filePath": "pkg/logs/logs.go",
+      "lineRange": [
+        179,
+        181
+      ],
+      "summary": "Wraps a logger so Infof can be called with a format string.",
+      "tags": [
+        "logging",
+        "formatting",
+        "wrapper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/logs/logs.go:Infof",
+      "type": "function",
+      "name": "Infof",
+      "filePath": "pkg/logs/logs.go",
+      "lineRange": [
+        184,
+        186
+      ],
+      "summary": "Formats and logs a message at info level.",
+      "tags": [
+        "logging",
+        "formatting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/metrics/acme.go",
+      "type": "file",
+      "name": "acme.go",
+      "filePath": "pkg/metrics/acme.go",
+      "summary": "Metric helpers that observe ACME request durations and increment ACME request counters.",
+      "tags": [
+        "metrics",
+        "acme",
+        "observability",
+        "prometheus"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/metrics/acme.go:ObserveACMERequestDuration",
+      "type": "function",
+      "name": "ObserveACMERequestDuration",
+      "filePath": "pkg/metrics/acme.go",
+      "lineRange": [
+        24,
+        26
+      ],
+      "summary": "Observes an ACME request duration in seconds with the given labels.",
+      "tags": [
+        "metrics",
+        "acme",
+        "observability"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/metrics/acme.go:IncrementACMERequestCount",
+      "type": "function",
+      "name": "IncrementACMERequestCount",
+      "filePath": "pkg/metrics/acme.go",
+      "lineRange": [
+        29,
+        31
+      ],
+      "summary": "Increments the ACME request counter with the given labels.",
+      "tags": [
+        "metrics",
+        "acme",
+        "observability"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/metrics/metrics.go",
+      "type": "file",
+      "name": "metrics.go",
+      "filePath": "pkg/metrics/metrics.go",
+      "summary": "Defines the Metrics registry and HTTP server, wiring Prometheus collectors for ACME, certificates, and controller sync counts.",
+      "tags": [
+        "metrics",
+        "prometheus",
+        "observability",
+        "collectors",
+        "server"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:pkg/metrics/metrics.go:Metrics",
+      "type": "class",
+      "name": "Metrics",
+      "filePath": "pkg/metrics/metrics.go",
+      "lineRange": [
+        55,
+        68
+      ],
+      "summary": "Holds registered Prometheus metrics and the metrics HTTP server.",
+      "tags": [
+        "metrics",
+        "prometheus",
+        "registry"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/metrics/metrics.go:New",
+      "type": "function",
+      "name": "New",
+      "filePath": "pkg/metrics/metrics.go",
+      "lineRange": [
+        71,
+        195
+      ],
+      "summary": "Registers cert-manager metrics and returns a Metrics instance.",
+      "tags": [
+        "metrics",
+        "constructor",
+        "prometheus",
+        "registration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/metrics/metrics.go:SetupACMECollector",
+      "type": "function",
+      "name": "SetupACMECollector",
+      "filePath": "pkg/metrics/metrics.go",
+      "lineRange": [
+        197,
+        199
+      ],
+      "summary": "Registers the ACME informer collector with the metrics registry.",
+      "tags": [
+        "metrics",
+        "collectors",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/metrics/metrics.go:SetupCertificateCollector",
+      "type": "function",
+      "name": "SetupCertificateCollector",
+      "filePath": "pkg/metrics/metrics.go",
+      "lineRange": [
+        201,
+        203
+      ],
+      "summary": "Registers the certificate lister collector with the metrics registry.",
+      "tags": [
+        "metrics",
+        "collectors",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/metrics/metrics.go:ACMERequestCounter",
+      "type": "function",
+      "name": "ACMERequestCounter",
+      "filePath": "pkg/metrics/metrics.go",
+      "lineRange": [
+        205,
+        207
+      ],
+      "summary": "Returns the ACME request counter metric.",
+      "tags": [
+        "metrics",
+        "acme",
+        "accessor"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/metrics/metrics.go:NewServer",
+      "type": "function",
+      "name": "NewServer",
+      "filePath": "pkg/metrics/metrics.go",
+      "lineRange": [
+        210,
+        239
+      ],
+      "summary": "Creates the HTTP server that serves the metrics endpoint.",
+      "tags": [
+        "metrics",
+        "server",
+        "http"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/metrics/metrics.go:IncrementSyncCallCount",
+      "type": "function",
+      "name": "IncrementSyncCallCount",
+      "filePath": "pkg/metrics/metrics.go",
+      "lineRange": [
+        242,
+        244
+      ],
+      "summary": "Increments the sync call counter for the named controller.",
+      "tags": [
+        "metrics",
+        "controller",
+        "observability"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/metrics/metrics.go:IncrementSyncErrorCount",
+      "type": "function",
+      "name": "IncrementSyncErrorCount",
+      "filePath": "pkg/metrics/metrics.go",
+      "lineRange": [
+        247,
+        249
+      ],
+      "summary": "Increments the sync error counter for the named controller.",
+      "tags": [
+        "metrics",
+        "controller",
+        "observability"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "function:pkg/issuer/venafi/setup.go:Setup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "function:pkg/issuer/venafi/setup.go:Setup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "class:pkg/issuer/venafi/venafi.go:Venafi",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "class:pkg/issuer/venafi/venafi.go:Venafi",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "function:pkg/issuer/venafi/venafi.go:NewVenafi",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "function:pkg/issuer/venafi/venafi.go:NewVenafi",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "class:pkg/logs/logs.go:LogWithFormat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "class:pkg/logs/logs.go:LogWithFormat",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:InitLogs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:InitLogs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:AddFlagsNonDeprecated",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:AddFlagsNonDeprecated",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:AddFlags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:AddFlags",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:ValidateAndApply",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:ValidateAndApply",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:FlushLogs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:FlushLogs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:WithResource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:WithResource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:WithRelatedResource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:WithRelatedResource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:WithRelatedResourceName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:WithRelatedResourceName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:FromContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:FromContext",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:NewContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:NewContext",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:WithInfof",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:WithInfof",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:Infof",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "function:pkg/logs/logs.go:Infof",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/metrics/acme.go",
+      "target": "function:pkg/metrics/acme.go:ObserveACMERequestDuration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/metrics/acme.go",
+      "target": "function:pkg/metrics/acme.go:ObserveACMERequestDuration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/metrics/acme.go",
+      "target": "function:pkg/metrics/acme.go:IncrementACMERequestCount",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/metrics/acme.go",
+      "target": "function:pkg/metrics/acme.go:IncrementACMERequestCount",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "class:pkg/metrics/metrics.go:Metrics",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "class:pkg/metrics/metrics.go:Metrics",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "function:pkg/metrics/metrics.go:New",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "function:pkg/metrics/metrics.go:New",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "function:pkg/metrics/metrics.go:SetupACMECollector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "function:pkg/metrics/metrics.go:SetupACMECollector",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "function:pkg/metrics/metrics.go:SetupCertificateCollector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "function:pkg/metrics/metrics.go:SetupCertificateCollector",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "function:pkg/metrics/metrics.go:ACMERequestCounter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "function:pkg/metrics/metrics.go:ACMERequestCounter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "function:pkg/metrics/metrics.go:NewServer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "function:pkg/metrics/metrics.go:NewServer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "function:pkg/metrics/metrics.go:IncrementSyncCallCount",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "function:pkg/metrics/metrics.go:IncrementSyncCallCount",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "function:pkg/metrics/metrics.go:IncrementSyncErrorCount",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "function:pkg/metrics/metrics.go:IncrementSyncErrorCount",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/api/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/api/util/duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/api/util/issuers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/api/util/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/api/util/names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/api/util/usages.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/setup.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:pkg/api/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:pkg/api/util/duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:pkg/api/util/issuers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:pkg/api/util/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:pkg/api/util/names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:pkg/api/util/usages.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:pkg/issuer/factory.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:pkg/issuer/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:pkg/issuer/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:pkg/issuer/venafi/client/request.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:pkg/issuer/venafi/client/venaficlient.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/venafi/venafi.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/logs/logs.go",
+      "target": "file:pkg/api/scheme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "file:internal/collectors/acme_collector.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "file:internal/collectors/certificate_collector.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "file:pkg/client/listers/acme/v1/challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "file:pkg/client/listers/acme/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "file:pkg/client/listers/acme/v1/order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "file:pkg/client/listers/certmanager/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/metrics/metrics.go",
+      "target": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/metrics/metrics.go:New",
+      "target": "function:internal/collectors/acme_collector.go:NewACMECollector",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/metrics/metrics.go:New",
+      "target": "function:internal/collectors/certificate_collector.go:NewCertificateCollector",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

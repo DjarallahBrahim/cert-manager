@@ -1,0 +1,369 @@
+{
+  "nodes": [
+    {
+      "id": "config:hack/artifact-metadata.template.json",
+      "type": "config",
+      "name": "artifact-metadata.template.json",
+      "filePath": "hack/artifact-metadata.template.json",
+      "summary": "Template for release artifact metadata JSON, with TODO placeholders for artifact name, sha256 digest, OS, and architecture filled in by release tooling.",
+      "tags": ["configuration", "release", "artifact-metadata", "template"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:hack/boilerplate-go.txt",
+      "type": "document",
+      "name": "boilerplate-go.txt",
+      "filePath": "hack/boilerplate-go.txt",
+      "summary": "Apache 2.0 license header template in Go comment syntax, passed to Kubernetes code generators via --go-header-file so generated files carry the cert-manager copyright notice.",
+      "tags": ["documentation", "license-header", "code-generation", "template"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:hack/boilerplate-sh.txt",
+      "type": "document",
+      "name": "boilerplate-sh.txt",
+      "filePath": "hack/boilerplate-sh.txt",
+      "summary": "Apache 2.0 license header template in shell comment syntax, prepended to generated shell files such as the kind image list.",
+      "tags": ["documentation", "license-header", "shell", "template"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:hack/boilerplate-yaml.txt",
+      "type": "document",
+      "name": "boilerplate-yaml.txt",
+      "filePath": "hack/boilerplate-yaml.txt",
+      "summary": "Apache 2.0 license header template in YAML comment syntax with a YEAR placeholder, used when stamping generated YAML manifests.",
+      "tags": ["documentation", "license-header", "yaml", "template"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:hack/concat-yaml.sh",
+      "type": "file",
+      "name": "concat-yaml.sh",
+      "filePath": "hack/concat-yaml.sh",
+      "summary": "Concatenates a list of YAML files into a single multi-document stream, inserting `---` separators between files and failing on missing files or unsupported `%YAML` directives.",
+      "tags": ["script", "yaml", "build-tool", "utility"],
+      "complexity": "simple",
+      "languageNotes": "Relies on bash `set -eu -o pipefail` and positional-argument shifting for a streaming file loop; no functions are defined."
+    },
+    {
+      "id": "file:hack/k8s-codegen.sh",
+      "type": "file",
+      "name": "k8s-codegen.sh",
+      "filePath": "hack/k8s-codegen.sh",
+      "summary": "Drives all Kubernetes code generation for cert-manager, invoking deepcopy, client, lister, informer, defaulter, conversion, OpenAPI, and apply-configuration generators over the versioned and internal API packages.",
+      "tags": ["script", "code-generation", "kubernetes", "build-tool", "api"],
+      "complexity": "complex",
+      "languageNotes": "Bash array parameter expansion (`${arr[@]/#/$module_name/}`) is used to prefix package paths; each generator binary is injected as a positional argument."
+    },
+    {
+      "id": "function:hack/k8s-codegen.sh:clean",
+      "type": "function",
+      "name": "clean",
+      "filePath": "hack/k8s-codegen.sh",
+      "lineRange": [93, 100],
+      "summary": "Deletes generated files matching a given name under a path, returning early when the directory does not exist.",
+      "tags": ["utility", "cleanup", "code-generation", "shell"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:hack/k8s-codegen.sh:gen-openapi-acme",
+      "type": "function",
+      "name": "gen-openapi-acme",
+      "filePath": "hack/k8s-codegen.sh",
+      "lineRange": [102, 117],
+      "summary": "Generates the OpenAPI definitions for the ACME webhook API into pkg/acme/webhook/openapi, cleaning stale output and writing a report file first.",
+      "tags": ["code-generation", "openapi", "acme", "shell"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:hack/k8s-codegen.sh:gen-openapi-client",
+      "type": "function",
+      "name": "gen-openapi-client",
+      "filePath": "hack/k8s-codegen.sh",
+      "lineRange": [119, 139],
+      "summary": "Generates the client OpenAPI definitions for the public cert-manager API packages alongside required Kubernetes and Gateway API dependencies.",
+      "tags": ["code-generation", "openapi", "client", "shell"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:hack/k8s-codegen.sh:gen-deepcopy",
+      "type": "function",
+      "name": "gen-deepcopy",
+      "filePath": "hack/k8s-codegen.sh",
+      "lineRange": [141, 152],
+      "summary": "Regenerates zz_generated.deepcopy.go files for every internal and external API package, bounded to the cert-manager module.",
+      "tags": ["code-generation", "deepcopy", "api", "shell"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:hack/k8s-codegen.sh:gen-applyconfigurations",
+      "type": "function",
+      "name": "gen-applyconfigurations",
+      "filePath": "hack/k8s-codegen.sh",
+      "lineRange": [154, 169],
+      "summary": "Generates client apply-configuration types for the public API using a locally generated OpenAPI schema, working around upstream fake-clientset limitations.",
+      "tags": ["code-generation", "apply-configuration", "client", "shell"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:hack/k8s-codegen.sh:gen-clientsets",
+      "type": "function",
+      "name": "gen-clientsets",
+      "filePath": "hack/k8s-codegen.sh",
+      "lineRange": [171, 184],
+      "summary": "Generates the versioned typed clientset for the cert-manager and ACME APIs into pkg/client/clientset.",
+      "tags": ["code-generation", "clientset", "client", "shell"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:hack/k8s-codegen.sh:gen-listers",
+      "type": "function",
+      "name": "gen-listers",
+      "filePath": "hack/k8s-codegen.sh",
+      "lineRange": [186, 195],
+      "summary": "Generates typed listers for the cert-manager and ACME APIs into pkg/client/listers.",
+      "tags": ["code-generation", "lister", "client", "shell"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:hack/k8s-codegen.sh:gen-informers",
+      "type": "function",
+      "name": "gen-informers",
+      "filePath": "hack/k8s-codegen.sh",
+      "lineRange": [197, 208],
+      "summary": "Generates shared informers for the cert-manager and ACME APIs, wiring them to the generated clientset and listers.",
+      "tags": ["code-generation", "informer", "client", "shell"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:hack/k8s-codegen.sh:gen-defaulters",
+      "type": "function",
+      "name": "gen-defaulters",
+      "filePath": "hack/k8s-codegen.sh",
+      "lineRange": [210, 230],
+      "summary": "Generates defaulting functions for internal API types used by the mutating webhook, supplying extra peer package directories.",
+      "tags": ["code-generation", "defaulting", "webhook", "shell"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:hack/k8s-codegen.sh:gen-conversions",
+      "type": "function",
+      "name": "gen-conversions",
+      "filePath": "hack/k8s-codegen.sh",
+      "lineRange": [232, 252],
+      "summary": "Generates conversion functions between internal and external API versions for the conversion webhook, with extra peer package directories configured.",
+      "tags": ["code-generation", "conversion", "webhook", "shell"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:hack/latest-base-images.sh",
+      "type": "file",
+      "name": "latest-base-images.sh",
+      "filePath": "hack/latest-base-images.sh",
+      "summary": "Resolves the latest crane digests for distroless static and dynamic base images across all supported architectures and writes them as Makefile variables to make/base_images.mk.",
+      "tags": ["script", "build-tool", "container-images", "maintenance", "automation"],
+      "complexity": "simple",
+      "languageNotes": "Generates GNU Make variable assignments by echoing command-substituted `crane digest` results, keeping images pinned by digest rather than tag."
+    },
+    {
+      "id": "file:hack/latest-kind-images.sh",
+      "type": "file",
+      "name": "latest-kind-images.sh",
+      "filePath": "hack/latest-kind-images.sh",
+      "summary": "Parses the kind GitHub release notes for a pinned kind version and regenerates make/kind_images.sh with KIND_IMAGE_K8S_* node image digest variables.",
+      "tags": ["script", "kubernetes", "kind", "test-infrastructure", "automation"],
+      "complexity": "simple",
+      "languageNotes": "Uses `curl | jq` with a named capture regex over the release body to extract digests, prefixed with the shared shell boilerplate header."
+    },
+    {
+      "id": "file:hack/latest-kubebuilder-shas.sh",
+      "type": "file",
+      "name": "latest-kubebuilder-shas.sh",
+      "filePath": "hack/latest-kubebuilder-shas.sh",
+      "summary": "Downloads kubebuilder-tools archives for each supported OS/architecture and prints their SHA256 checksums as KUBEBUILDER_TOOLS_*_SHA256SUM variables for make/tools.mk.",
+      "tags": ["script", "build-tool", "kubebuilder", "checksums", "maintenance"],
+      "complexity": "simple",
+      "languageNotes": "Validates a single version argument, then loops over bashing arrays while templating a multi-line output string with printf."
+    },
+    {
+      "id": "file:hack/verify-chart-version.sh",
+      "type": "file",
+      "name": "verify-chart-version.sh",
+      "filePath": "hack/verify-chart-version.sh",
+      "summary": "Lints a packaged cert-manager Helm chart tarball by extracting it to a temp directory and running chart-testing (ct lint) inside a pinned Docker image.",
+      "tags": ["script", "helm", "validation", "ci-cd", "containerization"],
+      "complexity": "simple",
+      "languageNotes": "Uses a mktemp directory with an EXIT trap for cleanup and allows the container runtime to be overridden via the DOCKER variable."
+    },
+    {
+      "id": "file:hack/verify-errexit.sh",
+      "type": "file",
+      "name": "verify-errexit.sh",
+      "filePath": "hack/verify-errexit.sh",
+      "summary": "Repository lint that scans shell scripts for `set -o errexit` (or an equivalent `set -e` form) and exits non-zero when any script lacks fail-fast behavior.",
+      "tags": ["script", "validation", "lint", "shell", "ci-cd"],
+      "complexity": "simple",
+      "languageNotes": "Derived from Kubernetes tooling; detects scripts via a shebang grep and reports failures by conditionally creating a temp marker file."
+    },
+    {
+      "id": "file:hack/verify-upgrade.sh",
+      "type": "file",
+      "name": "verify-upgrade.sh",
+      "filePath": "hack/verify-upgrade.sh",
+      "summary": "End-to-end upgrade test that installs the last published cert-manager release in a kind cluster, upgrades to the current checkout via Helm and static manifests, verifies existing resources still work, then uninstalls.",
+      "tags": ["script", "test", "upgrade", "e2e", "kubernetes"],
+      "complexity": "complex",
+      "languageNotes": "Sources hack/build/version.sh for release discovery, overrides image tags in generated manifests with ytt, and polls `kubectl rollout status` until a bounded attempt limit."
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:hack/k8s-codegen.sh",
+      "target": "function:hack/k8s-codegen.sh:clean",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/k8s-codegen.sh",
+      "target": "function:hack/k8s-codegen.sh:gen-openapi-acme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/k8s-codegen.sh",
+      "target": "function:hack/k8s-codegen.sh:gen-openapi-client",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/k8s-codegen.sh",
+      "target": "function:hack/k8s-codegen.sh:gen-deepcopy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/k8s-codegen.sh",
+      "target": "function:hack/k8s-codegen.sh:gen-applyconfigurations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/k8s-codegen.sh",
+      "target": "function:hack/k8s-codegen.sh:gen-clientsets",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/k8s-codegen.sh",
+      "target": "function:hack/k8s-codegen.sh:gen-listers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/k8s-codegen.sh",
+      "target": "function:hack/k8s-codegen.sh:gen-informers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/k8s-codegen.sh",
+      "target": "function:hack/k8s-codegen.sh:gen-defaulters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/k8s-codegen.sh",
+      "target": "function:hack/k8s-codegen.sh:gen-conversions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "function:hack/k8s-codegen.sh:gen-openapi-acme",
+      "target": "function:hack/k8s-codegen.sh:clean",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:hack/k8s-codegen.sh:gen-openapi-client",
+      "target": "function:hack/k8s-codegen.sh:clean",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:hack/k8s-codegen.sh:gen-deepcopy",
+      "target": "function:hack/k8s-codegen.sh:clean",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:hack/k8s-codegen.sh:gen-applyconfigurations",
+      "target": "function:hack/k8s-codegen.sh:clean",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:hack/k8s-codegen.sh:gen-clientsets",
+      "target": "function:hack/k8s-codegen.sh:clean",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:hack/k8s-codegen.sh:gen-listers",
+      "target": "function:hack/k8s-codegen.sh:clean",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:hack/k8s-codegen.sh:gen-informers",
+      "target": "function:hack/k8s-codegen.sh:clean",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:hack/k8s-codegen.sh:gen-defaulters",
+      "target": "function:hack/k8s-codegen.sh:clean",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:hack/k8s-codegen.sh:gen-conversions",
+      "target": "function:hack/k8s-codegen.sh:clean",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "document:hack/boilerplate-go.txt",
+      "target": "file:hack/k8s-codegen.sh",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:hack/boilerplate-sh.txt",
+      "target": "file:hack/latest-kind-images.sh",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

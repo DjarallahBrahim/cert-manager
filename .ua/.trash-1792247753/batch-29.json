@@ -1,0 +1,91 @@
+{
+  "nodes": [
+    {
+      "id": "config:deploy/charts/cert-manager/Chart.template.yaml",
+      "type": "config",
+      "name": "Chart.template.yaml",
+      "filePath": "deploy/charts/cert-manager/Chart.template.yaml",
+      "summary": "Helm chart metadata template for the cert-manager chart, defining the chart name, description, keywords, maintainers, Artifact Hub annotations, and minimum Kubernetes version.",
+      "tags": ["configuration", "helm", "chart-metadata", "release-automation", "infrastructure"],
+      "complexity": "simple",
+      "languageNotes": "Contains {{IS_PRERELEASE}} placeholders and placeholder version/appVersion fields that the release tooling substitutes when generating the final Chart.yaml."
+    },
+    {
+      "id": "document:deploy/charts/cert-manager/README.template.md",
+      "type": "document",
+      "name": "README.template.md",
+      "filePath": "deploy/charts/cert-manager/README.template.md",
+      "summary": "Helm chart README combining installation, upgrade, and uninstall instructions with a complete auto-generated reference for every chart value (236 headings across global, controller, webhook, cainjector, and ACME solver settings).",
+      "tags": ["documentation", "helm", "configuration-reference", "installation", "generated"],
+      "complexity": "complex",
+      "languageNotes": "The Configuration section is marked AUTO-GENERATED and is produced by helm-tool from the +docs annotations embedded in values.yaml; {{RELEASE_VERSION}} is substituted at release time."
+    },
+    {
+      "id": "document:deploy/charts/cert-manager/signkey_annotation.txt",
+      "type": "document",
+      "name": "signkey_annotation.txt",
+      "filePath": "deploy/charts/cert-manager/signkey_annotation.txt",
+      "summary": "Two-line metadata file holding the fingerprint and download URL of the GPG key used to sign cert-manager Helm chart releases, read by the build to annotate the generated Chart.yaml.",
+      "tags": ["documentation", "security", "signing", "helm", "release-automation"],
+      "complexity": "simple",
+      "languageNotes": "Consumed verbatim by make/manifests.mk via a read loop and written as an Artifact Hub signature-key annotation on the generated chart."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/values.schema.json",
+      "type": "config",
+      "name": "values.schema.json",
+      "filePath": "deploy/charts/cert-manager/values.schema.json",
+      "summary": "JSON Schema (draft-07) validating the cert-manager Helm chart values, using 252 nested $defs entries to constrain every top-level value and each component's image, resource, scheduling, and security settings.",
+      "tags": ["configuration", "schema-definition", "validation", "helm", "data-model"],
+      "complexity": "complex",
+      "languageNotes": "Built around a single helm-values root definition with additionalProperties: false and per-component $ref chains such as #/$defs/helm-values.cainjector."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/values.yaml",
+      "type": "config",
+      "name": "values.yaml",
+      "filePath": "deploy/charts/cert-manager/values.yaml",
+      "summary": "Default values for the cert-manager Helm chart, configuring the controller, webhook, cainjector, ACME solver, startup API check, CRDs, RBAC, monitoring, and shared global scheduling and image-pull settings.",
+      "tags": ["configuration", "helm", "defaults", "deployment", "kubernetes"],
+      "complexity": "complex",
+      "languageNotes": "Heavily documented with +docs:section and +docs:property comment annotations that drive README generation and the values schema."
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:deploy/charts/cert-manager/values.schema.json",
+      "target": "config:deploy/charts/cert-manager/values.yaml",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:deploy/charts/cert-manager/README.template.md",
+      "target": "config:deploy/charts/cert-manager/values.yaml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:deploy/charts/cert-manager/README.template.md",
+      "target": "config:deploy/charts/cert-manager/Chart.template.yaml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:deploy/charts/cert-manager/signkey_annotation.txt",
+      "target": "config:deploy/charts/cert-manager/Chart.template.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/Chart.template.yaml",
+      "target": "config:deploy/charts/cert-manager/values.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

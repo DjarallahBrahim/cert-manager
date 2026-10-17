@@ -1,0 +1,63 @@
+{
+  "role": "file-analyzer",
+  "agentDefinition": "/Users/samtyga/.understand-anything/repo/understand-anything-plugin/agents/file-analyzer.md",
+  "projectRoot": "/Users/samtyga/Desktop/work/cert-manager",
+  "projectName": "cert-manager",
+  "projectDescription": "cert-manager adds certificates and certificate issuers as resource types in Kubernetes clusters, and simplifies obtaining, renewing, and using those certificates.",
+  "languages": [
+    "go",
+    "json",
+    "json5",
+    "makefile",
+    "markdown",
+    "mod",
+    "shell",
+    "sum",
+    "txt",
+    "yaml"
+  ],
+  "skillDir": "/Users/samtyga/.agents/skills/understand",
+  "dataDir": "/Users/samtyga/Desktop/work/cert-manager/.ua",
+  "batchIndex": 23,
+  "totalBatches": 51,
+  "languageDirective": "Generate all textual content (summaries, tags, titles, descriptions, languageNotes) in English.",
+  "outputDir": "/Users/samtyga/Desktop/work/cert-manager/.ua/intermediate",
+  "files": [
+    {
+      "path": "cmd/cainjector/app/cainjector.go",
+      "language": "go",
+      "sizeLines": 179,
+      "fileCategory": "code"
+    },
+    {
+      "path": "cmd/cainjector/app/controller.go",
+      "language": "go",
+      "sizeLines": 317,
+      "fileCategory": "code"
+    },
+    {
+      "path": "cmd/cainjector/app/options/options.go",
+      "language": "go",
+      "sizeLines": 141,
+      "fileCategory": "code"
+    },
+    {
+      "path": "cmd/cainjector/main.go",
+      "language": "go",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "cmd/cainjector/app/cainjector.go": [
+      "cmd/cainjector/app/options/options.go"
+    ],
+    "cmd/cainjector/app/controller.go": [],
+    "cmd/cainjector/app/options/options.go": [],
+    "cmd/cainjector/main.go": [
+      "cmd/cainjector/app/cainjector.go",
+      "cmd/cainjector/app/controller.go"
+    ]
+  },
+  "neighborMap": {}
+}

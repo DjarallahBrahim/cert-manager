@@ -1,0 +1,305 @@
+{
+  "nodes": [
+    {
+      "id": "config:deploy/charts/cert-manager/templates/networkpolicy-webhooks.yaml",
+      "type": "config",
+      "name": "networkpolicy-webhooks.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/networkpolicy-webhooks.yaml",
+      "summary": "Helm template rendering a NetworkPolicy that restricts ingress traffic to the cert-manager webhook pods, with ingress rules supplied from .Values.webhook.networkPolicy.ingress.",
+      "tags": ["configuration", "kubernetes", "helm", "security", "networking"],
+      "complexity": "simple",
+      "languageNotes": "Guarded by a Helm `if` on webhook.networkPolicy.enabled and uses `toYaml | nindent` to inject user-supplied ingress rules."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/poddisruptionbudget.yaml",
+      "type": "config",
+      "name": "poddisruptionbudget.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/poddisruptionbudget.yaml",
+      "summary": "Helm template creating a PodDisruptionBudget for the cert-manager controller, defaulting to minAvailable: 1 unless the user sets minAvailable or maxUnavailable.",
+      "tags": ["configuration", "kubernetes", "helm", "availability", "high-availability"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/podmonitor.yaml",
+      "type": "config",
+      "name": "podmonitor.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/podmonitor.yaml",
+      "summary": "Helm template producing a Prometheus Operator PodMonitor that scrapes the cainjector, controller, and webhook pods on the http-metrics port, failing the render if ServiceMonitor is enabled at the same time.",
+      "tags": ["configuration", "kubernetes", "helm", "monitoring", "observability"],
+      "complexity": "moderate",
+      "languageNotes": "Uses `fail` to enforce mutual exclusivity between the PodMonitor and ServiceMonitor chart options."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/psp-clusterrole.yaml",
+      "type": "config",
+      "name": "psp-clusterrole.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/psp-clusterrole.yaml",
+      "summary": "Helm template defining a ClusterRole that grants the `use` verb on the cert-manager PodSecurityPolicy resource by name.",
+      "tags": ["configuration", "kubernetes", "helm", "rbac", "security"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/psp-clusterrolebinding.yaml",
+      "type": "config",
+      "name": "psp-clusterrolebinding.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/psp-clusterrolebinding.yaml",
+      "summary": "Helm template binding the cert-manager PSP ClusterRole to the controller ServiceAccount so the controller may use the PodSecurityPolicy.",
+      "tags": ["configuration", "kubernetes", "helm", "rbac", "security"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/psp.yaml",
+      "type": "config",
+      "name": "psp.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/psp.yaml",
+      "summary": "Helm template defining a restrictive PodSecurityPolicy for cert-manager controller pods, with non-privileged containers, fixed UID/GID 1000, and a whitelist of volume types.",
+      "tags": ["configuration", "kubernetes", "helm", "security", "pod-security-policy"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/rbac.yaml",
+      "type": "config",
+      "name": "rbac.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/rbac.yaml",
+      "summary": "Large Helm template rendering the controller's full RBAC surface: leader-election and token-request Roles/RoleBindings plus ClusterRoles and ClusterRoleBindings for issuers, clusterissuers, certificates, orders, challenges, ingress-shim, approvals, certificate signing requests, and aggregated view/edit roles.",
+      "tags": ["configuration", "kubernetes", "helm", "rbac", "security"],
+      "complexity": "complex",
+      "languageNotes": "Emits roughly two dozen multi-document YAML resources from a single template, guarded by global.rbac.create and serviceAccount.create conditionals."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/service.yaml",
+      "type": "config",
+      "name": "service.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/service.yaml",
+      "summary": "Helm template creating a ClusterIP Service exposing the controller's Prometheus metrics port 9402 for ServiceMonitor scraping, rendered only when Prometheus is enabled without PodMonitor.",
+      "tags": ["configuration", "kubernetes", "helm", "monitoring", "networking"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/serviceaccount.yaml",
+      "type": "config",
+      "name": "serviceaccount.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/serviceaccount.yaml",
+      "summary": "Helm template creating the cert-manager controller ServiceAccount with configurable image pull secrets, automount settings, annotations, and labels.",
+      "tags": ["configuration", "kubernetes", "helm", "rbac", "identity"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/servicemonitor.yaml",
+      "type": "config",
+      "name": "servicemonitor.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/servicemonitor.yaml",
+      "summary": "Helm template rendering a Prometheus Operator ServiceMonitor that scrapes cert-manager component endpoints by target port, with a guard preventing simultaneous PodMonitor enablement.",
+      "tags": ["configuration", "kubernetes", "helm", "monitoring", "observability"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/startupapicheck-job.yaml",
+      "type": "config",
+      "name": "startupapicheck-job.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/startupapicheck-job.yaml",
+      "summary": "Helm template defining the post-install startup API check Job, which runs the cert-manager image with `check api --wait` to verify the API is serving before the release is considered healthy.",
+      "tags": ["configuration", "kubernetes", "helm", "health-check", "deployment"],
+      "complexity": "moderate",
+      "languageNotes": "Merges global and component nodeSelector maps with the Helm `merge` function before rendering."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/startupapicheck-psp-clusterrole.yaml",
+      "type": "config",
+      "name": "startupapicheck-psp-clusterrole.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/startupapicheck-psp-clusterrole.yaml",
+      "summary": "Helm template granting the `use` verb on the startup API check PodSecurityPolicy through a dedicated ClusterRole.",
+      "tags": ["configuration", "kubernetes", "helm", "rbac", "security"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/startupapicheck-psp-clusterrolebinding.yaml",
+      "type": "config",
+      "name": "startupapicheck-psp-clusterrolebinding.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/startupapicheck-psp-clusterrolebinding.yaml",
+      "summary": "Helm template binding the startup API check PSP ClusterRole to the startupapicheck ServiceAccount.",
+      "tags": ["configuration", "kubernetes", "helm", "rbac", "security"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/startupapicheck-psp.yaml",
+      "type": "config",
+      "name": "startupapicheck-psp.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/startupapicheck-psp.yaml",
+      "summary": "Helm template defining a PodSecurityPolicy for the startup API check Job pods, permitting only projected and secret volumes with fixed UID/GID 1000.",
+      "tags": ["configuration", "kubernetes", "helm", "security", "pod-security-policy"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/startupapicheck-rbac.yaml",
+      "type": "config",
+      "name": "startupapicheck-rbac.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/startupapicheck-rbac.yaml",
+      "summary": "Helm template creating a Role and RoleBinding that let the startup API check ServiceAccount create CertificateRequests during the post-install verification.",
+      "tags": ["configuration", "kubernetes", "helm", "rbac", "health-check"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/startupapicheck-serviceaccount.yaml",
+      "type": "config",
+      "name": "startupapicheck-serviceaccount.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/startupapicheck-serviceaccount.yaml",
+      "summary": "Helm template creating the startup API check ServiceAccount with configurable annotations, labels, automount token, and image pull secrets.",
+      "tags": ["configuration", "kubernetes", "helm", "rbac", "identity"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/webhook-config.yaml",
+      "type": "config",
+      "name": "webhook-config.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/webhook-config.yaml",
+      "summary": "Helm template packaging the webhook's WebhookConfiguration values into a ConfigMap under config.yaml, defaulting apiVersion and kind before serializing with toYaml.",
+      "tags": ["configuration", "kubernetes", "helm", "webhook", "configmap"],
+      "complexity": "simple",
+      "languageNotes": "Mutates the values map in place with Helm's `set` before serializing it into the ConfigMap data field."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/webhook-deployment.yaml",
+      "type": "config",
+      "name": "webhook-deployment.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/webhook-deployment.yaml",
+      "summary": "Helm template for the cert-manager webhook Deployment, wiring replicas, security context, feature gates, dynamic-serving CA secret flags, health and metrics ports, and the mounted webhook configuration ConfigMap.",
+      "tags": ["configuration", "kubernetes", "helm", "webhook", "deployment"],
+      "complexity": "complex",
+      "languageNotes": "Extensive conditional templating covers hostNetwork/dnsPolicy, Prometheus scrape annotations, and configurable secure-port and healthz-port overrides."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/webhook-mutating-webhook.yaml",
+      "type": "config",
+      "name": "webhook-mutating-webhook.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/webhook-mutating-webhook.yaml",
+      "summary": "Helm template registering the MutatingWebhookConfiguration that intercepts CREATE operations on cert-manager CertificateRequests and routes them to the webhook service's /mutate path.",
+      "tags": ["configuration", "kubernetes", "helm", "webhook", "admission-control"],
+      "complexity": "simple",
+      "languageNotes": "Annotated with cert-manager.io/inject-ca-from-secret so cainjector populates the CA bundle from the webhook CA Secret."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/webhook-poddisruptionbudget.yaml",
+      "type": "config",
+      "name": "webhook-poddisruptionbudget.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/webhook-poddisruptionbudget.yaml",
+      "summary": "Helm template creating a PodDisruptionBudget for webhook pods, defaulting to minAvailable: 1 unless the user overrides availability settings.",
+      "tags": ["configuration", "kubernetes", "helm", "availability", "webhook"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:deploy/charts/cert-manager/templates/webhook-config.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/webhook-deployment.yaml",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/networkpolicy-webhooks.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/webhook-deployment.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/webhook-poddisruptionbudget.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/webhook-deployment.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/webhook-mutating-webhook.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/webhook-deployment.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/psp-clusterrolebinding.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/psp-clusterrole.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/psp-clusterrolebinding.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/serviceaccount.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/psp-clusterrole.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/psp.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/rbac.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/serviceaccount.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/service.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/servicemonitor.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/podmonitor.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/servicemonitor.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/startupapicheck-job.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/startupapicheck-serviceaccount.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/startupapicheck-job.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/startupapicheck-rbac.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/startupapicheck-rbac.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/startupapicheck-serviceaccount.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/startupapicheck-psp-clusterrole.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/startupapicheck-psp.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/startupapicheck-psp-clusterrolebinding.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/startupapicheck-psp-clusterrole.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/startupapicheck-psp-clusterrolebinding.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/startupapicheck-serviceaccount.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

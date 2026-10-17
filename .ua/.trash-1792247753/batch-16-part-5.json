@@ -1,0 +1,356 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/server/tls/source.go",
+      "type": "file",
+      "name": "source.go",
+      "filePath": "pkg/server/tls/source.go",
+      "summary": "Defines the CertificateSource interface (GetCertificate, Start, Healthy) and the ErrNotAvailable sentinel used by TLS certificate providers.",
+      "tags": [
+        "interface",
+        "tls",
+        "certificate-management",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/util/profiling/profiling.go",
+      "type": "file",
+      "name": "profiling.go",
+      "filePath": "pkg/util/profiling/profiling.go",
+      "summary": "Registers Go pprof profiling endpoints on an HTTP ServeMux with a redirect from /debug/pprof.",
+      "tags": [
+        "profiling",
+        "http",
+        "observability",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/webhook/admission/chain.go",
+      "type": "file",
+      "name": "chain.go",
+      "filePath": "pkg/webhook/admission/chain.go",
+      "summary": "PluginChain type that fans admission requests out to a sequence of admission plugins, aggregating warnings and errors.",
+      "tags": [
+        "admission-webhook",
+        "middleware",
+        "plugin-chain",
+        "aggregation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/webhook/admission/custom_decoder.go",
+      "type": "file",
+      "name": "custom_decoder.go",
+      "filePath": "pkg/webhook/admission/custom_decoder.go",
+      "summary": "Decoders that convert admission request raw extensions into typed internal objects or unstructured objects, preserving GroupVersionKind information.",
+      "tags": [
+        "admission-webhook",
+        "decoding",
+        "serialization",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/webhook/admission/custom_mutation_webhook.go",
+      "type": "file",
+      "name": "custom_mutation_webhook.go",
+      "filePath": "pkg/webhook/admission/custom_mutation_webhook.go",
+      "summary": "Adapts cert-manager mutation plugins to controller-runtime's admission webhook, decoding requests and returning JSON patches.",
+      "tags": [
+        "admission-webhook",
+        "mutation",
+        "adapter",
+        "http-handler"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/server/tls/source.go:CertificateSource",
+      "type": "class",
+      "name": "CertificateSource",
+      "filePath": "pkg/server/tls/source.go",
+      "lineRange": [
+        29,
+        49
+      ],
+      "summary": "Interface for TLS certificate providers used by the server, exposing certificate retrieval, lifecycle start, and health reporting.",
+      "tags": [
+        "interface",
+        "tls",
+        "certificate-management",
+        "contracts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/profiling/profiling.go:Install",
+      "type": "function",
+      "name": "Install",
+      "filePath": "pkg/util/profiling/profiling.go",
+      "lineRange": [
+        25,
+        31
+      ],
+      "summary": "Registers pprof index, profile, symbol, and trace handlers on the given ServeMux.",
+      "tags": [
+        "profiling",
+        "http",
+        "observability"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/admission/chain.go:Handles",
+      "type": "function",
+      "name": "Handles",
+      "filePath": "pkg/webhook/admission/chain.go",
+      "lineRange": [
+        34,
+        41
+      ],
+      "summary": "Returns true if any plugin in the chain handles the given admission operation.",
+      "tags": [
+        "dispatch",
+        "admission-webhook",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/admission/chain.go:Validate",
+      "type": "function",
+      "name": "Validate",
+      "filePath": "pkg/webhook/admission/chain.go",
+      "lineRange": [
+        43,
+        57
+      ],
+      "summary": "Runs all validation-capable plugins that handle the operation, collecting warnings and aggregating errors.",
+      "tags": [
+        "validation",
+        "aggregation",
+        "plugin-chain"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/admission/chain.go:Mutate",
+      "type": "function",
+      "name": "Mutate",
+      "filePath": "pkg/webhook/admission/chain.go",
+      "lineRange": [
+        59,
+        71
+      ],
+      "summary": "Runs all mutation-capable plugins that handle the operation, stopping at the first error.",
+      "tags": [
+        "mutation",
+        "plugin-chain",
+        "error-handling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/admission/custom_decoder.go:DecodeRaw",
+      "type": "function",
+      "name": "DecodeRaw",
+      "filePath": "pkg/webhook/admission/custom_decoder.go",
+      "lineRange": [
+        38,
+        53
+      ],
+      "summary": "Decodes raw admission bytes into a typed object and converts it to the internal API version.",
+      "tags": [
+        "decoding",
+        "serialization",
+        "api-versioning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/admission/custom_decoder.go:DecodeRawUnstructured",
+      "type": "function",
+      "name": "DecodeRawUnstructured",
+      "filePath": "pkg/webhook/admission/custom_decoder.go",
+      "lineRange": [
+        56,
+        70
+      ],
+      "summary": "Decodes raw admission bytes into an unstructured object, defaulting its GroupVersionKind when absent.",
+      "tags": [
+        "decoding",
+        "unstructured",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/admission/custom_mutation_webhook.go:NewCustomMutationWebhook",
+      "type": "function",
+      "name": "NewCustomMutationWebhook",
+      "filePath": "pkg/webhook/admission/custom_mutation_webhook.go",
+      "lineRange": [
+        30,
+        38
+      ],
+      "summary": "Wraps a MutationInterface in a controller-runtime admission webhook handler.",
+      "tags": [
+        "factory",
+        "adapter",
+        "mutation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/admission/custom_mutation_webhook.go:Handle",
+      "type": "function",
+      "name": "Handle",
+      "filePath": "pkg/webhook/admission/custom_mutation_webhook.go",
+      "lineRange": [
+        45,
+        90
+      ],
+      "summary": "Decodes the request object, applies mutation plugins, and returns a JSON patch or denial response.",
+      "tags": [
+        "http-handler",
+        "mutation",
+        "admission-webhook"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/server/tls/source.go",
+      "target": "class:pkg/server/tls/source.go:CertificateSource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/server/tls/source.go",
+      "target": "class:pkg/server/tls/source.go:CertificateSource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/profiling/profiling.go",
+      "target": "function:pkg/util/profiling/profiling.go:Install",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/util/profiling/profiling.go",
+      "target": "function:pkg/util/profiling/profiling.go:Install",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/admission/chain.go",
+      "target": "function:pkg/webhook/admission/chain.go:Handles",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/admission/chain.go",
+      "target": "function:pkg/webhook/admission/chain.go:Handles",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/admission/chain.go",
+      "target": "function:pkg/webhook/admission/chain.go:Validate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/admission/chain.go",
+      "target": "function:pkg/webhook/admission/chain.go:Validate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/admission/chain.go",
+      "target": "function:pkg/webhook/admission/chain.go:Mutate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/admission/chain.go",
+      "target": "function:pkg/webhook/admission/chain.go:Mutate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/admission/custom_decoder.go",
+      "target": "function:pkg/webhook/admission/custom_decoder.go:DecodeRaw",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/admission/custom_decoder.go",
+      "target": "function:pkg/webhook/admission/custom_decoder.go:DecodeRaw",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/admission/custom_decoder.go",
+      "target": "function:pkg/webhook/admission/custom_decoder.go:DecodeRawUnstructured",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/admission/custom_decoder.go",
+      "target": "function:pkg/webhook/admission/custom_decoder.go:DecodeRawUnstructured",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/admission/custom_mutation_webhook.go",
+      "target": "function:pkg/webhook/admission/custom_mutation_webhook.go:NewCustomMutationWebhook",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/admission/custom_mutation_webhook.go",
+      "target": "function:pkg/webhook/admission/custom_mutation_webhook.go:NewCustomMutationWebhook",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/admission/custom_mutation_webhook.go",
+      "target": "function:pkg/webhook/admission/custom_mutation_webhook.go:Handle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/admission/custom_mutation_webhook.go",
+      "target": "function:pkg/webhook/admission/custom_mutation_webhook.go:Handle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

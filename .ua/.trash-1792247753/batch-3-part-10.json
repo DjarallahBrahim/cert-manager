@@ -1,0 +1,1095 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/controller/certificates/issuing/temporary.go",
+      "type": "file",
+      "name": "temporary.go",
+      "filePath": "pkg/controller/certificates/issuing/temporary.go",
+      "summary": "Issues and annotates temporary certificates for Certificates that are still awaiting issuance.",
+      "tags": [
+        "certificates",
+        "temporary-certificate",
+        "issuing",
+        "helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificates/issuing/temporary.go:ensureTemporaryCertificate",
+      "type": "function",
+      "name": "ensureTemporaryCertificate",
+      "filePath": "pkg/controller/certificates/issuing/temporary.go",
+      "lineRange": [
+        38,
+        82
+      ],
+      "summary": "Issues a temporary certificate when policy requires one and writes it to the Certificate Secret.",
+      "tags": [
+        "certificates",
+        "temporary-certificate",
+        "issuing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificates/issuing/temporary.go:certificateHasTemporaryCertificateAnnotation",
+      "type": "function",
+      "name": "certificateHasTemporaryCertificateAnnotation",
+      "filePath": "pkg/controller/certificates/issuing/temporary.go",
+      "lineRange": [
+        84,
+        94
+      ],
+      "summary": "Reports whether the Certificate carries the temporary certificate annotation.",
+      "tags": [
+        "annotation",
+        "predicate",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "type": "file",
+      "name": "keymanager_controller.go",
+      "filePath": "pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "summary": "Key manager controller that creates, tracks and rotates the private key Secrets used by Certificates.",
+      "tags": [
+        "controller",
+        "certificates",
+        "private-key",
+        "rotation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:NewController",
+      "type": "function",
+      "name": "NewController",
+      "filePath": "pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "lineRange": [
+        77,
+        128
+      ],
+      "summary": "Constructs the key manager controller with certificate and Secret informers and a rate-limited queue.",
+      "tags": [
+        "controller",
+        "certificates",
+        "constructor"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:ProcessItem",
+      "type": "function",
+      "name": "ProcessItem",
+      "filePath": "pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "lineRange": [
+        142,
+        237
+      ],
+      "summary": "Reconciles the private key Secret lifecycle for a Certificate.",
+      "tags": [
+        "controller",
+        "certificates",
+        "private-key"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:createNextPrivateKeyRotationPolicyNever",
+      "type": "function",
+      "name": "createNextPrivateKeyRotationPolicyNever",
+      "filePath": "pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "lineRange": [
+        239,
+        273
+      ],
+      "summary": "Handles the Never rotation policy by reusing or creating the next private key Secret.",
+      "tags": [
+        "private-key",
+        "rotation",
+        "certificates"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:createAndSetNextPrivateKey",
+      "type": "function",
+      "name": "createAndSetNextPrivateKey",
+      "filePath": "pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "lineRange": [
+        275,
+        289
+      ],
+      "summary": "Creates a next private key and records its Secret name on the Certificate.",
+      "tags": [
+        "private-key",
+        "certificates",
+        "secret"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:deleteSecretResources",
+      "type": "function",
+      "name": "deleteSecretResources",
+      "filePath": "pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "lineRange": [
+        292,
+        301
+      ],
+      "summary": "Deletes the given private key Secrets, ignoring not-found errors.",
+      "tags": [
+        "cleanup",
+        "secret",
+        "private-key"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:setNextPrivateKeySecretName",
+      "type": "function",
+      "name": "setNextPrivateKeySecretName",
+      "filePath": "pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "lineRange": [
+        303,
+        316
+      ],
+      "summary": "Sets the next private key Secret name on the Certificate.",
+      "tags": [
+        "annotation",
+        "private-key",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:updateOrApplyStatus",
+      "type": "function",
+      "name": "updateOrApplyStatus",
+      "filePath": "pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "lineRange": [
+        321,
+        334
+      ],
+      "summary": "Updates or applies Certificate status through the API client.",
+      "tags": [
+        "status",
+        "apply",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:createNewPrivateKeySecret",
+      "type": "function",
+      "name": "createNewPrivateKeySecret",
+      "filePath": "pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "lineRange": [
+        336,
+        372
+      ],
+      "summary": "Creates a new Secret containing an encoded private key and ownership metadata.",
+      "tags": [
+        "secret",
+        "private-key",
+        "creation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:Register",
+      "type": "function",
+      "name": "Register",
+      "filePath": "pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "lineRange": [
+        380,
+        388
+      ],
+      "summary": "Registers the key manager controller with the controller context.",
+      "tags": [
+        "registration",
+        "controller",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/certificates/keymanager/keymanager_controller.go:controller",
+      "type": "class",
+      "name": "controller",
+      "filePath": "pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "lineRange": [
+        64,
+        75
+      ],
+      "summary": "Key manager controller that creates and rotates private keys for Certificates.",
+      "tags": [
+        "controller",
+        "private-key",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/certificates/keymanager/keymanager_controller.go:controllerWrapper",
+      "type": "class",
+      "name": "controllerWrapper",
+      "filePath": "pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "lineRange": [
+        376,
+        378
+      ],
+      "summary": "Wrapper exposing Register for the key manager controller.",
+      "tags": [
+        "wrapper",
+        "controller",
+        "registration"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "function:pkg/controller/certificates/issuing/temporary.go:ensureTemporaryCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "function:pkg/controller/certificates/issuing/temporary.go:certificateHasTemporaryCertificateAnnotation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:internal/controller/certificates/policies/checks.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:internal/controller/certificates/policies/constants.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:internal/controller/certificates/policies/gatherer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:internal/controller/certificates/policies/policies.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/controller/certificates/issuing/internal/keystore.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/controller/certificates/issuing/internal/secret.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/util/pki/asn1_util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/util/pki/basicconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/util/pki/certificatetemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/util/pki/csr.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/util/pki/generate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/util/pki/keyusage.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/util/pki/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/util/pki/match.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/util/pki/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/util/pki/parse.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/util/pki/parse_certificate_chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/util/pki/renewaltime.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/util/pki/sans.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/util/pki/subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/issuing/temporary.go",
+      "target": "file:pkg/util/pki/temporarycertificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:NewController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:NewController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:ProcessItem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:ProcessItem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:createNextPrivateKeyRotationPolicyNever",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:createAndSetNextPrivateKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:deleteSecretResources",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:setNextPrivateKeySecretName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:updateOrApplyStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:createNewPrivateKeySecret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:Register",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:Register",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "class:pkg/controller/certificates/keymanager/keymanager_controller.go:controller",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "class:pkg/controller/certificates/keymanager/keymanager_controller.go:controllerWrapper",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:internal/apis/certmanager/v1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:internal/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:internal/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:internal/apis/certmanager/v1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:internal/controller/certificates/apply.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:internal/controller/certificates/certificates.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:internal/controller/certificates/secrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:internal/controller/feature/features.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/api/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/api/util/duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/api/util/issuers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/api/util/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/api/util/names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/api/util/usages.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/client/clientset/versioned/clientset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/controller/certificates/informers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/controller/certificates/listers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/feature/feature_gate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/pki/asn1_util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/pki/basicconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/pki/certificatetemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/pki/csr.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/pki/generate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/pki/keyusage.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/pki/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/pki/match.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/pki/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/pki/parse.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/pki/parse_certificate_chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/pki/renewaltime.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/pki/sans.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/pki/subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/pki/temporarycertificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/predicate/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/predicate/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/predicate/generic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "target": "file:pkg/util/predicate/predicate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/controller/certificates/issuing/temporary.go:ensureTemporaryCertificate",
+      "target": "function:pkg/controller/certificates/issuing/temporary.go:certificateHasTemporaryCertificateAnnotation",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:ProcessItem",
+      "target": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:createNextPrivateKeyRotationPolicyNever",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:ProcessItem",
+      "target": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:createAndSetNextPrivateKey",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:ProcessItem",
+      "target": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:deleteSecretResources",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:createAndSetNextPrivateKey",
+      "target": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:createNewPrivateKeySecret",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:createAndSetNextPrivateKey",
+      "target": "function:pkg/controller/certificates/keymanager/keymanager_controller.go:setNextPrivateKeySecretName",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

@@ -1,0 +1,2904 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 25,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 25,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "internal/apis/config/cainjector/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/cainjector/fuzzer/fuzzer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 46,
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/cainjector/install/install.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "Install",
+          "startLine": 30,
+          "endLine": 33,
+          "params": [
+            "scheme"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Install",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Install",
+          "callee": "utilruntime.Must",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Install",
+          "callee": "cainjector.AddToScheme",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Install",
+          "callee": "utilruntime.Must",
+          "lineNumber": 32
+        },
+        {
+          "caller": "Install",
+          "callee": "v1alpha1.AddToScheme",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/cainjector/register.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "Resource",
+          "startLine": 35,
+          "endLine": 37,
+          "params": [
+            "resource"
+          ]
+        },
+        {
+          "name": "addKnownTypes",
+          "startLine": 40,
+          "endLine": 46,
+          "params": [
+            "scheme"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Resource",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource(resource).GroupResource",
+          "lineNumber": 36
+        },
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource",
+          "lineNumber": 36
+        },
+        {
+          "caller": "addKnownTypes",
+          "callee": "scheme.AddKnownTypes",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/cainjector/scheme/scheme.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "NewSchemeAndCodecs",
+          "startLine": 30,
+          "endLine": 40,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewSchemeAndCodecs",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewSchemeAndCodecs",
+          "callee": "runtime.NewScheme",
+          "lineNumber": 31
+        },
+        {
+          "caller": "NewSchemeAndCodecs",
+          "callee": "config.AddToScheme",
+          "lineNumber": 32
+        },
+        {
+          "caller": "NewSchemeAndCodecs",
+          "callee": "configv1alpha1.AddToScheme",
+          "lineNumber": 35
+        },
+        {
+          "caller": "NewSchemeAndCodecs",
+          "callee": "serializer.NewCodecFactory",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/cainjector/types.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 76,
+      "classes": [
+        {
+          "name": "CAInjectorConfiguration",
+          "startLine": 28,
+          "endLine": 72,
+          "methods": [],
+          "properties": [
+            "KubeConfig",
+            "Namespace",
+            "LeaderElectionConfig",
+            "EnableDataSourceConfig",
+            "EnableInjectableConfig",
+            "EnablePprof",
+            "PprofAddress",
+            "Logging",
+            "FeatureGates",
+            "MetricsListenAddress",
+            "MetricsTLSConfig"
+          ]
+        },
+        {
+          "name": "EnableDataSourceConfig",
+          "startLine": 74,
+          "endLine": 78,
+          "methods": [],
+          "properties": [
+            "Certificates"
+          ]
+        },
+        {
+          "name": "EnableInjectableConfig",
+          "startLine": 80,
+          "endLine": 100,
+          "methods": [],
+          "properties": [
+            "ValidatingWebhookConfigurations",
+            "MutatingWebhookConfigurations",
+            "CustomResourceDefinitions",
+            "APIServices"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CAInjectorConfiguration",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "EnableDataSourceConfig",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "EnableInjectableConfig",
+          "line": 80,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "internal/apis/config/cainjector/v1alpha1/defaults.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "addDefaultingFuncs",
+          "startLine": 29,
+          "endLine": 31,
+          "params": [
+            "scheme"
+          ]
+        },
+        {
+          "name": "SetDefaults_CAInjectorConfiguration",
+          "startLine": 33,
+          "endLine": 43,
+          "params": [
+            "obj"
+          ]
+        },
+        {
+          "name": "SetDefaults_EnableDataSourceConfig",
+          "startLine": 45,
+          "endLine": 49,
+          "params": [
+            "obj"
+          ]
+        },
+        {
+          "name": "SetDefaults_EnableInjectableConfig",
+          "startLine": 51,
+          "endLine": 64,
+          "params": [
+            "obj"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SetDefaults_CAInjectorConfiguration",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "SetDefaults_EnableDataSourceConfig",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "SetDefaults_EnableInjectableConfig",
+          "line": 51,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "addDefaultingFuncs",
+          "callee": "RegisterDefaults",
+          "lineNumber": 30
+        },
+        {
+          "caller": "SetDefaults_CAInjectorConfiguration",
+          "callee": "logsapi.SetRecommendedLoggingConfiguration",
+          "lineNumber": 42
+        },
+        {
+          "caller": "SetDefaults_EnableDataSourceConfig",
+          "callee": "ptr.To",
+          "lineNumber": 47
+        },
+        {
+          "caller": "SetDefaults_EnableInjectableConfig",
+          "callee": "ptr.To",
+          "lineNumber": 53
+        },
+        {
+          "caller": "SetDefaults_EnableInjectableConfig",
+          "callee": "ptr.To",
+          "lineNumber": 56
+        },
+        {
+          "caller": "SetDefaults_EnableInjectableConfig",
+          "callee": "ptr.To",
+          "lineNumber": 59
+        },
+        {
+          "caller": "SetDefaults_EnableInjectableConfig",
+          "callee": "ptr.To",
+          "lineNumber": 62
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 3,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/cainjector/v1alpha1/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 18,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/cainjector/v1alpha1/register.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "Resource",
+          "startLine": 30,
+          "endLine": 32,
+          "params": [
+            "resource"
+          ]
+        },
+        {
+          "name": "init",
+          "startLine": 39,
+          "endLine": 44,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Resource",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource(resource).GroupResource",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource",
+          "lineNumber": 31
+        },
+        {
+          "caller": "init",
+          "callee": "localSchemeBuilder.Register",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 195,
+      "nonEmptyLines": 173,
+      "functions": [
+        {
+          "name": "init",
+          "startLine": 35,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "RegisterConversions",
+          "startLine": 41,
+          "endLine": 73,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_v1alpha1_CAInjectorConfiguration_To_cainjector_CAInjectorConfiguration",
+          "startLine": 75,
+          "endLine": 96,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_v1alpha1_CAInjectorConfiguration_To_cainjector_CAInjectorConfiguration",
+          "startLine": 99,
+          "endLine": 101,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_cainjector_CAInjectorConfiguration_To_v1alpha1_CAInjectorConfiguration",
+          "startLine": 103,
+          "endLine": 124,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_cainjector_CAInjectorConfiguration_To_v1alpha1_CAInjectorConfiguration",
+          "startLine": 127,
+          "endLine": 129,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_v1alpha1_EnableDataSourceConfig_To_cainjector_EnableDataSourceConfig",
+          "startLine": 131,
+          "endLine": 136,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_v1alpha1_EnableDataSourceConfig_To_cainjector_EnableDataSourceConfig",
+          "startLine": 139,
+          "endLine": 141,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_cainjector_EnableDataSourceConfig_To_v1alpha1_EnableDataSourceConfig",
+          "startLine": 143,
+          "endLine": 148,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_cainjector_EnableDataSourceConfig_To_v1alpha1_EnableDataSourceConfig",
+          "startLine": 151,
+          "endLine": 153,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_v1alpha1_EnableInjectableConfig_To_cainjector_EnableInjectableConfig",
+          "startLine": 155,
+          "endLine": 169,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_v1alpha1_EnableInjectableConfig_To_cainjector_EnableInjectableConfig",
+          "startLine": 172,
+          "endLine": 174,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_cainjector_EnableInjectableConfig_To_v1alpha1_EnableInjectableConfig",
+          "startLine": 176,
+          "endLine": 190,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_cainjector_EnableInjectableConfig_To_v1alpha1_EnableInjectableConfig",
+          "startLine": 193,
+          "endLine": 195,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RegisterConversions",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_v1alpha1_CAInjectorConfiguration_To_cainjector_CAInjectorConfiguration",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_cainjector_CAInjectorConfiguration_To_v1alpha1_CAInjectorConfiguration",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_v1alpha1_EnableDataSourceConfig_To_cainjector_EnableDataSourceConfig",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_cainjector_EnableDataSourceConfig_To_v1alpha1_EnableDataSourceConfig",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_v1alpha1_EnableInjectableConfig_To_cainjector_EnableInjectableConfig",
+          "line": 172,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_cainjector_EnableInjectableConfig_To_v1alpha1_EnableInjectableConfig",
+          "line": 193,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "init",
+          "callee": "localSchemeBuilder.Register",
+          "lineNumber": 36
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 42
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*cainjectorv1alpha1.CAInjectorConfiguration)",
+          "lineNumber": 42
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*cainjector.CAInjectorConfiguration)",
+          "lineNumber": 42
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_v1alpha1_CAInjectorConfiguration_To_cainjector_CAInjectorConfiguration",
+          "lineNumber": 43
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 47
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*cainjector.CAInjectorConfiguration)",
+          "lineNumber": 47
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*cainjectorv1alpha1.CAInjectorConfiguration)",
+          "lineNumber": 47
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_cainjector_CAInjectorConfiguration_To_v1alpha1_CAInjectorConfiguration",
+          "lineNumber": 48
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 52
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*cainjectorv1alpha1.EnableDataSourceConfig)",
+          "lineNumber": 52
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*cainjector.EnableDataSourceConfig)",
+          "lineNumber": 52
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_v1alpha1_EnableDataSourceConfig_To_cainjector_EnableDataSourceConfig",
+          "lineNumber": 53
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 57
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*cainjector.EnableDataSourceConfig)",
+          "lineNumber": 57
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*cainjectorv1alpha1.EnableDataSourceConfig)",
+          "lineNumber": 57
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_cainjector_EnableDataSourceConfig_To_v1alpha1_EnableDataSourceConfig",
+          "lineNumber": 58
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 62
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*cainjectorv1alpha1.EnableInjectableConfig)",
+          "lineNumber": 62
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*cainjector.EnableInjectableConfig)",
+          "lineNumber": 62
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_v1alpha1_EnableInjectableConfig_To_cainjector_EnableInjectableConfig",
+          "lineNumber": 63
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 67
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*cainjector.EnableInjectableConfig)",
+          "lineNumber": 67
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*cainjectorv1alpha1.EnableInjectableConfig)",
+          "lineNumber": 67
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_cainjector_EnableInjectableConfig_To_v1alpha1_EnableInjectableConfig",
+          "lineNumber": 68
+        },
+        {
+          "caller": "autoConvert_v1alpha1_CAInjectorConfiguration_To_cainjector_CAInjectorConfiguration",
+          "callee": "sharedv1alpha1.Convert_v1alpha1_LeaderElectionConfig_To_shared_LeaderElectionConfig",
+          "lineNumber": 78
+        },
+        {
+          "caller": "autoConvert_v1alpha1_CAInjectorConfiguration_To_cainjector_CAInjectorConfiguration",
+          "callee": "Convert_v1alpha1_EnableDataSourceConfig_To_cainjector_EnableDataSourceConfig",
+          "lineNumber": 81
+        },
+        {
+          "caller": "autoConvert_v1alpha1_CAInjectorConfiguration_To_cainjector_CAInjectorConfiguration",
+          "callee": "Convert_v1alpha1_EnableInjectableConfig_To_cainjector_EnableInjectableConfig",
+          "lineNumber": 84
+        },
+        {
+          "caller": "autoConvert_v1alpha1_CAInjectorConfiguration_To_cainjector_CAInjectorConfiguration",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 90
+        },
+        {
+          "caller": "autoConvert_v1alpha1_CAInjectorConfiguration_To_cainjector_CAInjectorConfiguration",
+          "callee": "sharedv1alpha1.Convert_v1alpha1_TLSConfig_To_shared_TLSConfig",
+          "lineNumber": 92
+        },
+        {
+          "caller": "Convert_v1alpha1_CAInjectorConfiguration_To_cainjector_CAInjectorConfiguration",
+          "callee": "autoConvert_v1alpha1_CAInjectorConfiguration_To_cainjector_CAInjectorConfiguration",
+          "lineNumber": 100
+        },
+        {
+          "caller": "autoConvert_cainjector_CAInjectorConfiguration_To_v1alpha1_CAInjectorConfiguration",
+          "callee": "sharedv1alpha1.Convert_shared_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "lineNumber": 106
+        },
+        {
+          "caller": "autoConvert_cainjector_CAInjectorConfiguration_To_v1alpha1_CAInjectorConfiguration",
+          "callee": "Convert_cainjector_EnableDataSourceConfig_To_v1alpha1_EnableDataSourceConfig",
+          "lineNumber": 109
+        },
+        {
+          "caller": "autoConvert_cainjector_CAInjectorConfiguration_To_v1alpha1_CAInjectorConfiguration",
+          "callee": "Convert_cainjector_EnableInjectableConfig_To_v1alpha1_EnableInjectableConfig",
+          "lineNumber": 112
+        },
+        {
+          "caller": "autoConvert_cainjector_CAInjectorConfiguration_To_v1alpha1_CAInjectorConfiguration",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 118
+        },
+        {
+          "caller": "autoConvert_cainjector_CAInjectorConfiguration_To_v1alpha1_CAInjectorConfiguration",
+          "callee": "sharedv1alpha1.Convert_shared_TLSConfig_To_v1alpha1_TLSConfig",
+          "lineNumber": 120
+        },
+        {
+          "caller": "Convert_cainjector_CAInjectorConfiguration_To_v1alpha1_CAInjectorConfiguration",
+          "callee": "autoConvert_cainjector_CAInjectorConfiguration_To_v1alpha1_CAInjectorConfiguration",
+          "lineNumber": 128
+        },
+        {
+          "caller": "autoConvert_v1alpha1_EnableDataSourceConfig_To_cainjector_EnableDataSourceConfig",
+          "callee": "v1.Convert_Pointer_bool_To_bool",
+          "lineNumber": 132
+        },
+        {
+          "caller": "Convert_v1alpha1_EnableDataSourceConfig_To_cainjector_EnableDataSourceConfig",
+          "callee": "autoConvert_v1alpha1_EnableDataSourceConfig_To_cainjector_EnableDataSourceConfig",
+          "lineNumber": 140
+        },
+        {
+          "caller": "autoConvert_cainjector_EnableDataSourceConfig_To_v1alpha1_EnableDataSourceConfig",
+          "callee": "v1.Convert_bool_To_Pointer_bool",
+          "lineNumber": 144
+        },
+        {
+          "caller": "Convert_cainjector_EnableDataSourceConfig_To_v1alpha1_EnableDataSourceConfig",
+          "callee": "autoConvert_cainjector_EnableDataSourceConfig_To_v1alpha1_EnableDataSourceConfig",
+          "lineNumber": 152
+        },
+        {
+          "caller": "autoConvert_v1alpha1_EnableInjectableConfig_To_cainjector_EnableInjectableConfig",
+          "callee": "v1.Convert_Pointer_bool_To_bool",
+          "lineNumber": 156
+        },
+        {
+          "caller": "autoConvert_v1alpha1_EnableInjectableConfig_To_cainjector_EnableInjectableConfig",
+          "callee": "v1.Convert_Pointer_bool_To_bool",
+          "lineNumber": 159
+        },
+        {
+          "caller": "autoConvert_v1alpha1_EnableInjectableConfig_To_cainjector_EnableInjectableConfig",
+          "callee": "v1.Convert_Pointer_bool_To_bool",
+          "lineNumber": 162
+        },
+        {
+          "caller": "autoConvert_v1alpha1_EnableInjectableConfig_To_cainjector_EnableInjectableConfig",
+          "callee": "v1.Convert_Pointer_bool_To_bool",
+          "lineNumber": 165
+        },
+        {
+          "caller": "Convert_v1alpha1_EnableInjectableConfig_To_cainjector_EnableInjectableConfig",
+          "callee": "autoConvert_v1alpha1_EnableInjectableConfig_To_cainjector_EnableInjectableConfig",
+          "lineNumber": 173
+        },
+        {
+          "caller": "autoConvert_cainjector_EnableInjectableConfig_To_v1alpha1_EnableInjectableConfig",
+          "callee": "v1.Convert_bool_To_Pointer_bool",
+          "lineNumber": 177
+        },
+        {
+          "caller": "autoConvert_cainjector_EnableInjectableConfig_To_v1alpha1_EnableInjectableConfig",
+          "callee": "v1.Convert_bool_To_Pointer_bool",
+          "lineNumber": 180
+        },
+        {
+          "caller": "autoConvert_cainjector_EnableInjectableConfig_To_v1alpha1_EnableInjectableConfig",
+          "callee": "v1.Convert_bool_To_Pointer_bool",
+          "lineNumber": 183
+        },
+        {
+          "caller": "autoConvert_cainjector_EnableInjectableConfig_To_v1alpha1_EnableInjectableConfig",
+          "callee": "v1.Convert_bool_To_Pointer_bool",
+          "lineNumber": 186
+        },
+        {
+          "caller": "Convert_cainjector_EnableInjectableConfig_To_v1alpha1_EnableInjectableConfig",
+          "callee": "autoConvert_cainjector_EnableInjectableConfig_To_v1alpha1_EnableInjectableConfig",
+          "lineNumber": 194
+        }
+      ],
+      "metrics": {
+        "importCount": 14,
+        "exportCount": 7,
+        "functionCount": 14,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 37,
+      "functions": [
+        {
+          "name": "RegisterDefaults",
+          "startLine": 33,
+          "endLine": 38,
+          "params": [
+            "scheme"
+          ]
+        },
+        {
+          "name": "SetObjectDefaults_CAInjectorConfiguration",
+          "startLine": 40,
+          "endLine": 46,
+          "params": [
+            "in"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RegisterDefaults",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "SetObjectDefaults_CAInjectorConfiguration",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "RegisterDefaults",
+          "callee": "scheme.AddTypeDefaultingFunc",
+          "lineNumber": 34
+        },
+        {
+          "caller": "RegisterDefaults",
+          "callee": "SetObjectDefaults_CAInjectorConfiguration",
+          "lineNumber": 35
+        },
+        {
+          "caller": "SetObjectDefaults_CAInjectorConfiguration",
+          "callee": "SetDefaults_CAInjectorConfiguration",
+          "lineNumber": 41
+        },
+        {
+          "caller": "SetObjectDefaults_CAInjectorConfiguration",
+          "callee": "sharedv1alpha1.SetDefaults_LeaderElectionConfig",
+          "lineNumber": 42
+        },
+        {
+          "caller": "SetObjectDefaults_CAInjectorConfiguration",
+          "callee": "SetDefaults_EnableDataSourceConfig",
+          "lineNumber": 43
+        },
+        {
+          "caller": "SetObjectDefaults_CAInjectorConfiguration",
+          "callee": "SetDefaults_EnableInjectableConfig",
+          "lineNumber": 44
+        },
+        {
+          "caller": "SetObjectDefaults_CAInjectorConfiguration",
+          "callee": "sharedv1alpha1.SetDefaults_DynamicServingConfig",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/cainjector/validation/validation.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "ValidateCAInjectorConfiguration",
+          "startLine": 27,
+          "endLine": 34,
+          "params": [
+            "cfg",
+            "fldPath"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ValidateCAInjectorConfiguration",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ValidateCAInjectorConfiguration",
+          "callee": "append",
+          "lineNumber": 30
+        },
+        {
+          "caller": "ValidateCAInjectorConfiguration",
+          "callee": "logsapi.Validate",
+          "lineNumber": 30
+        },
+        {
+          "caller": "ValidateCAInjectorConfiguration",
+          "callee": "fldPath.Child",
+          "lineNumber": 30
+        },
+        {
+          "caller": "ValidateCAInjectorConfiguration",
+          "callee": "append",
+          "lineNumber": 31
+        },
+        {
+          "caller": "ValidateCAInjectorConfiguration",
+          "callee": "sharedvalidation.ValidateLeaderElectionConfig",
+          "lineNumber": 31
+        },
+        {
+          "caller": "ValidateCAInjectorConfiguration",
+          "callee": "fldPath.Child",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/cainjector/zz_generated.deepcopy.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 81,
+      "functions": [
+        {
+          "name": "DeepCopyInto",
+          "startLine": 29,
+          "endLine": 45,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 48,
+          "endLine": 55,
+          "params": []
+        },
+        {
+          "name": "DeepCopyObject",
+          "startLine": 58,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 66,
+          "endLine": 69,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 72,
+          "endLine": 79,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 82,
+          "endLine": 85,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 88,
+          "endLine": 95,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeepCopyInto",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyObject",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 88,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Logging.DeepCopyInto",
+          "lineNumber": 35
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 38
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 38
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.MetricsTLSConfig.DeepCopyInto",
+          "lineNumber": 43
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 52
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 53
+        },
+        {
+          "caller": "DeepCopyObject",
+          "callee": "in.DeepCopy",
+          "lineNumber": 59
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 76
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 77
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 92
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 93
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/controller/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/controller/fuzzer/fuzzer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 119,
+      "nonEmptyLines": 90,
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/controller/install/install.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "Install",
+          "startLine": 30,
+          "endLine": 33,
+          "params": [
+            "scheme"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Install",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Install",
+          "callee": "utilruntime.Must",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Install",
+          "callee": "controller.AddToScheme",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Install",
+          "callee": "utilruntime.Must",
+          "lineNumber": 32
+        },
+        {
+          "caller": "Install",
+          "callee": "v1alpha1.AddToScheme",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/controller/register.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "Resource",
+          "startLine": 35,
+          "endLine": 37,
+          "params": [
+            "resource"
+          ]
+        },
+        {
+          "name": "addKnownTypes",
+          "startLine": 40,
+          "endLine": 46,
+          "params": [
+            "scheme"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Resource",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource(resource).GroupResource",
+          "lineNumber": 36
+        },
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource",
+          "lineNumber": 36
+        },
+        {
+          "caller": "addKnownTypes",
+          "callee": "scheme.AddKnownTypes",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/controller/scheme/scheme.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "NewSchemeAndCodecs",
+          "startLine": 30,
+          "endLine": 40,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewSchemeAndCodecs",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewSchemeAndCodecs",
+          "callee": "runtime.NewScheme",
+          "lineNumber": 31
+        },
+        {
+          "caller": "NewSchemeAndCodecs",
+          "callee": "config.AddToScheme",
+          "lineNumber": 32
+        },
+        {
+          "caller": "NewSchemeAndCodecs",
+          "callee": "configv1alpha1.AddToScheme",
+          "lineNumber": 35
+        },
+        {
+          "caller": "NewSchemeAndCodecs",
+          "callee": "serializer.NewCodecFactory",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/controller/types.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 225,
+      "nonEmptyLines": 174,
+      "classes": [
+        {
+          "name": "ControllerConfiguration",
+          "startLine": 30,
+          "endLine": 136,
+          "methods": [],
+          "properties": [
+            "APIServerHost",
+            "KubeConfig",
+            "KubernetesAPIQPS",
+            "KubernetesAPIBurst",
+            "Namespace",
+            "ClusterResourceNamespace",
+            "LeaderElectionConfig",
+            "Controllers",
+            "IssuerAmbientCredentials",
+            "ClusterIssuerAmbientCredentials",
+            "EnableCertificateOwnerRef",
+            "EnableGatewayAPI",
+            "CopiedAnnotationPrefixes",
+            "NumberOfConcurrentWorkers",
+            "MaxConcurrentChallenges",
+            "MetricsListenAddress",
+            "MetricsTLSConfig",
+            "HealthzListenAddress",
+            "EnablePprof",
+            "PprofAddress",
+            "Logging",
+            "FeatureGates",
+            "IngressShimConfig",
+            "ACMEHTTP01Config",
+            "ACMEDNS01Config"
+          ]
+        },
+        {
+          "name": "LeaderElectionConfig",
+          "startLine": 138,
+          "endLine": 144,
+          "methods": [],
+          "properties": [
+            "HealthzTimeout"
+          ]
+        },
+        {
+          "name": "IngressShimConfig",
+          "startLine": 146,
+          "endLine": 167,
+          "methods": [],
+          "properties": [
+            "DefaultIssuerName",
+            "DefaultIssuerKind",
+            "DefaultIssuerGroup",
+            "DefaultAutoCertificateAnnotations",
+            "ExtraCertificateAnnotations"
+          ]
+        },
+        {
+          "name": "ACMEHTTP01Config",
+          "startLine": 169,
+          "endLine": 200,
+          "methods": [],
+          "properties": [
+            "SolverImage",
+            "SolverResourceRequestCPU",
+            "SolverResourceRequestMemory",
+            "SolverResourceLimitsCPU",
+            "SolverResourceLimitsMemory",
+            "SolverRunAsNonRoot",
+            "SolverNameservers"
+          ]
+        },
+        {
+          "name": "ACMEDNS01Config",
+          "startLine": 202,
+          "endLine": 225,
+          "methods": [],
+          "properties": [
+            "RecursiveNameservers",
+            "RecursiveNameserversOnly",
+            "CheckRetryPeriod"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ControllerConfiguration",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "LeaderElectionConfig",
+          "line": 138,
+          "isDefault": false
+        },
+        {
+          "name": "IngressShimConfig",
+          "line": 146,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEHTTP01Config",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEDNS01Config",
+          "line": 202,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 5,
+        "functionCount": 0,
+        "classCount": 5
+      }
+    },
+    {
+      "path": "internal/apis/config/controller/v1alpha1/defaults.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 332,
+      "nonEmptyLines": 273,
+      "functions": [
+        {
+          "name": "addDefaultingFuncs",
+          "startLine": 182,
+          "endLine": 184,
+          "params": [
+            "scheme"
+          ]
+        },
+        {
+          "name": "SetDefaults_ControllerConfiguration",
+          "startLine": 186,
+          "endLine": 260,
+          "params": [
+            "obj"
+          ]
+        },
+        {
+          "name": "SetDefaults_LeaderElectionConfig",
+          "startLine": 262,
+          "endLine": 266,
+          "params": [
+            "obj"
+          ]
+        },
+        {
+          "name": "SetDefaults_IngressShimConfig",
+          "startLine": 268,
+          "endLine": 288,
+          "params": [
+            "obj"
+          ]
+        },
+        {
+          "name": "SetDefaults_ACMEHTTP01Config",
+          "startLine": 290,
+          "endLine": 318,
+          "params": [
+            "obj"
+          ]
+        },
+        {
+          "name": "SetDefaults_ACMEDNS01Config",
+          "startLine": 320,
+          "endLine": 332,
+          "params": [
+            "obj"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SetDefaults_ControllerConfiguration",
+          "line": 186,
+          "isDefault": false
+        },
+        {
+          "name": "SetDefaults_LeaderElectionConfig",
+          "line": 262,
+          "isDefault": false
+        },
+        {
+          "name": "SetDefaults_IngressShimConfig",
+          "line": 268,
+          "isDefault": false
+        },
+        {
+          "name": "SetDefaults_ACMEHTTP01Config",
+          "line": 290,
+          "isDefault": false
+        },
+        {
+          "name": "SetDefaults_ACMEDNS01Config",
+          "line": 320,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "addDefaultingFuncs",
+          "callee": "RegisterDefaults",
+          "lineNumber": 183
+        },
+        {
+          "caller": "SetDefaults_ControllerConfiguration",
+          "callee": "len",
+          "lineNumber": 211
+        },
+        {
+          "caller": "SetDefaults_ControllerConfiguration",
+          "callee": "len",
+          "lineNumber": 231
+        },
+        {
+          "caller": "SetDefaults_ControllerConfiguration",
+          "callee": "logsapi.SetRecommendedLoggingConfiguration",
+          "lineNumber": 259
+        },
+        {
+          "caller": "SetDefaults_LeaderElectionConfig",
+          "callee": "obj.HealthzTimeout.IsZero",
+          "lineNumber": 263
+        },
+        {
+          "caller": "SetDefaults_LeaderElectionConfig",
+          "callee": "sharedv1alpha1.DurationFromTime",
+          "lineNumber": 264
+        },
+        {
+          "caller": "SetDefaults_IngressShimConfig",
+          "callee": "len",
+          "lineNumber": 281
+        },
+        {
+          "caller": "SetDefaults_IngressShimConfig",
+          "callee": "len",
+          "lineNumber": 285
+        },
+        {
+          "caller": "SetDefaults_ACMEHTTP01Config",
+          "callee": "len",
+          "lineNumber": 315
+        },
+        {
+          "caller": "SetDefaults_ACMEDNS01Config",
+          "callee": "len",
+          "lineNumber": 321
+        },
+        {
+          "caller": "SetDefaults_ACMEDNS01Config",
+          "callee": "obj.CheckRetryPeriod.IsZero",
+          "lineNumber": 329
+        },
+        {
+          "caller": "SetDefaults_ACMEDNS01Config",
+          "callee": "sharedv1alpha1.DurationFromTime",
+          "lineNumber": 330
+        }
+      ],
+      "metrics": {
+        "importCount": 53,
+        "exportCount": 5,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/controller/v1alpha1/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 18,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/controller/v1alpha1/register.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "Resource",
+          "startLine": 30,
+          "endLine": 32,
+          "params": [
+            "resource"
+          ]
+        },
+        {
+          "name": "init",
+          "startLine": 39,
+          "endLine": 44,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Resource",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource(resource).GroupResource",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource",
+          "lineNumber": 31
+        },
+        {
+          "caller": "init",
+          "callee": "localSchemeBuilder.Register",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/controller/v1alpha1/zz_generated.conversion.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 343,
+      "nonEmptyLines": 313,
+      "functions": [
+        {
+          "name": "init",
+          "startLine": 35,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "RegisterConversions",
+          "startLine": 41,
+          "endLine": 93,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_v1alpha1_ACMEDNS01Config_To_controller_ACMEDNS01Config",
+          "startLine": 95,
+          "endLine": 104,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_v1alpha1_ACMEDNS01Config_To_controller_ACMEDNS01Config",
+          "startLine": 107,
+          "endLine": 109,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_controller_ACMEDNS01Config_To_v1alpha1_ACMEDNS01Config",
+          "startLine": 111,
+          "endLine": 120,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_controller_ACMEDNS01Config_To_v1alpha1_ACMEDNS01Config",
+          "startLine": 123,
+          "endLine": 125,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_v1alpha1_ACMEHTTP01Config_To_controller_ACMEHTTP01Config",
+          "startLine": 127,
+          "endLine": 138,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_v1alpha1_ACMEHTTP01Config_To_controller_ACMEHTTP01Config",
+          "startLine": 141,
+          "endLine": 143,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_controller_ACMEHTTP01Config_To_v1alpha1_ACMEHTTP01Config",
+          "startLine": 145,
+          "endLine": 156,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_controller_ACMEHTTP01Config_To_v1alpha1_ACMEHTTP01Config",
+          "startLine": 159,
+          "endLine": 161,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "startLine": 163,
+          "endLine": 218,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "startLine": 221,
+          "endLine": 223,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "startLine": 225,
+          "endLine": 280,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "startLine": 283,
+          "endLine": 285,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_v1alpha1_IngressShimConfig_To_controller_IngressShimConfig",
+          "startLine": 287,
+          "endLine": 294,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_v1alpha1_IngressShimConfig_To_controller_IngressShimConfig",
+          "startLine": 297,
+          "endLine": 299,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_controller_IngressShimConfig_To_v1alpha1_IngressShimConfig",
+          "startLine": 301,
+          "endLine": 308,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_controller_IngressShimConfig_To_v1alpha1_IngressShimConfig",
+          "startLine": 311,
+          "endLine": 313,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_v1alpha1_LeaderElectionConfig_To_controller_LeaderElectionConfig",
+          "startLine": 315,
+          "endLine": 323,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_v1alpha1_LeaderElectionConfig_To_controller_LeaderElectionConfig",
+          "startLine": 326,
+          "endLine": 328,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_controller_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "startLine": 330,
+          "endLine": 338,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_controller_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "startLine": 341,
+          "endLine": 343,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RegisterConversions",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_v1alpha1_ACMEDNS01Config_To_controller_ACMEDNS01Config",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_controller_ACMEDNS01Config_To_v1alpha1_ACMEDNS01Config",
+          "line": 123,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_v1alpha1_ACMEHTTP01Config_To_controller_ACMEHTTP01Config",
+          "line": 141,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_controller_ACMEHTTP01Config_To_v1alpha1_ACMEHTTP01Config",
+          "line": 159,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "line": 221,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "line": 283,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_v1alpha1_IngressShimConfig_To_controller_IngressShimConfig",
+          "line": 297,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_controller_IngressShimConfig_To_v1alpha1_IngressShimConfig",
+          "line": 311,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_v1alpha1_LeaderElectionConfig_To_controller_LeaderElectionConfig",
+          "line": 326,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_controller_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "line": 341,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "init",
+          "callee": "localSchemeBuilder.Register",
+          "lineNumber": 36
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 42
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controllerv1alpha1.ACMEDNS01Config)",
+          "lineNumber": 42
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controller.ACMEDNS01Config)",
+          "lineNumber": 42
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_v1alpha1_ACMEDNS01Config_To_controller_ACMEDNS01Config",
+          "lineNumber": 43
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 47
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controller.ACMEDNS01Config)",
+          "lineNumber": 47
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controllerv1alpha1.ACMEDNS01Config)",
+          "lineNumber": 47
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_controller_ACMEDNS01Config_To_v1alpha1_ACMEDNS01Config",
+          "lineNumber": 48
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 52
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controllerv1alpha1.ACMEHTTP01Config)",
+          "lineNumber": 52
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controller.ACMEHTTP01Config)",
+          "lineNumber": 52
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_v1alpha1_ACMEHTTP01Config_To_controller_ACMEHTTP01Config",
+          "lineNumber": 53
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 57
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controller.ACMEHTTP01Config)",
+          "lineNumber": 57
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controllerv1alpha1.ACMEHTTP01Config)",
+          "lineNumber": 57
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_controller_ACMEHTTP01Config_To_v1alpha1_ACMEHTTP01Config",
+          "lineNumber": 58
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 62
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controllerv1alpha1.ControllerConfiguration)",
+          "lineNumber": 62
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controller.ControllerConfiguration)",
+          "lineNumber": 62
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "lineNumber": 63
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 67
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controller.ControllerConfiguration)",
+          "lineNumber": 67
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controllerv1alpha1.ControllerConfiguration)",
+          "lineNumber": 67
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "lineNumber": 68
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 72
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controllerv1alpha1.IngressShimConfig)",
+          "lineNumber": 72
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controller.IngressShimConfig)",
+          "lineNumber": 72
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_v1alpha1_IngressShimConfig_To_controller_IngressShimConfig",
+          "lineNumber": 73
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 77
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controller.IngressShimConfig)",
+          "lineNumber": 77
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controllerv1alpha1.IngressShimConfig)",
+          "lineNumber": 77
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_controller_IngressShimConfig_To_v1alpha1_IngressShimConfig",
+          "lineNumber": 78
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 82
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controllerv1alpha1.LeaderElectionConfig)",
+          "lineNumber": 82
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controller.LeaderElectionConfig)",
+          "lineNumber": 82
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_v1alpha1_LeaderElectionConfig_To_controller_LeaderElectionConfig",
+          "lineNumber": 83
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddGeneratedConversionFunc",
+          "lineNumber": 87
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controller.LeaderElectionConfig)",
+          "lineNumber": 87
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*controllerv1alpha1.LeaderElectionConfig)",
+          "lineNumber": 87
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_controller_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "lineNumber": 88
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ACMEDNS01Config_To_controller_ACMEDNS01Config",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 96
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ACMEDNS01Config_To_controller_ACMEDNS01Config",
+          "callee": "v1.Convert_Pointer_bool_To_bool",
+          "lineNumber": 97
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ACMEDNS01Config_To_controller_ACMEDNS01Config",
+          "callee": "sharedv1alpha1.Convert_Pointer_v1alpha1_Duration_To_time_Duration",
+          "lineNumber": 100
+        },
+        {
+          "caller": "Convert_v1alpha1_ACMEDNS01Config_To_controller_ACMEDNS01Config",
+          "callee": "autoConvert_v1alpha1_ACMEDNS01Config_To_controller_ACMEDNS01Config",
+          "lineNumber": 108
+        },
+        {
+          "caller": "autoConvert_controller_ACMEDNS01Config_To_v1alpha1_ACMEDNS01Config",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 112
+        },
+        {
+          "caller": "autoConvert_controller_ACMEDNS01Config_To_v1alpha1_ACMEDNS01Config",
+          "callee": "v1.Convert_bool_To_Pointer_bool",
+          "lineNumber": 113
+        },
+        {
+          "caller": "autoConvert_controller_ACMEDNS01Config_To_v1alpha1_ACMEDNS01Config",
+          "callee": "sharedv1alpha1.Convert_time_Duration_To_Pointer_v1alpha1_Duration",
+          "lineNumber": 116
+        },
+        {
+          "caller": "Convert_controller_ACMEDNS01Config_To_v1alpha1_ACMEDNS01Config",
+          "callee": "autoConvert_controller_ACMEDNS01Config_To_v1alpha1_ACMEDNS01Config",
+          "lineNumber": 124
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ACMEHTTP01Config_To_controller_ACMEHTTP01Config",
+          "callee": "v1.Convert_Pointer_bool_To_bool",
+          "lineNumber": 133
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ACMEHTTP01Config_To_controller_ACMEHTTP01Config",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 136
+        },
+        {
+          "caller": "Convert_v1alpha1_ACMEHTTP01Config_To_controller_ACMEHTTP01Config",
+          "callee": "autoConvert_v1alpha1_ACMEHTTP01Config_To_controller_ACMEHTTP01Config",
+          "lineNumber": 142
+        },
+        {
+          "caller": "autoConvert_controller_ACMEHTTP01Config_To_v1alpha1_ACMEHTTP01Config",
+          "callee": "v1.Convert_bool_To_Pointer_bool",
+          "lineNumber": 151
+        },
+        {
+          "caller": "autoConvert_controller_ACMEHTTP01Config_To_v1alpha1_ACMEHTTP01Config",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 154
+        },
+        {
+          "caller": "Convert_controller_ACMEHTTP01Config_To_v1alpha1_ACMEHTTP01Config",
+          "callee": "autoConvert_controller_ACMEHTTP01Config_To_v1alpha1_ACMEHTTP01Config",
+          "lineNumber": 160
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "callee": "sharedv1alpha1.Convert_Pointer_float32_To_float32",
+          "lineNumber": 166
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "callee": "sharedv1alpha1.Convert_Pointer_int32_To_int",
+          "lineNumber": 169
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "callee": "Convert_v1alpha1_LeaderElectionConfig_To_controller_LeaderElectionConfig",
+          "lineNumber": 174
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 177
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "callee": "v1.Convert_Pointer_bool_To_bool",
+          "lineNumber": 178
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "callee": "v1.Convert_Pointer_bool_To_bool",
+          "lineNumber": 181
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "callee": "v1.Convert_Pointer_bool_To_bool",
+          "lineNumber": 184
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "callee": "v1.Convert_Pointer_bool_To_bool",
+          "lineNumber": 187
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 190
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "callee": "sharedv1alpha1.Convert_Pointer_int32_To_int",
+          "lineNumber": 191
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "callee": "sharedv1alpha1.Convert_Pointer_int32_To_int",
+          "lineNumber": 194
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "callee": "sharedv1alpha1.Convert_v1alpha1_TLSConfig_To_shared_TLSConfig",
+          "lineNumber": 198
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "callee": "v1.Convert_Pointer_bool_To_bool",
+          "lineNumber": 202
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 207
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "callee": "Convert_v1alpha1_IngressShimConfig_To_controller_IngressShimConfig",
+          "lineNumber": 208
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "callee": "Convert_v1alpha1_ACMEHTTP01Config_To_controller_ACMEHTTP01Config",
+          "lineNumber": 211
+        },
+        {
+          "caller": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "callee": "Convert_v1alpha1_ACMEDNS01Config_To_controller_ACMEDNS01Config",
+          "lineNumber": 214
+        },
+        {
+          "caller": "Convert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "callee": "autoConvert_v1alpha1_ControllerConfiguration_To_controller_ControllerConfiguration",
+          "lineNumber": 222
+        },
+        {
+          "caller": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "callee": "sharedv1alpha1.Convert_float32_To_Pointer_float32",
+          "lineNumber": 228
+        },
+        {
+          "caller": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "callee": "sharedv1alpha1.Convert_int_To_Pointer_int32",
+          "lineNumber": 231
+        },
+        {
+          "caller": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "callee": "Convert_controller_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "lineNumber": 236
+        },
+        {
+          "caller": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 239
+        },
+        {
+          "caller": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "callee": "v1.Convert_bool_To_Pointer_bool",
+          "lineNumber": 240
+        },
+        {
+          "caller": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "callee": "v1.Convert_bool_To_Pointer_bool",
+          "lineNumber": 243
+        },
+        {
+          "caller": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "callee": "v1.Convert_bool_To_Pointer_bool",
+          "lineNumber": 246
+        },
+        {
+          "caller": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "callee": "v1.Convert_bool_To_Pointer_bool",
+          "lineNumber": 249
+        },
+        {
+          "caller": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 252
+        },
+        {
+          "caller": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "callee": "sharedv1alpha1.Convert_int_To_Pointer_int32",
+          "lineNumber": 253
+        },
+        {
+          "caller": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "callee": "sharedv1alpha1.Convert_int_To_Pointer_int32",
+          "lineNumber": 256
+        },
+        {
+          "caller": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "callee": "sharedv1alpha1.Convert_shared_TLSConfig_To_v1alpha1_TLSConfig",
+          "lineNumber": 260
+        },
+        {
+          "caller": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "callee": "v1.Convert_bool_To_Pointer_bool",
+          "lineNumber": 264
+        },
+        {
+          "caller": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 269
+        },
+        {
+          "caller": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "callee": "Convert_controller_IngressShimConfig_To_v1alpha1_IngressShimConfig",
+          "lineNumber": 270
+        },
+        {
+          "caller": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "callee": "Convert_controller_ACMEHTTP01Config_To_v1alpha1_ACMEHTTP01Config",
+          "lineNumber": 273
+        },
+        {
+          "caller": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "callee": "Convert_controller_ACMEDNS01Config_To_v1alpha1_ACMEDNS01Config",
+          "lineNumber": 276
+        },
+        {
+          "caller": "Convert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "callee": "autoConvert_controller_ControllerConfiguration_To_v1alpha1_ControllerConfiguration",
+          "lineNumber": 284
+        },
+        {
+          "caller": "autoConvert_v1alpha1_IngressShimConfig_To_controller_IngressShimConfig",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 291
+        },
+        {
+          "caller": "autoConvert_v1alpha1_IngressShimConfig_To_controller_IngressShimConfig",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 292
+        },
+        {
+          "caller": "Convert_v1alpha1_IngressShimConfig_To_controller_IngressShimConfig",
+          "callee": "autoConvert_v1alpha1_IngressShimConfig_To_controller_IngressShimConfig",
+          "lineNumber": 298
+        },
+        {
+          "caller": "autoConvert_controller_IngressShimConfig_To_v1alpha1_IngressShimConfig",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 305
+        },
+        {
+          "caller": "autoConvert_controller_IngressShimConfig_To_v1alpha1_IngressShimConfig",
+          "callee": "unsafe.Pointer",
+          "lineNumber": 306
+        },
+        {
+          "caller": "Convert_controller_IngressShimConfig_To_v1alpha1_IngressShimConfig",
+          "callee": "autoConvert_controller_IngressShimConfig_To_v1alpha1_IngressShimConfig",
+          "lineNumber": 312
+        },
+        {
+          "caller": "autoConvert_v1alpha1_LeaderElectionConfig_To_controller_LeaderElectionConfig",
+          "callee": "sharedv1alpha1.Convert_v1alpha1_LeaderElectionConfig_To_shared_LeaderElectionConfig",
+          "lineNumber": 316
+        },
+        {
+          "caller": "autoConvert_v1alpha1_LeaderElectionConfig_To_controller_LeaderElectionConfig",
+          "callee": "sharedv1alpha1.Convert_Pointer_v1alpha1_Duration_To_time_Duration",
+          "lineNumber": 319
+        },
+        {
+          "caller": "Convert_v1alpha1_LeaderElectionConfig_To_controller_LeaderElectionConfig",
+          "callee": "autoConvert_v1alpha1_LeaderElectionConfig_To_controller_LeaderElectionConfig",
+          "lineNumber": 327
+        },
+        {
+          "caller": "autoConvert_controller_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "callee": "sharedv1alpha1.Convert_shared_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "lineNumber": 331
+        },
+        {
+          "caller": "autoConvert_controller_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "callee": "sharedv1alpha1.Convert_time_Duration_To_Pointer_v1alpha1_Duration",
+          "lineNumber": 334
+        },
+        {
+          "caller": "Convert_controller_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "callee": "autoConvert_controller_LeaderElectionConfig_To_v1alpha1_LeaderElectionConfig",
+          "lineNumber": 342
+        }
+      ],
+      "metrics": {
+        "importCount": 14,
+        "exportCount": 11,
+        "functionCount": 22,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/controller/v1alpha1/zz_generated.defaults.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "RegisterDefaults",
+          "startLine": 33,
+          "endLine": 38,
+          "params": [
+            "scheme"
+          ]
+        },
+        {
+          "name": "SetObjectDefaults_ControllerConfiguration",
+          "startLine": 40,
+          "endLine": 48,
+          "params": [
+            "in"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RegisterDefaults",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "SetObjectDefaults_ControllerConfiguration",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "RegisterDefaults",
+          "callee": "scheme.AddTypeDefaultingFunc",
+          "lineNumber": 34
+        },
+        {
+          "caller": "RegisterDefaults",
+          "callee": "SetObjectDefaults_ControllerConfiguration",
+          "lineNumber": 35
+        },
+        {
+          "caller": "SetObjectDefaults_ControllerConfiguration",
+          "callee": "SetDefaults_ControllerConfiguration",
+          "lineNumber": 41
+        },
+        {
+          "caller": "SetObjectDefaults_ControllerConfiguration",
+          "callee": "SetDefaults_LeaderElectionConfig",
+          "lineNumber": 42
+        },
+        {
+          "caller": "SetObjectDefaults_ControllerConfiguration",
+          "callee": "sharedv1alpha1.SetDefaults_LeaderElectionConfig",
+          "lineNumber": 43
+        },
+        {
+          "caller": "SetObjectDefaults_ControllerConfiguration",
+          "callee": "sharedv1alpha1.SetDefaults_DynamicServingConfig",
+          "lineNumber": 44
+        },
+        {
+          "caller": "SetObjectDefaults_ControllerConfiguration",
+          "callee": "SetDefaults_IngressShimConfig",
+          "lineNumber": 45
+        },
+        {
+          "caller": "SetObjectDefaults_ControllerConfiguration",
+          "callee": "SetDefaults_ACMEHTTP01Config",
+          "lineNumber": 46
+        },
+        {
+          "caller": "SetObjectDefaults_ControllerConfiguration",
+          "callee": "SetDefaults_ACMEDNS01Config",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/config/controller/validation/validation.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 97,
+      "nonEmptyLines": 77,
+      "functions": [
+        {
+          "name": "ValidateControllerConfiguration",
+          "startLine": 33,
+          "endLine": 97,
+          "params": [
+            "cfg",
+            "fldPath"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ValidateControllerConfiguration",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "append",
+          "lineNumber": 36
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "logsapi.Validate",
+          "lineNumber": 36
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child",
+          "lineNumber": 36
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "append",
+          "lineNumber": 37
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "sharedvalidation.ValidateTLSConfig",
+          "lineNumber": 37
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child",
+          "lineNumber": 37
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "append",
+          "lineNumber": 40
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "field.Invalid",
+          "lineNumber": 40
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child(\"leaderElectionConfig\").Child",
+          "lineNumber": 40
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child",
+          "lineNumber": 40
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "append",
+          "lineNumber": 42
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "sharedvalidation.ValidateLeaderElectionConfig",
+          "lineNumber": 42
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child",
+          "lineNumber": 42
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "len",
+          "lineNumber": 44
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "append",
+          "lineNumber": 45
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "field.Required",
+          "lineNumber": 45
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child(\"ingressShimConfig\").Child",
+          "lineNumber": 45
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child",
+          "lineNumber": 45
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "append",
+          "lineNumber": 49
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "field.Invalid",
+          "lineNumber": 49
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child",
+          "lineNumber": 49
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "append",
+          "lineNumber": 53
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "field.Invalid",
+          "lineNumber": 53
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child",
+          "lineNumber": 53
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "float32",
+          "lineNumber": 56
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "append",
+          "lineNumber": 57
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "field.Invalid",
+          "lineNumber": 57
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child",
+          "lineNumber": 57
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "net.SplitHostPort",
+          "lineNumber": 62
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "append",
+          "lineNumber": 64
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "field.Invalid",
+          "lineNumber": 64
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child(\"acmeHTTP01Config\").Child(\"solverNameservers\").Index",
+          "lineNumber": 64
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child(\"acmeHTTP01Config\").Child",
+          "lineNumber": 64
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child",
+          "lineNumber": 64
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "strings.HasPrefix",
+          "lineNumber": 73
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "url.ParseRequestURI",
+          "lineNumber": 74
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "append",
+          "lineNumber": 75
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "field.Invalid",
+          "lineNumber": 75
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child(\"acmeDNS01Config\").Child(\"recursiveNameservers\").Index",
+          "lineNumber": 75
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child(\"acmeDNS01Config\").Child",
+          "lineNumber": 75
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child",
+          "lineNumber": 75
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "net.SplitHostPort",
+          "lineNumber": 78
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "append",
+          "lineNumber": 79
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "field.Invalid",
+          "lineNumber": 79
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child(\"acmeDNS01Config\").Child(\"recursiveNameservers\").Index",
+          "lineNumber": 79
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child(\"acmeDNS01Config\").Child",
+          "lineNumber": 79
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child",
+          "lineNumber": 79
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "sets.NewString",
+          "lineNumber": 84
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "strings.TrimPrefix",
+          "lineNumber": 90
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "allControllersSet.Has",
+          "lineNumber": 91
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "append",
+          "lineNumber": 92
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "field.Invalid",
+          "lineNumber": 92
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child(\"controllers\").Index",
+          "lineNumber": 92
+        },
+        {
+          "caller": "ValidateControllerConfiguration",
+          "callee": "fldPath.Child",
+          "lineNumber": 92
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

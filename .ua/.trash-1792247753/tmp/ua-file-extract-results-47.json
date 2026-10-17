@@ -1,0 +1,622 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 18,
+  "filesSkipped": [
+    "internal/controller/certificaterequests/OWNERS",
+    "internal/controller/certificates/OWNERS",
+    "internal/controller/challenges/OWNERS",
+    "internal/controller/issuers/OWNERS",
+    "internal/controller/orders/OWNERS",
+    "internal/pem/testdata/issue-ghsa-r4pg-vg54-wxx4.bin",
+    "make/_shared/boilerplate/template/boilerplate.go.txt"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 18,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 3,
+      "failed": 0,
+      "skipped": 15
+    }
+  },
+  "results": [
+    {
+      "path": "internal/apis/meta/fuzzer/fuzzer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 20,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/generated/openapi/cmd/models-schema/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 13,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/vault/fake/client.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "NewFakeClient",
+          "startLine": 33,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "CloneConfig",
+          "startLine": 42,
+          "endLine": 44,
+          "params": []
+        },
+        {
+          "name": "WithNewRequest",
+          "startLine": 46,
+          "endLine": 49,
+          "params": [
+            "r"
+          ]
+        },
+        {
+          "name": "WithRawRequest",
+          "startLine": 51,
+          "endLine": 56,
+          "params": [
+            "resp",
+            "err"
+          ]
+        },
+        {
+          "name": "WithRawRequestFn",
+          "startLine": 58,
+          "endLine": 63,
+          "params": [
+            "fn"
+          ]
+        },
+        {
+          "name": "NewRequest",
+          "startLine": 65,
+          "endLine": 67,
+          "params": [
+            "method",
+            "requestPath"
+          ]
+        },
+        {
+          "name": "SetToken",
+          "startLine": 69,
+          "endLine": 71,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "RawRequest",
+          "startLine": 73,
+          "endLine": 75,
+          "params": [
+            "r"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FakeClient",
+          "startLine": 26,
+          "endLine": 31,
+          "methods": [
+            "CloneConfig",
+            "WithNewRequest",
+            "WithRawRequest",
+            "WithRawRequestFn",
+            "NewRequest",
+            "SetToken",
+            "RawRequest"
+          ],
+          "properties": [
+            "NewRequestS",
+            "RawRequestFn",
+            "GotToken",
+            "T"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FakeClient",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "NewFakeClient",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "CloneConfig",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "WithNewRequest",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "WithRawRequest",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "WithRawRequestFn",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "NewRequest",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "SetToken",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "RawRequest",
+          "line": 73,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewFakeClient",
+          "callee": "new",
+          "lineNumber": 35
+        },
+        {
+          "caller": "NewFakeClient",
+          "callee": "errors.New",
+          "lineNumber": 37
+        },
+        {
+          "caller": "CloneConfig",
+          "callee": "vault.DefaultConfig",
+          "lineNumber": 43
+        },
+        {
+          "caller": "WithRawRequestFn",
+          "callee": "fn",
+          "lineNumber": 60
+        },
+        {
+          "caller": "RawRequest",
+          "callee": "c.RawRequestFn",
+          "lineNumber": 74
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "logo/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 12,
+      "nonEmptyLines": 7,
+      "sections": [
+        {
+          "heading": "Project Logo",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Licensing",
+          "level": 2,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "make/00_mod.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 57,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 0
+      }
+    },
+    {
+      "path": "make/02_mod.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 44,
+      "steps": [
+        {
+          "name": "generate-licenses",
+          "startLine": 41,
+          "endLine": 42
+        },
+        {
+          "name": "tidy",
+          "startLine": 44,
+          "endLine": 45
+        },
+        {
+          "name": "update-base-images",
+          "startLine": 47,
+          "endLine": 49
+        },
+        {
+          "name": "update-licenses",
+          "startLine": 51,
+          "endLine": 52
+        },
+        {
+          "name": "verify-licenses",
+          "startLine": 54,
+          "endLine": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 5
+      }
+    },
+    {
+      "path": "make/_shared/boilerplate/00_mod.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 15,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 0
+      }
+    },
+    {
+      "path": "make/_shared/boilerplate/01_mod.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 26,
+      "steps": [
+        {
+          "name": "verify-boilerplate",
+          "startLine": 20,
+          "endLine": 22
+        },
+        {
+          "name": "generate-license",
+          "startLine": 28,
+          "endLine": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 2
+      }
+    },
+    {
+      "path": "make/_shared/generate-verify/00_mod.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 17,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 0
+      }
+    },
+    {
+      "path": "make/_shared/generate-verify/02_mod.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 33,
+      "steps": [
+        {
+          "name": "generate",
+          "startLine": 18,
+          "endLine": 21
+        },
+        {
+          "name": "verify_generated_targets",
+          "startLine": 28,
+          "endLine": 28
+        },
+        {
+          "name": "verify_generated_targets_dirty",
+          "startLine": 29,
+          "endLine": 30
+        },
+        {
+          "name": "verify",
+          "startLine": 37,
+          "endLine": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 4
+      }
+    },
+    {
+      "path": "make/_shared/generate-verify/util/verify.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 73,
+      "nonEmptyLines": 61,
+      "functions": [
+        {
+          "name": "cleanup",
+          "startLine": 42,
+          "endLine": 44,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "make/_shared/go/.golangci.override.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 80,
+      "nonEmptyLines": 80,
+      "sections": [
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "linters",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "formatters",
+          "level": 1,
+          "line": 68
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "make/_shared/go/01_mod.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 155,
+      "nonEmptyLines": 134,
+      "steps": [
+        {
+          "name": "go-workspace",
+          "startLine": 34,
+          "endLine": 42
+        },
+        {
+          "name": "go-tidy",
+          "startLine": 46,
+          "endLine": 47
+        },
+        {
+          "name": "generate-go-mod-tidy",
+          "startLine": 51,
+          "endLine": 62
+        },
+        {
+          "name": "generate-govulncheck",
+          "startLine": 72,
+          "endLine": 78
+        },
+        {
+          "name": "verify-govulncheck",
+          "startLine": 97,
+          "endLine": 107
+        },
+        {
+          "name": "generate-golangci-lint-config",
+          "startLine": 111,
+          "endLine": 122
+        },
+        {
+          "name": "verify-golangci-lint",
+          "startLine": 130,
+          "endLine": 140
+        },
+        {
+          "name": "fix-golangci-lint",
+          "startLine": 146,
+          "endLine": 156
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 8
+      }
+    },
+    {
+      "path": "make/_shared/go/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 3,
+      "nonEmptyLines": 2,
+      "sections": [
+        {
+          "heading": "README",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "make/_shared/go/base/.github/workflows/govulncheck.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 37,
+      "nonEmptyLines": 29,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "on",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "permissions",
+          "level": 1,
+          "line": 13
+        },
+        {
+          "heading": "jobs",
+          "level": 1,
+          "line": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "make/_shared/help/01_mod.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 19,
+      "steps": [
+        {
+          "name": "help",
+          "startLine": 19,
+          "endLine": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 1
+      }
+    },
+    {
+      "path": "make/_shared/help/help.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 115,
+      "nonEmptyLines": 95,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "make/_shared/klone/01_mod.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 27,
+      "steps": [
+        {
+          "name": "generate-klone",
+          "startLine": 18,
+          "endLine": 20
+        },
+        {
+          "name": "upgrade-klone",
+          "startLine": 29,
+          "endLine": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 2
+      }
+    }
+  ]
+}

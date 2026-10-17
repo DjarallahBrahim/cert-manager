@@ -1,0 +1,1294 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/unit/gen/certificate.go",
+      "type": "file",
+      "name": "certificate.go",
+      "filePath": "test/unit/gen/certificate.go",
+      "summary": "Functional-option test builders for constructing cert-manager Certificate objects and mutating their spec, metadata and status.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder",
+        "certificate"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Follows the functional-options pattern so each helper returns a mutation that can be composed when building fixtures."
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:Certificate",
+      "type": "function",
+      "name": "Certificate",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        30,
+        42
+      ],
+      "summary": "Creates a Certificate fixture with the supplied name and an empty spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:CertificateFrom",
+      "type": "function",
+      "name": "CertificateFrom",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        44,
+        51
+      ],
+      "summary": "Copies an existing Certificate as the base for further fixture mutation.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateIssuer",
+      "type": "function",
+      "name": "SetCertificateIssuer",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        54,
+        58
+      ],
+      "summary": "Sets the issuer reference on the Certificate fixture.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateDNSNames",
+      "type": "function",
+      "name": "SetCertificateDNSNames",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        60,
+        64
+      ],
+      "summary": "Sets the DNS names in the Certificate spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateCommonName",
+      "type": "function",
+      "name": "SetCertificateCommonName",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        66,
+        70
+      ],
+      "summary": "Sets the common name in the Certificate spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateIPs",
+      "type": "function",
+      "name": "SetCertificateIPs",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        72,
+        76
+      ],
+      "summary": "Sets the IP addresses in the Certificate spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateOtherNames",
+      "type": "function",
+      "name": "SetCertificateOtherNames",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        78,
+        82
+      ],
+      "summary": "Sets the otherName SAN entries in the Certificate spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateEmails",
+      "type": "function",
+      "name": "SetCertificateEmails",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        84,
+        88
+      ],
+      "summary": "Sets the email SANs in the Certificate spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateURIs",
+      "type": "function",
+      "name": "SetCertificateURIs",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        90,
+        94
+      ],
+      "summary": "Sets the URI SANs in the Certificate spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateIsCA",
+      "type": "function",
+      "name": "SetCertificateIsCA",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        96,
+        100
+      ],
+      "summary": "Sets the isCA flag on the Certificate spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateKeyAlgorithm",
+      "type": "function",
+      "name": "SetCertificateKeyAlgorithm",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        102,
+        106
+      ],
+      "summary": "Sets the private key algorithm on the Certificate spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateKeySize",
+      "type": "function",
+      "name": "SetCertificateKeySize",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        108,
+        112
+      ],
+      "summary": "Sets the private key size on the Certificate spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateKeyEncoding",
+      "type": "function",
+      "name": "SetCertificateKeyEncoding",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        114,
+        118
+      ],
+      "summary": "Sets the private key encoding on the Certificate spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateSecretName",
+      "type": "function",
+      "name": "SetCertificateSecretName",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        120,
+        124
+      ],
+      "summary": "Sets the target secret name on the Certificate spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateSecretTemplate",
+      "type": "function",
+      "name": "SetCertificateSecretTemplate",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        127,
+        134
+      ],
+      "summary": "Sets secret template annotations and labels on the Certificate spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateDuration",
+      "type": "function",
+      "name": "SetCertificateDuration",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        136,
+        140
+      ],
+      "summary": "Sets the requested certificate duration.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateRenewBefore",
+      "type": "function",
+      "name": "SetCertificateRenewBefore",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        142,
+        146
+      ],
+      "summary": "Sets the renewBefore window on the Certificate spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateNextPrivateKeySecretName",
+      "type": "function",
+      "name": "SetCertificateNextPrivateKeySecretName",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        148,
+        152
+      ],
+      "summary": "Sets the next private key secret name used during key rotation.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateStatusCondition",
+      "type": "function",
+      "name": "SetCertificateStatusCondition",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        154,
+        168
+      ],
+      "summary": "Replaces the Certificate status conditions with the supplied condition.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateLastFailureTime",
+      "type": "function",
+      "name": "SetCertificateLastFailureTime",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        170,
+        174
+      ],
+      "summary": "Sets the last failure time in the Certificate status.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateIssuanceAttempts",
+      "type": "function",
+      "name": "SetCertificateIssuanceAttempts",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        175,
+        179
+      ],
+      "summary": "Sets the issuance attempts counter in the Certificate status.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateNotAfter",
+      "type": "function",
+      "name": "SetCertificateNotAfter",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        181,
+        185
+      ],
+      "summary": "Sets the notAfter timestamp in the Certificate status.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateNotBefore",
+      "type": "function",
+      "name": "SetCertificateNotBefore",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        187,
+        191
+      ],
+      "summary": "Sets the notBefore timestamp in the Certificate status.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateRenewalTime",
+      "type": "function",
+      "name": "SetCertificateRenewalTime",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        193,
+        197
+      ],
+      "summary": "Sets the renewal time in the Certificate status.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateOrganization",
+      "type": "function",
+      "name": "SetCertificateOrganization",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        199,
+        206
+      ],
+      "summary": "Sets the organization subject field on the Certificate spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateNamespace",
+      "type": "function",
+      "name": "SetCertificateNamespace",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        208,
+        212
+      ],
+      "summary": "Sets the Certificate namespace.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateKeyUsages",
+      "type": "function",
+      "name": "SetCertificateKeyUsages",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        214,
+        218
+      ],
+      "summary": "Sets the key usages on the Certificate spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateRevision",
+      "type": "function",
+      "name": "SetCertificateRevision",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        220,
+        224
+      ],
+      "summary": "Sets the revision annotation on the Certificate.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateUID",
+      "type": "function",
+      "name": "SetCertificateUID",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        226,
+        230
+      ],
+      "summary": "Sets the Certificate UID.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateGeneration",
+      "type": "function",
+      "name": "SetCertificateGeneration",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        232,
+        236
+      ],
+      "summary": "Sets the Certificate generation.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateCreationTimestamp",
+      "type": "function",
+      "name": "SetCertificateCreationTimestamp",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        238,
+        242
+      ],
+      "summary": "Sets the Certificate creation timestamp.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:AddCertificateAnnotations",
+      "type": "function",
+      "name": "AddCertificateAnnotations",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        244,
+        254
+      ],
+      "summary": "Merges the supplied annotations into the Certificate.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:AddCertificateLabels",
+      "type": "function",
+      "name": "AddCertificateLabels",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        256,
+        265
+      ],
+      "summary": "Merges the supplied labels into the Certificate.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:CertificateRef",
+      "type": "function",
+      "name": "CertificateRef",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        277,
+        284
+      ],
+      "summary": "Builds an object reference pointing at the named Certificate.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateRevisionHistoryLimit",
+      "type": "function",
+      "name": "SetCertificateRevisionHistoryLimit",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        286,
+        290
+      ],
+      "summary": "Sets the revision history limit on the Certificate spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateAdditionalOutputFormats",
+      "type": "function",
+      "name": "SetCertificateAdditionalOutputFormats",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        292,
+        296
+      ],
+      "summary": "Sets additional output formats on the Certificate spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificate.go:SetCertificateKeystore",
+      "type": "function",
+      "name": "SetCertificateKeystore",
+      "filePath": "test/unit/gen/certificate.go",
+      "lineRange": [
+        298,
+        302
+      ],
+      "summary": "Sets keystore configuration on the Certificate spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "file:internal/apis/certmanager/v1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "file:internal/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "file:internal/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "file:internal/apis/certmanager/v1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:Certificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:Certificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:CertificateFrom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:CertificateFrom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateDNSNames",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateDNSNames",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateCommonName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateCommonName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateIPs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateIPs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateOtherNames",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateOtherNames",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateEmails",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateEmails",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateURIs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateURIs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateIsCA",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateIsCA",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateKeyAlgorithm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateKeyAlgorithm",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateKeySize",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateKeySize",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateKeyEncoding",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateKeyEncoding",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateSecretName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateSecretName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateSecretTemplate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateSecretTemplate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateDuration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateDuration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateRenewBefore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateRenewBefore",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateNextPrivateKeySecretName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateNextPrivateKeySecretName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateStatusCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateStatusCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateLastFailureTime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateLastFailureTime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateIssuanceAttempts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateIssuanceAttempts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateNotAfter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateNotAfter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateNotBefore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateNotBefore",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateRenewalTime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateRenewalTime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateOrganization",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateOrganization",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateNamespace",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateNamespace",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateKeyUsages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateKeyUsages",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateRevision",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateRevision",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateUID",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateUID",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateGeneration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateGeneration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateCreationTimestamp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateCreationTimestamp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:AddCertificateAnnotations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:AddCertificateAnnotations",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:AddCertificateLabels",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:AddCertificateLabels",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:CertificateRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:CertificateRef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateRevisionHistoryLimit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateRevisionHistoryLimit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateAdditionalOutputFormats",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateAdditionalOutputFormats",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateKeystore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificate.go",
+      "target": "function:test/unit/gen/certificate.go:SetCertificateKeystore",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

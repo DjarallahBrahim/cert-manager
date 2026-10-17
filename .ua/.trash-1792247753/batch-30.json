@@ -1,0 +1,356 @@
+{
+  "nodes": [
+    {
+      "id": "document:deploy/charts/cert-manager/templates/NOTES.txt",
+      "type": "document",
+      "name": "NOTES.txt",
+      "filePath": "deploy/charts/cert-manager/templates/NOTES.txt",
+      "summary": "Helm post-install notes displayed after installing the cert-manager chart, warning about the deprecated installCRDs value and the new private key rotation default, then pointing users to Issuer and ingress-shim documentation.",
+      "tags": ["documentation", "helm", "post-install", "cert-manager"],
+      "complexity": "simple",
+      "languageNotes": "Uses Go template conditionals so the deprecation warning only appears when installCRDs is set."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/cainjector-config.yaml",
+      "type": "config",
+      "name": "cainjector-config.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/cainjector-config.yaml",
+      "summary": "Renders an optional ConfigMap holding the cainjector configuration file, defaulting apiVersion and kind to cainjector.config.cert-manager.io/v1alpha1 CAInjectorConfiguration.",
+      "tags": ["configuration", "kubernetes", "helm-template", "cainjector", "configmap"],
+      "complexity": "simple",
+      "languageNotes": "Mutates the values map in-template using Helm's set function to inject API defaults before serializing with toYaml."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/cainjector-deployment.yaml",
+      "type": "config",
+      "name": "cainjector-deployment.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/cainjector-deployment.yaml",
+      "summary": "Defines the cainjector Deployment, wiring replicas, leader election, feature gates, optional config volume, Prometheus metrics port, security context, scheduling constraints, and image pull secrets for the CA injector component.",
+      "tags": ["configuration", "kubernetes", "helm-template", "deployment", "cainjector"],
+      "complexity": "moderate",
+      "languageNotes": "Heavy use of named templates (image, labels, cainjector.fullname) with nindent to compose nested YAML blocks conditionally."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/cainjector-poddisruptionbudget.yaml",
+      "type": "config",
+      "name": "cainjector-poddisruptionbudget.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/cainjector-poddisruptionbudget.yaml",
+      "summary": "Optional PodDisruptionBudget for cainjector pods that applies minAvailable or maxUnavailable from values and defaults to minAvailable 1 when neither is configured.",
+      "tags": ["configuration", "kubernetes", "helm-template", "availability", "cainjector"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/cainjector-psp-clusterrole.yaml",
+      "type": "config",
+      "name": "cainjector-psp-clusterrole.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/cainjector-psp-clusterrole.yaml",
+      "summary": "ClusterRole granting the cainjector service account use of its dedicated PodSecurityPolicy when the deprecated podSecurityPolicy feature is enabled.",
+      "tags": ["configuration", "kubernetes", "rbac", "helm-template", "security"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/cainjector-psp-clusterrolebinding.yaml",
+      "type": "config",
+      "name": "cainjector-psp-clusterrolebinding.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/cainjector-psp-clusterrolebinding.yaml",
+      "summary": "ClusterRoleBinding that binds the cainjector PodSecurityPolicy ClusterRole to the cainjector service account in the release namespace.",
+      "tags": ["configuration", "kubernetes", "rbac", "helm-template", "security"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/cainjector-psp.yaml",
+      "type": "config",
+      "name": "cainjector-psp.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/cainjector-psp.yaml",
+      "summary": "Legacy policy/v1beta1 PodSecurityPolicy restricting cainjector to unprivileged containers, fixed UID/GID 1000, no host namespaces, and a minimal set of volume types.",
+      "tags": ["configuration", "kubernetes", "helm-template", "security", "podsecuritypolicy"],
+      "complexity": "moderate",
+      "languageNotes": "PodSecurityPolicy was removed in Kubernetes 1.25, so this template is gated behind global.podSecurityPolicy.enabled."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/cainjector-rbac.yaml",
+      "type": "config",
+      "name": "cainjector-rbac.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/cainjector-rbac.yaml",
+      "summary": "Full RBAC set for cainjector: cluster-wide read and update access to certificates, secrets, webhook configurations, APIServices and CRDs, plus leader-election Role and RoleBinding in the configured namespace.",
+      "tags": ["configuration", "kubernetes", "rbac", "helm-template", "cainjector"],
+      "complexity": "moderate",
+      "languageNotes": "Bundles multiple YAML documents separated by --- inside a single Helm template."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/cainjector-service.yaml",
+      "type": "config",
+      "name": "cainjector-service.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/cainjector-service.yaml",
+      "summary": "ClusterIP Service exposing the cainjector Prometheus metrics port 9402, rendered only when monitoring is enabled without a PodMonitor.",
+      "tags": ["configuration", "kubernetes", "helm-template", "service", "monitoring"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/cainjector-serviceaccount.yaml",
+      "type": "config",
+      "name": "cainjector-serviceaccount.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/cainjector-serviceaccount.yaml",
+      "summary": "Creates the cainjector ServiceAccount with configurable token automounting, annotations, labels, and global image pull secrets.",
+      "tags": ["configuration", "kubernetes", "helm-template", "serviceaccount", "cainjector"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/controller-config.yaml",
+      "type": "config",
+      "name": "controller-config.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/controller-config.yaml",
+      "summary": "Renders an optional ConfigMap containing the controller configuration, defaulting apiVersion and kind to controller.config.cert-manager.io/v1alpha1 ControllerConfiguration.",
+      "tags": ["configuration", "kubernetes", "helm-template", "controller", "configmap"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/crd-acme.cert-manager.io_challenges.yaml",
+      "type": "config",
+      "name": "crd-acme.cert-manager.io_challenges.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/crd-acme.cert-manager.io_challenges.yaml",
+      "summary": "CustomResourceDefinition for the namespaced ACME Challenge resource, including the full OpenAPI v3 schema for solver types such as HTTP-01 and DNS-01.",
+      "tags": ["configuration", "kubernetes", "crd", "helm-template", "acme"],
+      "complexity": "complex",
+      "languageNotes": "A 3k-line generated OpenAPI schema preserved with Helm conditionals and optional helm.sh/resource-policy annotations."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/crd-acme.cert-manager.io_orders.yaml",
+      "type": "config",
+      "name": "crd-acme.cert-manager.io_orders.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/crd-acme.cert-manager.io_orders.yaml",
+      "summary": "CustomResourceDefinition for the namespaced ACME Order resource, describing certificate identifiers, issuer references, and authorization status.",
+      "tags": ["configuration", "kubernetes", "crd", "helm-template", "acme"],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/crd-cert-manager.io_certificaterequests.yaml",
+      "type": "config",
+      "name": "crd-cert-manager.io_certificaterequests.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/crd-cert-manager.io_certificaterequests.yaml",
+      "summary": "CustomResourceDefinition for the namespaced CertificateRequest resource, capturing CSR data, issuer reference, requested duration, and issued certificate status.",
+      "tags": ["configuration", "kubernetes", "crd", "helm-template", "certificates"],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/crd-cert-manager.io_certificates.yaml",
+      "type": "config",
+      "name": "crd-cert-manager.io_certificates.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/crd-cert-manager.io_certificates.yaml",
+      "summary": "CustomResourceDefinition for the namespaced Certificate resource, defining secretName, DNS names, issuers, keystore options, private key rotation policy, and renewal status.",
+      "tags": ["configuration", "kubernetes", "crd", "helm-template", "certificates"],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/crd-cert-manager.io_clusterissuers.yaml",
+      "type": "config",
+      "name": "crd-cert-manager.io_clusterissuers.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/crd-cert-manager.io_clusterissuers.yaml",
+      "summary": "CustomResourceDefinition for the cluster-scoped ClusterIssuer resource, containing the shared IssuerSpec and IssuerStatus schemas for ACME, CA, Vault, Venafi and self-signed issuers.",
+      "tags": ["configuration", "kubernetes", "crd", "helm-template", "issuers"],
+      "complexity": "complex",
+      "languageNotes": "Mirrors the Issuer schema but at cluster scope, making the OpenAPI body one of the largest templates in the chart."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/crd-cert-manager.io_issuers.yaml",
+      "type": "config",
+      "name": "crd-cert-manager.io_issuers.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/crd-cert-manager.io_issuers.yaml",
+      "summary": "CustomResourceDefinition for the namespaced Issuer resource, defining issuer backends (ACME, CA, Vault, Venafi, self-signed) and their status conditions.",
+      "tags": ["configuration", "kubernetes", "crd", "helm-template", "issuers"],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/deployment.yaml",
+      "type": "config",
+      "name": "deployment.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/deployment.yaml",
+      "summary": "Defines the main cert-manager controller Deployment, configuring replicas, leader election, feature gates, optional config volume, metrics endpoint, security context, and pod scheduling.",
+      "tags": ["configuration", "kubernetes", "helm-template", "deployment", "controller"],
+      "complexity": "complex",
+      "languageNotes": "Uses quoted comparison tricks in Helm conditionals so that a log level or revision limit of 0 is still honored."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/extras-objects.yaml",
+      "type": "config",
+      "name": "extras-objects.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/extras-objects.yaml",
+      "summary": "Generic escape hatch that renders every entry of .Values.extraObjects through Helm's tpl function so users can inject arbitrary additional Kubernetes manifests into the release.",
+      "tags": ["configuration", "kubernetes", "helm-template", "extensibility"],
+      "complexity": "simple",
+      "languageNotes": "The tpl call evaluates each extra object as a template with the chart's root context, allowing user-supplied values to be interpolated."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/networkpolicy-egress.yaml",
+      "type": "config",
+      "name": "networkpolicy-egress.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/networkpolicy-egress.yaml",
+      "summary": "Optional egress NetworkPolicy for the webhook pods, allowing operators to restrict outbound traffic from webhook components via values.",
+      "tags": ["configuration", "kubernetes", "helm-template", "networkpolicy", "security"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:deploy/charts/cert-manager/templates/NOTES.txt",
+      "target": "config:deploy/charts/cert-manager/templates/deployment.yaml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/cainjector-config.yaml",
+      "target": "file:cmd/cainjector/main.go",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/controller-config.yaml",
+      "target": "file:cmd/controller/main.go",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/cainjector-deployment.yaml",
+      "target": "file:cmd/cainjector/main.go",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/cainjector-deployment.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/cainjector-config.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/cainjector-deployment.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/cainjector-serviceaccount.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/cainjector-deployment.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/cainjector-rbac.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/deployment.yaml",
+      "target": "file:cmd/controller/main.go",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/deployment.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/controller-config.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/cainjector-service.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/cainjector-deployment.yaml",
+      "type": "serves",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/cainjector-poddisruptionbudget.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/cainjector-deployment.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/cainjector-rbac.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/cainjector-serviceaccount.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/cainjector-psp.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/cainjector-deployment.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/cainjector-psp-clusterrole.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/cainjector-psp.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/cainjector-psp-clusterrolebinding.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/cainjector-psp-clusterrole.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/cainjector-psp-clusterrolebinding.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/cainjector-serviceaccount.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/networkpolicy-egress.yaml",
+      "target": "file:deploy/charts/cert-manager/templates/webhook-deployment.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/crd-acme.cert-manager.io_challenges.yaml",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/crd-acme.cert-manager.io_orders.yaml",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/crd-cert-manager.io_certificaterequests.yaml",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/crd-cert-manager.io_certificates.yaml",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/crd-cert-manager.io_clusterissuers.yaml",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/crd-cert-manager.io_issuers.yaml",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

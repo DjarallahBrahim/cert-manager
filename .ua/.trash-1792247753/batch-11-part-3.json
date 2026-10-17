@@ -1,0 +1,1523 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/issuer/acme/dns/dns.go",
+      "type": "file",
+      "name": "dns.go",
+      "filePath": "pkg/issuer/acme/dns/dns.go",
+      "summary": "Core DNS-01 solver that resolves issuer solver configuration, instantiates DNS providers, and drives challenge presentation and cleanup.",
+      "tags": [
+        "dns01",
+        "solver",
+        "acme",
+        "provider-factory"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:pkg/issuer/acme/dns/dns.go:solver",
+      "type": "class",
+      "name": "solver",
+      "filePath": "pkg/issuer/acme/dns/dns.go",
+      "lineRange": [
+        53,
+        56
+      ],
+      "summary": "Minimal interface implemented by DNS-01 challenge solvers.",
+      "tags": [
+        "interface",
+        "solver",
+        "dns01"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/issuer/acme/dns/dns.go:dnsProviderConstructors",
+      "type": "class",
+      "name": "dnsProviderConstructors",
+      "filePath": "pkg/issuer/acme/dns/dns.go",
+      "lineRange": [
+        61,
+        68
+      ],
+      "summary": "Holds constructor functions for the built-in DNS-01 providers.",
+      "tags": [
+        "provider-factory",
+        "registry",
+        "dns01"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/issuer/acme/dns/dns.go:Solver",
+      "type": "class",
+      "name": "Solver",
+      "filePath": "pkg/issuer/acme/dns/dns.go",
+      "lineRange": [
+        73,
+        78
+      ],
+      "summary": "DNS-01 solver orchestrating provider selection, secret loading, and challenge present and cleanup.",
+      "tags": [
+        "dns01",
+        "solver",
+        "orchestration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/dns.go:Present",
+      "type": "function",
+      "name": "Present",
+      "filePath": "pkg/issuer/acme/dns/dns.go",
+      "lineRange": [
+        81,
+        107
+      ],
+      "summary": "Presents a DNS-01 challenge using the provider selected for the issuer solver configuration.",
+      "tags": [
+        "dns01",
+        "present",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/dns.go:Check",
+      "type": "function",
+      "name": "Check",
+      "filePath": "pkg/issuer/acme/dns/dns.go",
+      "lineRange": [
+        110,
+        135
+      ],
+      "summary": "Checks whether the DNS-01 challenge record has propagated to authoritative nameservers.",
+      "tags": [
+        "dns01",
+        "propagation",
+        "check"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/dns.go:CleanUp",
+      "type": "function",
+      "name": "CleanUp",
+      "filePath": "pkg/issuer/acme/dns/dns.go",
+      "lineRange": [
+        139,
+        163
+      ],
+      "summary": "Cleans up DNS records associated with a challenge using the configured provider.",
+      "tags": [
+        "dns01",
+        "cleanup",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/dns.go:solverForChallenge",
+      "type": "function",
+      "name": "solverForChallenge",
+      "filePath": "pkg/issuer/acme/dns/dns.go",
+      "lineRange": [
+        180,
+        440
+      ],
+      "summary": "Selects and configures the DNS provider for a challenge from issuer settings and credential secrets.",
+      "tags": [
+        "solver-selection",
+        "credentials",
+        "dns01"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/dns.go:prepareChallengeRequest",
+      "type": "function",
+      "name": "prepareChallengeRequest",
+      "filePath": "pkg/issuer/acme/dns/dns.go",
+      "lineRange": [
+        442,
+        486
+      ],
+      "summary": "Builds the provider configuration payload for a challenge, loading referenced secrets.",
+      "tags": [
+        "configuration",
+        "secrets",
+        "dns01"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/dns.go:dns01SolverForConfig",
+      "type": "function",
+      "name": "dns01SolverForConfig",
+      "filePath": "pkg/issuer/acme/dns/dns.go",
+      "lineRange": [
+        490,
+        509
+      ],
+      "summary": "Instantiates a DNS provider from a DNS-01 solver configuration block.",
+      "tags": [
+        "factory",
+        "dns01",
+        "provider"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/dns.go:NewSolver",
+      "type": "function",
+      "name": "NewSolver",
+      "filePath": "pkg/issuer/acme/dns/dns.go",
+      "lineRange": [
+        513,
+        548
+      ],
+      "summary": "Creates the DNS-01 solver with secret listing and webhook solver support from the controller context.",
+      "tags": [
+        "factory",
+        "solver",
+        "dns01"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/dns.go:loadSecretData",
+      "type": "function",
+      "name": "loadSecretData",
+      "filePath": "pkg/issuer/acme/dns/dns.go",
+      "lineRange": [
+        550,
+        561
+      ],
+      "summary": "Loads and decodes secret data selected by key.",
+      "tags": [
+        "secrets",
+        "kubernetes",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/dns.go:createToken",
+      "type": "function",
+      "name": "createToken",
+      "filePath": "pkg/issuer/acme/dns/dns.go",
+      "lineRange": [
+        563,
+        575
+      ],
+      "summary": "Requests a projected service-account token for the given audiences and namespace.",
+      "tags": [
+        "kubernetes",
+        "service-account",
+        "token"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "type": "file",
+      "name": "provider.go",
+      "filePath": "pkg/issuer/acme/dns/rfc2136/provider.go",
+      "summary": "RFC 2136 dynamic DNS update solver for ACME DNS-01 challenges, loading nameserver and TSIG settings from secrets.",
+      "tags": [
+        "dns01",
+        "rfc2136",
+        "provider",
+        "dns"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/issuer/acme/dns/rfc2136/provider.go:Solver",
+      "type": "class",
+      "name": "Solver",
+      "filePath": "pkg/issuer/acme/dns/rfc2136/provider.go",
+      "lineRange": [
+        39,
+        48
+      ],
+      "summary": "RFC 2136 solver that loads nameserver and TSIG configuration and presents TXT records.",
+      "tags": [
+        "dns01",
+        "solver",
+        "rfc2136"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/rfc2136/provider.go:Present",
+      "type": "function",
+      "name": "Present",
+      "filePath": "pkg/issuer/acme/dns/rfc2136/provider.go",
+      "lineRange": [
+        91,
+        103
+      ],
+      "summary": "Presents the DNS-01 TXT record using an RFC 2136 dynamic update.",
+      "tags": [
+        "dns01",
+        "present",
+        "rfc2136"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/rfc2136/provider.go:CleanUp",
+      "type": "function",
+      "name": "CleanUp",
+      "filePath": "pkg/issuer/acme/dns/rfc2136/provider.go",
+      "lineRange": [
+        105,
+        117
+      ],
+      "summary": "Removes the DNS-01 TXT record with an RFC 2136 dynamic update.",
+      "tags": [
+        "dns01",
+        "cleanup",
+        "rfc2136"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/rfc2136/provider.go:Initialize",
+      "type": "function",
+      "name": "Initialize",
+      "filePath": "pkg/issuer/acme/dns/rfc2136/provider.go",
+      "lineRange": [
+        119,
+        140
+      ],
+      "summary": "Initializes shared informers and lister state used by the RFC 2136 solver.",
+      "tags": [
+        "initialization",
+        "informer",
+        "rfc2136"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/rfc2136/provider.go:loadSecretKeySelector",
+      "type": "function",
+      "name": "loadSecretKeySelector",
+      "filePath": "pkg/issuer/acme/dns/rfc2136/provider.go",
+      "lineRange": [
+        151,
+        171
+      ],
+      "summary": "Loads a value from a Kubernetes SecretKeySelector, applying a default key.",
+      "tags": [
+        "secrets",
+        "helper",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/rfc2136/provider.go:buildDNSProvider",
+      "type": "function",
+      "name": "buildDNSProvider",
+      "filePath": "pkg/issuer/acme/dns/rfc2136/provider.go",
+      "lineRange": [
+        173,
+        194
+      ],
+      "summary": "Builds an RFC 2136 DNS provider from challenge configuration and referenced secrets.",
+      "tags": [
+        "factory",
+        "provider",
+        "rfc2136"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/issuer/acme/dns/rfc2136/tsig.go",
+      "type": "file",
+      "name": "tsig.go",
+      "filePath": "pkg/issuer/acme/dns/rfc2136/tsig.go",
+      "summary": "TSIG signing and verification helpers used by the RFC 2136 dynamic DNS provider.",
+      "tags": [
+        "dns",
+        "tsig",
+        "rfc2136",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/rfc2136/tsig.go:Generate",
+      "type": "function",
+      "name": "Generate",
+      "filePath": "pkg/issuer/acme/dns/rfc2136/tsig.go",
+      "lineRange": [
+        49,
+        76
+      ],
+      "summary": "Generates a TSIG signature over a DNS message for the configured key.",
+      "tags": [
+        "tsig",
+        "signing",
+        "dns"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/rfc2136/tsig.go:Verify",
+      "type": "function",
+      "name": "Verify",
+      "filePath": "pkg/issuer/acme/dns/rfc2136/tsig.go",
+      "lineRange": [
+        80,
+        93
+      ],
+      "summary": "Verifies a TSIG signature on a DNS message against the configured key.",
+      "tags": [
+        "tsig",
+        "verification",
+        "dns"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "type": "file",
+      "name": "route53.go",
+      "filePath": "pkg/issuer/acme/dns/route53/route53.go",
+      "summary": "AWS Route53 DNS provider for ACME DNS-01 challenges with IAM, ambient, and web identity credentials.",
+      "tags": [
+        "dns01",
+        "route53",
+        "aws",
+        "provider"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:pkg/issuer/acme/dns/route53/route53.go:DNSProvider",
+      "type": "class",
+      "name": "DNSProvider",
+      "filePath": "pkg/issuer/acme/dns/route53/route53.go",
+      "lineRange": [
+        40,
+        45
+      ],
+      "summary": "Route53 provider that changes challenge TXT records in a hosted zone.",
+      "tags": [
+        "dns01",
+        "provider",
+        "route53"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/issuer/acme/dns/route53/route53.go:sessionProvider",
+      "type": "class",
+      "name": "sessionProvider",
+      "filePath": "pkg/issuer/acme/dns/route53/route53.go",
+      "lineRange": [
+        47,
+        56
+      ],
+      "summary": "Describes how an AWS session is obtained: static keys, ambient credentials, role, or web identity.",
+      "tags": [
+        "authentication",
+        "aws",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/issuer/acme/dns/route53/route53.go:StsClient",
+      "type": "class",
+      "name": "StsClient",
+      "filePath": "pkg/issuer/acme/dns/route53/route53.go",
+      "lineRange": [
+        58,
+        61
+      ],
+      "summary": "Narrow interface over the AWS STS client used to assume roles.",
+      "tags": [
+        "interface",
+        "aws",
+        "sts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/route53/route53.go:GetSession",
+      "type": "function",
+      "name": "GetSession",
+      "filePath": "pkg/issuer/acme/dns/route53/route53.go",
+      "lineRange": [
+        63,
+        204
+      ],
+      "summary": "Builds an AWS session for Route53, assuming roles or web identity when configured.",
+      "tags": [
+        "authentication",
+        "aws",
+        "session"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/route53/route53.go:newSessionProvider",
+      "type": "function",
+      "name": "newSessionProvider",
+      "filePath": "pkg/issuer/acme/dns/route53/route53.go",
+      "lineRange": [
+        206,
+        217
+      ],
+      "summary": "Creates the session provider describing static, ambient, or web identity credentials.",
+      "tags": [
+        "factory",
+        "credentials",
+        "aws"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/route53/route53.go:NewDNSProvider",
+      "type": "function",
+      "name": "NewDNSProvider",
+      "filePath": "pkg/issuer/acme/dns/route53/route53.go",
+      "lineRange": [
+        226,
+        248
+      ],
+      "summary": "Creates a Route53 DNS provider with credentials and hosted zone settings.",
+      "tags": [
+        "factory",
+        "provider",
+        "route53"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/route53/route53.go:changeRecord",
+      "type": "function",
+      "name": "changeRecord",
+      "filePath": "pkg/issuer/acme/dns/route53/route53.go",
+      "lineRange": [
+        262,
+        315
+      ],
+      "summary": "Submits a Route53 change batch to create or delete a TXT record and waits for it to apply.",
+      "tags": [
+        "dns",
+        "record-change",
+        "route53"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/route53/route53.go:getHostedZoneID",
+      "type": "function",
+      "name": "getHostedZoneID",
+      "filePath": "pkg/issuer/acme/dns/route53/route53.go",
+      "lineRange": [
+        317,
+        359
+      ],
+      "summary": "Finds the Route53 hosted zone matching the challenge FQDN.",
+      "tags": [
+        "dns",
+        "zone-lookup",
+        "route53"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/route53/route53.go:newTXTRecordSet",
+      "type": "function",
+      "name": "newTXTRecordSet",
+      "filePath": "pkg/issuer/acme/dns/route53/route53.go",
+      "lineRange": [
+        361,
+        372
+      ],
+      "summary": "Builds a Route53 TXT resource record set for a challenge value.",
+      "tags": [
+        "dns",
+        "record-set",
+        "route53"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/route53/route53.go:removeReqID",
+      "type": "function",
+      "name": "removeReqID",
+      "filePath": "pkg/issuer/acme/dns/route53/route53.go",
+      "lineRange": [
+        380,
+        390
+      ],
+      "summary": "Strips request IDs from Route53 error strings for stable messages.",
+      "tags": [
+        "error-handling",
+        "route53",
+        "helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/issuer/acme/dns/util/dns.go",
+      "type": "file",
+      "name": "dns.go",
+      "filePath": "pkg/issuer/acme/dns/util/dns.go",
+      "summary": "DNS helper utilities for resolving challenge FQDNs with optional CNAME following.",
+      "tags": [
+        "dns01",
+        "dns",
+        "utility",
+        "lookup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/util/dns.go:DNS01LookupFQDN",
+      "type": "function",
+      "name": "DNS01LookupFQDN",
+      "filePath": "pkg/issuer/acme/dns/util/dns.go",
+      "lineRange": [
+        21,
+        34
+      ],
+      "summary": "Resolves the effective FQDN for a DNS-01 challenge, optionally following CNAMEs.",
+      "tags": [
+        "dns",
+        "lookup",
+        "cname"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/util/dns.go:FindBestMatch",
+      "type": "function",
+      "name": "FindBestMatch",
+      "filePath": "pkg/issuer/acme/dns/util/dns.go",
+      "lineRange": [
+        37,
+        58
+      ],
+      "summary": "Finds the longest matching DNS zone for an FQDN from a list of zone names.",
+      "tags": [
+        "dns",
+        "zone-lookup",
+        "utility"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "class:pkg/issuer/acme/dns/dns.go:solver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "class:pkg/issuer/acme/dns/dns.go:dnsProviderConstructors",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "class:pkg/issuer/acme/dns/dns.go:Solver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "class:pkg/issuer/acme/dns/dns.go:Solver",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "function:pkg/issuer/acme/dns/dns.go:Present",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "function:pkg/issuer/acme/dns/dns.go:Present",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "function:pkg/issuer/acme/dns/dns.go:Check",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "function:pkg/issuer/acme/dns/dns.go:Check",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "function:pkg/issuer/acme/dns/dns.go:CleanUp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "function:pkg/issuer/acme/dns/dns.go:CleanUp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "function:pkg/issuer/acme/dns/dns.go:solverForChallenge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "function:pkg/issuer/acme/dns/dns.go:prepareChallengeRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "function:pkg/issuer/acme/dns/dns.go:dns01SolverForConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "function:pkg/issuer/acme/dns/dns.go:NewSolver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "function:pkg/issuer/acme/dns/dns.go:NewSolver",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "function:pkg/issuer/acme/dns/dns.go:loadSecretData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "function:pkg/issuer/acme/dns/dns.go:createToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "class:pkg/issuer/acme/dns/rfc2136/provider.go:Solver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "class:pkg/issuer/acme/dns/rfc2136/provider.go:Solver",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/provider.go:Present",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/provider.go:Present",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/provider.go:CleanUp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/provider.go:CleanUp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/provider.go:Initialize",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/provider.go:Initialize",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/provider.go:loadSecretKeySelector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/provider.go:buildDNSProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/tsig.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/tsig.go:Generate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/tsig.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/tsig.go:Generate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/tsig.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/tsig.go:Verify",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/tsig.go",
+      "target": "function:pkg/issuer/acme/dns/rfc2136/tsig.go:Verify",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "target": "class:pkg/issuer/acme/dns/route53/route53.go:DNSProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "target": "class:pkg/issuer/acme/dns/route53/route53.go:DNSProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "target": "class:pkg/issuer/acme/dns/route53/route53.go:sessionProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "target": "class:pkg/issuer/acme/dns/route53/route53.go:StsClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "target": "class:pkg/issuer/acme/dns/route53/route53.go:StsClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "target": "function:pkg/issuer/acme/dns/route53/route53.go:GetSession",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "target": "function:pkg/issuer/acme/dns/route53/route53.go:GetSession",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "target": "function:pkg/issuer/acme/dns/route53/route53.go:newSessionProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "target": "function:pkg/issuer/acme/dns/route53/route53.go:NewDNSProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "target": "function:pkg/issuer/acme/dns/route53/route53.go:NewDNSProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "target": "function:pkg/issuer/acme/dns/route53/route53.go:changeRecord",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "target": "function:pkg/issuer/acme/dns/route53/route53.go:getHostedZoneID",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "target": "function:pkg/issuer/acme/dns/route53/route53.go:newTXTRecordSet",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "target": "function:pkg/issuer/acme/dns/route53/route53.go:removeReqID",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/util/dns.go",
+      "target": "function:pkg/issuer/acme/dns/util/dns.go:DNS01LookupFQDN",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/util/dns.go",
+      "target": "function:pkg/issuer/acme/dns/util/dns.go:DNS01LookupFQDN",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/util/dns.go",
+      "target": "function:pkg/issuer/acme/dns/util/dns.go:FindBestMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/util/dns.go",
+      "target": "function:pkg/issuer/acme/dns/util/dns.go:FindBestMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/acme/webhook/webhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/issuer/acme/dns/acmedns/acmedns.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/issuer/acme/dns/rfc2136/tsig.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/issuer/acme/dns/util/dns.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/issuer/acme/dns/util/wait.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/rfc2136/provider.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "target": "file:pkg/issuer/acme/dns/util/dns.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "target": "file:pkg/issuer/acme/dns/util/wait.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:FindZoneByFqdn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:DNSQuery",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/dns.go",
+      "target": "function:pkg/issuer/acme/dns/util/dns.go:DNS01LookupFQDN",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/route53/route53.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:FindZoneByFqdn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

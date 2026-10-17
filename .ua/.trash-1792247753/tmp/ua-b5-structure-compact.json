@@ -1,0 +1,2856 @@
+[
+  {
+    "path": "pkg/issuer/factory.go",
+    "language": "go",
+    "nonEmptyLines": 69,
+    "functions": [
+      {
+        "name": "RegisterIssuer",
+        "startLine": 42,
+        "endLine": 46,
+        "params": [
+          "name",
+          "c"
+        ]
+      },
+      {
+        "name": "NewFactory",
+        "startLine": 62,
+        "endLine": 64,
+        "params": [
+          "ctx"
+        ]
+      },
+      {
+        "name": "IssuerFor",
+        "startLine": 71,
+        "endLine": 84,
+        "params": [
+          "issuer"
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "name": "Factory",
+        "startLine": 51,
+        "endLine": 53,
+        "methods": [
+          "IssuerFor"
+        ],
+        "properties": []
+      },
+      {
+        "name": "factory",
+        "startLine": 56,
+        "endLine": 58,
+        "methods": [
+          "IssuerFor"
+        ],
+        "properties": [
+          "ctx"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "RegisterIssuer",
+        "line": 42,
+        "isDefault": false
+      },
+      {
+        "name": "Factory",
+        "line": 51,
+        "isDefault": false
+      },
+      {
+        "name": "NewFactory",
+        "line": 62,
+        "isDefault": false
+      },
+      {
+        "name": "IssuerFor",
+        "line": 71,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 21,
+      "exportCount": 4,
+      "functionCount": 3,
+      "classCount": 2
+    }
+  },
+  {
+    "path": "pkg/issuer/fake/factory.go",
+    "language": "go",
+    "nonEmptyLines": 24,
+    "functions": [
+      {
+        "name": "IssuerFor",
+        "startLine": 30,
+        "endLine": 32,
+        "params": [
+          "iss"
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "name": "Factory",
+        "startLine": 24,
+        "endLine": 26,
+        "methods": [
+          "IssuerFor"
+        ],
+        "properties": [
+          "IssuerForFunc"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "Factory",
+        "line": 24,
+        "isDefault": false
+      },
+      {
+        "name": "IssuerFor",
+        "line": 30,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 12,
+      "exportCount": 2,
+      "functionCount": 1,
+      "classCount": 1
+    }
+  },
+  {
+    "path": "pkg/issuer/fake/helper.go",
+    "language": "go",
+    "nonEmptyLines": 25,
+    "functions": [
+      {
+        "name": "GetGenericIssuer",
+        "startLine": 31,
+        "endLine": 33,
+        "params": [
+          "ref",
+          "ns"
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "name": "Helper",
+        "startLine": 25,
+        "endLine": 27,
+        "methods": [
+          "GetGenericIssuer"
+        ],
+        "properties": [
+          "GetGenericIssuerFunc"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "Helper",
+        "line": 25,
+        "isDefault": false
+      },
+      {
+        "name": "GetGenericIssuer",
+        "line": 31,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 16,
+      "exportCount": 2,
+      "functionCount": 1,
+      "classCount": 1
+    }
+  },
+  {
+    "path": "pkg/issuer/fake/issuer.go",
+    "language": "go",
+    "nonEmptyLines": 34,
+    "functions": [
+      {
+        "name": "Setup",
+        "startLine": 36,
+        "endLine": 38,
+        "params": [
+          "ctx",
+          "issuer"
+        ]
+      },
+      {
+        "name": "Issue",
+        "startLine": 42,
+        "endLine": 44,
+        "params": [
+          "ctx",
+          "crt"
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "name": "Issuer",
+        "startLine": 26,
+        "endLine": 29,
+        "methods": [
+          "Setup",
+          "Issue"
+        ],
+        "properties": [
+          "SetupFunc",
+          "IssueFunc"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "Issuer",
+        "line": 26,
+        "isDefault": false
+      },
+      {
+        "name": "Setup",
+        "line": 36,
+        "isDefault": false
+      },
+      {
+        "name": "Issue",
+        "line": 42,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 12,
+      "exportCount": 3,
+      "functionCount": 2,
+      "classCount": 1
+    }
+  },
+  {
+    "path": "pkg/issuer/helper.go",
+    "language": "go",
+    "nonEmptyLines": 63,
+    "functions": [
+      {
+        "name": "NewHelper",
+        "startLine": 45,
+        "endLine": 50,
+        "params": [
+          "issuerLister",
+          "clusterIssuerLister"
+        ]
+      },
+      {
+        "name": "GetGenericIssuer",
+        "startLine": 57,
+        "endLine": 74,
+        "params": [
+          "ref",
+          "ns"
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "name": "Helper",
+        "startLine": 29,
+        "endLine": 31,
+        "methods": [
+          "GetGenericIssuer"
+        ],
+        "properties": []
+      },
+      {
+        "name": "helperImpl",
+        "startLine": 36,
+        "endLine": 39,
+        "methods": [
+          "GetGenericIssuer"
+        ],
+        "properties": [
+          "issuerLister",
+          "clusterIssuerLister"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "Helper",
+        "line": 29,
+        "isDefault": false
+      },
+      {
+        "name": "NewHelper",
+        "line": 45,
+        "isDefault": false
+      },
+      {
+        "name": "GetGenericIssuer",
+        "line": 57,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 18,
+      "exportCount": 3,
+      "functionCount": 2,
+      "classCount": 2
+    }
+  },
+  {
+    "path": "pkg/issuer/issuer.go",
+    "language": "go",
+    "nonEmptyLines": 39,
+    "functions": null,
+    "classes": [
+      {
+        "name": "Interface",
+        "startLine": 25,
+        "endLine": 30,
+        "methods": [
+          "Setup"
+        ],
+        "properties": []
+      },
+      {
+        "name": "IssueResponse",
+        "startLine": 32,
+        "endLine": 49,
+        "methods": [],
+        "properties": [
+          "Certificate",
+          "PrivateKey",
+          "CA"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "Interface",
+        "line": 25,
+        "isDefault": false
+      },
+      {
+        "name": "IssueResponse",
+        "line": 32,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 9,
+      "exportCount": 2,
+      "functionCount": 0,
+      "classCount": 2
+    }
+  },
+  {
+    "path": "pkg/issuer/selfsigned/selfsigned.go",
+    "language": "go",
+    "nonEmptyLines": 35,
+    "functions": [
+      {
+        "name": "NewSelfSigned",
+        "startLine": 34,
+        "endLine": 41,
+        "params": [
+          "ctx"
+        ]
+      },
+      {
+        "name": "init",
+        "startLine": 43,
+        "endLine": 45,
+        "params": []
+      }
+    ],
+    "classes": [
+      {
+        "name": "SelfSigned",
+        "startLine": 28,
+        "endLine": 32,
+        "methods": [],
+        "properties": [
+          "secretsLister"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "SelfSigned",
+        "line": 28,
+        "isDefault": false
+      },
+      {
+        "name": "NewSelfSigned",
+        "line": 34,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 20,
+      "exportCount": 2,
+      "functionCount": 2,
+      "classCount": 1
+    }
+  },
+  {
+    "path": "pkg/issuer/selfsigned/setup.go",
+    "language": "go",
+    "nonEmptyLines": 26,
+    "functions": [
+      {
+        "name": "Setup",
+        "startLine": 31,
+        "endLine": 34,
+        "params": [
+          "ctx",
+          "issuer"
+        ]
+      }
+    ],
+    "classes": null,
+    "exports": [
+      {
+        "name": "Setup",
+        "line": 31,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 19,
+      "exportCount": 1,
+      "functionCount": 1,
+      "classCount": 0
+    }
+  },
+  {
+    "path": "pkg/issuer/vault/setup.go",
+    "language": "go",
+    "nonEmptyLines": 125,
+    "functions": [
+      {
+        "name": "Setup",
+        "startLine": 54,
+        "endLine": 149,
+        "params": [
+          "ctx",
+          "issuer"
+        ]
+      }
+    ],
+    "classes": null,
+    "exports": [
+      {
+        "name": "Setup",
+        "line": 54,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 21,
+      "exportCount": 1,
+      "functionCount": 1,
+      "classCount": 0
+    }
+  },
+  {
+    "path": "pkg/issuer/vault/vault.go",
+    "language": "go",
+    "nonEmptyLines": 40,
+    "functions": [
+      {
+        "name": "NewVault",
+        "startLine": 38,
+        "endLine": 46,
+        "params": [
+          "ctx"
+        ]
+      },
+      {
+        "name": "init",
+        "startLine": 49,
+        "endLine": 51,
+        "params": []
+      }
+    ],
+    "classes": [
+      {
+        "name": "Vault",
+        "startLine": 28,
+        "endLine": 35,
+        "methods": [],
+        "properties": [
+          "secretsLister",
+          "createTokenFn"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "Vault",
+        "line": 28,
+        "isDefault": false
+      },
+      {
+        "name": "NewVault",
+        "line": 38,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 21,
+      "exportCount": 2,
+      "functionCount": 2,
+      "classCount": 1
+    }
+  },
+  {
+    "path": "pkg/issuer/venafi/client/api/customfield.go",
+    "language": "go",
+    "nonEmptyLines": 23,
+    "functions": null,
+    "classes": [
+      {
+        "name": "CustomField",
+        "startLine": 26,
+        "endLine": 30,
+        "methods": [],
+        "properties": [
+          "Type",
+          "Name",
+          "Value"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "CustomField",
+        "line": 26,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 0,
+      "exportCount": 1,
+      "functionCount": 0,
+      "classCount": 1
+    }
+  },
+  {
+    "path": "pkg/issuer/venafi/client/fake/venafi.go",
+    "language": "go",
+    "nonEmptyLines": 45,
+    "functions": [
+      {
+        "name": "Ping",
+        "startLine": 35,
+        "endLine": 37,
+        "params": []
+      },
+      {
+        "name": "RequestCertificate",
+        "startLine": 39,
+        "endLine": 41,
+        "params": [
+          "csrPEM",
+          "duration",
+          "customFields"
+        ]
+      },
+      {
+        "name": "RetrieveCertificate",
+        "startLine": 43,
+        "endLine": 45,
+        "params": [
+          "pickupID",
+          "csrPEM",
+          "duration",
+          "customFields"
+        ]
+      },
+      {
+        "name": "ReadZoneConfiguration",
+        "startLine": 47,
+        "endLine": 49,
+        "params": []
+      },
+      {
+        "name": "SetClient",
+        "startLine": 51,
+        "endLine": 51,
+        "params": []
+      },
+      {
+        "name": "VerifyCredentials",
+        "startLine": 54,
+        "endLine": 60,
+        "params": []
+      }
+    ],
+    "classes": [
+      {
+        "name": "Venafi",
+        "startLine": 27,
+        "endLine": 33,
+        "methods": [
+          "Ping",
+          "RequestCertificate",
+          "RetrieveCertificate",
+          "ReadZoneConfiguration",
+          "SetClient",
+          "VerifyCredentials"
+        ],
+        "properties": [
+          "PingFn",
+          "RequestCertificateFn",
+          "RetrieveCertificateFn",
+          "ReadZoneConfigurationFn",
+          "VerifyCredentialsFn"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "Venafi",
+        "line": 27,
+        "isDefault": false
+      },
+      {
+        "name": "Ping",
+        "line": 35,
+        "isDefault": false
+      },
+      {
+        "name": "RequestCertificate",
+        "line": 39,
+        "isDefault": false
+      },
+      {
+        "name": "RetrieveCertificate",
+        "line": 43,
+        "isDefault": false
+      },
+      {
+        "name": "ReadZoneConfiguration",
+        "line": 47,
+        "isDefault": false
+      },
+      {
+        "name": "SetClient",
+        "line": 51,
+        "isDefault": false
+      },
+      {
+        "name": "VerifyCredentials",
+        "line": 54,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 1,
+      "exportCount": 7,
+      "functionCount": 6,
+      "classCount": 1
+    }
+  },
+  {
+    "path": "pkg/issuer/venafi/client/instrumentedvenaficlient.go",
+    "language": "go",
+    "nonEmptyLines": 74,
+    "functions": [
+      {
+        "name": "newInstrumentedConnector",
+        "startLine": 38,
+        "endLine": 44,
+        "params": [
+          "conn",
+          "metrics",
+          "log"
+        ]
+      },
+      {
+        "name": "ReadZoneConfiguration",
+        "startLine": 46,
+        "endLine": 53,
+        "params": []
+      },
+      {
+        "name": "RequestCertificate",
+        "startLine": 55,
+        "endLine": 62,
+        "params": [
+          "req"
+        ]
+      },
+      {
+        "name": "RetrieveCertificate",
+        "startLine": 64,
+        "endLine": 71,
+        "params": [
+          "req"
+        ]
+      },
+      {
+        "name": "Ping",
+        "startLine": 73,
+        "endLine": 80,
+        "params": []
+      },
+      {
+        "name": "RenewCertificate",
+        "startLine": 82,
+        "endLine": 89,
+        "params": [
+          "req"
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "name": "instrumentedConnector",
+        "startLine": 30,
+        "endLine": 34,
+        "methods": [
+          "ReadZoneConfiguration",
+          "RequestCertificate",
+          "RetrieveCertificate",
+          "Ping",
+          "RenewCertificate"
+        ],
+        "properties": [
+          "conn",
+          "metrics",
+          "logger"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "ReadZoneConfiguration",
+        "line": 46,
+        "isDefault": false
+      },
+      {
+        "name": "RequestCertificate",
+        "line": 55,
+        "isDefault": false
+      },
+      {
+        "name": "RetrieveCertificate",
+        "line": 64,
+        "isDefault": false
+      },
+      {
+        "name": "Ping",
+        "line": 73,
+        "isDefault": false
+      },
+      {
+        "name": "RenewCertificate",
+        "line": 82,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 4,
+      "exportCount": 5,
+      "functionCount": 6,
+      "classCount": 1
+    }
+  },
+  {
+    "path": "pkg/issuer/venafi/client/request.go",
+    "language": "go",
+    "nonEmptyLines": 186,
+    "functions": [
+      {
+        "name": "Error",
+        "startLine": 39,
+        "endLine": 41,
+        "params": []
+      },
+      {
+        "name": "RequestCertificate",
+        "startLine": 49,
+        "endLine": 83,
+        "params": [
+          "csrPEM",
+          "duration",
+          "customFields"
+        ]
+      },
+      {
+        "name": "RetrieveCertificate",
+        "startLine": 85,
+        "endLine": 105,
+        "params": [
+          "pickupID",
+          "csrPEM",
+          "duration",
+          "customFields"
+        ]
+      },
+      {
+        "name": "buildVReq",
+        "startLine": 107,
+        "endLine": 161,
+        "params": [
+          "csrPEM",
+          "duration",
+          "customFields"
+        ]
+      },
+      {
+        "name": "convertCustomFieldsToVcert",
+        "startLine": 163,
+        "endLine": 184,
+        "params": [
+          "customFields"
+        ]
+      },
+      {
+        "name": "newVRequest",
+        "startLine": 186,
+        "endLine": 203,
+        "params": [
+          "cert",
+          "duration"
+        ]
+      },
+      {
+        "name": "getVcertFriendlyName",
+        "startLine": 205,
+        "endLine": 222,
+        "params": [
+          "crt"
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "name": "ErrCustomFieldsType",
+        "startLine": 35,
+        "endLine": 37,
+        "methods": [
+          "Error"
+        ],
+        "properties": [
+          "Type"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "ErrCustomFieldsType",
+        "line": 35,
+        "isDefault": false
+      },
+      {
+        "name": "Error",
+        "line": 39,
+        "isDefault": false
+      },
+      {
+        "name": "RequestCertificate",
+        "line": 49,
+        "isDefault": false
+      },
+      {
+        "name": "RetrieveCertificate",
+        "line": 85,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 16,
+      "exportCount": 4,
+      "functionCount": 7,
+      "classCount": 1
+    }
+  },
+  {
+    "path": "pkg/issuer/venafi/client/venaficlient.go",
+    "language": "go",
+    "nonEmptyLines": 407,
+    "functions": [
+      {
+        "name": "New",
+        "startLine": 95,
+        "endLine": 151,
+        "params": [
+          "namespace",
+          "secretsLister",
+          "issuer",
+          "metrics",
+          "logger",
+          "userAgent"
+        ]
+      },
+      {
+        "name": "configForIssuer",
+        "startLine": 155,
+        "endLine": 236,
+        "params": [
+          "iss",
+          "secretsLister",
+          "namespace",
+          "userAgent"
+        ]
+      },
+      {
+        "name": "httpClientForVcert",
+        "startLine": 302,
+        "endLine": 348,
+        "params": [
+          "options"
+        ]
+      },
+      {
+        "name": "caBundleForVcertTPP",
+        "startLine": 356,
+        "endLine": 390,
+        "params": [
+          "tpp",
+          "secretsLister",
+          "namespace"
+        ]
+      },
+      {
+        "name": "Ping",
+        "startLine": 392,
+        "endLine": 394,
+        "params": []
+      },
+      {
+        "name": "ReadZoneConfiguration",
+        "startLine": 396,
+        "endLine": 398,
+        "params": []
+      },
+      {
+        "name": "SetClient",
+        "startLine": 400,
+        "endLine": 402,
+        "params": [
+          "client"
+        ]
+      },
+      {
+        "name": "VerifyCredentials",
+        "startLine": 405,
+        "endLine": 464,
+        "params": []
+      }
+    ],
+    "classes": [
+      {
+        "name": "Interface",
+        "startLine": 59,
+        "endLine": 66,
+        "methods": [
+          "RequestCertificate",
+          "RetrieveCertificate",
+          "Ping",
+          "ReadZoneConfiguration",
+          "SetClient",
+          "VerifyCredentials"
+        ],
+        "properties": []
+      },
+      {
+        "name": "Venafi",
+        "startLine": 69,
+        "endLine": 80,
+        "methods": [
+          "Ping",
+          "ReadZoneConfiguration",
+          "SetClient",
+          "VerifyCredentials"
+        ],
+        "properties": [
+          "namespace",
+          "secretsLister",
+          "vcertClient",
+          "tppClient",
+          "cloudClient",
+          "config"
+        ]
+      },
+      {
+        "name": "connector",
+        "startLine": 84,
+        "endLine": 91,
+        "methods": [
+          "Ping",
+          "ReadZoneConfiguration",
+          "RequestCertificate",
+          "RetrieveCertificate",
+          "RenewCertificate"
+        ],
+        "properties": []
+      },
+      {
+        "name": "httpClientForVcertOptions",
+        "startLine": 240,
+        "endLine": 249,
+        "methods": [],
+        "properties": [
+          "UserAgent",
+          "CABundle",
+          "TLSRenegotiationSupport"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "Interface",
+        "line": 59,
+        "isDefault": false
+      },
+      {
+        "name": "Venafi",
+        "line": 69,
+        "isDefault": false
+      },
+      {
+        "name": "New",
+        "line": 95,
+        "isDefault": false
+      },
+      {
+        "name": "Ping",
+        "line": 392,
+        "isDefault": false
+      },
+      {
+        "name": "ReadZoneConfiguration",
+        "line": 396,
+        "isDefault": false
+      },
+      {
+        "name": "SetClient",
+        "line": 400,
+        "isDefault": false
+      },
+      {
+        "name": "VerifyCredentials",
+        "line": 405,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 25,
+      "exportCount": 7,
+      "functionCount": 8,
+      "classCount": 4
+    }
+  },
+  {
+    "path": "pkg/issuer/venafi/setup.go",
+    "language": "go",
+    "nonEmptyLines": 56,
+    "functions": [
+      {
+        "name": "Setup",
+        "startLine": 31,
+        "endLine": 69,
+        "params": [
+          "ctx",
+          "issuer"
+        ]
+      }
+    ],
+    "classes": null,
+    "exports": [
+      {
+        "name": "Setup",
+        "line": 31,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 20,
+      "exportCount": 1,
+      "functionCount": 1,
+      "classCount": 0
+    }
+  },
+  {
+    "path": "pkg/issuer/venafi/venafi.go",
+    "language": "go",
+    "nonEmptyLines": 43,
+    "functions": [
+      {
+        "name": "NewVenafi",
+        "startLine": 44,
+        "endLine": 52,
+        "params": [
+          "ctx"
+        ]
+      },
+      {
+        "name": "init",
+        "startLine": 54,
+        "endLine": 56,
+        "params": []
+      }
+    ],
+    "classes": [
+      {
+        "name": "Venafi",
+        "startLine": 31,
+        "endLine": 42,
+        "methods": [],
+        "properties": [
+          "secretsLister",
+          "clientBuilder",
+          "log",
+          "userAgent"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "Venafi",
+        "line": 31,
+        "isDefault": false
+      },
+      {
+        "name": "NewVenafi",
+        "line": 44,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 24,
+      "exportCount": 2,
+      "functionCount": 2,
+      "classCount": 1
+    }
+  },
+  {
+    "path": "pkg/logs/logs.go",
+    "language": "go",
+    "nonEmptyLines": 152,
+    "functions": [
+      {
+        "name": "InitLogs",
+        "startLine": 52,
+        "endLine": 56,
+        "params": []
+      },
+      {
+        "name": "AddFlagsNonDeprecated",
+        "startLine": 58,
+        "endLine": 68,
+        "params": [
+          "opts",
+          "fs"
+        ]
+      },
+      {
+        "name": "AddFlags",
+        "startLine": 70,
+        "endLine": 86,
+        "params": [
+          "opts",
+          "fs"
+        ]
+      },
+      {
+        "name": "ValidateAndApply",
+        "startLine": 88,
+        "endLine": 90,
+        "params": [
+          "opts"
+        ]
+      },
+      {
+        "name": "FlushLogs",
+        "startLine": 93,
+        "endLine": 95,
+        "params": []
+      },
+      {
+        "name": "WithResource",
+        "startLine": 109,
+        "endLine": 125,
+        "params": [
+          "l",
+          "obj"
+        ]
+      },
+      {
+        "name": "WithRelatedResource",
+        "startLine": 127,
+        "endLine": 143,
+        "params": [
+          "l",
+          "obj"
+        ]
+      },
+      {
+        "name": "WithRelatedResourceName",
+        "startLine": 145,
+        "endLine": 151,
+        "params": [
+          "l",
+          "name",
+          "namespace",
+          "kind"
+        ]
+      },
+      {
+        "name": "FromContext",
+        "startLine": 153,
+        "endLine": 162,
+        "params": [
+          "ctx"
+        ]
+      },
+      {
+        "name": "NewContext",
+        "startLine": 164,
+        "endLine": 169,
+        "params": [
+          "ctx",
+          "l"
+        ]
+      },
+      {
+        "name": "WithInfof",
+        "startLine": 179,
+        "endLine": 181,
+        "params": [
+          "l"
+        ]
+      },
+      {
+        "name": "Infof",
+        "startLine": 184,
+        "endLine": 186,
+        "params": [
+          "format"
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "name": "LogWithFormat",
+        "startLine": 175,
+        "endLine": 177,
+        "methods": [
+          "Infof"
+        ],
+        "properties": []
+      }
+    ],
+    "exports": [
+      {
+        "name": "InitLogs",
+        "line": 52,
+        "isDefault": false
+      },
+      {
+        "name": "AddFlagsNonDeprecated",
+        "line": 58,
+        "isDefault": false
+      },
+      {
+        "name": "AddFlags",
+        "line": 70,
+        "isDefault": false
+      },
+      {
+        "name": "ValidateAndApply",
+        "line": 88,
+        "isDefault": false
+      },
+      {
+        "name": "FlushLogs",
+        "line": 93,
+        "isDefault": false
+      },
+      {
+        "name": "WithResource",
+        "line": 109,
+        "isDefault": false
+      },
+      {
+        "name": "WithRelatedResource",
+        "line": 127,
+        "isDefault": false
+      },
+      {
+        "name": "WithRelatedResourceName",
+        "line": 145,
+        "isDefault": false
+      },
+      {
+        "name": "FromContext",
+        "line": 153,
+        "isDefault": false
+      },
+      {
+        "name": "NewContext",
+        "line": 164,
+        "isDefault": false
+      },
+      {
+        "name": "LogWithFormat",
+        "line": 175,
+        "isDefault": false
+      },
+      {
+        "name": "WithInfof",
+        "line": 179,
+        "isDefault": false
+      },
+      {
+        "name": "Infof",
+        "line": 184,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 1,
+      "exportCount": 13,
+      "functionCount": 12,
+      "classCount": 1
+    }
+  },
+  {
+    "path": "pkg/metrics/acme.go",
+    "language": "go",
+    "nonEmptyLines": 24,
+    "functions": [
+      {
+        "name": "ObserveACMERequestDuration",
+        "startLine": 24,
+        "endLine": 26,
+        "params": [
+          "duration"
+        ]
+      },
+      {
+        "name": "IncrementACMERequestCount",
+        "startLine": 29,
+        "endLine": 31,
+        "params": []
+      }
+    ],
+    "classes": null,
+    "exports": [
+      {
+        "name": "ObserveACMERequestDuration",
+        "line": 24,
+        "isDefault": false
+      },
+      {
+        "name": "IncrementACMERequestCount",
+        "line": 29,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 0,
+      "exportCount": 2,
+      "functionCount": 2,
+      "classCount": 0
+    }
+  },
+  {
+    "path": "pkg/metrics/metrics.go",
+    "language": "go",
+    "nonEmptyLines": 218,
+    "functions": [
+      {
+        "name": "New",
+        "startLine": 71,
+        "endLine": 195,
+        "params": [
+          "log",
+          "c"
+        ]
+      },
+      {
+        "name": "SetupACMECollector",
+        "startLine": 197,
+        "endLine": 199,
+        "params": [
+          "acmeInformers"
+        ]
+      },
+      {
+        "name": "SetupCertificateCollector",
+        "startLine": 201,
+        "endLine": 203,
+        "params": [
+          "certLister"
+        ]
+      },
+      {
+        "name": "ACMERequestCounter",
+        "startLine": 205,
+        "endLine": 207,
+        "params": []
+      },
+      {
+        "name": "NewServer",
+        "startLine": 210,
+        "endLine": 239,
+        "params": [
+          "ln"
+        ]
+      },
+      {
+        "name": "IncrementSyncCallCount",
+        "startLine": 242,
+        "endLine": 244,
+        "params": [
+          "controllerName"
+        ]
+      },
+      {
+        "name": "IncrementSyncErrorCount",
+        "startLine": 247,
+        "endLine": 249,
+        "params": [
+          "controllerName"
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "name": "Metrics",
+        "startLine": 55,
+        "endLine": 68,
+        "methods": [
+          "SetupACMECollector",
+          "SetupCertificateCollector",
+          "ACMERequestCounter",
+          "NewServer",
+          "IncrementSyncCallCount",
+          "IncrementSyncErrorCount"
+        ],
+        "properties": [
+          "log",
+          "registry",
+          "clockTimeSeconds",
+          "clockTimeSecondsGauge",
+          "acmeClientRequestDurationSeconds",
+          "acmeClientRequestCount",
+          "venafiClientRequestDurationSeconds",
+          "controllerSyncCallCount",
+          "controllerSyncErrorCount",
+          "challengeCollector",
+          "certificateCollector"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "Metrics",
+        "line": 55,
+        "isDefault": false
+      },
+      {
+        "name": "New",
+        "line": 71,
+        "isDefault": false
+      },
+      {
+        "name": "SetupACMECollector",
+        "line": 197,
+        "isDefault": false
+      },
+      {
+        "name": "SetupCertificateCollector",
+        "line": 201,
+        "isDefault": false
+      },
+      {
+        "name": "ACMERequestCounter",
+        "line": 205,
+        "isDefault": false
+      },
+      {
+        "name": "NewServer",
+        "line": 210,
+        "isDefault": false
+      },
+      {
+        "name": "IncrementSyncCallCount",
+        "line": 242,
+        "isDefault": false
+      },
+      {
+        "name": "IncrementSyncErrorCount",
+        "line": 247,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 10,
+      "exportCount": 8,
+      "functionCount": 7,
+      "classCount": 1
+    }
+  },
+  {
+    "path": "pkg/metrics/venafi.go",
+    "language": "go",
+    "nonEmptyLines": 20,
+    "functions": [
+      {
+        "name": "ObserveVenafiRequestDuration",
+        "startLine": 24,
+        "endLine": 26,
+        "params": [
+          "duration"
+        ]
+      }
+    ],
+    "classes": null,
+    "exports": [
+      {
+        "name": "ObserveVenafiRequestDuration",
+        "line": 24,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 0,
+      "exportCount": 1,
+      "functionCount": 1,
+      "classCount": 0
+    }
+  },
+  {
+    "path": "pkg/scheduler/scheduler.go",
+    "language": "go",
+    "nonEmptyLines": 99,
+    "functions": [
+      {
+        "name": "afterFunc",
+        "startLine": 28,
+        "endLine": 54,
+        "params": [
+          "c",
+          "d",
+          "f"
+        ]
+      },
+      {
+        "name": "NewScheduledWorkQueue",
+        "startLine": 83,
+        "endLine": 92,
+        "params": [
+          "clock",
+          "processFunc"
+        ]
+      },
+      {
+        "name": "Add",
+        "startLine": 97,
+        "endLine": 110,
+        "params": [
+          "obj",
+          "duration"
+        ]
+      },
+      {
+        "name": "Forget",
+        "startLine": 113,
+        "endLine": 121,
+        "params": [
+          "obj"
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "name": "ScheduledWorkQueue",
+        "startLine": 62,
+        "endLine": 70,
+        "methods": [
+          "Add",
+          "Forget"
+        ],
+        "properties": []
+      },
+      {
+        "name": "scheduledWorkQueue",
+        "startLine": 72,
+        "endLine": 80,
+        "methods": [
+          "Add",
+          "Forget"
+        ],
+        "properties": [
+          "processFunc",
+          "clock",
+          "work",
+          "workLock",
+          "afterFunc"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "ScheduledWorkQueue",
+        "line": 62,
+        "isDefault": false
+      },
+      {
+        "name": "NewScheduledWorkQueue",
+        "line": 83,
+        "isDefault": false
+      },
+      {
+        "name": "Add",
+        "line": 97,
+        "isDefault": false
+      },
+      {
+        "name": "Forget",
+        "line": 113,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 0,
+      "exportCount": 4,
+      "functionCount": 4,
+      "classCount": 2
+    }
+  },
+  {
+    "path": "pkg/scheduler/test/fake.go",
+    "language": "go",
+    "nonEmptyLines": 30,
+    "functions": [
+      {
+        "name": "Add",
+        "startLine": 35,
+        "endLine": 37,
+        "params": [
+          "obj",
+          "duration"
+        ]
+      },
+      {
+        "name": "Forget",
+        "startLine": 39,
+        "endLine": 41,
+        "params": [
+          "obj"
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "name": "FakeScheduler",
+        "startLine": 30,
+        "endLine": 33,
+        "methods": [
+          "Add",
+          "Forget"
+        ],
+        "properties": [
+          "AddFunc",
+          "ForgetFunc"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "FakeScheduler",
+        "line": 30,
+        "isDefault": false
+      },
+      {
+        "name": "Add",
+        "line": 35,
+        "isDefault": false
+      },
+      {
+        "name": "Forget",
+        "line": 39,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 1,
+      "exportCount": 3,
+      "functionCount": 2,
+      "classCount": 1
+    }
+  },
+  {
+    "path": "pkg/server/tls/authority/authority.go",
+    "language": "go",
+    "nonEmptyLines": 381,
+    "functions": [
+      {
+        "name": "Run",
+        "startLine": 102,
+        "endLine": 183,
+        "params": [
+          "ctx"
+        ]
+      },
+      {
+        "name": "Sign",
+        "startLine": 188,
+        "endLine": 232,
+        "params": [
+          "template"
+        ]
+      },
+      {
+        "name": "WatchRotation",
+        "startLine": 238,
+        "endLine": 244,
+        "params": [
+          "output"
+        ]
+      },
+      {
+        "name": "StopWatchingRotation",
+        "startLine": 246,
+        "endLine": 257,
+        "params": [
+          "output"
+        ]
+      },
+      {
+        "name": "ensureCA",
+        "startLine": 259,
+        "endLine": 277,
+        "params": [
+          "ctx"
+        ]
+      },
+      {
+        "name": "notifyWatches",
+        "startLine": 279,
+        "endLine": 306,
+        "params": [
+          "newCertData",
+          "newPrivateKeyData"
+        ]
+      },
+      {
+        "name": "caRequiresRegeneration",
+        "startLine": 310,
+        "endLine": 342,
+        "params": [
+          "s"
+        ]
+      },
+      {
+        "name": "regenerateCA",
+        "startLine": 347,
+        "endLine": 418,
+        "params": [
+          "ctx",
+          "s"
+        ]
+      },
+      {
+        "name": "handleAdd",
+        "startLine": 420,
+        "endLine": 425,
+        "params": [
+          "obj"
+        ]
+      },
+      {
+        "name": "handleUpdate",
+        "startLine": 427,
+        "endLine": 432,
+        "params": [
+          "_",
+          "obj"
+        ]
+      },
+      {
+        "name": "handleDelete",
+        "startLine": 434,
+        "endLine": 439,
+        "params": [
+          "obj"
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "name": "DynamicAuthority",
+        "startLine": 54,
+        "endLine": 96,
+        "methods": [
+          "Run",
+          "Sign",
+          "WatchRotation",
+          "StopWatchingRotation",
+          "ensureCA",
+          "notifyWatches",
+          "regenerateCA",
+          "handleAdd",
+          "handleUpdate",
+          "handleDelete"
+        ],
+        "properties": [
+          "SecretNamespace",
+          "SecretName",
+          "SecretLabels",
+          "RESTConfig",
+          "CommonName",
+          "CADuration",
+          "LeafDuration",
+          "log",
+          "lister",
+          "client",
+          "currentCertData",
+          "currentPrivateKeyData",
+          "signMutex",
+          "ensureMutex",
+          "watchMutex",
+          "watches",
+          "newClient"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "DynamicAuthority",
+        "line": 54,
+        "isDefault": false
+      },
+      {
+        "name": "Run",
+        "line": 102,
+        "isDefault": false
+      },
+      {
+        "name": "Sign",
+        "line": 188,
+        "isDefault": false
+      },
+      {
+        "name": "WatchRotation",
+        "line": 238,
+        "isDefault": false
+      },
+      {
+        "name": "StopWatchingRotation",
+        "line": 246,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 29,
+      "exportCount": 5,
+      "functionCount": 11,
+      "classCount": 1
+    }
+  },
+  {
+    "path": "pkg/server/tls/dynamic_source.go",
+    "language": "go",
+    "nonEmptyLines": 233,
+    "functions": [
+      {
+        "name": "Start",
+        "startLine": 76,
+        "endLine": 196,
+        "params": [
+          "ctx"
+        ]
+      },
+      {
+        "name": "NeedLeaderElection",
+        "startLine": 199,
+        "endLine": 201,
+        "params": []
+      },
+      {
+        "name": "GetCertificate",
+        "startLine": 203,
+        "endLine": 210,
+        "params": []
+      },
+      {
+        "name": "Healthy",
+        "startLine": 212,
+        "endLine": 216,
+        "params": []
+      },
+      {
+        "name": "tryRegenerateCertificate",
+        "startLine": 218,
+        "endLine": 227,
+        "params": [
+          "ctx",
+          "nextRenewCh"
+        ]
+      },
+      {
+        "name": "regenerateCertificate",
+        "startLine": 231,
+        "endLine": 256,
+        "params": [
+          "ctx",
+          "nextRenew"
+        ]
+      },
+      {
+        "name": "updateCertificate",
+        "startLine": 258,
+        "endLine": 292,
+        "params": [
+          "ctx",
+          "pk",
+          "cert",
+          "nextRenewCh"
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "name": "Authority",
+        "startLine": 38,
+        "endLine": 54,
+        "methods": [
+          "Run",
+          "WatchRotation",
+          "StopWatchingRotation",
+          "Sign"
+        ],
+        "properties": []
+      },
+      {
+        "name": "DynamicSource",
+        "startLine": 58,
+        "endLine": 71,
+        "methods": [
+          "Start",
+          "NeedLeaderElection",
+          "GetCertificate",
+          "Healthy",
+          "tryRegenerateCertificate",
+          "regenerateCertificate",
+          "updateCertificate"
+        ],
+        "properties": [
+          "DNSNames",
+          "Authority",
+          "RetryInterval",
+          "log",
+          "cachedCertificate",
+          "lock"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "Authority",
+        "line": 38,
+        "isDefault": false
+      },
+      {
+        "name": "DynamicSource",
+        "line": 58,
+        "isDefault": false
+      },
+      {
+        "name": "Start",
+        "line": 76,
+        "isDefault": false
+      },
+      {
+        "name": "NeedLeaderElection",
+        "line": 199,
+        "isDefault": false
+      },
+      {
+        "name": "GetCertificate",
+        "line": 203,
+        "isDefault": false
+      },
+      {
+        "name": "Healthy",
+        "line": 212,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 25,
+      "exportCount": 6,
+      "functionCount": 7,
+      "classCount": 2
+    }
+  },
+  {
+    "path": "pkg/util/cmapichecker/cmapichecker.go",
+    "language": "go",
+    "nonEmptyLines": 216,
+    "functions": [
+      {
+        "name": "New",
+        "startLine": 78,
+        "endLine": 85,
+        "params": [
+          "restcfg",
+          "namespace"
+        ]
+      },
+      {
+        "name": "NewForConfigAndClient",
+        "startLine": 87,
+        "endLine": 161,
+        "params": [
+          "restcfg",
+          "httpClient",
+          "namespace"
+        ]
+      },
+      {
+        "name": "Check",
+        "startLine": 170,
+        "endLine": 203,
+        "params": [
+          "ctx"
+        ]
+      },
+      {
+        "name": "TranslateToSimpleError",
+        "startLine": 221,
+        "endLine": 248,
+        "params": [
+          "err"
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "name": "Interface",
+        "startLine": 66,
+        "endLine": 68,
+        "methods": [
+          "Check"
+        ],
+        "properties": []
+      },
+      {
+        "name": "cmapiChecker",
+        "startLine": 70,
+        "endLine": 75,
+        "methods": [
+          "Check"
+        ],
+        "properties": [
+          "client",
+          "testValidCR",
+          "testInvalidCR"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "Interface",
+        "line": 66,
+        "isDefault": false
+      },
+      {
+        "name": "New",
+        "line": 78,
+        "isDefault": false
+      },
+      {
+        "name": "NewForConfigAndClient",
+        "line": 87,
+        "isDefault": false
+      },
+      {
+        "name": "Check",
+        "line": 170,
+        "isDefault": false
+      },
+      {
+        "name": "TranslateToSimpleError",
+        "line": 221,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 28,
+      "exportCount": 5,
+      "functionCount": 4,
+      "classCount": 2
+    }
+  },
+  {
+    "path": "pkg/util/errors/errors.go",
+    "language": "go",
+    "nonEmptyLines": 24,
+    "functions": [
+      {
+        "name": "NewInvalidData",
+        "startLine": 23,
+        "endLine": 25,
+        "params": [
+          "str"
+        ]
+      },
+      {
+        "name": "IsInvalidData",
+        "startLine": 27,
+        "endLine": 32,
+        "params": [
+          "err"
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "name": "invalidDataError",
+        "startLine": 21,
+        "endLine": 21,
+        "methods": [],
+        "properties": []
+      }
+    ],
+    "exports": [
+      {
+        "name": "NewInvalidData",
+        "line": 23,
+        "isDefault": false
+      },
+      {
+        "name": "IsInvalidData",
+        "line": 27,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 0,
+      "exportCount": 2,
+      "functionCount": 2,
+      "classCount": 1
+    }
+  },
+  {
+    "path": "pkg/util/feature/feature_gate.go",
+    "language": "go",
+    "nonEmptyLines": 26,
+    "functions": null,
+    "classes": null,
+    "exports": null,
+    "metrics": {
+      "importCount": 0,
+      "exportCount": 0,
+      "functionCount": 0,
+      "classCount": 0
+    }
+  },
+  {
+    "path": "pkg/util/kube/pki.go",
+    "language": "go",
+    "nonEmptyLines": 123,
+    "functions": [
+      {
+        "name": "SecretTLSKeyRef",
+        "startLine": 35,
+        "endLine": 47,
+        "params": [
+          "ctx",
+          "secretLister",
+          "namespace",
+          "name",
+          "keyName"
+        ]
+      },
+      {
+        "name": "SecretTLSKey",
+        "startLine": 52,
+        "endLine": 54,
+        "params": [
+          "ctx",
+          "secretLister",
+          "namespace",
+          "name"
+        ]
+      },
+      {
+        "name": "ParseTLSKeyFromSecret",
+        "startLine": 58,
+        "endLine": 70,
+        "params": [
+          "secret",
+          "keyName"
+        ]
+      },
+      {
+        "name": "SecretTLSCertChain",
+        "startLine": 72,
+        "endLine": 89,
+        "params": [
+          "ctx",
+          "secretLister",
+          "namespace",
+          "name"
+        ]
+      },
+      {
+        "name": "SecretTLSKeyPairAndCA",
+        "startLine": 94,
+        "endLine": 115,
+        "params": [
+          "ctx",
+          "secretLister",
+          "namespace",
+          "name"
+        ]
+      },
+      {
+        "name": "SecretTLSKeyPair",
+        "startLine": 117,
+        "endLine": 142,
+        "params": [
+          "ctx",
+          "secretLister",
+          "namespace",
+          "name"
+        ]
+      },
+      {
+        "name": "SecretTLSCert",
+        "startLine": 144,
+        "endLine": 151,
+        "params": [
+          "ctx",
+          "secretLister",
+          "namespace",
+          "name"
+        ]
+      }
+    ],
+    "classes": null,
+    "exports": [
+      {
+        "name": "SecretTLSKeyRef",
+        "line": 35,
+        "isDefault": false
+      },
+      {
+        "name": "SecretTLSKey",
+        "line": 52,
+        "isDefault": false
+      },
+      {
+        "name": "ParseTLSKeyFromSecret",
+        "line": 58,
+        "isDefault": false
+      },
+      {
+        "name": "SecretTLSCertChain",
+        "line": 72,
+        "isDefault": false
+      },
+      {
+        "name": "SecretTLSKeyPairAndCA",
+        "line": 94,
+        "isDefault": false
+      },
+      {
+        "name": "SecretTLSKeyPair",
+        "line": 117,
+        "isDefault": false
+      },
+      {
+        "name": "SecretTLSCert",
+        "line": 144,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 25,
+      "exportCount": 7,
+      "functionCount": 7,
+      "classCount": 0
+    }
+  },
+  {
+    "path": "pkg/util/pki/asn1_util.go",
+    "language": "go",
+    "nonEmptyLines": 171,
+    "functions": [
+      {
+        "name": "ParseObjectIdentifier",
+        "startLine": 31,
+        "endLine": 49,
+        "params": [
+          "oidString"
+        ]
+      },
+      {
+        "name": "Type",
+        "startLine": 67,
+        "endLine": 85,
+        "params": []
+      },
+      {
+        "name": "MarshalUniversalValue",
+        "startLine": 87,
+        "endLine": 111,
+        "params": [
+          "uv"
+        ]
+      },
+      {
+        "name": "marshalRawString",
+        "startLine": 113,
+        "endLine": 122,
+        "params": [
+          "tag",
+          "value"
+        ]
+      },
+      {
+        "name": "UnmarshalUniversalValue",
+        "startLine": 124,
+        "endLine": 155,
+        "params": [
+          "rawValue"
+        ]
+      },
+      {
+        "name": "isIA5String",
+        "startLine": 158,
+        "endLine": 167,
+        "params": [
+          "s"
+        ]
+      },
+      {
+        "name": "isPrintable",
+        "startLine": 172,
+        "endLine": 199,
+        "params": [
+          "s"
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "name": "UniversalValue",
+        "startLine": 60,
+        "endLine": 65,
+        "methods": [
+          "Type"
+        ],
+        "properties": [
+          "Bytes",
+          "IA5String",
+          "UTF8String",
+          "PrintableString"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "ParseObjectIdentifier",
+        "line": 31,
+        "isDefault": false
+      },
+      {
+        "name": "UniversalValue",
+        "line": 60,
+        "isDefault": false
+      },
+      {
+        "name": "Type",
+        "line": 67,
+        "isDefault": false
+      },
+      {
+        "name": "MarshalUniversalValue",
+        "line": 87,
+        "isDefault": false
+      },
+      {
+        "name": "UnmarshalUniversalValue",
+        "line": 124,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 0,
+      "exportCount": 5,
+      "functionCount": 7,
+      "classCount": 1
+    }
+  },
+  {
+    "path": "pkg/util/pki/basicconstraints.go",
+    "language": "go",
+    "nonEmptyLines": 55,
+    "functions": [
+      {
+        "name": "MarshalBasicConstraints",
+        "startLine": 37,
+        "endLine": 49,
+        "params": [
+          "isCA",
+          "maxPathLen"
+        ]
+      },
+      {
+        "name": "UnmarshalBasicConstraints",
+        "startLine": 52,
+        "endLine": 68,
+        "params": [
+          "value"
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "name": "basicConstraints",
+        "startLine": 31,
+        "endLine": 34,
+        "methods": [],
+        "properties": [
+          "IsCA",
+          "MaxPathLen"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "MarshalBasicConstraints",
+        "line": 37,
+        "isDefault": false
+      },
+      {
+        "name": "UnmarshalBasicConstraints",
+        "line": 52,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 0,
+      "exportCount": 2,
+      "functionCount": 2,
+      "classCount": 1
+    }
+  },
+  {
+    "path": "pkg/util/pki/certificatetemplate.go",
+    "language": "go",
+    "nonEmptyLines": 294,
+    "functions": [
+      {
+        "name": "hasExtension",
+        "startLine": 37,
+        "endLine": 51,
+        "params": [
+          "checkReq",
+          "extensionID"
+        ]
+      },
+      {
+        "name": "CertificateTemplateOverrideDuration",
+        "startLine": 55,
+        "endLine": 61,
+        "params": [
+          "duration"
+        ]
+      },
+      {
+        "name": "CertificateTemplateValidateAndOverrideBasicConstraints",
+        "startLine": 65,
+        "endLine": 95,
+        "params": [
+          "isCA",
+          "maxPathLen"
+        ]
+      },
+      {
+        "name": "CertificateTemplateValidateAndOverrideKeyUsages",
+        "startLine": 99,
+        "endLine": 121,
+        "params": [
+          "keyUsage",
+          "extKeyUsage"
+        ]
+      },
+      {
+        "name": "String",
+        "startLine": 125,
+        "endLine": 141,
+        "params": []
+      },
+      {
+        "name": "CertificateTemplateFromCSR",
+        "startLine": 145,
+        "endLine": 268,
+        "params": [
+          "csr"
+        ]
+      },
+      {
+        "name": "CertificateTemplateFromCSRPEM",
+        "startLine": 272,
+        "endLine": 283,
+        "params": [
+          "csrPEM"
+        ]
+      },
+      {
+        "name": "CertificateTemplateFromCertificate",
+        "startLine": 287,
+        "endLine": 305,
+        "params": [
+          "crt"
+        ]
+      },
+      {
+        "name": "CertificateTemplateFromCertificateRequest",
+        "startLine": 309,
+        "endLine": 322,
+        "params": [
+          "cr"
+        ]
+      },
+      {
+        "name": "CertificateTemplateFromCertificateSigningRequest",
+        "startLine": 326,
+        "endLine": 345,
+        "params": [
+          "csr"
+        ]
+      }
+    ],
+    "classes": null,
+    "exports": [
+      {
+        "name": "CertificateTemplateOverrideDuration",
+        "line": 55,
+        "isDefault": false
+      },
+      {
+        "name": "CertificateTemplateValidateAndOverrideBasicConstraints",
+        "line": 65,
+        "isDefault": false
+      },
+      {
+        "name": "CertificateTemplateValidateAndOverrideKeyUsages",
+        "line": 99,
+        "isDefault": false
+      },
+      {
+        "name": "String",
+        "line": 125,
+        "isDefault": false
+      },
+      {
+        "name": "CertificateTemplateFromCSR",
+        "line": 145,
+        "isDefault": false
+      },
+      {
+        "name": "CertificateTemplateFromCSRPEM",
+        "line": 272,
+        "isDefault": false
+      },
+      {
+        "name": "CertificateTemplateFromCertificate",
+        "line": 287,
+        "isDefault": false
+      },
+      {
+        "name": "CertificateTemplateFromCertificateRequest",
+        "line": 309,
+        "isDefault": false
+      },
+      {
+        "name": "CertificateTemplateFromCertificateSigningRequest",
+        "line": 326,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 16,
+      "exportCount": 9,
+      "functionCount": 10,
+      "classCount": 0
+    }
+  },
+  {
+    "path": "pkg/util/pki/csr.go",
+    "language": "go",
+    "nonEmptyLines": 519,
+    "functions": [
+      {
+        "name": "IPAddressesToString",
+        "startLine": 43,
+        "endLine": 49,
+        "params": [
+          "ipAddresses"
+        ]
+      },
+      {
+        "name": "IPAddressesFromStrings",
+        "startLine": 51,
+        "endLine": 65,
+        "params": [
+          "ipStrings"
+        ]
+      },
+      {
+        "name": "URLsToString",
+        "startLine": 67,
+        "endLine": 78,
+        "params": [
+          "uris"
+        ]
+      },
+      {
+        "name": "SubjectForCertificate",
+        "startLine": 81,
+        "endLine": 87,
+        "params": [
+          "crt"
+        ]
+      },
+      {
+        "name": "KeyUsagesForCertificateOrCertificateRequest",
+        "startLine": 89,
+        "endLine": 114,
+        "params": [
+          "usages",
+          "isCA"
+        ]
+      },
+      {
+        "name": "WithEncodeBasicConstraintsInRequest",
+        "startLine": 128,
+        "endLine": 132,
+        "params": [
+          "encode"
+        ]
+      },
+      {
+        "name": "WithNameConstraints",
+        "startLine": 134,
+        "endLine": 138,
+        "params": [
+          "enabled"
+        ]
+      },
+      {
+        "name": "WithOtherNames",
+        "startLine": 140,
+        "endLine": 144,
+        "params": [
+          "enabled"
+        ]
+      },
+      {
+        "name": "WithUseLiteralSubject",
+        "startLine": 146,
+        "endLine": 150,
+        "params": [
+          "useLiteralSubject"
+        ]
+      },
+      {
+        "name": "GenerateCSR",
+        "startLine": 156,
+        "endLine": 337,
+        "params": [
+          "crt"
+        ]
+      },
+      {
+        "name": "SignCertificate",
+        "startLine": 345,
+        "endLine": 400,
+        "params": [
+          "template",
+          "issuerCert",
+          "publicKey",
+          "signerKey"
+        ]
+      },
+      {
+        "name": "SignCSRTemplate",
+        "startLine": 406,
+        "endLine": 424,
+        "params": [
+          "caCerts",
+          "caPrivateKey",
+          "template"
+        ]
+      },
+      {
+        "name": "EncodeCSR",
+        "startLine": 428,
+        "endLine": 435,
+        "params": [
+          "template",
+          "key"
+        ]
+      },
+      {
+        "name": "EncodeX509",
+        "startLine": 438,
+        "endLine": 446,
+        "params": [
+          "cert"
+        ]
+      },
+      {
+        "name": "EncodeX509Chain",
+        "startLine": 454,
+        "endLine": 473,
+        "params": [
+          "certs"
+        ]
+      },
+      {
+        "name": "SignatureAlgorithm",
+        "startLine": 493,
+        "endLine": 552,
+        "params": [
+          "crt"
+        ]
+      },
+      {
+        "name": "signatureAlgorithmFromPublicKey",
+        "startLine": 562,
+        "endLine": 614,
+        "params": [
+          "alg",
+          "arg"
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "name": "generateCSROptions",
+        "startLine": 116,
+        "endLine": 121,
+        "methods": [],
+        "properties": [
+          "EncodeBasicConstraintsInRequest",
+          "EncodeNameConstraints",
+          "EncodeOtherNames",
+          "UseLiteralSubject"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "IPAddressesToString",
+        "line": 43,
+        "isDefault": false
+      },
+      {
+        "name": "IPAddressesFromStrings",
+        "line": 51,
+        "isDefault": false
+      },
+      {
+        "name": "URLsToString",
+        "line": 67,
+        "isDefault": false
+      },
+      {
+        "name": "SubjectForCertificate",
+        "line": 81,
+        "isDefault": false
+      },
+      {
+        "name": "KeyUsagesForCertificateOrCertificateRequest",
+        "line": 89,
+        "isDefault": false
+      },
+      {
+        "name": "WithEncodeBasicConstraintsInRequest",
+        "line": 128,
+        "isDefault": false
+      },
+      {
+        "name": "WithNameConstraints",
+        "line": 134,
+        "isDefault": false
+      },
+      {
+        "name": "WithOtherNames",
+        "line": 140,
+        "isDefault": false
+      },
+      {
+        "name": "WithUseLiteralSubject",
+        "line": 146,
+        "isDefault": false
+      },
+      {
+        "name": "GenerateCSR",
+        "line": 156,
+        "isDefault": false
+      },
+      {
+        "name": "SignCertificate",
+        "line": 345,
+        "isDefault": false
+      },
+      {
+        "name": "SignCSRTemplate",
+        "line": 406,
+        "isDefault": false
+      },
+      {
+        "name": "EncodeCSR",
+        "line": 428,
+        "isDefault": false
+      },
+      {
+        "name": "EncodeX509",
+        "line": 438,
+        "isDefault": false
+      },
+      {
+        "name": "EncodeX509Chain",
+        "line": 454,
+        "isDefault": false
+      },
+      {
+        "name": "SignatureAlgorithm",
+        "line": 493,
+        "isDefault": false
+      }
+    ],
+    "metrics": {
+      "importCount": 15,
+      "exportCount": 16,
+      "functionCount": 17,
+      "classCount": 1
+    }
+  }
+]

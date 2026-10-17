@@ -1,0 +1,185 @@
+{
+  "nodes": [
+    {
+      "id": "config:deploy/charts/cert-manager/templates/webhook-psp-clusterrole.yaml",
+      "type": "config",
+      "name": "webhook-psp-clusterrole.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/webhook-psp-clusterrole.yaml",
+      "summary": "Helm-templated ClusterRole granting the cert-manager webhook permission to 'use' its PodSecurityPolicy, rendered only when global.podSecurityPolicy.enabled is true.",
+      "tags": ["configuration", "rbac", "security", "kubernetes", "helm-chart"],
+      "complexity": "simple",
+      "languageNotes": "YAML manifest interleaved with Go template directives, so it is only valid after Helm rendering."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/webhook-psp-clusterrolebinding.yaml",
+      "type": "config",
+      "name": "webhook-psp-clusterrolebinding.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/webhook-psp-clusterrolebinding.yaml",
+      "summary": "ClusterRoleBinding that binds the webhook PodSecurityPolicy ClusterRole to the webhook ServiceAccount, gated on the podSecurityPolicy feature flag.",
+      "tags": ["configuration", "rbac", "security", "kubernetes", "helm-chart"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/webhook-psp.yaml",
+      "type": "config",
+      "name": "webhook-psp.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/webhook-psp.yaml",
+      "summary": "PodSecurityPolicy for the cert-manager webhook pods, disabling privileged mode and privilege escalation while restricting volumes, host access, and runAs/seccomp/AppArmor profiles.",
+      "tags": ["configuration", "security", "pod-security-policy", "kubernetes", "helm-chart"],
+      "complexity": "moderate",
+      "languageNotes": "Uses the deprecated policy/v1beta1 PSP API behind a Helm values flag; hostNetwork and securePort are driven by .Values.webhook."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/webhook-rbac.yaml",
+      "type": "config",
+      "name": "webhook-rbac.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/webhook-rbac.yaml",
+      "summary": "Bundles all webhook RBAC objects: a namespaced Role/RoleBinding for reading and updating dynamic serving-certificate Secrets and a ClusterRole/ClusterRoleBinding for creating SubjectAccessReviews.",
+      "tags": ["configuration", "rbac", "security", "kubernetes", "helm-chart"],
+      "complexity": "moderate",
+      "languageNotes": "Contains four documents in one file separated by '---', with resourceNames scoped to the CA Secret and conditional metrics-TLS Secret access."
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/webhook-service.yaml",
+      "type": "config",
+      "name": "webhook-service.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/webhook-service.yaml",
+      "summary": "Service exposing the webhook over HTTPS on port 443 and optionally a Prometheus metrics port, with configurable service type, IP families, load balancer IP, annotations, and labels.",
+      "tags": ["configuration", "kubernetes", "service", "networking", "helm-chart"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/webhook-serviceaccount.yaml",
+      "type": "config",
+      "name": "webhook-serviceaccount.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/webhook-serviceaccount.yaml",
+      "summary": "ServiceAccount for the webhook pods with configurable token automounting, annotations, labels, and global image pull secrets, created only when webhook.serviceAccount.create is set.",
+      "tags": ["configuration", "rbac", "kubernetes", "service-account", "helm-chart"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/charts/cert-manager/templates/webhook-validating-webhook.yaml",
+      "type": "config",
+      "name": "webhook-validating-webhook.yaml",
+      "filePath": "deploy/charts/cert-manager/templates/webhook-validating-webhook.yaml",
+      "summary": "ValidatingWebhookConfiguration registering webhook.cert-manager.io for CREATE/UPDATE on cert-manager.io and acme.cert-manager.io resources, with CA injection, Equivalent match policy, and a service or URL client config.",
+      "tags": ["configuration", "admission-webhook", "kubernetes", "validation", "helm-chart"],
+      "complexity": "moderate",
+      "languageNotes": "Uses the cert-manager cainjector annotation to inject the CA bundle from a Secret into the webhook configuration."
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:deploy/charts/cert-manager/templates/webhook-psp-clusterrole.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/webhook-psp.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/webhook-psp-clusterrole.yaml",
+      "target": "file:deploy/charts/cert-manager/templates/_helpers.tpl",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/webhook-psp-clusterrolebinding.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/webhook-psp-clusterrole.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/webhook-psp-clusterrolebinding.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/webhook-serviceaccount.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/webhook-psp-clusterrolebinding.yaml",
+      "target": "file:deploy/charts/cert-manager/templates/_helpers.tpl",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/webhook-psp.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/webhook-deployment.yaml",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/webhook-psp.yaml",
+      "target": "file:deploy/charts/cert-manager/templates/_helpers.tpl",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/webhook-rbac.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/webhook-serviceaccount.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/webhook-rbac.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/webhook-deployment.yaml",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/webhook-rbac.yaml",
+      "target": "file:deploy/charts/cert-manager/templates/_helpers.tpl",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/webhook-service.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/webhook-deployment.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/webhook-service.yaml",
+      "target": "file:deploy/charts/cert-manager/templates/_helpers.tpl",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/webhook-serviceaccount.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/webhook-deployment.yaml",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/webhook-serviceaccount.yaml",
+      "target": "file:deploy/charts/cert-manager/templates/_helpers.tpl",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/webhook-validating-webhook.yaml",
+      "target": "config:deploy/charts/cert-manager/templates/webhook-service.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/charts/cert-manager/templates/webhook-validating-webhook.yaml",
+      "target": "file:deploy/charts/cert-manager/templates/_helpers.tpl",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

@@ -1,0 +1,1376 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/unit/gen/certificaterequest.go",
+      "type": "file",
+      "name": "certificaterequest.go",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "summary": "Functional-option builders for cert-manager CertificateRequest fixtures, covering spec, metadata, annotations and status conditions.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder",
+        "certificate-request"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:CertificateRequest",
+      "type": "function",
+      "name": "CertificateRequest",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        29,
+        38
+      ],
+      "summary": "Creates a CertificateRequest fixture with the supplied name.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:CertificateRequestFrom",
+      "type": "function",
+      "name": "CertificateRequestFrom",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        40,
+        47
+      ],
+      "summary": "Copies an existing CertificateRequest as the base for further fixture mutation.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestIssuer",
+      "type": "function",
+      "name": "SetCertificateRequestIssuer",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        50,
+        54
+      ],
+      "summary": "Sets the issuer reference on the CertificateRequest.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestCSR",
+      "type": "function",
+      "name": "SetCertificateRequestCSR",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        56,
+        60
+      ],
+      "summary": "Sets the CSR bytes on the CertificateRequest spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestIsCA",
+      "type": "function",
+      "name": "SetCertificateRequestIsCA",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        62,
+        66
+      ],
+      "summary": "Sets the isCA flag on the request spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestDuration",
+      "type": "function",
+      "name": "SetCertificateRequestDuration",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        68,
+        72
+      ],
+      "summary": "Sets the requested certificate duration.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestCA",
+      "type": "function",
+      "name": "SetCertificateRequestCA",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        74,
+        78
+      ],
+      "summary": "Sets the CA certificate bytes in the request status.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestCertificate",
+      "type": "function",
+      "name": "SetCertificateRequestCertificate",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        80,
+        84
+      ],
+      "summary": "Sets the issued certificate bytes in the request status.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestStatusCondition",
+      "type": "function",
+      "name": "SetCertificateRequestStatusCondition",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        86,
+        100
+      ],
+      "summary": "Replaces the request status conditions with the supplied condition.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:AddCertificateRequestStatusCondition",
+      "type": "function",
+      "name": "AddCertificateRequestStatusCondition",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        102,
+        106
+      ],
+      "summary": "Appends a condition to the request status.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestNamespace",
+      "type": "function",
+      "name": "SetCertificateRequestNamespace",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        108,
+        112
+      ],
+      "summary": "Sets the request namespace.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestName",
+      "type": "function",
+      "name": "SetCertificateRequestName",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        114,
+        118
+      ],
+      "summary": "Sets the request name.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestGenerateName",
+      "type": "function",
+      "name": "SetCertificateRequestGenerateName",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        120,
+        124
+      ],
+      "summary": "Sets the generateName prefix on the request.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestKeyUsages",
+      "type": "function",
+      "name": "SetCertificateRequestKeyUsages",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        126,
+        130
+      ],
+      "summary": "Sets the key usages on the request spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:AddCertificateRequestAnnotations",
+      "type": "function",
+      "name": "AddCertificateRequestAnnotations",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        132,
+        144
+      ],
+      "summary": "Merges annotations into the CertificateRequest.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:AddCertificateRequestOwnerReferences",
+      "type": "function",
+      "name": "AddCertificateRequestOwnerReferences",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        146,
+        150
+      ],
+      "summary": "Adds owner references to the CertificateRequest.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestAnnotations",
+      "type": "function",
+      "name": "SetCertificateRequestAnnotations",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        152,
+        161
+      ],
+      "summary": "Replaces the request annotations.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:DeleteCertificateRequestAnnotation",
+      "type": "function",
+      "name": "DeleteCertificateRequestAnnotation",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        163,
+        170
+      ],
+      "summary": "Removes an annotation from the request by key.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestFailureTime",
+      "type": "function",
+      "name": "SetCertificateRequestFailureTime",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        172,
+        176
+      ],
+      "summary": "Sets the failure time in the request status.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestTypeMeta",
+      "type": "function",
+      "name": "SetCertificateRequestTypeMeta",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        178,
+        182
+      ],
+      "summary": "Sets the request TypeMeta.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestUsername",
+      "type": "function",
+      "name": "SetCertificateRequestUsername",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        184,
+        188
+      ],
+      "summary": "Sets the authenticating username on the request.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestGroups",
+      "type": "function",
+      "name": "SetCertificateRequestGroups",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        190,
+        194
+      ],
+      "summary": "Sets the authenticating groups on the request.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestRevision",
+      "type": "function",
+      "name": "SetCertificateRequestRevision",
+      "filePath": "test/unit/gen/certificaterequest.go",
+      "lineRange": [
+        196,
+        204
+      ],
+      "summary": "Sets the revision annotation on the request.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/unit/gen/certificatesigningrequest.go",
+      "type": "file",
+      "name": "certificatesigningrequest.go",
+      "filePath": "test/unit/gen/certificatesigningrequest.go",
+      "summary": "Functional-option builders for Kubernetes CertificateSigningRequest fixtures used by unit tests.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/unit/gen/certificatesigningrequest.go:CertificateSigningRequest",
+      "type": "function",
+      "name": "CertificateSigningRequest",
+      "filePath": "test/unit/gen/certificatesigningrequest.go",
+      "lineRange": [
+        30,
+        42
+      ],
+      "summary": "Creates a Kubernetes CertificateSigningRequest fixture with the supplied name.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificatesigningrequest.go:CertificateSigningRequestWithRandomName",
+      "type": "function",
+      "name": "CertificateSigningRequestWithRandomName",
+      "filePath": "test/unit/gen/certificatesigningrequest.go",
+      "lineRange": [
+        44,
+        56
+      ],
+      "summary": "Creates a CertificateSigningRequest fixture with a random name suffix.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificatesigningrequest.go:CertificateSigningRequestFrom",
+      "type": "function",
+      "name": "CertificateSigningRequestFrom",
+      "filePath": "test/unit/gen/certificatesigningrequest.go",
+      "lineRange": [
+        58,
+        64
+      ],
+      "summary": "Copies an existing CertificateSigningRequest as the base for mutation.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestIsCA",
+      "type": "function",
+      "name": "SetCertificateSigningRequestIsCA",
+      "filePath": "test/unit/gen/certificatesigningrequest.go",
+      "lineRange": [
+        66,
+        70
+      ],
+      "summary": "Sets the isCA flag on the CSR spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestRequest",
+      "type": "function",
+      "name": "SetCertificateSigningRequestRequest",
+      "filePath": "test/unit/gen/certificatesigningrequest.go",
+      "lineRange": [
+        72,
+        76
+      ],
+      "summary": "Sets the PKCS#10 request bytes on the CSR spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificatesigningrequest.go:AddCertificateSigningRequestAnnotations",
+      "type": "function",
+      "name": "AddCertificateSigningRequestAnnotations",
+      "filePath": "test/unit/gen/certificatesigningrequest.go",
+      "lineRange": [
+        78,
+        90
+      ],
+      "summary": "Merges annotations into the CertificateSigningRequest.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestSignerName",
+      "type": "function",
+      "name": "SetCertificateSigningRequestSignerName",
+      "filePath": "test/unit/gen/certificatesigningrequest.go",
+      "lineRange": [
+        92,
+        96
+      ],
+      "summary": "Sets the signer name on the CSR spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestExpirationSeconds",
+      "type": "function",
+      "name": "SetCertificateSigningRequestExpirationSeconds",
+      "filePath": "test/unit/gen/certificatesigningrequest.go",
+      "lineRange": [
+        98,
+        102
+      ],
+      "summary": "Sets the expiration seconds on the CSR spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestDuration",
+      "type": "function",
+      "name": "SetCertificateSigningRequestDuration",
+      "filePath": "test/unit/gen/certificatesigningrequest.go",
+      "lineRange": [
+        104,
+        108
+      ],
+      "summary": "Sets the cert-manager duration annotation on the CSR.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestCertificate",
+      "type": "function",
+      "name": "SetCertificateSigningRequestCertificate",
+      "filePath": "test/unit/gen/certificatesigningrequest.go",
+      "lineRange": [
+        110,
+        114
+      ],
+      "summary": "Sets the issued certificate bytes in the CSR status.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestStatusCondition",
+      "type": "function",
+      "name": "SetCertificateSigningRequestStatusCondition",
+      "filePath": "test/unit/gen/certificatesigningrequest.go",
+      "lineRange": [
+        116,
+        131
+      ],
+      "summary": "Replaces the CSR status conditions with the supplied condition.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestUsername",
+      "type": "function",
+      "name": "SetCertificateSigningRequestUsername",
+      "filePath": "test/unit/gen/certificatesigningrequest.go",
+      "lineRange": [
+        133,
+        137
+      ],
+      "summary": "Sets the request username.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestGroups",
+      "type": "function",
+      "name": "SetCertificateSigningRequestGroups",
+      "filePath": "test/unit/gen/certificatesigningrequest.go",
+      "lineRange": [
+        139,
+        143
+      ],
+      "summary": "Sets the request groups.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestUID",
+      "type": "function",
+      "name": "SetCertificateSigningRequestUID",
+      "filePath": "test/unit/gen/certificatesigningrequest.go",
+      "lineRange": [
+        145,
+        149
+      ],
+      "summary": "Sets the CertificateSigningRequest UID.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestExtra",
+      "type": "function",
+      "name": "SetCertificateSigningRequestExtra",
+      "filePath": "test/unit/gen/certificatesigningrequest.go",
+      "lineRange": [
+        151,
+        155
+      ],
+      "summary": "Sets extra request attributes on the CSR.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestUsages",
+      "type": "function",
+      "name": "SetCertificateSigningRequestUsages",
+      "filePath": "test/unit/gen/certificatesigningrequest.go",
+      "lineRange": [
+        157,
+        161
+      ],
+      "summary": "Sets the key usages on the CSR spec.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "file:internal/apis/certmanager/v1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "file:internal/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "file:internal/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "file:internal/apis/certmanager/v1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:CertificateRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:CertificateRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:CertificateRequestFrom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:CertificateRequestFrom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestCSR",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestCSR",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestIsCA",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestIsCA",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestDuration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestDuration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestCA",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestCA",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestStatusCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestStatusCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:AddCertificateRequestStatusCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:AddCertificateRequestStatusCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestNamespace",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestNamespace",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestGenerateName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestGenerateName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestKeyUsages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestKeyUsages",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:AddCertificateRequestAnnotations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:AddCertificateRequestAnnotations",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:AddCertificateRequestOwnerReferences",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:AddCertificateRequestOwnerReferences",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestAnnotations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestAnnotations",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:DeleteCertificateRequestAnnotation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:DeleteCertificateRequestAnnotation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestFailureTime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestFailureTime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestTypeMeta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestTypeMeta",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestUsername",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestUsername",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestGroups",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestGroups",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestRevision",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificaterequest.go",
+      "target": "function:test/unit/gen/certificaterequest.go:SetCertificateRequestRevision",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "file:pkg/apis/experimental/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:CertificateSigningRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:CertificateSigningRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:CertificateSigningRequestWithRandomName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:CertificateSigningRequestWithRandomName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:CertificateSigningRequestFrom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:CertificateSigningRequestFrom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestIsCA",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestIsCA",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:AddCertificateSigningRequestAnnotations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:AddCertificateSigningRequestAnnotations",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestSignerName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestSignerName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestExpirationSeconds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestExpirationSeconds",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestDuration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestDuration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestStatusCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestStatusCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestUsername",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestUsername",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestGroups",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestGroups",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestUID",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestUID",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestExtra",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestExtra",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestUsages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/certificatesigningrequest.go",
+      "target": "function:test/unit/gen/certificatesigningrequest.go:SetCertificateSigningRequestUsages",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

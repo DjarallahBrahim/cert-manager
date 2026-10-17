@@ -1,0 +1,1297 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/e2e/e2e.go",
+      "type": "file",
+      "name": "e2e.go",
+      "filePath": "test/e2e/e2e.go",
+      "summary": "Ginkgo suite bootstrap for the cert-manager e2e tests: initializes, provisions, logs, and deprovisions the shared global addons across Ginkgo processes.",
+      "tags": [
+        "test",
+        "entry-point",
+        "e2e",
+        "ginkgo",
+        "lifecycle"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Uses Ginkgo SynchronizedBeforeSuite/SynchronizedAfterSuite to coordinate global addon state across parallel processes."
+    },
+    {
+      "id": "file:test/e2e/framework/addon/base/base.go",
+      "type": "file",
+      "name": "base.go",
+      "filePath": "test/e2e/framework/addon/base/base.go",
+      "summary": "Shared addon scaffolding that gives addon plugins a Kubernetes clientset and suite configuration through a reusable Base/Details pair.",
+      "tags": [
+        "test",
+        "addon",
+        "dependency-injection",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/e2e/framework/addon/base/base.go:Base",
+      "type": "class",
+      "name": "Base",
+      "filePath": "test/e2e/framework/addon/base/base.go",
+      "lineRange": [
+        33,
+        38
+      ],
+      "summary": "Addon skeleton that implements the internal Addon interface and caches a Details value after setup.",
+      "tags": [
+        "addon",
+        "test",
+        "base",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/framework/addon/base/base.go:Details",
+      "type": "class",
+      "name": "Details",
+      "filePath": "test/e2e/framework/addon/base/base.go",
+      "lineRange": [
+        43,
+        53
+      ],
+      "summary": "Carries the suite config plus a Kubernetes REST config and clientset that addon plugins use to provision resources.",
+      "tags": [
+        "addon",
+        "kubernetes",
+        "configuration",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/base/base.go:Setup",
+      "type": "function",
+      "name": "Setup",
+      "filePath": "test/e2e/framework/addon/base/base.go",
+      "lineRange": [
+        61,
+        83
+      ],
+      "summary": "Loads the kubeconfig and builds a Kubernetes clientset, caching the resulting Details for later addon calls.",
+      "tags": [
+        "setup",
+        "kubernetes",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/framework/addon/chart/addon.go",
+      "type": "file",
+      "name": "addon.go",
+      "filePath": "test/e2e/framework/addon/chart/addon.go",
+      "summary": "Generic Helm chart addon that installs, inspects, and removes arbitrary charts in the e2e cluster using Helm CLI commands.",
+      "tags": [
+        "test",
+        "addon",
+        "helm",
+        "deployment",
+        "e2e"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Shells out to the Helm binary with a per-addon temporary HOME instead of using the Helm Go SDK."
+    },
+    {
+      "id": "class:test/e2e/framework/addon/chart/addon.go:Chart",
+      "type": "class",
+      "name": "Chart",
+      "filePath": "test/e2e/framework/addon/chart/addon.go",
+      "lineRange": [
+        37,
+        76
+      ],
+      "summary": "Configurable Helm chart addon holding release metadata, repository, values, and CLI options.",
+      "tags": [
+        "addon",
+        "helm",
+        "configuration",
+        "struct"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/e2e/framework/addon/chart/addon.go:Repo",
+      "type": "class",
+      "name": "Repo",
+      "filePath": "test/e2e/framework/addon/chart/addon.go",
+      "lineRange": [
+        80,
+        86
+      ],
+      "summary": "Helm repository name and URL pair used when adding a chart repo.",
+      "tags": [
+        "helm",
+        "configuration",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/framework/addon/chart/addon.go:StringTuple",
+      "type": "class",
+      "name": "StringTuple",
+      "filePath": "test/e2e/framework/addon/chart/addon.go",
+      "lineRange": [
+        89,
+        92
+      ],
+      "summary": "Key/value pair used to build ordered Helm value maps.",
+      "tags": [
+        "helm",
+        "value",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/framework/addon/chart/addon.go:Details",
+      "type": "class",
+      "name": "Details",
+      "filePath": "test/e2e/framework/addon/chart/addon.go",
+      "lineRange": [
+        95,
+        101
+      ],
+      "summary": "Release name and namespace of an installed chart.",
+      "tags": [
+        "helm",
+        "deployment",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/chart/addon.go:Setup",
+      "type": "function",
+      "name": "Setup",
+      "filePath": "test/e2e/framework/addon/chart/addon.go",
+      "lineRange": [
+        103,
+        117
+      ],
+      "summary": "Stores suite config and prepares a temporary Helm home and namespace for the chart addon.",
+      "tags": [
+        "setup",
+        "helm",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/chart/addon.go:Provision",
+      "type": "function",
+      "name": "Provision",
+      "filePath": "test/e2e/framework/addon/chart/addon.go",
+      "lineRange": [
+        120,
+        141
+      ],
+      "summary": "Adds the chart repository, updates dependencies, and installs the release into the target namespace.",
+      "tags": [
+        "deployment",
+        "helm",
+        "provisioning"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/chart/addon.go:runDepUpdate",
+      "type": "function",
+      "name": "runDepUpdate",
+      "filePath": "test/e2e/framework/addon/chart/addon.go",
+      "lineRange": [
+        143,
+        149
+      ],
+      "summary": "Runs helm dep update for the configured chart.",
+      "tags": [
+        "helm",
+        "dependency",
+        "chart"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/chart/addon.go:runInstall",
+      "type": "function",
+      "name": "runInstall",
+      "filePath": "test/e2e/framework/addon/chart/addon.go",
+      "lineRange": [
+        151,
+        170
+      ],
+      "summary": "Builds and executes the helm install command with the configured values and variables.",
+      "tags": [
+        "helm",
+        "deployment",
+        "install"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/chart/addon.go:buildHelmCmd",
+      "type": "function",
+      "name": "buildHelmCmd",
+      "filePath": "test/e2e/framework/addon/chart/addon.go",
+      "lineRange": [
+        172,
+        181
+      ],
+      "summary": "Constructs a Helm exec.Cmd with the addon's HOME, kubeconfig, and namespace flags.",
+      "tags": [
+        "helm",
+        "utility",
+        "command"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/chart/addon.go:Deprovision",
+      "type": "function",
+      "name": "Deprovision",
+      "filePath": "test/e2e/framework/addon/chart/addon.go",
+      "lineRange": [
+        184,
+        206
+      ],
+      "summary": "Uninstalls the Helm release, captures logs, and removes the temporary Helm home directory.",
+      "tags": [
+        "helm",
+        "cleanup",
+        "deprovisioning"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/chart/addon.go:SupportsGlobal",
+      "type": "function",
+      "name": "SupportsGlobal",
+      "filePath": "test/e2e/framework/addon/chart/addon.go",
+      "lineRange": [
+        219,
+        224
+      ],
+      "summary": "Reports that chart addons can be shared globally under a well-known release name.",
+      "tags": [
+        "addon",
+        "capability",
+        "global"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/chart/addon.go:Logs",
+      "type": "function",
+      "name": "Logs",
+      "filePath": "test/e2e/framework/addon/chart/addon.go",
+      "lineRange": [
+        226,
+        273
+      ],
+      "summary": "Collects current and previous container logs from the chart release's pods.",
+      "tags": [
+        "logging",
+        "kubernetes",
+        "debugging"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/chart/addon.go:addRepo",
+      "type": "function",
+      "name": "addRepo",
+      "filePath": "test/e2e/framework/addon/chart/addon.go",
+      "lineRange": [
+        275,
+        281
+      ],
+      "summary": "Adds the configured Helm repository to the temporary Helm home.",
+      "tags": [
+        "helm",
+        "setup",
+        "repository"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/addon/globals.go",
+      "type": "file",
+      "name": "globals.go",
+      "filePath": "test/e2e/framework/addon/globals.go",
+      "summary": "Defines the shared global addon instances and the primary/non-primary Ginkgo process lifecycle used to set up, provision, log, and deprovision them.",
+      "tags": [
+        "test",
+        "addon",
+        "lifecycle",
+        "e2e",
+        "ginkgo"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/globals.go:InitGlobals",
+      "type": "function",
+      "name": "InitGlobals",
+      "filePath": "test/e2e/framework/addon/globals.go",
+      "lineRange": [
+        60,
+        82
+      ],
+      "summary": "Allocates the shared global addon singletons from the suite configuration.",
+      "tags": [
+        "addon",
+        "initialization",
+        "globals"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/globals.go:SetupGlobalsPrimary",
+      "type": "function",
+      "name": "SetupGlobalsPrimary",
+      "filePath": "test/e2e/framework/addon/globals.go",
+      "lineRange": [
+        90,
+        103
+      ],
+      "summary": "Runs Setup for every global addon on Ginkgo process one and returns serializable transfer data.",
+      "tags": [
+        "addon",
+        "setup",
+        "ginkgo",
+        "globals"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/globals.go:SetupGlobalsNonPrimary",
+      "type": "function",
+      "name": "SetupGlobalsNonPrimary",
+      "filePath": "test/e2e/framework/addon/globals.go",
+      "lineRange": [
+        113,
+        124
+      ],
+      "summary": "Re-runs addon Setup on non-primary Ginkgo processes using data transferred from process one.",
+      "tags": [
+        "addon",
+        "setup",
+        "ginkgo",
+        "globals"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/globals.go:ProvisionGlobals",
+      "type": "function",
+      "name": "ProvisionGlobals",
+      "filePath": "test/e2e/framework/addon/globals.go",
+      "lineRange": [
+        134,
+        142
+      ],
+      "summary": "Provisions every global addon on the primary Ginkgo process.",
+      "tags": [
+        "addon",
+        "provisioning",
+        "globals"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/globals.go:GlobalLogs",
+      "type": "function",
+      "name": "GlobalLogs",
+      "filePath": "test/e2e/framework/addon/globals.go",
+      "lineRange": [
+        148,
+        169
+      ],
+      "summary": "Gathers logs from every global addon that implements the loggable interface.",
+      "tags": [
+        "addon",
+        "logging",
+        "globals"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/globals.go:DeprovisionGlobals",
+      "type": "function",
+      "name": "DeprovisionGlobals",
+      "filePath": "test/e2e/framework/addon/globals.go",
+      "lineRange": [
+        175,
+        186
+      ],
+      "summary": "Deprovisions global addons in reverse order and aggregates any errors.",
+      "tags": [
+        "addon",
+        "cleanup",
+        "globals"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/framework/addon/internal/globals.go",
+      "type": "file",
+      "name": "globals.go",
+      "filePath": "test/e2e/framework/addon/internal/globals.go",
+      "summary": "Defines the internal Addon interface that every e2e addon plugin implements, including transferable data for global addons.",
+      "tags": [
+        "test",
+        "addon",
+        "interface",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/framework/addon/internal/globals.go:Addon",
+      "type": "class",
+      "name": "Addon",
+      "filePath": "test/e2e/framework/addon/internal/globals.go",
+      "lineRange": [
+        26,
+        42
+      ],
+      "summary": "Interface every e2e addon implements, covering setup, provisioning, deprovisioning, and global support.",
+      "tags": [
+        "interface",
+        "addon",
+        "lifecycle",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "class:test/e2e/framework/addon/base/base.go:Base",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "class:test/e2e/framework/addon/base/base.go:Base",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "class:test/e2e/framework/addon/base/base.go:Details",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "class:test/e2e/framework/addon/base/base.go:Details",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "function:test/e2e/framework/addon/base/base.go:Setup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "function:test/e2e/framework/addon/base/base.go:Setup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "class:test/e2e/framework/addon/chart/addon.go:Chart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "class:test/e2e/framework/addon/chart/addon.go:Chart",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "class:test/e2e/framework/addon/chart/addon.go:Repo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "class:test/e2e/framework/addon/chart/addon.go:Repo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "class:test/e2e/framework/addon/chart/addon.go:StringTuple",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "class:test/e2e/framework/addon/chart/addon.go:StringTuple",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "class:test/e2e/framework/addon/chart/addon.go:Details",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "class:test/e2e/framework/addon/chart/addon.go:Details",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:Setup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:Setup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:Provision",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:Provision",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:runDepUpdate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:runInstall",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:buildHelmCmd",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:Deprovision",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:Deprovision",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:SupportsGlobal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:SupportsGlobal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:Logs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:Logs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:addRepo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "function:test/e2e/framework/addon/globals.go:InitGlobals",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "function:test/e2e/framework/addon/globals.go:InitGlobals",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "function:test/e2e/framework/addon/globals.go:SetupGlobalsPrimary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "function:test/e2e/framework/addon/globals.go:SetupGlobalsPrimary",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "function:test/e2e/framework/addon/globals.go:SetupGlobalsNonPrimary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "function:test/e2e/framework/addon/globals.go:SetupGlobalsNonPrimary",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "function:test/e2e/framework/addon/globals.go:ProvisionGlobals",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "function:test/e2e/framework/addon/globals.go:ProvisionGlobals",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "function:test/e2e/framework/addon/globals.go:GlobalLogs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "function:test/e2e/framework/addon/globals.go:GlobalLogs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "function:test/e2e/framework/addon/globals.go:DeprovisionGlobals",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "function:test/e2e/framework/addon/globals.go:DeprovisionGlobals",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/internal/globals.go",
+      "target": "class:test/e2e/framework/addon/internal/globals.go:Addon",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/internal/globals.go",
+      "target": "class:test/e2e/framework/addon/internal/globals.go:Addon",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/e2e.go",
+      "target": "file:test/e2e/framework/addon/globals.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/e2e.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/e2e.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/e2e.go",
+      "target": "file:test/e2e/framework/log/log.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/e2e.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/e2e.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/addon/internal/globals.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/config/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/config/addons.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/config/certmanager.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/config/config.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/config/gateway.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/config/ginkgo.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/config/helm.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/config/ingress_controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/config/samplewebhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/config/suite.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/config/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/helper/certificaterequests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/helper/certificates.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/helper/certificatesigningrequests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/helper/describe.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/helper/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/helper/kubectl.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/helper/secret.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/helper/validate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/base/base.go",
+      "target": "file:test/e2e/framework/util/config.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "file:test/e2e/framework/addon/base/base.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "file:test/e2e/framework/addon/internal/globals.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "file:test/e2e/framework/config/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "file:test/e2e/framework/config/addons.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "file:test/e2e/framework/config/certmanager.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "file:test/e2e/framework/config/config.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "file:test/e2e/framework/config/gateway.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "file:test/e2e/framework/config/ginkgo.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "file:test/e2e/framework/config/helm.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "file:test/e2e/framework/config/ingress_controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "file:test/e2e/framework/config/samplewebhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "file:test/e2e/framework/config/suite.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/chart/addon.go",
+      "target": "file:test/e2e/framework/config/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "file:test/e2e/framework/addon/base/base.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "file:test/e2e/framework/addon/internal/globals.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "file:test/e2e/framework/addon/vault/proxy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "file:test/e2e/framework/addon/vault/setup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "file:test/e2e/framework/addon/vault/vault.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "file:test/e2e/framework/config/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "file:test/e2e/framework/config/addons.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "file:test/e2e/framework/config/certmanager.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "file:test/e2e/framework/config/config.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "file:test/e2e/framework/config/gateway.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "file:test/e2e/framework/config/ginkgo.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "file:test/e2e/framework/config/helm.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "file:test/e2e/framework/config/ingress_controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "file:test/e2e/framework/config/samplewebhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "file:test/e2e/framework/config/suite.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "file:test/e2e/framework/config/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/globals.go",
+      "target": "file:test/e2e/framework/log/log.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/internal/globals.go",
+      "target": "file:test/e2e/framework/config/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/internal/globals.go",
+      "target": "file:test/e2e/framework/config/addons.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/internal/globals.go",
+      "target": "file:test/e2e/framework/config/certmanager.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/internal/globals.go",
+      "target": "file:test/e2e/framework/config/config.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/internal/globals.go",
+      "target": "file:test/e2e/framework/config/gateway.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/internal/globals.go",
+      "target": "file:test/e2e/framework/config/ginkgo.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/internal/globals.go",
+      "target": "file:test/e2e/framework/config/helm.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/internal/globals.go",
+      "target": "file:test/e2e/framework/config/ingress_controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/internal/globals.go",
+      "target": "file:test/e2e/framework/config/samplewebhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/internal/globals.go",
+      "target": "file:test/e2e/framework/config/suite.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/internal/globals.go",
+      "target": "file:test/e2e/framework/config/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:test/e2e/framework/addon/chart/addon.go:Provision",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:addRepo",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/addon/chart/addon.go:Provision",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:runDepUpdate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/addon/chart/addon.go:Provision",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:runInstall",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/addon/chart/addon.go:runDepUpdate",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:buildHelmCmd",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/addon/chart/addon.go:runInstall",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:buildHelmCmd",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/addon/chart/addon.go:Deprovision",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:buildHelmCmd",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/addon/chart/addon.go:addRepo",
+      "target": "function:test/e2e/framework/addon/chart/addon.go:buildHelmCmd",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+[
+  {
+    "order": 1,
+    "title": "Project Overview",
+    "description": "cert-manager adds Certificate and Issuer resource types to Kubernetes and automates obtaining, renewing, and using TLS certificates from ACME/Let's Encrypt, HashiCorp Vault, Venafi, or local in-cluster CAs. The README frames that purpose and the supported issuer backends, while the extensible-certificate-controller design record explains why the certificate controller was split into keymanager, requestmanager, and issuing components. Keep that pipeline in mind: the rest of the tour follows a Certificate from API object to signed Secret, then out to the deployed controller, webhook, and Helm chart.",
+    "nodeIds": [
+      "document:README.md",
+      "document:design/20200326.extensible-certificate-controller.md"
+    ]
+  },
+  {
+    "order": 2,
+    "title": "Controller Binary Bootstrap",
+    "description": "Every cert-manager component is a Go binary whose main function only handles logging, signal handling, and exit codes before delegating to a cobra command. In the primary controller, start.go loads and validates ControllerConfiguration and blank-imports the controller and issuer packages so their init functions register implementations, while app/controller.go builds the shared context, starts metrics, profiling and health servers, acquires leader election, and runs the enabled controllers. The options package defines the CLI flags and resolves the enabled controller set from configuration and feature gates.",
+    "nodeIds": [
+      "file:cmd/controller/main.go",
+      "file:cmd/controller/app/start.go",
+      "file:cmd/controller/app/controller.go",
+      "file:cmd/controller/app/options/options.go"
+    ],
+    "languageLesson": "Go blank imports (`_ \"some/package\"`) execute a package's init functions without referencing any of its exported symbols. cert-manager relies on this to populate global controller and issuer registries before the binary starts, which keeps the wiring out of main.go."
+  },
+  {
+    "order": 3,
+    "title": "Core Kubernetes API Types",
+    "description": "The public API lives under pkg/apis and is the vocabulary every later component shares. types_certificate.go defines the Certificate spec and status, including SANs, renewal policy, the target Secret, keystores, and private key settings; types_certificaterequest.go defines the CSR hand-off object; and types_issuer.go defines Issuer, ClusterIssuer, and every backend configuration. generic_issuer.go contributes the GenericIssuer interface so controllers can treat namespaced and cluster-scoped issuers uniformly, while types.go holds shared constants such as label keys and default key usages.",
+    "nodeIds": [
+      "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "file:pkg/apis/certmanager/v1/types.go",
+      "file:pkg/apis/certmanager/v1/generic_issuer.go"
+    ],
+    "languageLesson": "Go interfaces give cert-manager duck typing: any value implementing the GenericIssuer accessor methods can pass through the same controller code, so Issuer and ClusterIssuer do not need duplicated reconciliation logic."
+  },
+  {
+    "order": 4,
+    "title": "Defaulting, Conversion & Validation",
+    "description": "Kubernetes API conventions require an internal hub version alongside the versioned external types users submit. The internal certmanager/v1 package registers defaulting functions, such as the private key rotation policy, and generated conversions between internal and public v1 objects, while the validation package enforces rules for Certificates, Issuers, and CertificateRequests before a controller ever sees them. The ACME group receives the same treatment: its defaulting fills issuerRef kind and group on Order and Challenge objects when users omit them.",
+    "nodeIds": [
+      "file:internal/apis/certmanager/v1/defaults.go",
+      "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "file:internal/apis/certmanager/validation/certificate.go",
+      "file:internal/apis/certmanager/validation/issuer.go",
+      "file:internal/apis/acme/v1/defaults.go"
+    ],
+    "languageLesson": "In Kubernetes APIs the external version is the serialized contract, the internal version is the in-memory hub, and conversion-gen emits round-trip functions between them. Defaulting runs before validation, so validators can assume omitted optional fields already have sensible values."
+  },
+  {
+    "order": 5,
+    "title": "Generated Clients & Informers",
+    "description": "Controllers never call the API server for every read. The generated clientset wires typed clients for the certmanager.io and acme.cert-manager.io groups onto a shared REST configuration, the informer factory lazily builds and synchronizes shared caches for every resource, and listers provide read-only access to those caches. Apply configurations add fluent server-side-apply builders, which the controllers use to update specs and status without clobbering other field managers.",
+    "nodeIds": [
+      "file:pkg/client/clientset/versioned/clientset.go",
+      "file:pkg/client/informers/externalversions/factory.go",
+      "file:pkg/client/listers/certmanager/v1/certificate.go",
+      "file:pkg/client/applyconfigurations/certmanager/v1/certificate.go"
+    ],
+    "languageLesson": "A shared informer opens one watch per resource type and fans changes out to many handlers. Listers read from the local cache, which makes reconciliation cheap but eventually consistent, so controllers must tolerate briefly stale objects."
+  },
+  {
+    "order": 6,
+    "title": "Controller Runtime Framework",
+    "description": "All controllers share a single queueing framework built around the controller Context. Context carries the Kubernetes clients, informers, metrics, and ACME registries; controller.go provides the Run and worker loop with rate-limited workqueues and duration metrics; and register.go plus builder.go let each controller register a constructor that the runner instantiates by name. This is the glue that makes dozens of independent reconciliation loops behave like one coherent control plane.",
+    "nodeIds": [
+      "file:pkg/controller/controller.go",
+      "file:pkg/controller/context.go",
+      "file:pkg/controller/register.go",
+      "file:pkg/controller/builder.go"
+    ],
+    "languageLesson": "The workqueue pattern decouples event delivery from processing: event handlers enqueue object keys, a fixed pool of goroutine workers reconciles them, and rate limiting plus retries prevent one failing object from consuming the process."
+  },
+  {
+    "order": 7,
+    "title": "Certificate Reconciliation Pipeline",
+    "description": "A Certificate moves through several cooperating controllers rather than one monolith. The trigger controller compares the Certificate and its Secret against issuance policies and sets the Issuing condition; requestmanager creates, cleans up, and tracks CertificateRequests; keymanager creates and rotates the private key Secret; issuing drives issuance, validates the response, and updates status; and readiness evaluates the policy chain to set the Ready condition. This separation is exactly the design introduced in step 1 and lets each concern be reasoned about and tested independently.",
+    "nodeIds": [
+      "file:pkg/controller/certificates/trigger/trigger_controller.go",
+      "file:pkg/controller/certificates/requestmanager/requestmanager_controller.go",
+      "file:pkg/controller/certificates/keymanager/keymanager_controller.go",
+      "file:pkg/controller/certificates/issuing/issuing_controller.go",
+      "file:pkg/controller/certificates/readiness/readiness_controller.go"
+    ]
+  },
+  {
+    "order": 8,
+    "title": "CertificateRequest & Issuer Backends",
+    "description": "Once a CertificateRequest exists, the generic certificaterequests controller owns the informers and workqueue but delegates signing to an issuer-specific implementation through the issuer Interface. Its shared sync routine validates approval and issuer state before invoking that backend, and the Factory resolves a GenericIssuer reference to a concrete implementation. The CA issuer is the simplest worked example: it signs requests with a key pair stored in a Secret, while SelfSigned, Vault, Venafi, and ACME all plug into the same contract.",
+    "nodeIds": [
+      "file:pkg/controller/certificaterequests/controller.go",
+      "file:pkg/controller/certificaterequests/sync.go",
+      "file:pkg/issuer/issuer.go",
+      "file:pkg/issuer/factory.go",
+      "file:pkg/controller/certificaterequests/ca/ca.go"
+    ],
+    "languageLesson": "The issuer Interface is a classic Go strategy pattern: the controller depends only on Issue and Setup behavior, and each backend supplies its own implementation plus a factory registration, so adding Vault or Venafi requires no changes to the reconciliation loop."
+  },
+  {
+    "order": 9,
+    "title": "ACME Orders, Challenges & Solvers",
+    "description": "ACME is a multi-step protocol, so cert-manager models it as first-class Order and Challenge resources instead of hiding state in memory. The ACME order controller creates orders, tracks authorizations, creates challenges, finalizes orders, and stores the certificate, while the challenge controller schedules work and drives HTTP-01 or DNS-01 solvers. The DNS solver resolves provider configuration and credentials, and the lightweight acmesolver binary serves HTTP-01 tokens from inside the cluster.",
+    "nodeIds": [
+      "file:pkg/issuer/acme/acme.go",
+      "file:pkg/controller/acmeorders/controller.go",
+      "file:pkg/controller/acmechallenges/controller.go",
+      "file:pkg/issuer/acme/dns/dns.go",
+      "file:cmd/acmesolver/main.go"
+    ],
+    "languageLesson": "By persisting each protocol step as a Kubernetes object, cert-manager turns an external state machine into ordinary reconciliation. Progress survives controller restarts and operators can inspect Orders and Challenges with kubectl instead of reading logs."
+  },
+  {
+    "order": 10,
+    "title": "Admission Webhook & CA Injector",
+    "description": "The webhook binary protects the API surface described in step 3. The internal webhook package installs the API schemes and assembles an admission plugin chain, pkg/webhook/admission adapts those plugins to controller-runtime's validating and mutating webhooks with warnings and JSON patches, and the server package runs the secure listener with health, metrics, and graceful shutdown. cainjector solves the bootstrap trust problem by reading CA data from Secrets, kubeconfigs, or Certificates and injecting the resulting bundle into webhook configurations, APIServices, and CRD conversion webhooks.",
+    "nodeIds": [
+      "file:internal/webhook/webhook.go",
+      "file:pkg/webhook/admission/chain.go",
+      "file:pkg/webhook/server/server.go",
+      "file:pkg/controller/cainjector/reconciler.go",
+      "file:pkg/controller/cainjector/sources.go"
+    ],
+    "languageLesson": "Admission plugins run as a chain: any plugin can reject a request or add warnings, and mutating plugins return JSON patches that Kubernetes applies before the object is persisted. This is how cert-manager enforces defaults beyond what CRD schemas can express."
+  },
+  {
+    "order": 11,
+    "title": "Helm Chart & Deployment",
+    "description": "The Helm chart is the supported installation path for everything built so far. values.yaml configures the controller, webhook, cainjector, ACME solver, startup API check, CRDs, RBAC, and monitoring, while values.schema.json validates user input before rendering. The controller Deployment wires replicas, leader election, feature gates, metrics, and security context, and the generated CRD manifests publish the Certificate schema from step 3. Containerfiles package each prebuilt binary into the shared base image.",
+    "nodeIds": [
+      "config:deploy/charts/cert-manager/values.yaml",
+      "config:deploy/charts/cert-manager/values.schema.json",
+      "config:deploy/charts/cert-manager/templates/deployment.yaml",
+      "config:deploy/charts/cert-manager/templates/crd-cert-manager.io_certificates.yaml",
+      "service:hack/containers/Containerfile.controller"
+    ],
+    "languageLesson": "Helm merges values.yaml with user overrides and renders Go templates. CRDs are cluster-scoped API definitions with their own lifecycle, which is why the chart treats installing and upgrading them separately from the Deployment that runs the controller."
+  },
+  {
+    "order": 12,
+    "title": "Build, CI & Module Tooling",
+    "description": "The root Makefile is deliberately thin: it sets host and version variables and includes repository modules such as 00_mod.mk, which defines build flags, binary names, and chart paths. server.mk cross-compiles the controller, webhook, cainjector, acmesolver, and startupapicheck binaries for five Linux architectures, while go.mod pins the Kubernetes, controller-runtime, Vault, and Venafi dependencies for the main module. Scheduled workflows such as make-self-upgrade rerun generation and open a pull request when generated code drifts, keeping the clients and CRDs from steps 4 and 5 in sync.",
+    "nodeIds": [
+      "service:Makefile",
+      "file:make/00_mod.mk",
+      "file:make/server.mk",
+      "config:go.mod",
+      "pipeline:.github/workflows/make-self-upgrade.yaml"
+    ],
+    "languageLesson": "Make includes compose a build from small .mk fragments, and targets declare dependencies rather than scripts. Combined with Go modules, this gives cert-manager a reproducible way to build each binary from a pinned dependency set."
+  }
+]

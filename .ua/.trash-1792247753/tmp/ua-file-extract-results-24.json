@@ -1,0 +1,1685 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 4,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 4,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "cmd/controller/app/controller.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 440,
+      "nonEmptyLines": 378,
+      "functions": [
+        {
+          "name": "Run",
+          "startLine": 66,
+          "endLine": 276,
+          "params": [
+            "rootCtx",
+            "opts"
+          ]
+        },
+        {
+          "name": "buildControllerContextFactory",
+          "startLine": 280,
+          "endLine": 369,
+          "params": [
+            "ctx",
+            "opts"
+          ]
+        },
+        {
+          "name": "startLeaderElection",
+          "startLine": 371,
+          "endLine": 414,
+          "params": [
+            "ctx",
+            "opts",
+            "leaderElectionClient",
+            "recorder",
+            "callbacks",
+            "healthzAdaptor"
+          ]
+        },
+        {
+          "name": "buildCertificateSource",
+          "startLine": 416,
+          "endLine": 440,
+          "params": [
+            "log",
+            "tlsConfig",
+            "restCfg"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Run",
+          "line": 66,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Run",
+          "callee": "context.WithCancel",
+          "lineNumber": 67
+        },
+        {
+          "caller": "Run",
+          "callee": "cancelContext",
+          "lineNumber": 68
+        },
+        {
+          "caller": "Run",
+          "callee": "logf.FromContext",
+          "lineNumber": 70
+        },
+        {
+          "caller": "Run",
+          "callee": "errgroup.WithContext",
+          "lineNumber": 71
+        },
+        {
+          "caller": "Run",
+          "callee": "util.VersionInfo",
+          "lineNumber": 73
+        },
+        {
+          "caller": "Run",
+          "callee": "log.Info",
+          "lineNumber": 74
+        },
+        {
+          "caller": "Run",
+          "callee": "buildControllerContextFactory",
+          "lineNumber": 76
+        },
+        {
+          "caller": "Run",
+          "callee": "ctxFactory.Build",
+          "lineNumber": 83
+        },
+        {
+          "caller": "Run",
+          "callee": "options.EnabledControllers",
+          "lineNumber": 88
+        },
+        {
+          "caller": "Run",
+          "callee": "log.Info",
+          "lineNumber": 89
+        },
+        {
+          "caller": "Run",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 89
+        },
+        {
+          "caller": "Run",
+          "callee": "sets.List",
+          "lineNumber": 89
+        },
+        {
+          "caller": "Run",
+          "callee": "buildCertificateSource",
+          "lineNumber": 92
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V(logf.InfoLevel).Info",
+          "lineNumber": 94
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V",
+          "lineNumber": 94
+        },
+        {
+          "caller": "Run",
+          "callee": "g.Go",
+          "lineNumber": 95
+        },
+        {
+          "caller": "Run",
+          "callee": "certificateSource.Start",
+          "lineNumber": 96
+        },
+        {
+          "caller": "Run",
+          "callee": "errors.Is",
+          "lineNumber": 96
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V(logf.InfoLevel).Info",
+          "lineNumber": 102
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V",
+          "lineNumber": 102
+        },
+        {
+          "caller": "Run",
+          "callee": "server.Listen",
+          "lineNumber": 106
+        },
+        {
+          "caller": "Run",
+          "callee": "server.WithCertificateSource",
+          "lineNumber": 107
+        },
+        {
+          "caller": "Run",
+          "callee": "server.WithTLSCipherSuites",
+          "lineNumber": 108
+        },
+        {
+          "caller": "Run",
+          "callee": "server.WithTLSMinVersion",
+          "lineNumber": 109
+        },
+        {
+          "caller": "Run",
+          "callee": "fmt.Errorf",
+          "lineNumber": 112
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.Metrics.SetupACMECollector",
+          "lineNumber": 115
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.SharedInformerFactory.Acme().V1().Challenges().Lister",
+          "lineNumber": 115
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.SharedInformerFactory.Acme().V1().Challenges",
+          "lineNumber": 115
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.SharedInformerFactory.Acme().V1",
+          "lineNumber": 115
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.SharedInformerFactory.Acme",
+          "lineNumber": 115
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.Metrics.SetupCertificateCollector",
+          "lineNumber": 116
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.SharedInformerFactory.Certmanager().V1().Certificates().Lister",
+          "lineNumber": 116
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.SharedInformerFactory.Certmanager().V1().Certificates",
+          "lineNumber": 116
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.SharedInformerFactory.Certmanager().V1",
+          "lineNumber": 116
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.SharedInformerFactory.Certmanager",
+          "lineNumber": 116
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.Metrics.NewServer",
+          "lineNumber": 117
+        },
+        {
+          "caller": "Run",
+          "callee": "g.Go",
+          "lineNumber": 119
+        },
+        {
+          "caller": "Run",
+          "callee": "rootCtx.Done",
+          "lineNumber": 120
+        },
+        {
+          "caller": "Run",
+          "callee": "context.WithTimeout",
+          "lineNumber": 122
+        },
+        {
+          "caller": "Run",
+          "callee": "context.Background",
+          "lineNumber": 122
+        },
+        {
+          "caller": "Run",
+          "callee": "cancel",
+          "lineNumber": 123
+        },
+        {
+          "caller": "Run",
+          "callee": "metricsServer.Shutdown",
+          "lineNumber": 126
+        },
+        {
+          "caller": "Run",
+          "callee": "g.Go",
+          "lineNumber": 128
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V(logf.InfoLevel).Info",
+          "lineNumber": 129
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V",
+          "lineNumber": 129
+        },
+        {
+          "caller": "Run",
+          "callee": "metricsLn.Addr",
+          "lineNumber": 129
+        },
+        {
+          "caller": "Run",
+          "callee": "metricsServer.Serve",
+          "lineNumber": 130
+        },
+        {
+          "caller": "Run",
+          "callee": "lc.Listen",
+          "lineNumber": 139
+        },
+        {
+          "caller": "Run",
+          "callee": "fmt.Errorf",
+          "lineNumber": 141
+        },
+        {
+          "caller": "Run",
+          "callee": "http.NewServeMux",
+          "lineNumber": 143
+        },
+        {
+          "caller": "Run",
+          "callee": "profiling.Install",
+          "lineNumber": 145
+        },
+        {
+          "caller": "Run",
+          "callee": "g.Go",
+          "lineNumber": 151
+        },
+        {
+          "caller": "Run",
+          "callee": "rootCtx.Done",
+          "lineNumber": 152
+        },
+        {
+          "caller": "Run",
+          "callee": "context.WithTimeout",
+          "lineNumber": 154
+        },
+        {
+          "caller": "Run",
+          "callee": "context.Background",
+          "lineNumber": 154
+        },
+        {
+          "caller": "Run",
+          "callee": "cancel",
+          "lineNumber": 155
+        },
+        {
+          "caller": "Run",
+          "callee": "profilerServer.Shutdown",
+          "lineNumber": 158
+        },
+        {
+          "caller": "Run",
+          "callee": "g.Go",
+          "lineNumber": 160
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V(logf.InfoLevel).Info",
+          "lineNumber": 161
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V",
+          "lineNumber": 161
+        },
+        {
+          "caller": "Run",
+          "callee": "profilerLn.Addr",
+          "lineNumber": 161
+        },
+        {
+          "caller": "Run",
+          "callee": "profilerServer.Serve",
+          "lineNumber": 162
+        },
+        {
+          "caller": "Run",
+          "callee": "lc.Listen",
+          "lineNumber": 169
+        },
+        {
+          "caller": "Run",
+          "callee": "fmt.Errorf",
+          "lineNumber": 171
+        },
+        {
+          "caller": "Run",
+          "callee": "healthz.NewServer",
+          "lineNumber": 173
+        },
+        {
+          "caller": "Run",
+          "callee": "g.Go",
+          "lineNumber": 174
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V(logf.InfoLevel).Info",
+          "lineNumber": 175
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V",
+          "lineNumber": 175
+        },
+        {
+          "caller": "Run",
+          "callee": "healthzListener.Addr",
+          "lineNumber": 175
+        },
+        {
+          "caller": "Run",
+          "callee": "healthzServer.Start",
+          "lineNumber": 176
+        },
+        {
+          "caller": "Run",
+          "callee": "make",
+          "lineNumber": 179
+        },
+        {
+          "caller": "Run",
+          "callee": "g.Go",
+          "lineNumber": 181
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V(logf.InfoLevel).Info",
+          "lineNumber": 182
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V",
+          "lineNumber": 182
+        },
+        {
+          "caller": "Run",
+          "callee": "ctxFactory.Build",
+          "lineNumber": 183
+        },
+        {
+          "caller": "Run",
+          "callee": "make",
+          "lineNumber": 187
+        },
+        {
+          "caller": "Run",
+          "callee": "startLeaderElection",
+          "lineNumber": 188
+        },
+        {
+          "caller": "Run",
+          "callee": "close",
+          "lineNumber": 190
+        },
+        {
+          "caller": "Run",
+          "callee": "rootCtx.Done",
+          "lineNumber": 194
+        },
+        {
+          "caller": "Run",
+          "callee": "errors.New",
+          "lineNumber": 198
+        },
+        {
+          "caller": "Run",
+          "callee": "close",
+          "lineNumber": 213
+        },
+        {
+          "caller": "Run",
+          "callee": "rootCtx.Done",
+          "lineNumber": 217
+        },
+        {
+          "caller": "Run",
+          "callee": "g.Wait",
+          "lineNumber": 219
+        },
+        {
+          "caller": "Run",
+          "callee": "controller.Known",
+          "lineNumber": 224
+        },
+        {
+          "caller": "Run",
+          "callee": "log.WithValues",
+          "lineNumber": 225
+        },
+        {
+          "caller": "Run",
+          "callee": "enabledControllers.Has",
+          "lineNumber": 228
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V(logf.InfoLevel).Info",
+          "lineNumber": 229
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V",
+          "lineNumber": 229
+        },
+        {
+          "caller": "Run",
+          "callee": "fn",
+          "lineNumber": 233
+        },
+        {
+          "caller": "Run",
+          "callee": "fmt.Errorf",
+          "lineNumber": 235
+        },
+        {
+          "caller": "Run",
+          "callee": "cancelContext",
+          "lineNumber": 237
+        },
+        {
+          "caller": "Run",
+          "callee": "g.Wait",
+          "lineNumber": 238
+        },
+        {
+          "caller": "Run",
+          "callee": "utilerrors.NewAggregate",
+          "lineNumber": 240
+        },
+        {
+          "caller": "Run",
+          "callee": "g.Go",
+          "lineNumber": 245
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V(logf.InfoLevel).Info",
+          "lineNumber": 246
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V",
+          "lineNumber": 246
+        },
+        {
+          "caller": "Run",
+          "callee": "iface.Run",
+          "lineNumber": 248
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V(logf.DebugLevel).Info",
+          "lineNumber": 252
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V",
+          "lineNumber": 252
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.SharedInformerFactory.Start",
+          "lineNumber": 253
+        },
+        {
+          "caller": "Run",
+          "callee": "rootCtx.Done",
+          "lineNumber": 253
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.KubeSharedInformerFactory.Start",
+          "lineNumber": 254
+        },
+        {
+          "caller": "Run",
+          "callee": "rootCtx.Done",
+          "lineNumber": 254
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.HTTP01ResourceMetadataInformersFactory.Start",
+          "lineNumber": 255
+        },
+        {
+          "caller": "Run",
+          "callee": "rootCtx.Done",
+          "lineNumber": 255
+        },
+        {
+          "caller": "Run",
+          "callee": "utilfeature.DefaultFeatureGate.Enabled",
+          "lineNumber": 257
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.GWShared.Start",
+          "lineNumber": 258
+        },
+        {
+          "caller": "Run",
+          "callee": "rootCtx.Done",
+          "lineNumber": 258
+        },
+        {
+          "caller": "Run",
+          "callee": "g.Wait",
+          "lineNumber": 261
+        },
+        {
+          "caller": "Run",
+          "callee": "fmt.Errorf",
+          "lineNumber": 263
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V(logf.InfoLevel).Info",
+          "lineNumber": 265
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V",
+          "lineNumber": 265
+        },
+        {
+          "caller": "Run",
+          "callee": "utilfeature.DefaultFeatureGate.Enabled",
+          "lineNumber": 267
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.GWShared.Shutdown",
+          "lineNumber": 268
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.HTTP01ResourceMetadataInformersFactory.Shutdown",
+          "lineNumber": 271
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.KubeSharedInformerFactory.Shutdown",
+          "lineNumber": 272
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.SharedInformerFactory.Shutdown",
+          "lineNumber": 273
+        },
+        {
+          "caller": "buildControllerContextFactory",
+          "callee": "logf.FromContext",
+          "lineNumber": 281
+        },
+        {
+          "caller": "buildControllerContextFactory",
+          "callee": "len",
+          "lineNumber": 284
+        },
+        {
+          "caller": "buildControllerContextFactory",
+          "callee": "log.V(logf.InfoLevel).WithName(\"build-context\").\n\t\tWithValues(\"nameservers\", nameservers).\n\t\tInfo",
+          "lineNumber": 288
+        },
+        {
+          "caller": "buildControllerContextFactory",
+          "callee": "log.V(logf.InfoLevel).WithName(\"build-context\").\n\t\tWithValues",
+          "lineNumber": 288
+        },
+        {
+          "caller": "buildControllerContextFactory",
+          "callee": "log.V(logf.InfoLevel).WithName",
+          "lineNumber": 288
+        },
+        {
+          "caller": "buildControllerContextFactory",
+          "callee": "log.V",
+          "lineNumber": 288
+        },
+        {
+          "caller": "buildControllerContextFactory",
+          "callee": "resource.ParseQuantity",
+          "lineNumber": 292
+        },
+        {
+          "caller": "buildControllerContextFactory",
+          "callee": "fmt.Errorf",
+          "lineNumber": 294
+        },
+        {
+          "caller": "buildControllerContextFactory",
+          "callee": "resource.ParseQuantity",
+          "lineNumber": 297
+        },
+        {
+          "caller": "buildControllerContextFactory",
+          "callee": "fmt.Errorf",
+          "lineNumber": 299
+        },
+        {
+          "caller": "buildControllerContextFactory",
+          "callee": "resource.ParseQuantity",
+          "lineNumber": 302
+        },
+        {
+          "caller": "buildControllerContextFactory",
+          "callee": "fmt.Errorf",
+          "lineNumber": 304
+        },
+        {
+          "caller": "buildControllerContextFactory",
+          "callee": "resource.ParseQuantity",
+          "lineNumber": 307
+        },
+        {
+          "caller": "buildControllerContextFactory",
+          "callee": "fmt.Errorf",
+          "lineNumber": 309
+        },
+        {
+          "caller": "buildControllerContextFactory",
+          "callee": "controller.NewContextFactory",
+          "lineNumber": 314
+        },
+        {
+          "caller": "startLeaderElection",
+          "callee": "os.Hostname",
+          "lineNumber": 373
+        },
+        {
+          "caller": "startLeaderElection",
+          "callee": "fmt.Errorf",
+          "lineNumber": 375
+        },
+        {
+          "caller": "startLeaderElection",
+          "callee": "resourcelock.New",
+          "lineNumber": 386
+        },
+        {
+          "caller": "startLeaderElection",
+          "callee": "leaderElectionClient.CoreV1",
+          "lineNumber": 389
+        },
+        {
+          "caller": "startLeaderElection",
+          "callee": "leaderElectionClient.CoordinationV1",
+          "lineNumber": 390
+        },
+        {
+          "caller": "startLeaderElection",
+          "callee": "fmt.Errorf",
+          "lineNumber": 394
+        },
+        {
+          "caller": "startLeaderElection",
+          "callee": "leaderelection.NewLeaderElector",
+          "lineNumber": 398
+        },
+        {
+          "caller": "startLeaderElection",
+          "callee": "le.Run",
+          "lineNumber": 411
+        },
+        {
+          "caller": "buildCertificateSource",
+          "callee": "tlsConfig.FilesystemConfigProvided",
+          "lineNumber": 418
+        },
+        {
+          "caller": "buildCertificateSource",
+          "callee": "log.V(logf.InfoLevel).Info",
+          "lineNumber": 419
+        },
+        {
+          "caller": "buildCertificateSource",
+          "callee": "log.V",
+          "lineNumber": 419
+        },
+        {
+          "caller": "buildCertificateSource",
+          "callee": "tlsConfig.DynamicConfigProvided",
+          "lineNumber": 424
+        },
+        {
+          "caller": "buildCertificateSource",
+          "callee": "log.V(logf.InfoLevel).Info",
+          "lineNumber": 425
+        },
+        {
+          "caller": "buildCertificateSource",
+          "callee": "log.V",
+          "lineNumber": 425
+        },
+        {
+          "caller": "buildCertificateSource",
+          "callee": "log.V(logf.WarnLevel).Info",
+          "lineNumber": 437
+        },
+        {
+          "caller": "buildCertificateSource",
+          "callee": "log.V",
+          "lineNumber": 437
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cmd/controller/app/options/options.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 279,
+      "nonEmptyLines": 239,
+      "functions": [
+        {
+          "name": "NewControllerFlags",
+          "startLine": 44,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "AddFlags",
+          "startLine": 48,
+          "endLine": 50,
+          "params": [
+            "fs"
+          ]
+        },
+        {
+          "name": "NewControllerConfiguration",
+          "startLine": 52,
+          "endLine": 64,
+          "params": []
+        },
+        {
+          "name": "AddConfigFlags",
+          "startLine": 66,
+          "endLine": 232,
+          "params": [
+            "fs",
+            "c"
+          ]
+        },
+        {
+          "name": "EnabledControllers",
+          "startLine": 234,
+          "endLine": 279,
+          "params": [
+            "o"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ControllerFlags",
+          "startLine": 39,
+          "endLine": 42,
+          "methods": [
+            "AddFlags"
+          ],
+          "properties": [
+            "Config"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ControllerFlags",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "NewControllerFlags",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "AddFlags",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "NewControllerConfiguration",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "AddConfigFlags",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "EnabledControllers",
+          "line": 234,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AddFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 49
+        },
+        {
+          "caller": "NewControllerConfiguration",
+          "callee": "configscheme.NewSchemeAndCodecs",
+          "lineNumber": 53
+        },
+        {
+          "caller": "NewControllerConfiguration",
+          "callee": "scheme.Default",
+          "lineNumber": 58
+        },
+        {
+          "caller": "NewControllerConfiguration",
+          "callee": "scheme.Convert",
+          "lineNumber": 60
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 67
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 70
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.Float32Var",
+          "lineNumber": 72
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.IntVar",
+          "lineNumber": 73
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 74
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 77
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.BoolVar",
+          "lineNumber": 80
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 83
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.DurationVar",
+          "lineNumber": 85
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.DurationVar",
+          "lineNumber": 91
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.DurationVar",
+          "lineNumber": 95
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringSliceVar",
+          "lineNumber": 99
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 99
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "strings.Join",
+          "lineNumber": 104
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 106
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 115
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 118
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 121
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 124
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.BoolVar",
+          "lineNumber": 127
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringSliceVar",
+          "lineNumber": 130
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.BoolVar",
+          "lineNumber": 135
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.BoolVar",
+          "lineNumber": 139
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringSliceVar",
+          "lineNumber": 144
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringSliceVar",
+          "lineNumber": 146
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 148
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 150
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 152
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringSliceVar",
+          "lineNumber": 155
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.BoolVar",
+          "lineNumber": 160
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.DurationVar",
+          "lineNumber": 167
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.BoolVar",
+          "lineNumber": 171
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.BoolVar",
+          "lineNumber": 174
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringSliceVar",
+          "lineNumber": 177
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.Var",
+          "lineNumber": 181
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "cliflag.NewMapStringBool",
+          "lineNumber": 181
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "strings.Join",
+          "lineNumber": 182
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "utilfeature.DefaultFeatureGate.KnownFeatures",
+          "lineNumber": 182
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.IntVar",
+          "lineNumber": 184
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.IntVar",
+          "lineNumber": 186
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 189
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.BoolVar",
+          "lineNumber": 191
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 193
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 196
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 197
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.DurationVar",
+          "lineNumber": 199
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 200
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 201
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringSliceVar",
+          "lineNumber": 202
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "cliflag.TLSCipherPossibleValues",
+          "lineNumber": 203
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringSliceVar",
+          "lineNumber": 204
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "strings.Join",
+          "lineNumber": 207
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "cliflag.TLSPossibleVersions",
+          "lineNumber": 208
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 209
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "strings.Join",
+          "lineNumber": 211
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 222
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "utilruntime.Must",
+          "lineNumber": 225
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.MarkHidden",
+          "lineNumber": 225
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.DurationVar",
+          "lineNumber": 227
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "utilruntime.Must",
+          "lineNumber": 229
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.MarkHidden",
+          "lineNumber": 229
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "logf.AddFlags",
+          "lineNumber": 231
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "sets.New[string]",
+          "lineNumber": 236
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "enabled.Insert",
+          "lineNumber": 241
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "strings.HasPrefix",
+          "lineNumber": 242
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "append",
+          "lineNumber": 243
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "strings.TrimPrefix",
+          "lineNumber": 243
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "enabled.Insert",
+          "lineNumber": 245
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "len",
+          "lineNumber": 250
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "len",
+          "lineNumber": 250
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "enabled.Insert",
+          "lineNumber": 251
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "utilfeature.DefaultFeatureGate.Enabled",
+          "lineNumber": 254
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "logf.Log.Info",
+          "lineNumber": 255
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "enabled.Insert",
+          "lineNumber": 256
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "utilfeature.DefaultFeatureGate.Enabled",
+          "lineNumber": 259
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "logf.Log.Info",
+          "lineNumber": 260
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "enabled.Insert",
+          "lineNumber": 261
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "utilfeature.DefaultFeatureGate.Enabled",
+          "lineNumber": 264
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "logf.Log.Info",
+          "lineNumber": 265
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "logf.Log.Info",
+          "lineNumber": 270
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "strings.Join",
+          "lineNumber": 271
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "enabled.Delete",
+          "lineNumber": 272
+        },
+        {
+          "caller": "EnabledControllers",
+          "callee": "enabled.Delete",
+          "lineNumber": 276
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "cmd/controller/app/start.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 183,
+      "nonEmptyLines": 151,
+      "functions": [
+        {
+          "name": "NewServerCommand",
+          "startLine": 51,
+          "endLine": 57,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "newServerCommand",
+          "startLine": 59,
+          "endLine": 128,
+          "params": [
+            "setupCtx",
+            "run",
+            "allArgs"
+          ]
+        },
+        {
+          "name": "loadConfigFromFile",
+          "startLine": 138,
+          "endLine": 183,
+          "params": [
+            "cmd",
+            "allArgs",
+            "configFilePath",
+            "cfg",
+            "newConfigHook"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewServerCommand",
+          "line": 51,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewServerCommand",
+          "callee": "newServerCommand",
+          "lineNumber": 52
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "logf.FromContext",
+          "lineNumber": 64
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "options.NewControllerFlags",
+          "lineNumber": 66
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "options.NewControllerConfiguration",
+          "lineNumber": 67
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "log.Error",
+          "lineNumber": 69
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "os.Exit",
+          "lineNumber": 70
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "loadConfigFromFile",
+          "lineNumber": 86
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "utilfeature.DefaultMutableFeatureGate.SetFromMap",
+          "lineNumber": 90
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "fmt.Errorf",
+          "lineNumber": 91
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "validation.ValidateControllerConfiguration",
+          "lineNumber": 100
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "len",
+          "lineNumber": 100
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "fmt.Errorf",
+          "lineNumber": 101
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "err.ToAggregate",
+          "lineNumber": 101
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "logf.ValidateAndApply",
+          "lineNumber": 108
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "fmt.Errorf",
+          "lineNumber": 109
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "run",
+          "lineNumber": 116
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "cmd.Context",
+          "lineNumber": 116
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "controllerFlags.AddFlags",
+          "lineNumber": 120
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "cmd.Flags",
+          "lineNumber": 120
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "options.AddConfigFlags",
+          "lineNumber": 121
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "cmd.Flags",
+          "lineNumber": 121
+        },
+        {
+          "caller": "newServerCommand",
+          "callee": "cmd.SetArgs",
+          "lineNumber": 125
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "newConfigHook",
+          "lineNumber": 145
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "len",
+          "lineNumber": 149
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "filepath.Abs",
+          "lineNumber": 151
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "fmt.Errorf",
+          "lineNumber": 153
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "configfile.NewConfigurationFSLoader",
+          "lineNumber": 156
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "fmt.Errorf",
+          "lineNumber": 158
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "controllerconfigfile.New",
+          "lineNumber": 161
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "loader.Load",
+          "lineNumber": 162
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "fmt.Errorf",
+          "lineNumber": 163
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "controllerConfigFromFile.Config.DeepCopyInto",
+          "lineNumber": 166
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "cmd.Root().Find",
+          "lineNumber": 168
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "cmd.Root",
+          "lineNumber": 168
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "fmt.Errorf",
+          "lineNumber": 170
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "cmd.ParseFlags",
+          "lineNumber": 173
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "fmt.Errorf",
+          "lineNumber": 174
+        },
+        {
+          "caller": "loadConfigFromFile",
+          "callee": "newConfigHook",
+          "lineNumber": 177
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cmd/controller/main.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 28,
+          "endLine": 43,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "util.SetupExitHandler",
+          "lineNumber": 29
+        },
+        {
+          "caller": "main",
+          "callee": "context.Background",
+          "lineNumber": 29
+        },
+        {
+          "caller": "main",
+          "callee": "exit",
+          "lineNumber": 30
+        },
+        {
+          "caller": "main",
+          "callee": "logf.InitLogs",
+          "lineNumber": 32
+        },
+        {
+          "caller": "main",
+          "callee": "logf.FlushLogs",
+          "lineNumber": 33
+        },
+        {
+          "caller": "main",
+          "callee": "logf.NewContext",
+          "lineNumber": 34
+        },
+        {
+          "caller": "main",
+          "callee": "app.NewServerCommand",
+          "lineNumber": 36
+        },
+        {
+          "caller": "main",
+          "callee": "cmd.Flags().AddGoFlagSet",
+          "lineNumber": 37
+        },
+        {
+          "caller": "main",
+          "callee": "cmd.Flags",
+          "lineNumber": 37
+        },
+        {
+          "caller": "main",
+          "callee": "cmd.ExecuteContext",
+          "lineNumber": 39
+        },
+        {
+          "caller": "main",
+          "callee": "logf.Log.Error",
+          "lineNumber": 40
+        },
+        {
+          "caller": "main",
+          "callee": "util.SetExitCode",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

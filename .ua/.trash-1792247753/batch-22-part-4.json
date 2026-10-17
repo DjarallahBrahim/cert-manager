@@ -1,0 +1,926 @@
+{
+  "nodes": [
+    {
+      "id": "file:third_party/forked/acme/rfc8555.go",
+      "type": "file",
+      "name": "rfc8555.go",
+      "filePath": "third_party/forked/acme/rfc8555.go",
+      "summary": "Implements the RFC 8555 account, order, certificate, and revocation operations for the forked ACME client.",
+      "tags": [
+        "acme",
+        "rfc8555",
+        "protocol",
+        "vendor"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:third_party/forked/acme/rfc8555.go:DeactivateReg",
+      "type": "function",
+      "name": "DeactivateReg",
+      "filePath": "third_party/forked/acme/rfc8555.go",
+      "lineRange": [
+        25,
+        40
+      ],
+      "summary": "Permanently deactivates the ACME account associated with the client key.",
+      "tags": [
+        "acme",
+        "account",
+        "deactivation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/rfc8555.go:registerRFC",
+      "type": "function",
+      "name": "registerRFC",
+      "filePath": "third_party/forked/acme/rfc8555.go",
+      "lineRange": [
+        44,
+        88
+      ],
+      "summary": "Registers an RFC 8555 account, optionally including terms agreement and external account binding.",
+      "tags": [
+        "acme",
+        "account",
+        "registration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/rfc8555.go:updateRegRFC",
+      "type": "function",
+      "name": "updateRegRFC",
+      "filePath": "third_party/forked/acme/rfc8555.go",
+      "lineRange": [
+        102,
+        118
+      ],
+      "summary": "Updates the ACME account contact information with a signed POST.",
+      "tags": [
+        "acme",
+        "account",
+        "update"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/rfc8555.go:getRegRFC",
+      "type": "function",
+      "name": "getRegRFC",
+      "filePath": "third_party/forked/acme/rfc8555.go",
+      "lineRange": [
+        122,
+        134
+      ],
+      "summary": "Retrieves the current ACME account using POST-as-GET.",
+      "tags": [
+        "acme",
+        "account",
+        "lookup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/rfc8555.go:responseAccount",
+      "type": "function",
+      "name": "responseAccount",
+      "filePath": "third_party/forked/acme/rfc8555.go",
+      "lineRange": [
+        136,
+        151
+      ],
+      "summary": "Parses an account response and extracts its URL from the Location header.",
+      "tags": [
+        "acme",
+        "account",
+        "parsing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/rfc8555.go:accountKeyRollover",
+      "type": "function",
+      "name": "accountKeyRollover",
+      "filePath": "third_party/forked/acme/rfc8555.go",
+      "lineRange": [
+        155,
+        187
+      ],
+      "summary": "Migrates the account to a new key using the RFC 8555 key-change flow.",
+      "tags": [
+        "acme",
+        "account",
+        "key-rotation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/rfc8555.go:AuthorizeOrder",
+      "type": "function",
+      "name": "AuthorizeOrder",
+      "filePath": "third_party/forked/acme/rfc8555.go",
+      "lineRange": [
+        198,
+        243
+      ],
+      "summary": "Creates a new ACME order for the given identifiers with optional not-before, not-after, and profile settings.",
+      "tags": [
+        "acme",
+        "order",
+        "creation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/rfc8555.go:GetOrder",
+      "type": "function",
+      "name": "GetOrder",
+      "filePath": "third_party/forked/acme/rfc8555.go",
+      "lineRange": [
+        250,
+        261
+      ],
+      "summary": "Fetches an order by URL using POST-as-GET.",
+      "tags": [
+        "acme",
+        "order",
+        "lookup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/rfc8555.go:WaitOrder",
+      "type": "function",
+      "name": "WaitOrder",
+      "filePath": "third_party/forked/acme/rfc8555.go",
+      "lineRange": [
+        270,
+        305
+      ],
+      "summary": "Polls an order until it reaches ready, valid, or invalid state and returns the final order.",
+      "tags": [
+        "acme",
+        "order",
+        "polling"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/rfc8555.go:responseOrder",
+      "type": "function",
+      "name": "responseOrder",
+      "filePath": "third_party/forked/acme/rfc8555.go",
+      "lineRange": [
+        307,
+        339
+      ],
+      "summary": "Parses an order response, resolving authorization and certificate URLs.",
+      "tags": [
+        "acme",
+        "order",
+        "parsing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/rfc8555.go:CreateOrderCert",
+      "type": "function",
+      "name": "CreateOrderCert",
+      "filePath": "third_party/forked/acme/rfc8555.go",
+      "lineRange": [
+        352,
+        386
+      ],
+      "summary": "Finalizes an order with a CSR and downloads the issued certificate chain.",
+      "tags": [
+        "acme",
+        "certificate",
+        "finalize"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/rfc8555.go:fetchCertRFC",
+      "type": "function",
+      "name": "fetchCertRFC",
+      "filePath": "third_party/forked/acme/rfc8555.go",
+      "lineRange": [
+        392,
+        434
+      ],
+      "summary": "Downloads a PEM certificate chain, optionally including alternate chains, and decodes it.",
+      "tags": [
+        "acme",
+        "certificate",
+        "download"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/rfc8555.go:revokeCertRFC",
+      "type": "function",
+      "name": "revokeCertRFC",
+      "filePath": "third_party/forked/acme/rfc8555.go",
+      "lineRange": [
+        437,
+        455
+      ],
+      "summary": "Revokes a certificate with the given reason code, treating already-revoked errors as success.",
+      "tags": [
+        "acme",
+        "certificate",
+        "revocation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/rfc8555.go:ListCertAlternates",
+      "type": "function",
+      "name": "ListCertAlternates",
+      "filePath": "third_party/forked/acme/rfc8555.go",
+      "lineRange": [
+        468,
+        486
+      ],
+      "summary": "Lists alternate certificate chain URLs from Link headers.",
+      "tags": [
+        "acme",
+        "certificate",
+        "pagination"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:third_party/forked/acme/types.go",
+      "type": "file",
+      "name": "types.go",
+      "filePath": "third_party/forked/acme/types.go",
+      "summary": "Data types and error models for the forked ACME client, covering accounts, directories, orders, authorizations, challenges, and certificate options.",
+      "tags": [
+        "acme",
+        "data-model",
+        "types",
+        "vendor"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:third_party/forked/acme/types.go:Subproblem",
+      "type": "class",
+      "name": "Subproblem",
+      "filePath": "third_party/forked/acme/types.go",
+      "lineRange": [
+        75,
+        89
+      ],
+      "summary": "Represents a single sub-problem within an ACME error response.",
+      "tags": [
+        "acme",
+        "error",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:third_party/forked/acme/types.go:Error",
+      "type": "class",
+      "name": "Error",
+      "filePath": "third_party/forked/acme/types.go",
+      "lineRange": [
+        102,
+        123
+      ],
+      "summary": "ACME protocol error carrying type, detail, HTTP status, and sub-problems.",
+      "tags": [
+        "acme",
+        "error",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:third_party/forked/acme/types.go:AuthorizationError",
+      "type": "class",
+      "name": "AuthorizationError",
+      "filePath": "third_party/forked/acme/types.go",
+      "lineRange": [
+        139,
+        149
+      ],
+      "summary": "Error returned when an authorization fails, including the problematic challenge.",
+      "tags": [
+        "acme",
+        "error",
+        "authorization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:third_party/forked/acme/types.go:OrderError",
+      "type": "class",
+      "name": "OrderError",
+      "filePath": "third_party/forked/acme/types.go",
+      "lineRange": [
+        171,
+        176
+      ],
+      "summary": "Error returned when an order cannot be completed, exposing the order URL.",
+      "tags": [
+        "acme",
+        "error",
+        "order"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:third_party/forked/acme/types.go:Account",
+      "type": "class",
+      "name": "Account",
+      "filePath": "third_party/forked/acme/types.go",
+      "lineRange": [
+        205,
+        261
+      ],
+      "summary": "ACME account resource with contact details, status, orders URL, and external account binding.",
+      "tags": [
+        "acme",
+        "account",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:third_party/forked/acme/types.go:ExternalAccountBinding",
+      "type": "class",
+      "name": "ExternalAccountBinding",
+      "filePath": "third_party/forked/acme/types.go",
+      "lineRange": [
+        266,
+        274
+      ],
+      "summary": "Holds the key identifier and MAC key used for external account binding.",
+      "tags": [
+        "acme",
+        "eab",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:third_party/forked/acme/types.go:Directory",
+      "type": "class",
+      "name": "Directory",
+      "filePath": "third_party/forked/acme/types.go",
+      "lineRange": [
+        282,
+        327
+      ],
+      "summary": "ACME directory listing the service endpoints advertised by the certificate authority.",
+      "tags": [
+        "acme",
+        "directory",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:third_party/forked/acme/types.go:Order",
+      "type": "class",
+      "name": "Order",
+      "filePath": "third_party/forked/acme/types.go",
+      "lineRange": [
+        331,
+        385
+      ],
+      "summary": "ACME order resource with identifiers, authorization URLs, finalize URL, and certificate URL.",
+      "tags": [
+        "acme",
+        "order",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:third_party/forked/acme/types.go:OrderOption",
+      "type": "class",
+      "name": "OrderOption",
+      "filePath": "third_party/forked/acme/types.go",
+      "lineRange": [
+        388,
+        390
+      ],
+      "summary": "Functional option for customizing order creation.",
+      "tags": [
+        "acme",
+        "options",
+        "order"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:third_party/forked/acme/types.go:Authorization",
+      "type": "class",
+      "name": "Authorization",
+      "filePath": "third_party/forked/acme/types.go",
+      "lineRange": [
+        424,
+        458
+      ],
+      "summary": "ACME authorization resource describing identifier ownership and its challenges.",
+      "tags": [
+        "acme",
+        "authorization",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:third_party/forked/acme/types.go:Challenge",
+      "type": "class",
+      "name": "Challenge",
+      "filePath": "third_party/forked/acme/types.go",
+      "lineRange": [
+        541,
+        574
+      ],
+      "summary": "ACME challenge resource with type, token, URI, status, and validation error.",
+      "tags": [
+        "acme",
+        "challenge",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:third_party/forked/acme/types.go:CertOption",
+      "type": "class",
+      "name": "CertOption",
+      "filePath": "third_party/forked/acme/types.go",
+      "lineRange": [
+        630,
+        632
+      ],
+      "summary": "Functional option for customizing certificate and challenge certificate creation.",
+      "tags": [
+        "acme",
+        "options",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:third_party/forked/acme/types.go:RateLimit",
+      "type": "function",
+      "name": "RateLimit",
+      "filePath": "third_party/forked/acme/types.go",
+      "lineRange": [
+        187,
+        201
+      ],
+      "summary": "Wraps an ACME error to expose retry timing and rate-limit details.",
+      "tags": [
+        "acme",
+        "error",
+        "rate-limit"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:third_party/forked/acme/types.go:DomainIDs",
+      "type": "function",
+      "name": "DomainIDs",
+      "filePath": "third_party/forked/acme/types.go",
+      "lineRange": [
+        467,
+        473
+      ],
+      "summary": "Converts domain names into ACME DNS identifier values.",
+      "tags": [
+        "acme",
+        "identifier",
+        "conversion"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:third_party/forked/acme/types.go:IPIDs",
+      "type": "function",
+      "name": "IPIDs",
+      "filePath": "third_party/forked/acme/types.go",
+      "lineRange": [
+        478,
+        484
+      ],
+      "summary": "Converts IP addresses into ACME IP identifier values.",
+      "tags": [
+        "acme",
+        "identifier",
+        "conversion"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:DeactivateReg",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:DeactivateReg",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:registerRFC",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:updateRegRFC",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:getRegRFC",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:responseAccount",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:accountKeyRollover",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:AuthorizeOrder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:AuthorizeOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:GetOrder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:GetOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:WaitOrder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:WaitOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:responseOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:CreateOrderCert",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:CreateOrderCert",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:fetchCertRFC",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:revokeCertRFC",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:ListCertAlternates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/rfc8555.go",
+      "target": "function:third_party/forked/acme/rfc8555.go:ListCertAlternates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:third_party/forked/acme/rfc8555.go:DeactivateReg",
+      "target": "function:third_party/forked/acme/http.go:post",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:third_party/forked/acme/rfc8555.go:registerRFC",
+      "target": "function:third_party/forked/acme/http.go:post",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:third_party/forked/acme/rfc8555.go:AuthorizeOrder",
+      "target": "function:third_party/forked/acme/http.go:post",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:third_party/forked/acme/rfc8555.go:GetOrder",
+      "target": "function:third_party/forked/acme/http.go:post",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:third_party/forked/acme/rfc8555.go:CreateOrderCert",
+      "target": "function:third_party/forked/acme/http.go:post",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:third_party/forked/acme/rfc8555.go:fetchCertRFC",
+      "target": "function:third_party/forked/acme/http.go:post",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:third_party/forked/acme/rfc8555.go:revokeCertRFC",
+      "target": "function:third_party/forked/acme/http.go:post",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:Subproblem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:Subproblem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:Error",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:Error",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:AuthorizationError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:AuthorizationError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:OrderError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:OrderError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:Account",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:Account",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:ExternalAccountBinding",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:ExternalAccountBinding",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:Directory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:Directory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:Order",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:Order",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:OrderOption",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:OrderOption",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:Authorization",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:Authorization",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:Challenge",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:Challenge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:CertOption",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "class:third_party/forked/acme/types.go:CertOption",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "function:third_party/forked/acme/types.go:RateLimit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "function:third_party/forked/acme/types.go:RateLimit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "function:third_party/forked/acme/types.go:DomainIDs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "function:third_party/forked/acme/types.go:DomainIDs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "function:third_party/forked/acme/types.go:IPIDs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:third_party/forked/acme/types.go",
+      "target": "function:third_party/forked/acme/types.go:IPIDs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

@@ -1,0 +1,767 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "type": "file",
+      "name": "checks.go",
+      "filePath": "pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "summary": "Event handlers that map Secret changes back to the CertificateSigningRequests whose self-signed issuer references them.",
+      "tags": [
+        "event-handler",
+        "secret",
+        "csr",
+        "selfsigned",
+        "informer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificatesigningrequests/selfsigned/checks.go:handleSecretReferenceWorkFunc",
+      "type": "function",
+      "name": "handleSecretReferenceWorkFunc",
+      "filePath": "pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "lineRange": [
+        44,
+        70
+      ],
+      "summary": "Builds an event handler that maps Secret references to queued CertificateSigningRequests.",
+      "tags": [
+        "event-handler",
+        "queue",
+        "secret",
+        "csr"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/certificatesigningrequests/selfsigned/checks.go:certificateSigningRequestsForSecret",
+      "type": "function",
+      "name": "certificateSigningRequestsForSecret",
+      "filePath": "pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "lineRange": [
+        77,
+        142
+      ],
+      "summary": "Finds CSRs that reference the given Secret through their self-signed issuer configuration.",
+      "tags": [
+        "lookup",
+        "secret",
+        "selfsigned",
+        "csr"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "type": "file",
+      "name": "selfsigned.go",
+      "filePath": "pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "summary": "Self-signed CSR signer that issues certificates generated from the request’s own public key, backing the SelfSigned issuer type.",
+      "tags": [
+        "signer",
+        "selfsigned",
+        "csr",
+        "certificate",
+        "issuance"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go:SelfSigned",
+      "type": "class",
+      "name": "SelfSigned",
+      "filePath": "pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "lineRange": [
+        59,
+        72
+      ],
+      "summary": "Self-signed signer state storing issuer options, secret lister and signing dependencies.",
+      "tags": [
+        "signer",
+        "selfsigned",
+        "state",
+        "csr"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go:init",
+      "type": "function",
+      "name": "init",
+      "filePath": "pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "lineRange": [
+        74,
+        104
+      ],
+      "summary": "Registers the self-signed signer with the CertificateSigningRequest controller during package initialisation.",
+      "tags": [
+        "registration",
+        "initialisation",
+        "signer",
+        "selfsigned"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go:NewSelfSigned",
+      "type": "function",
+      "name": "NewSelfSigned",
+      "filePath": "pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "lineRange": [
+        107,
+        116
+      ],
+      "summary": "Constructs the self-signed signer from the controller context.",
+      "tags": [
+        "factory",
+        "signer",
+        "selfsigned",
+        "csr"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go:Sign",
+      "type": "function",
+      "name": "Sign",
+      "filePath": "pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "lineRange": [
+        126,
+        224
+      ],
+      "summary": "Generates a self-signed certificate for the CSR’s public key, validates the duration and writes the result into the CSR status.",
+      "tags": [
+        "signing",
+        "selfsigned",
+        "csr",
+        "certificate"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "function:pkg/controller/certificatesigningrequests/selfsigned/checks.go:handleSecretReferenceWorkFunc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "function:pkg/controller/certificatesigningrequests/selfsigned/checks.go:certificateSigningRequestsForSecret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/api/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/api/util/duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/api/util/issuers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/api/util/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/api/util/names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/api/util/usages.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/apis/experimental/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/controller/certificatesigningrequests/util/apply.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/controller/certificatesigningrequests/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/controller/certificatesigningrequests/util/signername.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/issuer/factory.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/issuer/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/issuer/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/checks.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/controller/certificatesigningrequests/selfsigned/checks.go:handleSecretReferenceWorkFunc",
+      "target": "function:pkg/controller/certificatesigningrequests/selfsigned/checks.go:certificateSigningRequestsForSecret",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "class:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go:SelfSigned",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "class:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go:SelfSigned",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "function:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go:init",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "function:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go:NewSelfSigned",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "function:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go:NewSelfSigned",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "function:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go:Sign",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "function:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go:Sign",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/api/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/api/util/duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/api/util/issuers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/api/util/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/api/util/names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/api/util/usages.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/apis/experimental/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/controller/certificatesigningrequests/checks.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/controller/certificatesigningrequests/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/controller/certificatesigningrequests/sync.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/controller/certificatesigningrequests/util/apply.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/controller/certificatesigningrequests/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/controller/certificatesigningrequests/util/signername.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/issuer/factory.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/issuer/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/issuer/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/util/errors/errors.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/util/kube/pki.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/util/pki/asn1_util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/util/pki/basicconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/util/pki/certificatetemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/util/pki/csr.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/util/pki/generate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/util/pki/keyusage.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/util/pki/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/util/pki/match.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/util/pki/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/util/pki/parse.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/util/pki/parse_certificate_chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/util/pki/renewaltime.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/util/pki/sans.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/util/pki/subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:pkg/util/pki/temporarycertificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/controller/certificatesigningrequests/selfsigned/selfsigned.go:Sign",
+      "target": "function:pkg/controller/certificatesigningrequests/util/conditions.go:CertificateSigningRequestSetFailed",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

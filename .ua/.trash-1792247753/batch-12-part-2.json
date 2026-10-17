@@ -1,0 +1,1707 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/e2e/framework/addon/vault/proxy.go",
+      "type": "file",
+      "name": "proxy.go",
+      "filePath": "test/e2e/framework/addon/vault/proxy.go",
+      "summary": "Port-forwarding proxy that exposes an in-cluster Vault pod on a local port for e2e tests.",
+      "tags": [
+        "test",
+        "vault",
+        "port-forward",
+        "networking",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/e2e/framework/addon/vault/proxy.go:proxy",
+      "type": "class",
+      "name": "proxy",
+      "filePath": "test/e2e/framework/addon/vault/proxy.go",
+      "lineRange": [
+        34,
+        44
+      ],
+      "summary": "Local port-forward proxy state for reaching an in-cluster Vault pod.",
+      "tags": [
+        "vault",
+        "networking",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/proxy.go:newProxy",
+      "type": "function",
+      "name": "newProxy",
+      "filePath": "test/e2e/framework/addon/vault/proxy.go",
+      "lineRange": [
+        46,
+        67
+      ],
+      "summary": "Allocates a free local port and constructs a proxy for the named Vault pod.",
+      "tags": [
+        "vault",
+        "networking",
+        "factory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/proxy.go:freePort",
+      "type": "function",
+      "name": "freePort",
+      "filePath": "test/e2e/framework/addon/vault/proxy.go",
+      "lineRange": [
+        69,
+        78
+      ],
+      "summary": "Finds an available TCP port by briefly listening on localhost.",
+      "tags": [
+        "networking",
+        "utility",
+        "port"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/proxy.go:start",
+      "type": "function",
+      "name": "start",
+      "filePath": "test/e2e/framework/addon/vault/proxy.go",
+      "lineRange": [
+        80,
+        139
+      ],
+      "summary": "Starts a SPDY port-forward with automatic reconnection until stopped.",
+      "tags": [
+        "vault",
+        "port-forward",
+        "networking"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/proxy.go:stop",
+      "type": "function",
+      "name": "stop",
+      "filePath": "test/e2e/framework/addon/vault/proxy.go",
+      "lineRange": [
+        141,
+        161
+      ],
+      "summary": "Signals the port-forwarder to stop and waits for it to finish.",
+      "tags": [
+        "vault",
+        "networking",
+        "cleanup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/framework/addon/vault/setup.go",
+      "type": "file",
+      "name": "setup.go",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "summary": "Vault PKI initializer that mounts root and intermediate PKI engines and configures AppRole, Kubernetes, and client-certificate auth for issuer tests.",
+      "tags": [
+        "test",
+        "vault",
+        "pki",
+        "authentication",
+        "setup"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Each test scenario mounts and unmounts its own PKI paths on a shared Vault server."
+    },
+    {
+      "id": "class:test/e2e/framework/addon/vault/setup.go:VaultInitializer",
+      "type": "class",
+      "name": "VaultInitializer",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        50,
+        66
+      ],
+      "summary": "Stateful Vault PKI initializer that tracks mount points, roles, and auth paths for a test PKI.",
+      "tags": [
+        "vault",
+        "pki",
+        "state",
+        "struct"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:NewVaultInitializerClientCertificate",
+      "type": "function",
+      "name": "NewVaultInitializerClientCertificate",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        68,
+        90
+      ],
+      "summary": "Creates an initializer configured for client-certificate auth with randomized mount and role names.",
+      "tags": [
+        "vault",
+        "factory",
+        "authentication"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:NewVaultInitializerAppRole",
+      "type": "function",
+      "name": "NewVaultInitializerAppRole",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        92,
+        114
+      ],
+      "summary": "Creates an initializer configured for AppRole authentication.",
+      "tags": [
+        "vault",
+        "factory",
+        "authentication"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:NewVaultInitializerKubernetes",
+      "type": "function",
+      "name": "NewVaultInitializerKubernetes",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        116,
+        140
+      ],
+      "summary": "Creates an initializer configured for Kubernetes service-account auth against the given API server.",
+      "tags": [
+        "vault",
+        "factory",
+        "authentication",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:NewVaultInitializerAllAuth",
+      "type": "function",
+      "name": "NewVaultInitializerAllAuth",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        142,
+        170
+      ],
+      "summary": "Creates an initializer that configures AppRole, Kubernetes, and client-certificate auth together.",
+      "tags": [
+        "vault",
+        "factory",
+        "authentication"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:Init",
+      "type": "function",
+      "name": "Init",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        239,
+        312
+      ],
+      "summary": "Builds a Vault client over the port-forward proxy and waits for the Vault server to become healthy.",
+      "tags": [
+        "vault",
+        "client",
+        "initialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:Setup",
+      "type": "function",
+      "name": "Setup",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        315,
+        390
+      ],
+      "summary": "Mounts root and intermediate PKI engines, generates a CA chain, imports the intermediate, and configures auth backends.",
+      "tags": [
+        "vault",
+        "pki",
+        "setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:Clean",
+      "type": "function",
+      "name": "Clean",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        392,
+        401
+      ],
+      "summary": "Unmounts the PKI and auth mounts created for the test.",
+      "tags": [
+        "vault",
+        "cleanup",
+        "teardown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:CreateAppRole",
+      "type": "function",
+      "name": "CreateAppRole",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        403,
+        432
+      ],
+      "summary": "Creates an AppRole with a generated secret ID and returns the credential pair.",
+      "tags": [
+        "vault",
+        "authentication",
+        "approle"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:CleanAppRole",
+      "type": "function",
+      "name": "CleanAppRole",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        434,
+        446
+      ],
+      "summary": "Deletes the AppRole and its secret ID from Vault.",
+      "tags": [
+        "vault",
+        "cleanup",
+        "approle"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:mountPKI",
+      "type": "function",
+      "name": "mountPKI",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        448,
+        461
+      ],
+      "summary": "Enables and tunes a PKI secrets engine at the given mount point.",
+      "tags": [
+        "vault",
+        "pki",
+        "mount"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:generateRootCert",
+      "type": "function",
+      "name": "generateRootCert",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        463,
+        475
+      ],
+      "summary": "Generates a self-signed root CA inside the root PKI mount.",
+      "tags": [
+        "vault",
+        "pki",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:generateIntermediateSigningReq",
+      "type": "function",
+      "name": "generateIntermediateSigningReq",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        477,
+        489
+      ],
+      "summary": "Creates a CSR for an intermediate CA in the intermediate mount.",
+      "tags": [
+        "vault",
+        "pki",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:signCertificate",
+      "type": "function",
+      "name": "signCertificate",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        491,
+        503
+      ],
+      "summary": "Signs a CSR with the root CA to produce an intermediate certificate.",
+      "tags": [
+        "vault",
+        "pki",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:importSignIntermediate",
+      "type": "function",
+      "name": "importSignIntermediate",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        505,
+        514
+      ],
+      "summary": "Imports the signed intermediate CA chain into the intermediate mount.",
+      "tags": [
+        "vault",
+        "pki",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:configureCert",
+      "type": "function",
+      "name": "configureCert",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        516,
+        526
+      ],
+      "summary": "Writes the CA chain and CRL URLs into the PKI mount configuration.",
+      "tags": [
+        "vault",
+        "pki",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:configureIntermediateRoles",
+      "type": "function",
+      "name": "configureIntermediateRoles",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        528,
+        548
+      ],
+      "summary": "Creates the intermediate signing role used for certificate issuance.",
+      "tags": [
+        "vault",
+        "pki",
+        "role"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:setupAppRoleAuth",
+      "type": "function",
+      "name": "setupAppRoleAuth",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        550,
+        567
+      ],
+      "summary": "Enables the AppRole auth backend and wires it to the PKI mount.",
+      "tags": [
+        "vault",
+        "authentication",
+        "approle"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:setupKubernetesBasedAuth",
+      "type": "function",
+      "name": "setupKubernetesBasedAuth",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        569,
+        596
+      ],
+      "summary": "Enables and configures Kubernetes auth, including the token reviewer role.",
+      "tags": [
+        "vault",
+        "authentication",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:CreateKubernetesRole",
+      "type": "function",
+      "name": "CreateKubernetesRole",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        601,
+        631
+      ],
+      "summary": "Creates a service account, role binding, and Vault Kubernetes auth role for a namespace.",
+      "tags": [
+        "vault",
+        "authentication",
+        "kubernetes",
+        "rbac"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:CleanKubernetesRole",
+      "type": "function",
+      "name": "CleanKubernetesRole",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        638,
+        655
+      ],
+      "summary": "Removes a Vault Kubernetes auth role and its associated RBAC resources.",
+      "tags": [
+        "vault",
+        "cleanup",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:RoleAndBindingForServiceAccountRefAuth",
+      "type": "function",
+      "name": "RoleAndBindingForServiceAccountRefAuth",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        657,
+        689
+      ],
+      "summary": "Builds the Role and RoleBinding allowing a service account to authenticate to Vault.",
+      "tags": [
+        "vault",
+        "rbac",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:CreateKubernetesRoleForServiceAccountRefAuth",
+      "type": "function",
+      "name": "CreateKubernetesRoleForServiceAccountRefAuth",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        693,
+        705
+      ],
+      "summary": "Creates RBAC for service-account-ref auth and registers the Vault role.",
+      "tags": [
+        "vault",
+        "kubernetes",
+        "authentication"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:CleanKubernetesRoleForServiceAccountRefAuth",
+      "type": "function",
+      "name": "CleanKubernetesRoleForServiceAccountRefAuth",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        707,
+        717
+      ],
+      "summary": "Deletes the Vault role and RBAC used by service-account-ref auth.",
+      "tags": [
+        "vault",
+        "cleanup",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:setupClientCertAuth",
+      "type": "function",
+      "name": "setupClientCertAuth",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        719,
+        736
+      ],
+      "summary": "Enables the cert auth backend and configures its CA certificate.",
+      "tags": [
+        "vault",
+        "authentication",
+        "tls"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/setup.go:CreateClientCertRole",
+      "type": "function",
+      "name": "CreateClientCertRole",
+      "filePath": "test/e2e/framework/addon/vault/setup.go",
+      "lineRange": [
+        738,
+        780
+      ],
+      "summary": "Generates a client certificate and creates a cert-auth role bound to it.",
+      "tags": [
+        "vault",
+        "authentication",
+        "tls"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/framework/addon/vault/vault.go",
+      "type": "file",
+      "name": "vault.go",
+      "filePath": "test/e2e/framework/addon/vault/vault.go",
+      "summary": "Vault addon that deploys a Vault Helm chart, generates mTLS serving and client certificates, and exposes connection details to tests.",
+      "tags": [
+        "test",
+        "addon",
+        "vault",
+        "deployment",
+        "tls"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:test/e2e/framework/addon/vault/vault.go:Vault",
+      "type": "class",
+      "name": "Vault",
+      "filePath": "test/e2e/framework/addon/vault/vault.go",
+      "lineRange": [
+        56,
+        79
+      ],
+      "summary": "Vault addon configuration embedding the chart addon plus mTLS and proxy state.",
+      "tags": [
+        "vault",
+        "addon",
+        "configuration",
+        "struct"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/e2e/framework/addon/vault/vault.go:Details",
+      "type": "class",
+      "name": "Details",
+      "filePath": "test/e2e/framework/addon/vault/vault.go",
+      "lineRange": [
+        83,
+        102
+      ],
+      "summary": "Connection details (URLs, CA, client certificate) exposed to tests that use Vault.",
+      "tags": [
+        "vault",
+        "configuration",
+        "tls",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/vault.go:convertInterfaceToDetails",
+      "type": "function",
+      "name": "convertInterfaceToDetails",
+      "filePath": "test/e2e/framework/addon/vault/vault.go",
+      "lineRange": [
+        104,
+        117
+      ],
+      "summary": "Decodes transferred global addon data into concrete Vault details.",
+      "tags": [
+        "vault",
+        "serialization",
+        "globals"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/vault.go:Setup",
+      "type": "function",
+      "name": "Setup",
+      "filePath": "test/e2e/framework/addon/vault/vault.go",
+      "lineRange": [
+        119,
+        313
+      ],
+      "summary": "Prepares Vault's namespace, certificates, chart values, and shared state, generating mTLS material as needed.",
+      "tags": [
+        "vault",
+        "setup",
+        "tls",
+        "helm"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/vault.go:Provision",
+      "type": "function",
+      "name": "Provision",
+      "filePath": "test/e2e/framework/addon/vault/vault.go",
+      "lineRange": [
+        316,
+        415
+      ],
+      "summary": "Deploys Vault via the chart addon and waits for the pod and port-forward proxy to be ready.",
+      "tags": [
+        "vault",
+        "deployment",
+        "provisioning"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/vault.go:Deprovision",
+      "type": "function",
+      "name": "Deprovision",
+      "filePath": "test/e2e/framework/addon/vault/vault.go",
+      "lineRange": [
+        423,
+        435
+      ],
+      "summary": "Stops the proxy and uninstalls the Vault Helm release.",
+      "tags": [
+        "vault",
+        "cleanup",
+        "deprovisioning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/vault.go:generateVaultServingCert",
+      "type": "function",
+      "name": "generateVaultServingCert",
+      "filePath": "test/e2e/framework/addon/vault/vault.go",
+      "lineRange": [
+        445,
+        487
+      ],
+      "summary": "Issues a serving certificate for the Vault service DNS name from the test CA.",
+      "tags": [
+        "vault",
+        "tls",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/vault.go:generateVaultClientCert",
+      "type": "function",
+      "name": "generateVaultClientCert",
+      "filePath": "test/e2e/framework/addon/vault/vault.go",
+      "lineRange": [
+        489,
+        529
+      ],
+      "summary": "Issues a client certificate for authenticating to Vault.",
+      "tags": [
+        "vault",
+        "tls",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/vault/vault.go:GenerateCA",
+      "type": "function",
+      "name": "GenerateCA",
+      "filePath": "test/e2e/framework/addon/vault/vault.go",
+      "lineRange": [
+        531,
+        561
+      ],
+      "summary": "Generates a self-signed CA and private key used to secure the Vault deployment.",
+      "tags": [
+        "vault",
+        "tls",
+        "certificate",
+        "ca"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "type": "file",
+      "name": "cloud.go",
+      "filePath": "test/e2e/framework/addon/venafi/cloud.go",
+      "summary": "Venafi Cloud addon that provisions API credentials and builds Venafi Cloud Issuer and ClusterIssuer resources for e2e tests.",
+      "tags": [
+        "test",
+        "addon",
+        "venafi",
+        "issuer",
+        "credentials"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/e2e/framework/addon/venafi/cloud.go:VenafiCloud",
+      "type": "class",
+      "name": "VenafiCloud",
+      "filePath": "test/e2e/framework/addon/venafi/cloud.go",
+      "lineRange": [
+        34,
+        44
+      ],
+      "summary": "Venafi Cloud addon state including namespace, details, and the created credential secret.",
+      "tags": [
+        "venafi",
+        "addon",
+        "configuration",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/framework/addon/venafi/cloud.go:CloudDetails",
+      "type": "class",
+      "name": "CloudDetails",
+      "filePath": "test/e2e/framework/addon/venafi/cloud.go",
+      "lineRange": [
+        48,
+        50
+      ],
+      "summary": "Holds the issuer template used to build Venafi Cloud issuers.",
+      "tags": [
+        "venafi",
+        "issuer",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/venafi/cloud.go:Setup",
+      "type": "function",
+      "name": "Setup",
+      "filePath": "test/e2e/framework/addon/venafi/cloud.go",
+      "lineRange": [
+        52,
+        71
+      ],
+      "summary": "Loads suite config and prepares the namespace and issuer template for Venafi Cloud.",
+      "tags": [
+        "venafi",
+        "setup",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/venafi/cloud.go:Provision",
+      "type": "function",
+      "name": "Provision",
+      "filePath": "test/e2e/framework/addon/venafi/cloud.go",
+      "lineRange": [
+        73,
+        103
+      ],
+      "summary": "Creates the Venafi Cloud API key secret and issuer template resources.",
+      "tags": [
+        "venafi",
+        "provisioning",
+        "credentials"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/venafi/cloud.go:BuildIssuer",
+      "type": "function",
+      "name": "BuildIssuer",
+      "filePath": "test/e2e/framework/addon/venafi/cloud.go",
+      "lineRange": [
+        117,
+        128
+      ],
+      "summary": "Builds a namespaced Venafi Cloud Issuer from the stored template.",
+      "tags": [
+        "venafi",
+        "issuer",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/venafi/cloud.go:BuildClusterIssuer",
+      "type": "function",
+      "name": "BuildClusterIssuer",
+      "filePath": "test/e2e/framework/addon/venafi/cloud.go",
+      "lineRange": [
+        130,
+        141
+      ],
+      "summary": "Builds a cluster-scoped Venafi Cloud ClusterIssuer from the stored template.",
+      "tags": [
+        "venafi",
+        "issuer",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/venafi/cloud.go:SetAPIKey",
+      "type": "function",
+      "name": "SetAPIKey",
+      "filePath": "test/e2e/framework/addon/venafi/cloud.go",
+      "lineRange": [
+        144,
+        153
+      ],
+      "summary": "Updates the stored secret with a new Venafi Cloud API key.",
+      "tags": [
+        "venafi",
+        "credentials",
+        "secret"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/addon/venafi/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "test/e2e/framework/addon/venafi/doc.go",
+      "summary": "Package documentation for the Venafi addon, describing how e2e tests obtain Venafi TPP credentials.",
+      "tags": [
+        "test",
+        "documentation",
+        "venafi",
+        "addon"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/e2e/framework/addon/vault/proxy.go",
+      "target": "class:test/e2e/framework/addon/vault/proxy.go:proxy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/proxy.go",
+      "target": "function:test/e2e/framework/addon/vault/proxy.go:newProxy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/proxy.go",
+      "target": "function:test/e2e/framework/addon/vault/proxy.go:freePort",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/proxy.go",
+      "target": "function:test/e2e/framework/addon/vault/proxy.go:start",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/proxy.go",
+      "target": "function:test/e2e/framework/addon/vault/proxy.go:stop",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "class:test/e2e/framework/addon/vault/setup.go:VaultInitializer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "class:test/e2e/framework/addon/vault/setup.go:VaultInitializer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:NewVaultInitializerClientCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:NewVaultInitializerClientCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:NewVaultInitializerAppRole",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:NewVaultInitializerAppRole",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:NewVaultInitializerKubernetes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:NewVaultInitializerKubernetes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:NewVaultInitializerAllAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:NewVaultInitializerAllAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:Init",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:Init",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:Setup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:Setup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:Clean",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:Clean",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:CreateAppRole",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:CreateAppRole",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:CleanAppRole",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:CleanAppRole",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:mountPKI",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:generateRootCert",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:generateIntermediateSigningReq",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:signCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:importSignIntermediate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:configureCert",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:configureIntermediateRoles",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:setupAppRoleAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:setupKubernetesBasedAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:CreateKubernetesRole",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:CreateKubernetesRole",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:CleanKubernetesRole",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:CleanKubernetesRole",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:RoleAndBindingForServiceAccountRefAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:RoleAndBindingForServiceAccountRefAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:CreateKubernetesRoleForServiceAccountRefAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:CreateKubernetesRoleForServiceAccountRefAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:CleanKubernetesRoleForServiceAccountRefAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:CleanKubernetesRoleForServiceAccountRefAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:setupClientCertAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:CreateClientCertRole",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/setup.go",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:CreateClientCertRole",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "class:test/e2e/framework/addon/vault/vault.go:Vault",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "class:test/e2e/framework/addon/vault/vault.go:Vault",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "class:test/e2e/framework/addon/vault/vault.go:Details",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "class:test/e2e/framework/addon/vault/vault.go:Details",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "function:test/e2e/framework/addon/vault/vault.go:convertInterfaceToDetails",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "function:test/e2e/framework/addon/vault/vault.go:Setup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "function:test/e2e/framework/addon/vault/vault.go:Setup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "function:test/e2e/framework/addon/vault/vault.go:Provision",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "function:test/e2e/framework/addon/vault/vault.go:Provision",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "function:test/e2e/framework/addon/vault/vault.go:Deprovision",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "function:test/e2e/framework/addon/vault/vault.go:Deprovision",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "function:test/e2e/framework/addon/vault/vault.go:generateVaultServingCert",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "function:test/e2e/framework/addon/vault/vault.go:generateVaultClientCert",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "function:test/e2e/framework/addon/vault/vault.go:GenerateCA",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "function:test/e2e/framework/addon/vault/vault.go:GenerateCA",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "class:test/e2e/framework/addon/venafi/cloud.go:VenafiCloud",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "class:test/e2e/framework/addon/venafi/cloud.go:VenafiCloud",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "class:test/e2e/framework/addon/venafi/cloud.go:CloudDetails",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "class:test/e2e/framework/addon/venafi/cloud.go:CloudDetails",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "function:test/e2e/framework/addon/venafi/cloud.go:Setup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "function:test/e2e/framework/addon/venafi/cloud.go:Setup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "function:test/e2e/framework/addon/venafi/cloud.go:Provision",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "function:test/e2e/framework/addon/venafi/cloud.go:Provision",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "function:test/e2e/framework/addon/venafi/cloud.go:BuildIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "function:test/e2e/framework/addon/venafi/cloud.go:BuildIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "function:test/e2e/framework/addon/venafi/cloud.go:BuildClusterIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "function:test/e2e/framework/addon/venafi/cloud.go:BuildClusterIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "function:test/e2e/framework/addon/venafi/cloud.go:SetAPIKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "function:test/e2e/framework/addon/venafi/cloud.go:SetAPIKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "file:test/e2e/framework/addon/base/base.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "file:test/e2e/framework/addon/chart/addon.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "file:test/e2e/framework/addon/internal/globals.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "file:test/e2e/framework/config/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "file:test/e2e/framework/config/addons.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "file:test/e2e/framework/config/certmanager.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "file:test/e2e/framework/config/config.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "file:test/e2e/framework/config/gateway.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "file:test/e2e/framework/config/ginkgo.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "file:test/e2e/framework/config/helm.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "file:test/e2e/framework/config/ingress_controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "file:test/e2e/framework/config/samplewebhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "file:test/e2e/framework/config/suite.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/vault/vault.go",
+      "target": "file:test/e2e/framework/config/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "file:test/e2e/framework/addon/base/base.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "file:test/e2e/framework/addon/internal/globals.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "file:test/e2e/framework/config/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "file:test/e2e/framework/config/addons.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "file:test/e2e/framework/config/certmanager.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "file:test/e2e/framework/config/config.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "file:test/e2e/framework/config/gateway.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "file:test/e2e/framework/config/ginkgo.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "file:test/e2e/framework/config/helm.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "file:test/e2e/framework/config/ingress_controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "file:test/e2e/framework/config/samplewebhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "file:test/e2e/framework/config/suite.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "file:test/e2e/framework/config/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/cloud.go",
+      "target": "file:test/e2e/framework/util/errors/errors.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:test/e2e/framework/addon/vault/vault.go:Setup",
+      "target": "function:test/e2e/framework/addon/vault/vault.go:GenerateCA",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/addon/vault/vault.go:Setup",
+      "target": "function:test/e2e/framework/addon/vault/vault.go:generateVaultServingCert",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/addon/vault/vault.go:Setup",
+      "target": "function:test/e2e/framework/addon/vault/vault.go:generateVaultClientCert",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/addon/vault/setup.go:Setup",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:mountPKI",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/addon/vault/setup.go:Setup",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:generateRootCert",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/addon/vault/setup.go:Setup",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:generateIntermediateSigningReq",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/addon/vault/setup.go:Setup",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:signCertificate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/addon/vault/setup.go:Setup",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:importSignIntermediate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/addon/vault/setup.go:Setup",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:configureIntermediateRoles",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/addon/vault/setup.go:Setup",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:setupAppRoleAuth",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/addon/vault/setup.go:Setup",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:setupKubernetesBasedAuth",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/addon/vault/setup.go:Setup",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:setupClientCertAuth",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/addon/vault/setup.go:CreateKubernetesRoleForServiceAccountRefAuth",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:RoleAndBindingForServiceAccountRefAuth",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

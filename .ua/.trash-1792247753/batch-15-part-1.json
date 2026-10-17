@@ -1,0 +1,1526 @@
+{
+  "nodes": [
+    {
+      "id": "file:internal/apis/acme/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "internal/apis/acme/doc.go",
+      "summary": "Package documentation for the internal (unversioned) ACME API group, declaring deepcopy generation and the acme.cert-manager.io group name.",
+      "tags": [
+        "documentation",
+        "api-group",
+        "acme",
+        "package-doc"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/acme/fuzzer/fuzzer.go",
+      "type": "file",
+      "name": "fuzzer.go",
+      "filePath": "internal/apis/acme/fuzzer/fuzzer.go",
+      "summary": "Registers randfill fuzzer functions for internal ACME Order and Challenge types, defaulting issuer references and JSON payloads for round-trip serialization tests.",
+      "tags": [
+        "test",
+        "fuzzer",
+        "api-group",
+        "serialization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/acme/install/install.go",
+      "type": "file",
+      "name": "install.go",
+      "filePath": "internal/apis/acme/install/install.go",
+      "summary": "Registers the internal ACME API group together with its v1 and meta versions into a Kubernetes runtime scheme.",
+      "tags": [
+        "entry-point",
+        "api-group",
+        "registration",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/acme/install/install.go:Install",
+      "type": "function",
+      "name": "Install",
+      "filePath": "internal/apis/acme/install/install.go",
+      "lineRange": [
+        31,
+        37
+      ],
+      "summary": "Installs the internal ACME API group and its v1 and meta versions into the given runtime scheme.",
+      "tags": [
+        "entry-point",
+        "api-group",
+        "registration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/acme/register.go",
+      "type": "file",
+      "name": "register.go",
+      "filePath": "internal/apis/acme/register.go",
+      "summary": "Defines the internal ACME GroupVersion, scheme builder, and resource helper used to register Order and Challenge types.",
+      "tags": [
+        "api-group",
+        "registration",
+        "kubernetes",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/acme/register.go:Resource",
+      "type": "function",
+      "name": "Resource",
+      "filePath": "internal/apis/acme/register.go",
+      "lineRange": [
+        35,
+        37
+      ],
+      "summary": "Returns the fully qualified GroupResource for an ACME resource name.",
+      "tags": [
+        "utility",
+        "api-group",
+        "registration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/acme/register.go:addKnownTypes",
+      "type": "function",
+      "name": "addKnownTypes",
+      "filePath": "internal/apis/acme/register.go",
+      "lineRange": [
+        40,
+        48
+      ],
+      "summary": "Registers Order and Challenge types with the internal ACME scheme group version.",
+      "tags": [
+        "registration",
+        "api-group",
+        "scheme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/acme/types_challenge.go",
+      "type": "file",
+      "name": "types_challenge.go",
+      "filePath": "internal/apis/acme/types_challenge.go",
+      "summary": "Internal API types for ACME Challenge resources, including the challenge spec (URL, DNS name, token, solver) and its presented/processing status.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "challenge"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/acme/types_challenge.go:Challenge",
+      "type": "class",
+      "name": "Challenge",
+      "filePath": "internal/apis/acme/types_challenge.go",
+      "lineRange": [
+        28,
+        34
+      ],
+      "summary": "Challenge resource representing a single ACME challenge request and its current state.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "challenge"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/acme/types_challenge.go:ChallengeList",
+      "type": "class",
+      "name": "ChallengeList",
+      "filePath": "internal/apis/acme/types_challenge.go",
+      "lineRange": [
+        39,
+        44
+      ],
+      "summary": "List wrapper for Challenge resources.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "challenge"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/acme/types_challenge.go:ChallengeSpec",
+      "type": "class",
+      "name": "ChallengeSpec",
+      "filePath": "internal/apis/acme/types_challenge.go",
+      "lineRange": [
+        46,
+        91
+      ],
+      "summary": "Desired challenge properties: ACME URLs, DNS name, wildcard flag, challenge type, token, key, solver, and issuer reference.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "challenge"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/acme/types_challenge.go:ChallengeStatus",
+      "type": "class",
+      "name": "ChallengeStatus",
+      "filePath": "internal/apis/acme/types_challenge.go",
+      "lineRange": [
+        106,
+        131
+      ],
+      "summary": "Observed challenge state including whether it is being processed, presented, and its current ACME state.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "challenge"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/apis/acme/types_issuer.go",
+      "type": "file",
+      "name": "types_issuer.go",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "summary": "Internal API types describing ACME issuer configuration, including server and account settings, HTTP-01/DNS-01 challenge solvers, and credentials for every supported DNS provider.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "issuer"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEIssuer",
+      "type": "class",
+      "name": "ACMEIssuer",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        31,
+        109
+      ],
+      "summary": "ACME issuer configuration: server URL, account email, private key secret, external account binding, solvers, and status.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "issuer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEExternalAccountBinding",
+      "type": "class",
+      "name": "ACMEExternalAccountBinding",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        113,
+        131
+      ],
+      "summary": "External account binding credentials (key ID, key secret, and algorithm) used when registering an ACME account.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolver",
+      "type": "class",
+      "name": "ACMEChallengeSolver",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        144,
+        161
+      ],
+      "summary": "Challenge solver entry combining a DNS name selector with HTTP-01 or DNS-01 solver configuration.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "solver"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:CertificateDNSNameSelector",
+      "type": "class",
+      "name": "CertificateDNSNameSelector",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        167,
+        191
+      ],
+      "summary": "Selects the DNS names and wildcard patterns to which a challenge solver applies.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "solver"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01",
+      "type": "class",
+      "name": "ACMEChallengeSolverHTTP01",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        198,
+        211
+      ],
+      "summary": "HTTP-01 solver configuration, choosing between ingress and Gateway API HTTPRoute based solving.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "solver"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01Ingress",
+      "type": "class",
+      "name": "ACMEChallengeSolverHTTP01Ingress",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        213,
+        246
+      ],
+      "summary": "Ingress-based HTTP-01 solver options including ingress class, service type, and pod template customizations.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "solver"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01GatewayHTTPRoute",
+      "type": "class",
+      "name": "ACMEChallengeSolverHTTP01GatewayHTTPRoute",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        248,
+        268
+      ],
+      "summary": "Gateway API HTTPRoute-based HTTP-01 solver settings such as parent references, labels, and annotations.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "solver"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressPodTemplate",
+      "type": "class",
+      "name": "ACMEChallengeSolverHTTP01IngressPodTemplate",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        270,
+        284
+      ],
+      "summary": "Pod template customizations applied to the pods created by the HTTP-01 solver.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "solver"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressPodObjectMeta",
+      "type": "class",
+      "name": "ACMEChallengeSolverHTTP01IngressPodObjectMeta",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        286,
+        292
+      ],
+      "summary": "Labels and annotations applied to HTTP-01 solver pods.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "solver"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressPodSpec",
+      "type": "class",
+      "name": "ACMEChallengeSolverHTTP01IngressPodSpec",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        294,
+        329
+      ],
+      "summary": "Pod spec overrides for HTTP-01 solver pods including affinity, tolerations, priority class, and node selector.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "solver"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressTemplate",
+      "type": "class",
+      "name": "ACMEChallengeSolverHTTP01IngressTemplate",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        331,
+        337
+      ],
+      "summary": "Template customizations applied to the ingress created by the HTTP-01 solver.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "solver"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressObjectMeta",
+      "type": "class",
+      "name": "ACMEChallengeSolverHTTP01IngressObjectMeta",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        339,
+        345
+      ],
+      "summary": "Labels and annotations applied to HTTP-01 solver ingresses.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "solver"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverDNS01",
+      "type": "class",
+      "name": "ACMEChallengeSolverDNS01",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        350,
+        384
+      ],
+      "summary": "DNS-01 solver configuration holding credentials for each supported DNS provider.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "solver"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressPodSecurityContext",
+      "type": "class",
+      "name": "ACMEChallengeSolverHTTP01IngressPodSecurityContext",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        386,
+        458
+      ],
+      "summary": "Security context overrides for HTTP-01 solver pods.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "solver"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressPodResources",
+      "type": "class",
+      "name": "ACMEChallengeSolverHTTP01IngressPodResources",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        462,
+        473
+      ],
+      "summary": "Resource requests and limits for HTTP-01 solver pods.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "solver"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderAkamai",
+      "type": "class",
+      "name": "ACMEIssuerDNS01ProviderAkamai",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        495,
+        500
+      ],
+      "summary": "Akamai FastDNS credentials and settings for DNS-01 solving.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "dns"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderCloudDNS",
+      "type": "class",
+      "name": "ACMEIssuerDNS01ProviderCloudDNS",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        504,
+        508
+      ],
+      "summary": "Google Cloud DNS project and service account credentials for DNS-01 solving.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "dns"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderCloudflare",
+      "type": "class",
+      "name": "ACMEIssuerDNS01ProviderCloudflare",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        513,
+        524
+      ],
+      "summary": "Cloudflare API credentials and optional email for DNS-01 solving.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "dns"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderDigitalOcean",
+      "type": "class",
+      "name": "ACMEIssuerDNS01ProviderDigitalOcean",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        528,
+        530
+      ],
+      "summary": "DigitalOcean API token for DNS-01 solving.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "dns"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderRoute53",
+      "type": "class",
+      "name": "ACMEIssuerDNS01ProviderRoute53",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        534,
+        568
+      ],
+      "summary": "AWS Route53 credentials, region, hosted zone, and role settings for DNS-01 solving.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "dns"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:Route53Auth",
+      "type": "class",
+      "name": "Route53Auth",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        571,
+        575
+      ],
+      "summary": "Authentication configuration for Route53 DNS-01 solving.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "dns"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:Route53KubernetesAuth",
+      "type": "class",
+      "name": "Route53KubernetesAuth",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        579,
+        584
+      ],
+      "summary": "Kubernetes service account based authentication for Route53.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "dns"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ServiceAccountRef",
+      "type": "class",
+      "name": "ServiceAccountRef",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        588,
+        597
+      ],
+      "summary": "Reference to a Kubernetes service account used by DNS providers for authentication.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "dns"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderAzureDNS",
+      "type": "class",
+      "name": "ACMEIssuerDNS01ProviderAzureDNS",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        601,
+        620
+      ],
+      "summary": "Azure DNS credentials, subscription, resource group, and managed identity settings.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "dns"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:AzureManagedIdentity",
+      "type": "class",
+      "name": "AzureManagedIdentity",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        622,
+        628
+      ],
+      "summary": "Azure managed identity configuration including client, resource, and tenant IDs.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "dns"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderAcmeDNS",
+      "type": "class",
+      "name": "ACMEIssuerDNS01ProviderAcmeDNS",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        641,
+        645
+      ],
+      "summary": "acme-dns service account credentials for DNS-01 solving.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "dns"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderRFC2136",
+      "type": "class",
+      "name": "ACMEIssuerDNS01ProviderRFC2136",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        649,
+        673
+      ],
+      "summary": "RFC2136 dynamic DNS update settings including nameserver, TSIG credentials, and zone.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "dns"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderWebhook",
+      "type": "class",
+      "name": "ACMEIssuerDNS01ProviderWebhook",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        684,
+        705
+      ],
+      "summary": "Webhook-based DNS provider configuration with solver name, group, and raw payload.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "dns"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/acme/types_issuer.go:ACMEIssuerStatus",
+      "type": "class",
+      "name": "ACMEIssuerStatus",
+      "filePath": "internal/apis/acme/types_issuer.go",
+      "lineRange": [
+        707,
+        721
+      ],
+      "summary": "Observed ACME issuer state, including the ACME directory URL and per-solver status.",
+      "tags": [
+        "data-model",
+        "api-type",
+        "acme",
+        "issuer"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:internal/apis/acme/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/acme/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/acme/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/acme/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/acme/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/acme/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/acme/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/fuzzer/fuzzer.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/fuzzer/fuzzer.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/fuzzer/fuzzer.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/fuzzer/fuzzer.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/fuzzer/fuzzer.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/fuzzer/fuzzer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/fuzzer/fuzzer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/fuzzer/fuzzer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/fuzzer/fuzzer.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "file:internal/apis/acme/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "file:internal/apis/acme/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "file:internal/apis/acme/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "file:internal/apis/acme/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "file:internal/apis/acme/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "file:internal/apis/acme/v1/conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "file:internal/apis/acme/v1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "file:internal/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "file:internal/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "file:internal/apis/acme/v1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "file:internal/apis/acme/v1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "file:internal/apis/acme/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "file:internal/apis/meta/v1/conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "file:internal/apis/meta/v1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "file:internal/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "file:internal/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "file:internal/apis/meta/v1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "file:internal/apis/meta/v1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/register.go",
+      "target": "file:pkg/apis/acme/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/types_challenge.go",
+      "target": "file:internal/apis/meta/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/types_challenge.go",
+      "target": "file:internal/apis/meta/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/types_challenge.go",
+      "target": "file:internal/apis/meta/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/types_challenge.go",
+      "target": "file:internal/apis/meta/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "file:internal/apis/meta/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "file:internal/apis/meta/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "file:internal/apis/meta/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "file:internal/apis/meta/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "function:internal/apis/acme/install/install.go:Install",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/register.go",
+      "target": "function:internal/apis/acme/register.go:Resource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/register.go",
+      "target": "function:internal/apis/acme/register.go:addKnownTypes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_challenge.go",
+      "target": "class:internal/apis/acme/types_challenge.go:Challenge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_challenge.go",
+      "target": "class:internal/apis/acme/types_challenge.go:ChallengeList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_challenge.go",
+      "target": "class:internal/apis/acme/types_challenge.go:ChallengeSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_challenge.go",
+      "target": "class:internal/apis/acme/types_challenge.go:ChallengeStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEExternalAccountBinding",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:CertificateDNSNameSelector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01Ingress",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01GatewayHTTPRoute",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressPodTemplate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressPodObjectMeta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressPodSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressTemplate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressObjectMeta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverDNS01",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressPodSecurityContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressPodResources",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderAkamai",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderCloudDNS",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderCloudflare",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderDigitalOcean",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderRoute53",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:Route53Auth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:Route53KubernetesAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ServiceAccountRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderAzureDNS",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:AzureManagedIdentity",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderAcmeDNS",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderRFC2136",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderWebhook",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/acme/install/install.go",
+      "target": "function:internal/apis/acme/install/install.go:Install",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/register.go",
+      "target": "function:internal/apis/acme/register.go:Resource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_challenge.go",
+      "target": "class:internal/apis/acme/types_challenge.go:Challenge",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_challenge.go",
+      "target": "class:internal/apis/acme/types_challenge.go:ChallengeList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_challenge.go",
+      "target": "class:internal/apis/acme/types_challenge.go:ChallengeSpec",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_challenge.go",
+      "target": "class:internal/apis/acme/types_challenge.go:ChallengeStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEExternalAccountBinding",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolver",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:CertificateDNSNameSelector",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01Ingress",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01GatewayHTTPRoute",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressPodTemplate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressPodObjectMeta",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressPodSpec",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressTemplate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressObjectMeta",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverDNS01",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressPodSecurityContext",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEChallengeSolverHTTP01IngressPodResources",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderAkamai",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderCloudDNS",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderCloudflare",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderDigitalOcean",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderRoute53",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:Route53Auth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:Route53KubernetesAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ServiceAccountRef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderAzureDNS",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:AzureManagedIdentity",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderAcmeDNS",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderRFC2136",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerDNS01ProviderWebhook",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/acme/types_issuer.go",
+      "target": "class:internal/apis/acme/types_issuer.go:ACMEIssuerStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

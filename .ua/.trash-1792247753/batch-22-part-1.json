@@ -1,0 +1,802 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/acme/accounts/client.go",
+      "type": "file",
+      "name": "client.go",
+      "filePath": "pkg/acme/accounts/client.go",
+      "summary": "Constructs cert-manager ACME clients from issuer options, wiring TLS configuration, custom CA bundles, retry backoff, and logging middleware.",
+      "tags": [
+        "acme",
+        "client-factory",
+        "tls",
+        "networking"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/acme/accounts/client.go:NewClient",
+      "type": "function",
+      "name": "NewClient",
+      "filePath": "pkg/acme/accounts/client.go",
+      "lineRange": [
+        52,
+        60
+      ],
+      "summary": "Returns a NewClientFunc that builds a metrics-instrumented ACME client for the supplied metrics registry and user agent.",
+      "tags": [
+        "factory",
+        "acme",
+        "client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/acme/accounts/client.go:buildHTTPClientWithCABundle",
+      "type": "function",
+      "name": "buildHTTPClientWithCABundle",
+      "filePath": "pkg/acme/accounts/client.go",
+      "lineRange": [
+        77,
+        111
+      ],
+      "summary": "Creates an instrumented HTTP client with optional custom CA bundle, TLS verification settings, and tuned connection pooling for ACME requests.",
+      "tags": [
+        "http-client",
+        "tls",
+        "metrics",
+        "networking"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/acme/accounts/registry.go",
+      "type": "file",
+      "name": "registry.go",
+      "filePath": "pkg/acme/accounts/registry.go",
+      "summary": "In-memory registry that caches ACME clients per issuer UID and rebuilds them only when the server URL, TLS options, or account key change.",
+      "tags": [
+        "acme",
+        "registry",
+        "cache",
+        "concurrency"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/acme/accounts/registry.go:Registry",
+      "type": "class",
+      "name": "Registry",
+      "filePath": "pkg/acme/accounts/registry.go",
+      "lineRange": [
+        36,
+        50
+      ],
+      "summary": "Interface for storing, retrieving, and invalidating cached ACME clients keyed by issuer UID.",
+      "tags": [
+        "acme",
+        "interface",
+        "registry"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/acme/accounts/registry.go:Getter",
+      "type": "class",
+      "name": "Getter",
+      "filePath": "pkg/acme/accounts/registry.go",
+      "lineRange": [
+        53,
+        64
+      ],
+      "summary": "Read-only view of the ACME client registry exposing client lookup and listing.",
+      "tags": [
+        "acme",
+        "interface",
+        "read-only"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/acme/accounts/registry.go:registry",
+      "type": "class",
+      "name": "registry",
+      "filePath": "pkg/acme/accounts/registry.go",
+      "lineRange": [
+        75,
+        82
+      ],
+      "summary": "Mutex-protected map implementation of Registry that stores clients alongside the stable options used to build them.",
+      "tags": [
+        "registry",
+        "concurrency",
+        "cache"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/acme/accounts/registry.go:NewDefaultRegistry",
+      "type": "function",
+      "name": "NewDefaultRegistry",
+      "filePath": "pkg/acme/accounts/registry.go",
+      "lineRange": [
+        67,
+        72
+      ],
+      "summary": "Creates the default Registry implementation backed by a mutex-protected map keyed by issuer UID.",
+      "tags": [
+        "factory",
+        "registry"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/acme/accounts/registry.go:newStableOptions",
+      "type": "function",
+      "name": "newStableOptions",
+      "filePath": "pkg/acme/accounts/registry.go",
+      "lineRange": [
+        101,
+        115
+      ],
+      "summary": "Hashes the account private key and captures server URL, skip-TLS-verify, and CA bundle into a comparable options struct used as a cache key.",
+      "tags": [
+        "hashing",
+        "options",
+        "cache-key"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/acme/accounts/registry.go:ensureClient",
+      "type": "function",
+      "name": "ensureClient",
+      "filePath": "pkg/acme/accounts/registry.go",
+      "lineRange": [
+        137,
+        156
+      ],
+      "summary": "Creates or replaces the cached ACME client for an issuer UID when its stable options differ from the stored ones.",
+      "tags": [
+        "registry",
+        "cache",
+        "concurrency"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/acme/accounts/registry.go:AddClient",
+      "type": "function",
+      "name": "AddClient",
+      "filePath": "pkg/acme/accounts/registry.go",
+      "lineRange": [
+        127,
+        130
+      ],
+      "summary": "Ensures the registry holds an up-to-date ACME client for the given issuer UID.",
+      "tags": [
+        "registry",
+        "cache"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/acme/accounts/registry.go:GetClient",
+      "type": "function",
+      "name": "GetClient",
+      "filePath": "pkg/acme/accounts/registry.go",
+      "lineRange": [
+        161,
+        169
+      ],
+      "summary": "Returns the cached ACME client for the given issuer UID, or ErrNotFound when absent.",
+      "tags": [
+        "registry",
+        "lookup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/acme/accounts/registry.go:RemoveClient",
+      "type": "function",
+      "name": "RemoveClient",
+      "filePath": "pkg/acme/accounts/registry.go",
+      "lineRange": [
+        173,
+        180
+      ],
+      "summary": "Deletes the cached ACME client associated with the given issuer UID.",
+      "tags": [
+        "registry",
+        "cleanup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/acme/accounts/registry.go:ListClients",
+      "type": "function",
+      "name": "ListClients",
+      "filePath": "pkg/acme/accounts/registry.go",
+      "lineRange": [
+        186,
+        195
+      ],
+      "summary": "Returns a snapshot map of all registered ACME clients keyed by issuer UID, stripping internal metadata.",
+      "tags": [
+        "registry",
+        "enumeration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/acme/accounts/registry.go:IsKeyCheckSumCached",
+      "type": "function",
+      "name": "IsKeyCheckSumCached",
+      "filePath": "pkg/acme/accounts/registry.go",
+      "lineRange": [
+        200,
+        218
+      ],
+      "summary": "Compares the SHA-256 checksum of the supplied private key with a previously recorded hash to detect account key rotation.",
+      "tags": [
+        "validation",
+        "hashing",
+        "key-management"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/acme/accounts/test/registry.go",
+      "type": "file",
+      "name": "registry.go",
+      "filePath": "pkg/acme/accounts/test/registry.go",
+      "summary": "Test double implementing the accounts.Registry interface with injectable function fields for unit tests.",
+      "tags": [
+        "test",
+        "mock",
+        "registry",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/acme/accounts/test/registry.go:FakeRegistry",
+      "type": "class",
+      "name": "FakeRegistry",
+      "filePath": "pkg/acme/accounts/test/registry.go",
+      "lineRange": [
+        29,
+        35
+      ],
+      "summary": "Fake registry whose methods delegate to caller-supplied functions, letting tests stub ACME client storage and lookup.",
+      "tags": [
+        "test",
+        "mock",
+        "registry"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/acme/client/fake.go",
+      "type": "file",
+      "name": "fake.go",
+      "filePath": "pkg/acme/client/fake.go",
+      "summary": "FakeACME implements the ACME client Interface with per-method callback hooks, enabling controller tests without a real ACME server.",
+      "tags": [
+        "test",
+        "mock",
+        "acme",
+        "client"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/acme/client/fake.go:FakeACME",
+      "type": "class",
+      "name": "FakeACME",
+      "filePath": "pkg/acme/client/fake.go",
+      "lineRange": [
+        30,
+        47
+      ],
+      "summary": "Configurable mock ACME client whose methods invoke optional Fake* callbacks and return 'not implemented' errors when unset.",
+      "tags": [
+        "test",
+        "mock",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/acme/client/http.go",
+      "type": "file",
+      "name": "http.go",
+      "filePath": "pkg/acme/client/http.go",
+      "summary": "Custom round tripper that instruments every ACME HTTP request with Prometheus duration and count metrics.",
+      "tags": [
+        "http-client",
+        "metrics",
+        "middleware",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/acme/client/http.go:NewInstrumentedClient",
+      "type": "function",
+      "name": "NewInstrumentedClient",
+      "filePath": "pkg/acme/client/http.go",
+      "lineRange": [
+        52,
+        68
+      ],
+      "summary": "Wraps an http.Client transport with the instrumented ACME round tripper, falling back to http.DefaultClient when nil.",
+      "tags": [
+        "http-client",
+        "metrics",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/acme/client/http.go:RoundTrip",
+      "type": "function",
+      "name": "RoundTrip",
+      "filePath": "pkg/acme/client/http.go",
+      "lineRange": [
+        72,
+        103
+      ],
+      "summary": "Measures request latency and records ACME duration and count metrics labeled by scheme, host, action, method, and status code.",
+      "tags": [
+        "metrics",
+        "http-client",
+        "observability"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/acme/accounts/client.go",
+      "target": "function:pkg/acme/accounts/client.go:NewClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/accounts/client.go",
+      "target": "function:pkg/acme/accounts/client.go:NewClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/accounts/client.go",
+      "target": "function:pkg/acme/accounts/client.go:buildHTTPClientWithCABundle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/accounts/client.go",
+      "target": "file:pkg/acme/client/fake.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/accounts/client.go",
+      "target": "file:pkg/acme/client/http.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/accounts/client.go",
+      "target": "file:pkg/acme/client/interfaces.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/accounts/client.go",
+      "target": "file:pkg/acme/client/middleware/logger.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/accounts/client.go",
+      "target": "file:pkg/acme/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/accounts/client.go",
+      "target": "file:pkg/metrics/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/accounts/client.go",
+      "target": "file:pkg/metrics/metrics.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/accounts/client.go",
+      "target": "file:pkg/metrics/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/accounts/client.go",
+      "target": "file:third_party/forked/acme/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/accounts/client.go",
+      "target": "file:third_party/forked/acme/http.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/accounts/client.go",
+      "target": "file:third_party/forked/acme/jws.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/accounts/client.go",
+      "target": "file:third_party/forked/acme/rfc8555.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/accounts/client.go",
+      "target": "file:third_party/forked/acme/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/acme/accounts/client.go:buildHTTPClientWithCABundle",
+      "target": "function:pkg/acme/client/http.go:NewInstrumentedClient",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "class:pkg/acme/accounts/registry.go:Registry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "class:pkg/acme/accounts/registry.go:Registry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "class:pkg/acme/accounts/registry.go:Getter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "class:pkg/acme/accounts/registry.go:Getter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "class:pkg/acme/accounts/registry.go:registry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "function:pkg/acme/accounts/registry.go:NewDefaultRegistry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "function:pkg/acme/accounts/registry.go:NewDefaultRegistry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "function:pkg/acme/accounts/registry.go:newStableOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "function:pkg/acme/accounts/registry.go:ensureClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "function:pkg/acme/accounts/registry.go:AddClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "function:pkg/acme/accounts/registry.go:AddClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "function:pkg/acme/accounts/registry.go:GetClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "function:pkg/acme/accounts/registry.go:GetClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "function:pkg/acme/accounts/registry.go:RemoveClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "function:pkg/acme/accounts/registry.go:RemoveClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "function:pkg/acme/accounts/registry.go:ListClients",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "function:pkg/acme/accounts/registry.go:ListClients",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "function:pkg/acme/accounts/registry.go:IsKeyCheckSumCached",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "function:pkg/acme/accounts/registry.go:IsKeyCheckSumCached",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "file:pkg/acme/client/fake.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "file:pkg/acme/client/http.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/accounts/registry.go",
+      "target": "file:pkg/acme/client/interfaces.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "class:pkg/acme/accounts/registry.go:registry",
+      "target": "class:pkg/acme/accounts/registry.go:Registry",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:pkg/acme/accounts/test/registry.go",
+      "target": "class:pkg/acme/accounts/test/registry.go:FakeRegistry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/accounts/test/registry.go",
+      "target": "class:pkg/acme/accounts/test/registry.go:FakeRegistry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/accounts/test/registry.go",
+      "target": "file:pkg/acme/accounts/client.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/accounts/test/registry.go",
+      "target": "file:pkg/acme/accounts/registry.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/accounts/test/registry.go",
+      "target": "file:pkg/acme/client/fake.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/accounts/test/registry.go",
+      "target": "file:pkg/acme/client/http.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/accounts/test/registry.go",
+      "target": "file:pkg/acme/client/interfaces.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "class:pkg/acme/accounts/test/registry.go:FakeRegistry",
+      "target": "class:pkg/acme/accounts/registry.go:Registry",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:pkg/acme/client/fake.go",
+      "target": "class:pkg/acme/client/fake.go:FakeACME",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/client/fake.go",
+      "target": "class:pkg/acme/client/fake.go:FakeACME",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/client/fake.go",
+      "target": "file:third_party/forked/acme/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/fake.go",
+      "target": "file:third_party/forked/acme/http.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/fake.go",
+      "target": "file:third_party/forked/acme/jws.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/fake.go",
+      "target": "file:third_party/forked/acme/rfc8555.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/fake.go",
+      "target": "file:third_party/forked/acme/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "class:pkg/acme/client/fake.go:FakeACME",
+      "target": "class:pkg/acme/client/interfaces.go:Interface",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:pkg/acme/client/http.go",
+      "target": "function:pkg/acme/client/http.go:NewInstrumentedClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/client/http.go",
+      "target": "function:pkg/acme/client/http.go:NewInstrumentedClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/client/http.go",
+      "target": "function:pkg/acme/client/http.go:RoundTrip",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/client/http.go",
+      "target": "file:pkg/metrics/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/http.go",
+      "target": "file:pkg/metrics/metrics.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/http.go",
+      "target": "file:pkg/metrics/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/acme/client/http.go:RoundTrip",
+      "target": "function:pkg/metrics/acme.go:ObserveACMERequestDuration",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

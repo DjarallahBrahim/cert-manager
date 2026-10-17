@@ -1,0 +1,1378 @@
+{
+  "nodes": [
+    {
+      "id": "file:make/licenses.mk",
+      "type": "file",
+      "name": "licenses.mk",
+      "filePath": "make/licenses.mk",
+      "summary": "Make include that assembles the license header and license footnote files embedded into cert-manager container images and generated manifests.",
+      "tags": [
+        "build-system",
+        "licensing",
+        "compliance",
+        "containerization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:make/manifests.mk",
+      "type": "file",
+      "name": "manifests.mk",
+      "filePath": "make/manifests.mk",
+      "summary": "Make include that packages the Helm chart, renders the static cert-manager and CRD YAML manifests, and assembles signed release manifest bundles.",
+      "tags": [
+        "build-system",
+        "helm",
+        "manifests",
+        "release"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:make/release.mk",
+      "type": "file",
+      "name": "release.mk",
+      "filePath": "make/release.mk",
+      "summary": "Make include implementing the release pipeline: artifact builds, per-architecture container bundles, metadata generation, signing, and GCS upload.",
+      "tags": [
+        "build-system",
+        "release",
+        "signing",
+        "containerization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:make/scan.mk",
+      "type": "file",
+      "name": "scan.mk",
+      "filePath": "make/scan.mk",
+      "summary": "Make include running Trivy vulnerability scans against each cert-manager container image tarball.",
+      "tags": [
+        "build-system",
+        "security",
+        "scanning",
+        "compliance"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:make/server.mk",
+      "type": "file",
+      "name": "server.mk",
+      "filePath": "make/server.mk",
+      "summary": "Make include cross-compiling the controller, acmesolver, webhook, cainjector, and startupapicheck Go binaries for five Linux architectures.",
+      "tags": [
+        "build-system",
+        "compilation",
+        "cross-platform",
+        "go"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:make/test.mk",
+      "type": "file",
+      "name": "test.mk",
+      "filePath": "make/test.mk",
+      "summary": "Make include defining the unit, integration, live-DNS, upgrade, and e2e test targets along with JUnit-report variants used in CI.",
+      "tags": [
+        "build-system",
+        "testing",
+        "ci-cd",
+        "e2e-testing"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:make/third_party.mk",
+      "type": "file",
+      "name": "third_party.mk",
+      "filePath": "make/third_party.mk",
+      "summary": "Make include that syncs the vendored third-party tree, strips autocert, rewrites forked ACME import paths, and refreshes upstream license files.",
+      "tags": [
+        "build-system",
+        "third-party",
+        "vendoring",
+        "development"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:make/util.mk",
+      "type": "file",
+      "name": "util.mk",
+      "filePath": "make/util.mk",
+      "summary": "Make include providing the get-sources helper and targets that print the binary directory, Go sources, and source directories.",
+      "tags": [
+        "build-system",
+        "utility",
+        "helpers",
+        "development"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/acme/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "pkg/acme/OWNERS",
+      "summary": "Kubernetes OWNERS metadata labeling the pkg/acme tree with the area/acme review label.",
+      "tags": [
+        "governance",
+        "owners",
+        "metadata",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/apis/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "pkg/apis/OWNERS",
+      "summary": "Kubernetes OWNERS metadata for pkg/apis requiring munnerz as reviewer and applying the area/api label.",
+      "tags": [
+        "governance",
+        "owners",
+        "metadata",
+        "api"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/apis/config/shared/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "pkg/apis/config/shared/doc.go",
+      "summary": "Package documentation for the shared cert-manager configuration API types; contains only the license header and the shared package clause.",
+      "tags": [
+        "go",
+        "package-doc",
+        "configuration",
+        "api"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/apis/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "pkg/apis/doc.go",
+      "summary": "Package documentation for the cert-manager API packages declaring the cert-manager.io domain marker; contains only the license header and package clause.",
+      "tags": [
+        "go",
+        "package-doc",
+        "api",
+        "code-generation"
+      ],
+      "complexity": "simple",
+      "languageNotes": "The +domain marker is consumed by Kubernetes code-generation tooling."
+    },
+    {
+      "id": "function:make/manifests.mk:helm-chart",
+      "type": "function",
+      "name": "helm-chart",
+      "filePath": "make/manifests.mk",
+      "lineRange": [
+        25,
+        26
+      ],
+      "summary": "Packages the cert-manager Helm chart for the current version.",
+      "tags": [
+        "make-target",
+        "helm",
+        "packaging"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/manifests.mk:helm-chart-signature",
+      "type": "function",
+      "name": "helm-chart-signature",
+      "filePath": "make/manifests.mk",
+      "lineRange": [
+        31,
+        32
+      ],
+      "summary": "Generates the cmrel signature/provenance file for the packaged Helm chart.",
+      "tags": [
+        "make-target",
+        "helm",
+        "signing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/manifests.mk:static-manifests",
+      "type": "function",
+      "name": "static-manifests",
+      "filePath": "make/manifests.mk",
+      "lineRange": [
+        34,
+        35
+      ],
+      "summary": "Builds the static cert-manager.yaml and cert-manager.crds.yaml manifests.",
+      "tags": [
+        "make-target",
+        "manifests",
+        "packaging"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/manifests.mk:release-manifests",
+      "type": "function",
+      "name": "release-manifests",
+      "filePath": "make/manifests.mk",
+      "lineRange": [
+        44,
+        45
+      ],
+      "summary": "Assembles the unsigned release tarball containing the Helm chart and static manifests.",
+      "tags": [
+        "make-target",
+        "release",
+        "manifests"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/manifests.mk:release-manifests-signed",
+      "type": "function",
+      "name": "release-manifests-signed",
+      "filePath": "make/manifests.mk",
+      "lineRange": [
+        53,
+        54
+      ],
+      "summary": "Assembles and signs the release manifest bundle together with its metadata JSON.",
+      "tags": [
+        "make-target",
+        "release",
+        "signing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/release.mk:release-artifacts",
+      "type": "function",
+      "name": "release-artifacts",
+      "filePath": "make/release.mk",
+      "lineRange": [
+        38,
+        39
+      ],
+      "summary": "Builds all unsigned release artifacts locally: server binaries, Helm chart, containers, and manifests.",
+      "tags": [
+        "make-target",
+        "release",
+        "aggregate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/release.mk:release-artifacts-signed",
+      "type": "function",
+      "name": "release-artifacts-signed",
+      "filePath": "make/release.mk",
+      "lineRange": [
+        45,
+        46
+      ],
+      "summary": "Builds the release artifacts and additionally signs the Helm chart and manifest bundle.",
+      "tags": [
+        "make-target",
+        "release",
+        "signing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/release.mk:release",
+      "type": "function",
+      "name": "release",
+      "filePath": "make/release.mk",
+      "lineRange": [
+        55,
+        57
+      ],
+      "summary": "Creates a complete signed release ready for staging, including release metadata.",
+      "tags": [
+        "make-target",
+        "release",
+        "signing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/release.mk:upload-release",
+      "type": "function",
+      "name": "upload-release",
+      "filePath": "make/release.mk",
+      "lineRange": [
+        63,
+        63
+      ],
+      "summary": "Uploads the staged release directory to the configured GCS bucket using rclone.",
+      "tags": [
+        "make-target",
+        "release",
+        "upload"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/release.mk:release-containers",
+      "type": "function",
+      "name": "release-containers",
+      "filePath": "make/release.mk",
+      "lineRange": [
+        79,
+        80
+      ],
+      "summary": "Aggregate target for container bundle archives and their metadata files.",
+      "tags": [
+        "make-target",
+        "release",
+        "containerization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/release.mk:release-container-bundles",
+      "type": "function",
+      "name": "release-container-bundles",
+      "filePath": "make/release.mk",
+      "lineRange": [
+        82,
+        83
+      ],
+      "summary": "Packages per-architecture tarballs containing all cert-manager container images, the version file, and licenses.",
+      "tags": [
+        "make-target",
+        "release",
+        "containerization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:make/release.mk:release-container-metadata",
+      "type": "function",
+      "name": "release-container-metadata",
+      "filePath": "make/release.mk",
+      "lineRange": [
+        106,
+        107
+      ],
+      "summary": "Generates artifact metadata JSON with SHA-256 digests for each container bundle.",
+      "tags": [
+        "make-target",
+        "release",
+        "metadata"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/release.mk:forcetime",
+      "type": "function",
+      "name": "forcetime",
+      "filePath": "make/release.mk",
+      "lineRange": [
+        119,
+        121
+      ],
+      "summary": "Normalizes the modification times of every file under the build output directory.",
+      "tags": [
+        "make-target",
+        "release",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/scan.mk:trivy-scan-all",
+      "type": "function",
+      "name": "trivy-scan-all",
+      "filePath": "make/scan.mk",
+      "lineRange": [
+        22,
+        23
+      ],
+      "summary": "Runs Trivy scans for all five cert-manager images, aborting the whole run if any scan fails.",
+      "tags": [
+        "make-target",
+        "security",
+        "scanning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/scan.mk:trivy-scan-controller",
+      "type": "function",
+      "name": "trivy-scan-controller",
+      "filePath": "make/scan.mk",
+      "lineRange": [
+        25,
+        27
+      ],
+      "summary": "Scans the controller container image tarball with Trivy and exits non-zero on findings.",
+      "tags": [
+        "make-target",
+        "security",
+        "controller"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/scan.mk:trivy-scan-acmesolver",
+      "type": "function",
+      "name": "trivy-scan-acmesolver",
+      "filePath": "make/scan.mk",
+      "lineRange": [
+        29,
+        31
+      ],
+      "summary": "Scans the acmesolver container image tarball with Trivy and exits non-zero on findings.",
+      "tags": [
+        "make-target",
+        "security",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/scan.mk:trivy-scan-webhook",
+      "type": "function",
+      "name": "trivy-scan-webhook",
+      "filePath": "make/scan.mk",
+      "lineRange": [
+        33,
+        35
+      ],
+      "summary": "Scans the webhook container image tarball with Trivy and exits non-zero on findings.",
+      "tags": [
+        "make-target",
+        "security",
+        "webhook"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/scan.mk:trivy-scan-cainjector",
+      "type": "function",
+      "name": "trivy-scan-cainjector",
+      "filePath": "make/scan.mk",
+      "lineRange": [
+        37,
+        39
+      ],
+      "summary": "Scans the cainjector container image tarball with Trivy and exits non-zero on findings.",
+      "tags": [
+        "make-target",
+        "security",
+        "cainjector"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/scan.mk:trivy-scan-startupapicheck",
+      "type": "function",
+      "name": "trivy-scan-startupapicheck",
+      "filePath": "make/scan.mk",
+      "lineRange": [
+        41,
+        43
+      ],
+      "summary": "Scans the startupapicheck container image tarball with Trivy and exits non-zero on findings.",
+      "tags": [
+        "make-target",
+        "security",
+        "startup-check"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/server.mk:server-binaries",
+      "type": "function",
+      "name": "server-binaries",
+      "filePath": "make/server.mk",
+      "lineRange": [
+        16,
+        17
+      ],
+      "summary": "Aggregate target compiling the controller, acmesolver, webhook, and cainjector Linux binaries.",
+      "tags": [
+        "make-target",
+        "compilation",
+        "aggregate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/server.mk:controller",
+      "type": "function",
+      "name": "controller",
+      "filePath": "make/server.mk",
+      "lineRange": [
+        22,
+        23
+      ],
+      "summary": "Cross-compiles the cert-manager controller binary for all supported Linux architectures.",
+      "tags": [
+        "make-target",
+        "compilation",
+        "controller"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/server.mk:acmesolver",
+      "type": "function",
+      "name": "acmesolver",
+      "filePath": "make/server.mk",
+      "lineRange": [
+        40,
+        41
+      ],
+      "summary": "Cross-compiles the ACME HTTP-01 solver binary for all supported Linux architectures.",
+      "tags": [
+        "make-target",
+        "compilation",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/server.mk:webhook",
+      "type": "function",
+      "name": "webhook",
+      "filePath": "make/server.mk",
+      "lineRange": [
+        58,
+        59
+      ],
+      "summary": "Cross-compiles the cert-manager webhook binary for all supported Linux architectures.",
+      "tags": [
+        "make-target",
+        "compilation",
+        "webhook"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/server.mk:cainjector",
+      "type": "function",
+      "name": "cainjector",
+      "filePath": "make/server.mk",
+      "lineRange": [
+        76,
+        77
+      ],
+      "summary": "Cross-compiles the cainjector binary for all supported Linux architectures.",
+      "tags": [
+        "make-target",
+        "compilation",
+        "cainjector"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/server.mk:startupapicheck",
+      "type": "function",
+      "name": "startupapicheck",
+      "filePath": "make/server.mk",
+      "lineRange": [
+        94,
+        95
+      ],
+      "summary": "Cross-compiles the startupapicheck binary for all supported Linux architectures.",
+      "tags": [
+        "make-target",
+        "compilation",
+        "startup-check"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/test.mk:test",
+      "type": "function",
+      "name": "test",
+      "filePath": "make/test.mk",
+      "lineRange": [
+        37,
+        39
+      ],
+      "summary": "Runs the default gotestsum suite over the pkg, internal, test, and prune-junit packages configured by WHAT.",
+      "tags": [
+        "make-target",
+        "testing",
+        "unit-test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/test.mk:test-ci",
+      "type": "function",
+      "name": "test-ci",
+      "filePath": "make/test.mk",
+      "lineRange": [
+        48,
+        63
+      ],
+      "summary": "Runs every unit and integration suite with JUnit report output for CI, including pruning noisy fuzz results.",
+      "tags": [
+        "make-target",
+        "testing",
+        "ci-cd"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:make/test.mk:unit-test",
+      "type": "function",
+      "name": "unit-test",
+      "filePath": "make/test.mk",
+      "lineRange": [
+        70,
+        71
+      ],
+      "summary": "Aggregate target running unit tests for the core module and each cmd module.",
+      "tags": [
+        "make-target",
+        "testing",
+        "aggregate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/test.mk:unit-test-core-module",
+      "type": "function",
+      "name": "unit-test-core-module",
+      "filePath": "make/test.mk",
+      "lineRange": [
+        73,
+        75
+      ],
+      "summary": "Runs unit tests for ./pkg/... and ./internal/... through gotestsum.",
+      "tags": [
+        "make-target",
+        "testing",
+        "unit-test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/test.mk:unit-test-acmesolver",
+      "type": "function",
+      "name": "unit-test-acmesolver",
+      "filePath": "make/test.mk",
+      "lineRange": [
+        77,
+        79
+      ],
+      "summary": "Runs the acmesolver module unit tests.",
+      "tags": [
+        "make-target",
+        "testing",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/test.mk:unit-test-cainjector",
+      "type": "function",
+      "name": "unit-test-cainjector",
+      "filePath": "make/test.mk",
+      "lineRange": [
+        81,
+        83
+      ],
+      "summary": "Runs the cainjector module unit tests.",
+      "tags": [
+        "make-target",
+        "testing",
+        "cainjector"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/test.mk:unit-test-controller",
+      "type": "function",
+      "name": "unit-test-controller",
+      "filePath": "make/test.mk",
+      "lineRange": [
+        85,
+        87
+      ],
+      "summary": "Runs the controller module unit tests.",
+      "tags": [
+        "make-target",
+        "testing",
+        "controller"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/test.mk:unit-test-webhook",
+      "type": "function",
+      "name": "unit-test-webhook",
+      "filePath": "make/test.mk",
+      "lineRange": [
+        89,
+        91
+      ],
+      "summary": "Runs the webhook module unit tests.",
+      "tags": [
+        "make-target",
+        "testing",
+        "webhook"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/test.mk:unit-test-thirdparty",
+      "type": "function",
+      "name": "unit-test-thirdparty",
+      "filePath": "make/test.mk",
+      "lineRange": [
+        93,
+        95
+      ],
+      "summary": "Runs unit tests for the vendored third_party packages.",
+      "tags": [
+        "make-target",
+        "testing",
+        "third-party"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/test.mk:update-config-api-defaults",
+      "type": "function",
+      "name": "update-config-api-defaults",
+      "filePath": "make/test.mk",
+      "lineRange": [
+        97,
+        101
+      ],
+      "summary": "Regenerates default values for the cainjector, controller, and webhook configuration APIs.",
+      "tags": [
+        "make-target",
+        "code-generation",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/test.mk:setup-integration-tests",
+      "type": "function",
+      "name": "setup-integration-tests",
+      "filePath": "make/test.mk",
+      "lineRange": [
+        103,
+        104
+      ],
+      "summary": "Placeholder hook for integration test prerequisites that currently has no dependencies.",
+      "tags": [
+        "make-target",
+        "testing",
+        "integration-test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/test.mk:integration-test",
+      "type": "function",
+      "name": "integration-test",
+      "filePath": "make/test.mk",
+      "lineRange": [
+        111,
+        113
+      ],
+      "summary": "Runs the integration suite that requires etcd and a live Kubernetes API server.",
+      "tags": [
+        "make-target",
+        "testing",
+        "integration-test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/test.mk:livedns-test",
+      "type": "function",
+      "name": "livedns-test",
+      "filePath": "make/test.mk",
+      "lineRange": [
+        119,
+        121
+      ],
+      "summary": "Runs the live DNS tests gated behind the livedns_test build tag.",
+      "tags": [
+        "make-target",
+        "testing",
+        "dns"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/test.mk:e2e",
+      "type": "function",
+      "name": "e2e",
+      "filePath": "make/test.mk",
+      "lineRange": [
+        141,
+        143
+      ],
+      "summary": "Runs the Ginkgo end-to-end suite against an existing kind cluster prepared by e2e-setup.",
+      "tags": [
+        "make-target",
+        "testing",
+        "e2e-testing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/test.mk:e2e-ci",
+      "type": "function",
+      "name": "e2e-ci",
+      "filePath": "make/test.mk",
+      "lineRange": [
+        145,
+        149
+      ],
+      "summary": "Creates the kind cluster, installs the e2e add-ons, and runs the e2e suite in CI mode.",
+      "tags": [
+        "make-target",
+        "testing",
+        "ci-cd",
+        "e2e-testing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/test.mk:e2e-build",
+      "type": "function",
+      "name": "e2e-build",
+      "filePath": "make/test.mk",
+      "lineRange": [
+        176,
+        177
+      ],
+      "summary": "Builds a standalone e2e test binary that can run outside the repository without Go or Ginkgo installed.",
+      "tags": [
+        "make-target",
+        "testing",
+        "e2e-testing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/test.mk:test-upgrade",
+      "type": "function",
+      "name": "test-upgrade",
+      "filePath": "make/test.mk",
+      "lineRange": [
+        188,
+        192
+      ],
+      "summary": "Runs the upgrade test that installs the latest published release and upgrades it to the current code.",
+      "tags": [
+        "make-target",
+        "testing",
+        "upgrade"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:make/third_party.mk:update-third-party",
+      "type": "function",
+      "name": "update-third-party",
+      "filePath": "make/third_party.mk",
+      "lineRange": [
+        27,
+        39
+      ],
+      "summary": "Syncs third_party via klone, removes autocert, rewrites forked ACME import paths to the cert-manager module, and downloads upstream license files.",
+      "tags": [
+        "make-target",
+        "third-party",
+        "vendoring"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:make/util.mk:print-bindir",
+      "type": "function",
+      "name": "print-bindir",
+      "filePath": "make/util.mk",
+      "lineRange": [
+        25,
+        27
+      ],
+      "summary": "Prints the configured build output directory.",
+      "tags": [
+        "make-target",
+        "utility",
+        "build-system"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/util.mk:print-sources",
+      "type": "function",
+      "name": "print-sources",
+      "filePath": "make/util.mk",
+      "lineRange": [
+        29,
+        31
+      ],
+      "summary": "Prints the resolved list of Go source files used as build inputs.",
+      "tags": [
+        "make-target",
+        "utility",
+        "build-system"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/util.mk:print-source-dirs",
+      "type": "function",
+      "name": "print-source-dirs",
+      "filePath": "make/util.mk",
+      "lineRange": [
+        33,
+        35
+      ],
+      "summary": "Prints the resolved list of source directories.",
+      "tags": [
+        "make-target",
+        "utility",
+        "build-system"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:make/manifests.mk",
+      "target": "function:make/manifests.mk:helm-chart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/manifests.mk",
+      "target": "function:make/manifests.mk:helm-chart-signature",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/manifests.mk",
+      "target": "function:make/manifests.mk:static-manifests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/manifests.mk",
+      "target": "function:make/manifests.mk:release-manifests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/manifests.mk",
+      "target": "function:make/manifests.mk:release-manifests-signed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/release.mk",
+      "target": "function:make/release.mk:release-artifacts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/release.mk",
+      "target": "function:make/release.mk:release-artifacts-signed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/release.mk",
+      "target": "function:make/release.mk:release",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/release.mk",
+      "target": "function:make/release.mk:upload-release",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/release.mk",
+      "target": "function:make/release.mk:release-containers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/release.mk",
+      "target": "function:make/release.mk:release-container-bundles",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/release.mk",
+      "target": "function:make/release.mk:release-container-metadata",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/release.mk",
+      "target": "function:make/release.mk:forcetime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/scan.mk",
+      "target": "function:make/scan.mk:trivy-scan-all",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/scan.mk",
+      "target": "function:make/scan.mk:trivy-scan-controller",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/scan.mk",
+      "target": "function:make/scan.mk:trivy-scan-acmesolver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/scan.mk",
+      "target": "function:make/scan.mk:trivy-scan-webhook",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/scan.mk",
+      "target": "function:make/scan.mk:trivy-scan-cainjector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/scan.mk",
+      "target": "function:make/scan.mk:trivy-scan-startupapicheck",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/server.mk",
+      "target": "function:make/server.mk:server-binaries",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/server.mk",
+      "target": "function:make/server.mk:controller",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/server.mk",
+      "target": "function:make/server.mk:acmesolver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/server.mk",
+      "target": "function:make/server.mk:webhook",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/server.mk",
+      "target": "function:make/server.mk:cainjector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/server.mk",
+      "target": "function:make/server.mk:startupapicheck",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/test.mk",
+      "target": "function:make/test.mk:test",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/test.mk",
+      "target": "function:make/test.mk:test-ci",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/test.mk",
+      "target": "function:make/test.mk:unit-test",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/test.mk",
+      "target": "function:make/test.mk:unit-test-core-module",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/test.mk",
+      "target": "function:make/test.mk:unit-test-acmesolver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/test.mk",
+      "target": "function:make/test.mk:unit-test-cainjector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/test.mk",
+      "target": "function:make/test.mk:unit-test-controller",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/test.mk",
+      "target": "function:make/test.mk:unit-test-webhook",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/test.mk",
+      "target": "function:make/test.mk:unit-test-thirdparty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/test.mk",
+      "target": "function:make/test.mk:update-config-api-defaults",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/test.mk",
+      "target": "function:make/test.mk:setup-integration-tests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/test.mk",
+      "target": "function:make/test.mk:integration-test",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/test.mk",
+      "target": "function:make/test.mk:livedns-test",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/test.mk",
+      "target": "function:make/test.mk:e2e",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/test.mk",
+      "target": "function:make/test.mk:e2e-ci",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/test.mk",
+      "target": "function:make/test.mk:e2e-build",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/test.mk",
+      "target": "function:make/test.mk:test-upgrade",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/third_party.mk",
+      "target": "function:make/third_party.mk:update-third-party",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/util.mk",
+      "target": "function:make/util.mk:print-bindir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/util.mk",
+      "target": "function:make/util.mk:print-sources",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/util.mk",
+      "target": "function:make/util.mk:print-source-dirs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/apis/OWNERS",
+      "target": "file:pkg/apis/doc.go",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:pkg/apis/config/shared/doc.go",
+      "target": "file:pkg/apis/doc.go",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "function:make/release.mk:release-artifacts",
+      "target": "function:make/server.mk:server-binaries",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/release.mk:release-artifacts",
+      "target": "function:make/manifests.mk:helm-chart",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/release.mk:release-artifacts",
+      "target": "function:make/release.mk:release-containers",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/release.mk:release-artifacts",
+      "target": "function:make/manifests.mk:release-manifests",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/release.mk:release",
+      "target": "function:make/release.mk:release-artifacts-signed",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/release.mk:release-containers",
+      "target": "function:make/release.mk:release-container-bundles",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/release.mk:release-containers",
+      "target": "function:make/release.mk:release-container-metadata",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/scan.mk:trivy-scan-all",
+      "target": "function:make/scan.mk:trivy-scan-controller",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/scan.mk:trivy-scan-all",
+      "target": "function:make/scan.mk:trivy-scan-acmesolver",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/scan.mk:trivy-scan-all",
+      "target": "function:make/scan.mk:trivy-scan-webhook",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/scan.mk:trivy-scan-all",
+      "target": "function:make/scan.mk:trivy-scan-cainjector",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/scan.mk:trivy-scan-all",
+      "target": "function:make/scan.mk:trivy-scan-startupapicheck",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

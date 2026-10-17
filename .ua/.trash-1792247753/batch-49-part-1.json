@@ -1,0 +1,968 @@
+{
+  "nodes": [
+    {
+      "id": "file:make/config/pebble/chart/templates/_helpers.tpl",
+      "type": "file",
+      "name": "_helpers.tpl",
+      "filePath": "make/config/pebble/chart/templates/_helpers.tpl",
+      "summary": "Helm helper template for the local Pebble chart defining the name and fullname helpers that derive chart- and release-scoped resource names.",
+      "tags": [
+        "helm",
+        "template",
+        "naming",
+        "e2e-testing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:make/config/pebble/chart/values.yaml",
+      "type": "config",
+      "name": "values.yaml",
+      "filePath": "make/config/pebble/chart/values.yaml",
+      "summary": "Default values for the local Pebble ACME test-server Helm chart, setting the local image, ClusterIP service, resource limits, and Pebble strict mode.",
+      "tags": [
+        "configuration",
+        "helm",
+        "acme-server",
+        "e2e-testing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:make/config/projectcontour/contour.yaml",
+      "type": "config",
+      "name": "contour.yaml",
+      "filePath": "make/config/projectcontour/contour.yaml",
+      "summary": "Contour configuration used by the e2e Gateway API setup, wiring Contour to the acmesolver Gateway and tuning TLS, logging, and Envoy options.",
+      "tags": [
+        "configuration",
+        "gateway-api",
+        "networking",
+        "e2e-testing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:make/config/projectcontour/gateway.yaml",
+      "type": "config",
+      "name": "gateway.yaml",
+      "filePath": "make/config/projectcontour/gateway.yaml",
+      "summary": "Kubernetes Gateway API resources defining an acmesolver GatewayClass and an HTTP Gateway consumed by Contour during HTTP-01 e2e tests.",
+      "tags": [
+        "configuration",
+        "gateway-api",
+        "kubernetes",
+        "e2e-testing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:make/config/samplewebhook/Containerfile.samplewebhook",
+      "type": "file",
+      "name": "Containerfile.samplewebhook",
+      "filePath": "make/config/samplewebhook/Containerfile.samplewebhook",
+      "summary": "Container image definition that copies the sample webhook binary into a non-root base image and runs it as the entrypoint for e2e webhook tests.",
+      "tags": [
+        "containerization",
+        "dockerfile",
+        "webhook",
+        "e2e-testing"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Single-stage OCI build parameterized by a BASE_IMAGE build argument and running as UID 1000."
+    },
+    {
+      "id": "file:make/config/samplewebhook/chart/.helmignore",
+      "type": "file",
+      "name": ".helmignore",
+      "filePath": "make/config/samplewebhook/chart/.helmignore",
+      "summary": "Helm ignore list excluding VCS metadata, backups, swap files, and IDE files from the packaged sample webhook chart.",
+      "tags": [
+        "helm",
+        "packaging",
+        "configuration",
+        "e2e-testing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:make/config/samplewebhook/chart/Chart.yaml",
+      "type": "config",
+      "name": "Chart.yaml",
+      "filePath": "make/config/samplewebhook/chart/Chart.yaml",
+      "summary": "Helm chart metadata for the example webhook chart declaring its name, chart version, and application version.",
+      "tags": [
+        "configuration",
+        "helm",
+        "chart-metadata",
+        "e2e-testing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:make/config/samplewebhook/chart/templates/_helpers.tpl",
+      "type": "file",
+      "name": "_helpers.tpl",
+      "filePath": "make/config/samplewebhook/chart/templates/_helpers.tpl",
+      "summary": "Helm helper templates defining name, fullname, chart label, and self-signed issuer, CA issuer, certificate, and serving-certificate names for the sample webhook chart.",
+      "tags": [
+        "helm",
+        "template",
+        "naming",
+        "webhook"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:make/config/samplewebhook/chart/values.yaml",
+      "type": "config",
+      "name": "values.yaml",
+      "filePath": "make/config/samplewebhook/chart/values.yaml",
+      "summary": "Helm values for the sample webhook chart configuring its DNS group name, cert-manager integration namespace and service account, local image, service port, and scheduling options.",
+      "tags": [
+        "configuration",
+        "helm",
+        "webhook",
+        "e2e-testing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:make/containers.mk",
+      "type": "file",
+      "name": "containers.mk",
+      "filePath": "make/containers.mk",
+      "summary": "Make include that builds and saves multi-architecture container image tarballs for the controller, webhook, cainjector, acmesolver, and startupapicheck binaries.",
+      "tags": [
+        "build-system",
+        "containerization",
+        "multi-arch",
+        "release"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Uses GNU Make pattern rules, eval, and per-target hard-linked build contexts to keep each container build context small."
+    },
+    {
+      "id": "file:make/e2e-setup.mk",
+      "type": "file",
+      "name": "e2e-setup.mk",
+      "filePath": "make/e2e-setup.mk",
+      "summary": "Make include that provisions a kind cluster and installs cert-manager plus every e2e add-on: Gateway API, Vault, Bind, Pebble, ingress-nginx, Contour, Kyverno, and the sample webhook and external issuer.",
+      "tags": [
+        "build-system",
+        "e2e-testing",
+        "kubernetes",
+        "test-infrastructure"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:make/git.mk",
+      "type": "file",
+      "name": "git.mk",
+      "filePath": "make/git.mk",
+      "summary": "Make include exposing git version metadata targets and maintaining the release-version stamp file used to invalidate container builds after checkouts.",
+      "tags": [
+        "build-system",
+        "versioning",
+        "git",
+        "release"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:make/ko.mk",
+      "type": "file",
+      "name": "ko.mk",
+      "filePath": "make/ko.mk",
+      "summary": "Make include with experimental ko-based targets that build and push cert-manager images to an OCI registry and deploy them to the current cluster.",
+      "tags": [
+        "build-system",
+        "containerization",
+        "ko",
+        "deployment"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:make/containers.mk:all-containers",
+      "type": "function",
+      "name": "all-containers",
+      "filePath": "make/containers.mk",
+      "lineRange": [
+        52,
+        53
+      ],
+      "summary": "Aggregate target building container image tarballs for all five cert-manager binaries across every supported architecture.",
+      "tags": [
+        "make-target",
+        "containerization",
+        "aggregate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/containers.mk:cert-manager-controller-linux",
+      "type": "function",
+      "name": "cert-manager-controller-linux",
+      "filePath": "make/containers.mk",
+      "lineRange": [
+        55,
+        56
+      ],
+      "summary": "Builds and saves controller container image tarballs for all supported Linux architectures.",
+      "tags": [
+        "make-target",
+        "containerization",
+        "controller"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/containers.mk:cert-manager-webhook-linux",
+      "type": "function",
+      "name": "cert-manager-webhook-linux",
+      "filePath": "make/containers.mk",
+      "lineRange": [
+        68,
+        69
+      ],
+      "summary": "Builds and saves webhook container image tarballs for all supported Linux architectures.",
+      "tags": [
+        "make-target",
+        "containerization",
+        "webhook"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/containers.mk:cert-manager-cainjector-linux",
+      "type": "function",
+      "name": "cert-manager-cainjector-linux",
+      "filePath": "make/containers.mk",
+      "lineRange": [
+        81,
+        82
+      ],
+      "summary": "Builds and saves cainjector container image tarballs for all supported Linux architectures.",
+      "tags": [
+        "make-target",
+        "containerization",
+        "cainjector"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/containers.mk:cert-manager-acmesolver-linux",
+      "type": "function",
+      "name": "cert-manager-acmesolver-linux",
+      "filePath": "make/containers.mk",
+      "lineRange": [
+        94,
+        95
+      ],
+      "summary": "Builds and saves acmesolver container image tarballs for all supported Linux architectures.",
+      "tags": [
+        "make-target",
+        "containerization",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/containers.mk:cert-manager-startupapicheck-linux",
+      "type": "function",
+      "name": "cert-manager-startupapicheck-linux",
+      "filePath": "make/containers.mk",
+      "lineRange": [
+        107,
+        108
+      ],
+      "summary": "Builds and saves startupapicheck container image tarballs for all supported Linux architectures.",
+      "tags": [
+        "make-target",
+        "containerization",
+        "startup-check"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/e2e-setup.mk:e2e-setup-kind",
+      "type": "function",
+      "name": "e2e-setup-kind",
+      "filePath": "make/e2e-setup.mk",
+      "lineRange": [
+        84,
+        87
+      ],
+      "summary": "Ensures the kind cluster exists and prints the follow-up command that installs cert-manager and the add-ons.",
+      "tags": [
+        "make-target",
+        "e2e-testing",
+        "kind"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/e2e-setup.mk:kind-exists",
+      "type": "function",
+      "name": "kind-exists",
+      "filePath": "make/e2e-setup.mk",
+      "lineRange": [
+        104,
+        105
+      ],
+      "summary": "Guarantees the kind cluster marker file exists, creating the cluster when it is missing.",
+      "tags": [
+        "make-target",
+        "e2e-testing",
+        "kind"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/e2e-setup.mk:e2e-setup",
+      "type": "function",
+      "name": "e2e-setup",
+      "filePath": "make/e2e-setup.mk",
+      "lineRange": [
+        117,
+        118
+      ],
+      "summary": "Installs cert-manager and every e2e add-on into the kind cluster, including Gateway API, Vault, Bind, Pebble, ingress-nginx, Contour, Kyverno, and sample solvers.",
+      "tags": [
+        "make-target",
+        "e2e-testing",
+        "aggregate",
+        "test-infrastructure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/e2e-setup.mk:preload-kind-image",
+      "type": "function",
+      "name": "preload-kind-image",
+      "filePath": "make/e2e-setup.mk",
+      "lineRange": [
+        170,
+        171
+      ],
+      "summary": "Pre-pulls or loads the kind node image so cluster creation does not block other e2e setup targets.",
+      "tags": [
+        "make-target",
+        "e2e-testing",
+        "container-image"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/e2e-setup.mk:e2e-setup-certmanager",
+      "type": "function",
+      "name": "e2e-setup-certmanager",
+      "filePath": "make/e2e-setup.mk",
+      "lineRange": [
+        311,
+        327
+      ],
+      "summary": "Installs cert-manager into the kind cluster from the locally built manifests and images.",
+      "tags": [
+        "make-target",
+        "e2e-testing",
+        "deployment"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:make/e2e-setup.mk:e2e-setup-bind",
+      "type": "function",
+      "name": "e2e-setup-bind",
+      "filePath": "make/e2e-setup.mk",
+      "lineRange": [
+        359,
+        363
+      ],
+      "summary": "Deploys the Bind DNS server used by the ACME DNS-01 end-to-end tests.",
+      "tags": [
+        "make-target",
+        "e2e-testing",
+        "dns"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/e2e-setup.mk:e2e-setup-gatewayapi",
+      "type": "function",
+      "name": "e2e-setup-gatewayapi",
+      "filePath": "make/e2e-setup.mk",
+      "lineRange": [
+        365,
+        368
+      ],
+      "summary": "Installs the Kubernetes Gateway API CRDs required by the Contour gateway tests.",
+      "tags": [
+        "make-target",
+        "e2e-testing",
+        "gateway-api"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/e2e-setup.mk:e2e-setup-ingressnginx",
+      "type": "function",
+      "name": "e2e-setup-ingressnginx",
+      "filePath": "make/e2e-setup.mk",
+      "lineRange": [
+        386,
+        407
+      ],
+      "summary": "Deploys ingress-nginx with a fixed service IP for the ACME HTTP-01 ingress tests.",
+      "tags": [
+        "make-target",
+        "e2e-testing",
+        "ingress"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:make/e2e-setup.mk:e2e-setup-kyverno",
+      "type": "function",
+      "name": "e2e-setup-kyverno",
+      "filePath": "make/e2e-setup.mk",
+      "lineRange": [
+        409,
+        429
+      ],
+      "summary": "Installs Kyverno and its pre-hook deployment for the policy-related e2e tests.",
+      "tags": [
+        "make-target",
+        "e2e-testing",
+        "policy"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:make/e2e-setup.mk:e2e-setup-pebble",
+      "type": "function",
+      "name": "e2e-setup-pebble",
+      "filePath": "make/e2e-setup.mk",
+      "lineRange": [
+        455,
+        462
+      ],
+      "summary": "Installs the local Pebble ACME test server Helm chart into the kind cluster.",
+      "tags": [
+        "make-target",
+        "e2e-testing",
+        "acme-server"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/e2e-setup.mk:e2e-setup-samplewebhook",
+      "type": "function",
+      "name": "e2e-setup-samplewebhook",
+      "filePath": "make/e2e-setup.mk",
+      "lineRange": [
+        477,
+        484
+      ],
+      "summary": "Builds, loads, and Helm-installs the sample external webhook solver used in e2e tests.",
+      "tags": [
+        "make-target",
+        "e2e-testing",
+        "webhook"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/e2e-setup.mk:e2e-setup-projectcontour",
+      "type": "function",
+      "name": "e2e-setup-projectcontour",
+      "filePath": "make/e2e-setup.mk",
+      "lineRange": [
+        486,
+        522
+      ],
+      "summary": "Installs Contour and Envoy through the Bitnami chart, points Contour at the acmesolver Gateway, and applies the Gateway resources.",
+      "tags": [
+        "make-target",
+        "e2e-testing",
+        "gateway-api"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:make/e2e-setup.mk:e2e-setup-sampleexternalissuer",
+      "type": "function",
+      "name": "e2e-setup-sampleexternalissuer",
+      "filePath": "make/e2e-setup.mk",
+      "lineRange": [
+        524,
+        527
+      ],
+      "summary": "Installs the sample external issuer controller used by the external issuer e2e tests.",
+      "tags": [
+        "make-target",
+        "e2e-testing",
+        "external-issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/e2e-setup.mk:e2e-setup-vault",
+      "type": "function",
+      "name": "e2e-setup-vault",
+      "filePath": "make/e2e-setup.mk",
+      "lineRange": [
+        531,
+        532
+      ],
+      "summary": "Loads the retagged Vault image into the kind cluster so the Vault issuer e2e tests can install it.",
+      "tags": [
+        "make-target",
+        "e2e-testing",
+        "vault"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/e2e-setup.mk:kind-logs",
+      "type": "function",
+      "name": "kind-logs",
+      "filePath": "make/e2e-setup.mk",
+      "lineRange": [
+        537,
+        541
+      ],
+      "summary": "Exports kind cluster logs into the artifacts directory for debugging failed e2e runs.",
+      "tags": [
+        "make-target",
+        "e2e-testing",
+        "debugging"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/git.mk:gitver",
+      "type": "function",
+      "name": "gitver",
+      "filePath": "make/git.mk",
+      "lineRange": [
+        18,
+        23
+      ],
+      "summary": "Prints the resolved release version, tagged-release status, prerelease flag, and git commit hash.",
+      "tags": [
+        "make-target",
+        "versioning",
+        "git"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/git.mk:release-version",
+      "type": "function",
+      "name": "release-version",
+      "filePath": "make/git.mk",
+      "lineRange": [
+        25,
+        27
+      ],
+      "summary": "Prints the computed release version string for use by scripts and other targets.",
+      "tags": [
+        "make-target",
+        "versioning",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/ko.mk:ko-images-push",
+      "type": "function",
+      "name": "ko-images-push",
+      "filePath": "make/ko.mk",
+      "lineRange": [
+        69,
+        70
+      ],
+      "summary": "Builds and pushes the selected cert-manager images to an OCI registry using ko, recording image references as YAML.",
+      "tags": [
+        "make-target",
+        "containerization",
+        "ko",
+        "registry"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/ko.mk:ko-deploy-certmanager",
+      "type": "function",
+      "name": "ko-deploy-certmanager",
+      "filePath": "make/ko.mk",
+      "lineRange": [
+        74,
+        92
+      ],
+      "summary": "Deploys or upgrades cert-manager with Helm using the repository and digest of each ko-built image.",
+      "tags": [
+        "make-target",
+        "deployment",
+        "ko",
+        "helm"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:make/containers.mk",
+      "target": "function:make/containers.mk:all-containers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/containers.mk",
+      "target": "function:make/containers.mk:cert-manager-controller-linux",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/containers.mk",
+      "target": "function:make/containers.mk:cert-manager-webhook-linux",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/containers.mk",
+      "target": "function:make/containers.mk:cert-manager-cainjector-linux",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/containers.mk",
+      "target": "function:make/containers.mk:cert-manager-acmesolver-linux",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/containers.mk",
+      "target": "function:make/containers.mk:cert-manager-startupapicheck-linux",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "function:make/e2e-setup.mk:e2e-setup-kind",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "function:make/e2e-setup.mk:kind-exists",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "function:make/e2e-setup.mk:e2e-setup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "function:make/e2e-setup.mk:preload-kind-image",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "function:make/e2e-setup.mk:e2e-setup-certmanager",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "function:make/e2e-setup.mk:e2e-setup-bind",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "function:make/e2e-setup.mk:e2e-setup-gatewayapi",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "function:make/e2e-setup.mk:e2e-setup-ingressnginx",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "function:make/e2e-setup.mk:e2e-setup-kyverno",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "function:make/e2e-setup.mk:e2e-setup-pebble",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "function:make/e2e-setup.mk:e2e-setup-samplewebhook",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "function:make/e2e-setup.mk:e2e-setup-projectcontour",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "function:make/e2e-setup.mk:e2e-setup-sampleexternalissuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "function:make/e2e-setup.mk:e2e-setup-vault",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "function:make/e2e-setup.mk:kind-logs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/git.mk",
+      "target": "function:make/git.mk:gitver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/git.mk",
+      "target": "function:make/git.mk:release-version",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/ko.mk",
+      "target": "function:make/ko.mk:ko-images-push",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/ko.mk",
+      "target": "function:make/ko.mk:ko-deploy-certmanager",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "config:make/config/pebble/chart/values.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "config:make/config/projectcontour/contour.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "config:make/config/projectcontour/gateway.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "config:make/config/samplewebhook/chart/Chart.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "config:make/config/samplewebhook/chart/values.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/e2e-setup.mk",
+      "target": "file:make/config/samplewebhook/Containerfile.samplewebhook",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:make/config/pebble/chart/values.yaml",
+      "target": "file:make/config/pebble/chart/templates/_helpers.tpl",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:make/config/samplewebhook/chart/values.yaml",
+      "target": "file:make/config/samplewebhook/chart/templates/_helpers.tpl",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:make/config/samplewebhook/chart/Chart.yaml",
+      "target": "file:make/config/samplewebhook/chart/templates/_helpers.tpl",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:make/config/projectcontour/contour.yaml",
+      "target": "config:make/config/projectcontour/gateway.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:make/config/samplewebhook/Containerfile.samplewebhook",
+      "target": "config:make/config/samplewebhook/chart/values.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "function:make/e2e-setup.mk:e2e-setup",
+      "target": "function:make/e2e-setup.mk:e2e-setup-gatewayapi",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/e2e-setup.mk:e2e-setup",
+      "target": "function:make/e2e-setup.mk:e2e-setup-certmanager",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/e2e-setup.mk:e2e-setup",
+      "target": "function:make/e2e-setup.mk:e2e-setup-vault",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/e2e-setup.mk:e2e-setup",
+      "target": "function:make/e2e-setup.mk:e2e-setup-bind",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/e2e-setup.mk:e2e-setup",
+      "target": "function:make/e2e-setup.mk:e2e-setup-sampleexternalissuer",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/e2e-setup.mk:e2e-setup",
+      "target": "function:make/e2e-setup.mk:e2e-setup-samplewebhook",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/e2e-setup.mk:e2e-setup",
+      "target": "function:make/e2e-setup.mk:e2e-setup-pebble",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/e2e-setup.mk:e2e-setup",
+      "target": "function:make/e2e-setup.mk:e2e-setup-ingressnginx",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/e2e-setup.mk:e2e-setup",
+      "target": "function:make/e2e-setup.mk:e2e-setup-projectcontour",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/containers.mk:all-containers",
+      "target": "function:make/containers.mk:cert-manager-controller-linux",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/containers.mk:all-containers",
+      "target": "function:make/containers.mk:cert-manager-webhook-linux",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/containers.mk:all-containers",
+      "target": "function:make/containers.mk:cert-manager-cainjector-linux",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/containers.mk:all-containers",
+      "target": "function:make/containers.mk:cert-manager-acmesolver-linux",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:make/containers.mk:all-containers",
+      "target": "function:make/containers.mk:cert-manager-startupapicheck-linux",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

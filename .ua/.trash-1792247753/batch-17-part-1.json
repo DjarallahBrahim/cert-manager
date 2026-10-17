@@ -1,0 +1,741 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go",
+      "type": "file",
+      "name": "vaultkubernetesauth.go",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go",
+      "summary": "Generated apply-configuration builder for the Vault Kubernetes auth method, exposing typed With* setters for mount path, role, SecretKeySelector and ServiceAccountRef.",
+      "tags": [
+        "generated-code",
+        "apply-configuration",
+        "vault",
+        "kubernetes-auth",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/certmanager/v1/venaficloud.go",
+      "type": "file",
+      "name": "venaficloud.go",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/venaficloud.go",
+      "summary": "Generated apply-configuration builder for Venafi Cloud issuer settings, carrying the Venafi Cloud URL and API token secret reference.",
+      "tags": [
+        "generated-code",
+        "apply-configuration",
+        "venafi",
+        "issuer-config",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go",
+      "type": "file",
+      "name": "venafiissuer.go",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go",
+      "summary": "Generated apply-configuration builder for the Venafi issuer block, selecting between the TPP and Cloud connection settings and a zone.",
+      "tags": [
+        "generated-code",
+        "apply-configuration",
+        "venafi",
+        "issuer-config",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/certmanager/v1/venafitpp.go",
+      "type": "file",
+      "name": "venafitpp.go",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/venafitpp.go",
+      "summary": "Generated apply-configuration builder for Venafi TPP connection settings, including URL, credentials secret reference and CA bundle fields.",
+      "tags": [
+        "generated-code",
+        "apply-configuration",
+        "venafi",
+        "tpp",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/certmanager/v1/x509subject.go",
+      "type": "file",
+      "name": "x509subject.go",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/x509subject.go",
+      "summary": "Generated apply-configuration builder for X.509 distinguished-name fields such as organizations, countries, localities and serial number.",
+      "tags": [
+        "generated-code",
+        "apply-configuration",
+        "x509",
+        "certificate-subject",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/internal/internal.go",
+      "type": "file",
+      "name": "internal.go",
+      "filePath": "pkg/client/applyconfigurations/internal/internal.go",
+      "summary": "Bundles the structured-merge-diff schema YAML for all cert-manager API types and exposes a lazily initialised typed.Parser used when converting typed objects for server-side apply.",
+      "tags": [
+        "generated-code",
+        "schema-definition",
+        "parser",
+        "server-side-apply"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Schema YAML is embedded as a raw string and parsed once via sync.Once, so parser creation is concurrency-safe and cheap on repeat calls."
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "type": "file",
+      "name": "issuerreference.go",
+      "filePath": "pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "summary": "Generated apply-configuration builder for an IssuerReference, capturing the referenced issuer name, kind and API group.",
+      "tags": [
+        "generated-code",
+        "apply-configuration",
+        "issuer-reference",
+        "meta",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "type": "file",
+      "name": "localobjectreference.go",
+      "filePath": "pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "summary": "Generated apply-configuration builder for a LocalObjectReference, limited to the referenced object name.",
+      "tags": [
+        "generated-code",
+        "apply-configuration",
+        "object-reference",
+        "meta",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+      "type": "file",
+      "name": "secretkeyselector.go",
+      "filePath": "pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+      "summary": "Generated apply-configuration builder for a SecretKeySelector, capturing the secret name and the key within it.",
+      "tags": [
+        "generated-code",
+        "apply-configuration",
+        "secret-reference",
+        "meta",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go:VaultKubernetesAuthApplyConfiguration",
+      "type": "class",
+      "name": "VaultKubernetesAuthApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go",
+      "lineRange": [
+        27,
+        32
+      ],
+      "summary": "Apply-configuration struct holding the Vault Kubernetes auth fields with fluent With* setters returning the receiver.",
+      "tags": [
+        "apply-configuration",
+        "builder",
+        "vault",
+        "kubernetes-auth"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go:VaultKubernetesAuth",
+      "type": "function",
+      "name": "VaultKubernetesAuth",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go",
+      "lineRange": [
+        36,
+        38
+      ],
+      "summary": "Constructs an empty VaultKubernetesAuthApplyConfiguration for use in declarative apply requests.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "vault"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/certmanager/v1/venaficloud.go:VenafiCloudApplyConfiguration",
+      "type": "class",
+      "name": "VenafiCloudApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/venaficloud.go",
+      "lineRange": [
+        27,
+        30
+      ],
+      "summary": "Apply-configuration struct for Venafi Cloud settings with setters for URL and API token secret reference.",
+      "tags": [
+        "apply-configuration",
+        "builder",
+        "venafi",
+        "cloud"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/venaficloud.go:VenafiCloud",
+      "type": "function",
+      "name": "VenafiCloud",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/venaficloud.go",
+      "lineRange": [
+        34,
+        36
+      ],
+      "summary": "Constructs an empty VenafiCloudApplyConfiguration.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "venafi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go:VenafiIssuerApplyConfiguration",
+      "type": "class",
+      "name": "VenafiIssuerApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go",
+      "lineRange": [
+        23,
+        27
+      ],
+      "summary": "Apply-configuration struct for the Venafi issuer block, holding zone plus optional TPP and Cloud settings.",
+      "tags": [
+        "apply-configuration",
+        "builder",
+        "venafi",
+        "issuer-config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go:VenafiIssuer",
+      "type": "function",
+      "name": "VenafiIssuer",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go",
+      "lineRange": [
+        31,
+        33
+      ],
+      "summary": "Constructs an empty VenafiIssuerApplyConfiguration.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "venafi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/certmanager/v1/venafitpp.go:VenafiTPPApplyConfiguration",
+      "type": "class",
+      "name": "VenafiTPPApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/venafitpp.go",
+      "lineRange": [
+        27,
+        32
+      ],
+      "summary": "Apply-configuration struct for Venafi TPP settings, with URL, credentials reference and CA bundle setters.",
+      "tags": [
+        "apply-configuration",
+        "builder",
+        "venafi",
+        "tpp"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/venafitpp.go:VenafiTPP",
+      "type": "function",
+      "name": "VenafiTPP",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/venafitpp.go",
+      "lineRange": [
+        36,
+        38
+      ],
+      "summary": "Constructs an empty VenafiTPPApplyConfiguration.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "venafi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/certmanager/v1/x509subject.go:X509SubjectApplyConfiguration",
+      "type": "class",
+      "name": "X509SubjectApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/x509subject.go",
+      "lineRange": [
+        23,
+        32
+      ],
+      "summary": "Apply-configuration struct covering the X.509 subject attributes, with slice setters that copy input values.",
+      "tags": [
+        "apply-configuration",
+        "builder",
+        "x509",
+        "certificate-subject"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/x509subject.go:X509Subject",
+      "type": "function",
+      "name": "X509Subject",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/x509subject.go",
+      "lineRange": [
+        36,
+        38
+      ],
+      "summary": "Constructs an empty X509SubjectApplyConfiguration.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "x509"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/internal/internal.go:Parser",
+      "type": "function",
+      "name": "Parser",
+      "filePath": "pkg/client/applyconfigurations/internal/internal.go",
+      "lineRange": [
+        28,
+        37
+      ],
+      "summary": "Returns the shared structured-merge-diff typed parser, building it once from the embedded schema YAML and panicking if the schema is invalid.",
+      "tags": [
+        "parser",
+        "singleton",
+        "server-side-apply",
+        "schema-definition"
+      ],
+      "complexity": "simple",
+      "languageNotes": "sync.Once guards lazy initialisation, so the parser is built at most once per process."
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/meta/v1/issuerreference.go:IssuerReferenceApplyConfiguration",
+      "type": "class",
+      "name": "IssuerReferenceApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "lineRange": [
+        23,
+        27
+      ],
+      "summary": "Apply-configuration struct for an issuer reference with name, kind and group setters.",
+      "tags": [
+        "apply-configuration",
+        "builder",
+        "issuer-reference",
+        "meta"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/meta/v1/issuerreference.go:IssuerReference",
+      "type": "function",
+      "name": "IssuerReference",
+      "filePath": "pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "lineRange": [
+        31,
+        33
+      ],
+      "summary": "Constructs an empty IssuerReferenceApplyConfiguration.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "issuer-reference"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/meta/v1/localobjectreference.go:LocalObjectReferenceApplyConfiguration",
+      "type": "class",
+      "name": "LocalObjectReferenceApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "lineRange": [
+        23,
+        25
+      ],
+      "summary": "Apply-configuration struct for a local object reference, carrying only the object name.",
+      "tags": [
+        "apply-configuration",
+        "builder",
+        "object-reference",
+        "meta"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/meta/v1/localobjectreference.go:LocalObjectReference",
+      "type": "function",
+      "name": "LocalObjectReference",
+      "filePath": "pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "lineRange": [
+        29,
+        31
+      ],
+      "summary": "Constructs an empty LocalObjectReferenceApplyConfiguration.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "object-reference"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go:SecretKeySelectorApplyConfiguration",
+      "type": "class",
+      "name": "SecretKeySelectorApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+      "lineRange": [
+        23,
+        26
+      ],
+      "summary": "Apply-configuration struct for selecting a key inside a Secret, with name and key setters.",
+      "tags": [
+        "apply-configuration",
+        "builder",
+        "secret-reference",
+        "meta"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go:SecretKeySelector",
+      "type": "function",
+      "name": "SecretKeySelector",
+      "filePath": "pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+      "lineRange": [
+        30,
+        32
+      ],
+      "summary": "Constructs an empty SecretKeySelectorApplyConfiguration.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "secret-reference"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/venaficloud.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/venaficloud.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/venaficloud.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/venafitpp.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/venafitpp.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/venafitpp.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go:VaultKubernetesAuthApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go:VaultKubernetesAuthApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go:VaultKubernetesAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go:VaultKubernetesAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/venaficloud.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/venaficloud.go:VenafiCloudApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/venaficloud.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/venaficloud.go:VenafiCloudApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/venaficloud.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/venaficloud.go:VenafiCloud",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/venaficloud.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/venaficloud.go:VenafiCloud",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go:VenafiIssuerApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go:VenafiIssuerApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go:VenafiIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go:VenafiIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/venafitpp.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/venafitpp.go:VenafiTPPApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/venafitpp.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/venafitpp.go:VenafiTPPApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/venafitpp.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/venafitpp.go:VenafiTPP",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/venafitpp.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/venafitpp.go:VenafiTPP",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/x509subject.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/x509subject.go:X509SubjectApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/x509subject.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/x509subject.go:X509SubjectApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/x509subject.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/x509subject.go:X509Subject",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/x509subject.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/x509subject.go:X509Subject",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/internal/internal.go",
+      "target": "function:pkg/client/applyconfigurations/internal/internal.go:Parser",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/internal/internal.go",
+      "target": "function:pkg/client/applyconfigurations/internal/internal.go:Parser",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "target": "class:pkg/client/applyconfigurations/meta/v1/issuerreference.go:IssuerReferenceApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "target": "class:pkg/client/applyconfigurations/meta/v1/issuerreference.go:IssuerReferenceApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "target": "function:pkg/client/applyconfigurations/meta/v1/issuerreference.go:IssuerReference",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "target": "function:pkg/client/applyconfigurations/meta/v1/issuerreference.go:IssuerReference",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "target": "class:pkg/client/applyconfigurations/meta/v1/localobjectreference.go:LocalObjectReferenceApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "target": "class:pkg/client/applyconfigurations/meta/v1/localobjectreference.go:LocalObjectReferenceApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "target": "function:pkg/client/applyconfigurations/meta/v1/localobjectreference.go:LocalObjectReference",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "target": "function:pkg/client/applyconfigurations/meta/v1/localobjectreference.go:LocalObjectReference",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+      "target": "class:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go:SecretKeySelectorApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+      "target": "class:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go:SecretKeySelectorApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+      "target": "function:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go:SecretKeySelector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+      "target": "function:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go:SecretKeySelector",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

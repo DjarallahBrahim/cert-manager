@@ -1,0 +1,757 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/apis/experimental/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "pkg/apis/experimental/doc.go",
+      "summary": "Package documentation for the experimental cert-manager API group, declaring the experimental.cert-manager.io group name constant.",
+      "tags": ["api-group", "package-doc", "kubernetes", "experimental"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/acmechallenges/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "pkg/controller/acmechallenges/OWNERS",
+      "summary": "Kubernetes OWNERS file assigning the area/acme label to the ACME challenges controller directory.",
+      "tags": ["ownership", "governance", "acme", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/acmeorders/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "pkg/controller/acmeorders/OWNERS",
+      "summary": "Kubernetes OWNERS file assigning the area/acme label to the ACME orders controller directory.",
+      "tags": ["ownership", "governance", "acme", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/test/actions.go",
+      "type": "file",
+      "name": "actions.go",
+      "filePath": "pkg/controller/test/actions.go",
+      "summary": "Provides action wrappers and matchers used to assert on client-go fake actions in controller unit tests.",
+      "tags": ["testing", "test-utility", "kubernetes", "matcher"],
+      "complexity": "moderate",
+      "languageNotes": "Uses go-cmp option filters to ignore the managedFields path while comparing actions."
+    },
+    {
+      "id": "file:pkg/controller/test/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "pkg/controller/test/doc.go",
+      "summary": "Package documentation for shared test helpers that build fake cert-manager contexts and clientsets for unit tests.",
+      "tags": ["testing", "package-doc", "test-utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/test/recorder.go",
+      "type": "file",
+      "name": "recorder.go",
+      "filePath": "pkg/controller/test/recorder.go",
+      "summary": "Thread-safe fake event recorder that captures emitted Kubernetes events as strings for assertions in unit tests.",
+      "tags": ["testing", "fake", "event-recorder", "kubernetes"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/healthz/clock_health.go",
+      "type": "file",
+      "name": "clock_health.go",
+      "filePath": "pkg/healthz/clock_health.go",
+      "summary": "Implements a health checker that fails when the system clock drifts from Go's monotonic clock, protecting certificate renewal timing.",
+      "tags": ["healthz", "monitoring", "clock", "liveness"],
+      "complexity": "moderate",
+      "languageNotes": "Compares wall-clock and monotonic elapsed durations and accumulates small skews so persistent drift eventually fails the probe."
+    },
+    {
+      "id": "file:pkg/healthz/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "pkg/healthz/doc.go",
+      "summary": "Package documentation explaining the liveness HTTP server and its leader-election watchdog health check.",
+      "tags": ["healthz", "package-doc", "monitoring", "liveness"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/healthz/healthz.go",
+      "type": "file",
+      "name": "healthz.go",
+      "filePath": "pkg/healthz/healthz.go",
+      "summary": "HTTP health server exposing a /livez endpoint backed by a leader-election watchdog and clock-skew adaptor.",
+      "tags": ["healthz", "http-server", "liveness", "leader-election", "monitoring"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/issuer/acme/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "pkg/issuer/acme/OWNERS",
+      "summary": "Kubernetes OWNERS file assigning the area/acme label to the ACME issuer directory.",
+      "tags": ["ownership", "governance", "acme", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/acme/dns/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "pkg/issuer/acme/dns/OWNERS",
+      "summary": "Kubernetes OWNERS file assigning the area/acme/dns01 label to the DNS-01 solver directory.",
+      "tags": ["ownership", "governance", "acme", "dns"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/acme/dns/route53/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "pkg/issuer/acme/dns/route53/OWNERS",
+      "summary": "Kubernetes OWNERS file listing approvers and reviewers for the Route53 DNS-01 solver.",
+      "tags": ["ownership", "governance", "route53", "dns"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/acme/dns/util/testdata/resolv.conf.1",
+      "type": "file",
+      "name": "resolv.conf.1",
+      "filePath": "pkg/issuer/acme/dns/util/testdata/resolv.conf.1",
+      "summary": "Test fixture resolv.conf containing a domain and IPv4/IPv6 nameserver entries used by DNS resolver parsing tests.",
+      "tags": ["test-fixture", "dns", "configuration", "testdata"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/acme/http/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "pkg/issuer/acme/http/OWNERS",
+      "summary": "Kubernetes OWNERS file assigning the area/acme/http01 label to the HTTP-01 solver directory.",
+      "tags": ["ownership", "governance", "acme", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/ca/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "pkg/issuer/ca/OWNERS",
+      "summary": "Kubernetes OWNERS file assigning the area/ca label to the CA issuer directory.",
+      "tags": ["ownership", "governance", "ca-issuer", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/selfsigned/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "pkg/issuer/selfsigned/OWNERS",
+      "summary": "Kubernetes OWNERS file assigning the area/selfsigned label to the self-signed issuer directory.",
+      "tags": ["ownership", "governance", "selfsigned", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/vault/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "pkg/issuer/vault/OWNERS",
+      "summary": "Kubernetes OWNERS file listing approvers and reviewers plus the area/vault label for the Vault issuer.",
+      "tags": ["ownership", "governance", "vault", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/venafi/client/fake/connector.go",
+      "type": "file",
+      "name": "connector.go",
+      "filePath": "pkg/issuer/venafi/client/fake/connector.go",
+      "summary": "Fake Venafi connector implementing the vcert endpoint interface with injectable function hooks for unit tests.",
+      "tags": ["testing", "fake", "venafi", "connector"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/metrics/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "pkg/metrics/OWNERS",
+      "summary": "Kubernetes OWNERS file assigning the area/monitoring label to the metrics package directory.",
+      "tags": ["ownership", "governance", "monitoring", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/util/configfile/configfile.go",
+      "type": "file",
+      "name": "configfile.go",
+      "filePath": "pkg/util/configfile/configfile.go",
+      "summary": "Generic configuration-file loader that reads a file, decodes it through a ConfigFile implementation, and resolves relative path references.",
+      "tags": ["configuration", "loader", "utility", "path-resolution"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/webhook/handlers/interfaces.go",
+      "type": "file",
+      "name": "interfaces.go",
+      "filePath": "pkg/webhook/handlers/interfaces.go",
+      "summary": "Defines the ValidatingAdmissionHook and MutatingAdmissionHook interfaces used by the webhook admission handlers.",
+      "tags": ["webhook", "interface", "admission", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "test/OWNERS",
+      "summary": "Kubernetes OWNERS file assigning the area/testing label to the top-level test directory.",
+      "tags": ["ownership", "governance", "testing", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/acme/server/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "test/acme/server/doc.go",
+      "summary": "Package documentation for a minimal test DNS server supporting RFC2136 updates and TXT record lookups.",
+      "tags": ["testing", "dns", "package-doc", "test-server"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/acme/suite.go",
+      "type": "file",
+      "name": "suite.go",
+      "filePath": "test/acme/suite.go",
+      "summary": "DNS-01 solver conformance tests verifying that challenge records are presented, propagate, and are cleaned up correctly.",
+      "tags": ["testing", "e2e", "dns01", "acme", "conformance"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/bin/cloudflare-clean/main.go",
+      "type": "file",
+      "name": "main.go",
+      "filePath": "test/e2e/bin/cloudflare-clean/main.go",
+      "summary": "E2E maintenance command that deletes stale Cloudflare TXT challenge records from a zone, with a dry-run confirmation flag.",
+      "tags": ["entry-point", "cli", "cloudflare", "dns", "e2e"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/controller/test/actions.go:Action",
+      "type": "class",
+      "name": "Action",
+      "filePath": "pkg/controller/test/actions.go",
+      "lineRange": [30, 33],
+      "summary": "Interface exposing an action getter and a matcher used by test assertions on client-go actions.",
+      "tags": ["testing", "interface", "matcher", "test-utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/test/actions.go:NewCustomMatch",
+      "type": "function",
+      "name": "NewCustomMatch",
+      "filePath": "pkg/controller/test/actions.go",
+      "lineRange": [44, 49],
+      "summary": "Wraps a client-go Action with a custom matcher function so it can be compared against recorded actions.",
+      "tags": ["testing", "factory", "matcher"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/test/actions.go:NewAction",
+      "type": "function",
+      "name": "NewAction",
+      "filePath": "pkg/controller/test/actions.go",
+      "lineRange": [68, 72],
+      "summary": "Wraps a client-go Action in the Action interface for deep-equality comparison against recorded actions.",
+      "tags": ["testing", "factory", "matcher"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/test/actions.go:Matches",
+      "type": "function",
+      "name": "Matches",
+      "filePath": "pkg/controller/test/actions.go",
+      "lineRange": [80, 93],
+      "summary": "Deep-compares expected and actual actions while ignoring the managedFields subresource path, returning a readable error on mismatch.",
+      "tags": ["testing", "matcher", "comparison"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/test/recorder.go:FakeRecorder",
+      "type": "class",
+      "name": "FakeRecorder",
+      "filePath": "pkg/controller/test/recorder.go",
+      "lineRange": [29, 31],
+      "summary": "Fake event recorder that accumulates formatted event strings for assertions in unit tests.",
+      "tags": ["testing", "fake", "event-recorder"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/healthz/clock_health.go:clockHealthAdaptor",
+      "type": "class",
+      "name": "clockHealthAdaptor",
+      "filePath": "pkg/healthz/clock_health.go",
+      "lineRange": [47, 51],
+      "summary": "Health checker that compares wall-clock and monotonic elapsed time to detect system clock skew.",
+      "tags": ["healthz", "clock", "monitoring"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/healthz/clock_health.go:NewClockHealthAdaptor",
+      "type": "function",
+      "name": "NewClockHealthAdaptor",
+      "filePath": "pkg/healthz/clock_health.go",
+      "lineRange": [53, 60],
+      "summary": "Constructs a clock health adaptor, capturing the initial real and monotonic timestamps.",
+      "tags": ["healthz", "factory", "clock"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/healthz/healthz.go:Server",
+      "type": "class",
+      "name": "Server",
+      "filePath": "pkg/healthz/healthz.go",
+      "lineRange": [42, 48],
+      "summary": "Liveness HTTP server bundling an http.Server with a leader-election watchdog adaptor exposed for the LeaderElector config.",
+      "tags": ["healthz", "http-server", "leader-election"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/healthz/healthz.go:NewServer",
+      "type": "function",
+      "name": "NewServer",
+      "filePath": "pkg/healthz/healthz.go",
+      "lineRange": [53, 67],
+      "summary": "Builds the liveness server, installing leader-election and clock-skew health checkers on a fresh mux.",
+      "tags": ["healthz", "factory", "liveness", "monitoring"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/healthz/healthz.go:Start",
+      "type": "function",
+      "name": "Start",
+      "filePath": "pkg/healthz/healthz.go",
+      "lineRange": [73, 91],
+      "summary": "Runs the HTTP health server until the context is cancelled, then shuts it down gracefully with a timeout.",
+      "tags": ["healthz", "http-server", "lifecycle"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/issuer/venafi/client/fake/connector.go:Connector",
+      "type": "class",
+      "name": "Connector",
+      "filePath": "pkg/issuer/venafi/client/fake/connector.go",
+      "lineRange": [25, 33],
+      "summary": "Fake Venafi connector embedding vcert's fake connector and overriding methods with injectable function hooks.",
+      "tags": ["testing", "fake", "venafi", "connector"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/venafi/client/fake/connector.go:Default",
+      "type": "function",
+      "name": "Default",
+      "filePath": "pkg/issuer/venafi/client/fake/connector.go",
+      "lineRange": [35, 40],
+      "summary": "Returns the connector with a default vcert fake backing implementation when one is not already set.",
+      "tags": ["testing", "fake", "factory"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/util/configfile/configfile.go:ConfigFile",
+      "type": "class",
+      "name": "ConfigFile",
+      "filePath": "pkg/util/configfile/configfile.go",
+      "lineRange": [30, 33],
+      "summary": "Interface for configuration types that decode themselves from bytes and expose path references needing resolution.",
+      "tags": ["configuration", "interface", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/util/configfile/configfile.go:Load",
+      "type": "function",
+      "name": "Load",
+      "filePath": "pkg/util/configfile/configfile.go",
+      "lineRange": [35, 57],
+      "summary": "Reads the configured file, rejects empty content, decodes it into the ConfigFile, and absolutizes referenced paths.",
+      "tags": ["configuration", "loader", "validation", "path-resolution"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/util/configfile/configfile.go:NewConfigurationFSLoader",
+      "type": "function",
+      "name": "NewConfigurationFSLoader",
+      "filePath": "pkg/util/configfile/configfile.go",
+      "lineRange": [59, 73],
+      "summary": "Creates a configuration loader that reads the named file through a caller-supplied read function.",
+      "tags": ["configuration", "factory", "loader"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/webhook/handlers/interfaces.go:ValidatingAdmissionHook",
+      "type": "class",
+      "name": "ValidatingAdmissionHook",
+      "filePath": "pkg/webhook/handlers/interfaces.go",
+      "lineRange": [25, 29],
+      "summary": "Admission hook interface whose Validate method accepts or rejects an admission request without patching.",
+      "tags": ["webhook", "interface", "admission", "validation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/webhook/handlers/interfaces.go:MutatingAdmissionHook",
+      "type": "class",
+      "name": "MutatingAdmissionHook",
+      "filePath": "pkg/webhook/handlers/interfaces.go",
+      "lineRange": [31, 35],
+      "summary": "Admission hook interface whose Mutate method may patch the admitted object via the response patch field.",
+      "tags": ["webhook", "interface", "admission", "mutation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/acme/suite.go:TestBasicPresentRecord",
+      "type": "function",
+      "name": "TestBasicPresentRecord",
+      "filePath": "test/acme/suite.go",
+      "lineRange": [32, 65],
+      "summary": "Verifies the DNS solver presents a challenge record, waits for propagation, then cleans it up and checks deletion.",
+      "tags": ["testing", "dns01", "conformance", "acme"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/acme/suite.go:TestExtendedDeletingOneRecordRetainsOthers",
+      "type": "function",
+      "name": "TestExtendedDeletingOneRecordRetainsOthers",
+      "filePath": "test/acme/suite.go",
+      "lineRange": [71, 136],
+      "summary": "Checks that cleaning up one of two presented challenge records deletes only that record and leaves the other intact.",
+      "tags": ["testing", "dns01", "conformance", "acme"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/e2e/bin/cloudflare-clean/main.go:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "test/e2e/bin/cloudflare-clean/main.go",
+      "lineRange": [44, 54],
+      "summary": "CLI entry point that installs a graceful shutdown handler, parses flags, and runs the cleanup routine.",
+      "tags": ["entry-point", "cli", "cloudflare"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/bin/cloudflare-clean/main.go:Main",
+      "type": "function",
+      "name": "Main",
+      "filePath": "test/e2e/bin/cloudflare-clean/main.go",
+      "lineRange": [56, 125],
+      "summary": "Lists the zone's DNS records, filters stale ACME challenge TXT records, and deletes them unless dry-run mode is active.",
+      "tags": ["cloudflare", "dns", "cleanup", "cli"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/e2e/bin/cloudflare-clean/main.go:shouldDelete",
+      "type": "function",
+      "name": "shouldDelete",
+      "filePath": "test/e2e/bin/cloudflare-clean/main.go",
+      "lineRange": [127, 142],
+      "summary": "Decides whether a TXT record is older than the cutoff and carries the expected ACME challenge prefix.",
+      "tags": ["cloudflare", "filtering", "dns"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/bin/cloudflare-clean/main.go:convertPagerToSlice",
+      "type": "function",
+      "name": "convertPagerToSlice",
+      "filePath": "test/e2e/bin/cloudflare-clean/main.go",
+      "lineRange": [144, 156],
+      "summary": "Drains a Cloudflare auto-paginating result set into a slice, propagating iteration errors.",
+      "tags": ["cloudflare", "pagination", "utility"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/controller/test/actions.go",
+      "target": "class:pkg/controller/test/actions.go:Action",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/test/actions.go",
+      "target": "function:pkg/controller/test/actions.go:NewCustomMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/test/actions.go",
+      "target": "function:pkg/controller/test/actions.go:NewAction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/test/actions.go",
+      "target": "function:pkg/controller/test/actions.go:Matches",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/test/actions.go",
+      "target": "class:pkg/controller/test/actions.go:Action",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/actions.go",
+      "target": "function:pkg/controller/test/actions.go:NewCustomMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/actions.go",
+      "target": "function:pkg/controller/test/actions.go:NewAction",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/actions.go",
+      "target": "function:pkg/controller/test/actions.go:Matches",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/recorder.go",
+      "target": "class:pkg/controller/test/recorder.go:FakeRecorder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/test/recorder.go",
+      "target": "class:pkg/controller/test/recorder.go:FakeRecorder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/healthz/clock_health.go",
+      "target": "class:pkg/healthz/clock_health.go:clockHealthAdaptor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/healthz/clock_health.go",
+      "target": "function:pkg/healthz/clock_health.go:NewClockHealthAdaptor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/healthz/clock_health.go",
+      "target": "function:pkg/healthz/clock_health.go:NewClockHealthAdaptor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/healthz/healthz.go",
+      "target": "class:pkg/healthz/healthz.go:Server",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/healthz/healthz.go",
+      "target": "function:pkg/healthz/healthz.go:NewServer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/healthz/healthz.go",
+      "target": "function:pkg/healthz/healthz.go:Start",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/healthz/healthz.go",
+      "target": "class:pkg/healthz/healthz.go:Server",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/healthz/healthz.go",
+      "target": "function:pkg/healthz/healthz.go:NewServer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/healthz/healthz.go",
+      "target": "function:pkg/healthz/healthz.go:Start",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/fake/connector.go",
+      "target": "class:pkg/issuer/venafi/client/fake/connector.go:Connector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/fake/connector.go",
+      "target": "function:pkg/issuer/venafi/client/fake/connector.go:Default",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/fake/connector.go",
+      "target": "class:pkg/issuer/venafi/client/fake/connector.go:Connector",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/venafi/client/fake/connector.go",
+      "target": "function:pkg/issuer/venafi/client/fake/connector.go:Default",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/configfile/configfile.go",
+      "target": "class:pkg/util/configfile/configfile.go:ConfigFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/configfile/configfile.go",
+      "target": "function:pkg/util/configfile/configfile.go:Load",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/configfile/configfile.go",
+      "target": "function:pkg/util/configfile/configfile.go:NewConfigurationFSLoader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/util/configfile/configfile.go",
+      "target": "class:pkg/util/configfile/configfile.go:ConfigFile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/configfile/configfile.go",
+      "target": "function:pkg/util/configfile/configfile.go:Load",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/util/configfile/configfile.go",
+      "target": "function:pkg/util/configfile/configfile.go:NewConfigurationFSLoader",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/handlers/interfaces.go",
+      "target": "class:pkg/webhook/handlers/interfaces.go:ValidatingAdmissionHook",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/webhook/handlers/interfaces.go",
+      "target": "class:pkg/webhook/handlers/interfaces.go:MutatingAdmissionHook",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/webhook/handlers/interfaces.go",
+      "target": "class:pkg/webhook/handlers/interfaces.go:ValidatingAdmissionHook",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/handlers/interfaces.go",
+      "target": "class:pkg/webhook/handlers/interfaces.go:MutatingAdmissionHook",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/acme/suite.go",
+      "target": "function:test/acme/suite.go:TestBasicPresentRecord",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/acme/suite.go",
+      "target": "function:test/acme/suite.go:TestExtendedDeletingOneRecordRetainsOthers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/acme/suite.go",
+      "target": "function:test/acme/suite.go:TestBasicPresentRecord",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/acme/suite.go",
+      "target": "function:test/acme/suite.go:TestExtendedDeletingOneRecordRetainsOthers",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/bin/cloudflare-clean/main.go",
+      "target": "function:test/e2e/bin/cloudflare-clean/main.go:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/bin/cloudflare-clean/main.go",
+      "target": "function:test/e2e/bin/cloudflare-clean/main.go:Main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/bin/cloudflare-clean/main.go",
+      "target": "function:test/e2e/bin/cloudflare-clean/main.go:shouldDelete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/bin/cloudflare-clean/main.go",
+      "target": "function:test/e2e/bin/cloudflare-clean/main.go:convertPagerToSlice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/bin/cloudflare-clean/main.go",
+      "target": "function:test/e2e/bin/cloudflare-clean/main.go:Main",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

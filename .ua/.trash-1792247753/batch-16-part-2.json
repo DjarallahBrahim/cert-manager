@@ -1,0 +1,256 @@
+{
+  "nodes": [
+    {
+      "id": "file:internal/apis/meta/v1/defaults.go",
+      "type": "file",
+      "name": "defaults.go",
+      "filePath": "internal/apis/meta/v1/defaults.go",
+      "summary": "Registers defaulting functions for the v1 meta API with the shared scheme builder.",
+      "tags": [
+        "defaulting",
+        "scheme-registration",
+        "api-versioning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/meta/v1/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "internal/apis/meta/v1/doc.go",
+      "summary": "Package documentation and code-generation markers for the v1 meta API, driving conversion, deepcopy, and defaulter generation.",
+      "tags": [
+        "documentation",
+        "code-generation",
+        "api-versioning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/meta/v1/register.go",
+      "type": "file",
+      "name": "register.go",
+      "filePath": "internal/apis/meta/v1/register.go",
+      "summary": "Registers the v1 meta API group version, exposes resource helpers, and wires defaulting functions into the shared scheme builder.",
+      "tags": [
+        "scheme-registration",
+        "api-versioning",
+        "initialization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/meta/v1/zz_generated.conversion.go",
+      "type": "file",
+      "name": "zz_generated.conversion.go",
+      "filePath": "internal/apis/meta/v1/zz_generated.conversion.go",
+      "summary": "Generated conversion registrations and auto-conversion helpers translating between v1 and internal meta reference types.",
+      "tags": [
+        "code-generation",
+        "conversion",
+        "api-versioning",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/apis/meta/v1/zz_generated.defaults.go",
+      "type": "file",
+      "name": "zz_generated.defaults.go",
+      "filePath": "internal/apis/meta/v1/zz_generated.defaults.go",
+      "summary": "Generated defaulting registration that wires the meta v1 defaulting functions into the API scheme.",
+      "tags": [
+        "code-generation",
+        "defaulting",
+        "scheme-registration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/meta/v1/register.go:Resource",
+      "type": "function",
+      "name": "Resource",
+      "filePath": "internal/apis/meta/v1/register.go",
+      "lineRange": [
+        30,
+        32
+      ],
+      "summary": "Returns the fully qualified GroupResource for a v1 meta resource name.",
+      "tags": [
+        "utility",
+        "api-versioning",
+        "resource-naming"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/meta/v1/zz_generated.conversion.go:RegisterConversions",
+      "type": "function",
+      "name": "RegisterConversions",
+      "filePath": "internal/apis/meta/v1/zz_generated.conversion.go",
+      "lineRange": [
+        37,
+        69
+      ],
+      "summary": "Registers bidirectional conversion functions between v1 and internal meta reference types with the conversion scheme.",
+      "tags": [
+        "conversion",
+        "registration",
+        "code-generation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/meta/v1/zz_generated.defaults.go:RegisterDefaults",
+      "type": "function",
+      "name": "RegisterDefaults",
+      "filePath": "internal/apis/meta/v1/zz_generated.defaults.go",
+      "lineRange": [
+        31,
+        33
+      ],
+      "summary": "Registers the meta v1 defaulting functions with the given scheme.",
+      "tags": [
+        "defaulting",
+        "registration",
+        "code-generation"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:internal/apis/meta/v1/register.go",
+      "target": "function:internal/apis/meta/v1/register.go:Resource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/meta/v1/register.go",
+      "target": "function:internal/apis/meta/v1/register.go:Resource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/meta/v1/zz_generated.conversion.go",
+      "target": "function:internal/apis/meta/v1/zz_generated.conversion.go:RegisterConversions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/meta/v1/zz_generated.conversion.go",
+      "target": "function:internal/apis/meta/v1/zz_generated.conversion.go:RegisterConversions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/meta/v1/zz_generated.defaults.go",
+      "target": "function:internal/apis/meta/v1/zz_generated.defaults.go:RegisterDefaults",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/meta/v1/zz_generated.defaults.go",
+      "target": "function:internal/apis/meta/v1/zz_generated.defaults.go:RegisterDefaults",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/meta/v1/register.go",
+      "target": "file:pkg/apis/meta/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/register.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/register.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/register.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/register.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/meta/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/meta/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/meta/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/zz_generated.conversion.go",
+      "target": "file:internal/apis/meta/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/meta/v1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

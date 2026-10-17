@@ -1,0 +1,106 @@
+{
+  "nodes": [
+    {
+      "id": "document:make/config/samplewebhook/chart/templates/NOTES.txt",
+      "type": "document",
+      "name": "NOTES.txt",
+      "filePath": "make/config/samplewebhook/chart/templates/NOTES.txt",
+      "summary": "Empty Helm NOTES template placeholder for the sample webhook chart; it renders no post-install usage notes.",
+      "tags": ["documentation", "helm", "placeholder", "empty"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:make/config/samplewebhook/chart/templates/apiservice.yaml",
+      "type": "config",
+      "name": "apiservice.yaml",
+      "filePath": "make/config/samplewebhook/chart/templates/apiservice.yaml",
+      "summary": "Helm-templated APIService registration exposing the sample webhook as v1alpha1 in its API group, with cert-manager CA injection from the webhook serving certificate.",
+      "tags": ["configuration", "helm", "kubernetes", "api-server", "webhook"],
+      "complexity": "simple",
+      "languageNotes": "Relies on the cert-manager.io/inject-ca-from annotation to have cert-manager populate caBundle from the serving Certificate secret."
+    },
+    {
+      "id": "config:make/config/samplewebhook/chart/templates/deployment.yaml",
+      "type": "config",
+      "name": "deployment.yaml",
+      "filePath": "make/config/samplewebhook/chart/templates/deployment.yaml",
+      "summary": "Helm-templated Deployment for the sample aggregated API server webhook, serving TLS on port 8443 with the cert-manager-issued serving certificate, health probes, and values-driven scheduling settings.",
+      "tags": ["configuration", "deployment", "helm", "webhook", "kubernetes"],
+      "complexity": "moderate",
+      "languageNotes": "Serving certificate and key are mounted from a Secret at /tls and passed to the server via --tls-cert-file/--tls-private-key-file flags."
+    },
+    {
+      "id": "config:make/config/samplewebhook/chart/templates/pki.yaml",
+      "type": "config",
+      "name": "pki.yaml",
+      "filePath": "make/config/samplewebhook/chart/templates/pki.yaml",
+      "summary": "Helm-templated PKI chain for the sample webhook: a self-signed Issuer, a root CA Certificate, a CA Issuer backed by that root, and a serving Certificate with in-cluster DNS names.",
+      "tags": ["configuration", "helm", "certificates", "pki", "cert-manager"],
+      "complexity": "moderate",
+      "languageNotes": "Demonstrates cert-manager's self-signed bootstrap pattern with a 5-year root CA and a 1-year serving certificate."
+    },
+    {
+      "id": "config:make/config/samplewebhook/chart/templates/rbac.yaml",
+      "type": "config",
+      "name": "rbac.yaml",
+      "filePath": "make/config/samplewebhook/chart/templates/rbac.yaml",
+      "summary": "Helm-templated RBAC bundle for the sample webhook: its ServiceAccount, request-header authentication Role and RoleBinding in kube-system, auth-delegator ClusterRoleBinding, plus a domain-solver ClusterRole and binding for cert-manager.",
+      "tags": ["configuration", "helm", "rbac", "security", "kubernetes"],
+      "complexity": "moderate",
+      "languageNotes": "Defines a local webhook-authentication-reader Role as a workaround for Kubernetes versions before 1.17."
+    },
+    {
+      "id": "config:make/config/samplewebhook/chart/templates/service.yaml",
+      "type": "config",
+      "name": "service.yaml",
+      "filePath": "make/config/samplewebhook/chart/templates/service.yaml",
+      "summary": "Helm-templated Service exposing the sample webhook's HTTPS port and selecting its pods, used by the APIService registration.",
+      "tags": ["configuration", "helm", "kubernetes", "networking", "webhook"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:make/config/samplewebhook/chart/templates/deployment.yaml",
+      "target": "config:make/config/samplewebhook/chart/templates/pki.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:make/config/samplewebhook/chart/templates/deployment.yaml",
+      "target": "config:make/config/samplewebhook/chart/templates/rbac.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:make/config/samplewebhook/chart/templates/apiservice.yaml",
+      "target": "config:make/config/samplewebhook/chart/templates/service.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:make/config/samplewebhook/chart/templates/apiservice.yaml",
+      "target": "config:make/config/samplewebhook/chart/templates/pki.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:make/config/samplewebhook/chart/templates/service.yaml",
+      "target": "config:make/config/samplewebhook/chart/templates/deployment.yaml",
+      "type": "serves",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "config:make/config/samplewebhook/chart/templates/rbac.yaml",
+      "target": "config:make/config/samplewebhook/chart/templates/deployment.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

@@ -1,0 +1,575 @@
+{
+  "nodes": [
+    {
+      "id": "file:internal/apis/acme/zz_generated.deepcopy.go",
+      "type": "file",
+      "name": "zz_generated.deepcopy.go",
+      "filePath": "internal/apis/acme/zz_generated.deepcopy.go",
+      "summary": "Generated deepcopy implementations for every internal ACME API type, supporting safe object caching and scheme registration.",
+      "tags": [
+        "generated",
+        "deepcopy",
+        "api-group",
+        "acme"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:internal/apis/certmanager/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "internal/apis/certmanager/doc.go",
+      "summary": "Package documentation for the internal (unversioned) cert-manager API group.",
+      "tags": [
+        "documentation",
+        "api-group",
+        "cert-manager",
+        "package-doc"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/certmanager/fuzzer/fuzzer.go",
+      "type": "file",
+      "name": "fuzzer.go",
+      "filePath": "internal/apis/certmanager/fuzzer/fuzzer.go",
+      "summary": "Registers fuzzer functions for internal Certificate and CertificateRequest types, extending the ACME fuzzers with sensible defaults for issuer references and durations.",
+      "tags": [
+        "test",
+        "fuzzer",
+        "api-group",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/certmanager/generic_issuer.go",
+      "type": "file",
+      "name": "generic_issuer.go",
+      "filePath": "internal/apis/certmanager/generic_issuer.go",
+      "summary": "Defines the GenericIssuer interface and accessor helpers that abstract uniformly over Issuer and ClusterIssuer objects.",
+      "tags": [
+        "interface",
+        "utility",
+        "issuer",
+        "api-type"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/certmanager/generic_issuer.go:GenericIssuer",
+      "type": "class",
+      "name": "GenericIssuer",
+      "filePath": "internal/apis/certmanager/generic_issuer.go",
+      "lineRange": [
+        26,
+        33
+      ],
+      "summary": "Interface abstracting Issuer and ClusterIssuer so controllers can read and write specs, statuses, and object metadata uniformly.",
+      "tags": [
+        "interface",
+        "api-type",
+        "issuer",
+        "abstraction"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/certmanager/generic_issuer.go:ACMEStatus",
+      "type": "function",
+      "name": "ACMEStatus",
+      "filePath": "internal/apis/certmanager/generic_issuer.go",
+      "lineRange": [
+        76,
+        85
+      ],
+      "summary": "Returns the ACME-specific status of an issuer so callers can access it through concrete issuer types.",
+      "tags": [
+        "utility",
+        "issuer",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/apis/certmanager/install/install.go",
+      "type": "file",
+      "name": "install.go",
+      "filePath": "internal/apis/certmanager/install/install.go",
+      "summary": "Registers the internal cert-manager API group with its internal, v1, and meta versions into a Kubernetes runtime scheme.",
+      "tags": [
+        "entry-point",
+        "api-group",
+        "registration",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/certmanager/install/install.go:Install",
+      "type": "function",
+      "name": "Install",
+      "filePath": "internal/apis/certmanager/install/install.go",
+      "lineRange": [
+        31,
+        37
+      ],
+      "summary": "Installs the internal cert-manager API group, its v1 version, and meta v1 into the given runtime scheme.",
+      "tags": [
+        "entry-point",
+        "api-group",
+        "registration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/certmanager/register.go",
+      "type": "file",
+      "name": "register.go",
+      "filePath": "internal/apis/certmanager/register.go",
+      "summary": "Defines the internal cert-manager GroupVersion, scheme builder, and resource helper for Certificate, CertificateRequest, Issuer, and ClusterIssuer.",
+      "tags": [
+        "api-group",
+        "registration",
+        "kubernetes",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/certmanager/register.go:Resource",
+      "type": "function",
+      "name": "Resource",
+      "filePath": "internal/apis/certmanager/register.go",
+      "lineRange": [
+        35,
+        37
+      ],
+      "summary": "Returns the fully qualified GroupResource for a cert-manager resource name.",
+      "tags": [
+        "utility",
+        "api-group",
+        "registration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/certmanager/register.go:addKnownTypes",
+      "type": "function",
+      "name": "addKnownTypes",
+      "filePath": "internal/apis/certmanager/register.go",
+      "lineRange": [
+        40,
+        52
+      ],
+      "summary": "Registers Certificate, CertificateRequest, Issuer, and ClusterIssuer types with the internal scheme group version.",
+      "tags": [
+        "registration",
+        "api-group",
+        "scheme"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:internal/apis/acme/zz_generated.deepcopy.go",
+      "target": "file:internal/apis/meta/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/zz_generated.deepcopy.go",
+      "target": "file:internal/apis/meta/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/zz_generated.deepcopy.go",
+      "target": "file:internal/apis/meta/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/acme/zz_generated.deepcopy.go",
+      "target": "file:internal/apis/meta/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/acme/fuzzer/fuzzer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/certmanager/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/certmanager/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/certmanager/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/certmanager/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/certmanager/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/certmanager/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/certmanager/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/fuzzer/fuzzer.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/fuzzer/fuzzer.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/fuzzer/fuzzer.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/fuzzer/fuzzer.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/fuzzer/fuzzer.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/fuzzer/fuzzer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/fuzzer/fuzzer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/fuzzer/fuzzer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/fuzzer/fuzzer.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/generic_issuer.go",
+      "target": "file:internal/apis/acme/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/generic_issuer.go",
+      "target": "file:internal/apis/acme/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/generic_issuer.go",
+      "target": "file:internal/apis/acme/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/generic_issuer.go",
+      "target": "file:internal/apis/acme/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/generic_issuer.go",
+      "target": "file:internal/apis/acme/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/generic_issuer.go",
+      "target": "file:internal/apis/acme/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "file:internal/apis/certmanager/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "file:internal/apis/certmanager/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "file:internal/apis/certmanager/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "file:internal/apis/certmanager/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "file:internal/apis/certmanager/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "file:internal/apis/certmanager/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "file:internal/apis/certmanager/v1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "file:internal/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "file:internal/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "file:internal/apis/certmanager/v1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "file:internal/apis/certmanager/v1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "file:internal/apis/certmanager/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "file:internal/apis/meta/v1/conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "file:internal/apis/meta/v1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "file:internal/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "file:internal/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "file:internal/apis/meta/v1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "file:internal/apis/meta/v1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/register.go",
+      "target": "file:pkg/apis/certmanager/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/certmanager/generic_issuer.go",
+      "target": "class:internal/apis/certmanager/generic_issuer.go:GenericIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/generic_issuer.go",
+      "target": "function:internal/apis/certmanager/generic_issuer.go:ACMEStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "function:internal/apis/certmanager/install/install.go:Install",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/register.go",
+      "target": "function:internal/apis/certmanager/register.go:Resource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/register.go",
+      "target": "function:internal/apis/certmanager/register.go:addKnownTypes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/apis/certmanager/generic_issuer.go",
+      "target": "class:internal/apis/certmanager/generic_issuer.go:GenericIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/generic_issuer.go",
+      "target": "function:internal/apis/certmanager/generic_issuer.go:ACMEStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/install/install.go",
+      "target": "function:internal/apis/certmanager/install/install.go:Install",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/certmanager/register.go",
+      "target": "function:internal/apis/certmanager/register.go:Resource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

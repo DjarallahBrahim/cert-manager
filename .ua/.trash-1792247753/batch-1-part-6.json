@@ -1,0 +1,465 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/api/util/duration.go",
+      "type": "file",
+      "name": "duration.go",
+      "filePath": "pkg/api/util/duration.go",
+      "summary": "Returns the default certificate duration when a Certificate does not specify one.",
+      "tags": [
+        "utility",
+        "duration",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/api/util/issuers.go",
+      "type": "file",
+      "name": "issuers.go",
+      "filePath": "pkg/api/util/issuers.go",
+      "summary": "Resolves the display name and kind of an issuer reference for use in annotations and status messages.",
+      "tags": [
+        "utility",
+        "issuers",
+        "api"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/api/util/kube.go",
+      "type": "file",
+      "name": "kube.go",
+      "filePath": "pkg/api/util/kube.go",
+      "summary": "Converts Kubernetes CertificateSigningRequest key usages to and from their x509 equivalents.",
+      "tags": [
+        "utility",
+        "kubernetes",
+        "certificates",
+        "conversion"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/api/util/duration.go:DefaultCertDuration",
+      "type": "function",
+      "name": "DefaultCertDuration",
+      "filePath": "pkg/api/util/duration.go",
+      "lineRange": [
+        29,
+        36
+      ],
+      "summary": "Returns the provided duration or the cert-manager default when it is unset.",
+      "tags": [
+        "duration",
+        "defaulting",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/issuers.go:NameForIssuer",
+      "type": "function",
+      "name": "NameForIssuer",
+      "filePath": "pkg/api/util/issuers.go",
+      "lineRange": [
+        41,
+        55
+      ],
+      "summary": "Returns a human-readable issuer name combining kind and name for messages and annotations.",
+      "tags": [
+        "issuers",
+        "formatting",
+        "api"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/issuers.go:IssuerKind",
+      "type": "function",
+      "name": "IssuerKind",
+      "filePath": "pkg/api/util/issuers.go",
+      "lineRange": [
+        58,
+        63
+      ],
+      "summary": "Returns the kind of an issuer reference, defaulting to Issuer when unset.",
+      "tags": [
+        "issuers",
+        "defaulting",
+        "api"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/kube.go:KeyUsageTypeKube",
+      "type": "function",
+      "name": "KeyUsageTypeKube",
+      "filePath": "pkg/api/util/kube.go",
+      "lineRange": [
+        56,
+        59
+      ],
+      "summary": "Maps a Kubernetes key usage to its x509.KeyUsage value.",
+      "tags": [
+        "conversion",
+        "kubernetes",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/kube.go:ExtKeyUsageTypeKube",
+      "type": "function",
+      "name": "ExtKeyUsageTypeKube",
+      "filePath": "pkg/api/util/kube.go",
+      "lineRange": [
+        62,
+        65
+      ],
+      "summary": "Maps a Kubernetes key usage to its x509.ExtKeyUsage value.",
+      "tags": [
+        "conversion",
+        "kubernetes",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/kube.go:KubeKeyUsageStrings",
+      "type": "function",
+      "name": "KubeKeyUsageStrings",
+      "filePath": "pkg/api/util/kube.go",
+      "lineRange": [
+        69,
+        79
+      ],
+      "summary": "Converts a list of x509 key usages into Kubernetes key usage strings.",
+      "tags": [
+        "conversion",
+        "kubernetes",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/kube.go:KubeExtKeyUsageStrings",
+      "type": "function",
+      "name": "KubeExtKeyUsageStrings",
+      "filePath": "pkg/api/util/kube.go",
+      "lineRange": [
+        82,
+        90
+      ],
+      "summary": "Converts a list of x509 extended key usages into Kubernetes key usage strings.",
+      "tags": [
+        "conversion",
+        "kubernetes",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/kube.go:kubeKeyUsageString",
+      "type": "function",
+      "name": "kubeKeyUsageString",
+      "filePath": "pkg/api/util/kube.go",
+      "lineRange": [
+        93,
+        105
+      ],
+      "summary": "Converts a single x509 key usage into its Kubernetes string form.",
+      "tags": [
+        "conversion",
+        "kubernetes",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/kube.go:kubeExtKeyUsageString",
+      "type": "function",
+      "name": "kubeExtKeyUsageString",
+      "filePath": "pkg/api/util/kube.go",
+      "lineRange": [
+        108,
+        120
+      ],
+      "summary": "Converts a single x509 extended key usage into its Kubernetes string form.",
+      "tags": [
+        "conversion",
+        "kubernetes",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/api/util/duration.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/duration.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/duration.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/duration.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/duration.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/duration.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/duration.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/duration.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/duration.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/duration.go",
+      "target": "function:pkg/api/util/duration.go:DefaultCertDuration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/duration.go",
+      "target": "function:pkg/api/util/duration.go:DefaultCertDuration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/issuers.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/issuers.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/issuers.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/issuers.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/issuers.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/issuers.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/issuers.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/issuers.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/issuers.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/issuers.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/issuers.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/issuers.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/issuers.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/issuers.go",
+      "target": "function:pkg/api/util/issuers.go:NameForIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/issuers.go",
+      "target": "function:pkg/api/util/issuers.go:NameForIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/issuers.go",
+      "target": "function:pkg/api/util/issuers.go:IssuerKind",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/issuers.go",
+      "target": "function:pkg/api/util/issuers.go:IssuerKind",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/kube.go",
+      "target": "function:pkg/api/util/kube.go:KeyUsageTypeKube",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/kube.go",
+      "target": "function:pkg/api/util/kube.go:KeyUsageTypeKube",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/kube.go",
+      "target": "function:pkg/api/util/kube.go:ExtKeyUsageTypeKube",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/kube.go",
+      "target": "function:pkg/api/util/kube.go:ExtKeyUsageTypeKube",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/kube.go",
+      "target": "function:pkg/api/util/kube.go:KubeKeyUsageStrings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/kube.go",
+      "target": "function:pkg/api/util/kube.go:KubeKeyUsageStrings",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/kube.go",
+      "target": "function:pkg/api/util/kube.go:KubeExtKeyUsageStrings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/kube.go",
+      "target": "function:pkg/api/util/kube.go:KubeExtKeyUsageStrings",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/kube.go",
+      "target": "function:pkg/api/util/kube.go:kubeKeyUsageString",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/kube.go",
+      "target": "function:pkg/api/util/kube.go:kubeExtKeyUsageString",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

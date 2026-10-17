@@ -1,0 +1,863 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "type": "file",
+      "name": "order.go",
+      "filePath": "pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "summary": "Generated typed client for ACME Order resources, defining the getter and full CRUD/apply interface backed by a gentype client.",
+      "tags": [
+        "generated-code",
+        "api-client",
+        "acme",
+        "order"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "type": "file",
+      "name": "certificate.go",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "summary": "Generated typed client for cert-manager Certificate resources, defining the getter and CRUD/apply interface backed by a gentype client.",
+      "tags": [
+        "generated-code",
+        "api-client",
+        "cert-manager",
+        "certificate"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/client/clientset/versioned/typed/acme/v1/order.go:OrdersGetter",
+      "type": "class",
+      "name": "OrdersGetter",
+      "filePath": "pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "lineRange": [
+        35,
+        37
+      ],
+      "summary": "Interface exposing the Orders accessor that group clients must implement.",
+      "tags": [
+        "interface",
+        "api-client",
+        "acme",
+        "order"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/clientset/versioned/typed/acme/v1/order.go:OrderInterface",
+      "type": "class",
+      "name": "OrderInterface",
+      "filePath": "pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "lineRange": [
+        40,
+        55
+      ],
+      "summary": "Full client interface for ACME Order resources covering CRUD, watch, patch, apply and status subresource operations.",
+      "tags": [
+        "interface",
+        "api-client",
+        "acme",
+        "order"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/client/clientset/versioned/typed/acme/v1/order.go:newOrders",
+      "type": "function",
+      "name": "newOrders",
+      "filePath": "pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "lineRange": [
+        63,
+        74
+      ],
+      "summary": "Constructs the gentype-backed orders client for a namespace.",
+      "tags": [
+        "constructor",
+        "api-client",
+        "acme",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go:CertificatesGetter",
+      "type": "class",
+      "name": "CertificatesGetter",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "lineRange": [
+        35,
+        37
+      ],
+      "summary": "Interface exposing the Certificates accessor that group clients must implement.",
+      "tags": [
+        "interface",
+        "api-client",
+        "cert-manager",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go:CertificateInterface",
+      "type": "class",
+      "name": "CertificateInterface",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "lineRange": [
+        40,
+        55
+      ],
+      "summary": "Full client interface for cert-manager Certificate resources covering CRUD, watch, patch, apply and status operations.",
+      "tags": [
+        "interface",
+        "api-client",
+        "cert-manager",
+        "certificate"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go:newCertificates",
+      "type": "function",
+      "name": "newCertificates",
+      "filePath": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "lineRange": [
+        63,
+        74
+      ],
+      "summary": "Constructs the gentype-backed certificates client for the given namespace (or cluster scope).",
+      "tags": [
+        "constructor",
+        "api-client",
+        "cert-manager",
+        "factory"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolver.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01gatewayhttproute.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingress.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingressobjectmeta.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodobjectmeta.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodresources.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodsecuritycontext.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodspec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodtemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresstemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeexternalaccountbinding.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerdns01provideracmedns.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerakamai.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerazuredns.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerclouddns.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providercloudflare.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerdigitalocean.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerrfc2136.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerroute53.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerwebhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/acmeissuerstatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/azuremanagedidentity.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/certificatednsnameselector.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/challengespec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/orderspec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/route53auth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/route53kubernetesauth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/applyconfigurations/acme/v1/serviceaccountref.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/clientset/versioned/scheme/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "file:pkg/client/clientset/versioned/scheme/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/caissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificateadditionaloutputformat.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatecondition.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatekeystores.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificateprivatekey.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestcondition.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/certificatestatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuercondition.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuerconfig.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuerspec.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/issuerstatus.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/jkskeystore.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraintitem.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/venaficloud.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/venafitpp.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/applyconfigurations/certmanager/v1/x509subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/clientset/versioned/scheme/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "file:pkg/client/clientset/versioned/scheme/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "class:pkg/client/clientset/versioned/typed/acme/v1/order.go:OrdersGetter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "class:pkg/client/clientset/versioned/typed/acme/v1/order.go:OrdersGetter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "class:pkg/client/clientset/versioned/typed/acme/v1/order.go:OrderInterface",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "class:pkg/client/clientset/versioned/typed/acme/v1/order.go:OrderInterface",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "target": "function:pkg/client/clientset/versioned/typed/acme/v1/order.go:newOrders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "class:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go:CertificatesGetter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "class:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go:CertificatesGetter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "class:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go:CertificateInterface",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "class:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go:CertificateInterface",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "target": "function:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go:newCertificates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    }
+  ]
+}

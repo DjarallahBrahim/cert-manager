@@ -1,0 +1,1206 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "type": "file",
+      "name": "clusterissuer.go",
+      "filePath": "pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "summary": "Generated cache lister providing read access to cluster-scoped ClusterIssuer objects.",
+      "tags": [
+        "generated",
+        "lister",
+        "cache",
+        "client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/listers/certmanager/v1/expansion_generated.go",
+      "type": "file",
+      "name": "expansion_generated.go",
+      "filePath": "pkg/client/listers/certmanager/v1/expansion_generated.go",
+      "summary": "Marker interfaces used to extend the generated listers for cert-manager v1 resources with custom methods.",
+      "tags": [
+        "generated",
+        "lister",
+        "extension-point",
+        "client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "type": "file",
+      "name": "issuer.go",
+      "filePath": "pkg/client/listers/certmanager/v1/issuer.go",
+      "summary": "Generated cache listers providing cluster-wide and namespace-scoped read access to Issuer objects.",
+      "tags": [
+        "generated",
+        "lister",
+        "cache",
+        "client"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/controller/acmechallenges/controller.go",
+      "type": "file",
+      "name": "controller.go",
+      "filePath": "pkg/controller/acmechallenges/controller.go",
+      "summary": "ACME challenge controller that registers informers, builds the challenge scheduler and processes Challenge resources through the configured HTTP-01 and DNS-01 solvers.",
+      "tags": [
+        "controller",
+        "acme",
+        "scheduler",
+        "kubernetes"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Uses the cert-manager controllerpkg queueing/registration pattern where Register returns the workqueue and InformerSynced list."
+    },
+    {
+      "id": "file:pkg/controller/acmeorders/controller.go",
+      "type": "file",
+      "name": "controller.go",
+      "filePath": "pkg/controller/acmeorders/controller.go",
+      "summary": "ACME order controller that wires Order-related informers, schedules re-processing work and processes Order resources for ACME issuance.",
+      "tags": [
+        "controller",
+        "acme",
+        "scheduler",
+        "kubernetes"
+      ],
+      "complexity": "complex",
+      "languageNotes": "controllerWrapper adapts the controller to the controllerpkg queueingController interface for integration tests."
+    },
+    {
+      "id": "class:pkg/client/listers/certmanager/v1/clusterissuer.go:ClusterIssuerLister",
+      "type": "class",
+      "name": "ClusterIssuerLister",
+      "filePath": "pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "lineRange": [
+        30,
+        38
+      ],
+      "summary": "Lister interface for cluster-scoped ClusterIssuers.",
+      "tags": [
+        "lister",
+        "interface",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/listers/certmanager/v1/clusterissuer.go:clusterIssuerLister",
+      "type": "class",
+      "name": "clusterIssuerLister",
+      "filePath": "pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "lineRange": [
+        41,
+        43
+      ],
+      "summary": "Indexer-backed implementation of ClusterIssuerLister.",
+      "tags": [
+        "lister",
+        "cache",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/listers/certmanager/v1/issuer.go:IssuerLister",
+      "type": "class",
+      "name": "IssuerLister",
+      "filePath": "pkg/client/listers/certmanager/v1/issuer.go",
+      "lineRange": [
+        30,
+        37
+      ],
+      "summary": "Lister interface for all Issuers with namespace-scoped accessors.",
+      "tags": [
+        "lister",
+        "interface",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/listers/certmanager/v1/issuer.go:issuerLister",
+      "type": "class",
+      "name": "issuerLister",
+      "filePath": "pkg/client/listers/certmanager/v1/issuer.go",
+      "lineRange": [
+        40,
+        42
+      ],
+      "summary": "Indexer-backed implementation of IssuerLister.",
+      "tags": [
+        "lister",
+        "cache",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/listers/certmanager/v1/issuer.go:IssuerNamespaceLister",
+      "type": "class",
+      "name": "IssuerNamespaceLister",
+      "filePath": "pkg/client/listers/certmanager/v1/issuer.go",
+      "lineRange": [
+        56,
+        64
+      ],
+      "summary": "Namespace-scoped lister interface for listing and getting Issuers.",
+      "tags": [
+        "lister",
+        "interface",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/listers/certmanager/v1/issuer.go:issuerNamespaceLister",
+      "type": "class",
+      "name": "issuerNamespaceLister",
+      "filePath": "pkg/client/listers/certmanager/v1/issuer.go",
+      "lineRange": [
+        68,
+        70
+      ],
+      "summary": "Indexer-backed namespace-scoped Issuer lister.",
+      "tags": [
+        "lister",
+        "cache",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/acmechallenges/controller.go:controller",
+      "type": "class",
+      "name": "controller",
+      "filePath": "pkg/controller/acmechallenges/controller.go",
+      "lineRange": [
+        44,
+        84
+      ],
+      "summary": "Challenge controller holding listers, solvers, scheduler, workqueue, recorder and timing configuration.",
+      "tags": [
+        "controller",
+        "acme",
+        "challenge"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/acmeorders/controller.go:controller",
+      "type": "class",
+      "name": "controller",
+      "filePath": "pkg/controller/acmeorders/controller.go",
+      "lineRange": [
+        43,
+        73
+      ],
+      "summary": "Order controller holding order/issuer/challenge listers, ACME registry, client, clock, queues and recorder.",
+      "tags": [
+        "controller",
+        "acme",
+        "order"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/acmeorders/controller.go:controllerWrapper",
+      "type": "class",
+      "name": "controllerWrapper",
+      "filePath": "pkg/controller/acmeorders/controller.go",
+      "lineRange": [
+        197,
+        199
+      ],
+      "summary": "Thin wrapper around controller that implements the controllerpkg Register interface for integration tests.",
+      "tags": [
+        "controller",
+        "wrapper",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/listers/certmanager/v1/clusterissuer.go:NewClusterIssuerLister",
+      "type": "function",
+      "name": "NewClusterIssuerLister",
+      "filePath": "pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "lineRange": [
+        46,
+        48
+      ],
+      "summary": "Creates a ClusterIssuerLister backed by the given cache indexer.",
+      "tags": [
+        "lister",
+        "factory",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/listers/certmanager/v1/issuer.go:NewIssuerLister",
+      "type": "function",
+      "name": "NewIssuerLister",
+      "filePath": "pkg/client/listers/certmanager/v1/issuer.go",
+      "lineRange": [
+        45,
+        47
+      ],
+      "summary": "Creates an IssuerLister backed by the given cache indexer.",
+      "tags": [
+        "lister",
+        "factory",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/listers/certmanager/v1/issuer.go:Issuers",
+      "type": "function",
+      "name": "Issuers",
+      "filePath": "pkg/client/listers/certmanager/v1/issuer.go",
+      "lineRange": [
+        50,
+        52
+      ],
+      "summary": "Returns a namespace-scoped Issuer lister for the given namespace.",
+      "tags": [
+        "lister",
+        "issuer",
+        "go"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmechallenges/controller.go:Register",
+      "type": "function",
+      "name": "Register",
+      "filePath": "pkg/controller/acmechallenges/controller.go",
+      "lineRange": [
+        86,
+        166
+      ],
+      "summary": "Registers the challenge controller against the shared context: builds the queue, informers, listers, solvers and returns the workqueue and sync functions.",
+      "tags": [
+        "controller",
+        "registration",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/acmechallenges/controller.go:runScheduler",
+      "type": "function",
+      "name": "runScheduler",
+      "filePath": "pkg/controller/acmechallenges/controller.go",
+      "lineRange": [
+        180,
+        203
+      ],
+      "summary": "Runs the challenge scheduler periodically to determine which challenges should be processed.",
+      "tags": [
+        "scheduler",
+        "acme",
+        "challenge"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmechallenges/controller.go:ProcessItem",
+      "type": "function",
+      "name": "ProcessItem",
+      "filePath": "pkg/controller/acmechallenges/controller.go",
+      "lineRange": [
+        205,
+        222
+      ],
+      "summary": "Processes one queued Challenge key through the sync logic.",
+      "tags": [
+        "queue",
+        "controller",
+        "challenge"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/controller.go:NewController",
+      "type": "function",
+      "name": "NewController",
+      "filePath": "pkg/controller/acmeorders/controller.go",
+      "lineRange": [
+        76,
+        162
+      ],
+      "summary": "Builds the order controller: queue, scheduled work queue, informers, listers and event handlers, returning it with sync functions.",
+      "tags": [
+        "controller",
+        "factory",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/controller.go:ProcessItem",
+      "type": "function",
+      "name": "ProcessItem",
+      "filePath": "pkg/controller/acmeorders/controller.go",
+      "lineRange": [
+        164,
+        180
+      ],
+      "summary": "Processes one queued Order key through the sync logic.",
+      "tags": [
+        "queue",
+        "controller",
+        "order"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/controller.go:Register",
+      "type": "function",
+      "name": "Register",
+      "filePath": "pkg/controller/acmeorders/controller.go",
+      "lineRange": [
+        204,
+        219
+      ],
+      "summary": "Registers the controller wrapper by constructing the controller from the shared context.",
+      "tags": [
+        "controller",
+        "registration",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/controller.go:orderGetterFunc",
+      "type": "function",
+      "name": "orderGetterFunc",
+      "filePath": "pkg/controller/acmeorders/controller.go",
+      "lineRange": [
+        183,
+        187
+      ],
+      "summary": "Returns a getter closure that looks up Orders by namespace and name through a lister.",
+      "tags": [
+        "lister",
+        "factory",
+        "order"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "target": "class:pkg/client/listers/certmanager/v1/clusterissuer.go:ClusterIssuerLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "target": "class:pkg/client/listers/certmanager/v1/clusterissuer.go:ClusterIssuerLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "target": "class:pkg/client/listers/certmanager/v1/clusterissuer.go:clusterIssuerLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "target": "class:pkg/client/listers/certmanager/v1/issuer.go:IssuerLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "target": "class:pkg/client/listers/certmanager/v1/issuer.go:IssuerLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "target": "class:pkg/client/listers/certmanager/v1/issuer.go:issuerLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "target": "class:pkg/client/listers/certmanager/v1/issuer.go:IssuerNamespaceLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "target": "class:pkg/client/listers/certmanager/v1/issuer.go:IssuerNamespaceLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "target": "class:pkg/client/listers/certmanager/v1/issuer.go:issuerNamespaceLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "class:pkg/controller/acmechallenges/controller.go:controller",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "class:pkg/controller/acmeorders/controller.go:controller",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "class:pkg/controller/acmeorders/controller.go:controllerWrapper",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "target": "function:pkg/client/listers/certmanager/v1/clusterissuer.go:NewClusterIssuerLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "target": "function:pkg/client/listers/certmanager/v1/clusterissuer.go:NewClusterIssuerLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "target": "function:pkg/client/listers/certmanager/v1/issuer.go:NewIssuerLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "target": "function:pkg/client/listers/certmanager/v1/issuer.go:NewIssuerLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "target": "function:pkg/client/listers/certmanager/v1/issuer.go:Issuers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "target": "function:pkg/client/listers/certmanager/v1/issuer.go:Issuers",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "function:pkg/controller/acmechallenges/controller.go:Register",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "function:pkg/controller/acmechallenges/controller.go:Register",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "function:pkg/controller/acmechallenges/controller.go:runScheduler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "function:pkg/controller/acmechallenges/controller.go:ProcessItem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "function:pkg/controller/acmechallenges/controller.go:ProcessItem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "function:pkg/controller/acmeorders/controller.go:NewController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "function:pkg/controller/acmeorders/controller.go:NewController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "function:pkg/controller/acmeorders/controller.go:ProcessItem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "function:pkg/controller/acmeorders/controller.go:ProcessItem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "function:pkg/controller/acmeorders/controller.go:Register",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "function:pkg/controller/acmeorders/controller.go:Register",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "function:pkg/controller/acmeorders/controller.go:orderGetterFunc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/acme/accounts/client.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/acme/accounts/registry.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/client/listers/acme/v1/challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/client/listers/acme/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/client/listers/acme/v1/order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/issuer/acme/dns/dns.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/issuer/acme/http/http.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/issuer/acme/http/httproute.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/issuer/acme/http/ingress.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/issuer/acme/http/pod.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/issuer/acme/http/service.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/issuer/factory.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/issuer/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/issuer/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/controller.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/acme/accounts/client.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/acme/accounts/registry.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/client/clientset/versioned/clientset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/client/listers/acme/v1/challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/client/listers/acme/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/client/listers/acme/v1/order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/issuer/factory.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/issuer/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/issuer/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/controller.go",
+      "target": "file:pkg/scheduler/scheduler.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

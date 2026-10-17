@@ -1,0 +1,695 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/issuer/acme/http/service.go",
+      "type": "file",
+      "name": "service.go",
+      "filePath": "pkg/issuer/acme/http/service.go",
+      "summary": "Creates and cleans up the Service that exposes HTTP-01 solver pods.",
+      "tags": [
+        "http01",
+        "service",
+        "solver",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/service.go:ensureService",
+      "type": "function",
+      "name": "ensureService",
+      "filePath": "pkg/issuer/acme/http/service.go",
+      "lineRange": [
+        36,
+        60
+      ],
+      "summary": "Ensures the solver Service exists for a challenge.",
+      "tags": [
+        "http01",
+        "service",
+        "ensure"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/service.go:getServicesForChallenge",
+      "type": "function",
+      "name": "getServicesForChallenge",
+      "filePath": "pkg/issuer/acme/http/service.go",
+      "lineRange": [
+        64,
+        97
+      ],
+      "summary": "Lists Services owned by a challenge and filters out stale ones.",
+      "tags": [
+        "http01",
+        "service",
+        "lookup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/service.go:buildService",
+      "type": "function",
+      "name": "buildService",
+      "filePath": "pkg/issuer/acme/http/service.go",
+      "lineRange": [
+        109,
+        144
+      ],
+      "summary": "Builds the solver Service targeting the challenge pod labels.",
+      "tags": [
+        "http01",
+        "service",
+        "builder"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/service.go:cleanupServices",
+      "type": "function",
+      "name": "cleanupServices",
+      "filePath": "pkg/issuer/acme/http/service.go",
+      "lineRange": [
+        146,
+        167
+      ],
+      "summary": "Deletes solver Services that are no longer needed by the challenge.",
+      "tags": [
+        "http01",
+        "service",
+        "cleanup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/util/solverpicker/solverpicker.go",
+      "type": "file",
+      "name": "solverpicker.go",
+      "filePath": "pkg/util/solverpicker/solverpicker.go",
+      "summary": "Selects the challenge solver that matches a domain and challenge set, honouring issuer solver ordering and fallback.",
+      "tags": [
+        "solver-selection",
+        "acme",
+        "matching",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/util/solverpicker/solverpicker.go:Pick",
+      "type": "function",
+      "name": "Pick",
+      "filePath": "pkg/util/solverpicker/solverpicker.go",
+      "lineRange": [
+        28,
+        185
+      ],
+      "summary": "Selects the first solver whose selector matches the domain, falling back to a default solver when none match.",
+      "tags": [
+        "solver-selection",
+        "matching",
+        "acme"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:test/acme/fixture.go",
+      "type": "file",
+      "name": "fixture.go",
+      "filePath": "test/acme/fixture.go",
+      "summary": "End-to-end ACME conformance test fixture that exercises challenge solvers against a live test server.",
+      "tags": [
+        "test",
+        "integration-testing",
+        "acme",
+        "fixture"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/acme/fixture.go:fixture",
+      "type": "class",
+      "name": "fixture",
+      "filePath": "test/acme/fixture.go",
+      "lineRange": [
+        43,
+        82
+      ],
+      "summary": "Conformance fixture holding test server configuration, clients, and DNS settings.",
+      "tags": [
+        "test",
+        "fixture",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/acme/fixture.go:RunConformance",
+      "type": "function",
+      "name": "RunConformance",
+      "filePath": "test/acme/fixture.go",
+      "lineRange": [
+        88,
+        94
+      ],
+      "summary": "Runs the full ACME conformance suite against the configured solver.",
+      "tags": [
+        "test",
+        "conformance",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/acme/fixture.go:setup",
+      "type": "function",
+      "name": "setup",
+      "filePath": "test/acme/fixture.go",
+      "lineRange": [
+        110,
+        150
+      ],
+      "summary": "Starts the test environment, solver, and API clients required for conformance runs.",
+      "tags": [
+        "test",
+        "setup",
+        "fixture"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/acme/options.go",
+      "type": "file",
+      "name": "options.go",
+      "filePath": "test/acme/options.go",
+      "summary": "Configuration options, defaults, and validation for the ACME conformance test fixture.",
+      "tags": [
+        "test",
+        "configuration",
+        "acme",
+        "options"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/acme/options.go:NewFixture",
+      "type": "function",
+      "name": "NewFixture",
+      "filePath": "test/acme/options.go",
+      "lineRange": [
+        39,
+        48
+      ],
+      "summary": "Creates a conformance fixture for the given solver type.",
+      "tags": [
+        "factory",
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/acme/options.go:applyDefaults",
+      "type": "function",
+      "name": "applyDefaults",
+      "filePath": "test/acme/options.go",
+      "lineRange": [
+        50,
+        77
+      ],
+      "summary": "Applies default values to unset fixture options.",
+      "tags": [
+        "configuration",
+        "defaults",
+        "test"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/acme/options.go:validate",
+      "type": "function",
+      "name": "validate",
+      "filePath": "test/acme/options.go",
+      "lineRange": [
+        79,
+        101
+      ],
+      "summary": "Validates the fixture configuration required to run the conformance suite.",
+      "tags": [
+        "validation",
+        "test",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/acme/util.go",
+      "type": "file",
+      "name": "util.go",
+      "filePath": "test/acme/util.go",
+      "summary": "Shared helpers for ACME conformance tests covering namespaces, webhook payloads, and DNS propagation checks.",
+      "tags": [
+        "test",
+        "helper",
+        "acme",
+        "integration-testing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/acme/util.go:setupNamespace",
+      "type": "function",
+      "name": "setupNamespace",
+      "filePath": "test/acme/util.go",
+      "lineRange": [
+        44,
+        90
+      ],
+      "summary": "Creates an isolated namespace and starting resources for a conformance run.",
+      "tags": [
+        "test",
+        "kubernetes",
+        "setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/acme/util.go:buildChallengeRequest",
+      "type": "function",
+      "name": "buildChallengeRequest",
+      "filePath": "test/acme/util.go",
+      "lineRange": [
+        92,
+        102
+      ],
+      "summary": "Builds a webhook challenge request payload for the test DNS server.",
+      "tags": [
+        "test",
+        "payload",
+        "webhook"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/acme/util.go:allConditions",
+      "type": "function",
+      "name": "allConditions",
+      "filePath": "test/acme/util.go",
+      "lineRange": [
+        104,
+        114
+      ],
+      "summary": "Returns all challenge conditions used by test assertion helpers.",
+      "tags": [
+        "test",
+        "helper",
+        "conditions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/acme/util.go:recordHasBeenDeletedCheck",
+      "type": "function",
+      "name": "recordHasBeenDeletedCheck",
+      "filePath": "test/acme/util.go",
+      "lineRange": [
+        122,
+        145
+      ],
+      "summary": "Polls until the challenge DNS record has been removed.",
+      "tags": [
+        "test",
+        "dns",
+        "polling"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/issuer/acme/http/service.go",
+      "target": "function:pkg/issuer/acme/http/service.go:ensureService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/service.go",
+      "target": "function:pkg/issuer/acme/http/service.go:getServicesForChallenge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/service.go",
+      "target": "function:pkg/issuer/acme/http/service.go:buildService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/service.go",
+      "target": "function:pkg/issuer/acme/http/service.go:cleanupServices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/util/solverpicker/solverpicker.go",
+      "target": "function:pkg/util/solverpicker/solverpicker.go:Pick",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/util/solverpicker/solverpicker.go",
+      "target": "function:pkg/util/solverpicker/solverpicker.go:Pick",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/acme/fixture.go",
+      "target": "class:test/acme/fixture.go:fixture",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/acme/fixture.go",
+      "target": "function:test/acme/fixture.go:RunConformance",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/acme/fixture.go",
+      "target": "function:test/acme/fixture.go:RunConformance",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/acme/fixture.go",
+      "target": "function:test/acme/fixture.go:setup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/acme/options.go",
+      "target": "function:test/acme/options.go:NewFixture",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/acme/options.go",
+      "target": "function:test/acme/options.go:NewFixture",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/acme/options.go",
+      "target": "function:test/acme/options.go:applyDefaults",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/acme/options.go",
+      "target": "function:test/acme/options.go:validate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/acme/util.go",
+      "target": "function:test/acme/util.go:setupNamespace",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/acme/util.go",
+      "target": "function:test/acme/util.go:buildChallengeRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/acme/util.go",
+      "target": "function:test/acme/util.go:allConditions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/acme/util.go",
+      "target": "function:test/acme/util.go:recordHasBeenDeletedCheck",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/service.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/service.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/service.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/service.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/service.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/service.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/service.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/service.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/service.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/solverpicker/solverpicker.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/solverpicker/solverpicker.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/solverpicker/solverpicker.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/solverpicker/solverpicker.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/solverpicker/solverpicker.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/solverpicker/solverpicker.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/solverpicker/solverpicker.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/solverpicker/solverpicker.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/solverpicker/solverpicker.go",
+      "target": "file:pkg/controller/acmeorders/selectors/dns_names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/solverpicker/solverpicker.go",
+      "target": "file:pkg/controller/acmeorders/selectors/dns_zones.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/solverpicker/solverpicker.go",
+      "target": "file:pkg/controller/acmeorders/selectors/labels.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/solverpicker/solverpicker.go",
+      "target": "file:pkg/controller/acmeorders/selectors/selector.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/util/solverpicker/solverpicker.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/acme/fixture.go",
+      "target": "file:pkg/acme/webhook/webhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/acme/fixture.go",
+      "target": "file:test/apiserver/apiserver.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/acme/fixture.go",
+      "target": "file:test/apiserver/envs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/acme/options.go",
+      "target": "file:pkg/acme/webhook/webhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/acme/util.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/acme/util.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/acme/util.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/acme/util.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/acme/util.go",
+      "target": "file:pkg/issuer/acme/dns/util/dns.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/acme/util.go",
+      "target": "file:pkg/issuer/acme/dns/util/wait.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/acme/util.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:DNSQuery",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/acme/util.go",
+      "target": "function:pkg/issuer/acme/dns/util/dns.go:DNS01LookupFQDN",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

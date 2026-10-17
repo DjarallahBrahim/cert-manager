@@ -1,0 +1,1454 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 12,
+  "filesSkipped": [
+    "test/e2e/go.mod",
+    "test/e2e/go.sum",
+    "test/integration/go.mod",
+    "test/integration/go.sum",
+    "third_party/forked/acme/PATENTS"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 12,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 4,
+      "failed": 0,
+      "skipped": 8
+    }
+  },
+  "results": [
+    {
+      "path": "test/e2e/framework/addon/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": "test/integration/framework/apiserver.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 289,
+      "nonEmptyLines": 250,
+      "functions": [
+        {
+          "name": "WithCRDDirectory",
+          "startLine": 61,
+          "endLine": 65,
+          "params": [
+            "directory"
+          ]
+        },
+        {
+          "name": "RunControlPlane",
+          "startLine": 67,
+          "endLine": 148,
+          "params": [
+            "t"
+          ]
+        },
+        {
+          "name": "init",
+          "startLine": 154,
+          "endLine": 157,
+          "params": []
+        },
+        {
+          "name": "readCustomResourcesAtPath",
+          "startLine": 159,
+          "endLine": 184,
+          "params": [
+            "t",
+            "path"
+          ]
+        },
+        {
+          "name": "readCRDsAtPath",
+          "startLine": 186,
+          "endLine": 213,
+          "params": [
+            "codec",
+            "converter",
+            "path"
+          ]
+        },
+        {
+          "name": "getValidatingWebhookConfig",
+          "startLine": 215,
+          "endLine": 251,
+          "params": [
+            "url",
+            "caPEM"
+          ]
+        },
+        {
+          "name": "getMutatingWebhookConfig",
+          "startLine": 253,
+          "endLine": 289,
+          "params": [
+            "url",
+            "caPEM"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "controlPlaneOptions",
+          "startLine": 53,
+          "endLine": 55,
+          "methods": [],
+          "properties": [
+            "crdsDir"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WithCRDDirectory",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "RunControlPlane",
+          "line": 67,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithCRDDirectory",
+          "callee": "ptr.To",
+          "lineNumber": 63
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "context.WithCancel",
+          "lineNumber": 70
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "t.Context",
+          "lineNumber": 70
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "paths.CRDDirectory",
+          "lineNumber": 72
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "t.Fatal",
+          "lineNumber": 74
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "ptr.To",
+          "lineNumber": 78
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "f",
+          "lineNumber": 82
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "apiserver.RunBareControlPlane",
+          "lineNumber": 85
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "env.ControlPlane.AddUser",
+          "lineNumber": 86
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "t.Fatal",
+          "lineNumber": 88
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "testuser.KubeConfig",
+          "lineNumber": 91
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "t.Fatal",
+          "lineNumber": 93
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "os.CreateTemp",
+          "lineNumber": 96
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "t.TempDir",
+          "lineNumber": 96
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "t.Fatal",
+          "lineNumber": 98
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "f.Close",
+          "lineNumber": 100
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "func() {\n\t\tos.Remove(f.Name())\n\t}",
+          "lineNumber": 101
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "os.Remove",
+          "lineNumber": 102
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "f.Name",
+          "lineNumber": 102
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "f.Write",
+          "lineNumber": 104
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "t.Fatal",
+          "lineNumber": 105
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "webhooktesting.StartWebhookServer",
+          "lineNumber": 108
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "f.Name",
+          "lineNumber": 112
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "readCustomResourcesAtPath",
+          "lineNumber": 115
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "t.Logf",
+          "lineNumber": 117
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "envtest.InstallCRDs",
+          "lineNumber": 120
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "t.Fatal",
+          "lineNumber": 123
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "client.New",
+          "lineNumber": 126
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "t.Fatal",
+          "lineNumber": 128
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "cl.Create",
+          "lineNumber": 132
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "getValidatingWebhookConfig",
+          "lineNumber": 132
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "t.Fatal",
+          "lineNumber": 134
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "cl.Create",
+          "lineNumber": 138
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "getMutatingWebhookConfig",
+          "lineNumber": 138
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "t.Fatal",
+          "lineNumber": 140
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "stopCtxFn",
+          "lineNumber": 144
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "stopControlPlaneFn",
+          "lineNumber": 145
+        },
+        {
+          "caller": "RunControlPlane",
+          "callee": "stopWebhook",
+          "lineNumber": 146
+        },
+        {
+          "caller": "init",
+          "callee": "utilruntime.Must",
+          "lineNumber": 155
+        },
+        {
+          "caller": "init",
+          "callee": "metav1.AddMetaToScheme",
+          "lineNumber": 155
+        },
+        {
+          "caller": "init",
+          "callee": "apiextensionsinstall.Install",
+          "lineNumber": 156
+        },
+        {
+          "caller": "readCustomResourcesAtPath",
+          "callee": "jsonserializer.NewSerializerWithOptions",
+          "lineNumber": 160
+        },
+        {
+          "caller": "readCustomResourcesAtPath",
+          "callee": "runtime.UnsafeObjectConvertor",
+          "lineNumber": 163
+        },
+        {
+          "caller": "readCustomResourcesAtPath",
+          "callee": "versioning.NewCodec",
+          "lineNumber": 164
+        },
+        {
+          "caller": "readCustomResourcesAtPath",
+          "callee": "internalScheme.Name",
+          "lineNumber": 164
+        },
+        {
+          "caller": "readCustomResourcesAtPath",
+          "callee": "filepath.Walk",
+          "lineNumber": 167
+        },
+        {
+          "caller": "readCustomResourcesAtPath",
+          "callee": "filepath.Ext",
+          "lineNumber": 171
+        },
+        {
+          "caller": "readCustomResourcesAtPath",
+          "callee": "readCRDsAtPath",
+          "lineNumber": 174
+        },
+        {
+          "caller": "readCustomResourcesAtPath",
+          "callee": "fmt.Errorf",
+          "lineNumber": 176
+        },
+        {
+          "caller": "readCustomResourcesAtPath",
+          "callee": "append",
+          "lineNumber": 178
+        },
+        {
+          "caller": "readCustomResourcesAtPath",
+          "callee": "t.Fatal",
+          "lineNumber": 181
+        },
+        {
+          "caller": "readCRDsAtPath",
+          "callee": "os.ReadFile",
+          "lineNumber": 187
+        },
+        {
+          "caller": "readCRDsAtPath",
+          "callee": "strings.Split",
+          "lineNumber": 193
+        },
+        {
+          "caller": "readCRDsAtPath",
+          "callee": "string",
+          "lineNumber": 193
+        },
+        {
+          "caller": "readCRDsAtPath",
+          "callee": "strings.TrimSpace",
+          "lineNumber": 195
+        },
+        {
+          "caller": "readCRDsAtPath",
+          "callee": "codec.Decode",
+          "lineNumber": 200
+        },
+        {
+          "caller": "readCRDsAtPath",
+          "callee": "converter.Convert",
+          "lineNumber": 205
+        },
+        {
+          "caller": "readCRDsAtPath",
+          "callee": "append",
+          "lineNumber": 209
+        },
+        {
+          "caller": "getValidatingWebhookConfig",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 218
+        },
+        {
+          "caller": "getMutatingWebhookConfig",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 256
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "test/integration/framework/helpers.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 133,
+      "nonEmptyLines": 112,
+      "functions": [
+        {
+          "name": "NewEventRecorder",
+          "startLine": 47,
+          "endLine": 51,
+          "params": [
+            "t",
+            "scheme"
+          ]
+        },
+        {
+          "name": "NewClients",
+          "startLine": 53,
+          "endLine": 79,
+          "params": [
+            "t",
+            "config"
+          ]
+        },
+        {
+          "name": "StartInformersAndController",
+          "startLine": 81,
+          "endLine": 83,
+          "params": [
+            "t",
+            "factory",
+            "cmFactory",
+            "c"
+          ]
+        },
+        {
+          "name": "StartInformersAndControllers",
+          "startLine": 85,
+          "endLine": 109,
+          "params": [
+            "t",
+            "factory",
+            "cmFactory"
+          ]
+        },
+        {
+          "name": "WaitForOpenAPIResourcesToBeLoaded",
+          "startLine": 111,
+          "endLine": 133,
+          "params": [
+            "t",
+            "ctx",
+            "config",
+            "gvk"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewEventRecorder",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "NewClients",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "StartInformersAndController",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "StartInformersAndControllers",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "WaitForOpenAPIResourcesToBeLoaded",
+          "line": 111,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewEventRecorder",
+          "callee": "record.NewBroadcaster",
+          "lineNumber": 48
+        },
+        {
+          "caller": "NewEventRecorder",
+          "callee": "eventBroadcaster.StartLogging",
+          "lineNumber": 49
+        },
+        {
+          "caller": "NewEventRecorder",
+          "callee": "eventBroadcaster.NewRecorder",
+          "lineNumber": 50
+        },
+        {
+          "caller": "NewEventRecorder",
+          "callee": "t.Name",
+          "lineNumber": 50
+        },
+        {
+          "caller": "NewClients",
+          "callee": "rest.HTTPClientFor",
+          "lineNumber": 54
+        },
+        {
+          "caller": "NewClients",
+          "callee": "t.Fatal",
+          "lineNumber": 56
+        },
+        {
+          "caller": "NewClients",
+          "callee": "kubernetes.NewForConfigAndClient",
+          "lineNumber": 59
+        },
+        {
+          "caller": "NewClients",
+          "callee": "t.Fatal",
+          "lineNumber": 61
+        },
+        {
+          "caller": "NewClients",
+          "callee": "internalinformers.NewBaseKubeInformerFactory",
+          "lineNumber": 63
+        },
+        {
+          "caller": "NewClients",
+          "callee": "cmclient.NewForConfigAndClient",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewClients",
+          "callee": "t.Fatal",
+          "lineNumber": 67
+        },
+        {
+          "caller": "NewClients",
+          "callee": "cminformers.NewSharedInformerFactory",
+          "lineNumber": 69
+        },
+        {
+          "caller": "NewClients",
+          "callee": "runtime.NewScheme",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewClients",
+          "callee": "utilruntime.Must",
+          "lineNumber": 72
+        },
+        {
+          "caller": "NewClients",
+          "callee": "kscheme.AddToScheme",
+          "lineNumber": 72
+        },
+        {
+          "caller": "NewClients",
+          "callee": "utilruntime.Must",
+          "lineNumber": 73
+        },
+        {
+          "caller": "NewClients",
+          "callee": "certmgrscheme.AddToScheme",
+          "lineNumber": 73
+        },
+        {
+          "caller": "NewClients",
+          "callee": "utilruntime.Must",
+          "lineNumber": 74
+        },
+        {
+          "caller": "NewClients",
+          "callee": "apiext.AddToScheme",
+          "lineNumber": 74
+        },
+        {
+          "caller": "NewClients",
+          "callee": "utilruntime.Must",
+          "lineNumber": 75
+        },
+        {
+          "caller": "NewClients",
+          "callee": "apireg.AddToScheme",
+          "lineNumber": 75
+        },
+        {
+          "caller": "NewClients",
+          "callee": "utilruntime.Must",
+          "lineNumber": 76
+        },
+        {
+          "caller": "NewClients",
+          "callee": "gwapi.Install",
+          "lineNumber": 76
+        },
+        {
+          "caller": "StartInformersAndController",
+          "callee": "StartInformersAndControllers",
+          "lineNumber": 82
+        },
+        {
+          "caller": "StartInformersAndControllers",
+          "callee": "context.WithCancel",
+          "lineNumber": 88
+        },
+        {
+          "caller": "StartInformersAndControllers",
+          "callee": "t.Context",
+          "lineNumber": 88
+        },
+        {
+          "caller": "StartInformersAndControllers",
+          "callee": "factory.Start",
+          "lineNumber": 90
+        },
+        {
+          "caller": "StartInformersAndControllers",
+          "callee": "stoppableCtx.Done",
+          "lineNumber": 90
+        },
+        {
+          "caller": "StartInformersAndControllers",
+          "callee": "cmFactory.Start",
+          "lineNumber": 91
+        },
+        {
+          "caller": "StartInformersAndControllers",
+          "callee": "stoppableCtx.Done",
+          "lineNumber": 91
+        },
+        {
+          "caller": "StartInformersAndControllers",
+          "callee": "errgroup.WithContext",
+          "lineNumber": 92
+        },
+        {
+          "caller": "StartInformersAndControllers",
+          "callee": "func() {\n\t\tfor _, c := range cs {\n\t\t\tfunc(c controllerpkg.Interface) {\n\t\t\t\tgroup.Go(func() error {\n\t\t\t\t\treturn c.Run(1, gctx)\n\t\t\t\t})\n\t\t\t}(c)\n\t\t}\n\t}",
+          "lineNumber": 93
+        },
+        {
+          "caller": "StartInformersAndControllers",
+          "callee": "func(c controllerpkg.Interface) {\n\t\t\t\tgroup.Go(func() error {\n\t\t\t\t\treturn c.Run(1, gctx)\n\t\t\t\t})\n\t\t\t}",
+          "lineNumber": 95
+        },
+        {
+          "caller": "StartInformersAndControllers",
+          "callee": "group.Go",
+          "lineNumber": 96
+        },
+        {
+          "caller": "StartInformersAndControllers",
+          "callee": "c.Run",
+          "lineNumber": 97
+        },
+        {
+          "caller": "StartInformersAndControllers",
+          "callee": "stopCtxFn",
+          "lineNumber": 104
+        },
+        {
+          "caller": "StartInformersAndControllers",
+          "callee": "group.Wait",
+          "lineNumber": 105
+        },
+        {
+          "caller": "StartInformersAndControllers",
+          "callee": "t.Fatal",
+          "lineNumber": 106
+        },
+        {
+          "caller": "WaitForOpenAPIResourcesToBeLoaded",
+          "callee": "discovery.NewDiscoveryClientForConfig",
+          "lineNumber": 112
+        },
+        {
+          "caller": "WaitForOpenAPIResourcesToBeLoaded",
+          "callee": "t.Fatal",
+          "lineNumber": 114
+        },
+        {
+          "caller": "WaitForOpenAPIResourcesToBeLoaded",
+          "callee": "wait.PollUntilContextCancel",
+          "lineNumber": 117
+        },
+        {
+          "caller": "WaitForOpenAPIResourcesToBeLoaded",
+          "callee": "openapi.NewOpenAPIGetter",
+          "lineNumber": 118
+        },
+        {
+          "caller": "WaitForOpenAPIResourcesToBeLoaded",
+          "callee": "openapi.NewOpenAPIParser(og).Parse",
+          "lineNumber": 119
+        },
+        {
+          "caller": "WaitForOpenAPIResourcesToBeLoaded",
+          "callee": "openapi.NewOpenAPIParser",
+          "lineNumber": 119
+        },
+        {
+          "caller": "WaitForOpenAPIResourcesToBeLoaded",
+          "callee": "oapiResource.LookupResource",
+          "lineNumber": 124
+        },
+        {
+          "caller": "WaitForOpenAPIResourcesToBeLoaded",
+          "callee": "t.Fatal",
+          "lineNumber": 131
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/integration/rfc2136_dns01/testdata/config.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": "test/integration/rfc2136_dns01/testdata/rfc2136-tsig-secret.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "stringData",
+          "level": 1,
+          "line": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "test/integration/validation/files/issuers.valid.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 20,
+      "nonEmptyLines": 20,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "test/unit/coreclients/secrets.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 140,
+      "nonEmptyLines": 114,
+      "functions": [
+        {
+          "name": "NewFakeSecretsGetterFrom",
+          "startLine": 43,
+          "endLine": 48,
+          "params": [
+            "f"
+          ]
+        },
+        {
+          "name": "NewFakeSecretsGetter",
+          "startLine": 50,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "SetFakeSecretsGetterCreate",
+          "startLine": 59,
+          "endLine": 65,
+          "params": [
+            "s",
+            "err"
+          ]
+        },
+        {
+          "name": "SetFakeSecretsGetterGet",
+          "startLine": 70,
+          "endLine": 76,
+          "params": [
+            "s",
+            "err"
+          ]
+        },
+        {
+          "name": "SetFakeSecretsGetterApplyFn",
+          "startLine": 80,
+          "endLine": 84,
+          "params": [
+            "fn"
+          ]
+        },
+        {
+          "name": "Secrets",
+          "startLine": 86,
+          "endLine": 88,
+          "params": []
+        },
+        {
+          "name": "Create",
+          "startLine": 106,
+          "endLine": 108,
+          "params": []
+        },
+        {
+          "name": "Update",
+          "startLine": 110,
+          "endLine": 112,
+          "params": []
+        },
+        {
+          "name": "Delete",
+          "startLine": 114,
+          "endLine": 116,
+          "params": []
+        },
+        {
+          "name": "DeleteCollection",
+          "startLine": 118,
+          "endLine": 120,
+          "params": []
+        },
+        {
+          "name": "Get",
+          "startLine": 122,
+          "endLine": 124,
+          "params": []
+        },
+        {
+          "name": "List",
+          "startLine": 126,
+          "endLine": 128,
+          "params": []
+        },
+        {
+          "name": "Watch",
+          "startLine": 130,
+          "endLine": 132,
+          "params": []
+        },
+        {
+          "name": "Patch",
+          "startLine": 134,
+          "endLine": 136,
+          "params": []
+        },
+        {
+          "name": "Apply",
+          "startLine": 138,
+          "endLine": 140,
+          "params": [
+            "ctx",
+            "cnf",
+            "opts"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FakeSecretsGetter",
+          "startLine": 35,
+          "endLine": 37,
+          "methods": [
+            "Secrets"
+          ],
+          "properties": [
+            "c"
+          ]
+        },
+        {
+          "name": "fakeSecretClient",
+          "startLine": 92,
+          "endLine": 104,
+          "methods": [
+            "Create",
+            "Update",
+            "Delete",
+            "DeleteCollection",
+            "Get",
+            "List",
+            "Watch",
+            "Patch",
+            "Apply"
+          ],
+          "properties": [
+            "CreateFn",
+            "UpdateFn",
+            "DeleteFn",
+            "DeleteCollectionFn",
+            "GetFn",
+            "ListFn",
+            "WatchFn",
+            "PatchFn",
+            "ApplyFn"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FakeSecretsGetter",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "NewFakeSecretsGetterFrom",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "NewFakeSecretsGetter",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "SetFakeSecretsGetterCreate",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "SetFakeSecretsGetterGet",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "SetFakeSecretsGetterApplyFn",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "Secrets",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "Create",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "Update",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "Delete",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "DeleteCollection",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "Get",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "List",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "Watch",
+          "line": 130,
+          "isDefault": false
+        },
+        {
+          "name": "Patch",
+          "line": 134,
+          "isDefault": false
+        },
+        {
+          "name": "Apply",
+          "line": 138,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewFakeSecretsGetterFrom",
+          "callee": "mod",
+          "lineNumber": 45
+        },
+        {
+          "caller": "NewFakeSecretsGetter",
+          "callee": "NewFakeSecretsGetterFrom",
+          "lineNumber": 51
+        },
+        {
+          "caller": "Create",
+          "callee": "f.CreateFn",
+          "lineNumber": 107
+        },
+        {
+          "caller": "Update",
+          "callee": "f.UpdateFn",
+          "lineNumber": 111
+        },
+        {
+          "caller": "Delete",
+          "callee": "f.DeleteFn",
+          "lineNumber": 115
+        },
+        {
+          "caller": "DeleteCollection",
+          "callee": "f.DeleteCollectionFn",
+          "lineNumber": 119
+        },
+        {
+          "caller": "Get",
+          "callee": "f.GetFn",
+          "lineNumber": 123
+        },
+        {
+          "caller": "List",
+          "callee": "f.ListFn",
+          "lineNumber": 127
+        },
+        {
+          "caller": "Watch",
+          "callee": "f.WatchFn",
+          "lineNumber": 131
+        },
+        {
+          "caller": "Patch",
+          "callee": "f.PatchFn",
+          "lineNumber": 135
+        },
+        {
+          "caller": "Apply",
+          "callee": "f.ApplyFn",
+          "lineNumber": 139
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 16,
+        "functionCount": 15,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "test/unit/listers/secret.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 119,
+      "nonEmptyLines": 97,
+      "functions": [
+        {
+          "name": "NewFakeSecretLister",
+          "startLine": 41,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "NewFakeSecretNamespaceLister",
+          "startLine": 53,
+          "endLine": 62,
+          "params": []
+        },
+        {
+          "name": "List",
+          "startLine": 64,
+          "endLine": 66,
+          "params": [
+            "selector"
+          ]
+        },
+        {
+          "name": "Secrets",
+          "startLine": 68,
+          "endLine": 70,
+          "params": [
+            "namespace"
+          ]
+        },
+        {
+          "name": "List",
+          "startLine": 72,
+          "endLine": 74,
+          "params": [
+            "selector"
+          ]
+        },
+        {
+          "name": "Get",
+          "startLine": 76,
+          "endLine": 78,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "FakeSecretNamespaceListerFrom",
+          "startLine": 80,
+          "endLine": 85,
+          "params": [
+            "f"
+          ]
+        },
+        {
+          "name": "SetFakeSecretNamespaceListerGet",
+          "startLine": 87,
+          "endLine": 94,
+          "params": [
+            "ret",
+            "err"
+          ]
+        },
+        {
+          "name": "FakeSecretListerFrom",
+          "startLine": 96,
+          "endLine": 101,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "SetFakeSecretListerSecret",
+          "startLine": 103,
+          "endLine": 107,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "SetFakeSecretNamespaceListerGet",
+          "startLine": 109,
+          "endLine": 119,
+          "params": [
+            "sec",
+            "err"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FakeSecretLister",
+          "startLine": 31,
+          "endLine": 34,
+          "methods": [
+            "List",
+            "Secrets"
+          ],
+          "properties": [
+            "ListFn",
+            "SecretsFn"
+          ]
+        },
+        {
+          "name": "FakeSecretNamespaceLister",
+          "startLine": 36,
+          "endLine": 39,
+          "methods": [
+            "List",
+            "Get",
+            "SetFakeSecretNamespaceListerGet"
+          ],
+          "properties": [
+            "ListFn",
+            "GetFn"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FakeSecretLister",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "FakeSecretNamespaceLister",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "NewFakeSecretLister",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "NewFakeSecretNamespaceLister",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "List",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "Secrets",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "List",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "Get",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "FakeSecretNamespaceListerFrom",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "SetFakeSecretNamespaceListerGet",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "FakeSecretListerFrom",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "SetFakeSecretListerSecret",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "SetFakeSecretNamespaceListerGet",
+          "line": 109,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewFakeSecretLister",
+          "callee": "FakeSecretListerFrom",
+          "lineNumber": 42
+        },
+        {
+          "caller": "NewFakeSecretNamespaceLister",
+          "callee": "FakeSecretNamespaceListerFrom",
+          "lineNumber": 54
+        },
+        {
+          "caller": "List",
+          "callee": "f.ListFn",
+          "lineNumber": 65
+        },
+        {
+          "caller": "Secrets",
+          "callee": "f.SecretsFn",
+          "lineNumber": 69
+        },
+        {
+          "caller": "List",
+          "callee": "f.ListFn",
+          "lineNumber": 73
+        },
+        {
+          "caller": "Get",
+          "callee": "f.GetFn",
+          "lineNumber": 77
+        },
+        {
+          "caller": "FakeSecretNamespaceListerFrom",
+          "callee": "mod",
+          "lineNumber": 82
+        },
+        {
+          "caller": "FakeSecretListerFrom",
+          "callee": "mod",
+          "lineNumber": 98
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 13,
+        "functionCount": 11,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "third_party/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 21,
+      "nonEmptyLines": 14,
+      "sections": [
+        {
+          "heading": "README",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "third_party/klone.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 15,
+      "nonEmptyLines": 15,
+      "sections": [
+        {
+          "heading": "targets",
+          "level": 1,
+          "line": 9
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "tools/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 4,
+      "nonEmptyLines": 3,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": "tools/setup-integration-test-dependencies.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 23,
+      "nonEmptyLines": 19,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

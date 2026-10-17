@@ -1,0 +1,1550 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [
+    "deploy/charts/cert-manager/signkey_annotation.txt"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 4,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 4
+    }
+  },
+  "results": [
+    {
+      "path": "deploy/charts/cert-manager/Chart.template.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 27,
+      "nonEmptyLines": 24,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "home",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "icon",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "keywords",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "annotations",
+          "level": 1,
+          "line": 12
+        },
+        {
+          "heading": "maintainers",
+          "level": 1,
+          "line": 16
+        },
+        {
+          "heading": "sources",
+          "level": 1,
+          "line": 20
+        },
+        {
+          "heading": "kubeVersion",
+          "level": 1,
+          "line": 23
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 26
+        },
+        {
+          "heading": "appVersion",
+          "level": 1,
+          "line": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/README.template.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 2044,
+      "nonEmptyLines": 1579,
+      "sections": [
+        {
+          "heading": "cert-manager",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Prerequisites",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Installing the Chart",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Upgrading the Chart",
+          "level": 2,
+          "line": 45
+        },
+        {
+          "heading": "Uninstalling the Chart",
+          "level": 2,
+          "line": 52
+        },
+        {
+          "heading": "Configuration",
+          "level": 2,
+          "line": 77
+        },
+        {
+          "heading": "Global",
+          "level": 3,
+          "line": 80
+        },
+        {
+          "heading": "**global.imagePullSecrets** ~ `array`",
+          "level": 4,
+          "line": 82
+        },
+        {
+          "heading": "**global.nodeSelector** ~ `object`",
+          "level": 4,
+          "line": 96
+        },
+        {
+          "heading": "**global.commonLabels** ~ `object`",
+          "level": 4,
+          "line": 108
+        },
+        {
+          "heading": "**global.revisionHistoryLimit** ~ `number`",
+          "level": 4,
+          "line": 118
+        },
+        {
+          "heading": "**global.priorityClassName** ~ `string`",
+          "level": 4,
+          "line": 122
+        },
+        {
+          "heading": "**global.hostUsers** ~ `bool`",
+          "level": 4,
+          "line": 129
+        },
+        {
+          "heading": "**global.rbac.create** ~ `bool`",
+          "level": 4,
+          "line": 141
+        },
+        {
+          "heading": "**global.rbac.aggregateClusterRoles** ~ `bool`",
+          "level": 4,
+          "line": 148
+        },
+        {
+          "heading": "**global.podSecurityPolicy.enabled** ~ `bool`",
+          "level": 4,
+          "line": 155
+        },
+        {
+          "heading": "**global.podSecurityPolicy.useAppArmor** ~ `bool`",
+          "level": 4,
+          "line": 164
+        },
+        {
+          "heading": "**global.logLevel** ~ `number`",
+          "level": 4,
+          "line": 171
+        },
+        {
+          "heading": "**global.leaderElection.namespace** ~ `string`",
+          "level": 4,
+          "line": 178
+        },
+        {
+          "heading": "**global.leaderElection.leaseDuration** ~ `string`",
+          "level": 4,
+          "line": 185
+        },
+        {
+          "heading": "**global.leaderElection.renewDeadline** ~ `string`",
+          "level": 4,
+          "line": 189
+        },
+        {
+          "heading": "**global.leaderElection.retryPeriod** ~ `string`",
+          "level": 4,
+          "line": 193
+        },
+        {
+          "heading": "**installCRDs** ~ `bool`",
+          "level": 4,
+          "line": 197
+        },
+        {
+          "heading": "**crds.enabled** ~ `bool`",
+          "level": 4,
+          "line": 204
+        },
+        {
+          "heading": "**crds.keep** ~ `bool`",
+          "level": 4,
+          "line": 211
+        },
+        {
+          "heading": "Controller",
+          "level": 3,
+          "line": 219
+        },
+        {
+          "heading": "**replicaCount** ~ `number`",
+          "level": 4,
+          "line": 221
+        },
+        {
+          "heading": "**strategy** ~ `object`",
+          "level": 4,
+          "line": 234
+        },
+        {
+          "heading": "**podDisruptionBudget.enabled** ~ `bool`",
+          "level": 4,
+          "line": 251
+        },
+        {
+          "heading": "**podDisruptionBudget.minAvailable** ~ `unknown`",
+          "level": 4,
+          "line": 261
+        },
+        {
+          "heading": "**podDisruptionBudget.maxUnavailable** ~ `unknown`",
+          "level": 4,
+          "line": 267
+        },
+        {
+          "heading": "**featureGates** ~ `string`",
+          "level": 4,
+          "line": 272
+        },
+        {
+          "heading": "**maxConcurrentChallenges** ~ `number`",
+          "level": 4,
+          "line": 279
+        },
+        {
+          "heading": "**image.registry** ~ `string`",
+          "level": 4,
+          "line": 286
+        },
+        {
+          "heading": "**image.repository** ~ `string`",
+          "level": 4,
+          "line": 290
+        },
+        {
+          "heading": "**image.tag** ~ `string`",
+          "level": 4,
+          "line": 298
+        },
+        {
+          "heading": "**image.digest** ~ `string`",
+          "level": 4,
+          "line": 302
+        },
+        {
+          "heading": "**image.pullPolicy** ~ `string`",
+          "level": 4,
+          "line": 306
+        },
+        {
+          "heading": "**clusterResourceNamespace** ~ `string`",
+          "level": 4,
+          "line": 313
+        },
+        {
+          "heading": "**namespace** ~ `string`",
+          "level": 4,
+          "line": 320
+        },
+        {
+          "heading": "**fullnameOverride** ~ `string`",
+          "level": 4,
+          "line": 327
+        },
+        {
+          "heading": "**nameOverride** ~ `string`",
+          "level": 4,
+          "line": 331
+        },
+        {
+          "heading": "**serviceAccount.create** ~ `bool`",
+          "level": 4,
+          "line": 335
+        },
+        {
+          "heading": "**serviceAccount.name** ~ `string`",
+          "level": 4,
+          "line": 342
+        },
+        {
+          "heading": "**serviceAccount.annotations** ~ `object`",
+          "level": 4,
+          "line": 347
+        },
+        {
+          "heading": "**serviceAccount.labels** ~ `object`",
+          "level": 4,
+          "line": 357
+        },
+        {
+          "heading": "**serviceAccount.automountServiceAccountToken** ~ `bool`",
+          "level": 4,
+          "line": 361
+        },
+        {
+          "heading": "**automountServiceAccountToken** ~ `bool`",
+          "level": 4,
+          "line": 368
+        },
+        {
+          "heading": "**enableCertificateOwnerRef** ~ `bool`",
+          "level": 4,
+          "line": 372
+        },
+        {
+          "heading": "**config** ~ `object`",
+          "level": 4,
+          "line": 379
+        },
+        {
+          "heading": "**dns01RecursiveNameservers** ~ `string`",
+          "level": 4,
+          "line": 432
+        },
+        {
+          "heading": "**dns01RecursiveNameserversOnly** ~ `bool`",
+          "level": 4,
+          "line": 439
+        },
+        {
+          "heading": "**disableAutoApproval** ~ `bool`",
+          "level": 4,
+          "line": 446
+        },
+        {
+          "heading": "**approveSignerNames** ~ `array`",
+          "level": 4,
+          "line": 453
+        },
+        {
+          "heading": "**extraArgs** ~ `array`",
+          "level": 4,
+          "line": 463
+        },
+        {
+          "heading": "**extraEnv** ~ `array`",
+          "level": 4,
+          "line": 479
+        },
+        {
+          "heading": "**resources** ~ `object`",
+          "level": 4,
+          "line": 493
+        },
+        {
+          "heading": "**securityContext** ~ `object`",
+          "level": 4,
+          "line": 510
+        },
+        {
+          "heading": "**containerSecurityContext** ~ `object`",
+          "level": 4,
+          "line": 521
+        },
+        {
+          "heading": "**volumes** ~ `array`",
+          "level": 4,
+          "line": 533
+        },
+        {
+          "heading": "**volumeMounts** ~ `array`",
+          "level": 4,
+          "line": 540
+        },
+        {
+          "heading": "**deploymentAnnotations** ~ `object`",
+          "level": 4,
+          "line": 547
+        },
+        {
+          "heading": "**podAnnotations** ~ `object`",
+          "level": 4,
+          "line": 551
+        },
+        {
+          "heading": "**podLabels** ~ `object`",
+          "level": 4,
+          "line": 555
+        },
+        {
+          "heading": "**serviceAnnotations** ~ `object`",
+          "level": 4,
+          "line": 562
+        },
+        {
+          "heading": "**serviceLabels** ~ `object`",
+          "level": 4,
+          "line": 566
+        },
+        {
+          "heading": "**serviceIPFamilyPolicy** ~ `string`",
+          "level": 4,
+          "line": 570
+        },
+        {
+          "heading": "**serviceIPFamilies** ~ `array`",
+          "level": 4,
+          "line": 574
+        },
+        {
+          "heading": "**podDnsPolicy** ~ `string`",
+          "level": 4,
+          "line": 578
+        },
+        {
+          "heading": "**podDnsConfig** ~ `object`",
+          "level": 4,
+          "line": 583
+        },
+        {
+          "heading": "**hostAliases** ~ `array`",
+          "level": 4,
+          "line": 587
+        },
+        {
+          "heading": "**nodeSelector** ~ `object`",
+          "level": 4,
+          "line": 594
+        },
+        {
+          "heading": "**ingressShim.defaultIssuerName** ~ `string`",
+          "level": 4,
+          "line": 604
+        },
+        {
+          "heading": "**ingressShim.defaultIssuerKind** ~ `string`",
+          "level": 4,
+          "line": 608
+        },
+        {
+          "heading": "**ingressShim.defaultIssuerGroup** ~ `string`",
+          "level": 4,
+          "line": 612
+        },
+        {
+          "heading": "**http_proxy** ~ `string`",
+          "level": 4,
+          "line": 616
+        },
+        {
+          "heading": "**https_proxy** ~ `string`",
+          "level": 4,
+          "line": 620
+        },
+        {
+          "heading": "**no_proxy** ~ `string`",
+          "level": 4,
+          "line": 624
+        },
+        {
+          "heading": "**affinity** ~ `object`",
+          "level": 4,
+          "line": 628
+        },
+        {
+          "heading": "**tolerations** ~ `array`",
+          "level": 4,
+          "line": 649
+        },
+        {
+          "heading": "**topologySpreadConstraints** ~ `array`",
+          "level": 4,
+          "line": 666
+        },
+        {
+          "heading": "**livenessProbe** ~ `object`",
+          "level": 4,
+          "line": 686
+        },
+        {
+          "heading": "**enableServiceLinks** ~ `bool`",
+          "level": 4,
+          "line": 702
+        },
+        {
+          "heading": "Prometheus",
+          "level": 3,
+          "line": 709
+        },
+        {
+          "heading": "**prometheus.enabled** ~ `bool`",
+          "level": 4,
+          "line": 711
+        },
+        {
+          "heading": "**prometheus.servicemonitor.enabled** ~ `bool`",
+          "level": 4,
+          "line": 720
+        },
+        {
+          "heading": "**prometheus.servicemonitor.namespace** ~ `string`",
+          "level": 4,
+          "line": 727
+        },
+        {
+          "heading": "**prometheus.servicemonitor.prometheusInstance** ~ `string`",
+          "level": 4,
+          "line": 731
+        },
+        {
+          "heading": "**prometheus.servicemonitor.targetPort** ~ `string,integer`",
+          "level": 4,
+          "line": 738
+        },
+        {
+          "heading": "**prometheus.servicemonitor.path** ~ `string`",
+          "level": 4,
+          "line": 746
+        },
+        {
+          "heading": "**prometheus.servicemonitor.interval** ~ `string`",
+          "level": 4,
+          "line": 753
+        },
+        {
+          "heading": "**prometheus.servicemonitor.scrapeTimeout** ~ `string`",
+          "level": 4,
+          "line": 760
+        },
+        {
+          "heading": "**prometheus.servicemonitor.labels** ~ `object`",
+          "level": 4,
+          "line": 767
+        },
+        {
+          "heading": "**prometheus.servicemonitor.annotations** ~ `object`",
+          "level": 4,
+          "line": 774
+        },
+        {
+          "heading": "**prometheus.servicemonitor.honorLabels** ~ `bool`",
+          "level": 4,
+          "line": 781
+        },
+        {
+          "heading": "**prometheus.servicemonitor.endpointAdditionalProperties** ~ `object`",
+          "level": 4,
+          "line": 788
+        },
+        {
+          "heading": "**prometheus.podmonitor.enabled** ~ `bool`",
+          "level": 4,
+          "line": 809
+        },
+        {
+          "heading": "**prometheus.podmonitor.namespace** ~ `string`",
+          "level": 4,
+          "line": 816
+        },
+        {
+          "heading": "**prometheus.podmonitor.prometheusInstance** ~ `string`",
+          "level": 4,
+          "line": 820
+        },
+        {
+          "heading": "**prometheus.podmonitor.path** ~ `string`",
+          "level": 4,
+          "line": 827
+        },
+        {
+          "heading": "**prometheus.podmonitor.interval** ~ `string`",
+          "level": 4,
+          "line": 834
+        },
+        {
+          "heading": "**prometheus.podmonitor.scrapeTimeout** ~ `string`",
+          "level": 4,
+          "line": 841
+        },
+        {
+          "heading": "**prometheus.podmonitor.labels** ~ `object`",
+          "level": 4,
+          "line": 848
+        },
+        {
+          "heading": "**prometheus.podmonitor.annotations** ~ `object`",
+          "level": 4,
+          "line": 855
+        },
+        {
+          "heading": "**prometheus.podmonitor.honorLabels** ~ `bool`",
+          "level": 4,
+          "line": 862
+        },
+        {
+          "heading": "**prometheus.podmonitor.endpointAdditionalProperties** ~ `object`",
+          "level": 4,
+          "line": 869
+        },
+        {
+          "heading": "Webhook",
+          "level": 3,
+          "line": 899
+        },
+        {
+          "heading": "**webhook.replicaCount** ~ `number`",
+          "level": 4,
+          "line": 901
+        },
+        {
+          "heading": "**webhook.timeoutSeconds** ~ `number`",
+          "level": 4,
+          "line": 912
+        },
+        {
+          "heading": "**webhook.config** ~ `object`",
+          "level": 4,
+          "line": 922
+        },
+        {
+          "heading": "**webhook.strategy** ~ `object`",
+          "level": 4,
+          "line": 954
+        },
+        {
+          "heading": "**webhook.securityContext** ~ `object`",
+          "level": 4,
+          "line": 971
+        },
+        {
+          "heading": "**webhook.containerSecurityContext** ~ `object`",
+          "level": 4,
+          "line": 981
+        },
+        {
+          "heading": "**webhook.podDisruptionBudget.enabled** ~ `bool`",
+          "level": 4,
+          "line": 993
+        },
+        {
+          "heading": "**webhook.podDisruptionBudget.minAvailable** ~ `unknown`",
+          "level": 4,
+          "line": 1003
+        },
+        {
+          "heading": "**webhook.podDisruptionBudget.maxUnavailable** ~ `unknown`",
+          "level": 4,
+          "line": 1009
+        },
+        {
+          "heading": "**webhook.deploymentAnnotations** ~ `object`",
+          "level": 4,
+          "line": 1015
+        },
+        {
+          "heading": "**webhook.podAnnotations** ~ `object`",
+          "level": 4,
+          "line": 1019
+        },
+        {
+          "heading": "**webhook.serviceAnnotations** ~ `object`",
+          "level": 4,
+          "line": 1023
+        },
+        {
+          "heading": "**webhook.mutatingWebhookConfigurationAnnotations** ~ `object`",
+          "level": 4,
+          "line": 1027
+        },
+        {
+          "heading": "**webhook.validatingWebhookConfigurationAnnotations** ~ `object`",
+          "level": 4,
+          "line": 1031
+        },
+        {
+          "heading": "**webhook.validatingWebhookConfiguration.namespaceSelector** ~ `object`",
+          "level": 4,
+          "line": 1035
+        },
+        {
+          "heading": "**webhook.mutatingWebhookConfiguration.namespaceSelector** ~ `object`",
+          "level": 4,
+          "line": 1047
+        },
+        {
+          "heading": "**webhook.extraArgs** ~ `array`",
+          "level": 4,
+          "line": 1055
+        },
+        {
+          "heading": "**webhook.extraEnv** ~ `array`",
+          "level": 4,
+          "line": 1062
+        },
+        {
+          "heading": "**webhook.featureGates** ~ `string`",
+          "level": 4,
+          "line": 1076
+        },
+        {
+          "heading": "**webhook.resources** ~ `object`",
+          "level": 4,
+          "line": 1083
+        },
+        {
+          "heading": "**webhook.livenessProbe** ~ `object`",
+          "level": 4,
+          "line": 1100
+        },
+        {
+          "heading": "**webhook.readinessProbe** ~ `object`",
+          "level": 4,
+          "line": 1113
+        },
+        {
+          "heading": "**webhook.nodeSelector** ~ `object`",
+          "level": 4,
+          "line": 1126
+        },
+        {
+          "heading": "**webhook.affinity** ~ `object`",
+          "level": 4,
+          "line": 1136
+        },
+        {
+          "heading": "**webhook.tolerations** ~ `array`",
+          "level": 4,
+          "line": 1157
+        },
+        {
+          "heading": "**webhook.topologySpreadConstraints** ~ `array`",
+          "level": 4,
+          "line": 1174
+        },
+        {
+          "heading": "**webhook.podLabels** ~ `object`",
+          "level": 4,
+          "line": 1194
+        },
+        {
+          "heading": "**webhook.serviceLabels** ~ `object`",
+          "level": 4,
+          "line": 1201
+        },
+        {
+          "heading": "**webhook.serviceIPFamilyPolicy** ~ `string`",
+          "level": 4,
+          "line": 1208
+        },
+        {
+          "heading": "**webhook.serviceIPFamilies** ~ `array`",
+          "level": 4,
+          "line": 1215
+        },
+        {
+          "heading": "**webhook.image.registry** ~ `string`",
+          "level": 4,
+          "line": 1222
+        },
+        {
+          "heading": "**webhook.image.repository** ~ `string`",
+          "level": 4,
+          "line": 1226
+        },
+        {
+          "heading": "**webhook.image.tag** ~ `string`",
+          "level": 4,
+          "line": 1234
+        },
+        {
+          "heading": "**webhook.image.digest** ~ `string`",
+          "level": 4,
+          "line": 1238
+        },
+        {
+          "heading": "**webhook.image.pullPolicy** ~ `string`",
+          "level": 4,
+          "line": 1242
+        },
+        {
+          "heading": "**webhook.serviceAccount.create** ~ `bool`",
+          "level": 4,
+          "line": 1249
+        },
+        {
+          "heading": "**webhook.serviceAccount.name** ~ `string`",
+          "level": 4,
+          "line": 1256
+        },
+        {
+          "heading": "**webhook.serviceAccount.annotations** ~ `object`",
+          "level": 4,
+          "line": 1261
+        },
+        {
+          "heading": "**webhook.serviceAccount.labels** ~ `object`",
+          "level": 4,
+          "line": 1265
+        },
+        {
+          "heading": "**webhook.serviceAccount.automountServiceAccountToken** ~ `bool`",
+          "level": 4,
+          "line": 1269
+        },
+        {
+          "heading": "**webhook.automountServiceAccountToken** ~ `bool`",
+          "level": 4,
+          "line": 1276
+        },
+        {
+          "heading": "**webhook.securePort** ~ `number`",
+          "level": 4,
+          "line": 1280
+        },
+        {
+          "heading": "**webhook.hostNetwork** ~ `bool`",
+          "level": 4,
+          "line": 1287
+        },
+        {
+          "heading": "**webhook.serviceType** ~ `string`",
+          "level": 4,
+          "line": 1298
+        },
+        {
+          "heading": "**webhook.loadBalancerIP** ~ `string`",
+          "level": 4,
+          "line": 1305
+        },
+        {
+          "heading": "**webhook.url** ~ `object`",
+          "level": 4,
+          "line": 1309
+        },
+        {
+          "heading": "**webhook.networkPolicy.enabled** ~ `bool`",
+          "level": 4,
+          "line": 1316
+        },
+        {
+          "heading": "**webhook.networkPolicy.ingress** ~ `array`",
+          "level": 4,
+          "line": 1323
+        },
+        {
+          "heading": "**webhook.networkPolicy.egress** ~ `array`",
+          "level": 4,
+          "line": 1335
+        },
+        {
+          "heading": "**webhook.volumes** ~ `array`",
+          "level": 4,
+          "line": 1358
+        },
+        {
+          "heading": "**webhook.volumeMounts** ~ `array`",
+          "level": 4,
+          "line": 1365
+        },
+        {
+          "heading": "**webhook.enableServiceLinks** ~ `bool`",
+          "level": 4,
+          "line": 1372
+        },
+        {
+          "heading": "CA Injector",
+          "level": 3,
+          "line": 1379
+        },
+        {
+          "heading": "**cainjector.enabled** ~ `bool`",
+          "level": 4,
+          "line": 1381
+        },
+        {
+          "heading": "**cainjector.replicaCount** ~ `number`",
+          "level": 4,
+          "line": 1388
+        },
+        {
+          "heading": "**cainjector.config** ~ `object`",
+          "level": 4,
+          "line": 1401
+        },
+        {
+          "heading": "**cainjector.strategy** ~ `object`",
+          "level": 4,
+          "line": 1430
+        },
+        {
+          "heading": "**cainjector.securityContext** ~ `object`",
+          "level": 4,
+          "line": 1447
+        },
+        {
+          "heading": "**cainjector.containerSecurityContext** ~ `object`",
+          "level": 4,
+          "line": 1457
+        },
+        {
+          "heading": "**cainjector.podDisruptionBudget.enabled** ~ `bool`",
+          "level": 4,
+          "line": 1469
+        },
+        {
+          "heading": "**cainjector.podDisruptionBudget.minAvailable** ~ `unknown`",
+          "level": 4,
+          "line": 1479
+        },
+        {
+          "heading": "**cainjector.podDisruptionBudget.maxUnavailable** ~ `unknown`",
+          "level": 4,
+          "line": 1486
+        },
+        {
+          "heading": "**cainjector.deploymentAnnotations** ~ `object`",
+          "level": 4,
+          "line": 1493
+        },
+        {
+          "heading": "**cainjector.podAnnotations** ~ `object`",
+          "level": 4,
+          "line": 1497
+        },
+        {
+          "heading": "**cainjector.serviceAnnotations** ~ `object`",
+          "level": 4,
+          "line": 1501
+        },
+        {
+          "heading": "**cainjector.extraArgs** ~ `array`",
+          "level": 4,
+          "line": 1505
+        },
+        {
+          "heading": "**cainjector.extraEnv** ~ `array`",
+          "level": 4,
+          "line": 1512
+        },
+        {
+          "heading": "**cainjector.featureGates** ~ `string`",
+          "level": 4,
+          "line": 1526
+        },
+        {
+          "heading": "**cainjector.resources** ~ `object`",
+          "level": 4,
+          "line": 1533
+        },
+        {
+          "heading": "**cainjector.nodeSelector** ~ `object`",
+          "level": 4,
+          "line": 1550
+        },
+        {
+          "heading": "**cainjector.affinity** ~ `object`",
+          "level": 4,
+          "line": 1560
+        },
+        {
+          "heading": "**cainjector.tolerations** ~ `array`",
+          "level": 4,
+          "line": 1581
+        },
+        {
+          "heading": "**cainjector.topologySpreadConstraints** ~ `array`",
+          "level": 4,
+          "line": 1598
+        },
+        {
+          "heading": "**cainjector.podLabels** ~ `object`",
+          "level": 4,
+          "line": 1618
+        },
+        {
+          "heading": "**cainjector.serviceLabels** ~ `object`",
+          "level": 4,
+          "line": 1625
+        },
+        {
+          "heading": "**cainjector.image.registry** ~ `string`",
+          "level": 4,
+          "line": 1632
+        },
+        {
+          "heading": "**cainjector.image.repository** ~ `string`",
+          "level": 4,
+          "line": 1636
+        },
+        {
+          "heading": "**cainjector.image.tag** ~ `string`",
+          "level": 4,
+          "line": 1644
+        },
+        {
+          "heading": "**cainjector.image.digest** ~ `string`",
+          "level": 4,
+          "line": 1648
+        },
+        {
+          "heading": "**cainjector.image.pullPolicy** ~ `string`",
+          "level": 4,
+          "line": 1652
+        },
+        {
+          "heading": "**cainjector.serviceAccount.create** ~ `bool`",
+          "level": 4,
+          "line": 1659
+        },
+        {
+          "heading": "**cainjector.serviceAccount.name** ~ `string`",
+          "level": 4,
+          "line": 1666
+        },
+        {
+          "heading": "**cainjector.serviceAccount.annotations** ~ `object`",
+          "level": 4,
+          "line": 1671
+        },
+        {
+          "heading": "**cainjector.serviceAccount.labels** ~ `object`",
+          "level": 4,
+          "line": 1675
+        },
+        {
+          "heading": "**cainjector.serviceAccount.automountServiceAccountToken** ~ `bool`",
+          "level": 4,
+          "line": 1679
+        },
+        {
+          "heading": "**cainjector.automountServiceAccountToken** ~ `bool`",
+          "level": 4,
+          "line": 1686
+        },
+        {
+          "heading": "**cainjector.volumes** ~ `array`",
+          "level": 4,
+          "line": 1690
+        },
+        {
+          "heading": "**cainjector.volumeMounts** ~ `array`",
+          "level": 4,
+          "line": 1697
+        },
+        {
+          "heading": "**cainjector.enableServiceLinks** ~ `bool`",
+          "level": 4,
+          "line": 1704
+        },
+        {
+          "heading": "ACME Solver",
+          "level": 3,
+          "line": 1711
+        },
+        {
+          "heading": "**acmesolver.image.registry** ~ `string`",
+          "level": 4,
+          "line": 1713
+        },
+        {
+          "heading": "**acmesolver.image.repository** ~ `string`",
+          "level": 4,
+          "line": 1717
+        },
+        {
+          "heading": "**acmesolver.image.tag** ~ `string`",
+          "level": 4,
+          "line": 1725
+        },
+        {
+          "heading": "**acmesolver.image.digest** ~ `string`",
+          "level": 4,
+          "line": 1729
+        },
+        {
+          "heading": "**acmesolver.image.pullPolicy** ~ `string`",
+          "level": 4,
+          "line": 1733
+        },
+        {
+          "heading": "Startup API Check",
+          "level": 3,
+          "line": 1740
+        },
+        {
+          "heading": "**startupapicheck.enabled** ~ `bool`",
+          "level": 4,
+          "line": 1744
+        },
+        {
+          "heading": "**startupapicheck.securityContext** ~ `object`",
+          "level": 4,
+          "line": 1751
+        },
+        {
+          "heading": "**startupapicheck.containerSecurityContext** ~ `object`",
+          "level": 4,
+          "line": 1761
+        },
+        {
+          "heading": "**startupapicheck.timeout** ~ `string`",
+          "level": 4,
+          "line": 1773
+        },
+        {
+          "heading": "**startupapicheck.backoffLimit** ~ `number`",
+          "level": 4,
+          "line": 1780
+        },
+        {
+          "heading": "**startupapicheck.jobAnnotations** ~ `object`",
+          "level": 4,
+          "line": 1787
+        },
+        {
+          "heading": "**startupapicheck.podAnnotations** ~ `object`",
+          "level": 4,
+          "line": 1797
+        },
+        {
+          "heading": "**startupapicheck.extraArgs** ~ `array`",
+          "level": 4,
+          "line": 1801
+        },
+        {
+          "heading": "**startupapicheck.extraEnv** ~ `array`",
+          "level": 4,
+          "line": 1811
+        },
+        {
+          "heading": "**startupapicheck.resources** ~ `object`",
+          "level": 4,
+          "line": 1825
+        },
+        {
+          "heading": "**startupapicheck.nodeSelector** ~ `object`",
+          "level": 4,
+          "line": 1842
+        },
+        {
+          "heading": "**startupapicheck.affinity** ~ `object`",
+          "level": 4,
+          "line": 1852
+        },
+        {
+          "heading": "**startupapicheck.tolerations** ~ `array`",
+          "level": 4,
+          "line": 1872
+        },
+        {
+          "heading": "**startupapicheck.podLabels** ~ `object`",
+          "level": 4,
+          "line": 1889
+        },
+        {
+          "heading": "**startupapicheck.image.registry** ~ `string`",
+          "level": 4,
+          "line": 1896
+        },
+        {
+          "heading": "**startupapicheck.image.repository** ~ `string`",
+          "level": 4,
+          "line": 1900
+        },
+        {
+          "heading": "**startupapicheck.image.tag** ~ `string`",
+          "level": 4,
+          "line": 1908
+        },
+        {
+          "heading": "**startupapicheck.image.digest** ~ `string`",
+          "level": 4,
+          "line": 1912
+        },
+        {
+          "heading": "**startupapicheck.image.pullPolicy** ~ `string`",
+          "level": 4,
+          "line": 1916
+        },
+        {
+          "heading": "**startupapicheck.rbac.annotations** ~ `object`",
+          "level": 4,
+          "line": 1923
+        },
+        {
+          "heading": "**startupapicheck.automountServiceAccountToken** ~ `bool`",
+          "level": 4,
+          "line": 1933
+        },
+        {
+          "heading": "**startupapicheck.serviceAccount.create** ~ `bool`",
+          "level": 4,
+          "line": 1937
+        },
+        {
+          "heading": "**startupapicheck.serviceAccount.name** ~ `string`",
+          "level": 4,
+          "line": 1944
+        },
+        {
+          "heading": "**startupapicheck.serviceAccount.annotations** ~ `object`",
+          "level": 4,
+          "line": 1949
+        },
+        {
+          "heading": "**startupapicheck.serviceAccount.automountServiceAccountToken** ~ `bool`",
+          "level": 4,
+          "line": 1959
+        },
+        {
+          "heading": "**startupapicheck.serviceAccount.labels** ~ `object`",
+          "level": 4,
+          "line": 1967
+        },
+        {
+          "heading": "**startupapicheck.volumes** ~ `array`",
+          "level": 4,
+          "line": 1971
+        },
+        {
+          "heading": "**startupapicheck.volumeMounts** ~ `array`",
+          "level": 4,
+          "line": 1978
+        },
+        {
+          "heading": "**startupapicheck.enableServiceLinks** ~ `bool`",
+          "level": 4,
+          "line": 1985
+        },
+        {
+          "heading": "**extraObjects** ~ `array`",
+          "level": 4,
+          "line": 1992
+        },
+        {
+          "heading": "Default Security Contexts",
+          "level": 3,
+          "line": 2012
+        },
+        {
+          "heading": "Assigning Values",
+          "level": 3,
+          "line": 2031
+        },
+        {
+          "heading": "Contributing",
+          "level": 2,
+          "line": 2042
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 236
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/values.schema.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 2159,
+      "nonEmptyLines": 2159,
+      "sections": [
+        {
+          "heading": "$defs",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "$ref",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "$schema",
+          "level": 1,
+          "line": 2158
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/values.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 1494,
+      "nonEmptyLines": 1261,
+      "sections": [
+        {
+          "heading": "global",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "installCRDs",
+          "level": 1,
+          "line": 95
+        },
+        {
+          "heading": "crds",
+          "level": 1,
+          "line": 97
+        },
+        {
+          "heading": "replicaCount",
+          "level": 1,
+          "line": 120
+        },
+        {
+          "heading": "strategy",
+          "level": 1,
+          "line": 131
+        },
+        {
+          "heading": "podDisruptionBudget",
+          "level": 1,
+          "line": 133
+        },
+        {
+          "heading": "featureGates",
+          "level": 1,
+          "line": 158
+        },
+        {
+          "heading": "maxConcurrentChallenges",
+          "level": 1,
+          "line": 161
+        },
+        {
+          "heading": "image",
+          "level": 1,
+          "line": 163
+        },
+        {
+          "heading": "clusterResourceNamespace",
+          "level": 1,
+          "line": 187
+        },
+        {
+          "heading": "namespace",
+          "level": 1,
+          "line": 192
+        },
+        {
+          "heading": "serviceAccount",
+          "level": 1,
+          "line": 207
+        },
+        {
+          "heading": "enableCertificateOwnerRef",
+          "level": 1,
+          "line": 235
+        },
+        {
+          "heading": "config",
+          "level": 1,
+          "line": 284
+        },
+        {
+          "heading": "dns01RecursiveNameservers",
+          "level": 1,
+          "line": 290
+        },
+        {
+          "heading": "dns01RecursiveNameserversOnly",
+          "level": 1,
+          "line": 294
+        },
+        {
+          "heading": "disableAutoApproval",
+          "level": 1,
+          "line": 300
+        },
+        {
+          "heading": "approveSignerNames",
+          "level": 1,
+          "line": 309
+        },
+        {
+          "heading": "extraArgs",
+          "level": 1,
+          "line": 321
+        },
+        {
+          "heading": "extraEnv",
+          "level": 1,
+          "line": 328
+        },
+        {
+          "heading": "resources",
+          "level": 1,
+          "line": 338
+        },
+        {
+          "heading": "securityContext",
+          "level": 1,
+          "line": 343
+        },
+        {
+          "heading": "containerSecurityContext",
+          "level": 1,
+          "line": 351
+        },
+        {
+          "heading": "volumes",
+          "level": 1,
+          "line": 359
+        },
+        {
+          "heading": "volumeMounts",
+          "level": 1,
+          "line": 362
+        },
+        {
+          "heading": "podLabels",
+          "level": 1,
+          "line": 373
+        },
+        {
+          "heading": "hostAliases",
+          "level": 1,
+          "line": 412
+        },
+        {
+          "heading": "nodeSelector",
+          "level": 1,
+          "line": 429
+        },
+        {
+          "heading": "ingressShim",
+          "level": 1,
+          "line": 433
+        },
+        {
+          "heading": "affinity",
+          "level": 1,
+          "line": 474
+        },
+        {
+          "heading": "tolerations",
+          "level": 1,
+          "line": 484
+        },
+        {
+          "heading": "topologySpreadConstraints",
+          "level": 1,
+          "line": 497
+        },
+        {
+          "heading": "livenessProbe",
+          "level": 1,
+          "line": 507
+        },
+        {
+          "heading": "enableServiceLinks",
+          "level": 1,
+          "line": 518
+        },
+        {
+          "heading": "prometheus",
+          "level": 1,
+          "line": 522
+        },
+        {
+          "heading": "webhook",
+          "level": 1,
+          "line": 642
+        },
+        {
+          "heading": "cainjector",
+          "level": 1,
+          "line": 1026
+        },
+        {
+          "heading": "acmesolver",
+          "level": 1,
+          "line": 1269
+        },
+        {
+          "heading": "startupapicheck",
+          "level": 1,
+          "line": 1300
+        },
+        {
+          "heading": "extraObjects",
+          "level": 1,
+          "line": 1480
+        },
+        {
+          "heading": "creator",
+          "level": 1,
+          "line": 1486
+        },
+        {
+          "heading": "enabled",
+          "level": 1,
+          "line": 1494
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 42
+      }
+    }
+  ]
+}

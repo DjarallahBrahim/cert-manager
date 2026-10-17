@@ -1,0 +1,642 @@
+{
+  "nodes": [
+    {
+      "id": "file:cmd/webhook/LICENSES",
+      "type": "file",
+      "name": "LICENSES",
+      "filePath": "cmd/webhook/LICENSES",
+      "summary": "Generated license inventory for the webhook binary module listing every dependency and its SPDX identifier, used for release compliance and CI freshness checks.",
+      "tags": ["licenses", "compliance", "generated", "reporting"],
+      "complexity": "moderate",
+      "languageNotes": "Produced by the go-licenses tool from the module's dependency graph; CI fails when it drifts."
+    },
+    {
+      "id": "file:cmd/webhook/app/webhook.go",
+      "type": "file",
+      "name": "webhook.go",
+      "filePath": "cmd/webhook/app/webhook.go",
+      "summary": "Builds the cert-manager webhook server command, wiring CLI flags, configuration-file loading, feature gates, validation, and the webhook server lifecycle.",
+      "tags": ["entry-point", "cli", "webhook", "command", "configuration"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cmd/webhook/app/webhook.go:NewServerCommand",
+      "type": "function",
+      "name": "NewServerCommand",
+      "filePath": "cmd/webhook/app/webhook.go",
+      "lineRange": [40, 58],
+      "summary": "Constructs the cobra command that starts the cert-manager webhook server, logging version information and running the server until it terminates.",
+      "tags": ["factory", "cli", "command", "webhook"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:cmd/webhook/app/webhook.go:newServerCommand",
+      "type": "function",
+      "name": "newServerCommand",
+      "filePath": "cmd/webhook/app/webhook.go",
+      "lineRange": [60, 129],
+      "summary": "Assembles the webhook command's flags, configuration defaults, feature-gate handling, validation, and run function that ultimately launches the server.",
+      "tags": ["factory", "cli", "configuration", "validation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cmd/webhook/app/webhook.go:loadConfigFromFile",
+      "type": "function",
+      "name": "loadConfigFromFile",
+      "filePath": "cmd/webhook/app/webhook.go",
+      "lineRange": [139, 184],
+      "summary": "Loads the webhook component configuration from a YAML file onto defaults and then parses the remaining command-line flags into it.",
+      "tags": ["configuration", "file-loading", "webhook"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:cmd/webhook/go.mod",
+      "type": "config",
+      "name": "go.mod",
+      "filePath": "cmd/webhook/go.mod",
+      "summary": "Go module definition for the standalone webhook binary, pinning cobra, component-base, and controller-runtime and replacing the main cert-manager module with the repository root.",
+      "tags": ["configuration", "go-module", "dependencies", "build-system"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:cmd/webhook/go.sum",
+      "type": "config",
+      "name": "go.sum",
+      "filePath": "cmd/webhook/go.sum",
+      "summary": "Checksum lock file for the webhook binary module's dependency graph, guaranteeing reproducible and verified Go builds.",
+      "tags": ["configuration", "go-module", "dependencies", "lockfile"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:cmd/webhook/main.go",
+      "type": "file",
+      "name": "main.go",
+      "filePath": "cmd/webhook/main.go",
+      "summary": "Entry point of the cert-manager webhook binary; initializes logging and executes the server command with exit-code handling.",
+      "tags": ["entry-point", "webhook", "cli", "bootstrap"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:cmd/webhook/main.go:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "cmd/webhook/main.go",
+      "lineRange": [29, 44],
+      "summary": "Initializes log flushing and the controller-runtime logger, executes the webhook server command, and maps failures to a non-zero exit code.",
+      "tags": ["entry-point", "bootstrap", "logging", "error-handling"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:deploy/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "deploy/OWNERS",
+      "summary": "OWNERS metadata applying the `area/deploy` label to the deployment manifests and Helm chart directory.",
+      "tags": ["ownership", "metadata", "deployment"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:deploy/charts/cert-manager/.helmignore",
+      "type": "file",
+      "name": ".helmignore",
+      "filePath": "deploy/charts/cert-manager/.helmignore",
+      "summary": "Helm packaging ignore list excluding VCS metadata, editor and backup files, chart templates, and previously built archives from the packaged chart.",
+      "tags": ["configuration", "helm", "packaging", "chart"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:deploy/charts/cert-manager/templates/_helpers.tpl",
+      "type": "file",
+      "name": "_helpers.tpl",
+      "filePath": "deploy/charts/cert-manager/templates/_helpers.tpl",
+      "summary": "Helm template helpers defining chart naming, fullname truncation, service account names, namespace resolution, image references, and shared labels for every cert-manager component.",
+      "tags": ["helm", "templates", "naming", "labels", "utility"],
+      "complexity": "moderate",
+      "languageNotes": "Go templates using named `define` blocks with 52-55 character name truncation to stay within Kubernetes name limits."
+    },
+    {
+      "id": "file:deploy/charts/cert-manager/values.linter.exceptions",
+      "type": "file",
+      "name": "values.linter.exceptions",
+      "filePath": "deploy/charts/cert-manager/values.linter.exceptions",
+      "summary": "Allowlist of values-linter exceptions declaring chart values intentionally absent from rendered templates, such as CRD enablement flags and the acmesolver pull policy.",
+      "tags": ["configuration", "helm", "linting", "exceptions"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:design/OWNERS",
+      "type": "file",
+      "name": "OWNERS",
+      "filePath": "design/OWNERS",
+      "summary": "OWNERS metadata applying the `kind/design` label to cert-manager design documents.",
+      "tags": ["ownership", "metadata", "design"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "docs/README.md",
+      "summary": "Short pointer README directing readers to cert-manager.io for documentation and to the separate cert-manager/website repository for contributions.",
+      "tags": ["documentation", "entry-point", "contributing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:gcb/build_cert_manager.yaml",
+      "type": "config",
+      "name": "build_cert_manager.yaml",
+      "filePath": "gcb/build_cert_manager.yaml",
+      "summary": "Google Cloud Build pipeline triggered on tag pushes that unshallows the checkout and runs `make upload-release` to build, sign, and publish release artifacts to GCS.",
+      "tags": ["ci-cd", "release", "deployment", "google-cloud-build"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "service:hack/containers/Containerfile.acmesolver",
+      "type": "service",
+      "name": "Containerfile.acmesolver",
+      "filePath": "hack/containers/Containerfile.acmesolver",
+      "summary": "Container image definition that copies the prebuilt acmesolver binary and license files into the shared base image and sets it as the entrypoint.",
+      "tags": ["containerization", "infrastructure", "deployment", "acmesolver"],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:hack/containers/Containerfile.cainjector",
+      "type": "service",
+      "name": "Containerfile.cainjector",
+      "filePath": "hack/containers/Containerfile.cainjector",
+      "summary": "Container image definition that copies the prebuilt cainjector binary and license files into the shared base image and sets it as the entrypoint.",
+      "tags": ["containerization", "infrastructure", "deployment", "cainjector"],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:hack/containers/Containerfile.controller",
+      "type": "service",
+      "name": "Containerfile.controller",
+      "filePath": "hack/containers/Containerfile.controller",
+      "summary": "Container image definition that copies the prebuilt controller binary and license files into the shared base image and sets it as the entrypoint.",
+      "tags": ["containerization", "infrastructure", "deployment", "controller"],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:hack/containers/Containerfile.startupapicheck",
+      "type": "service",
+      "name": "Containerfile.startupapicheck",
+      "filePath": "hack/containers/Containerfile.startupapicheck",
+      "summary": "Container image definition that copies the prebuilt startupapicheck binary and license files into the shared base image and sets it as the entrypoint.",
+      "tags": ["containerization", "infrastructure", "deployment", "startupapicheck"],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:hack/containers/Containerfile.webhook",
+      "type": "service",
+      "name": "Containerfile.webhook",
+      "filePath": "hack/containers/Containerfile.webhook",
+      "summary": "Container image definition that copies the prebuilt webhook binary and license files into the shared base image and sets it as the entrypoint.",
+      "tags": ["containerization", "infrastructure", "deployment", "webhook"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:hack/extractcrd/main.go",
+      "type": "file",
+      "name": "main.go",
+      "filePath": "hack/extractcrd/main.go",
+      "summary": "Developer utility that decodes multi-document YAML CustomResourceDefinitions and prints normalized kind, group, and field metadata for schema audits.",
+      "tags": ["utility", "crd", "code-generation", "developer-tooling"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:hack/extractcrd/main.go:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "hack/extractcrd/main.go",
+      "lineRange": [42, 112],
+      "summary": "Reads a CRD YAML file, splits it into documents, decodes each into a CustomResourceDefinition, and prints its kinds, versions, and field information.",
+      "tags": ["utility", "crd", "parsing", "cli"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:hack/openapi_reports/acme.txt",
+      "type": "document",
+      "name": "acme.txt",
+      "filePath": "hack/openapi_reports/acme.txt",
+      "summary": "Baseline of OpenAPI rule violations for the ACME API group, consumed by the openapi verification step to tolerate known naming mismatches.",
+      "tags": ["documentation", "api-schema", "code-generation", "baseline"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:hack/openapi_reports/client.txt",
+      "type": "document",
+      "name": "client.txt",
+      "filePath": "hack/openapi_reports/client.txt",
+      "summary": "Baseline of OpenAPI naming and list-type violations across cert-manager and Kubernetes client APIs, keeping generated client verification green.",
+      "tags": ["documentation", "api-schema", "code-generation", "baseline"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:hack/prune-junit-xml/prunexml.go",
+      "type": "file",
+      "name": "prunexml.go",
+      "filePath": "hack/prune-junit-xml/prunexml.go",
+      "summary": "Utility that parses JUnit XML results, deduplicates repeated fuzz test cases, and truncates oversized reports so CI uploads stay within size limits.",
+      "tags": ["utility", "ci-cd", "junit", "xml", "test-reporting"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:hack/prune-junit-xml/prunexml.go:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "hack/prune-junit-xml/prunexml.go",
+      "lineRange": [95, 128],
+      "summary": "Parses the byte-budget flag, reads the JUnit XML input, prunes it, and streams the result to the output file.",
+      "tags": ["entry-point", "cli", "test-reporting"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:hack/prune-junit-xml/prunexml.go:pruneXML",
+      "type": "function",
+      "name": "pruneXML",
+      "filePath": "hack/prune-junit-xml/prunexml.go",
+      "lineRange": [130, 201],
+      "summary": "Collapses duplicate fuzz-generated test suites and caps the serialized size of the JUnit report while recomputing aggregate counts and timings.",
+      "tags": ["utility", "xml", "pruning", "test-reporting"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:hack/prune-junit-xml/prunexml.go:incrementTime",
+      "type": "function",
+      "name": "incrementTime",
+      "filePath": "hack/prune-junit-xml/prunexml.go",
+      "lineRange": [203, 213],
+      "summary": "Adds a delta to a JUnit time attribute expressed as a string of seconds, returning the unchanged value on parse failure.",
+      "tags": ["utility", "time", "parsing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:hack/prune-junit-xml/prunexml.go:streamXML",
+      "type": "function",
+      "name": "streamXML",
+      "filePath": "hack/prune-junit-xml/prunexml.go",
+      "lineRange": [225, 237],
+      "summary": "Serializes the pruned JUnit suites to the writer with a fixed XML header and indented encoding.",
+      "tags": ["utility", "xml", "serialization"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:hack/prune-junit-xml/prunexml.go:JUnitTestSuites",
+      "type": "class",
+      "name": "JUnitTestSuites",
+      "filePath": "hack/prune-junit-xml/prunexml.go",
+      "lineRange": [47, 50],
+      "summary": "Top-level JUnit XML document struct wrapping the list of test suites.",
+      "tags": ["data-model", "xml", "junit"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:hack/prune-junit-xml/prunexml.go:JUnitTestSuite",
+      "type": "class",
+      "name": "JUnitTestSuite",
+      "filePath": "hack/prune-junit-xml/prunexml.go",
+      "lineRange": [54, 63],
+      "summary": "JUnit test suite struct with aggregate counters, timing, properties, and contained test cases.",
+      "tags": ["data-model", "xml", "junit"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:hack/prune-junit-xml/prunexml.go:JUnitTestCase",
+      "type": "class",
+      "name": "JUnitTestCase",
+      "filePath": "hack/prune-junit-xml/prunexml.go",
+      "lineRange": [66, 73],
+      "summary": "JUnit test case struct carrying classname, name, duration, and optional skip or failure details.",
+      "tags": ["data-model", "xml", "junit"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:hack/prune-junit-xml/prunexml.go:JUnitSkipMessage",
+      "type": "class",
+      "name": "JUnitSkipMessage",
+      "filePath": "hack/prune-junit-xml/prunexml.go",
+      "lineRange": [76, 78],
+      "summary": "JUnit skipped-test element holding the skip reason message.",
+      "tags": ["data-model", "xml", "junit"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:hack/prune-junit-xml/prunexml.go:JUnitProperty",
+      "type": "class",
+      "name": "JUnitProperty",
+      "filePath": "hack/prune-junit-xml/prunexml.go",
+      "lineRange": [81, 84],
+      "summary": "JUnit property name/value pair emitted inside suite properties.",
+      "tags": ["data-model", "xml", "junit"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:hack/prune-junit-xml/prunexml.go:JUnitFailure",
+      "type": "class",
+      "name": "JUnitFailure",
+      "filePath": "hack/prune-junit-xml/prunexml.go",
+      "lineRange": [87, 91],
+      "summary": "JUnit failure element with message, type, and captured failure output.",
+      "tags": ["data-model", "xml", "junit"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:hack/util/hash.sh",
+      "type": "file",
+      "name": "hash.sh",
+      "filePath": "hack/util/hash.sh",
+      "summary": "Portable shell wrapper printing only the SHA-256 hash of a file, using shasum on macOS and sha256sum elsewhere for release metadata targets.",
+      "tags": ["script", "hash", "release", "portability"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:internal/apis/config/cainjector/v1alpha1/testdata/defaults.json",
+      "type": "config",
+      "name": "defaults.json",
+      "filePath": "internal/apis/config/cainjector/v1alpha1/testdata/defaults.json",
+      "summary": "Golden fixture capturing the fully defaulted cainjector component configuration, used by the v1alpha1 defaulting tests.",
+      "tags": ["configuration", "test-fixture", "defaults", "cainjector"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:internal/apis/config/controller/v1alpha1/testdata/defaults.json",
+      "type": "config",
+      "name": "defaults.json",
+      "filePath": "internal/apis/config/controller/v1alpha1/testdata/defaults.json",
+      "summary": "Golden fixture capturing the fully defaulted controller component configuration, including controller enablement, concurrency, and ACME solver settings.",
+      "tags": ["configuration", "test-fixture", "defaults", "controller"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:internal/apis/config/webhook/v1alpha1/testdata/defaults.json",
+      "type": "config",
+      "name": "defaults.json",
+      "filePath": "internal/apis/config/webhook/v1alpha1/testdata/defaults.json",
+      "summary": "Golden fixture capturing the fully defaulted webhook component configuration, covering ports, TLS, logging, and metrics settings.",
+      "tags": ["configuration", "test-fixture", "defaults", "webhook"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:cmd/webhook/main.go",
+      "target": "file:cmd/webhook/app/webhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:cmd/webhook/app/webhook.go",
+      "target": "function:cmd/webhook/app/webhook.go:NewServerCommand",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/webhook/app/webhook.go",
+      "target": "function:cmd/webhook/app/webhook.go:newServerCommand",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/webhook/app/webhook.go",
+      "target": "function:cmd/webhook/app/webhook.go:loadConfigFromFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/webhook/app/webhook.go",
+      "target": "function:cmd/webhook/app/webhook.go:NewServerCommand",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:cmd/webhook/main.go",
+      "target": "function:cmd/webhook/main.go:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/extractcrd/main.go",
+      "target": "function:hack/extractcrd/main.go:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/prune-junit-xml/prunexml.go",
+      "target": "function:hack/prune-junit-xml/prunexml.go:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/prune-junit-xml/prunexml.go",
+      "target": "function:hack/prune-junit-xml/prunexml.go:pruneXML",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/prune-junit-xml/prunexml.go",
+      "target": "function:hack/prune-junit-xml/prunexml.go:incrementTime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/prune-junit-xml/prunexml.go",
+      "target": "function:hack/prune-junit-xml/prunexml.go:streamXML",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/prune-junit-xml/prunexml.go",
+      "target": "class:hack/prune-junit-xml/prunexml.go:JUnitTestSuites",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/prune-junit-xml/prunexml.go",
+      "target": "class:hack/prune-junit-xml/prunexml.go:JUnitTestSuite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/prune-junit-xml/prunexml.go",
+      "target": "class:hack/prune-junit-xml/prunexml.go:JUnitTestCase",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/prune-junit-xml/prunexml.go",
+      "target": "class:hack/prune-junit-xml/prunexml.go:JUnitSkipMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/prune-junit-xml/prunexml.go",
+      "target": "class:hack/prune-junit-xml/prunexml.go:JUnitProperty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/prune-junit-xml/prunexml.go",
+      "target": "class:hack/prune-junit-xml/prunexml.go:JUnitFailure",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hack/prune-junit-xml/prunexml.go",
+      "target": "class:hack/prune-junit-xml/prunexml.go:JUnitTestSuites",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:hack/prune-junit-xml/prunexml.go",
+      "target": "class:hack/prune-junit-xml/prunexml.go:JUnitTestSuite",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:hack/prune-junit-xml/prunexml.go",
+      "target": "class:hack/prune-junit-xml/prunexml.go:JUnitTestCase",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:hack/prune-junit-xml/prunexml.go",
+      "target": "class:hack/prune-junit-xml/prunexml.go:JUnitSkipMessage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:hack/prune-junit-xml/prunexml.go",
+      "target": "class:hack/prune-junit-xml/prunexml.go:JUnitProperty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:hack/prune-junit-xml/prunexml.go",
+      "target": "class:hack/prune-junit-xml/prunexml.go:JUnitFailure",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "config:cmd/webhook/go.mod",
+      "target": "file:cmd/webhook/app/webhook.go",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:cmd/webhook/go.sum",
+      "target": "config:cmd/webhook/go.mod",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:cmd/webhook/LICENSES",
+      "target": "config:cmd/webhook/go.mod",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "service:hack/containers/Containerfile.acmesolver",
+      "target": "file:cmd/acmesolver/main.go",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "service:hack/containers/Containerfile.cainjector",
+      "target": "file:cmd/cainjector/main.go",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "service:hack/containers/Containerfile.controller",
+      "target": "file:cmd/controller/main.go",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "service:hack/containers/Containerfile.startupapicheck",
+      "target": "file:cmd/startupapicheck/main.go",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "service:hack/containers/Containerfile.webhook",
+      "target": "file:cmd/webhook/main.go",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "config:internal/apis/config/cainjector/v1alpha1/testdata/defaults.json",
+      "target": "file:internal/apis/config/cainjector/v1alpha1/defaults.go",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:internal/apis/config/controller/v1alpha1/testdata/defaults.json",
+      "target": "file:internal/apis/config/controller/v1alpha1/defaults.go",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:internal/apis/config/webhook/v1alpha1/testdata/defaults.json",
+      "target": "file:internal/apis/config/webhook/v1alpha1/defaults.go",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:hack/openapi_reports/acme.txt",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:hack/openapi_reports/client.txt",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:hack/openapi_reports/client.txt",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

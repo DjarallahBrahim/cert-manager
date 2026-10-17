@@ -1,0 +1,2426 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 25,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 25,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "pkg/apis/config/cainjector/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/config/cainjector/v1alpha1/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/config/cainjector/v1alpha1/register.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "Resource",
+          "startLine": 31,
+          "endLine": 33,
+          "params": [
+            "resource"
+          ]
+        },
+        {
+          "name": "init",
+          "startLine": 41,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "addKnownTypes",
+          "startLine": 49,
+          "endLine": 56,
+          "params": [
+            "scheme"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Resource",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource(resource).GroupResource",
+          "lineNumber": 32
+        },
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource",
+          "lineNumber": 32
+        },
+        {
+          "caller": "init",
+          "callee": "localSchemeBuilder.Register",
+          "lineNumber": 45
+        },
+        {
+          "caller": "addKnownTypes",
+          "callee": "scheme.AddKnownTypes",
+          "lineNumber": 50
+        },
+        {
+          "caller": "addKnownTypes",
+          "callee": "metav1.AddToGroupVersion",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/config/cainjector/v1alpha1/types.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 108,
+      "nonEmptyLines": 84,
+      "classes": [
+        {
+          "name": "CAInjectorConfiguration",
+          "startLine": 28,
+          "endLine": 75,
+          "methods": [],
+          "properties": [
+            "KubeConfig",
+            "Namespace",
+            "LeaderElectionConfig",
+            "EnableDataSourceConfig",
+            "EnableInjectableConfig",
+            "EnablePprof",
+            "PprofAddress",
+            "Logging",
+            "FeatureGates",
+            "MetricsListenAddress",
+            "MetricsTLSConfig"
+          ]
+        },
+        {
+          "name": "EnableDataSourceConfig",
+          "startLine": 77,
+          "endLine": 82,
+          "methods": [],
+          "properties": [
+            "Certificates"
+          ]
+        },
+        {
+          "name": "EnableInjectableConfig",
+          "startLine": 84,
+          "endLine": 108,
+          "methods": [],
+          "properties": [
+            "ValidatingWebhookConfigurations",
+            "MutatingWebhookConfigurations",
+            "CustomResourceDefinitions",
+            "APIServices"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CAInjectorConfiguration",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "EnableDataSourceConfig",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "EnableInjectableConfig",
+          "line": 84,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "pkg/apis/config/cainjector/v1alpha1/zz_generated.deepcopy.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 120,
+      "nonEmptyLines": 106,
+      "functions": [
+        {
+          "name": "DeepCopyInto",
+          "startLine": 29,
+          "endLine": 45,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 48,
+          "endLine": 55,
+          "params": []
+        },
+        {
+          "name": "DeepCopyObject",
+          "startLine": 58,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 66,
+          "endLine": 74,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 77,
+          "endLine": 84,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 87,
+          "endLine": 110,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 113,
+          "endLine": 120,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeepCopyInto",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyObject",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 113,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.LeaderElectionConfig.DeepCopyInto",
+          "lineNumber": 32
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.EnableDataSourceConfig.DeepCopyInto",
+          "lineNumber": 33
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.EnableInjectableConfig.DeepCopyInto",
+          "lineNumber": 34
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Logging.DeepCopyInto",
+          "lineNumber": 35
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 38
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 38
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.MetricsTLSConfig.DeepCopyInto",
+          "lineNumber": 43
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 52
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 53
+        },
+        {
+          "caller": "DeepCopyObject",
+          "callee": "in.DeepCopy",
+          "lineNumber": 59
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 70
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 81
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 82
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 91
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 96
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 101
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 106
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 117
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 118
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/config/controller/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/config/controller/v1alpha1/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/config/controller/v1alpha1/register.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "Resource",
+          "startLine": 31,
+          "endLine": 33,
+          "params": [
+            "resource"
+          ]
+        },
+        {
+          "name": "init",
+          "startLine": 41,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "addKnownTypes",
+          "startLine": 49,
+          "endLine": 56,
+          "params": [
+            "scheme"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Resource",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource(resource).GroupResource",
+          "lineNumber": 32
+        },
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource",
+          "lineNumber": 32
+        },
+        {
+          "caller": "init",
+          "callee": "localSchemeBuilder.Register",
+          "lineNumber": 45
+        },
+        {
+          "caller": "addKnownTypes",
+          "callee": "scheme.AddKnownTypes",
+          "lineNumber": 50
+        },
+        {
+          "caller": "addKnownTypes",
+          "callee": "metav1.AddToGroupVersion",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/config/controller/v1alpha1/types.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 227,
+      "nonEmptyLines": 177,
+      "classes": [
+        {
+          "name": "ControllerConfiguration",
+          "startLine": 28,
+          "endLine": 138,
+          "methods": [],
+          "properties": [
+            "KubeConfig",
+            "APIServerHost",
+            "KubernetesAPIQPS",
+            "KubernetesAPIBurst",
+            "Namespace",
+            "ClusterResourceNamespace",
+            "LeaderElectionConfig",
+            "Controllers",
+            "IssuerAmbientCredentials",
+            "ClusterIssuerAmbientCredentials",
+            "EnableCertificateOwnerRef",
+            "EnableGatewayAPI",
+            "CopiedAnnotationPrefixes",
+            "NumberOfConcurrentWorkers",
+            "MaxConcurrentChallenges",
+            "MetricsListenAddress",
+            "MetricsTLSConfig",
+            "HealthzListenAddress",
+            "EnablePprof",
+            "PprofAddress",
+            "Logging",
+            "FeatureGates",
+            "IngressShimConfig",
+            "ACMEHTTP01Config",
+            "ACMEDNS01Config"
+          ]
+        },
+        {
+          "name": "LeaderElectionConfig",
+          "startLine": 140,
+          "endLine": 146,
+          "methods": [],
+          "properties": [
+            "HealthzTimeout"
+          ]
+        },
+        {
+          "name": "IngressShimConfig",
+          "startLine": 148,
+          "endLine": 169,
+          "methods": [],
+          "properties": [
+            "DefaultIssuerName",
+            "DefaultIssuerKind",
+            "DefaultIssuerGroup",
+            "DefaultAutoCertificateAnnotations",
+            "ExtraCertificateAnnotations"
+          ]
+        },
+        {
+          "name": "ACMEHTTP01Config",
+          "startLine": 171,
+          "endLine": 202,
+          "methods": [],
+          "properties": [
+            "SolverImage",
+            "SolverResourceRequestCPU",
+            "SolverResourceRequestMemory",
+            "SolverResourceLimitsCPU",
+            "SolverResourceLimitsMemory",
+            "SolverRunAsNonRoot",
+            "SolverNameservers"
+          ]
+        },
+        {
+          "name": "ACMEDNS01Config",
+          "startLine": 204,
+          "endLine": 227,
+          "methods": [],
+          "properties": [
+            "RecursiveNameservers",
+            "RecursiveNameserversOnly",
+            "CheckRetryPeriod"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ControllerConfiguration",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "LeaderElectionConfig",
+          "line": 140,
+          "isDefault": false
+        },
+        {
+          "name": "IngressShimConfig",
+          "line": 148,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEHTTP01Config",
+          "line": 171,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEDNS01Config",
+          "line": 204,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 5,
+        "functionCount": 0,
+        "classCount": 5
+      }
+    },
+    {
+      "path": "pkg/apis/config/controller/v1alpha1/zz_generated.deepcopy.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 225,
+      "nonEmptyLines": 207,
+      "functions": [
+        {
+          "name": "DeepCopyInto",
+          "startLine": 30,
+          "endLine": 48,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 51,
+          "endLine": 58,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 61,
+          "endLine": 74,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 77,
+          "endLine": 84,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 87,
+          "endLine": 159,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 162,
+          "endLine": 169,
+          "params": []
+        },
+        {
+          "name": "DeepCopyObject",
+          "startLine": 172,
+          "endLine": 177,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 180,
+          "endLine": 193,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 196,
+          "endLine": 203,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 206,
+          "endLine": 215,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 218,
+          "endLine": 225,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeepCopyInto",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 162,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyObject",
+          "line": 172,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 196,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 206,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 218,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 34
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 34
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 35
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 39
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 44
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 55
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 56
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 65
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 70
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 70
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 71
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 81
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 82
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 92
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 97
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.LeaderElectionConfig.DeepCopyInto",
+          "lineNumber": 100
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 103
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 103
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 104
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 108
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 113
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 118
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 123
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 128
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 128
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 129
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 133
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 138
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.MetricsTLSConfig.DeepCopyInto",
+          "lineNumber": 141
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 144
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Logging.DeepCopyInto",
+          "lineNumber": 147
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 150
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 150
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.IngressShimConfig.DeepCopyInto",
+          "lineNumber": 155
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.ACMEHTTP01Config.DeepCopyInto",
+          "lineNumber": 156
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.ACMEDNS01Config.DeepCopyInto",
+          "lineNumber": 157
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 166
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 167
+        },
+        {
+          "caller": "DeepCopyObject",
+          "callee": "in.DeepCopy",
+          "lineNumber": 173
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 184
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 184
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 185
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 189
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 189
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 190
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 200
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 201
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.LeaderElectionConfig.DeepCopyInto",
+          "lineNumber": 208
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 211
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 222
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 223
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 11,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/config/shared/v1alpha1/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 14,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/config/shared/v1alpha1/types_duration.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "DurationFromMetav1",
+          "startLine": 36,
+          "endLine": 38,
+          "params": [
+            "d"
+          ]
+        },
+        {
+          "name": "DurationFromTime",
+          "startLine": 40,
+          "endLine": 42,
+          "params": [
+            "d"
+          ]
+        },
+        {
+          "name": "MarshalJSON",
+          "startLine": 44,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "UnmarshalJSON",
+          "startLine": 48,
+          "endLine": 57,
+          "params": [
+            "b"
+          ]
+        },
+        {
+          "name": "IsZero",
+          "startLine": 59,
+          "endLine": 65,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "Duration",
+          "startLine": 31,
+          "endLine": 34,
+          "methods": [
+            "MarshalJSON",
+            "UnmarshalJSON",
+            "IsZero"
+          ],
+          "properties": [
+            "Duration"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Duration",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "DurationFromMetav1",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "DurationFromTime",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "MarshalJSON",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "UnmarshalJSON",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "IsZero",
+          "line": 59,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DurationFromTime",
+          "callee": "DurationFromMetav1",
+          "lineNumber": 41
+        },
+        {
+          "caller": "MarshalJSON",
+          "callee": "t.Duration.MarshalJSON",
+          "lineNumber": 45
+        },
+        {
+          "caller": "UnmarshalJSON",
+          "callee": "len",
+          "lineNumber": 49
+        },
+        {
+          "caller": "UnmarshalJSON",
+          "callee": "json.Unmarshal",
+          "lineNumber": 51
+        },
+        {
+          "caller": "UnmarshalJSON",
+          "callee": "json.Unmarshal",
+          "lineNumber": 53
+        },
+        {
+          "caller": "UnmarshalJSON",
+          "callee": "fmt.Errorf",
+          "lineNumber": 54
+        },
+        {
+          "caller": "UnmarshalJSON",
+          "callee": "string",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/apis/config/shared/v1alpha1/types_leaderelection.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "LeaderElectionConfig",
+          "startLine": 19,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "Enabled",
+            "Namespace",
+            "LeaseDuration",
+            "RenewDeadline",
+            "RetryPeriod"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LeaderElectionConfig",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/apis/config/shared/v1alpha1/types_tlsconfig.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 55,
+      "classes": [
+        {
+          "name": "TLSConfig",
+          "startLine": 21,
+          "endLine": 41,
+          "methods": [],
+          "properties": [
+            "CipherSuites",
+            "MinTLSVersion",
+            "Filesystem",
+            "Dynamic"
+          ]
+        },
+        {
+          "name": "DynamicServingConfig",
+          "startLine": 45,
+          "endLine": 59,
+          "methods": [],
+          "properties": [
+            "SecretNamespace",
+            "SecretName",
+            "DNSNames",
+            "LeafDuration"
+          ]
+        },
+        {
+          "name": "FilesystemServingConfig",
+          "startLine": 63,
+          "endLine": 69,
+          "methods": [],
+          "properties": [
+            "CertFile",
+            "KeyFile"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TLSConfig",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "DynamicServingConfig",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "FilesystemServingConfig",
+          "line": 63,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 140,
+      "nonEmptyLines": 124,
+      "functions": [
+        {
+          "name": "DeepCopyInto",
+          "startLine": 25,
+          "endLine": 29,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 32,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 42,
+          "endLine": 55,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 58,
+          "endLine": 65,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 68,
+          "endLine": 71,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 74,
+          "endLine": 81,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 84,
+          "endLine": 107,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 110,
+          "endLine": 117,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 120,
+          "endLine": 130,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 133,
+          "endLine": 140,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeepCopyInto",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 133,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 36
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 37
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 46
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 46
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 47
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 51
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 62
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 63
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 78
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 79
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 88
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 93
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 98
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 103
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 114
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 115
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 124
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 124
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 125
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Dynamic.DeepCopyInto",
+          "lineNumber": 128
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 137
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 138
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 10,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/config/webhook/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/config/webhook/v1alpha1/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/config/webhook/v1alpha1/register.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "Resource",
+          "startLine": 31,
+          "endLine": 33,
+          "params": [
+            "resource"
+          ]
+        },
+        {
+          "name": "init",
+          "startLine": 41,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "addKnownTypes",
+          "startLine": 49,
+          "endLine": 56,
+          "params": [
+            "scheme"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Resource",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource(resource).GroupResource",
+          "lineNumber": 32
+        },
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource",
+          "lineNumber": 32
+        },
+        {
+          "caller": "init",
+          "callee": "localSchemeBuilder.Register",
+          "lineNumber": 45
+        },
+        {
+          "caller": "addKnownTypes",
+          "callee": "scheme.AddKnownTypes",
+          "lineNumber": 50
+        },
+        {
+          "caller": "addKnownTypes",
+          "callee": "metav1.AddToGroupVersion",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/config/webhook/v1alpha1/types.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 56,
+      "classes": [
+        {
+          "name": "WebhookConfiguration",
+          "startLine": 28,
+          "endLine": 75,
+          "methods": [],
+          "properties": [
+            "SecurePort",
+            "HealthzPort",
+            "TLSConfig",
+            "KubeConfig",
+            "APIServerHost",
+            "EnablePprof",
+            "PprofAddress",
+            "Logging",
+            "FeatureGates",
+            "MetricsListenAddress",
+            "MetricsTLSConfig"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WebhookConfiguration",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 61,
+      "functions": [
+        {
+          "name": "DeepCopyInto",
+          "startLine": 29,
+          "endLine": 53,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 56,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "DeepCopyObject",
+          "startLine": 66,
+          "endLine": 71,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeepCopyInto",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyObject",
+          "line": 66,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 34
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 39
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.TLSConfig.DeepCopyInto",
+          "lineNumber": 42
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Logging.DeepCopyInto",
+          "lineNumber": 43
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 46
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 46
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.MetricsTLSConfig.DeepCopyInto",
+          "lineNumber": 51
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 60
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 61
+        },
+        {
+          "caller": "DeepCopyObject",
+          "callee": "in.DeepCopy",
+          "lineNumber": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/cainjector/configfile/configfile.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "New",
+          "startLine": 32,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "decodeConfiguration",
+          "startLine": 38,
+          "endLine": 56,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "DecodeAndConfigure",
+          "startLine": 58,
+          "endLine": 66,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "GetPathRefs",
+          "startLine": 68,
+          "endLine": 75,
+          "params": []
+        },
+        {
+          "name": "CAInjectorConfigurationPathRefs",
+          "startLine": 80,
+          "endLine": 86,
+          "params": [
+            "cfg"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CAInjectorConfigFile",
+          "startLine": 28,
+          "endLine": 30,
+          "methods": [
+            "DecodeAndConfigure",
+            "GetPathRefs"
+          ],
+          "properties": [
+            "Config"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CAInjectorConfigFile",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "New",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "DecodeAndConfigure",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "GetPathRefs",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "CAInjectorConfigurationPathRefs",
+          "line": 80,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "decodeConfiguration",
+          "callee": "scheme.NewSchemeAndCodecs",
+          "lineNumber": 39
+        },
+        {
+          "caller": "decodeConfiguration",
+          "callee": "codec.UniversalDecoder().Decode",
+          "lineNumber": 44
+        },
+        {
+          "caller": "decodeConfiguration",
+          "callee": "codec.UniversalDecoder",
+          "lineNumber": 44
+        },
+        {
+          "caller": "decodeConfiguration",
+          "callee": "fmt.Errorf",
+          "lineNumber": 46
+        },
+        {
+          "caller": "decodeConfiguration",
+          "callee": "fmt.Errorf",
+          "lineNumber": 51
+        },
+        {
+          "caller": "DecodeAndConfigure",
+          "callee": "decodeConfiguration",
+          "lineNumber": 59
+        },
+        {
+          "caller": "GetPathRefs",
+          "callee": "CAInjectorConfigurationPathRefs",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/controller/acmechallenges/checks.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 14,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/controller/configfile/configfile.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "New",
+          "startLine": 32,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "decodeConfiguration",
+          "startLine": 38,
+          "endLine": 56,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "DecodeAndConfigure",
+          "startLine": 58,
+          "endLine": 66,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "GetPathRefs",
+          "startLine": 68,
+          "endLine": 75,
+          "params": []
+        },
+        {
+          "name": "ControllerConfigurationPathRefs",
+          "startLine": 80,
+          "endLine": 85,
+          "params": [
+            "cfg"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ControllerConfigFile",
+          "startLine": 28,
+          "endLine": 30,
+          "methods": [
+            "DecodeAndConfigure",
+            "GetPathRefs"
+          ],
+          "properties": [
+            "Config"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ControllerConfigFile",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "New",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "DecodeAndConfigure",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "GetPathRefs",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "ControllerConfigurationPathRefs",
+          "line": 80,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "decodeConfiguration",
+          "callee": "scheme.NewSchemeAndCodecs",
+          "lineNumber": 39
+        },
+        {
+          "caller": "decodeConfiguration",
+          "callee": "codec.UniversalDecoder().Decode",
+          "lineNumber": 44
+        },
+        {
+          "caller": "decodeConfiguration",
+          "callee": "codec.UniversalDecoder",
+          "lineNumber": 44
+        },
+        {
+          "caller": "decodeConfiguration",
+          "callee": "fmt.Errorf",
+          "lineNumber": 46
+        },
+        {
+          "caller": "decodeConfiguration",
+          "callee": "fmt.Errorf",
+          "lineNumber": 51
+        },
+        {
+          "caller": "DecodeAndConfigure",
+          "callee": "decodeConfiguration",
+          "lineNumber": 59
+        },
+        {
+          "caller": "GetPathRefs",
+          "callee": "ControllerConfigurationPathRefs",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/webhook/configfile/configfile.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 88,
+      "nonEmptyLines": 69,
+      "functions": [
+        {
+          "name": "New",
+          "startLine": 32,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "decodeConfiguration",
+          "startLine": 38,
+          "endLine": 56,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "DecodeAndConfigure",
+          "startLine": 58,
+          "endLine": 66,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "GetPathRefs",
+          "startLine": 68,
+          "endLine": 75,
+          "params": []
+        },
+        {
+          "name": "WebhookConfigurationPathRefs",
+          "startLine": 80,
+          "endLine": 88,
+          "params": [
+            "cfg"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WebhookConfigFile",
+          "startLine": 28,
+          "endLine": 30,
+          "methods": [
+            "DecodeAndConfigure",
+            "GetPathRefs"
+          ],
+          "properties": [
+            "Config"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WebhookConfigFile",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "New",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "DecodeAndConfigure",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "GetPathRefs",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "WebhookConfigurationPathRefs",
+          "line": 80,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "decodeConfiguration",
+          "callee": "scheme.NewSchemeAndCodecs",
+          "lineNumber": 39
+        },
+        {
+          "caller": "decodeConfiguration",
+          "callee": "codec.UniversalDecoder().Decode",
+          "lineNumber": 44
+        },
+        {
+          "caller": "decodeConfiguration",
+          "callee": "codec.UniversalDecoder",
+          "lineNumber": 44
+        },
+        {
+          "caller": "decodeConfiguration",
+          "callee": "fmt.Errorf",
+          "lineNumber": 46
+        },
+        {
+          "caller": "decodeConfiguration",
+          "callee": "fmt.Errorf",
+          "lineNumber": 51
+        },
+        {
+          "caller": "DecodeAndConfigure",
+          "callee": "decodeConfiguration",
+          "lineNumber": 59
+        },
+        {
+          "caller": "GetPathRefs",
+          "callee": "WebhookConfigurationPathRefs",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/webhook/options/options.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 109,
+      "nonEmptyLines": 91,
+      "functions": [
+        {
+          "name": "NewWebhookFlags",
+          "startLine": 38,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "AddFlags",
+          "startLine": 42,
+          "endLine": 44,
+          "params": [
+            "fs"
+          ]
+        },
+        {
+          "name": "NewWebhookConfiguration",
+          "startLine": 46,
+          "endLine": 58,
+          "params": []
+        },
+        {
+          "name": "AddConfigFlags",
+          "startLine": 60,
+          "endLine": 109,
+          "params": [
+            "fs",
+            "c"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WebhookFlags",
+          "startLine": 33,
+          "endLine": 36,
+          "methods": [
+            "AddFlags"
+          ],
+          "properties": [
+            "Config"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WebhookFlags",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "NewWebhookFlags",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "AddFlags",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "NewWebhookConfiguration",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "AddConfigFlags",
+          "line": 60,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AddFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 43
+        },
+        {
+          "caller": "NewWebhookConfiguration",
+          "callee": "configscheme.NewSchemeAndCodecs",
+          "lineNumber": 47
+        },
+        {
+          "caller": "NewWebhookConfiguration",
+          "callee": "scheme.Default",
+          "lineNumber": 52
+        },
+        {
+          "caller": "NewWebhookConfiguration",
+          "callee": "scheme.Convert",
+          "lineNumber": 54
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.Int32Var",
+          "lineNumber": 61
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.Int32Var",
+          "lineNumber": 62
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 64
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 65
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.DurationVar",
+          "lineNumber": 67
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 68
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 69
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringSliceVar",
+          "lineNumber": 70
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 72
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 73
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.BoolVar",
+          "lineNumber": 76
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 78
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "cliflag.TLSCipherPossibleValues",
+          "lineNumber": 80
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringSliceVar",
+          "lineNumber": 81
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "strings.Join",
+          "lineNumber": 84
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "cliflag.TLSPossibleVersions",
+          "lineNumber": 85
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 86
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "strings.Join",
+          "lineNumber": 88
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.Var",
+          "lineNumber": 89
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "cliflag.NewMapStringBool",
+          "lineNumber": 89
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "strings.Join",
+          "lineNumber": 90
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "utilfeature.DefaultFeatureGate.KnownFeatures",
+          "lineNumber": 90
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "logf.AddFlags",
+          "lineNumber": 92
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 94
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 95
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 96
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.DurationVar",
+          "lineNumber": 98
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 99
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 100
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringSliceVar",
+          "lineNumber": 101
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringSliceVar",
+          "lineNumber": 102
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "strings.Join",
+          "lineNumber": 105
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "fs.StringVar",
+          "lineNumber": 106
+        },
+        {
+          "caller": "AddConfigFlags",
+          "callee": "strings.Join",
+          "lineNumber": 108
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    }
+  ]
+}

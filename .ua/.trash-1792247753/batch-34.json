@@ -1,0 +1,71 @@
+{
+  "nodes": [
+    {
+      "id": "config:deploy/manifests/01-namespace.yaml",
+      "type": "config",
+      "name": "01-namespace.yaml",
+      "filePath": "deploy/manifests/01-namespace.yaml",
+      "summary": "Kubernetes Namespace manifest that creates the cert-manager namespace, prefixed with 01 so it is applied before other deployment resources.",
+      "tags": ["configuration", "kubernetes", "namespace", "deployment"],
+      "complexity": "simple",
+      "languageNotes": "Starts with a YAML document separator so it can be concatenated with other manifests."
+    },
+    {
+      "id": "document:deploy/manifests/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "deploy/manifests/README.md",
+      "summary": "Explains that the static deployment manifests moved to being generated from the official Helm chart and published as GitHub release assets from v0.8 onward.",
+      "tags": ["documentation", "deployment", "kubernetes", "helm"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/manifests/helm-values.yaml",
+      "type": "config",
+      "name": "helm-values.yaml",
+      "filePath": "deploy/manifests/helm-values.yaml",
+      "summary": "Helm values overlay for the cert-manager chart that pins the release name, sets small CPU/memory requests for the controller and ingress shim, and enables the webhook.",
+      "tags": ["configuration", "helm", "deployment", "resources"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deploy/manifests/namespace.yaml",
+      "type": "config",
+      "name": "namespace.yaml",
+      "filePath": "deploy/manifests/namespace.yaml",
+      "summary": "Minimal Kubernetes Namespace manifest declaring the cert-manager namespace for deployment manifests.",
+      "tags": ["configuration", "kubernetes", "namespace", "deployment"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:deploy/manifests/README.md",
+      "target": "config:deploy/manifests/helm-values.yaml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:deploy/manifests/README.md",
+      "target": "file:deploy/charts/cert-manager/values.yaml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:deploy/manifests/helm-values.yaml",
+      "target": "file:deploy/charts/cert-manager/values.yaml",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:deploy/manifests/01-namespace.yaml",
+      "target": "config:deploy/manifests/namespace.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

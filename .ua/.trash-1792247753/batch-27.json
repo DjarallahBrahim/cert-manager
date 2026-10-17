@@ -1,0 +1,45 @@
+{
+  "nodes": [
+    {
+      "id": "pipeline:.github/workflows/govulncheck.yaml",
+      "type": "pipeline",
+      "name": "govulncheck.yaml",
+      "filePath": ".github/workflows/govulncheck.yaml",
+      "summary": "Scheduled GitHub Actions workflow that runs `make verify-govulncheck` nightly on the main branch to detect Go vulnerabilities affecting the project.",
+      "tags": ["ci-cd", "security", "vulnerability-scanning", "scheduled", "go"],
+      "complexity": "simple",
+      "languageNotes": "Auto-generated from cert-manager's shared makefile-modules repository; uses a pinned Go version resolved via `make print-go-version`."
+    },
+    {
+      "id": "pipeline:.github/workflows/make-self-upgrade.yaml",
+      "type": "pipeline",
+      "name": "make-self-upgrade.yaml",
+      "filePath": ".github/workflows/make-self-upgrade.yaml",
+      "summary": "Scheduled workflow that runs `make upgrade-klone` and `make generate`, commits any changes to a self-upgrade branch, and opens or updates a pull request with the result.",
+      "tags": ["ci-cd", "automation", "dependency-update", "scheduled", "gitops"],
+      "complexity": "moderate",
+      "languageNotes": "Uses Octo STS token exchange for scoped credentials and inline github-script JavaScript to manage pull requests."
+    },
+    {
+      "id": "pipeline:.github/workflows/renovate.yaml",
+      "type": "pipeline",
+      "name": "renovate.yaml",
+      "filePath": ".github/workflows/renovate.yaml",
+      "summary": "Scheduled workflow running self-hosted Renovate against the repository using `.github/renovate.json5`, with Octo STS credentials, to keep dependencies up to date.",
+      "tags": ["ci-cd", "dependency-update", "automation", "scheduled", "renovate"],
+      "complexity": "moderate",
+      "languageNotes": "Configuration is supplied through Renovate environment variables and an external JSON5 config file."
+    },
+    {
+      "id": "pipeline:.github/workflows/scorecards.yml",
+      "type": "pipeline",
+      "name": "scorecards.yml",
+      "filePath": ".github/workflows/scorecards.yml",
+      "summary": "OpenSSF Scorecards supply-chain security workflow that analyzes the default branch and uploads SARIF results to GitHub code scanning.",
+      "tags": ["ci-cd", "security", "supply-chain", "sarif", "scheduled"],
+      "complexity": "simple",
+      "languageNotes": "Triggers on branch protection changes, a weekly schedule, and pushes to master, with least-privilege permissions."
+    }
+  ],
+  "edges": []
+}

@@ -1,0 +1,1969 @@
+{
+  "nodes": [
+    {
+      "id": "file:internal/pem/decode.go",
+      "type": "file",
+      "name": "decode.go",
+      "filePath": "internal/pem/decode.go",
+      "summary": "Safe PEM decoding helpers that enforce size limits and structure checks before parsing certificates, CSRs, and private keys.",
+      "tags": [
+        "pki",
+        "security",
+        "parsing",
+        "utility"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Bounds are derived from worst-case 16k-bit RSA keys and realistic trust-bundle sizes to mitigate resource exhaustion."
+    },
+    {
+      "id": "file:internal/vault/fake/vault.go",
+      "type": "file",
+      "name": "vault.go",
+      "filePath": "internal/vault/fake/vault.go",
+      "summary": "In-memory fake implementation of the Vault issuer interface used in unit tests.",
+      "tags": [
+        "test",
+        "fake",
+        "vault",
+        "issuers"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/vault/vault.go",
+      "type": "file",
+      "name": "vault.go",
+      "filePath": "internal/vault/vault.go",
+      "summary": "Client implementation for the HashiCorp Vault issuer, handling authentication methods, token lifecycle, and certificate signing.",
+      "tags": [
+        "issuers",
+        "vault",
+        "integration",
+        "security"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:internal/webhook/feature/features.go",
+      "type": "file",
+      "name": "features.go",
+      "filePath": "internal/webhook/feature/features.go",
+      "summary": "Registers the cert-manager webhook component's feature gates independently from the other components.",
+      "tags": [
+        "feature-gate",
+        "configuration",
+        "webhook"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/api/scheme.go",
+      "type": "file",
+      "name": "scheme.go",
+      "filePath": "pkg/api/scheme.go",
+      "summary": "Defines the runtime scheme and codec containing only cert-manager external API types, deliberately without defaulting or conversion functions.",
+      "tags": [
+        "api",
+        "scheme",
+        "serialization",
+        "kubernetes"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Separating external-only types keeps controllers from applying webhook-owned defaulting semantics."
+    },
+    {
+      "id": "file:pkg/api/util/conditions.go",
+      "type": "file",
+      "name": "conditions.go",
+      "filePath": "pkg/api/util/conditions.go",
+      "summary": "Helpers for reading and setting Issuer, Certificate, and CertificateRequest conditions with observed-generation semantics.",
+      "tags": [
+        "utility",
+        "conditions",
+        "api",
+        "status"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:internal/pem/decode.go:safeDecodeInternal",
+      "type": "function",
+      "name": "safeDecodeInternal",
+      "filePath": "internal/pem/decode.go",
+      "lineRange": [
+        121,
+        132
+      ],
+      "summary": "Applies a maximum-size check and decodes exactly one PEM block of the expected type.",
+      "tags": [
+        "pki",
+        "parsing",
+        "security"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/pem/decode.go:SafeDecodePrivateKey",
+      "type": "function",
+      "name": "SafeDecodePrivateKey",
+      "filePath": "internal/pem/decode.go",
+      "lineRange": [
+        137,
+        139
+      ],
+      "summary": "Safely decodes a PEM-encoded private key with a size limit.",
+      "tags": [
+        "pki",
+        "parsing",
+        "security"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/pem/decode.go:SafeDecodeCSR",
+      "type": "function",
+      "name": "SafeDecodeCSR",
+      "filePath": "internal/pem/decode.go",
+      "lineRange": [
+        145,
+        147
+      ],
+      "summary": "Safely decodes a PEM-encoded certificate signing request with a size limit.",
+      "tags": [
+        "pki",
+        "parsing",
+        "security"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/pem/decode.go:SafeDecodeSingleCertificate",
+      "type": "function",
+      "name": "SafeDecodeSingleCertificate",
+      "filePath": "internal/pem/decode.go",
+      "lineRange": [
+        154,
+        156
+      ],
+      "summary": "Safely decodes a single PEM-encoded X.509 certificate with a size limit.",
+      "tags": [
+        "pki",
+        "parsing",
+        "security"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/pem/decode.go:SafeDecodeCertificateChain",
+      "type": "function",
+      "name": "SafeDecodeCertificateChain",
+      "filePath": "internal/pem/decode.go",
+      "lineRange": [
+        161,
+        163
+      ],
+      "summary": "Safely decodes a PEM-encoded certificate chain with an overall size limit.",
+      "tags": [
+        "pki",
+        "parsing",
+        "security"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/pem/decode.go:SafeDecodeCertificateBundle",
+      "type": "function",
+      "name": "SafeDecodeCertificateBundle",
+      "filePath": "internal/pem/decode.go",
+      "lineRange": [
+        170,
+        172
+      ],
+      "summary": "Safely decodes a PEM-encoded trust bundle with an upper size bound.",
+      "tags": [
+        "pki",
+        "parsing",
+        "security"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/vault/fake/vault.go:Vault",
+      "type": "class",
+      "name": "Vault",
+      "filePath": "internal/vault/fake/vault.go",
+      "lineRange": [
+        28,
+        32
+      ],
+      "summary": "Fake Vault issuer that records sign requests and returns configurable responses for tests.",
+      "tags": [
+        "test",
+        "fake",
+        "vault",
+        "issuers"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/vault/fake/vault.go:New",
+      "type": "function",
+      "name": "New",
+      "filePath": "internal/vault/fake/vault.go",
+      "lineRange": [
+        35,
+        50
+      ],
+      "summary": "Creates a fake Vault issuer with optional signing overrides.",
+      "tags": [
+        "test",
+        "fake",
+        "vault",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/vault/fake/vault.go:Sign",
+      "type": "function",
+      "name": "Sign",
+      "filePath": "internal/vault/fake/vault.go",
+      "lineRange": [
+        53,
+        55
+      ],
+      "summary": "Returns the configured fake signed certificate for a CSR.",
+      "tags": [
+        "test",
+        "fake",
+        "vault",
+        "signing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/vault/fake/vault.go:WithSign",
+      "type": "function",
+      "name": "WithSign",
+      "filePath": "internal/vault/fake/vault.go",
+      "lineRange": [
+        58,
+        63
+      ],
+      "summary": "Configures the fake issuer to return specific certificate and CA PEM data.",
+      "tags": [
+        "test",
+        "fake",
+        "vault",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/vault/fake/vault.go:WithNew",
+      "type": "function",
+      "name": "WithNew",
+      "filePath": "internal/vault/fake/vault.go",
+      "lineRange": [
+        66,
+        69
+      ],
+      "summary": "Configures the constructor hook used by the fake Vault issuer.",
+      "tags": [
+        "test",
+        "fake",
+        "vault",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/vault/fake/vault.go:IsVaultInitializedAndUnsealed",
+      "type": "function",
+      "name": "IsVaultInitializedAndUnsealed",
+      "filePath": "internal/vault/fake/vault.go",
+      "lineRange": [
+        82,
+        84
+      ],
+      "summary": "Reports the configured Vault initialization and seal status.",
+      "tags": [
+        "test",
+        "fake",
+        "vault",
+        "health"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/vault/vault.go:Interface",
+      "type": "class",
+      "name": "Interface",
+      "filePath": "internal/vault/vault.go",
+      "lineRange": [
+        54,
+        57
+      ],
+      "summary": "Interface for Vault issuer implementations that sign CSRs and report Vault health.",
+      "tags": [
+        "vault",
+        "interface",
+        "issuers"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/vault/vault.go:Client",
+      "type": "class",
+      "name": "Client",
+      "filePath": "internal/vault/vault.go",
+      "lineRange": [
+        60,
+        65
+      ],
+      "summary": "Abstraction over the Vault API client used by the issuer.",
+      "tags": [
+        "vault",
+        "client",
+        "interface"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/vault/vault.go:Vault",
+      "type": "class",
+      "name": "Vault",
+      "filePath": "internal/vault/vault.go",
+      "lineRange": [
+        72,
+        94
+      ],
+      "summary": "Vault issuer implementation holding configuration, secret lister access, and token state.",
+      "tags": [
+        "vault",
+        "issuers",
+        "authentication"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/vault/vault.go:New",
+      "type": "function",
+      "name": "New",
+      "filePath": "internal/vault/vault.go",
+      "lineRange": [
+        100,
+        140
+      ],
+      "summary": "Creates a Vault issuer client bound to the given namespace, secret lister, and Issuer resource.",
+      "tags": [
+        "vault",
+        "factory",
+        "issuers"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/vault/vault.go:Sign",
+      "type": "function",
+      "name": "Sign",
+      "filePath": "internal/vault/vault.go",
+      "lineRange": [
+        143,
+        183
+      ],
+      "summary": "Signs a PEM-encoded CSR through the Vault PKI backend and returns the certificate chain.",
+      "tags": [
+        "vault",
+        "signing",
+        "pki"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/vault/vault.go:setToken",
+      "type": "function",
+      "name": "setToken",
+      "filePath": "internal/vault/vault.go",
+      "lineRange": [
+        185,
+        237
+      ],
+      "summary": "Authenticates to Vault using the configured auth method and stores the resulting token.",
+      "tags": [
+        "vault",
+        "authentication",
+        "token"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/vault/vault.go:newConfig",
+      "type": "function",
+      "name": "newConfig",
+      "filePath": "internal/vault/vault.go",
+      "lineRange": [
+        239,
+        272
+      ],
+      "summary": "Builds the Vault client configuration, including TLS settings and CA bundles.",
+      "tags": [
+        "vault",
+        "configuration",
+        "tls"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/vault/vault.go:caBundle",
+      "type": "function",
+      "name": "caBundle",
+      "filePath": "internal/vault/vault.go",
+      "lineRange": [
+        280,
+        308
+      ],
+      "summary": "Loads and validates the CA bundle used to verify the Vault server certificate.",
+      "tags": [
+        "vault",
+        "tls",
+        "ca-bundle"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/vault/vault.go:clientCertificate",
+      "type": "function",
+      "name": "clientCertificate",
+      "filePath": "internal/vault/vault.go",
+      "lineRange": [
+        312,
+        356
+      ],
+      "summary": "Builds the client certificate and key pair used for Vault TLS authentication.",
+      "tags": [
+        "vault",
+        "tls",
+        "authentication"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/vault/vault.go:tokenRef",
+      "type": "function",
+      "name": "tokenRef",
+      "filePath": "internal/vault/vault.go",
+      "lineRange": [
+        358,
+        377
+      ],
+      "summary": "Reads a Vault token from a Kubernetes Secret reference.",
+      "tags": [
+        "vault",
+        "token",
+        "secrets"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/vault/vault.go:appRoleRef",
+      "type": "function",
+      "name": "appRoleRef",
+      "filePath": "internal/vault/vault.go",
+      "lineRange": [
+        379,
+        398
+      ],
+      "summary": "Reads AppRole credentials from Kubernetes Secret references.",
+      "tags": [
+        "vault",
+        "approle",
+        "secrets"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/vault/vault.go:requestTokenWithAppRoleRef",
+      "type": "function",
+      "name": "requestTokenWithAppRoleRef",
+      "filePath": "internal/vault/vault.go",
+      "lineRange": [
+        400,
+        447
+      ],
+      "summary": "Exchanges AppRole credentials for a Vault token.",
+      "tags": [
+        "vault",
+        "authentication",
+        "approle"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/vault/vault.go:requestTokenWithClientCertificate",
+      "type": "function",
+      "name": "requestTokenWithClientCertificate",
+      "filePath": "internal/vault/vault.go",
+      "lineRange": [
+        449,
+        520
+      ],
+      "summary": "Authenticates to Vault using the client certificate auth method and returns a token.",
+      "tags": [
+        "vault",
+        "authentication",
+        "tls"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:internal/vault/vault.go:requestTokenWithKubernetesAuth",
+      "type": "function",
+      "name": "requestTokenWithKubernetesAuth",
+      "filePath": "internal/vault/vault.go",
+      "lineRange": [
+        522,
+        621
+      ],
+      "summary": "Authenticates to Vault using Kubernetes service account auth and returns a token.",
+      "tags": [
+        "vault",
+        "authentication",
+        "kubernetes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:internal/vault/vault.go:extractCertificatesFromVaultCertificateSecret",
+      "type": "function",
+      "name": "extractCertificatesFromVaultCertificateSecret",
+      "filePath": "internal/vault/vault.go",
+      "lineRange": [
+        623,
+        645
+      ],
+      "summary": "Extracts certificate and CA data from a Vault certificate secret response.",
+      "tags": [
+        "vault",
+        "pki",
+        "parsing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/vault/vault.go:IsVaultInitializedAndUnsealed",
+      "type": "function",
+      "name": "IsVaultInitializedAndUnsealed",
+      "filePath": "internal/vault/vault.go",
+      "lineRange": [
+        647,
+        679
+      ],
+      "summary": "Queries Vault health endpoints to report whether it is initialized and unsealed.",
+      "tags": [
+        "vault",
+        "health",
+        "monitoring"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/api/util/conditions.go:IssuerHasCondition",
+      "type": "function",
+      "name": "IssuerHasCondition",
+      "filePath": "pkg/api/util/conditions.go",
+      "lineRange": [
+        37,
+        48
+      ],
+      "summary": "Reports whether an Issuer has a condition of the given type with True status.",
+      "tags": [
+        "conditions",
+        "issuers",
+        "status"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/conditions.go:SetIssuerCondition",
+      "type": "function",
+      "name": "SetIssuerCondition",
+      "filePath": "pkg/api/util/conditions.go",
+      "lineRange": [
+        60,
+        106
+      ],
+      "summary": "Adds or updates an Issuer condition while preserving observed generation and timestamps.",
+      "tags": [
+        "conditions",
+        "issuers",
+        "status"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/api/util/conditions.go:CertificateHasCondition",
+      "type": "function",
+      "name": "CertificateHasCondition",
+      "filePath": "pkg/api/util/conditions.go",
+      "lineRange": [
+        113,
+        124
+      ],
+      "summary": "Reports whether a Certificate has a condition of the given type with True status.",
+      "tags": [
+        "conditions",
+        "certificates",
+        "status"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/conditions.go:CertificateHasConditionWithObservedGeneration",
+      "type": "function",
+      "name": "CertificateHasConditionWithObservedGeneration",
+      "filePath": "pkg/api/util/conditions.go",
+      "lineRange": [
+        132,
+        143
+      ],
+      "summary": "Reports whether a Certificate condition is True and matches the current generation.",
+      "tags": [
+        "conditions",
+        "certificates",
+        "status"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/conditions.go:GetCertificateCondition",
+      "type": "function",
+      "name": "GetCertificateCondition",
+      "filePath": "pkg/api/util/conditions.go",
+      "lineRange": [
+        145,
+        152
+      ],
+      "summary": "Returns the Certificate condition of the requested type, if present.",
+      "tags": [
+        "conditions",
+        "certificates",
+        "status"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/conditions.go:GetCertificateRequestCondition",
+      "type": "function",
+      "name": "GetCertificateRequestCondition",
+      "filePath": "pkg/api/util/conditions.go",
+      "lineRange": [
+        154,
+        161
+      ],
+      "summary": "Returns the CertificateRequest condition of the requested type, if present.",
+      "tags": [
+        "conditions",
+        "certificaterequest",
+        "status"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/conditions.go:SetCertificateCondition",
+      "type": "function",
+      "name": "SetCertificateCondition",
+      "filePath": "pkg/api/util/conditions.go",
+      "lineRange": [
+        174,
+        221
+      ],
+      "summary": "Adds or updates a Certificate condition, managing timestamps and observed generation.",
+      "tags": [
+        "conditions",
+        "certificates",
+        "status"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/api/util/conditions.go:RemoveCertificateCondition",
+      "type": "function",
+      "name": "RemoveCertificateCondition",
+      "filePath": "pkg/api/util/conditions.go",
+      "lineRange": [
+        224,
+        236
+      ],
+      "summary": "Removes a Certificate condition of the given type.",
+      "tags": [
+        "conditions",
+        "certificates",
+        "status"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/conditions.go:SetCertificateRequestCondition",
+      "type": "function",
+      "name": "SetCertificateRequestCondition",
+      "filePath": "pkg/api/util/conditions.go",
+      "lineRange": [
+        246,
+        289
+      ],
+      "summary": "Adds or updates a CertificateRequest condition with status timestamps.",
+      "tags": [
+        "conditions",
+        "certificaterequest",
+        "status"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/api/util/conditions.go:CertificateRequestHasCondition",
+      "type": "function",
+      "name": "CertificateRequestHasCondition",
+      "filePath": "pkg/api/util/conditions.go",
+      "lineRange": [
+        297,
+        310
+      ],
+      "summary": "Reports whether a CertificateRequest has a True condition of the given type.",
+      "tags": [
+        "conditions",
+        "certificaterequest",
+        "status"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/conditions.go:CertificateRequestReadyReason",
+      "type": "function",
+      "name": "CertificateRequestReadyReason",
+      "filePath": "pkg/api/util/conditions.go",
+      "lineRange": [
+        314,
+        330
+      ],
+      "summary": "Returns the reason from the Ready condition of a CertificateRequest.",
+      "tags": [
+        "conditions",
+        "certificaterequest",
+        "status"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/conditions.go:CertificateRequestInvalidRequestMessage",
+      "type": "function",
+      "name": "CertificateRequestInvalidRequestMessage",
+      "filePath": "pkg/api/util/conditions.go",
+      "lineRange": [
+        334,
+        347
+      ],
+      "summary": "Returns the message from an InvalidRequest condition of a CertificateRequest.",
+      "tags": [
+        "conditions",
+        "certificaterequest",
+        "status"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/conditions.go:CertificateRequestHasInvalidRequest",
+      "type": "function",
+      "name": "CertificateRequestHasInvalidRequest",
+      "filePath": "pkg/api/util/conditions.go",
+      "lineRange": [
+        351,
+        364
+      ],
+      "summary": "Reports whether a CertificateRequest carries an InvalidRequest condition.",
+      "tags": [
+        "conditions",
+        "certificaterequest",
+        "status"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/conditions.go:CertificateRequestIsApproved",
+      "type": "function",
+      "name": "CertificateRequestIsApproved",
+      "filePath": "pkg/api/util/conditions.go",
+      "lineRange": [
+        369,
+        382
+      ],
+      "summary": "Reports whether a CertificateRequest has been approved.",
+      "tags": [
+        "conditions",
+        "certificaterequest",
+        "approval"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/conditions.go:CertificateRequestIsDenied",
+      "type": "function",
+      "name": "CertificateRequestIsDenied",
+      "filePath": "pkg/api/util/conditions.go",
+      "lineRange": [
+        386,
+        399
+      ],
+      "summary": "Reports whether a CertificateRequest has been denied.",
+      "tags": [
+        "conditions",
+        "certificaterequest",
+        "approval"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:internal/pem/decode.go",
+      "target": "function:internal/pem/decode.go:safeDecodeInternal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/pem/decode.go",
+      "target": "function:internal/pem/decode.go:SafeDecodePrivateKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/pem/decode.go",
+      "target": "function:internal/pem/decode.go:SafeDecodePrivateKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/pem/decode.go",
+      "target": "function:internal/pem/decode.go:SafeDecodeCSR",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/pem/decode.go",
+      "target": "function:internal/pem/decode.go:SafeDecodeCSR",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/pem/decode.go",
+      "target": "function:internal/pem/decode.go:SafeDecodeSingleCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/pem/decode.go",
+      "target": "function:internal/pem/decode.go:SafeDecodeSingleCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/pem/decode.go",
+      "target": "function:internal/pem/decode.go:SafeDecodeCertificateChain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/pem/decode.go",
+      "target": "function:internal/pem/decode.go:SafeDecodeCertificateChain",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/pem/decode.go",
+      "target": "function:internal/pem/decode.go:SafeDecodeCertificateBundle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/pem/decode.go",
+      "target": "function:internal/pem/decode.go:SafeDecodeCertificateBundle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "class:internal/vault/fake/vault.go:Vault",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "class:internal/vault/fake/vault.go:Vault",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "function:internal/vault/fake/vault.go:New",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "function:internal/vault/fake/vault.go:New",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "function:internal/vault/fake/vault.go:Sign",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "function:internal/vault/fake/vault.go:Sign",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "function:internal/vault/fake/vault.go:WithSign",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "function:internal/vault/fake/vault.go:WithSign",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "function:internal/vault/fake/vault.go:WithNew",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "function:internal/vault/fake/vault.go:WithNew",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "function:internal/vault/fake/vault.go:IsVaultInitializedAndUnsealed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/fake/vault.go",
+      "target": "function:internal/vault/fake/vault.go:IsVaultInitializedAndUnsealed",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/util/errors/errors.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/util/pki/asn1_util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/util/pki/basicconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/util/pki/certificatetemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/util/pki/csr.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/util/pki/generate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/util/pki/keyusage.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/util/pki/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/util/pki/match.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/util/pki/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/util/pki/parse.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/util/pki/parse_certificate_chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/util/pki/renewaltime.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/util/pki/sans.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/util/pki/subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "file:pkg/util/pki/temporarycertificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "class:internal/vault/vault.go:Interface",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "class:internal/vault/vault.go:Interface",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "class:internal/vault/vault.go:Client",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "class:internal/vault/vault.go:Client",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "class:internal/vault/vault.go:Vault",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "class:internal/vault/vault.go:Vault",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "function:internal/vault/vault.go:New",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "function:internal/vault/vault.go:New",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "function:internal/vault/vault.go:Sign",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "function:internal/vault/vault.go:Sign",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "function:internal/vault/vault.go:setToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "function:internal/vault/vault.go:newConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "function:internal/vault/vault.go:caBundle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "function:internal/vault/vault.go:clientCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "function:internal/vault/vault.go:tokenRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "function:internal/vault/vault.go:appRoleRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "function:internal/vault/vault.go:requestTokenWithAppRoleRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "function:internal/vault/vault.go:requestTokenWithClientCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "function:internal/vault/vault.go:requestTokenWithKubernetesAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "function:internal/vault/vault.go:extractCertificatesFromVaultCertificateSecret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "function:internal/vault/vault.go:IsVaultInitializedAndUnsealed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/vault/vault.go",
+      "target": "function:internal/vault/vault.go:IsVaultInitializedAndUnsealed",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/webhook/feature/features.go",
+      "target": "file:pkg/util/feature/feature_gate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/scheme.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:IssuerHasCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:IssuerHasCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:SetIssuerCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:SetIssuerCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:CertificateHasCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:CertificateHasCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:CertificateHasConditionWithObservedGeneration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:CertificateHasConditionWithObservedGeneration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:GetCertificateCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:GetCertificateCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:GetCertificateRequestCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:GetCertificateRequestCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:SetCertificateCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:SetCertificateCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:RemoveCertificateCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:RemoveCertificateCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:SetCertificateRequestCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:SetCertificateRequestCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:CertificateRequestHasCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:CertificateRequestHasCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:CertificateRequestReadyReason",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:CertificateRequestReadyReason",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:CertificateRequestInvalidRequestMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:CertificateRequestInvalidRequestMessage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:CertificateRequestHasInvalidRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:CertificateRequestHasInvalidRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:CertificateRequestIsApproved",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:CertificateRequestIsApproved",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:CertificateRequestIsDenied",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/api/util/conditions.go",
+      "target": "function:pkg/api/util/conditions.go:CertificateRequestIsDenied",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

@@ -1,0 +1,1354 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/acme/client/interfaces.go",
+      "type": "file",
+      "name": "interfaces.go",
+      "filePath": "pkg/acme/client/interfaces.go",
+      "summary": "Defines cert-manager's ACME client Interface covering RFC 8555 order, authorization, challenge, and account operations.",
+      "tags": [
+        "acme",
+        "interface",
+        "type-definition",
+        "api-contract"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/acme/client/interfaces.go:Interface",
+      "type": "class",
+      "name": "Interface",
+      "filePath": "pkg/acme/client/interfaces.go",
+      "lineRange": [
+        31,
+        59
+      ],
+      "summary": "ACME client contract used by controllers and middleware, implemented by the forked acme.Client and FakeACME.",
+      "tags": [
+        "acme",
+        "interface",
+        "api-contract"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/acme/client/middleware/logger.go",
+      "type": "file",
+      "name": "logger.go",
+      "filePath": "pkg/acme/client/middleware/logger.go",
+      "summary": "Logging middleware that decorates ACME client calls with trace logs and an operation label used as a Prometheus metric dimension.",
+      "tags": [
+        "middleware",
+        "logging",
+        "acme",
+        "observability"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/acme/client/middleware/logger.go:NewLogger",
+      "type": "function",
+      "name": "NewLogger",
+      "filePath": "pkg/acme/client/middleware/logger.go",
+      "lineRange": [
+        29,
+        34
+      ],
+      "summary": "Constructs a Logger middleware around the supplied ACME client.",
+      "tags": [
+        "middleware",
+        "factory",
+        "logging"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/acme/client/middleware/logger.go:Logger",
+      "type": "class",
+      "name": "Logger",
+      "filePath": "pkg/acme/client/middleware/logger.go",
+      "lineRange": [
+        39,
+        42
+      ],
+      "summary": "Wraps a client.Interface, logging each ACME operation and injecting an AcmeActionLabel into the request context.",
+      "tags": [
+        "middleware",
+        "logging",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/acme/util/util.go",
+      "type": "file",
+      "name": "util.go",
+      "filePath": "pkg/acme/util/util.go",
+      "summary": "Provides the ACME client retry backoff that retries badNonce (HTTP 400) responses with capped exponential backoff and jitter.",
+      "tags": [
+        "utility",
+        "retry",
+        "acme",
+        "backoff"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/acme/util/util.go:RetryBackoff",
+      "type": "function",
+      "name": "RetryBackoff",
+      "filePath": "pkg/acme/util/util.go",
+      "lineRange": [
+        33,
+        63
+      ],
+      "summary": "Returns a jittered exponential backoff for badNonce responses, giving up after six retries or when the response is not a 400.",
+      "tags": [
+        "retry",
+        "backoff",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/controller/acmechallenges/sync.go",
+      "type": "file",
+      "name": "sync.go",
+      "filePath": "pkg/controller/acmechallenges/sync.go",
+      "summary": "Core reconciliation logic for ACME Challenge resources: presents solvers, checks propagation, accepts challenges with the ACME server, and records final state.",
+      "tags": [
+        "controller",
+        "acme",
+        "reconciliation",
+        "challenge"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:pkg/controller/acmechallenges/sync.go:solver",
+      "type": "class",
+      "name": "solver",
+      "filePath": "pkg/controller/acmechallenges/sync.go",
+      "lineRange": [
+        52,
+        61
+      ],
+      "summary": "Interface for challenge solvers that present, self-check, and clean up HTTP-01 or DNS-01 challenge values.",
+      "tags": [
+        "acme",
+        "interface",
+        "solver"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmechallenges/sync.go:Sync",
+      "type": "function",
+      "name": "Sync",
+      "filePath": "pkg/controller/acmechallenges/sync.go",
+      "lineRange": [
+        65,
+        193
+      ],
+      "summary": "Main reconcile loop that manages challenge finalizers, selects a solver, presents and checks the challenge, accepts it, and updates status.",
+      "tags": [
+        "controller",
+        "reconciliation",
+        "acme"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/acmechallenges/sync.go:handleError",
+      "type": "function",
+      "name": "handleError",
+      "filePath": "pkg/controller/acmechallenges/sync.go",
+      "lineRange": [
+        198,
+        231
+      ],
+      "summary": "Maps ACME API errors to Errored or Expired challenge states and absorbs expected client errors.",
+      "tags": [
+        "error-handling",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/acmechallenges/sync.go:handleFinalizer",
+      "type": "function",
+      "name": "handleFinalizer",
+      "filePath": "pkg/controller/acmechallenges/sync.go",
+      "lineRange": [
+        235,
+        271
+      ],
+      "summary": "Runs solver cleanup when a Challenge is deleted, then removes the cert-manager finalizers.",
+      "tags": [
+        "finalizer",
+        "cleanup",
+        "solver"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/acmechallenges/sync.go:syncChallengeStatus",
+      "type": "function",
+      "name": "syncChallengeStatus",
+      "filePath": "pkg/controller/acmechallenges/sync.go",
+      "lineRange": [
+        276,
+        333
+      ],
+      "summary": "Fetches the parent authorization to read the challenge's current state and error detail, avoiding direct challenge POST-as-GET calls.",
+      "tags": [
+        "acme",
+        "status",
+        "authorization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/acmechallenges/sync.go:acceptChallenge",
+      "type": "function",
+      "name": "acceptChallenge",
+      "filePath": "pkg/controller/acmechallenges/sync.go",
+      "lineRange": [
+        340,
+        380
+      ],
+      "summary": "Accepts the challenge with the ACME server and waits for the authorization to reach a final state under a two-minute timeout.",
+      "tags": [
+        "acme",
+        "challenge",
+        "authorization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/acmechallenges/sync.go:handleAuthorizationError",
+      "type": "function",
+      "name": "handleAuthorizationError",
+      "filePath": "pkg/controller/acmechallenges/sync.go",
+      "lineRange": [
+        382,
+        401
+      ],
+      "summary": "Marks the challenge Invalid when authorization fails, emits a warning event, and swallows the domain validation failure.",
+      "tags": [
+        "error-handling",
+        "acme",
+        "events"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/acmeorders/sync.go",
+      "type": "file",
+      "name": "sync.go",
+      "filePath": "pkg/controller/acmeorders/sync.go",
+      "summary": "Reconciliation logic for ACME Order resources, driving order creation, authorization metadata, challenge lifecycle, finalization, and certificate storage.",
+      "tags": [
+        "controller",
+        "acme",
+        "reconciliation",
+        "order"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/sync.go:Sync",
+      "type": "function",
+      "name": "Sync",
+      "filePath": "pkg/controller/acmeorders/sync.go",
+      "lineRange": [
+        63,
+        260
+      ],
+      "summary": "Orchestrates the Order state machine: creates the ACME order, ensures challenges exist, finalizes when ready, and stores issued certificates.",
+      "tags": [
+        "controller",
+        "reconciliation",
+        "state-machine"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/sync.go:isRetryableError",
+      "type": "function",
+      "name": "isRetryableError",
+      "filePath": "pkg/controller/acmeorders/sync.go",
+      "lineRange": [
+        262,
+        278
+      ],
+      "summary": "Classifies ACME errors as retryable unless they relate to unsupported profiles or are 4xx responses.",
+      "tags": [
+        "error-handling",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/sync.go:createOrder",
+      "type": "function",
+      "name": "createOrder",
+      "filePath": "pkg/controller/acmeorders/sync.go",
+      "lineRange": [
+        280,
+        330
+      ],
+      "summary": "Submits a new order to the ACME server using DNS and IP identifiers plus optional duration and profile settings.",
+      "tags": [
+        "acme",
+        "order",
+        "creation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/sync.go:updateOrderStatusFromACMEOrder",
+      "type": "function",
+      "name": "updateOrderStatusFromACMEOrder",
+      "filePath": "pkg/controller/acmeorders/sync.go",
+      "lineRange": [
+        341,
+        361
+      ],
+      "summary": "Copies URL, finalize URL, state, and authorizations from the ACME order into the Order status.",
+      "tags": [
+        "status",
+        "acme",
+        "order"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/sync.go:fetchMetadataForAuthorizations",
+      "type": "function",
+      "name": "fetchMetadataForAuthorizations",
+      "filePath": "pkg/controller/acmeorders/sync.go",
+      "lineRange": [
+        397,
+        430
+      ],
+      "summary": "Fetches each authorization from the ACME server once to populate identifier, wildcard, challenge, and initial state metadata.",
+      "tags": [
+        "acme",
+        "authorization",
+        "metadata"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/sync.go:anyRequiredChallengesDoNotExist",
+      "type": "function",
+      "name": "anyRequiredChallengesDoNotExist",
+      "filePath": "pkg/controller/acmeorders/sync.go",
+      "lineRange": [
+        432,
+        443
+      ],
+      "summary": "Checks whether any challenge required by the order is missing from the cluster.",
+      "tags": [
+        "challenge",
+        "validation",
+        "cache"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/sync.go:createRequiredChallenges",
+      "type": "function",
+      "name": "createRequiredChallenges",
+      "filePath": "pkg/controller/acmeorders/sync.go",
+      "lineRange": [
+        445,
+        457
+      ],
+      "summary": "Creates missing Challenge resources in the API server and emits Created events.",
+      "tags": [
+        "challenge",
+        "kubernetes",
+        "creation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/sync.go:deleteLeftoverChallenges",
+      "type": "function",
+      "name": "deleteLeftoverChallenges",
+      "filePath": "pkg/controller/acmeorders/sync.go",
+      "lineRange": [
+        468,
+        481
+      ],
+      "summary": "Deletes Challenge resources that are no longer required by the order.",
+      "tags": [
+        "challenge",
+        "cleanup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/sync.go:deleteAllChallenges",
+      "type": "function",
+      "name": "deleteAllChallenges",
+      "filePath": "pkg/controller/acmeorders/sync.go",
+      "lineRange": [
+        483,
+        496
+      ],
+      "summary": "Removes every Challenge resource owned by the order when it reaches a terminal state.",
+      "tags": [
+        "challenge",
+        "cleanup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/sync.go:determineLeftoverChallenges",
+      "type": "function",
+      "name": "determineLeftoverChallenges",
+      "filePath": "pkg/controller/acmeorders/sync.go",
+      "lineRange": [
+        498,
+        518
+      ],
+      "summary": "Computes the set of owned challenges that are not part of the required challenge list.",
+      "tags": [
+        "challenge",
+        "set-operations"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/sync.go:listOwnedChallenges",
+      "type": "function",
+      "name": "listOwnedChallenges",
+      "filePath": "pkg/controller/acmeorders/sync.go",
+      "lineRange": [
+        520,
+        535
+      ],
+      "summary": "Lists Challenge resources owned by the Order using label selectors.",
+      "tags": [
+        "challenge",
+        "kubernetes",
+        "lookup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/sync.go:finalizeOrder",
+      "type": "function",
+      "name": "finalizeOrder",
+      "filePath": "pkg/controller/acmeorders/sync.go",
+      "lineRange": [
+        537,
+        632
+      ],
+      "summary": "Finalizes the ACME order with the CSR (accepting legacy DER input) and stores the returned certificate and URL.",
+      "tags": [
+        "acme",
+        "order",
+        "certificate",
+        "finalize"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/sync.go:storeCertificateOnStatus",
+      "type": "function",
+      "name": "storeCertificateOnStatus",
+      "filePath": "pkg/controller/acmeorders/sync.go",
+      "lineRange": [
+        634,
+        652
+      ],
+      "summary": "Encodes the issued certificate chain and stores it on the Order status.",
+      "tags": [
+        "certificate",
+        "status"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/sync.go:syncCertificateData",
+      "type": "function",
+      "name": "syncCertificateData",
+      "filePath": "pkg/controller/acmeorders/sync.go",
+      "lineRange": [
+        656,
+        676
+      ],
+      "summary": "Retrieves the ACME order and, when valid, downloads and stores the certificate on the Order.",
+      "tags": [
+        "certificate",
+        "acme",
+        "status"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/sync.go:syncCertificateDataWithOrder",
+      "type": "function",
+      "name": "syncCertificateDataWithOrder",
+      "filePath": "pkg/controller/acmeorders/sync.go",
+      "lineRange": [
+        678,
+        714
+      ],
+      "summary": "Fetches the certificate bundle for a valid ACME order, honors a preferred chain, and persists it.",
+      "tags": [
+        "certificate",
+        "acme",
+        "chain"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/sync.go:getACMEOrder",
+      "type": "function",
+      "name": "getACMEOrder",
+      "filePath": "pkg/controller/acmeorders/sync.go",
+      "lineRange": [
+        717,
+        731
+      ],
+      "summary": "Fetches the latest ACME order state from the server using the stored order URL.",
+      "tags": [
+        "acme",
+        "order",
+        "lookup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/sync.go:getPreferredCertChain",
+      "type": "function",
+      "name": "getPreferredCertChain",
+      "filePath": "pkg/controller/acmeorders/sync.go",
+      "lineRange": [
+        733,
+        802
+      ],
+      "summary": "Selects the certificate chain matching the preferred issuer chain, falling back to alternates when needed.",
+      "tags": [
+        "certificate",
+        "chain",
+        "selection"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/sync.go:updateOrApplyStatus",
+      "type": "function",
+      "name": "updateOrApplyStatus",
+      "filePath": "pkg/controller/acmeorders/sync.go",
+      "lineRange": [
+        807,
+        817
+      ],
+      "summary": "Applies status changes to the Order through the API or status applier.",
+      "tags": [
+        "status",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/acme/client/interfaces.go",
+      "target": "class:pkg/acme/client/interfaces.go:Interface",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/client/interfaces.go",
+      "target": "class:pkg/acme/client/interfaces.go:Interface",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/client/interfaces.go",
+      "target": "file:pkg/acme/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/interfaces.go",
+      "target": "file:third_party/forked/acme/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/interfaces.go",
+      "target": "file:third_party/forked/acme/http.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/interfaces.go",
+      "target": "file:third_party/forked/acme/jws.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/interfaces.go",
+      "target": "file:third_party/forked/acme/rfc8555.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/interfaces.go",
+      "target": "file:third_party/forked/acme/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/middleware/logger.go",
+      "target": "function:pkg/acme/client/middleware/logger.go:NewLogger",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/client/middleware/logger.go",
+      "target": "function:pkg/acme/client/middleware/logger.go:NewLogger",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/client/middleware/logger.go",
+      "target": "class:pkg/acme/client/middleware/logger.go:Logger",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/client/middleware/logger.go",
+      "target": "class:pkg/acme/client/middleware/logger.go:Logger",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/client/middleware/logger.go",
+      "target": "file:pkg/acme/client/fake.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/middleware/logger.go",
+      "target": "file:pkg/acme/client/http.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/middleware/logger.go",
+      "target": "file:pkg/acme/client/interfaces.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/middleware/logger.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/middleware/logger.go",
+      "target": "file:third_party/forked/acme/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/middleware/logger.go",
+      "target": "file:third_party/forked/acme/http.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/middleware/logger.go",
+      "target": "file:third_party/forked/acme/jws.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/middleware/logger.go",
+      "target": "file:third_party/forked/acme/rfc8555.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/client/middleware/logger.go",
+      "target": "file:third_party/forked/acme/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "class:pkg/acme/client/middleware/logger.go:Logger",
+      "target": "class:pkg/acme/client/interfaces.go:Interface",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:pkg/acme/util/util.go",
+      "target": "function:pkg/acme/util/util.go:RetryBackoff",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/util/util.go",
+      "target": "function:pkg/acme/util/util.go:RetryBackoff",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "class:pkg/controller/acmechallenges/sync.go:solver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "function:pkg/controller/acmechallenges/sync.go:Sync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "function:pkg/controller/acmechallenges/sync.go:Sync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "function:pkg/controller/acmechallenges/sync.go:handleError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "function:pkg/controller/acmechallenges/sync.go:handleFinalizer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "function:pkg/controller/acmechallenges/sync.go:syncChallengeStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "function:pkg/controller/acmechallenges/sync.go:acceptChallenge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "function:pkg/controller/acmechallenges/sync.go:handleAuthorizationError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/acme/client/fake.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/acme/client/http.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/acme/client/interfaces.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/acme/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:third_party/forked/acme/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:third_party/forked/acme/http.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:third_party/forked/acme/jws.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:third_party/forked/acme/rfc8555.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/sync.go",
+      "target": "file:third_party/forked/acme/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/controller/acmechallenges/sync.go:Sync",
+      "target": "function:pkg/acme/util.go:IsFinalState",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "function:pkg/controller/acmeorders/sync.go:Sync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "function:pkg/controller/acmeorders/sync.go:Sync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "function:pkg/controller/acmeorders/sync.go:isRetryableError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "function:pkg/controller/acmeorders/sync.go:createOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "function:pkg/controller/acmeorders/sync.go:updateOrderStatusFromACMEOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "function:pkg/controller/acmeorders/sync.go:fetchMetadataForAuthorizations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "function:pkg/controller/acmeorders/sync.go:anyRequiredChallengesDoNotExist",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "function:pkg/controller/acmeorders/sync.go:createRequiredChallenges",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "function:pkg/controller/acmeorders/sync.go:deleteLeftoverChallenges",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "function:pkg/controller/acmeorders/sync.go:deleteAllChallenges",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "function:pkg/controller/acmeorders/sync.go:determineLeftoverChallenges",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "function:pkg/controller/acmeorders/sync.go:listOwnedChallenges",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "function:pkg/controller/acmeorders/sync.go:finalizeOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "function:pkg/controller/acmeorders/sync.go:storeCertificateOnStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "function:pkg/controller/acmeorders/sync.go:syncCertificateData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "function:pkg/controller/acmeorders/sync.go:syncCertificateDataWithOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "function:pkg/controller/acmeorders/sync.go:getACMEOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "function:pkg/controller/acmeorders/sync.go:getPreferredCertChain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "function:pkg/controller/acmeorders/sync.go:updateOrApplyStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:internal/controller/feature/features.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:internal/controller/orders/apply.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:internal/pem/decode.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/acme/client/fake.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/acme/client/http.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/acme/client/interfaces.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/acme/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:pkg/util/feature/feature_gate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:third_party/forked/acme/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:third_party/forked/acme/http.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:third_party/forked/acme/jws.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:third_party/forked/acme/rfc8555.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/sync.go",
+      "target": "file:third_party/forked/acme/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/controller/acmeorders/sync.go:Sync",
+      "target": "function:pkg/acme/util.go:IsFailureState",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/acmeorders/sync.go:createOrder",
+      "target": "function:third_party/forked/acme/types.go:DomainIDs",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/acmeorders/sync.go:createOrder",
+      "target": "function:third_party/forked/acme/types.go:IPIDs",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

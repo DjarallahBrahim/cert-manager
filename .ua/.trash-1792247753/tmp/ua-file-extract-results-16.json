@@ -1,0 +1,3827 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 29,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 29,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 29,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "internal/apis/meta/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/meta/install/install.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "Install",
+          "startLine": 30,
+          "endLine": 33,
+          "params": [
+            "scheme"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Install",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Install",
+          "callee": "utilruntime.Must",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Install",
+          "callee": "meta.AddToScheme",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Install",
+          "callee": "utilruntime.Must",
+          "lineNumber": 32
+        },
+        {
+          "caller": "Install",
+          "callee": "cmmeta.AddToScheme",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/meta/register.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "Resource",
+          "startLine": 35,
+          "endLine": 37,
+          "params": [
+            "resource"
+          ]
+        },
+        {
+          "name": "addKnownTypes",
+          "startLine": 40,
+          "endLine": 43,
+          "params": [
+            "scheme"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Resource",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource(resource).GroupResource",
+          "lineNumber": 36
+        },
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/meta/types.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 65,
+      "classes": [
+        {
+          "name": "LocalObjectReference",
+          "startLine": 44,
+          "endLine": 48,
+          "methods": [],
+          "properties": [
+            "Name"
+          ]
+        },
+        {
+          "name": "IssuerReference",
+          "startLine": 51,
+          "endLine": 58,
+          "methods": [],
+          "properties": [
+            "Name",
+            "Kind",
+            "Group"
+          ]
+        },
+        {
+          "name": "SecretKeySelector",
+          "startLine": 66,
+          "endLine": 74,
+          "methods": [],
+          "properties": [
+            "Key"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LocalObjectReference",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "IssuerReference",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "SecretKeySelector",
+          "line": 66,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "internal/apis/meta/v1/conversion.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "Convert_meta_LocalObjectReference_To_v1_LocalObjectReference",
+          "startLine": 28,
+          "endLine": 30,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_v1_LocalObjectReference_To_meta_LocalObjectReference",
+          "startLine": 34,
+          "endLine": 36,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_meta_IssuerReference_To_v1_IssuerReference",
+          "startLine": 40,
+          "endLine": 42,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_v1_IssuerReference_To_meta_IssuerReference",
+          "startLine": 46,
+          "endLine": 48,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_meta_SecretKeySelector_To_v1_SecretKeySelector",
+          "startLine": 52,
+          "endLine": 54,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "Convert_v1_SecretKeySelector_To_meta_SecretKeySelector",
+          "startLine": 58,
+          "endLine": 60,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Convert_meta_LocalObjectReference_To_v1_LocalObjectReference",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_v1_LocalObjectReference_To_meta_LocalObjectReference",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_meta_IssuerReference_To_v1_IssuerReference",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_v1_IssuerReference_To_meta_IssuerReference",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_meta_SecretKeySelector_To_v1_SecretKeySelector",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "Convert_v1_SecretKeySelector_To_meta_SecretKeySelector",
+          "line": 58,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Convert_meta_LocalObjectReference_To_v1_LocalObjectReference",
+          "callee": "autoConvert_meta_LocalObjectReference_To_v1_LocalObjectReference",
+          "lineNumber": 29
+        },
+        {
+          "caller": "Convert_v1_LocalObjectReference_To_meta_LocalObjectReference",
+          "callee": "autoConvert_v1_LocalObjectReference_To_meta_LocalObjectReference",
+          "lineNumber": 35
+        },
+        {
+          "caller": "Convert_meta_IssuerReference_To_v1_IssuerReference",
+          "callee": "autoConvert_meta_IssuerReference_To_v1_IssuerReference",
+          "lineNumber": 41
+        },
+        {
+          "caller": "Convert_v1_IssuerReference_To_meta_IssuerReference",
+          "callee": "autoConvert_v1_IssuerReference_To_meta_IssuerReference",
+          "lineNumber": 47
+        },
+        {
+          "caller": "Convert_meta_SecretKeySelector_To_v1_SecretKeySelector",
+          "callee": "autoConvert_meta_SecretKeySelector_To_v1_SecretKeySelector",
+          "lineNumber": 53
+        },
+        {
+          "caller": "Convert_v1_SecretKeySelector_To_meta_SecretKeySelector",
+          "callee": "autoConvert_v1_SecretKeySelector_To_meta_SecretKeySelector",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/meta/v1/defaults.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "addDefaultingFuncs",
+          "startLine": 23,
+          "endLine": 25,
+          "params": [
+            "scheme"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "addDefaultingFuncs",
+          "callee": "RegisterDefaults",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/meta/v1/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 18,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/meta/v1/register.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "Resource",
+          "startLine": 30,
+          "endLine": 32,
+          "params": [
+            "resource"
+          ]
+        },
+        {
+          "name": "init",
+          "startLine": 39,
+          "endLine": 44,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Resource",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource(resource).GroupResource",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource",
+          "lineNumber": 31
+        },
+        {
+          "caller": "init",
+          "callee": "localSchemeBuilder.Register",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/meta/v1/zz_generated.conversion.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 109,
+      "nonEmptyLines": 94,
+      "functions": [
+        {
+          "name": "init",
+          "startLine": 31,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "RegisterConversions",
+          "startLine": 37,
+          "endLine": 69,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_v1_IssuerReference_To_meta_IssuerReference",
+          "startLine": 71,
+          "endLine": 76,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_meta_IssuerReference_To_v1_IssuerReference",
+          "startLine": 78,
+          "endLine": 83,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_v1_LocalObjectReference_To_meta_LocalObjectReference",
+          "startLine": 85,
+          "endLine": 88,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_meta_LocalObjectReference_To_v1_LocalObjectReference",
+          "startLine": 90,
+          "endLine": 93,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_v1_SecretKeySelector_To_meta_SecretKeySelector",
+          "startLine": 95,
+          "endLine": 101,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        },
+        {
+          "name": "autoConvert_meta_SecretKeySelector_To_v1_SecretKeySelector",
+          "startLine": 103,
+          "endLine": 109,
+          "params": [
+            "in",
+            "out",
+            "s"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RegisterConversions",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "init",
+          "callee": "localSchemeBuilder.Register",
+          "lineNumber": 32
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddConversionFunc",
+          "lineNumber": 38
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*meta.IssuerReference)",
+          "lineNumber": 38
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*metav1.IssuerReference)",
+          "lineNumber": 38
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_meta_IssuerReference_To_v1_IssuerReference",
+          "lineNumber": 39
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddConversionFunc",
+          "lineNumber": 43
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*meta.LocalObjectReference)",
+          "lineNumber": 43
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*metav1.LocalObjectReference)",
+          "lineNumber": 43
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_meta_LocalObjectReference_To_v1_LocalObjectReference",
+          "lineNumber": 44
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddConversionFunc",
+          "lineNumber": 48
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*meta.SecretKeySelector)",
+          "lineNumber": 48
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*metav1.SecretKeySelector)",
+          "lineNumber": 48
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_meta_SecretKeySelector_To_v1_SecretKeySelector",
+          "lineNumber": 49
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddConversionFunc",
+          "lineNumber": 53
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*metav1.IssuerReference)",
+          "lineNumber": 53
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*meta.IssuerReference)",
+          "lineNumber": 53
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_v1_IssuerReference_To_meta_IssuerReference",
+          "lineNumber": 54
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddConversionFunc",
+          "lineNumber": 58
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*metav1.LocalObjectReference)",
+          "lineNumber": 58
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*meta.LocalObjectReference)",
+          "lineNumber": 58
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_v1_LocalObjectReference_To_meta_LocalObjectReference",
+          "lineNumber": 59
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "s.AddConversionFunc",
+          "lineNumber": 63
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*metav1.SecretKeySelector)",
+          "lineNumber": 63
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "(*meta.SecretKeySelector)",
+          "lineNumber": 63
+        },
+        {
+          "caller": "RegisterConversions",
+          "callee": "Convert_v1_SecretKeySelector_To_meta_SecretKeySelector",
+          "lineNumber": 64
+        },
+        {
+          "caller": "autoConvert_v1_SecretKeySelector_To_meta_SecretKeySelector",
+          "callee": "Convert_v1_LocalObjectReference_To_meta_LocalObjectReference",
+          "lineNumber": 96
+        },
+        {
+          "caller": "autoConvert_meta_SecretKeySelector_To_v1_SecretKeySelector",
+          "callee": "Convert_meta_LocalObjectReference_To_v1_LocalObjectReference",
+          "lineNumber": 104
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/meta/v1/zz_generated.defaults.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "RegisterDefaults",
+          "startLine": 31,
+          "endLine": 33,
+          "params": [
+            "scheme"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RegisterDefaults",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/apis/meta/zz_generated.deepcopy.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "DeepCopyInto",
+          "startLine": 25,
+          "endLine": 28,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 31,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 41,
+          "endLine": 44,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 47,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 57,
+          "endLine": 61,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 64,
+          "endLine": 71,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeepCopyInto",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 64,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 35
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 36
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 51
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 52
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 68
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/kube/config.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "BuildClientConfig",
+          "startLine": 28,
+          "endLine": 33,
+          "params": [
+            "apiServerHost",
+            "kubeConfig"
+          ]
+        },
+        {
+          "name": "getKubeConfigGetter",
+          "startLine": 35,
+          "endLine": 51,
+          "params": [
+            "kubeConfig"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BuildClientConfig",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "BuildClientConfig",
+          "callee": "rest.InClusterConfig",
+          "lineNumber": 30
+        },
+        {
+          "caller": "BuildClientConfig",
+          "callee": "clientcmd.BuildConfigFromKubeconfigGetter",
+          "lineNumber": 32
+        },
+        {
+          "caller": "BuildClientConfig",
+          "callee": "getKubeConfigGetter",
+          "lineNumber": 32
+        },
+        {
+          "caller": "getKubeConfigGetter",
+          "callee": "len",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getKubeConfigGetter",
+          "callee": "clientcmdapi.NewConfig",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getKubeConfigGetter",
+          "callee": "clientcmd.LoadFromFile",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getKubeConfigGetter",
+          "callee": "os.IsNotExist",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getKubeConfigGetter",
+          "callee": "clientcmdapi.NewConfig",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getKubeConfigGetter",
+          "callee": "clientcmdapi.NewConfig",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getKubeConfigGetter",
+          "callee": "fmt.Errorf",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 275,
+      "nonEmptyLines": 230,
+      "functions": [
+        {
+          "name": "NewPlugin",
+          "startLine": 64,
+          "endLine": 72,
+          "params": [
+            "authz",
+            "discoveryClient"
+          ]
+        },
+        {
+          "name": "Validate",
+          "startLine": 74,
+          "endLine": 114,
+          "params": [
+            "ctx",
+            "request",
+            "oldObj",
+            "obj"
+          ]
+        },
+        {
+          "name": "approvalConditionsHaveChanged",
+          "startLine": 118,
+          "endLine": 124,
+          "params": [
+            "oldCR",
+            "cr"
+          ]
+        },
+        {
+          "name": "apiResourceForGroupKind",
+          "startLine": 131,
+          "endLine": 168,
+          "params": [
+            "groupKind"
+          ]
+        },
+        {
+          "name": "readAPIResourceFromCache",
+          "startLine": 170,
+          "endLine": 177,
+          "params": [
+            "groupKind"
+          ]
+        },
+        {
+          "name": "cacheAPIResource",
+          "startLine": 179,
+          "endLine": 194,
+          "params": [
+            "groupKind",
+            "resourceName",
+            "namespaced"
+          ]
+        },
+        {
+          "name": "signerNamesForAPIResource",
+          "startLine": 200,
+          "endLine": 212,
+          "params": [
+            "name",
+            "namespace",
+            "info"
+          ]
+        },
+        {
+          "name": "userInfoForRequest",
+          "startLine": 216,
+          "endLine": 227,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "isAuthorizedForSignerNames",
+          "startLine": 234,
+          "endLine": 249,
+          "params": [
+            "ctx",
+            "authz",
+            "info",
+            "signerNames"
+          ]
+        },
+        {
+          "name": "buildAttributes",
+          "startLine": 251,
+          "endLine": 261,
+          "params": [
+            "info",
+            "verb",
+            "signerName"
+          ]
+        },
+        {
+          "name": "ValidateInitialization",
+          "startLine": 263,
+          "endLine": 275,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "certificateRequestApproval",
+          "startLine": 45,
+          "endLine": 55,
+          "methods": [
+            "Validate",
+            "apiResourceForGroupKind",
+            "readAPIResourceFromCache",
+            "cacheAPIResource",
+            "ValidateInitialization"
+          ],
+          "properties": [
+            "authorizer",
+            "discovery",
+            "resourceInfo",
+            "mutex"
+          ]
+        },
+        {
+          "name": "resourceInfo",
+          "startLine": 57,
+          "endLine": 60,
+          "methods": [],
+          "properties": [
+            "Namespaced"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewPlugin",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "Validate",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "ValidateInitialization",
+          "line": 263,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewPlugin",
+          "callee": "admission.NewHandler",
+          "lineNumber": 66
+        },
+        {
+          "caller": "Validate",
+          "callee": "approvalConditionsHaveChanged",
+          "lineNumber": 82
+        },
+        {
+          "caller": "Validate",
+          "callee": "c.apiResourceForGroupKind",
+          "lineNumber": 98
+        },
+        {
+          "caller": "Validate",
+          "callee": "field.Forbidden",
+          "lineNumber": 101
+        },
+        {
+          "caller": "Validate",
+          "callee": "field.NewPath",
+          "lineNumber": 101
+        },
+        {
+          "caller": "Validate",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 102
+        },
+        {
+          "caller": "Validate",
+          "callee": "signerNamesForAPIResource",
+          "lineNumber": 107
+        },
+        {
+          "caller": "Validate",
+          "callee": "isAuthorizedForSignerNames",
+          "lineNumber": 108
+        },
+        {
+          "caller": "Validate",
+          "callee": "userInfoForRequest",
+          "lineNumber": 108
+        },
+        {
+          "caller": "Validate",
+          "callee": "field.Forbidden",
+          "lineNumber": 109
+        },
+        {
+          "caller": "Validate",
+          "callee": "field.NewPath",
+          "lineNumber": 109
+        },
+        {
+          "caller": "Validate",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 110
+        },
+        {
+          "caller": "approvalConditionsHaveChanged",
+          "callee": "util.GetCertificateRequestCondition",
+          "lineNumber": 119
+        },
+        {
+          "caller": "approvalConditionsHaveChanged",
+          "callee": "util.GetCertificateRequestCondition",
+          "lineNumber": 120
+        },
+        {
+          "caller": "approvalConditionsHaveChanged",
+          "callee": "util.GetCertificateRequestCondition",
+          "lineNumber": 121
+        },
+        {
+          "caller": "approvalConditionsHaveChanged",
+          "callee": "util.GetCertificateRequestCondition",
+          "lineNumber": 122
+        },
+        {
+          "caller": "apiResourceForGroupKind",
+          "callee": "c.readAPIResourceFromCache",
+          "lineNumber": 133
+        },
+        {
+          "caller": "apiResourceForGroupKind",
+          "callee": "c.discovery.ServerGroups",
+          "lineNumber": 141
+        },
+        {
+          "caller": "apiResourceForGroupKind",
+          "callee": "c.discovery.ServerResourcesForGroupVersion",
+          "lineNumber": 152
+        },
+        {
+          "caller": "apiResourceForGroupKind",
+          "callee": "c.cacheAPIResource",
+          "lineNumber": 162
+        },
+        {
+          "caller": "readAPIResourceFromCache",
+          "callee": "c.mutex.RLock",
+          "lineNumber": 171
+        },
+        {
+          "caller": "readAPIResourceFromCache",
+          "callee": "c.mutex.RUnlock",
+          "lineNumber": 172
+        },
+        {
+          "caller": "cacheAPIResource",
+          "callee": "c.mutex.Lock",
+          "lineNumber": 180
+        },
+        {
+          "caller": "cacheAPIResource",
+          "callee": "c.mutex.Unlock",
+          "lineNumber": 181
+        },
+        {
+          "caller": "signerNamesForAPIResource",
+          "callee": "make",
+          "lineNumber": 201
+        },
+        {
+          "caller": "signerNamesForAPIResource",
+          "callee": "append",
+          "lineNumber": 203
+        },
+        {
+          "caller": "signerNamesForAPIResource",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 203
+        },
+        {
+          "caller": "signerNamesForAPIResource",
+          "callee": "append",
+          "lineNumber": 206
+        },
+        {
+          "caller": "signerNamesForAPIResource",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 206
+        },
+        {
+          "caller": "signerNamesForAPIResource",
+          "callee": "append",
+          "lineNumber": 208
+        },
+        {
+          "caller": "signerNamesForAPIResource",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 208
+        },
+        {
+          "caller": "userInfoForRequest",
+          "callee": "make",
+          "lineNumber": 217
+        },
+        {
+          "caller": "isAuthorizedForSignerNames",
+          "callee": "buildAttributes",
+          "lineNumber": 238
+        },
+        {
+          "caller": "isAuthorizedForSignerNames",
+          "callee": "authz.Authorize",
+          "lineNumber": 239
+        },
+        {
+          "caller": "ValidateInitialization",
+          "callee": "fmt.Errorf",
+          "lineNumber": 265
+        },
+        {
+          "caller": "ValidateInitialization",
+          "callee": "fmt.Errorf",
+          "lineNumber": 268
+        },
+        {
+          "caller": "ValidateInitialization",
+          "callee": "c.discovery.ServerGroups",
+          "lineNumber": 270
+        }
+      ],
+      "metrics": {
+        "importCount": 16,
+        "exportCount": 3,
+        "functionCount": 11,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 165,
+      "nonEmptyLines": 139,
+      "functions": [
+        {
+          "name": "NewPlugin",
+          "startLine": 42,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "Mutate",
+          "startLine": 48,
+          "endLine": 81,
+          "params": [
+            "ctx",
+            "request",
+            "obj"
+          ]
+        },
+        {
+          "name": "Validate",
+          "startLine": 83,
+          "endLine": 108,
+          "params": [
+            "ctx",
+            "request",
+            "oldObj",
+            "obj"
+          ]
+        },
+        {
+          "name": "validateUpdate",
+          "startLine": 110,
+          "endLine": 127,
+          "params": [
+            "oldCR",
+            "cr"
+          ]
+        },
+        {
+          "name": "validateCreate",
+          "startLine": 129,
+          "endLine": 146,
+          "params": [
+            "request",
+            "cr"
+          ]
+        },
+        {
+          "name": "extrasMatch",
+          "startLine": 148,
+          "endLine": 165,
+          "params": [
+            "crExtra",
+            "reqExtra"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "certificateRequestIdentity",
+          "startLine": 35,
+          "endLine": 37,
+          "methods": [
+            "Mutate",
+            "Validate"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewPlugin",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "Mutate",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "Validate",
+          "line": 83,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewPlugin",
+          "callee": "admission.NewHandler",
+          "lineNumber": 44
+        },
+        {
+          "caller": "Mutate",
+          "callee": "unstructured.SetNestedField",
+          "lineNumber": 57
+        },
+        {
+          "caller": "Mutate",
+          "callee": "unstructured.SetNestedField",
+          "lineNumber": 58
+        },
+        {
+          "caller": "Mutate",
+          "callee": "unstructured.SetNestedStringSlice",
+          "lineNumber": 59
+        },
+        {
+          "caller": "Mutate",
+          "callee": "unstructured.RemoveNestedField",
+          "lineNumber": 68
+        },
+        {
+          "caller": "Mutate",
+          "callee": "len",
+          "lineNumber": 69
+        },
+        {
+          "caller": "Mutate",
+          "callee": "runtime.DefaultUnstructuredConverter.ToUnstructured",
+          "lineNumber": 70
+        },
+        {
+          "caller": "Mutate",
+          "callee": "unstructured.SetNestedMap",
+          "lineNumber": 75
+        },
+        {
+          "caller": "Validate",
+          "callee": "fmt.Errorf",
+          "lineNumber": 93
+        },
+        {
+          "caller": "Validate",
+          "callee": "validateCreate",
+          "lineNumber": 98
+        },
+        {
+          "caller": "Validate",
+          "callee": "fmt.Errorf",
+          "lineNumber": 102
+        },
+        {
+          "caller": "Validate",
+          "callee": "validateUpdate",
+          "lineNumber": 104
+        },
+        {
+          "caller": "Validate",
+          "callee": "fmt.Errorf",
+          "lineNumber": 106
+        },
+        {
+          "caller": "validateUpdate",
+          "callee": "field.NewPath",
+          "lineNumber": 111
+        },
+        {
+          "caller": "validateUpdate",
+          "callee": "append",
+          "lineNumber": 115
+        },
+        {
+          "caller": "validateUpdate",
+          "callee": "field.Forbidden",
+          "lineNumber": 115
+        },
+        {
+          "caller": "validateUpdate",
+          "callee": "fldPath.Child",
+          "lineNumber": 115
+        },
+        {
+          "caller": "validateUpdate",
+          "callee": "append",
+          "lineNumber": 118
+        },
+        {
+          "caller": "validateUpdate",
+          "callee": "field.Forbidden",
+          "lineNumber": 118
+        },
+        {
+          "caller": "validateUpdate",
+          "callee": "fldPath.Child",
+          "lineNumber": 118
+        },
+        {
+          "caller": "validateUpdate",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 120
+        },
+        {
+          "caller": "validateUpdate",
+          "callee": "append",
+          "lineNumber": 121
+        },
+        {
+          "caller": "validateUpdate",
+          "callee": "field.Forbidden",
+          "lineNumber": 121
+        },
+        {
+          "caller": "validateUpdate",
+          "callee": "fldPath.Child",
+          "lineNumber": 121
+        },
+        {
+          "caller": "validateUpdate",
+          "callee": "reflect.DeepEqual",
+          "lineNumber": 123
+        },
+        {
+          "caller": "validateUpdate",
+          "callee": "append",
+          "lineNumber": 124
+        },
+        {
+          "caller": "validateUpdate",
+          "callee": "field.Forbidden",
+          "lineNumber": 124
+        },
+        {
+          "caller": "validateUpdate",
+          "callee": "fldPath.Child",
+          "lineNumber": 124
+        },
+        {
+          "caller": "validateUpdate",
+          "callee": "el.ToAggregate",
+          "lineNumber": 126
+        },
+        {
+          "caller": "validateCreate",
+          "callee": "field.NewPath",
+          "lineNumber": 130
+        },
+        {
+          "caller": "validateCreate",
+          "callee": "append",
+          "lineNumber": 134
+        },
+        {
+          "caller": "validateCreate",
+          "callee": "field.Forbidden",
+          "lineNumber": 134
+        },
+        {
+          "caller": "validateCreate",
+          "callee": "fldPath.Child",
+          "lineNumber": 134
+        },
+        {
+          "caller": "validateCreate",
+          "callee": "append",
+          "lineNumber": 137
+        },
+        {
+          "caller": "validateCreate",
+          "callee": "field.Forbidden",
+          "lineNumber": 137
+        },
+        {
+          "caller": "validateCreate",
+          "callee": "fldPath.Child",
+          "lineNumber": 137
+        },
+        {
+          "caller": "validateCreate",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 139
+        },
+        {
+          "caller": "validateCreate",
+          "callee": "append",
+          "lineNumber": 140
+        },
+        {
+          "caller": "validateCreate",
+          "callee": "field.Forbidden",
+          "lineNumber": 140
+        },
+        {
+          "caller": "validateCreate",
+          "callee": "fldPath.Child",
+          "lineNumber": 140
+        },
+        {
+          "caller": "validateCreate",
+          "callee": "extrasMatch",
+          "lineNumber": 142
+        },
+        {
+          "caller": "validateCreate",
+          "callee": "append",
+          "lineNumber": 143
+        },
+        {
+          "caller": "validateCreate",
+          "callee": "field.Forbidden",
+          "lineNumber": 143
+        },
+        {
+          "caller": "validateCreate",
+          "callee": "fldPath.Child",
+          "lineNumber": 143
+        },
+        {
+          "caller": "validateCreate",
+          "callee": "el.ToAggregate",
+          "lineNumber": 145
+        },
+        {
+          "caller": "extrasMatch",
+          "callee": "len",
+          "lineNumber": 149
+        },
+        {
+          "caller": "extrasMatch",
+          "callee": "len",
+          "lineNumber": 149
+        },
+        {
+          "caller": "extrasMatch",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 159
+        }
+      ],
+      "metrics": {
+        "importCount": 17,
+        "exportCount": 3,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 104,
+      "nonEmptyLines": 85,
+      "functions": [
+        {
+          "name": "newValidationPair",
+          "startLine": 57,
+          "endLine": 59,
+          "params": [
+            "create",
+            "update"
+          ]
+        },
+        {
+          "name": "NewPlugin",
+          "startLine": 70,
+          "endLine": 74,
+          "params": []
+        },
+        {
+          "name": "Validate",
+          "startLine": 76,
+          "endLine": 104,
+          "params": [
+            "_",
+            "request",
+            "oldObj",
+            "obj"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "resourceValidation",
+          "startLine": 34,
+          "endLine": 38,
+          "methods": [
+            "Validate"
+          ],
+          "properties": [
+            "validationMappings"
+          ]
+        },
+        {
+          "name": "validationPair",
+          "startLine": 52,
+          "endLine": 55,
+          "methods": [],
+          "properties": [
+            "create",
+            "update"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewPlugin",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "Validate",
+          "line": 76,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewPlugin",
+          "callee": "admission.NewHandler",
+          "lineNumber": 72
+        },
+        {
+          "caller": "Validate",
+          "callee": "pair.create",
+          "lineNumber": 93
+        },
+        {
+          "caller": "Validate",
+          "callee": "errs.ToAggregate",
+          "lineNumber": 94
+        },
+        {
+          "caller": "Validate",
+          "callee": "pair.update",
+          "lineNumber": 99
+        },
+        {
+          "caller": "Validate",
+          "callee": "errs.ToAggregate",
+          "lineNumber": 100
+        }
+      ],
+      "metrics": {
+        "importCount": 30,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "internal/webhook/webhook.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 147,
+      "nonEmptyLines": 130,
+      "functions": [
+        {
+          "name": "NewCertManagerWebhookServer",
+          "startLine": 50,
+          "endLine": 93,
+          "params": [
+            "log",
+            "opts"
+          ]
+        },
+        {
+          "name": "buildAdmissionChain",
+          "startLine": 95,
+          "endLine": 120,
+          "params": [
+            "client"
+          ]
+        },
+        {
+          "name": "buildCertificateSource",
+          "startLine": 122,
+          "endLine": 147,
+          "params": [
+            "log",
+            "tlsConfig",
+            "restCfg"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewCertManagerWebhookServer",
+          "line": 50,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewCertManagerWebhookServer",
+          "callee": "crlog.SetLogger",
+          "lineNumber": 51
+        },
+        {
+          "caller": "NewCertManagerWebhookServer",
+          "callee": "kube.BuildClientConfig",
+          "lineNumber": 52
+        },
+        {
+          "caller": "NewCertManagerWebhookServer",
+          "callee": "kubernetes.NewForConfig",
+          "lineNumber": 57
+        },
+        {
+          "caller": "NewCertManagerWebhookServer",
+          "callee": "fmt.Errorf",
+          "lineNumber": 59
+        },
+        {
+          "caller": "NewCertManagerWebhookServer",
+          "callee": "buildAdmissionChain",
+          "lineNumber": 63
+        },
+        {
+          "caller": "NewCertManagerWebhookServer",
+          "callee": "runtime.NewScheme",
+          "lineNumber": 68
+        },
+        {
+          "caller": "NewCertManagerWebhookServer",
+          "callee": "cminstall.Install",
+          "lineNumber": 69
+        },
+        {
+          "caller": "NewCertManagerWebhookServer",
+          "callee": "acmeinstall.Install",
+          "lineNumber": 70
+        },
+        {
+          "caller": "NewCertManagerWebhookServer",
+          "callee": "metainstall.Install",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewCertManagerWebhookServer",
+          "callee": "int",
+          "lineNumber": 75
+        },
+        {
+          "caller": "NewCertManagerWebhookServer",
+          "callee": "ptr.To",
+          "lineNumber": 76
+        },
+        {
+          "caller": "NewCertManagerWebhookServer",
+          "callee": "int",
+          "lineNumber": 76
+        },
+        {
+          "caller": "NewCertManagerWebhookServer",
+          "callee": "buildCertificateSource",
+          "lineNumber": 79
+        },
+        {
+          "caller": "NewCertManagerWebhookServer",
+          "callee": "buildCertificateSource",
+          "lineNumber": 85
+        },
+        {
+          "caller": "NewCertManagerWebhookServer",
+          "callee": "fn",
+          "lineNumber": 90
+        },
+        {
+          "caller": "buildAdmissionChain",
+          "callee": "authorizerfactory.DelegatingAuthorizerConfig{\n\t\tSubjectAccessReviewClient: client.AuthorizationV1(),\n\t\t// cache responses for 1 second\n\t\tAllowCacheTTL: time.Second,\n\t\tDenyCacheTTL:  time.Second,\n\t\tWebhookRetryBackoff: &wait.Backoff{\n\t\t\tDuration: time.Second,\n\t\t\tFactor:   2,\n\t\t\tJitter:   0.2,\n\t\t\tSteps:    2,\n\t\t\tCap:      time.Second * 5,\n\t\t},\n\t}.New",
+          "lineNumber": 96
+        },
+        {
+          "caller": "buildAdmissionChain",
+          "callee": "client.AuthorizationV1",
+          "lineNumber": 97
+        },
+        {
+          "caller": "buildAdmissionChain",
+          "callee": "fmt.Errorf",
+          "lineNumber": 110
+        },
+        {
+          "caller": "buildAdmissionChain",
+          "callee": "admission.PluginChain",
+          "lineNumber": 113
+        },
+        {
+          "caller": "buildAdmissionChain",
+          "callee": "cridentity.NewPlugin",
+          "lineNumber": 114
+        },
+        {
+          "caller": "buildAdmissionChain",
+          "callee": "crapproval.NewPlugin",
+          "lineNumber": 115
+        },
+        {
+          "caller": "buildAdmissionChain",
+          "callee": "client.Discovery",
+          "lineNumber": 115
+        },
+        {
+          "caller": "buildAdmissionChain",
+          "callee": "resourcevalidation.NewPlugin",
+          "lineNumber": 116
+        },
+        {
+          "caller": "buildCertificateSource",
+          "callee": "tlsConfig.FilesystemConfigProvided",
+          "lineNumber": 124
+        },
+        {
+          "caller": "buildCertificateSource",
+          "callee": "log.V(logf.InfoLevel).Info",
+          "lineNumber": 125
+        },
+        {
+          "caller": "buildCertificateSource",
+          "callee": "log.V",
+          "lineNumber": 125
+        },
+        {
+          "caller": "buildCertificateSource",
+          "callee": "tlsConfig.DynamicConfigProvided",
+          "lineNumber": 131
+        },
+        {
+          "caller": "buildCertificateSource",
+          "callee": "log.V(logf.InfoLevel).Info",
+          "lineNumber": 132
+        },
+        {
+          "caller": "buildCertificateSource",
+          "callee": "log.V",
+          "lineNumber": 132
+        },
+        {
+          "caller": "buildCertificateSource",
+          "callee": "log.V(logf.WarnLevel).Info",
+          "lineNumber": 144
+        },
+        {
+          "caller": "buildCertificateSource",
+          "callee": "log.V",
+          "lineNumber": 144
+        }
+      ],
+      "metrics": {
+        "importCount": 27,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/meta/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/issuer/acme/dns/rfc2136/rfc2136.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 176,
+      "nonEmptyLines": 147,
+      "functions": [
+        {
+          "name": "WithNetwork",
+          "startLine": 58,
+          "endLine": 65,
+          "params": [
+            "network"
+          ]
+        },
+        {
+          "name": "NewDNSProviderCredentials",
+          "startLine": 71,
+          "endLine": 116,
+          "params": [
+            "nameserver",
+            "tsigAlgorithm",
+            "tsigKeyName",
+            "tsigSecret"
+          ]
+        },
+        {
+          "name": "Present",
+          "startLine": 119,
+          "endLine": 121,
+          "params": [
+            "_",
+            "fqdn",
+            "zone",
+            "value"
+          ]
+        },
+        {
+          "name": "CleanUp",
+          "startLine": 124,
+          "endLine": 126,
+          "params": [
+            "_",
+            "fqdn",
+            "zone",
+            "value"
+          ]
+        },
+        {
+          "name": "changeRecord",
+          "startLine": 128,
+          "endLine": 166,
+          "params": [
+            "action",
+            "fqdn",
+            "zone",
+            "value",
+            "ttl"
+          ]
+        },
+        {
+          "name": "Nameserver",
+          "startLine": 169,
+          "endLine": 171,
+          "params": []
+        },
+        {
+          "name": "TSIGAlgorithm",
+          "startLine": 174,
+          "endLine": 176,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "DNSProvider",
+          "startLine": 45,
+          "endLine": 51,
+          "methods": [
+            "Present",
+            "CleanUp",
+            "changeRecord",
+            "Nameserver",
+            "TSIGAlgorithm"
+          ],
+          "properties": [
+            "nameserver",
+            "tsigAlgorithm",
+            "network",
+            "tsigKeyName",
+            "tsigSecret"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DNSProvider",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "WithNetwork",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "NewDNSProviderCredentials",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "Present",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "CleanUp",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "Nameserver",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "TSIGAlgorithm",
+          "line": 174,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithNetwork",
+          "callee": "strings.ToLower",
+          "lineNumber": 63
+        },
+        {
+          "caller": "NewDNSProviderCredentials",
+          "callee": "logf.Log.V(logf.DebugLevel).Info",
+          "lineNumber": 72
+        },
+        {
+          "caller": "NewDNSProviderCredentials",
+          "callee": "logf.Log.V",
+          "lineNumber": 72
+        },
+        {
+          "caller": "NewDNSProviderCredentials",
+          "callee": "opt",
+          "lineNumber": 77
+        },
+        {
+          "caller": "NewDNSProviderCredentials",
+          "callee": "util.ValidNameserver",
+          "lineNumber": 80
+        },
+        {
+          "caller": "NewDNSProviderCredentials",
+          "callee": "len",
+          "lineNumber": 86
+        },
+        {
+          "caller": "NewDNSProviderCredentials",
+          "callee": "len",
+          "lineNumber": 86
+        },
+        {
+          "caller": "NewDNSProviderCredentials",
+          "callee": "strings.ToUpper",
+          "lineNumber": 94
+        },
+        {
+          "caller": "NewDNSProviderCredentials",
+          "callee": "fmt.Errorf",
+          "lineNumber": 97
+        },
+        {
+          "caller": "NewDNSProviderCredentials",
+          "callee": "len",
+          "lineNumber": 102
+        },
+        {
+          "caller": "NewDNSProviderCredentials",
+          "callee": "make",
+          "lineNumber": 103
+        },
+        {
+          "caller": "NewDNSProviderCredentials",
+          "callee": "string",
+          "lineNumber": 107
+        },
+        {
+          "caller": "NewDNSProviderCredentials",
+          "callee": "logf.Log.V(logf.DebugLevel).Info",
+          "lineNumber": 108
+        },
+        {
+          "caller": "NewDNSProviderCredentials",
+          "callee": "logf.Log.V",
+          "lineNumber": 108
+        },
+        {
+          "caller": "Present",
+          "callee": "r.changeRecord",
+          "lineNumber": 120
+        },
+        {
+          "caller": "CleanUp",
+          "callee": "r.changeRecord",
+          "lineNumber": 125
+        },
+        {
+          "caller": "changeRecord",
+          "callee": "new",
+          "lineNumber": 130
+        },
+        {
+          "caller": "changeRecord",
+          "callee": "new",
+          "lineNumber": 136
+        },
+        {
+          "caller": "changeRecord",
+          "callee": "m.SetUpdate",
+          "lineNumber": 137
+        },
+        {
+          "caller": "changeRecord",
+          "callee": "m.Insert",
+          "lineNumber": 140
+        },
+        {
+          "caller": "changeRecord",
+          "callee": "m.Remove",
+          "lineNumber": 142
+        },
+        {
+          "caller": "changeRecord",
+          "callee": "fmt.Errorf",
+          "lineNumber": 144
+        },
+        {
+          "caller": "changeRecord",
+          "callee": "tsigHMACProvider",
+          "lineNumber": 149
+        },
+        {
+          "caller": "changeRecord",
+          "callee": "len",
+          "lineNumber": 151
+        },
+        {
+          "caller": "changeRecord",
+          "callee": "len",
+          "lineNumber": 151
+        },
+        {
+          "caller": "changeRecord",
+          "callee": "m.SetTsig",
+          "lineNumber": 152
+        },
+        {
+          "caller": "changeRecord",
+          "callee": "dns.Fqdn",
+          "lineNumber": 152
+        },
+        {
+          "caller": "changeRecord",
+          "callee": "time.Now().Unix",
+          "lineNumber": 152
+        },
+        {
+          "caller": "changeRecord",
+          "callee": "time.Now",
+          "lineNumber": 152
+        },
+        {
+          "caller": "changeRecord",
+          "callee": "dns.Fqdn",
+          "lineNumber": 153
+        },
+        {
+          "caller": "changeRecord",
+          "callee": "c.Exchange",
+          "lineNumber": 157
+        },
+        {
+          "caller": "changeRecord",
+          "callee": "fmt.Errorf",
+          "lineNumber": 159
+        },
+        {
+          "caller": "changeRecord",
+          "callee": "fmt.Errorf",
+          "lineNumber": 162
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/server/listener.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 91,
+      "functions": [
+        {
+          "name": "Listen",
+          "startLine": 42,
+          "endLine": 65,
+          "params": [
+            "ctx",
+            "network",
+            "addr"
+          ]
+        },
+        {
+          "name": "WithCertificateSource",
+          "startLine": 69,
+          "endLine": 77,
+          "params": [
+            "certificateSource"
+          ]
+        },
+        {
+          "name": "WithTLSCipherSuites",
+          "startLine": 81,
+          "endLine": 94,
+          "params": [
+            "suites"
+          ]
+        },
+        {
+          "name": "WithTLSMinVersion",
+          "startLine": 98,
+          "endLine": 111,
+          "params": [
+            "version"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ListenerConfig",
+          "startLine": 31,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "TLSEnabled",
+            "TLSConfig"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ListenerConfig",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "Listen",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "WithCertificateSource",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "WithTLSCipherSuites",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "WithTLSMinVersion",
+          "line": 98,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Listen",
+          "callee": "lc.Listen",
+          "lineNumber": 45
+        },
+        {
+          "caller": "Listen",
+          "callee": "option",
+          "lineNumber": 53
+        },
+        {
+          "caller": "Listen",
+          "callee": "tls.NewListener",
+          "lineNumber": 61
+        },
+        {
+          "caller": "WithTLSCipherSuites",
+          "callee": "len",
+          "lineNumber": 83
+        },
+        {
+          "caller": "WithTLSCipherSuites",
+          "callee": "ciphers.TLSCipherSuites",
+          "lineNumber": 84
+        },
+        {
+          "caller": "WithTLSMinVersion",
+          "callee": "len",
+          "lineNumber": 100
+        },
+        {
+          "caller": "WithTLSMinVersion",
+          "callee": "ciphers.TLSVersion",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/server/tls/file_source.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 152,
+      "nonEmptyLines": 125,
+      "functions": [
+        {
+          "name": "Start",
+          "startLine": 69,
+          "endLine": 106,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "GetCertificate",
+          "startLine": 108,
+          "endLine": 115,
+          "params": []
+        },
+        {
+          "name": "Healthy",
+          "startLine": 117,
+          "endLine": 119,
+          "params": []
+        },
+        {
+          "name": "updateCertificateFromDisk",
+          "startLine": 123,
+          "endLine": 152,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "FileCertificateSource",
+          "startLine": 35,
+          "endLine": 62,
+          "methods": [
+            "Start",
+            "GetCertificate",
+            "Healthy",
+            "updateCertificateFromDisk"
+          ],
+          "properties": [
+            "CertPath",
+            "KeyPath",
+            "UpdateInterval",
+            "MaxFailures",
+            "log",
+            "cachedCertificate",
+            "cachedCertBytes",
+            "cachedKeyBytes",
+            "lock"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FileCertificateSource",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "Start",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "GetCertificate",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "Healthy",
+          "line": 117,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Start",
+          "callee": "logf.FromContext",
+          "lineNumber": 70
+        },
+        {
+          "caller": "Start",
+          "callee": "f.updateCertificateFromDisk",
+          "lineNumber": 83
+        },
+        {
+          "caller": "Start",
+          "callee": "f.log.Error",
+          "lineNumber": 84
+        },
+        {
+          "caller": "Start",
+          "callee": "time.NewTicker",
+          "lineNumber": 88
+        },
+        {
+          "caller": "Start",
+          "callee": "ticker.Stop",
+          "lineNumber": 89
+        },
+        {
+          "caller": "Start",
+          "callee": "ctx.Done",
+          "lineNumber": 92
+        },
+        {
+          "caller": "Start",
+          "callee": "f.updateCertificateFromDisk",
+          "lineNumber": 95
+        },
+        {
+          "caller": "Start",
+          "callee": "f.log.Error",
+          "lineNumber": 97
+        },
+        {
+          "caller": "Start",
+          "callee": "fmt.Errorf",
+          "lineNumber": 99
+        },
+        {
+          "caller": "Start",
+          "callee": "f.log.V(logf.DebugLevel).Info",
+          "lineNumber": 103
+        },
+        {
+          "caller": "Start",
+          "callee": "f.log.V",
+          "lineNumber": 103
+        },
+        {
+          "caller": "GetCertificate",
+          "callee": "f.lock.Lock",
+          "lineNumber": 109
+        },
+        {
+          "caller": "GetCertificate",
+          "callee": "f.lock.Unlock",
+          "lineNumber": 110
+        },
+        {
+          "caller": "updateCertificateFromDisk",
+          "callee": "os.ReadFile",
+          "lineNumber": 124
+        },
+        {
+          "caller": "updateCertificateFromDisk",
+          "callee": "fmt.Errorf",
+          "lineNumber": 126
+        },
+        {
+          "caller": "updateCertificateFromDisk",
+          "callee": "os.ReadFile",
+          "lineNumber": 129
+        },
+        {
+          "caller": "updateCertificateFromDisk",
+          "callee": "fmt.Errorf",
+          "lineNumber": 131
+        },
+        {
+          "caller": "updateCertificateFromDisk",
+          "callee": "f.lock.Lock",
+          "lineNumber": 134
+        },
+        {
+          "caller": "updateCertificateFromDisk",
+          "callee": "f.lock.Unlock",
+          "lineNumber": 135
+        },
+        {
+          "caller": "updateCertificateFromDisk",
+          "callee": "bytes.Equal",
+          "lineNumber": 136
+        },
+        {
+          "caller": "updateCertificateFromDisk",
+          "callee": "bytes.Equal",
+          "lineNumber": 136
+        },
+        {
+          "caller": "updateCertificateFromDisk",
+          "callee": "f.log.V(logf.DebugLevel).Info",
+          "lineNumber": 137
+        },
+        {
+          "caller": "updateCertificateFromDisk",
+          "callee": "f.log.V",
+          "lineNumber": 137
+        },
+        {
+          "caller": "updateCertificateFromDisk",
+          "callee": "f.log.V(logf.InfoLevel).Info",
+          "lineNumber": 140
+        },
+        {
+          "caller": "updateCertificateFromDisk",
+          "callee": "f.log.V",
+          "lineNumber": 140
+        },
+        {
+          "caller": "updateCertificateFromDisk",
+          "callee": "tls.X509KeyPair",
+          "lineNumber": 142
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/server/tls/source.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 40,
+      "classes": [
+        {
+          "name": "CertificateSource",
+          "startLine": 29,
+          "endLine": 49,
+          "methods": [
+            "GetCertificate",
+            "Start",
+            "Healthy"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateSource",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/util/profiling/profiling.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "Install",
+          "startLine": 25,
+          "endLine": 31,
+          "params": [
+            "mux"
+          ]
+        },
+        {
+          "name": "redirectTo",
+          "startLine": 34,
+          "endLine": 38,
+          "params": [
+            "to"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Install",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Install",
+          "callee": "mux.HandleFunc",
+          "lineNumber": 26
+        },
+        {
+          "caller": "Install",
+          "callee": "redirectTo",
+          "lineNumber": 26
+        },
+        {
+          "caller": "Install",
+          "callee": "mux.HandleFunc",
+          "lineNumber": 27
+        },
+        {
+          "caller": "Install",
+          "callee": "mux.HandleFunc",
+          "lineNumber": 28
+        },
+        {
+          "caller": "Install",
+          "callee": "mux.HandleFunc",
+          "lineNumber": 29
+        },
+        {
+          "caller": "Install",
+          "callee": "mux.HandleFunc",
+          "lineNumber": 30
+        },
+        {
+          "caller": "redirectTo",
+          "callee": "http.Redirect",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/webhook/admission/chain.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "Handles",
+          "startLine": 34,
+          "endLine": 41,
+          "params": [
+            "operation"
+          ]
+        },
+        {
+          "name": "Validate",
+          "startLine": 43,
+          "endLine": 57,
+          "params": [
+            "ctx",
+            "request",
+            "oldObj",
+            "obj"
+          ]
+        },
+        {
+          "name": "Mutate",
+          "startLine": 59,
+          "endLine": 71,
+          "params": [
+            "ctx",
+            "request",
+            "obj"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Handles",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "Validate",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "Mutate",
+          "line": 59,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Handles",
+          "callee": "plugin.Handles",
+          "lineNumber": 36
+        },
+        {
+          "caller": "Validate",
+          "callee": "handler.Handles",
+          "lineNumber": 47
+        },
+        {
+          "caller": "Validate",
+          "callee": "validator.Validate",
+          "lineNumber": 51
+        },
+        {
+          "caller": "Validate",
+          "callee": "append",
+          "lineNumber": 52
+        },
+        {
+          "caller": "Validate",
+          "callee": "append",
+          "lineNumber": 53
+        },
+        {
+          "caller": "Validate",
+          "callee": "utilerrors.NewAggregate",
+          "lineNumber": 56
+        },
+        {
+          "caller": "Mutate",
+          "callee": "handler.Handles",
+          "lineNumber": 61
+        },
+        {
+          "caller": "Mutate",
+          "callee": "mutator.Mutate",
+          "lineNumber": 65
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/webhook/admission/custom_decoder.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 57,
+      "functions": [
+        {
+          "name": "DecodeRaw",
+          "startLine": 38,
+          "endLine": 53,
+          "params": [
+            "rawObj",
+            "rawKind"
+          ]
+        },
+        {
+          "name": "DecodeRawUnstructured",
+          "startLine": 56,
+          "endLine": 70,
+          "params": [
+            "rawObj",
+            "rawKind"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "internalDecoder",
+          "startLine": 31,
+          "endLine": 34,
+          "methods": [
+            "DecodeRaw"
+          ],
+          "properties": [
+            "scheme",
+            "codecs"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DecodeRaw",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "DecodeRawUnstructured",
+          "line": 56,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DecodeRaw",
+          "callee": "len",
+          "lineNumber": 40
+        },
+        {
+          "caller": "DecodeRaw",
+          "callee": "fmt.Errorf",
+          "lineNumber": 41
+        },
+        {
+          "caller": "DecodeRaw",
+          "callee": "d.codecs.UniversalDeserializer().Decode",
+          "lineNumber": 44
+        },
+        {
+          "caller": "DecodeRaw",
+          "callee": "d.codecs.UniversalDeserializer",
+          "lineNumber": 44
+        },
+        {
+          "caller": "DecodeRaw",
+          "callee": "ptr.To",
+          "lineNumber": 44
+        },
+        {
+          "caller": "DecodeRaw",
+          "callee": "obj.GetObjectKind().GroupVersionKind().Empty",
+          "lineNumber": 48
+        },
+        {
+          "caller": "DecodeRaw",
+          "callee": "obj.GetObjectKind().GroupVersionKind",
+          "lineNumber": 48
+        },
+        {
+          "caller": "DecodeRaw",
+          "callee": "obj.GetObjectKind",
+          "lineNumber": 48
+        },
+        {
+          "caller": "DecodeRaw",
+          "callee": "obj.GetObjectKind().SetGroupVersionKind",
+          "lineNumber": 49
+        },
+        {
+          "caller": "DecodeRaw",
+          "callee": "obj.GetObjectKind",
+          "lineNumber": 49
+        },
+        {
+          "caller": "DecodeRaw",
+          "callee": "d.scheme.UnsafeConvertToVersion",
+          "lineNumber": 52
+        },
+        {
+          "caller": "DecodeRawUnstructured",
+          "callee": "len",
+          "lineNumber": 57
+        },
+        {
+          "caller": "DecodeRawUnstructured",
+          "callee": "fmt.Errorf",
+          "lineNumber": 58
+        },
+        {
+          "caller": "DecodeRawUnstructured",
+          "callee": "obj.UnmarshalJSON",
+          "lineNumber": 62
+        },
+        {
+          "caller": "DecodeRawUnstructured",
+          "callee": "obj.GetObjectKind().GroupVersionKind().Empty",
+          "lineNumber": 65
+        },
+        {
+          "caller": "DecodeRawUnstructured",
+          "callee": "obj.GetObjectKind().GroupVersionKind",
+          "lineNumber": 65
+        },
+        {
+          "caller": "DecodeRawUnstructured",
+          "callee": "obj.GetObjectKind",
+          "lineNumber": 65
+        },
+        {
+          "caller": "DecodeRawUnstructured",
+          "callee": "obj.GetObjectKind().SetGroupVersionKind",
+          "lineNumber": 66
+        },
+        {
+          "caller": "DecodeRawUnstructured",
+          "callee": "obj.GetObjectKind",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/webhook/admission/custom_mutation_webhook.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 76,
+      "functions": [
+        {
+          "name": "NewCustomMutationWebhook",
+          "startLine": 30,
+          "endLine": 38,
+          "params": [
+            "mutationWebhook"
+          ]
+        },
+        {
+          "name": "Handle",
+          "startLine": 45,
+          "endLine": 90,
+          "params": [
+            "ctx",
+            "req"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "mutator",
+          "startLine": 40,
+          "endLine": 42,
+          "methods": [
+            "Handle"
+          ],
+          "properties": [
+            "mutationWebhook"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewCustomMutationWebhook",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "Handle",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Handle",
+          "callee": "h.mutationWebhook.Handles",
+          "lineNumber": 47
+        },
+        {
+          "caller": "Handle",
+          "callee": "admission.Allowed",
+          "lineNumber": 48
+        },
+        {
+          "caller": "Handle",
+          "callee": "admission.Allowed",
+          "lineNumber": 53
+        },
+        {
+          "caller": "Handle",
+          "callee": "admission.NewContextWithRequest",
+          "lineNumber": 56
+        },
+        {
+          "caller": "Handle",
+          "callee": "DecodeRawUnstructured",
+          "lineNumber": 64
+        },
+        {
+          "caller": "Handle",
+          "callee": "admission.Errored",
+          "lineNumber": 66
+        },
+        {
+          "caller": "Handle",
+          "callee": "h.mutationWebhook.Mutate",
+          "lineNumber": 70
+        },
+        {
+          "caller": "Handle",
+          "callee": "errors.As",
+          "lineNumber": 72
+        },
+        {
+          "caller": "Handle",
+          "callee": "apiStatus.Status",
+          "lineNumber": 73
+        },
+        {
+          "caller": "Handle",
+          "callee": "admission.Denied",
+          "lineNumber": 81
+        },
+        {
+          "caller": "Handle",
+          "callee": "err.Error",
+          "lineNumber": 81
+        },
+        {
+          "caller": "Handle",
+          "callee": "obj.MarshalJSON",
+          "lineNumber": 85
+        },
+        {
+          "caller": "Handle",
+          "callee": "admission.Errored",
+          "lineNumber": 87
+        },
+        {
+          "caller": "Handle",
+          "callee": "admission.PatchResponseFromRaw",
+          "lineNumber": 89
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/webhook/admission/custom_validator_webhook.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 124,
+      "nonEmptyLines": 106,
+      "functions": [
+        {
+          "name": "NewCustomValidationWebhook",
+          "startLine": 33,
+          "endLine": 46,
+          "params": [
+            "scheme",
+            "validationWebhook"
+          ]
+        },
+        {
+          "name": "Handle",
+          "startLine": 54,
+          "endLine": 124,
+          "params": [
+            "ctx",
+            "req"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "validator",
+          "startLine": 48,
+          "endLine": 51,
+          "methods": [
+            "Handle"
+          ],
+          "properties": [
+            "decoder",
+            "validationWebhook"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewCustomValidationWebhook",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "Handle",
+          "line": 54,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewCustomValidationWebhook",
+          "callee": "serializer.NewCodecFactory",
+          "lineNumber": 41
+        },
+        {
+          "caller": "Handle",
+          "callee": "panic",
+          "lineNumber": 56
+        },
+        {
+          "caller": "Handle",
+          "callee": "h.validationWebhook.Handles",
+          "lineNumber": 60
+        },
+        {
+          "caller": "Handle",
+          "callee": "admission.Allowed",
+          "lineNumber": 61
+        },
+        {
+          "caller": "Handle",
+          "callee": "admission.NewContextWithRequest",
+          "lineNumber": 64
+        },
+        {
+          "caller": "Handle",
+          "callee": "h.decoder.DecodeRaw",
+          "lineNumber": 81
+        },
+        {
+          "caller": "Handle",
+          "callee": "admission.Errored",
+          "lineNumber": 82
+        },
+        {
+          "caller": "Handle",
+          "callee": "h.validationWebhook.Validate",
+          "lineNumber": 85
+        },
+        {
+          "caller": "Handle",
+          "callee": "h.decoder.DecodeRaw",
+          "lineNumber": 87
+        },
+        {
+          "caller": "Handle",
+          "callee": "admission.Errored",
+          "lineNumber": 88
+        },
+        {
+          "caller": "Handle",
+          "callee": "h.decoder.DecodeRaw",
+          "lineNumber": 90
+        },
+        {
+          "caller": "Handle",
+          "callee": "admission.Errored",
+          "lineNumber": 91
+        },
+        {
+          "caller": "Handle",
+          "callee": "h.validationWebhook.Validate",
+          "lineNumber": 94
+        },
+        {
+          "caller": "Handle",
+          "callee": "h.decoder.DecodeRaw",
+          "lineNumber": 98
+        },
+        {
+          "caller": "Handle",
+          "callee": "admission.Errored",
+          "lineNumber": 99
+        },
+        {
+          "caller": "Handle",
+          "callee": "h.validationWebhook.Validate",
+          "lineNumber": 102
+        },
+        {
+          "caller": "Handle",
+          "callee": "admission.Errored",
+          "lineNumber": 104
+        },
+        {
+          "caller": "Handle",
+          "callee": "fmt.Errorf",
+          "lineNumber": 104
+        },
+        {
+          "caller": "Handle",
+          "callee": "errors.As",
+          "lineNumber": 110
+        },
+        {
+          "caller": "Handle",
+          "callee": "apiStatus.Status",
+          "lineNumber": 111
+        },
+        {
+          "caller": "Handle",
+          "callee": "admission.Response{\n\t\t\t\tAdmissionResponse: admissionv1.AdmissionResponse{\n\t\t\t\t\tAllowed: false,\n\t\t\t\t\tResult:  &status,\n\t\t\t\t},\n\t\t\t}.WithWarnings",
+          "lineNumber": 112
+        },
+        {
+          "caller": "Handle",
+          "callee": "admission.Denied(err.Error()).WithWarnings",
+          "lineNumber": 119
+        },
+        {
+          "caller": "Handle",
+          "callee": "admission.Denied",
+          "lineNumber": 119
+        },
+        {
+          "caller": "Handle",
+          "callee": "err.Error",
+          "lineNumber": 119
+        },
+        {
+          "caller": "Handle",
+          "callee": "admission.Allowed(\"\").WithWarnings",
+          "lineNumber": 123
+        },
+        {
+          "caller": "Handle",
+          "callee": "admission.Allowed",
+          "lineNumber": 123
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/webhook/admission/handler.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "Handles",
+          "startLine": 28,
+          "endLine": 30,
+          "params": [
+            "operation"
+          ]
+        },
+        {
+          "name": "NewHandler",
+          "startLine": 34,
+          "endLine": 40,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "Handler",
+          "startLine": 24,
+          "endLine": 26,
+          "methods": [
+            "Handles"
+          ],
+          "properties": [
+            "operations"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Handler",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "Handles",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "NewHandler",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Handles",
+          "callee": "h.operations.Has",
+          "lineNumber": 29
+        },
+        {
+          "caller": "Handles",
+          "callee": "string",
+          "lineNumber": 29
+        },
+        {
+          "caller": "NewHandler",
+          "callee": "sets.New[string]",
+          "lineNumber": 35
+        },
+        {
+          "caller": "NewHandler",
+          "callee": "operations.Insert",
+          "lineNumber": 37
+        },
+        {
+          "caller": "NewHandler",
+          "callee": "string",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/webhook/admission/interfaces.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "Interface",
+          "startLine": 28,
+          "endLine": 30,
+          "methods": [
+            "Handles"
+          ],
+          "properties": []
+        },
+        {
+          "name": "ValidationInterface",
+          "startLine": 34,
+          "endLine": 38,
+          "methods": [
+            "Validate"
+          ],
+          "properties": []
+        },
+        {
+          "name": "MutationInterface",
+          "startLine": 42,
+          "endLine": 46,
+          "methods": [
+            "Mutate"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Interface",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "ValidationInterface",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "MutationInterface",
+          "line": 42,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "pkg/webhook/server/server.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 313,
+      "nonEmptyLines": 259,
+      "functions": [
+        {
+          "name": "Run",
+          "startLine": 106,
+          "endLine": 273,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "freePort",
+          "startLine": 275,
+          "endLine": 286,
+          "params": []
+        },
+        {
+          "name": "Port",
+          "startLine": 289,
+          "endLine": 295,
+          "params": []
+        },
+        {
+          "name": "handleHealthz",
+          "startLine": 297,
+          "endLine": 307,
+          "params": [
+            "w",
+            "req"
+          ]
+        },
+        {
+          "name": "handleLivez",
+          "startLine": 309,
+          "endLine": 313,
+          "params": [
+            "w",
+            "req"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Server",
+          "startLine": 57,
+          "endLine": 104,
+          "methods": [
+            "Run",
+            "Port",
+            "handleHealthz",
+            "handleLivez"
+          ],
+          "properties": [
+            "ListenAddr",
+            "HealthzAddr",
+            "PprofAddress",
+            "EnablePprof",
+            "ResourceScheme",
+            "CertificateSource",
+            "ValidationWebhook",
+            "MutationWebhook",
+            "CipherSuites",
+            "MinTLSVersion",
+            "MetricsListenAddress",
+            "MetricsCertificateSource",
+            "MetricsCipherSuites",
+            "MetricsMinTLSVersion"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Server",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "Run",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "Port",
+          "line": 289,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Run",
+          "callee": "fmt.Errorf",
+          "lineNumber": 108
+        },
+        {
+          "caller": "Run",
+          "callee": "logf.FromContext",
+          "lineNumber": 111
+        },
+        {
+          "caller": "Run",
+          "callee": "ciphers.TLSCipherSuites",
+          "lineNumber": 113
+        },
+        {
+          "caller": "Run",
+          "callee": "ciphers.TLSVersion",
+          "lineNumber": 117
+        },
+        {
+          "caller": "Run",
+          "callee": "ciphers.TLSCipherSuites",
+          "lineNumber": 122
+        },
+        {
+          "caller": "Run",
+          "callee": "ciphers.TLSVersion",
+          "lineNumber": 126
+        },
+        {
+          "caller": "Run",
+          "callee": "freePort",
+          "lineNumber": 132
+        },
+        {
+          "caller": "Run",
+          "callee": "ctrl.NewManager",
+          "lineNumber": 140
+        },
+        {
+          "caller": "Run",
+          "callee": "webhook.NewServer",
+          "lineNumber": 157
+        },
+        {
+          "caller": "Run",
+          "callee": "fmt.Errorf",
+          "lineNumber": 169
+        },
+        {
+          "caller": "Run",
+          "callee": "mgr.Add",
+          "lineNumber": 172
+        },
+        {
+          "caller": "Run",
+          "callee": "mgr.Add",
+          "lineNumber": 177
+        },
+        {
+          "caller": "Run",
+          "callee": "lc.Listen",
+          "lineNumber": 185
+        },
+        {
+          "caller": "Run",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 185
+        },
+        {
+          "caller": "Run",
+          "callee": "http.NewServeMux",
+          "lineNumber": 190
+        },
+        {
+          "caller": "Run",
+          "callee": "healthMux.HandleFunc",
+          "lineNumber": 191
+        },
+        {
+          "caller": "Run",
+          "callee": "healthMux.HandleFunc",
+          "lineNumber": 192
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V(logf.InfoLevel).Info",
+          "lineNumber": 193
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V",
+          "lineNumber": 193
+        },
+        {
+          "caller": "Run",
+          "callee": "mgr.Add",
+          "lineNumber": 199
+        },
+        {
+          "caller": "Run",
+          "callee": "manager.RunnableFunc",
+          "lineNumber": 199
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.Done",
+          "lineNumber": 200
+        },
+        {
+          "caller": "Run",
+          "callee": "context.WithTimeout",
+          "lineNumber": 203
+        },
+        {
+          "caller": "Run",
+          "callee": "context.Background",
+          "lineNumber": 203
+        },
+        {
+          "caller": "Run",
+          "callee": "cancel",
+          "lineNumber": 204
+        },
+        {
+          "caller": "Run",
+          "callee": "server.Shutdown",
+          "lineNumber": 207
+        },
+        {
+          "caller": "Run",
+          "callee": "mgr.Add",
+          "lineNumber": 215
+        },
+        {
+          "caller": "Run",
+          "callee": "manager.RunnableFunc",
+          "lineNumber": 215
+        },
+        {
+          "caller": "Run",
+          "callee": "server.Serve",
+          "lineNumber": 216
+        },
+        {
+          "caller": "Run",
+          "callee": "lc.Listen",
+          "lineNumber": 228
+        },
+        {
+          "caller": "Run",
+          "callee": "http.NewServeMux",
+          "lineNumber": 233
+        },
+        {
+          "caller": "Run",
+          "callee": "profiling.Install",
+          "lineNumber": 235
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V(logf.InfoLevel).Info",
+          "lineNumber": 236
+        },
+        {
+          "caller": "Run",
+          "callee": "log.V",
+          "lineNumber": 236
+        },
+        {
+          "caller": "Run",
+          "callee": "mgr.Add",
+          "lineNumber": 242
+        },
+        {
+          "caller": "Run",
+          "callee": "manager.RunnableFunc",
+          "lineNumber": 242
+        },
+        {
+          "caller": "Run",
+          "callee": "ctx.Done",
+          "lineNumber": 243
+        },
+        {
+          "caller": "Run",
+          "callee": "context.WithTimeout",
+          "lineNumber": 246
+        },
+        {
+          "caller": "Run",
+          "callee": "context.Background",
+          "lineNumber": 246
+        },
+        {
+          "caller": "Run",
+          "callee": "cancel",
+          "lineNumber": 247
+        },
+        {
+          "caller": "Run",
+          "callee": "server.Shutdown",
+          "lineNumber": 250
+        },
+        {
+          "caller": "Run",
+          "callee": "mgr.Add",
+          "lineNumber": 258
+        },
+        {
+          "caller": "Run",
+          "callee": "manager.RunnableFunc",
+          "lineNumber": 258
+        },
+        {
+          "caller": "Run",
+          "callee": "server.Serve",
+          "lineNumber": 259
+        },
+        {
+          "caller": "Run",
+          "callee": "mgr.GetWebhookServer().Register",
+          "lineNumber": 268
+        },
+        {
+          "caller": "Run",
+          "callee": "mgr.GetWebhookServer",
+          "lineNumber": 268
+        },
+        {
+          "caller": "Run",
+          "callee": "cmadmission.NewCustomMutationWebhook",
+          "lineNumber": 268
+        },
+        {
+          "caller": "Run",
+          "callee": "mgr.GetWebhookServer().Register",
+          "lineNumber": 270
+        },
+        {
+          "caller": "Run",
+          "callee": "mgr.GetWebhookServer",
+          "lineNumber": 270
+        },
+        {
+          "caller": "Run",
+          "callee": "cmadmission.NewCustomValidationWebhook",
+          "lineNumber": 270
+        },
+        {
+          "caller": "Run",
+          "callee": "mgr.GetScheme",
+          "lineNumber": 270
+        },
+        {
+          "caller": "Run",
+          "callee": "mgr.Start",
+          "lineNumber": 272
+        },
+        {
+          "caller": "freePort",
+          "callee": "net.ListenTCP",
+          "lineNumber": 276
+        },
+        {
+          "caller": "freePort",
+          "callee": "net.ParseIP",
+          "lineNumber": 277
+        },
+        {
+          "caller": "freePort",
+          "callee": "l.Close",
+          "lineNumber": 283
+        },
+        {
+          "caller": "freePort",
+          "callee": "l.Addr",
+          "lineNumber": 285
+        },
+        {
+          "caller": "handleHealthz",
+          "callee": "req.Body.Close",
+          "lineNumber": 298
+        },
+        {
+          "caller": "handleHealthz",
+          "callee": "s.CertificateSource.Healthy",
+          "lineNumber": 300
+        },
+        {
+          "caller": "handleHealthz",
+          "callee": "logf.FromContext(req.Context()).V(logf.WarnLevel).Info",
+          "lineNumber": 301
+        },
+        {
+          "caller": "handleHealthz",
+          "callee": "logf.FromContext(req.Context()).V",
+          "lineNumber": 301
+        },
+        {
+          "caller": "handleHealthz",
+          "callee": "logf.FromContext",
+          "lineNumber": 301
+        },
+        {
+          "caller": "handleHealthz",
+          "callee": "req.Context",
+          "lineNumber": 301
+        },
+        {
+          "caller": "handleHealthz",
+          "callee": "w.WriteHeader",
+          "lineNumber": 302
+        },
+        {
+          "caller": "handleHealthz",
+          "callee": "w.WriteHeader",
+          "lineNumber": 306
+        },
+        {
+          "caller": "handleLivez",
+          "callee": "req.Body.Close",
+          "lineNumber": 310
+        },
+        {
+          "caller": "handleLivez",
+          "callee": "w.WriteHeader",
+          "lineNumber": 312
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 3,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    }
+  ]
+}

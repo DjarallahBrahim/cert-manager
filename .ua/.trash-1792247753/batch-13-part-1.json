@@ -1,0 +1,3093 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/e2e/framework/helper/kubectl.go",
+      "type": "file",
+      "name": "kubectl.go",
+      "filePath": "test/e2e/framework/helper/kubectl.go",
+      "summary": "Wraps kubectl execution with the test namespace, kubeconfig and context, and formats describe output used when e2e tests fail.",
+      "tags": [
+        "test",
+        "helper",
+        "kubectl",
+        "e2e",
+        "debugging"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/e2e/framework/helper/kubectl.go:Kubectl",
+      "type": "class",
+      "name": "Kubectl",
+      "filePath": "test/e2e/framework/helper/kubectl.go",
+      "lineRange": [
+        27,
+        32
+      ],
+      "summary": "Holds the namespace, kubectl binary and kubeconfig/context used to invoke kubectl inside e2e tests.",
+      "tags": [
+        "test",
+        "helper",
+        "kubectl",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/kubectl.go:Describe",
+      "type": "function",
+      "name": "Describe",
+      "filePath": "test/e2e/framework/helper/kubectl.go",
+      "lineRange": [
+        34,
+        37
+      ],
+      "summary": "Returns kubectl describe output for the test namespace environment for failure diagnostics.",
+      "tags": [
+        "test",
+        "helper",
+        "kubectl",
+        "diagnostics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/kubectl.go:DescribeResource",
+      "type": "function",
+      "name": "DescribeResource",
+      "filePath": "test/e2e/framework/helper/kubectl.go",
+      "lineRange": [
+        39,
+        41
+      ],
+      "summary": "Returns kubectl describe output for a named resource as a kind/name string.",
+      "tags": [
+        "test",
+        "helper",
+        "kubectl",
+        "diagnostics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/kubectl.go:Kubectl",
+      "type": "function",
+      "name": "Kubectl",
+      "filePath": "test/e2e/framework/helper/kubectl.go",
+      "lineRange": [
+        43,
+        50
+      ],
+      "summary": "Builds a Kubectl runner bound to a namespace using the framework kubeconfig and current context.",
+      "tags": [
+        "test",
+        "helper",
+        "kubectl",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/kubectl.go:Run",
+      "type": "function",
+      "name": "Run",
+      "filePath": "test/e2e/framework/helper/kubectl.go",
+      "lineRange": [
+        52,
+        64
+      ],
+      "summary": "Runs kubectl with the configured namespace, kubeconfig and context, returning combined output for assertions.",
+      "tags": [
+        "test",
+        "helper",
+        "kubectl",
+        "command-execution"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/helper/secret.go",
+      "type": "file",
+      "name": "secret.go",
+      "filePath": "test/e2e/framework/helper/secret.go",
+      "summary": "Polls a Kubernetes Secret until cert-manager has populated its certificate data, so e2e tests can assert on issued material.",
+      "tags": [
+        "test",
+        "helper",
+        "secret",
+        "polling",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/secret.go:WaitForSecretCertificateData",
+      "type": "function",
+      "name": "WaitForSecretCertificateData",
+      "filePath": "test/e2e/framework/helper/secret.go",
+      "lineRange": [
+        33,
+        59
+      ],
+      "summary": "Waits for the named Secret to contain non-empty certificate data, failing the test once the timeout expires.",
+      "tags": [
+        "test",
+        "helper",
+        "secret",
+        "polling",
+        "wait"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/framework/helper/validate.go",
+      "type": "file",
+      "name": "validate.go",
+      "filePath": "test/e2e/framework/helper/validate.go",
+      "summary": "Helper methods that fetch issued Secrets and run validation function sets against Certificates, CertificateRequests and CertificateSigningRequests.",
+      "tags": [
+        "test",
+        "helper",
+        "validation",
+        "e2e",
+        "certificates"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validate.go:ValidateCertificate",
+      "type": "function",
+      "name": "ValidateCertificate",
+      "filePath": "test/e2e/framework/helper/validate.go",
+      "lineRange": [
+        37,
+        62
+      ],
+      "summary": "Fetches the Certificate's target Secret and applies every validation function, aggregating failures with resource descriptions.",
+      "tags": [
+        "test",
+        "validation",
+        "certificates",
+        "assertions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validate.go:ValidateCertificateRequest",
+      "type": "function",
+      "name": "ValidateCertificateRequest",
+      "filePath": "test/e2e/framework/helper/validate.go",
+      "lineRange": [
+        65,
+        83
+      ],
+      "summary": "Fetches the issued CertificateRequest material and applies every validation function, aggregating errors.",
+      "tags": [
+        "test",
+        "validation",
+        "certificate-request",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validate.go:ValidateCertificateSigningRequest",
+      "type": "function",
+      "name": "ValidateCertificateSigningRequest",
+      "filePath": "test/e2e/framework/helper/validate.go",
+      "lineRange": [
+        86,
+        103
+      ],
+      "summary": "Fetches the signed CertificateSigningRequest material and applies every validation function, aggregating errors.",
+      "tags": [
+        "test",
+        "validation",
+        "certificate-signing-request",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "type": "file",
+      "name": "certificaterequests.go",
+      "filePath": "test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "summary": "Empty-package assertions that verify an issued CertificateRequest matches its requested subject, SANs, key usages, conditions and duration.",
+      "tags": [
+        "test",
+        "validation",
+        "certificate-request",
+        "assertions",
+        "e2e"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectValidCertificate",
+      "type": "function",
+      "name": "ExpectValidCertificate",
+      "filePath": "test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "lineRange": [
+        40,
+        43
+      ],
+      "summary": "Asserts the CertificateRequest carries a non-empty issued certificate.",
+      "tags": [
+        "test",
+        "validation",
+        "certificate",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectCertificateOrganizationToMatch",
+      "type": "function",
+      "name": "ExpectCertificateOrganizationToMatch",
+      "filePath": "test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "lineRange": [
+        47,
+        63
+      ],
+      "summary": "Asserts the issued certificate's organization fields match the CertificateRequest spec.",
+      "tags": [
+        "test",
+        "validation",
+        "subject",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectValidPrivateKeyData",
+      "type": "function",
+      "name": "ExpectValidPrivateKeyData",
+      "filePath": "test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "lineRange": [
+        67,
+        95
+      ],
+      "summary": "Decodes the private key and verifies it matches the certificate public key and requested key algorithm.",
+      "tags": [
+        "test",
+        "validation",
+        "private-key",
+        "assertions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectCertificateDNSNamesToMatch",
+      "type": "function",
+      "name": "ExpectCertificateDNSNamesToMatch",
+      "filePath": "test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "lineRange": [
+        100,
+        116
+      ],
+      "summary": "Asserts the certificate DNS SANs exactly match the CertificateRequest spec.",
+      "tags": [
+        "test",
+        "validation",
+        "dns",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectCertificateURIsToMatch",
+      "type": "function",
+      "name": "ExpectCertificateURIsToMatch",
+      "filePath": "test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "lineRange": [
+        120,
+        137
+      ],
+      "summary": "Asserts the certificate URI SANs match the CertificateRequest spec.",
+      "tags": [
+        "test",
+        "validation",
+        "uri",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectCertificateIPsToMatch",
+      "type": "function",
+      "name": "ExpectCertificateIPsToMatch",
+      "filePath": "test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "lineRange": [
+        141,
+        158
+      ],
+      "summary": "Asserts the certificate IP address SANs match the CertificateRequest spec.",
+      "tags": [
+        "test",
+        "validation",
+        "ip-address",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectValidCommonName",
+      "type": "function",
+      "name": "ExpectValidCommonName",
+      "filePath": "test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "lineRange": [
+        161,
+        183
+      ],
+      "summary": "Asserts the certificate common name matches the CertificateRequest spec.",
+      "tags": [
+        "test",
+        "validation",
+        "common-name",
+        "assertions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectKeyUsageExtKeyUsageServerAuth",
+      "type": "function",
+      "name": "ExpectKeyUsageExtKeyUsageServerAuth",
+      "filePath": "test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "lineRange": [
+        187,
+        197
+      ],
+      "summary": "Asserts the certificate includes the server authentication extended key usage.",
+      "tags": [
+        "test",
+        "validation",
+        "key-usage",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectKeyUsageExtKeyUsageClientAuth",
+      "type": "function",
+      "name": "ExpectKeyUsageExtKeyUsageClientAuth",
+      "filePath": "test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "lineRange": [
+        201,
+        211
+      ],
+      "summary": "Asserts the certificate includes the client authentication extended key usage.",
+      "tags": [
+        "test",
+        "validation",
+        "key-usage",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectEmailsToMatch",
+      "type": "function",
+      "name": "ExpectEmailsToMatch",
+      "filePath": "test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "lineRange": [
+        214,
+        229
+      ],
+      "summary": "Asserts the certificate email SANs match the CertificateRequest spec.",
+      "tags": [
+        "test",
+        "validation",
+        "email",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectValidBasicConstraints",
+      "type": "function",
+      "name": "ExpectValidBasicConstraints",
+      "filePath": "test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "lineRange": [
+        232,
+        246
+      ],
+      "summary": "Asserts the certificate basic constraints (CA flag and path length) are as expected.",
+      "tags": [
+        "test",
+        "validation",
+        "basic-constraints",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectConditionApproved",
+      "type": "function",
+      "name": "ExpectConditionApproved",
+      "filePath": "test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "lineRange": [
+        250,
+        256
+      ],
+      "summary": "Asserts the CertificateRequest has an Approved condition set to True.",
+      "tags": [
+        "test",
+        "validation",
+        "conditions",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectConditionNotDenied",
+      "type": "function",
+      "name": "ExpectConditionNotDenied",
+      "filePath": "test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "lineRange": [
+        260,
+        266
+      ],
+      "summary": "Asserts the CertificateRequest has no Denied condition.",
+      "tags": [
+        "test",
+        "validation",
+        "conditions",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectDurationToMatch",
+      "type": "function",
+      "name": "ExpectDurationToMatch",
+      "filePath": "test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "lineRange": [
+        269,
+        272
+      ],
+      "summary": "Asserts the issued certificate duration matches the request's requested duration within the allowed fuzz.",
+      "tags": [
+        "test",
+        "validation",
+        "duration",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectDuration",
+      "type": "function",
+      "name": "ExpectDuration",
+      "filePath": "test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "lineRange": [
+        274,
+        298
+      ],
+      "summary": "Computes whether the observed certificate lifetime falls within the expected duration plus or minus fuzz seconds.",
+      "tags": [
+        "test",
+        "validation",
+        "duration",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "type": "file",
+      "name": "certificates.go",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "summary": "Empty-package assertions that verify the Secret issued for a Certificate matches its spec, including SANs, key usages, trust chain and additional output formats.",
+      "tags": [
+        "test",
+        "validation",
+        "certificates",
+        "assertions",
+        "secret"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidKeysInSecret",
+      "type": "function",
+      "name": "ExpectValidKeysInSecret",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        43,
+        58
+      ],
+      "summary": "Asserts the target Secret contains the private key and certificate entries cert-manager is expected to write.",
+      "tags": [
+        "test",
+        "validation",
+        "secret",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidAnnotations",
+      "type": "function",
+      "name": "ExpectValidAnnotations",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        61,
+        72
+      ],
+      "summary": "Asserts the Secret's annotations include those defined by the Certificate secret template.",
+      "tags": [
+        "test",
+        "validation",
+        "annotations",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidPrivateKeyData",
+      "type": "function",
+      "name": "ExpectValidPrivateKeyData",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        75,
+        91
+      ],
+      "summary": "Decodes the private key from the Secret and verifies it matches the certificate public key and requested algorithm.",
+      "tags": [
+        "test",
+        "validation",
+        "private-key",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidCertificate",
+      "type": "function",
+      "name": "ExpectValidCertificate",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        94,
+        106
+      ],
+      "summary": "Parses the issued certificate and asserts it is valid for the requested DNS name and not expired.",
+      "tags": [
+        "test",
+        "validation",
+        "certificate",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCertificateOrganizationToMatch",
+      "type": "function",
+      "name": "ExpectCertificateOrganizationToMatch",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        109,
+        141
+      ],
+      "summary": "Asserts the certificate's subject organization entries match the Certificate spec.",
+      "tags": [
+        "test",
+        "validation",
+        "subject",
+        "assertions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCertificateDNSNamesToMatch",
+      "type": "function",
+      "name": "ExpectCertificateDNSNamesToMatch",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        144,
+        157
+      ],
+      "summary": "Asserts the certificate's DNS SANs match the Certificate spec exactly.",
+      "tags": [
+        "test",
+        "validation",
+        "dns",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCertificateURIsToMatch",
+      "type": "function",
+      "name": "ExpectCertificateURIsToMatch",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        160,
+        173
+      ],
+      "summary": "Asserts the certificate's URI SANs match the Certificate spec.",
+      "tags": [
+        "test",
+        "validation",
+        "uri",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCertificateIPsToMatch",
+      "type": "function",
+      "name": "ExpectCertificateIPsToMatch",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        176,
+        189
+      ],
+      "summary": "Asserts the certificate's IP address SANs match the Certificate spec.",
+      "tags": [
+        "test",
+        "validation",
+        "ip-address",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidCommonName",
+      "type": "function",
+      "name": "ExpectValidCommonName",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        192,
+        210
+      ],
+      "summary": "Asserts the certificate's common name matches the Certificate spec.",
+      "tags": [
+        "test",
+        "validation",
+        "common-name",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidNotAfterDate",
+      "type": "function",
+      "name": "ExpectValidNotAfterDate",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        213,
+        227
+      ],
+      "summary": "Asserts the certificate's notAfter falls within the Certificate's requested duration window.",
+      "tags": [
+        "test",
+        "validation",
+        "expiry",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectKeyUsageExtKeyUsageServerAuth",
+      "type": "function",
+      "name": "ExpectKeyUsageExtKeyUsageServerAuth",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        230,
+        240
+      ],
+      "summary": "Asserts the certificate includes the server authentication extended key usage.",
+      "tags": [
+        "test",
+        "validation",
+        "key-usage",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectKeyUsageExtKeyUsageClientAuth",
+      "type": "function",
+      "name": "ExpectKeyUsageExtKeyUsageClientAuth",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        243,
+        253
+      ],
+      "summary": "Asserts the certificate includes the client authentication extended key usage.",
+      "tags": [
+        "test",
+        "validation",
+        "key-usage",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectKeyUsageUsageDigitalSignature",
+      "type": "function",
+      "name": "ExpectKeyUsageUsageDigitalSignature",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        256,
+        271
+      ],
+      "summary": "Asserts the certificate key usage includes digital signature.",
+      "tags": [
+        "test",
+        "validation",
+        "key-usage",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectKeyUsageUsageDataEncipherment",
+      "type": "function",
+      "name": "ExpectKeyUsageUsageDataEncipherment",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        274,
+        289
+      ],
+      "summary": "Asserts the certificate key usage includes data encipherment.",
+      "tags": [
+        "test",
+        "validation",
+        "key-usage",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectEmailsToMatch",
+      "type": "function",
+      "name": "ExpectEmailsToMatch",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        292,
+        303
+      ],
+      "summary": "Asserts the certificate's email SANs match the Certificate spec.",
+      "tags": [
+        "test",
+        "validation",
+        "email",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCorrectTrustChain",
+      "type": "function",
+      "name": "ExpectCorrectTrustChain",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        306,
+        338
+      ],
+      "summary": "Asserts the issued certificate verifies against the CA bundle stored in the Secret's ca.crt entry.",
+      "tags": [
+        "test",
+        "validation",
+        "trust-chain",
+        "assertions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCARootCertificate",
+      "type": "function",
+      "name": "ExpectCARootCertificate",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        341,
+        351
+      ],
+      "summary": "Asserts the CA certificate in the Secret is a valid root for the issued certificate.",
+      "tags": [
+        "test",
+        "validation",
+        "trust-chain",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectConditionReadyObservedGeneration",
+      "type": "function",
+      "name": "ExpectConditionReadyObservedGeneration",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        356,
+        365
+      ],
+      "summary": "Asserts the Certificate's Ready condition reports the current observed generation.",
+      "tags": [
+        "test",
+        "validation",
+        "conditions",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidBasicConstraints",
+      "type": "function",
+      "name": "ExpectValidBasicConstraints",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        368,
+        381
+      ],
+      "summary": "Asserts the certificate basic constraints (CA flag and path length) are as expected.",
+      "tags": [
+        "test",
+        "validation",
+        "basic-constraints",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidAdditionalOutputFormats",
+      "type": "function",
+      "name": "ExpectValidAdditionalOutputFormats",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        385,
+        418
+      ],
+      "summary": "Asserts the Secret contains the requested additional output formats (combined PEM, DER) of the certificate and key.",
+      "tags": [
+        "test",
+        "validation",
+        "additional-output-formats",
+        "assertions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectDurationToMatch",
+      "type": "function",
+      "name": "ExpectDurationToMatch",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        421,
+        424
+      ],
+      "summary": "Asserts the certificate duration matches the Certificate spec within the allowed fuzz.",
+      "tags": [
+        "test",
+        "validation",
+        "duration",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectDuration",
+      "type": "function",
+      "name": "ExpectDuration",
+      "filePath": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "lineRange": [
+        427,
+        451
+      ],
+      "summary": "Computes whether the observed certificate lifetime falls within the expected duration plus or minus fuzz seconds.",
+      "tags": [
+        "test",
+        "validation",
+        "duration",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "type": "file",
+      "name": "certificatesigningrequests.go",
+      "filePath": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "summary": "Empty-package assertions that verify a signed CertificateSigningRequest matches its requested subject, SANs, key usages, conditions and duration.",
+      "tags": [
+        "test",
+        "validation",
+        "certificate-signing-request",
+        "assertions",
+        "e2e"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectValidCertificate",
+      "type": "function",
+      "name": "ExpectValidCertificate",
+      "filePath": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "lineRange": [
+        42,
+        45
+      ],
+      "summary": "Asserts the CertificateSigningRequest carries a non-empty issued certificate.",
+      "tags": [
+        "test",
+        "validation",
+        "certificate",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectCertificateOrganizationToMatch",
+      "type": "function",
+      "name": "ExpectCertificateOrganizationToMatch",
+      "filePath": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "lineRange": [
+        49,
+        65
+      ],
+      "summary": "Asserts the signed certificate's organization fields match the CertificateSigningRequest spec.",
+      "tags": [
+        "test",
+        "validation",
+        "subject",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectValidPrivateKeyData",
+      "type": "function",
+      "name": "ExpectValidPrivateKeyData",
+      "filePath": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "lineRange": [
+        69,
+        97
+      ],
+      "summary": "Verifies the private key and issued certificate public keys match, honouring the requested key algorithm.",
+      "tags": [
+        "test",
+        "validation",
+        "private-key",
+        "assertions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectCertificateDNSNamesToMatch",
+      "type": "function",
+      "name": "ExpectCertificateDNSNamesToMatch",
+      "filePath": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "lineRange": [
+        102,
+        118
+      ],
+      "summary": "Asserts the certificate DNS SANs exactly match the CertificateSigningRequest spec.",
+      "tags": [
+        "test",
+        "validation",
+        "dns",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectCertificateURIsToMatch",
+      "type": "function",
+      "name": "ExpectCertificateURIsToMatch",
+      "filePath": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "lineRange": [
+        122,
+        139
+      ],
+      "summary": "Asserts the certificate URI SANs match the CertificateSigningRequest spec.",
+      "tags": [
+        "test",
+        "validation",
+        "uri",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectCertificateIPsToMatch",
+      "type": "function",
+      "name": "ExpectCertificateIPsToMatch",
+      "filePath": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "lineRange": [
+        143,
+        160
+      ],
+      "summary": "Asserts the certificate IP address SANs match the CertificateSigningRequest spec.",
+      "tags": [
+        "test",
+        "validation",
+        "ip-address",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectValidCommonName",
+      "type": "function",
+      "name": "ExpectValidCommonName",
+      "filePath": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "lineRange": [
+        163,
+        185
+      ],
+      "summary": "Asserts the certificate common name matches the CertificateSigningRequest spec.",
+      "tags": [
+        "test",
+        "validation",
+        "common-name",
+        "assertions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectDurationToMatch",
+      "type": "function",
+      "name": "ExpectDurationToMatch",
+      "filePath": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "lineRange": [
+        188,
+        194
+      ],
+      "summary": "Asserts the signed certificate duration matches the request duration within the allowed fuzz.",
+      "tags": [
+        "test",
+        "validation",
+        "duration",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectDuration",
+      "type": "function",
+      "name": "ExpectDuration",
+      "filePath": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "lineRange": [
+        197,
+        217
+      ],
+      "summary": "Computes whether the observed certificate lifetime falls within the expected duration plus or minus fuzz seconds.",
+      "tags": [
+        "test",
+        "validation",
+        "duration",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectKeyUsageExtKeyUsageServerAuth",
+      "type": "function",
+      "name": "ExpectKeyUsageExtKeyUsageServerAuth",
+      "filePath": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "lineRange": [
+        221,
+        231
+      ],
+      "summary": "Asserts the certificate includes the server authentication extended key usage.",
+      "tags": [
+        "test",
+        "validation",
+        "key-usage",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectKeyUsageExtKeyUsageClientAuth",
+      "type": "function",
+      "name": "ExpectKeyUsageExtKeyUsageClientAuth",
+      "filePath": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "lineRange": [
+        235,
+        245
+      ],
+      "summary": "Asserts the certificate includes the client authentication extended key usage.",
+      "tags": [
+        "test",
+        "validation",
+        "key-usage",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectKeyUsageUsageDigitalSignature",
+      "type": "function",
+      "name": "ExpectKeyUsageUsageDigitalSignature",
+      "filePath": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "lineRange": [
+        249,
+        265
+      ],
+      "summary": "Asserts the certificate key usage includes digital signature.",
+      "tags": [
+        "test",
+        "validation",
+        "key-usage",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectKeyUsageUsageDataEncipherment",
+      "type": "function",
+      "name": "ExpectKeyUsageUsageDataEncipherment",
+      "filePath": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "lineRange": [
+        269,
+        285
+      ],
+      "summary": "Asserts the certificate key usage includes data encipherment.",
+      "tags": [
+        "test",
+        "validation",
+        "key-usage",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectEmailsToMatch",
+      "type": "function",
+      "name": "ExpectEmailsToMatch",
+      "filePath": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "lineRange": [
+        288,
+        303
+      ],
+      "summary": "Asserts the certificate email SANs match the CertificateSigningRequest spec.",
+      "tags": [
+        "test",
+        "validation",
+        "email",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectValidBasicConstraints",
+      "type": "function",
+      "name": "ExpectValidBasicConstraints",
+      "filePath": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "lineRange": [
+        306,
+        322
+      ],
+      "summary": "Asserts the certificate basic constraints (CA flag and path length) are as expected.",
+      "tags": [
+        "test",
+        "validation",
+        "basic-constraints",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectConditionApproved",
+      "type": "function",
+      "name": "ExpectConditionApproved",
+      "filePath": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "lineRange": [
+        326,
+        332
+      ],
+      "summary": "Asserts the CertificateSigningRequest has an Approved condition set to True.",
+      "tags": [
+        "test",
+        "validation",
+        "conditions",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectConditionNotDenied",
+      "type": "function",
+      "name": "ExpectConditionNotDenied",
+      "filePath": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "lineRange": [
+        336,
+        342
+      ],
+      "summary": "Asserts the CertificateSigningRequest has no Denied condition.",
+      "tags": [
+        "test",
+        "validation",
+        "conditions",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectConditionNotFailed",
+      "type": "function",
+      "name": "ExpectConditionNotFailed",
+      "filePath": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "lineRange": [
+        346,
+        352
+      ],
+      "summary": "Asserts the CertificateSigningRequest has no Failed condition.",
+      "tags": [
+        "test",
+        "validation",
+        "conditions",
+        "assertions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/helper/validation/validation.go",
+      "type": "file",
+      "name": "validation.go",
+      "filePath": "test/e2e/framework/helper/validation/validation.go",
+      "summary": "Builds the validator lists used by e2e tests, skipping checks for certificate features the target issuer does not support.",
+      "tags": [
+        "test",
+        "validation",
+        "feature-set",
+        "e2e",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/validation.go:CertificateSetForUnsupportedFeatureSet",
+      "type": "function",
+      "name": "CertificateSetForUnsupportedFeatureSet",
+      "filePath": "test/e2e/framework/helper/validation/validation.go",
+      "lineRange": [
+        26,
+        72
+      ],
+      "summary": "Returns the Certificate validators to run, omitting checks whose features the issuer does not support.",
+      "tags": [
+        "test",
+        "validation",
+        "certificates",
+        "feature-set"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/validation.go:CertificateRequestSetForUnsupportedFeatureSet",
+      "type": "function",
+      "name": "CertificateRequestSetForUnsupportedFeatureSet",
+      "filePath": "test/e2e/framework/helper/validation/validation.go",
+      "lineRange": [
+        74,
+        108
+      ],
+      "summary": "Returns the CertificateRequest validators to run for the given unsupported feature set.",
+      "tags": [
+        "test",
+        "validation",
+        "certificate-request",
+        "feature-set"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/validation/validation.go:CertificateSigningRequestSetForUnsupportedFeatureSet",
+      "type": "function",
+      "name": "CertificateSigningRequestSetForUnsupportedFeatureSet",
+      "filePath": "test/e2e/framework/helper/validation/validation.go",
+      "lineRange": [
+        110,
+        147
+      ],
+      "summary": "Returns the CertificateSigningRequest validators to run for the given unsupported feature set.",
+      "tags": [
+        "test",
+        "validation",
+        "certificate-signing-request",
+        "feature-set"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/framework/log/log.go",
+      "type": "file",
+      "name": "log.go",
+      "filePath": "test/e2e/framework/log/log.go",
+      "summary": "Thin logging facade over the Ginkgo writer that adds timestamps and offers an exponential-backoff logger for noisy polling loops.",
+      "tags": [
+        "test",
+        "logging",
+        "helper",
+        "ginkgo",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/log/log.go:Logf",
+      "type": "function",
+      "name": "Logf",
+      "filePath": "test/e2e/framework/log/log.go",
+      "lineRange": [
+        38,
+        40
+      ],
+      "summary": "Writes a timestamped, level-tagged formatted log line to the configured writer.",
+      "tags": [
+        "test",
+        "logging",
+        "formatting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/log/log.go:LogBackoff",
+      "type": "function",
+      "name": "LogBackoff",
+      "filePath": "test/e2e/framework/log/log.go",
+      "lineRange": [
+        53,
+        83
+      ],
+      "summary": "Returns a logger that drops repeated messages while an exponential backoff timer is active.",
+      "tags": [
+        "test",
+        "logging",
+        "backoff",
+        "rate-limiting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "type": "file",
+      "name": "have_condition_matcher.go",
+      "filePath": "test/e2e/framework/matcher/have_condition_matcher.go",
+      "summary": "Gomega matcher that waits for a resource to report a given condition, mapping typed conditions (Certificate, Issuer, etc.) through generic accessors.",
+      "tags": [
+        "test",
+        "matcher",
+        "gomega",
+        "conditions",
+        "e2e"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/e2e/framework/matcher/have_condition_matcher.go:conditionMatcher",
+      "type": "class",
+      "name": "conditionMatcher",
+      "filePath": "test/e2e/framework/matcher/have_condition_matcher.go",
+      "lineRange": [
+        91,
+        94
+      ],
+      "summary": "Gomega matcher holding the expected condition and resource-to-condition extractor.",
+      "tags": [
+        "test",
+        "matcher",
+        "gomega",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/matcher/have_condition_matcher.go:HaveCondition",
+      "type": "function",
+      "name": "HaveCondition",
+      "filePath": "test/e2e/framework/matcher/have_condition_matcher.go",
+      "lineRange": [
+        32,
+        37
+      ],
+      "summary": "Builds a matcher asserting a resource eventually reports the expected condition.",
+      "tags": [
+        "test",
+        "matcher",
+        "gomega",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/matcher/have_condition_matcher.go:toGenericCondition",
+      "type": "function",
+      "name": "toGenericCondition",
+      "filePath": "test/e2e/framework/matcher/have_condition_matcher.go",
+      "lineRange": [
+        42,
+        53
+      ],
+      "summary": "Normalises a typed condition into a generic type/status/reason struct.",
+      "tags": [
+        "test",
+        "matcher",
+        "conditions",
+        "normalization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/matcher/have_condition_matcher.go:getUpToDateResource",
+      "type": "function",
+      "name": "getUpToDateResource",
+      "filePath": "test/e2e/framework/matcher/have_condition_matcher.go",
+      "lineRange": [
+        55,
+        66
+      ],
+      "summary": "Re-fetches the object being matched so the matcher evaluates the latest condition state.",
+      "tags": [
+        "test",
+        "matcher",
+        "kubernetes",
+        "refresh"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/matcher/have_condition_matcher.go:extractConditionSlice",
+      "type": "function",
+      "name": "extractConditionSlice",
+      "filePath": "test/e2e/framework/matcher/have_condition_matcher.go",
+      "lineRange": [
+        68,
+        87
+      ],
+      "summary": "Uses reflection to pull the Conditions slice out of a typed cert-manager resource.",
+      "tags": [
+        "test",
+        "matcher",
+        "reflection",
+        "conditions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/matcher/have_condition_matcher.go:Match",
+      "type": "function",
+      "name": "Match",
+      "filePath": "test/e2e/framework/matcher/have_condition_matcher.go",
+      "lineRange": [
+        120,
+        147
+      ],
+      "summary": "Implements the Gomega matcher, polling until a condition matches or the timeout elapses.",
+      "tags": [
+        "test",
+        "matcher",
+        "gomega",
+        "polling"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/matcher/have_condition_matcher.go:matches",
+      "type": "function",
+      "name": "matches",
+      "filePath": "test/e2e/framework/matcher/have_condition_matcher.go",
+      "lineRange": [
+        149,
+        166
+      ],
+      "summary": "Compares expected and actual generic conditions, honouring unspecified fields.",
+      "tags": [
+        "test",
+        "matcher",
+        "conditions",
+        "comparison"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/matcher/have_condition_matcher.go:buildGenericCondition",
+      "type": "function",
+      "name": "buildGenericCondition",
+      "filePath": "test/e2e/framework/matcher/have_condition_matcher.go",
+      "lineRange": [
+        168,
+        180
+      ],
+      "summary": "Constructs a generic condition from a condition type, status and reason.",
+      "tags": [
+        "test",
+        "matcher",
+        "conditions",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/matcher/have_condition_matcher.go:FailureMessage",
+      "type": "function",
+      "name": "FailureMessage",
+      "filePath": "test/e2e/framework/matcher/have_condition_matcher.go",
+      "lineRange": [
+        182,
+        199
+      ],
+      "summary": "Renders the failure message describing the conditions actually observed.",
+      "tags": [
+        "test",
+        "matcher",
+        "diagnostics",
+        "gomega"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/matcher/have_condition_matcher.go:NegatedFailureMessage",
+      "type": "function",
+      "name": "NegatedFailureMessage",
+      "filePath": "test/e2e/framework/matcher/have_condition_matcher.go",
+      "lineRange": [
+        201,
+        218
+      ],
+      "summary": "Renders the failure message for a negated condition assertion.",
+      "tags": [
+        "test",
+        "matcher",
+        "diagnostics",
+        "gomega"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/matcher/san_matchers.go",
+      "type": "file",
+      "name": "san_matchers.go",
+      "filePath": "test/e2e/framework/matcher/san_matchers.go",
+      "summary": "Gomega matchers that compare the SAN extension of an issued certificate against expected DNS, IP, URI and email entries.",
+      "tags": [
+        "test",
+        "matcher",
+        "san",
+        "gomega",
+        "certificates"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/e2e/framework/matcher/san_matchers.go:SANMatcher",
+      "type": "class",
+      "name": "SANMatcher",
+      "filePath": "test/e2e/framework/matcher/san_matchers.go",
+      "lineRange": [
+        50,
+        52
+      ],
+      "summary": "Gomega matcher holding the expected subject alternative name extension.",
+      "tags": [
+        "test",
+        "matcher",
+        "san",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/matcher/san_matchers.go:HaveSameSANsAs",
+      "type": "function",
+      "name": "HaveSameSANsAs",
+      "filePath": "test/e2e/framework/matcher/san_matchers.go",
+      "lineRange": [
+        35,
+        37
+      ],
+      "summary": "Builds a matcher comparing a certificate against the SANs of another certificate.",
+      "tags": [
+        "test",
+        "matcher",
+        "san",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/matcher/san_matchers.go:SANEquals",
+      "type": "function",
+      "name": "SANEquals",
+      "filePath": "test/e2e/framework/matcher/san_matchers.go",
+      "lineRange": [
+        40,
+        48
+      ],
+      "summary": "Builds a matcher comparing a certificate SAN extension against an expected extension.",
+      "tags": [
+        "test",
+        "matcher",
+        "san",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/matcher/san_matchers.go:Match",
+      "type": "function",
+      "name": "Match",
+      "filePath": "test/e2e/framework/matcher/san_matchers.go",
+      "lineRange": [
+        55,
+        95
+      ],
+      "summary": "Parses the certificate and compares its SAN extension with the expected one, order-independently.",
+      "tags": [
+        "test",
+        "matcher",
+        "san",
+        "comparison"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/matcher/san_matchers.go:sortGeneralNamesByTagBytes",
+      "type": "function",
+      "name": "sortGeneralNamesByTagBytes",
+      "filePath": "test/e2e/framework/matcher/san_matchers.go",
+      "lineRange": [
+        99,
+        114
+      ],
+      "summary": "Sorts ASN.1 general names by tag and bytes so SAN comparisons are order-insensitive.",
+      "tags": [
+        "test",
+        "matcher",
+        "san",
+        "sorting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/matcher/san_matchers.go:extractSANsFromCertificate",
+      "type": "function",
+      "name": "extractSANsFromCertificate",
+      "filePath": "test/e2e/framework/matcher/san_matchers.go",
+      "lineRange": [
+        127,
+        142
+      ],
+      "summary": "Parses a DER certificate and extracts its subject alternative name extension.",
+      "tags": [
+        "test",
+        "matcher",
+        "x509",
+        "parsing"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/e2e/framework/helper/kubectl.go",
+      "target": "class:test/e2e/framework/helper/kubectl.go:Kubectl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/kubectl.go",
+      "target": "class:test/e2e/framework/helper/kubectl.go:Kubectl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/kubectl.go",
+      "target": "function:test/e2e/framework/helper/kubectl.go:Describe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/kubectl.go",
+      "target": "function:test/e2e/framework/helper/kubectl.go:Describe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/kubectl.go",
+      "target": "function:test/e2e/framework/helper/kubectl.go:DescribeResource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/kubectl.go",
+      "target": "function:test/e2e/framework/helper/kubectl.go:DescribeResource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/kubectl.go",
+      "target": "function:test/e2e/framework/helper/kubectl.go:Kubectl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/kubectl.go",
+      "target": "function:test/e2e/framework/helper/kubectl.go:Kubectl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/kubectl.go",
+      "target": "function:test/e2e/framework/helper/kubectl.go:Run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/kubectl.go",
+      "target": "function:test/e2e/framework/helper/kubectl.go:Run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/kubectl.go",
+      "target": "file:test/e2e/framework/log/log.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/secret.go",
+      "target": "function:test/e2e/framework/helper/secret.go:WaitForSecretCertificateData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/secret.go",
+      "target": "function:test/e2e/framework/helper/secret.go:WaitForSecretCertificateData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/secret.go",
+      "target": "file:test/e2e/framework/log/log.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validate.go",
+      "target": "function:test/e2e/framework/helper/validate.go:ValidateCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validate.go",
+      "target": "function:test/e2e/framework/helper/validate.go:ValidateCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validate.go",
+      "target": "function:test/e2e/framework/helper/validate.go:ValidateCertificateRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validate.go",
+      "target": "function:test/e2e/framework/helper/validate.go:ValidateCertificateRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validate.go",
+      "target": "function:test/e2e/framework/helper/validate.go:ValidateCertificateSigningRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validate.go",
+      "target": "function:test/e2e/framework/helper/validate.go:ValidateCertificateSigningRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validate.go",
+      "target": "file:test/e2e/framework/helper/featureset/featureset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validate.go",
+      "target": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validate.go",
+      "target": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validate.go",
+      "target": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validate.go",
+      "target": "file:test/e2e/framework/helper/validation/validation.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validate.go",
+      "target": "file:test/e2e/framework/log/log.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectValidCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectValidCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectCertificateOrganizationToMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectCertificateOrganizationToMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectValidPrivateKeyData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectValidPrivateKeyData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectCertificateDNSNamesToMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectCertificateDNSNamesToMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectCertificateURIsToMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectCertificateURIsToMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectCertificateIPsToMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectCertificateIPsToMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectValidCommonName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectValidCommonName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectKeyUsageExtKeyUsageServerAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectKeyUsageExtKeyUsageServerAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectKeyUsageExtKeyUsageClientAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectKeyUsageExtKeyUsageClientAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectEmailsToMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectEmailsToMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectValidBasicConstraints",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectValidBasicConstraints",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectConditionApproved",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectConditionApproved",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectConditionNotDenied",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectConditionNotDenied",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectDurationToMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectDurationToMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectDuration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectDuration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidKeysInSecret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidKeysInSecret",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidAnnotations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidAnnotations",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidPrivateKeyData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidPrivateKeyData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCertificateOrganizationToMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCertificateOrganizationToMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCertificateDNSNamesToMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCertificateDNSNamesToMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCertificateURIsToMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCertificateURIsToMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCertificateIPsToMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCertificateIPsToMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidCommonName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidCommonName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidNotAfterDate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidNotAfterDate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectKeyUsageExtKeyUsageServerAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectKeyUsageExtKeyUsageServerAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectKeyUsageExtKeyUsageClientAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectKeyUsageExtKeyUsageClientAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectKeyUsageUsageDigitalSignature",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectKeyUsageUsageDigitalSignature",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectKeyUsageUsageDataEncipherment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectKeyUsageUsageDataEncipherment",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectEmailsToMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectEmailsToMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCorrectTrustChain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCorrectTrustChain",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCARootCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCARootCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectConditionReadyObservedGeneration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectConditionReadyObservedGeneration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidBasicConstraints",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidBasicConstraints",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidAdditionalOutputFormats",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidAdditionalOutputFormats",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectDurationToMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectDurationToMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectDuration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectDuration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectValidCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectValidCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectCertificateOrganizationToMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectCertificateOrganizationToMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectValidPrivateKeyData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectValidPrivateKeyData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectCertificateDNSNamesToMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectCertificateDNSNamesToMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectCertificateURIsToMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectCertificateURIsToMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectCertificateIPsToMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectCertificateIPsToMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectValidCommonName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectValidCommonName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectDurationToMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectDurationToMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectDuration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectDuration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectKeyUsageExtKeyUsageServerAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectKeyUsageExtKeyUsageServerAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectKeyUsageExtKeyUsageClientAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectKeyUsageExtKeyUsageClientAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectKeyUsageUsageDigitalSignature",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectKeyUsageUsageDigitalSignature",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectKeyUsageUsageDataEncipherment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectKeyUsageUsageDataEncipherment",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectEmailsToMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectEmailsToMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectValidBasicConstraints",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectValidBasicConstraints",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectConditionApproved",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectConditionApproved",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectConditionNotDenied",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectConditionNotDenied",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectConditionNotFailed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectConditionNotFailed",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/validation.go",
+      "target": "function:test/e2e/framework/helper/validation/validation.go:CertificateSetForUnsupportedFeatureSet",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/validation.go",
+      "target": "function:test/e2e/framework/helper/validation/validation.go:CertificateSetForUnsupportedFeatureSet",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/validation.go",
+      "target": "function:test/e2e/framework/helper/validation/validation.go:CertificateRequestSetForUnsupportedFeatureSet",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/validation.go",
+      "target": "function:test/e2e/framework/helper/validation/validation.go:CertificateRequestSetForUnsupportedFeatureSet",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/validation.go",
+      "target": "function:test/e2e/framework/helper/validation/validation.go:CertificateSigningRequestSetForUnsupportedFeatureSet",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/validation.go",
+      "target": "function:test/e2e/framework/helper/validation/validation.go:CertificateSigningRequestSetForUnsupportedFeatureSet",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/validation.go",
+      "target": "file:test/e2e/framework/helper/featureset/featureset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/validation.go",
+      "target": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/validation.go",
+      "target": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/validation/validation.go",
+      "target": "file:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/log/log.go",
+      "target": "function:test/e2e/framework/log/log.go:Logf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/log/log.go",
+      "target": "function:test/e2e/framework/log/log.go:Logf",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/log/log.go",
+      "target": "function:test/e2e/framework/log/log.go:LogBackoff",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/log/log.go",
+      "target": "function:test/e2e/framework/log/log.go:LogBackoff",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "target": "class:test/e2e/framework/matcher/have_condition_matcher.go:conditionMatcher",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "target": "function:test/e2e/framework/matcher/have_condition_matcher.go:HaveCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "target": "function:test/e2e/framework/matcher/have_condition_matcher.go:HaveCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "target": "function:test/e2e/framework/matcher/have_condition_matcher.go:toGenericCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "target": "function:test/e2e/framework/matcher/have_condition_matcher.go:getUpToDateResource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "target": "function:test/e2e/framework/matcher/have_condition_matcher.go:extractConditionSlice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "target": "function:test/e2e/framework/matcher/have_condition_matcher.go:Match",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "target": "function:test/e2e/framework/matcher/have_condition_matcher.go:Match",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "target": "function:test/e2e/framework/matcher/have_condition_matcher.go:matches",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "target": "function:test/e2e/framework/matcher/have_condition_matcher.go:buildGenericCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "target": "function:test/e2e/framework/matcher/have_condition_matcher.go:FailureMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "target": "function:test/e2e/framework/matcher/have_condition_matcher.go:FailureMessage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "target": "function:test/e2e/framework/matcher/have_condition_matcher.go:NegatedFailureMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "target": "function:test/e2e/framework/matcher/have_condition_matcher.go:NegatedFailureMessage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/san_matchers.go",
+      "target": "class:test/e2e/framework/matcher/san_matchers.go:SANMatcher",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/san_matchers.go",
+      "target": "class:test/e2e/framework/matcher/san_matchers.go:SANMatcher",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/san_matchers.go",
+      "target": "function:test/e2e/framework/matcher/san_matchers.go:HaveSameSANsAs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/san_matchers.go",
+      "target": "function:test/e2e/framework/matcher/san_matchers.go:HaveSameSANsAs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/san_matchers.go",
+      "target": "function:test/e2e/framework/matcher/san_matchers.go:SANEquals",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/san_matchers.go",
+      "target": "function:test/e2e/framework/matcher/san_matchers.go:SANEquals",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/san_matchers.go",
+      "target": "function:test/e2e/framework/matcher/san_matchers.go:Match",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/san_matchers.go",
+      "target": "function:test/e2e/framework/matcher/san_matchers.go:Match",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/san_matchers.go",
+      "target": "function:test/e2e/framework/matcher/san_matchers.go:sortGeneralNamesByTagBytes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/matcher/san_matchers.go",
+      "target": "function:test/e2e/framework/matcher/san_matchers.go:extractSANsFromCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validate.go:ValidateCertificate",
+      "target": "function:test/e2e/framework/helper/validation/validation.go:CertificateSetForUnsupportedFeatureSet",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validate.go:ValidateCertificateRequest",
+      "target": "function:test/e2e/framework/helper/validation/validation.go:CertificateRequestSetForUnsupportedFeatureSet",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validate.go:ValidateCertificateSigningRequest",
+      "target": "function:test/e2e/framework/helper/validation/validation.go:CertificateSigningRequestSetForUnsupportedFeatureSet",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validate.go:ValidateCertificate",
+      "target": "function:test/e2e/framework/log/log.go:Logf",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validate.go:ValidateCertificateRequest",
+      "target": "function:test/e2e/framework/log/log.go:Logf",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validate.go:ValidateCertificateSigningRequest",
+      "target": "function:test/e2e/framework/log/log.go:Logf",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validation/validation.go:CertificateSetForUnsupportedFeatureSet",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidCertificate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validation/validation.go:CertificateSetForUnsupportedFeatureSet",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidPrivateKeyData",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validation/validation.go:CertificateSetForUnsupportedFeatureSet",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidNotAfterDate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validation/validation.go:CertificateSetForUnsupportedFeatureSet",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidAnnotations",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validation/validation.go:CertificateSetForUnsupportedFeatureSet",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectValidAdditionalOutputFormats",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validation/validation.go:CertificateSetForUnsupportedFeatureSet",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCorrectTrustChain",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validation/validation.go:CertificateSetForUnsupportedFeatureSet",
+      "target": "function:test/e2e/framework/helper/validation/certificates/certificates.go:ExpectCARootCertificate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validation/validation.go:CertificateRequestSetForUnsupportedFeatureSet",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectValidCertificate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validation/validation.go:CertificateRequestSetForUnsupportedFeatureSet",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectValidPrivateKeyData",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validation/validation.go:CertificateRequestSetForUnsupportedFeatureSet",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectConditionApproved",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validation/validation.go:CertificateRequestSetForUnsupportedFeatureSet",
+      "target": "function:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go:ExpectConditionNotDenied",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validation/validation.go:CertificateSigningRequestSetForUnsupportedFeatureSet",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectValidCertificate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validation/validation.go:CertificateSigningRequestSetForUnsupportedFeatureSet",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectValidPrivateKeyData",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validation/validation.go:CertificateSigningRequestSetForUnsupportedFeatureSet",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectKeyUsageUsageDigitalSignature",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validation/validation.go:CertificateSigningRequestSetForUnsupportedFeatureSet",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectConditionApproved",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validation/validation.go:CertificateSigningRequestSetForUnsupportedFeatureSet",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectConditionNotDenied",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/validation/validation.go:CertificateSigningRequestSetForUnsupportedFeatureSet",
+      "target": "function:test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go:ExpectConditionNotFailed",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

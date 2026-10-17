@@ -1,0 +1,1192 @@
+{
+  "nodes": [
+    {
+      "id": "file:internal/apis/meta/zz_generated.deepcopy.go",
+      "type": "file",
+      "name": "zz_generated.deepcopy.go",
+      "filePath": "internal/apis/meta/zz_generated.deepcopy.go",
+      "summary": "Generated deep-copy implementations for meta reference types, ensuring safe copying of API objects.",
+      "tags": [
+        "code-generation",
+        "deepcopy",
+        "api-types"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/kube/config.go",
+      "type": "file",
+      "name": "config.go",
+      "filePath": "internal/kube/config.go",
+      "summary": "Builds Kubernetes REST client configuration from an explicit API server host or kubeconfig file, falling back to in-cluster configuration.",
+      "tags": [
+        "kubernetes-client",
+        "configuration",
+        "bootstrap"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "type": "file",
+      "name": "certificaterequest_approval.go",
+      "filePath": "internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "summary": "Admission plugin that authorizes changes to CertificateRequest Approved/Denied conditions by checking RBAC approve permissions on the referenced signer resource.",
+      "tags": [
+        "admission-webhook",
+        "authorization",
+        "rbac",
+        "certificaterequest",
+        "security"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "type": "file",
+      "name": "certificaterequest_identity.go",
+      "filePath": "internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "summary": "Admission plugin that stamps the requesting identity onto CertificateRequests and enforces that uid, username, groups, and extra fields cannot be altered.",
+      "tags": [
+        "admission-webhook",
+        "mutation",
+        "validation",
+        "identity",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "type": "file",
+      "name": "resourcevalidation.go",
+      "filePath": "internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "summary": "Admission plugin dispatching create and update requests to the per-resource validation functions for cert-manager and ACME API types.",
+      "tags": [
+        "admission-webhook",
+        "validation",
+        "dispatch",
+        "api-types"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/kube/config.go:BuildClientConfig",
+      "type": "function",
+      "name": "BuildClientConfig",
+      "filePath": "internal/kube/config.go",
+      "lineRange": [
+        28,
+        33
+      ],
+      "summary": "Returns a REST config from explicit API server host and kubeconfig values, or the in-cluster config when neither is set.",
+      "tags": [
+        "kubernetes-client",
+        "configuration",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/kube/config.go:getKubeConfigGetter",
+      "type": "function",
+      "name": "getKubeConfigGetter",
+      "filePath": "internal/kube/config.go",
+      "lineRange": [
+        35,
+        51
+      ],
+      "summary": "Builds a lazy kubeconfig getter that loads the given file, returning an empty config when no path is provided.",
+      "tags": [
+        "kubernetes-client",
+        "configuration",
+        "file-loading"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:NewPlugin",
+      "type": "function",
+      "name": "NewPlugin",
+      "filePath": "internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "lineRange": [
+        64,
+        72
+      ],
+      "summary": "Creates the CertificateRequest approval admission plugin with an authorizer and discovery client, handling updates only.",
+      "tags": [
+        "factory",
+        "admission-webhook",
+        "authorization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:Validate",
+      "type": "function",
+      "name": "Validate",
+      "filePath": "internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "lineRange": [
+        74,
+        114
+      ],
+      "summary": "Checks whether the requesting user may add Approved or Denied conditions by authorizing the approve verb on derived signer names.",
+      "tags": [
+        "validation",
+        "authorization",
+        "certificaterequest",
+        "rbac"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:apiResourceForGroupKind",
+      "type": "function",
+      "name": "apiResourceForGroupKind",
+      "filePath": "internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "lineRange": [
+        131,
+        168
+      ],
+      "summary": "Resolves the API resource descriptor for an issuer GroupKind, using a cache and falling back to API discovery.",
+      "tags": [
+        "discovery",
+        "caching",
+        "api-resource"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:cacheAPIResource",
+      "type": "function",
+      "name": "cacheAPIResource",
+      "filePath": "internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "lineRange": [
+        179,
+        194
+      ],
+      "summary": "Stores a resolved API resource descriptor in the plugin GroupKind cache under a write lock.",
+      "tags": [
+        "caching",
+        "concurrency",
+        "discovery"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:signerNamesForAPIResource",
+      "type": "function",
+      "name": "signerNamesForAPIResource",
+      "filePath": "internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "lineRange": [
+        200,
+        212
+      ],
+      "summary": "Builds the wildcard and fully qualified signer names used for RBAC authorization of a CertificateRequest.",
+      "tags": [
+        "authorization",
+        "rbac",
+        "naming"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:userInfoForRequest",
+      "type": "function",
+      "name": "userInfoForRequest",
+      "filePath": "internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "lineRange": [
+        216,
+        227
+      ],
+      "summary": "Converts admission request user info into an authorizer-compatible user.Info value.",
+      "tags": [
+        "adapter",
+        "authorization",
+        "user-info"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:isAuthorizedForSignerNames",
+      "type": "function",
+      "name": "isAuthorizedForSignerNames",
+      "filePath": "internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "lineRange": [
+        234,
+        249
+      ],
+      "summary": "Returns true if the authorizer allows the approve verb on any of the candidate signer names.",
+      "tags": [
+        "authorization",
+        "rbac",
+        "decision"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:buildAttributes",
+      "type": "function",
+      "name": "buildAttributes",
+      "filePath": "internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "lineRange": [
+        251,
+        261
+      ],
+      "summary": "Builds authorizer attributes for an approve request against cert-manager signer resources.",
+      "tags": [
+        "authorization",
+        "attributes",
+        "rbac"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:ValidateInitialization",
+      "type": "function",
+      "name": "ValidateInitialization",
+      "filePath": "internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "lineRange": [
+        263,
+        275
+      ],
+      "summary": "Verifies the plugin has an authorizer and discovery client and that discovery is reachable.",
+      "tags": [
+        "initialization",
+        "validation",
+        "health-check"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:certificateRequestApproval",
+      "type": "class",
+      "name": "certificateRequestApproval",
+      "filePath": "internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "lineRange": [
+        45,
+        55
+      ],
+      "summary": "Admission plugin struct holding the authorizer, discovery client, and a concurrency-safe GroupKind-to-resource cache.",
+      "tags": [
+        "admission-webhook",
+        "authorization",
+        "caching",
+        "stateful"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:NewPlugin",
+      "type": "function",
+      "name": "NewPlugin",
+      "filePath": "internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "lineRange": [
+        42,
+        46
+      ],
+      "summary": "Creates the CertificateRequest identity plugin handling create and update operations.",
+      "tags": [
+        "factory",
+        "admission-webhook",
+        "identity"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:Mutate",
+      "type": "function",
+      "name": "Mutate",
+      "filePath": "internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "lineRange": [
+        48,
+        81
+      ],
+      "summary": "Stamps the requesting user uid, username, groups, and extra fields into a new CertificateRequest spec.",
+      "tags": [
+        "mutation",
+        "identity",
+        "certificaterequest"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:Validate",
+      "type": "function",
+      "name": "Validate",
+      "filePath": "internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "lineRange": [
+        83,
+        108
+      ],
+      "summary": "Dispatches CertificateRequest identity validation to create or update handlers based on the admission operation.",
+      "tags": [
+        "validation",
+        "dispatch",
+        "identity"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:validateUpdate",
+      "type": "function",
+      "name": "validateUpdate",
+      "filePath": "internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "lineRange": [
+        110,
+        127
+      ],
+      "summary": "Rejects updates that change uid, username, groups, or extra identity fields on a CertificateRequest.",
+      "tags": [
+        "validation",
+        "immutability",
+        "identity"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:validateCreate",
+      "type": "function",
+      "name": "validateCreate",
+      "filePath": "internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "lineRange": [
+        129,
+        146
+      ],
+      "summary": "Rejects creates whose identity fields do not match the requesting user identity.",
+      "tags": [
+        "validation",
+        "identity",
+        "certificaterequest"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:extrasMatch",
+      "type": "function",
+      "name": "extrasMatch",
+      "filePath": "internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "lineRange": [
+        148,
+        165
+      ],
+      "summary": "Compares CertificateRequest extra identity values against admission request extras ignoring order.",
+      "tags": [
+        "comparison",
+        "identity",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:certificateRequestIdentity",
+      "type": "class",
+      "name": "certificateRequestIdentity",
+      "filePath": "internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "lineRange": [
+        35,
+        37
+      ],
+      "summary": "Admission plugin that both mutates and validates CertificateRequest requester identity.",
+      "tags": [
+        "admission-webhook",
+        "mutation",
+        "validation",
+        "identity"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/webhook/admission/resourcevalidation/resourcevalidation.go:NewPlugin",
+      "type": "function",
+      "name": "NewPlugin",
+      "filePath": "internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "lineRange": [
+        70,
+        74
+      ],
+      "summary": "Creates the resource validation admission plugin handling create and update operations.",
+      "tags": [
+        "factory",
+        "admission-webhook",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/webhook/admission/resourcevalidation/resourcevalidation.go:Validate",
+      "type": "function",
+      "name": "Validate",
+      "filePath": "internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "lineRange": [
+        76,
+        104
+      ],
+      "summary": "Looks up the validation pair for the requested GVR and runs the matching create or update validators, aggregating errors.",
+      "tags": [
+        "validation",
+        "dispatch",
+        "api-types"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:internal/kube/config.go",
+      "target": "function:internal/kube/config.go:BuildClientConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/kube/config.go",
+      "target": "function:internal/kube/config.go:BuildClientConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/kube/config.go",
+      "target": "function:internal/kube/config.go:getKubeConfigGetter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:NewPlugin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:NewPlugin",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:Validate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:Validate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:apiResourceForGroupKind",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:cacheAPIResource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:signerNamesForAPIResource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:userInfoForRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:isAuthorizedForSignerNames",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:buildAttributes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:ValidateInitialization",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:ValidateInitialization",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "class:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:certificateRequestApproval",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "function:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:NewPlugin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "function:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:NewPlugin",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "function:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:Mutate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "function:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:Mutate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "function:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:Validate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "function:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:Validate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "function:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:validateUpdate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "function:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:validateCreate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "function:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:extrasMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "class:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:certificateRequestIdentity",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "function:internal/webhook/admission/resourcevalidation/resourcevalidation.go:NewPlugin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "function:internal/webhook/admission/resourcevalidation/resourcevalidation.go:NewPlugin",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "function:internal/webhook/admission/resourcevalidation/resourcevalidation.go:Validate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "function:internal/webhook/admission/resourcevalidation/resourcevalidation.go:Validate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "file:internal/apis/certmanager/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "file:internal/apis/certmanager/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "file:internal/apis/certmanager/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "file:internal/apis/certmanager/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "file:internal/apis/certmanager/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "file:internal/apis/certmanager/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "file:internal/apis/certmanager/validation/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "file:internal/apis/certmanager/validation/util/nameserver.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "file:internal/apis/certmanager/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "file:pkg/webhook/admission/chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "file:pkg/webhook/admission/custom_decoder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "file:pkg/webhook/admission/custom_mutation_webhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "file:pkg/webhook/admission/custom_validator_webhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "file:pkg/webhook/admission/handler.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go",
+      "target": "file:pkg/webhook/admission/interfaces.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "file:internal/apis/certmanager/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "file:internal/apis/certmanager/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "file:internal/apis/certmanager/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "file:internal/apis/certmanager/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "file:internal/apis/certmanager/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "file:internal/apis/certmanager/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "file:internal/apis/certmanager/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "file:internal/apis/certmanager/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "file:pkg/util/useragent.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "file:pkg/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "file:pkg/util/version.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "file:pkg/webhook/admission/chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "file:pkg/webhook/admission/custom_decoder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "file:pkg/webhook/admission/custom_mutation_webhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "file:pkg/webhook/admission/custom_validator_webhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "file:pkg/webhook/admission/handler.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go",
+      "target": "file:pkg/webhook/admission/interfaces.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:internal/apis/acme/validation/challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:internal/apis/acme/validation/order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:internal/apis/certmanager/validation/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:internal/apis/certmanager/validation/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:internal/apis/certmanager/validation/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:internal/apis/certmanager/validation/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:internal/apis/certmanager/validation/warnings.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/webhook/admission/chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/webhook/admission/custom_decoder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/webhook/admission/custom_mutation_webhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/webhook/admission/custom_validator_webhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/webhook/admission/handler.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/webhook/admission/resourcevalidation/resourcevalidation.go",
+      "target": "file:pkg/webhook/admission/interfaces.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:internal/webhook/admission/certificaterequest/approval/certificaterequest_approval.go:Validate",
+      "target": "function:internal/apis/certmanager/validation/util/conditions.go:GetCertificateRequestCondition",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:validateUpdate",
+      "target": "function:pkg/util/util.go:EqualUnsorted",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/webhook/admission/certificaterequest/identity/certificaterequest_identity.go:validateCreate",
+      "target": "function:pkg/util/util.go:EqualUnsorted",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/webhook/admission/resourcevalidation/resourcevalidation.go:Validate",
+      "target": "function:internal/apis/certmanager/validation/certificate.go:ValidateCertificate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/webhook/admission/resourcevalidation/resourcevalidation.go:Validate",
+      "target": "function:internal/apis/certmanager/validation/certificate.go:ValidateUpdateCertificate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/webhook/admission/resourcevalidation/resourcevalidation.go:Validate",
+      "target": "function:internal/apis/certmanager/validation/certificaterequest.go:ValidateCertificateRequest",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/webhook/admission/resourcevalidation/resourcevalidation.go:Validate",
+      "target": "function:internal/apis/certmanager/validation/certificaterequest.go:ValidateUpdateCertificateRequest",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/webhook/admission/resourcevalidation/resourcevalidation.go:Validate",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateIssuer",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/webhook/admission/resourcevalidation/resourcevalidation.go:Validate",
+      "target": "function:internal/apis/certmanager/validation/issuer.go:ValidateUpdateIssuer",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/webhook/admission/resourcevalidation/resourcevalidation.go:Validate",
+      "target": "function:internal/apis/certmanager/validation/clusterissuer.go:ValidateClusterIssuer",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/webhook/admission/resourcevalidation/resourcevalidation.go:Validate",
+      "target": "function:internal/apis/certmanager/validation/clusterissuer.go:ValidateUpdateClusterIssuer",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/webhook/admission/resourcevalidation/resourcevalidation.go:Validate",
+      "target": "function:internal/apis/acme/validation/order.go:ValidateOrder",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/webhook/admission/resourcevalidation/resourcevalidation.go:Validate",
+      "target": "function:internal/apis/acme/validation/order.go:ValidateOrderUpdate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/webhook/admission/resourcevalidation/resourcevalidation.go:Validate",
+      "target": "function:internal/apis/acme/validation/challenge.go:ValidateChallenge",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:internal/webhook/admission/resourcevalidation/resourcevalidation.go:Validate",
+      "target": "function:internal/apis/acme/validation/challenge.go:ValidateChallengeUpdate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

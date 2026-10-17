@@ -1,0 +1,49 @@
+{
+  "nodes": [
+    {
+      "id": "config:make/config/bind/configmap.yaml",
+      "type": "config",
+      "name": "configmap.yaml",
+      "filePath": "make/config/bind/configmap.yaml",
+      "summary": "ConfigMap supplying BIND9 named.conf plus master zone files for the http01.example.com and dns01.example.com test zones used by cert-manager end-to-end tests.",
+      "tags": ["configuration", "dns", "kubernetes", "testing", "infrastructure"],
+      "complexity": "moderate",
+      "languageNotes": "Zone files use IP placeholder tokens such as {SERVICE_IP_PREFIX} that the test harness substitutes before applying the manifest."
+    },
+    {
+      "id": "config:make/config/bind/deployment.yaml",
+      "type": "config",
+      "name": "deployment.yaml",
+      "filePath": "make/config/bind/deployment.yaml",
+      "summary": "Kubernetes Deployment that runs a BIND9 DNS server on UDP port 8053 for cert-manager integration tests, mounting the bind ConfigMap into /etc/bind.",
+      "tags": ["configuration", "deployment", "dns", "kubernetes", "testing"],
+      "complexity": "moderate",
+      "languageNotes": "Uses a fixed runAsUser/runAsGroup of 101 so the named process runs as the in-image bind user, and disables image pulls for locally loaded test images."
+    },
+    {
+      "id": "config:make/config/bind/service.yaml",
+      "type": "config",
+      "name": "service.yaml",
+      "filePath": "make/config/bind/service.yaml",
+      "summary": "ClusterIP Service exposing the BIND test DNS server on UDP port 53 with a hardcoded cluster IP so tests can address it directly by address.",
+      "tags": ["configuration", "kubernetes", "dns", "networking", "testing"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:make/config/bind/deployment.yaml",
+      "target": "config:make/config/bind/configmap.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:make/config/bind/service.yaml",
+      "target": "config:make/config/bind/deployment.yaml",
+      "type": "serves",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

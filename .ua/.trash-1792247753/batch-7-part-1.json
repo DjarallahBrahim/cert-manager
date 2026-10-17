@@ -1,0 +1,965 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "file",
+      "name": "types_order.go",
+      "filePath": "pkg/apis/acme/v1/types_order.go",
+      "summary": "Defines the ACME v1 API types for Orders, their spec and status, plus the authorization and challenge structures returned by an ACME server.",
+      "tags": [
+        "api-types",
+        "acme",
+        "order",
+        "kubernetes-crd",
+        "data-model"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Kubernetes API types carrying kubebuilder markers that drive CRD generation, printer columns and the status subresource."
+    },
+    {
+      "id": "class:pkg/apis/acme/v1/types_order.go:Order",
+      "type": "class",
+      "name": "Order",
+      "filePath": "pkg/apis/acme/v1/types_order.go",
+      "lineRange": [
+        36,
+        43
+      ],
+      "summary": "Top-level namespaced Order resource representing a certificate order with an ACME server.",
+      "tags": [
+        "api-type",
+        "order",
+        "acme",
+        "resource"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/apis/acme/v1/types_order.go:OrderList",
+      "type": "class",
+      "name": "OrderList",
+      "filePath": "pkg/apis/acme/v1/types_order.go",
+      "lineRange": [
+        48,
+        53
+      ],
+      "summary": "List wrapper used by the Kubernetes API for Order collections.",
+      "tags": [
+        "api-type",
+        "order",
+        "list",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/apis/acme/v1/types_order.go:OrderSpec",
+      "type": "class",
+      "name": "OrderSpec",
+      "filePath": "pkg/apis/acme/v1/types_order.go",
+      "lineRange": [
+        55,
+        97
+      ],
+      "summary": "Desired Order state: DER-encoded CSR, issuer reference, common name, DNS names, IP addresses, duration and ACME profile.",
+      "tags": [
+        "api-type",
+        "order",
+        "spec",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/apis/acme/v1/types_order.go:OrderStatus",
+      "type": "class",
+      "name": "OrderStatus",
+      "filePath": "pkg/apis/acme/v1/types_order.go",
+      "lineRange": [
+        99,
+        140
+      ],
+      "summary": "Observed Order state including ACME URLs, authorizations, issued certificate, state, reason and failure time.",
+      "tags": [
+        "api-type",
+        "order",
+        "status",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/apis/acme/v1/types_order.go:ACMEAuthorization",
+      "type": "class",
+      "name": "ACMEAuthorization",
+      "filePath": "pkg/apis/acme/v1/types_order.go",
+      "lineRange": [
+        145,
+        179
+      ],
+      "summary": "An ACME authorization that must be completed to validate a DNS name, including the offered challenge types.",
+      "tags": [
+        "api-type",
+        "authorization",
+        "acme",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/apis/acme/v1/types_order.go:ACMEChallenge",
+      "type": "class",
+      "name": "ACMEChallenge",
+      "filePath": "pkg/apis/acme/v1/types_order.go",
+      "lineRange": [
+        184,
+        199
+      ],
+      "summary": "A challenge offered by the ACME server for an authorization, identified by URL, token and challenge type.",
+      "tags": [
+        "api-type",
+        "challenge",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "file",
+      "name": "zz_generated.deepcopy.go",
+      "filePath": "pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "summary": "Generated deep-copy implementations for every ACME v1 API type, providing the runtime.Object cloning required by Kubernetes clients and informer caches.",
+      "tags": [
+        "generated-code",
+        "deepcopy",
+        "kubernetes",
+        "acme",
+        "serialization"
+      ],
+      "complexity": "complex",
+      "languageNotes": "deepcopy-gen boilerplate: every exported type gets DeepCopyInto/DeepCopy, and runtime.Objects additionally get DeepCopyObject."
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+      "type": "file",
+      "name": "acmeauthorization.go",
+      "filePath": "pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+      "summary": "Generated declarative apply configuration for ACMEAuthorization, with chainable setters used by server-side apply clients.",
+      "tags": [
+        "generated-code",
+        "apply-configuration",
+        "acme",
+        "authorization",
+        "builder"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/acme/v1/acmeauthorization.go:ACMEAuthorizationApplyConfiguration",
+      "type": "class",
+      "name": "ACMEAuthorizationApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+      "lineRange": [
+        27,
+        33
+      ],
+      "summary": "Declarative mirror of ACMEAuthorization whose pointer fields distinguish unset values during server-side apply.",
+      "tags": [
+        "apply-configuration",
+        "acme",
+        "authorization",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+      "type": "file",
+      "name": "acmechallengesolverdns01.go",
+      "filePath": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+      "summary": "Generated apply configuration for ACMEChallengeSolverDNS01 exposing setters for every supported DNS-01 provider, including Akamai, CloudDNS, Cloudflare, Route53 and AzureDNS.",
+      "tags": [
+        "generated-code",
+        "apply-configuration",
+        "acme",
+        "dns01",
+        "solver"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go:ACMEChallengeSolverDNS01ApplyConfiguration",
+      "type": "class",
+      "name": "ACMEChallengeSolverDNS01ApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+      "lineRange": [
+        27,
+        38
+      ],
+      "summary": "Declarative DNS-01 solver configuration holding one optional provider block per supported DNS provider.",
+      "tags": [
+        "apply-configuration",
+        "solver",
+        "dns01",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+      "type": "file",
+      "name": "challengestatus.go",
+      "filePath": "pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+      "summary": "Generated apply configuration for ChallengeStatus with setters for processing, presented, reason and state.",
+      "tags": [
+        "generated-code",
+        "apply-configuration",
+        "acme",
+        "challenge",
+        "status"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/acme/v1/challengestatus.go:ChallengeStatusApplyConfiguration",
+      "type": "class",
+      "name": "ChallengeStatusApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+      "lineRange": [
+        27,
+        32
+      ],
+      "summary": "Declarative mirror of ChallengeStatus used when applying status updates to Challenge resources.",
+      "tags": [
+        "apply-configuration",
+        "challenge",
+        "status",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+      "type": "file",
+      "name": "orderstatus.go",
+      "filePath": "pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+      "summary": "Generated apply configuration for OrderStatus covering the order URL, finalize URL, authorizations, certificate bytes, state, reason and failure time.",
+      "tags": [
+        "generated-code",
+        "apply-configuration",
+        "acme",
+        "order",
+        "status"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/acme/v1/orderstatus.go:OrderStatusApplyConfiguration",
+      "type": "class",
+      "name": "OrderStatusApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+      "lineRange": [
+        28,
+        36
+      ],
+      "summary": "Declarative mirror of OrderStatus used when applying status updates to Order resources.",
+      "tags": [
+        "apply-configuration",
+        "order",
+        "status",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/clientset/versioned/clientset.go",
+      "type": "file",
+      "name": "clientset.go",
+      "filePath": "pkg/client/clientset/versioned/clientset.go",
+      "summary": "Constructs the versioned cert-manager clientset, wiring the acme/v1 and certmanager/v1 typed clients onto a shared REST configuration with rate limiting and user agent defaults.",
+      "tags": [
+        "client-library",
+        "kubernetes",
+        "clientset",
+        "factory",
+        "api-client"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/client/clientset/versioned/clientset.go:Interface",
+      "type": "class",
+      "name": "Interface",
+      "filePath": "pkg/client/clientset/versioned/clientset.go",
+      "lineRange": [
+        32,
+        36
+      ],
+      "summary": "Aggregate clientset interface exposing the AcmeV1, CertmanagerV1 and Discovery clients.",
+      "tags": [
+        "interface",
+        "clientset",
+        "api-client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/clientset/versioned/clientset.go:Clientset",
+      "type": "class",
+      "name": "Clientset",
+      "filePath": "pkg/client/clientset/versioned/clientset.go",
+      "lineRange": [
+        39,
+        43
+      ],
+      "summary": "Concrete clientset holding the generated API group clients and discovery client.",
+      "tags": [
+        "clientset",
+        "api-client",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/clientset/versioned/clientset.go:NewForConfig",
+      "type": "function",
+      "name": "NewForConfig",
+      "filePath": "pkg/client/clientset/versioned/clientset.go",
+      "lineRange": [
+        68,
+        82
+      ],
+      "summary": "Builds a Clientset from a rest.Config, applying default rate limits and constructing each API group client.",
+      "tags": [
+        "factory",
+        "clientset",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/client/clientset/versioned/clientset.go:NewForConfigAndClient",
+      "type": "function",
+      "name": "NewForConfigAndClient",
+      "filePath": "pkg/client/clientset/versioned/clientset.go",
+      "lineRange": [
+        88,
+        113
+      ],
+      "summary": "Builds a Clientset from a rest.Config and an explicit HTTP client, leaving transport ownership to the caller.",
+      "tags": [
+        "factory",
+        "clientset",
+        "configuration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/client/clientset/versioned/clientset.go:NewForConfigOrDie",
+      "type": "function",
+      "name": "NewForConfigOrDie",
+      "filePath": "pkg/client/clientset/versioned/clientset.go",
+      "lineRange": [
+        117,
+        123
+      ],
+      "summary": "Wraps NewForConfig and panics on error, for use during process startup.",
+      "tags": [
+        "factory",
+        "clientset",
+        "startup"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/apis/acme/v1/types_order.go",
+      "target": "class:pkg/apis/acme/v1/types_order.go:Order",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/apis/acme/v1/types_order.go",
+      "target": "class:pkg/apis/acme/v1/types_order.go:Order",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/apis/acme/v1/types_order.go",
+      "target": "class:pkg/apis/acme/v1/types_order.go:OrderList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/apis/acme/v1/types_order.go",
+      "target": "class:pkg/apis/acme/v1/types_order.go:OrderList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/apis/acme/v1/types_order.go",
+      "target": "class:pkg/apis/acme/v1/types_order.go:OrderSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/apis/acme/v1/types_order.go",
+      "target": "class:pkg/apis/acme/v1/types_order.go:OrderSpec",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/apis/acme/v1/types_order.go",
+      "target": "class:pkg/apis/acme/v1/types_order.go:OrderStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/apis/acme/v1/types_order.go",
+      "target": "class:pkg/apis/acme/v1/types_order.go:OrderStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/apis/acme/v1/types_order.go",
+      "target": "class:pkg/apis/acme/v1/types_order.go:ACMEAuthorization",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/apis/acme/v1/types_order.go",
+      "target": "class:pkg/apis/acme/v1/types_order.go:ACMEAuthorization",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/apis/acme/v1/types_order.go",
+      "target": "class:pkg/apis/acme/v1/types_order.go:ACMEChallenge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/apis/acme/v1/types_order.go",
+      "target": "class:pkg/apis/acme/v1/types_order.go:ACMEChallenge",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+      "target": "class:pkg/client/applyconfigurations/acme/v1/acmeauthorization.go:ACMEAuthorizationApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+      "target": "class:pkg/client/applyconfigurations/acme/v1/acmeauthorization.go:ACMEAuthorizationApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+      "target": "class:pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go:ACMEChallengeSolverDNS01ApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+      "target": "class:pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go:ACMEChallengeSolverDNS01ApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+      "target": "class:pkg/client/applyconfigurations/acme/v1/challengestatus.go:ChallengeStatusApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+      "target": "class:pkg/client/applyconfigurations/acme/v1/challengestatus.go:ChallengeStatusApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+      "target": "class:pkg/client/applyconfigurations/acme/v1/orderstatus.go:OrderStatusApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+      "target": "class:pkg/client/applyconfigurations/acme/v1/orderstatus.go:OrderStatusApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "class:pkg/client/clientset/versioned/clientset.go:Interface",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "class:pkg/client/clientset/versioned/clientset.go:Interface",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "class:pkg/client/clientset/versioned/clientset.go:Clientset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "class:pkg/client/clientset/versioned/clientset.go:Clientset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "function:pkg/client/clientset/versioned/clientset.go:NewForConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "function:pkg/client/clientset/versioned/clientset.go:NewForConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "function:pkg/client/clientset/versioned/clientset.go:NewForConfigAndClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "function:pkg/client/clientset/versioned/clientset.go:NewForConfigAndClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "function:pkg/client/clientset/versioned/clientset.go:NewForConfigOrDie",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "function:pkg/client/clientset/versioned/clientset.go:NewForConfigOrDie",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/apis/acme/v1/types_order.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/acme/v1/types_order.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/acme/v1/types_order.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/acme/v1/types_order.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmeauthorization.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/acmechallengesolverdns01.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/challengestatus.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/acme/v1/orderstatus.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "file:pkg/client/clientset/versioned/typed/acme/v1/acme_client.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "file:pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "file:pkg/client/clientset/versioned/typed/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "file:pkg/client/clientset/versioned/typed/acme/v1/generated_expansion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "file:pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/certmanager_client.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/generated_expansion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/clientset/versioned/clientset.go",
+      "target": "file:pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/client/clientset/versioned/clientset.go:NewForConfigAndClient",
+      "target": "function:pkg/client/clientset/versioned/typed/acme/v1/acme_client.go:NewForConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/client/clientset/versioned/clientset.go:NewForConfigAndClient",
+      "target": "function:pkg/client/clientset/versioned/typed/certmanager/v1/certmanager_client.go:NewForConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

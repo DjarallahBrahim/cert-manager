@@ -1,0 +1,1825 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "type": "file",
+      "name": "nameconstraints.go",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "summary": "Generated apply configuration for NameConstraints, toggling criticality and the permitted and excluded constraint sets.",
+      "tags": [
+        "apply-configuration",
+        "generated",
+        "kubernetes",
+        "certificate",
+        "x509"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Follows the generated client-go applyconfiguration pattern: With* builders mutate and return the receiver, Extract* converts live objects."
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go:NameConstraintsApplyConfiguration",
+      "type": "class",
+      "name": "NameConstraintsApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "lineRange": [
+        23,
+        27
+      ],
+      "summary": "Declarative apply-configuration struct for NameConstraints with 3 builder/accessor methods and fields: Critical, Permitted, Excluded.",
+      "tags": [
+        "apply-configuration",
+        "data-model",
+        "kubernetes",
+        "generated"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go:NameConstraints",
+      "type": "function",
+      "name": "NameConstraints",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "lineRange": [
+        31,
+        33
+      ],
+      "summary": "Constructs an empty NameConstraints apply configuration for use with Kubernetes server-side apply.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go:WithCritical",
+      "type": "function",
+      "name": "WithCritical",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "lineRange": [
+        38,
+        41
+      ],
+      "summary": "Sets the Critical field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go:WithPermitted",
+      "type": "function",
+      "name": "WithPermitted",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "lineRange": [
+        46,
+        49
+      ],
+      "summary": "Sets the Permitted field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go:WithExcluded",
+      "type": "function",
+      "name": "WithExcluded",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "lineRange": [
+        54,
+        57
+      ],
+      "summary": "Sets the Excluded field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "type": "file",
+      "name": "othername.go",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "summary": "Generated apply configuration for OtherName, representing the X.509 otherName subject alternative name extension.",
+      "tags": [
+        "apply-configuration",
+        "generated",
+        "kubernetes",
+        "certificate",
+        "x509"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Follows the generated client-go applyconfiguration pattern: With* builders mutate and return the receiver, Extract* converts live objects."
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/certmanager/v1/othername.go:OtherNameApplyConfiguration",
+      "type": "class",
+      "name": "OtherNameApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "lineRange": [
+        23,
+        26
+      ],
+      "summary": "Declarative apply-configuration struct for OtherName with 2 builder/accessor methods and fields: OID, UTF8Value.",
+      "tags": [
+        "apply-configuration",
+        "data-model",
+        "kubernetes",
+        "generated"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/othername.go:OtherName",
+      "type": "function",
+      "name": "OtherName",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "lineRange": [
+        30,
+        32
+      ],
+      "summary": "Constructs an empty OtherName apply configuration for use with Kubernetes server-side apply.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/othername.go:WithOID",
+      "type": "function",
+      "name": "WithOID",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "lineRange": [
+        37,
+        40
+      ],
+      "summary": "Sets the OID field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/othername.go:WithUTF8Value",
+      "type": "function",
+      "name": "WithUTF8Value",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "lineRange": [
+        45,
+        48
+      ],
+      "summary": "Sets the UTF8Value field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "type": "file",
+      "name": "pkcs12keystore.go",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "summary": "Generated apply configuration for PKCS12Keystore, exposing create, profile, and password options for PKCS#12 output.",
+      "tags": [
+        "apply-configuration",
+        "generated",
+        "kubernetes",
+        "keystore",
+        "certificate"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows the generated client-go applyconfiguration pattern: With* builders mutate and return the receiver, Extract* converts live objects."
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go:PKCS12KeystoreApplyConfiguration",
+      "type": "class",
+      "name": "PKCS12KeystoreApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "lineRange": [
+        28,
+        33
+      ],
+      "summary": "Declarative apply-configuration struct for PKCS12Keystore with 4 builder/accessor methods and fields: Create, Profile, PasswordSecretRef, Password.",
+      "tags": [
+        "apply-configuration",
+        "data-model",
+        "kubernetes",
+        "generated"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go:PKCS12Keystore",
+      "type": "function",
+      "name": "PKCS12Keystore",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "lineRange": [
+        37,
+        39
+      ],
+      "summary": "Constructs an empty PKCS12Keystore apply configuration for use with Kubernetes server-side apply.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go:WithCreate",
+      "type": "function",
+      "name": "WithCreate",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "lineRange": [
+        44,
+        47
+      ],
+      "summary": "Sets the Create field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go:WithProfile",
+      "type": "function",
+      "name": "WithProfile",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "lineRange": [
+        52,
+        55
+      ],
+      "summary": "Sets the Profile field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go:WithPasswordSecretRef",
+      "type": "function",
+      "name": "WithPasswordSecretRef",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "lineRange": [
+        60,
+        63
+      ],
+      "summary": "Sets the PasswordSecretRef field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go:WithPassword",
+      "type": "function",
+      "name": "WithPassword",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "lineRange": [
+        68,
+        71
+      ],
+      "summary": "Sets the Password field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go",
+      "type": "file",
+      "name": "selfsignedissuer.go",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go",
+      "summary": "Generated apply configuration for SelfSignedIssuer, exposing CRL distribution points for self-signed certificates.",
+      "tags": [
+        "apply-configuration",
+        "generated",
+        "kubernetes",
+        "issuer",
+        "self-signed"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Follows the generated client-go applyconfiguration pattern: With* builders mutate and return the receiver, Extract* converts live objects."
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go:SelfSignedIssuerApplyConfiguration",
+      "type": "class",
+      "name": "SelfSignedIssuerApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go",
+      "lineRange": [
+        23,
+        25
+      ],
+      "summary": "Declarative apply-configuration struct for SelfSignedIssuer with 1 builder/accessor method and fields: CRLDistributionPoints.",
+      "tags": [
+        "apply-configuration",
+        "data-model",
+        "kubernetes",
+        "generated"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go:SelfSignedIssuer",
+      "type": "function",
+      "name": "SelfSignedIssuer",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go",
+      "lineRange": [
+        29,
+        31
+      ],
+      "summary": "Constructs an empty SelfSignedIssuer apply configuration for use with Kubernetes server-side apply.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go:WithCRLDistributionPoints",
+      "type": "function",
+      "name": "WithCRLDistributionPoints",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go",
+      "lineRange": [
+        36,
+        41
+      ],
+      "summary": "Sets the CRLDistributionPoints field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "type": "file",
+      "name": "serviceaccountref.go",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "summary": "Generated apply configuration for the cert-manager ServiceAccountRef type, exposing the service account name and token audiences used by Vault Kubernetes auth.",
+      "tags": [
+        "apply-configuration",
+        "generated",
+        "kubernetes",
+        "vault",
+        "security"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Follows the generated client-go applyconfiguration pattern: With* builders mutate and return the receiver, Extract* converts live objects."
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go:ServiceAccountRefApplyConfiguration",
+      "type": "class",
+      "name": "ServiceAccountRefApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "lineRange": [
+        23,
+        26
+      ],
+      "summary": "Declarative apply-configuration struct for ServiceAccountRef with 2 builder/accessor methods and fields: Name, TokenAudiences.",
+      "tags": [
+        "apply-configuration",
+        "data-model",
+        "kubernetes",
+        "generated"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go:ServiceAccountRef",
+      "type": "function",
+      "name": "ServiceAccountRef",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "lineRange": [
+        30,
+        32
+      ],
+      "summary": "Constructs an empty ServiceAccountRef apply configuration for use with Kubernetes server-side apply.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go:WithName",
+      "type": "function",
+      "name": "WithName",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "lineRange": [
+        37,
+        40
+      ],
+      "summary": "Sets the Name field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go:WithTokenAudiences",
+      "type": "function",
+      "name": "WithTokenAudiences",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "lineRange": [
+        45,
+        50
+      ],
+      "summary": "Sets the TokenAudiences field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "type": "file",
+      "name": "vaultapprole.go",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "summary": "Generated apply configuration for VaultAppRole, exposing the mount path, role ID, and secret reference for AppRole authentication.",
+      "tags": [
+        "apply-configuration",
+        "generated",
+        "kubernetes",
+        "vault",
+        "security"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows the generated client-go applyconfiguration pattern: With* builders mutate and return the receiver, Extract* converts live objects."
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go:VaultAppRoleApplyConfiguration",
+      "type": "class",
+      "name": "VaultAppRoleApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "lineRange": [
+        27,
+        31
+      ],
+      "summary": "Declarative apply-configuration struct for VaultAppRole with 3 builder/accessor methods and fields: Path, RoleId, SecretRef.",
+      "tags": [
+        "apply-configuration",
+        "data-model",
+        "kubernetes",
+        "generated"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go:VaultAppRole",
+      "type": "function",
+      "name": "VaultAppRole",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "lineRange": [
+        35,
+        37
+      ],
+      "summary": "Constructs an empty VaultAppRole apply configuration for use with Kubernetes server-side apply.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go:WithPath",
+      "type": "function",
+      "name": "WithPath",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "lineRange": [
+        42,
+        45
+      ],
+      "summary": "Sets the Path field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go:WithRoleId",
+      "type": "function",
+      "name": "WithRoleId",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "lineRange": [
+        50,
+        53
+      ],
+      "summary": "Sets the RoleId field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go:WithSecretRef",
+      "type": "function",
+      "name": "WithSecretRef",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "lineRange": [
+        58,
+        61
+      ],
+      "summary": "Sets the SecretRef field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "type": "file",
+      "name": "vaultauth.go",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "summary": "Generated apply configuration for VaultAuth, wiring token secret, AppRole, client certificate, and Kubernetes authentication methods.",
+      "tags": [
+        "apply-configuration",
+        "generated",
+        "kubernetes",
+        "vault",
+        "security"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows the generated client-go applyconfiguration pattern: With* builders mutate and return the receiver, Extract* converts live objects."
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go:VaultAuthApplyConfiguration",
+      "type": "class",
+      "name": "VaultAuthApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "lineRange": [
+        27,
+        32
+      ],
+      "summary": "Declarative apply-configuration struct for VaultAuth with 4 builder/accessor methods and fields: TokenSecretRef, AppRole, ClientCertificate, Kubernetes.",
+      "tags": [
+        "apply-configuration",
+        "data-model",
+        "kubernetes",
+        "generated"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go:VaultAuth",
+      "type": "function",
+      "name": "VaultAuth",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "lineRange": [
+        36,
+        38
+      ],
+      "summary": "Constructs an empty VaultAuth apply configuration for use with Kubernetes server-side apply.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go:WithTokenSecretRef",
+      "type": "function",
+      "name": "WithTokenSecretRef",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "lineRange": [
+        43,
+        46
+      ],
+      "summary": "Sets the TokenSecretRef field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go:WithAppRole",
+      "type": "function",
+      "name": "WithAppRole",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "lineRange": [
+        51,
+        54
+      ],
+      "summary": "Sets the AppRole field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go:WithClientCertificate",
+      "type": "function",
+      "name": "WithClientCertificate",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "lineRange": [
+        59,
+        62
+      ],
+      "summary": "Sets the ClientCertificate field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go:WithKubernetes",
+      "type": "function",
+      "name": "WithKubernetes",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "lineRange": [
+        67,
+        70
+      ],
+      "summary": "Sets the Kubernetes field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "type": "file",
+      "name": "vaultclientcertificateauth.go",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "summary": "Generated apply configuration for VaultClientCertificateAuth, exposing the mount path and client certificate secret used for Vault authentication.",
+      "tags": [
+        "apply-configuration",
+        "generated",
+        "kubernetes",
+        "vault",
+        "security"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Follows the generated client-go applyconfiguration pattern: With* builders mutate and return the receiver, Extract* converts live objects."
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go:VaultClientCertificateAuthApplyConfiguration",
+      "type": "class",
+      "name": "VaultClientCertificateAuthApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "lineRange": [
+        23,
+        27
+      ],
+      "summary": "Declarative apply-configuration struct for VaultClientCertificateAuth with 3 builder/accessor methods and fields: Path, SecretName, Name.",
+      "tags": [
+        "apply-configuration",
+        "data-model",
+        "kubernetes",
+        "generated"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go:VaultClientCertificateAuth",
+      "type": "function",
+      "name": "VaultClientCertificateAuth",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "lineRange": [
+        31,
+        33
+      ],
+      "summary": "Constructs an empty VaultClientCertificateAuth apply configuration for use with Kubernetes server-side apply.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go:WithPath",
+      "type": "function",
+      "name": "WithPath",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "lineRange": [
+        38,
+        41
+      ],
+      "summary": "Sets the Path field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go:WithSecretName",
+      "type": "function",
+      "name": "WithSecretName",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "lineRange": [
+        46,
+        49
+      ],
+      "summary": "Sets the SecretName field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go:WithName",
+      "type": "function",
+      "name": "WithName",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "lineRange": [
+        54,
+        57
+      ],
+      "summary": "Sets the Name field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "type": "file",
+      "name": "vaultissuer.go",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "summary": "Generated apply configuration for VaultIssuer, exposing auth, server, path, namespace, CA bundle, and client certificate/key secret references.",
+      "tags": [
+        "apply-configuration",
+        "generated",
+        "kubernetes",
+        "vault",
+        "issuer"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows the generated client-go applyconfiguration pattern: With* builders mutate and return the receiver, Extract* converts live objects."
+    },
+    {
+      "id": "class:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:VaultIssuerApplyConfiguration",
+      "type": "class",
+      "name": "VaultIssuerApplyConfiguration",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "lineRange": [
+        27,
+        37
+      ],
+      "summary": "Declarative apply-configuration struct for VaultIssuer with 9 builder/accessor methods and fields: Auth, Server, ServerName, Path, Namespace, CABundle, CABundleSecretRef, ClientCertSecretRef, ClientKeySecretRef.",
+      "tags": [
+        "apply-configuration",
+        "data-model",
+        "kubernetes",
+        "generated"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:VaultIssuer",
+      "type": "function",
+      "name": "VaultIssuer",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "lineRange": [
+        41,
+        43
+      ],
+      "summary": "Constructs an empty VaultIssuer apply configuration for use with Kubernetes server-side apply.",
+      "tags": [
+        "constructor",
+        "apply-configuration",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithAuth",
+      "type": "function",
+      "name": "WithAuth",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "lineRange": [
+        48,
+        51
+      ],
+      "summary": "Sets the Auth field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithServer",
+      "type": "function",
+      "name": "WithServer",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "lineRange": [
+        56,
+        59
+      ],
+      "summary": "Sets the Server field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithServerName",
+      "type": "function",
+      "name": "WithServerName",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "lineRange": [
+        64,
+        67
+      ],
+      "summary": "Sets the ServerName field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithPath",
+      "type": "function",
+      "name": "WithPath",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "lineRange": [
+        72,
+        75
+      ],
+      "summary": "Sets the Path field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithNamespace",
+      "type": "function",
+      "name": "WithNamespace",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "lineRange": [
+        80,
+        83
+      ],
+      "summary": "Sets the Namespace field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithCABundle",
+      "type": "function",
+      "name": "WithCABundle",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "lineRange": [
+        88,
+        93
+      ],
+      "summary": "Sets the CABundle field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithCABundleSecretRef",
+      "type": "function",
+      "name": "WithCABundleSecretRef",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "lineRange": [
+        98,
+        101
+      ],
+      "summary": "Sets the CABundleSecretRef field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithClientCertSecretRef",
+      "type": "function",
+      "name": "WithClientCertSecretRef",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "lineRange": [
+        106,
+        109
+      ],
+      "summary": "Sets the ClientCertSecretRef field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithClientKeySecretRef",
+      "type": "function",
+      "name": "WithClientKeySecretRef",
+      "filePath": "pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "lineRange": [
+        114,
+        117
+      ],
+      "summary": "Sets the ClientKeySecretRef field on the apply configuration and returns the receiver for fluent chaining.",
+      "tags": [
+        "field-setter",
+        "builder",
+        "apply-configuration"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go:NameConstraintsApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go:NameConstraintsApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go:NameConstraints",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go:NameConstraints",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go:WithCritical",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go:WithCritical",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go:WithPermitted",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go:WithPermitted",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go:WithExcluded",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go:WithExcluded",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/othername.go:OtherNameApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/othername.go:OtherNameApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/othername.go:OtherName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/othername.go:OtherName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/othername.go:WithOID",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/othername.go:WithOID",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/othername.go:WithUTF8Value",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/othername.go:WithUTF8Value",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go:PKCS12KeystoreApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go:PKCS12KeystoreApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go:PKCS12Keystore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go:PKCS12Keystore",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go:WithCreate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go:WithCreate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go:WithProfile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go:WithProfile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go:WithPasswordSecretRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go:WithPasswordSecretRef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go:WithPassword",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go:WithPassword",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go:SelfSignedIssuerApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go:SelfSignedIssuerApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go:SelfSignedIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go:SelfSignedIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go:WithCRLDistributionPoints",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go:WithCRLDistributionPoints",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go:ServiceAccountRefApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go:ServiceAccountRefApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go:ServiceAccountRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go:ServiceAccountRef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go:WithName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go:WithName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go:WithTokenAudiences",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go:WithTokenAudiences",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go:VaultAppRoleApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go:VaultAppRoleApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go:VaultAppRole",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go:VaultAppRole",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go:WithPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go:WithPath",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go:WithRoleId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go:WithRoleId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go:WithSecretRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go:WithSecretRef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go:VaultAuthApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go:VaultAuthApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go:VaultAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go:VaultAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go:WithTokenSecretRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go:WithTokenSecretRef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go:WithAppRole",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go:WithAppRole",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go:WithClientCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go:WithClientCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go:WithKubernetes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go:WithKubernetes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go:VaultClientCertificateAuthApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go:VaultClientCertificateAuthApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go:VaultClientCertificateAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go:VaultClientCertificateAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go:WithPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go:WithPath",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go:WithSecretName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go:WithSecretName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go:WithName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go:WithName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:VaultIssuerApplyConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "class:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:VaultIssuerApplyConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:VaultIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:VaultIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithServer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithServer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithServerName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithServerName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithPath",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithNamespace",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithNamespace",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithCABundle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithCABundle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithCABundleSecretRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithCABundleSecretRef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithClientCertSecretRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithClientCertSecretRef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithClientKeySecretRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "function:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go:WithClientKeySecretRef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "target": "file:pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

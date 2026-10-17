@@ -1,0 +1,1277 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/issuer/acme/dns/util/wait.go",
+      "type": "file",
+      "name": "wait.go",
+      "filePath": "pkg/issuer/acme/dns/util/wait.go",
+      "summary": "DNS propagation utilities that query authoritative nameservers until challenge TXT records become visible.",
+      "tags": [
+        "dns01",
+        "propagation",
+        "dns",
+        "wait"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/util/wait.go:getNameservers",
+      "type": "function",
+      "name": "getNameservers",
+      "filePath": "pkg/issuer/acme/dns/util/wait.go",
+      "lineRange": [
+        61,
+        77
+      ],
+      "summary": "Reads the resolver nameserver list from resolv.conf, applying defaults.",
+      "tags": [
+        "dns",
+        "configuration",
+        "resolver"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/util/wait.go:followCNAMEs",
+      "type": "function",
+      "name": "followCNAMEs",
+      "filePath": "pkg/issuer/acme/dns/util/wait.go",
+      "lineRange": [
+        83,
+        107
+      ],
+      "summary": "Follows CNAME chains for an FQDN and returns the final target.",
+      "tags": [
+        "dns",
+        "cname",
+        "lookup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/util/wait.go:checkDNSPropagation",
+      "type": "function",
+      "name": "checkDNSPropagation",
+      "filePath": "pkg/issuer/acme/dns/util/wait.go",
+      "lineRange": [
+        110,
+        132
+      ],
+      "summary": "Checks challenge record propagation across the given nameservers.",
+      "tags": [
+        "dns01",
+        "propagation",
+        "check"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/util/wait.go:checkAuthoritativeNss",
+      "type": "function",
+      "name": "checkAuthoritativeNss",
+      "filePath": "pkg/issuer/acme/dns/util/wait.go",
+      "lineRange": [
+        135,
+        164
+      ],
+      "summary": "Queries authoritative nameservers to confirm the expected TXT value.",
+      "tags": [
+        "dns",
+        "authoritative",
+        "check"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/util/wait.go:DNSQuery",
+      "type": "function",
+      "name": "DNSQuery",
+      "filePath": "pkg/issuer/acme/dns/util/wait.go",
+      "lineRange": [
+        168,
+        215
+      ],
+      "summary": "Performs a DNS query of a given record type against specified nameservers.",
+      "tags": [
+        "dns",
+        "query",
+        "network"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/util/wait.go:Exchange",
+      "type": "function",
+      "name": "Exchange",
+      "filePath": "pkg/issuer/acme/dns/util/wait.go",
+      "lineRange": [
+        223,
+        273
+      ],
+      "summary": "Performs a DNS message exchange over UDP with TCP fallback and retries.",
+      "tags": [
+        "dns",
+        "network",
+        "exchange"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/util/wait.go:lookupNameservers",
+      "type": "function",
+      "name": "lookupNameservers",
+      "filePath": "pkg/issuer/acme/dns/util/wait.go",
+      "lineRange": [
+        276,
+        301
+      ],
+      "summary": "Finds the authoritative nameservers for a zone.",
+      "tags": [
+        "dns",
+        "nameserver",
+        "lookup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/util/wait.go:FindZoneByFqdn",
+      "type": "function",
+      "name": "FindZoneByFqdn",
+      "filePath": "pkg/issuer/acme/dns/util/wait.go",
+      "lineRange": [
+        305,
+        390
+      ],
+      "summary": "Determines the DNS zone containing an FQDN by querying SOA records recursively.",
+      "tags": [
+        "dns",
+        "zone-lookup",
+        "soa"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/util/wait.go:WaitFor",
+      "type": "function",
+      "name": "WaitFor",
+      "filePath": "pkg/issuer/acme/dns/util/wait.go",
+      "lineRange": [
+        421,
+        441
+      ],
+      "summary": "Polls a condition at a fixed interval until it succeeds or the timeout expires.",
+      "tags": [
+        "polling",
+        "timeout",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "type": "file",
+      "name": "webhook.go",
+      "filePath": "pkg/issuer/acme/dns/webhook/webhook.go",
+      "summary": "DNS-01 solver that delegates challenge presentation and cleanup to an external webhook service.",
+      "tags": [
+        "dns01",
+        "webhook",
+        "solver",
+        "external-integration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/issuer/acme/dns/webhook/webhook.go:Webhook",
+      "type": "class",
+      "name": "Webhook",
+      "filePath": "pkg/issuer/acme/dns/webhook/webhook.go",
+      "lineRange": [
+        37,
+        39
+      ],
+      "summary": "Webhook-based DNS-01 solver that calls a remote challenge API.",
+      "tags": [
+        "dns01",
+        "webhook",
+        "solver"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/webhook/webhook.go:Present",
+      "type": "function",
+      "name": "Present",
+      "filePath": "pkg/issuer/acme/dns/webhook/webhook.go",
+      "lineRange": [
+        46,
+        79
+      ],
+      "summary": "Sends a present request for a challenge to the configured webhook service.",
+      "tags": [
+        "dns01",
+        "webhook",
+        "present"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/webhook/webhook.go:CleanUp",
+      "type": "function",
+      "name": "CleanUp",
+      "filePath": "pkg/issuer/acme/dns/webhook/webhook.go",
+      "lineRange": [
+        82,
+        115
+      ],
+      "summary": "Sends a cleanup request for a challenge to the configured webhook service.",
+      "tags": [
+        "dns01",
+        "webhook",
+        "cleanup"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/webhook/webhook.go:Initialize",
+      "type": "function",
+      "name": "Initialize",
+      "filePath": "pkg/issuer/acme/dns/webhook/webhook.go",
+      "lineRange": [
+        117,
+        131
+      ],
+      "summary": "Initializes the webhook solver with Kubernetes REST configuration.",
+      "tags": [
+        "initialization",
+        "webhook",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/webhook/webhook.go:buildPayload",
+      "type": "function",
+      "name": "buildPayload",
+      "filePath": "pkg/issuer/acme/dns/webhook/webhook.go",
+      "lineRange": [
+        133,
+        161
+      ],
+      "summary": "Builds the challenge request payload sent to the webhook service.",
+      "tags": [
+        "payload",
+        "webhook",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/issuer/acme/http/httproute.go",
+      "type": "file",
+      "name": "httproute.go",
+      "filePath": "pkg/issuer/acme/http/httproute.go",
+      "summary": "Manages Gateway API HTTPRoutes so HTTP-01 challenge requests reach the solver service.",
+      "tags": [
+        "http01",
+        "gateway-api",
+        "httproute",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/httproute.go:ensureGatewayHTTPRoute",
+      "type": "function",
+      "name": "ensureGatewayHTTPRoute",
+      "filePath": "pkg/issuer/acme/http/httproute.go",
+      "lineRange": [
+        36,
+        64
+      ],
+      "summary": "Ensures an HTTPRoute exists and routes the challenge path to the solver service.",
+      "tags": [
+        "http01",
+        "httproute",
+        "ensure"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/httproute.go:getGatewayHTTPRoute",
+      "type": "function",
+      "name": "getGatewayHTTPRoute",
+      "filePath": "pkg/issuer/acme/http/httproute.go",
+      "lineRange": [
+        66,
+        90
+      ],
+      "summary": "Retrieves the HTTPRoute owned by a challenge, if present.",
+      "tags": [
+        "http01",
+        "httproute",
+        "lookup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/httproute.go:createGatewayHTTPRoute",
+      "type": "function",
+      "name": "createGatewayHTTPRoute",
+      "filePath": "pkg/issuer/acme/http/httproute.go",
+      "lineRange": [
+        92,
+        109
+      ],
+      "summary": "Creates the HTTPRoute resource for a challenge.",
+      "tags": [
+        "http01",
+        "httproute",
+        "create"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/httproute.go:checkAndUpdateGatewayHTTPRoute",
+      "type": "function",
+      "name": "checkAndUpdateGatewayHTTPRoute",
+      "filePath": "pkg/issuer/acme/http/httproute.go",
+      "lineRange": [
+        111,
+        141
+      ],
+      "summary": "Reconciles an existing HTTPRoute with the desired challenge routing.",
+      "tags": [
+        "http01",
+        "httproute",
+        "reconcile"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/httproute.go:generateHTTPRouteSpec",
+      "type": "function",
+      "name": "generateHTTPRouteSpec",
+      "filePath": "pkg/issuer/acme/http/httproute.go",
+      "lineRange": [
+        143,
+        178
+      ],
+      "summary": "Generates the HTTPRoute spec that routes the challenge path to the solver service.",
+      "tags": [
+        "http01",
+        "httproute",
+        "spec"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/issuer/acme/http/ingress.go",
+      "type": "file",
+      "name": "ingress.go",
+      "filePath": "pkg/issuer/acme/http/ingress.go",
+      "summary": "Ingress-based HTTP-01 solver that creates and patches Ingresses to serve ACME challenge paths.",
+      "tags": [
+        "http01",
+        "ingress",
+        "solver",
+        "kubernetes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/ingress.go:getIngressesForChallenge",
+      "type": "function",
+      "name": "getIngressesForChallenge",
+      "filePath": "pkg/issuer/acme/http/ingress.go",
+      "lineRange": [
+        50,
+        80
+      ],
+      "summary": "Lists the Ingresses owned by a challenge, filtering out completed ones as needed.",
+      "tags": [
+        "http01",
+        "ingress",
+        "lookup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/ingress.go:ensureIngress",
+      "type": "function",
+      "name": "ensureIngress",
+      "filePath": "pkg/issuer/acme/http/ingress.go",
+      "lineRange": [
+        85,
+        124
+      ],
+      "summary": "Ensures an Ingress exists for the challenge and contains the solver path rule.",
+      "tags": [
+        "http01",
+        "ingress",
+        "ensure"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/ingress.go:createIngress",
+      "type": "function",
+      "name": "createIngress",
+      "filePath": "pkg/issuer/acme/http/ingress.go",
+      "lineRange": [
+        132,
+        145
+      ],
+      "summary": "Creates a solver Ingress for the challenge.",
+      "tags": [
+        "http01",
+        "ingress",
+        "create"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/ingress.go:buildIngressResource",
+      "type": "function",
+      "name": "buildIngressResource",
+      "filePath": "pkg/issuer/acme/http/ingress.go",
+      "lineRange": [
+        147,
+        205
+      ],
+      "summary": "Builds the solver Ingress resource from challenge options and templates.",
+      "tags": [
+        "http01",
+        "ingress",
+        "builder"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/ingress.go:mergeIngressObjectMetaWithIngressResourceTemplate",
+      "type": "function",
+      "name": "mergeIngressObjectMetaWithIngressResourceTemplate",
+      "filePath": "pkg/issuer/acme/http/ingress.go",
+      "lineRange": [
+        208,
+        233
+      ],
+      "summary": "Merges pod template metadata and annotations into the generated Ingress resource.",
+      "tags": [
+        "http01",
+        "ingress",
+        "template"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/ingress.go:addChallengePathToIngress",
+      "type": "function",
+      "name": "addChallengePathToIngress",
+      "filePath": "pkg/issuer/acme/http/ingress.go",
+      "lineRange": [
+        235,
+        282
+      ],
+      "summary": "Adds the challenge path rule to an existing Ingress and prunes stale rules.",
+      "tags": [
+        "http01",
+        "ingress",
+        "routing"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/ingress.go:cleanupIngresses",
+      "type": "function",
+      "name": "cleanupIngresses",
+      "filePath": "pkg/issuer/acme/http/ingress.go",
+      "lineRange": [
+        287,
+        375
+      ],
+      "summary": "Removes challenge path rules from Ingresses and deletes solver-created Ingresses when unused.",
+      "tags": [
+        "http01",
+        "ingress",
+        "cleanup"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/ingress.go:ingressPath",
+      "type": "function",
+      "name": "ingressPath",
+      "filePath": "pkg/issuer/acme/http/ingress.go",
+      "lineRange": [
+        379,
+        400
+      ],
+      "summary": "Builds the path rule for a challenge token and solver service.",
+      "tags": [
+        "http01",
+        "ingress",
+        "routing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/issuer/acme/http/pod.go",
+      "type": "file",
+      "name": "pod.go",
+      "filePath": "pkg/issuer/acme/http/pod.go",
+      "summary": "Builds, reconciles, and cleans up the solver pods that serve HTTP-01 challenge responses.",
+      "tags": [
+        "http01",
+        "pod",
+        "solver",
+        "kubernetes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/pod.go:podLabels",
+      "type": "function",
+      "name": "podLabels",
+      "filePath": "pkg/issuer/acme/http/pod.go",
+      "lineRange": [
+        36,
+        49
+      ],
+      "summary": "Computes the labels identifying the solver pod for a challenge.",
+      "tags": [
+        "http01",
+        "pod",
+        "labels"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/pod.go:ensurePod",
+      "type": "function",
+      "name": "ensurePod",
+      "filePath": "pkg/issuer/acme/http/pod.go",
+      "lineRange": [
+        51,
+        76
+      ],
+      "summary": "Ensures a solver pod exists for the challenge, creating it when missing.",
+      "tags": [
+        "http01",
+        "pod",
+        "ensure"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/pod.go:getPodsForChallenge",
+      "type": "function",
+      "name": "getPodsForChallenge",
+      "filePath": "pkg/issuer/acme/http/pod.go",
+      "lineRange": [
+        80,
+        113
+      ],
+      "summary": "Lists the solver pods belonging to a challenge.",
+      "tags": [
+        "http01",
+        "pod",
+        "lookup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/pod.go:cleanupPods",
+      "type": "function",
+      "name": "cleanupPods",
+      "filePath": "pkg/issuer/acme/http/pod.go",
+      "lineRange": [
+        115,
+        137
+      ],
+      "summary": "Deletes solver pods no longer required by the challenge.",
+      "tags": [
+        "http01",
+        "pod",
+        "cleanup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/pod.go:buildPod",
+      "type": "function",
+      "name": "buildPod",
+      "filePath": "pkg/issuer/acme/http/pod.go",
+      "lineRange": [
+        150,
+        166
+      ],
+      "summary": "Builds the solver pod, preferring a user-provided pod template.",
+      "tags": [
+        "http01",
+        "pod",
+        "builder"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/pod.go:buildDefaultPod",
+      "type": "function",
+      "name": "buildDefaultPod",
+      "filePath": "pkg/issuer/acme/http/pod.go",
+      "lineRange": [
+        174,
+        244
+      ],
+      "summary": "Builds the default solver pod spec including the challenge container and security settings.",
+      "tags": [
+        "http01",
+        "pod",
+        "builder"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/http/pod.go:mergePodObjectMetaWithPodTemplate",
+      "type": "function",
+      "name": "mergePodObjectMetaWithPodTemplate",
+      "filePath": "pkg/issuer/acme/http/pod.go",
+      "lineRange": [
+        247,
+        327
+      ],
+      "summary": "Merges object metadata and security context from a pod template into the solver pod.",
+      "tags": [
+        "http01",
+        "pod",
+        "template"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/issuer/acme/dns/util/wait.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:getNameservers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/util/wait.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:followCNAMEs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/util/wait.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:checkDNSPropagation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/util/wait.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:checkAuthoritativeNss",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/util/wait.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:DNSQuery",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/util/wait.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:DNSQuery",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/util/wait.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:Exchange",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/util/wait.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:Exchange",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/util/wait.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:lookupNameservers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/util/wait.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:FindZoneByFqdn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/util/wait.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:FindZoneByFqdn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/util/wait.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:WaitFor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/util/wait.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:WaitFor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "class:pkg/issuer/acme/dns/webhook/webhook.go:Webhook",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "class:pkg/issuer/acme/dns/webhook/webhook.go:Webhook",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "function:pkg/issuer/acme/dns/webhook/webhook.go:Present",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "function:pkg/issuer/acme/dns/webhook/webhook.go:Present",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "function:pkg/issuer/acme/dns/webhook/webhook.go:CleanUp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "function:pkg/issuer/acme/dns/webhook/webhook.go:CleanUp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "function:pkg/issuer/acme/dns/webhook/webhook.go:Initialize",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "function:pkg/issuer/acme/dns/webhook/webhook.go:Initialize",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "function:pkg/issuer/acme/dns/webhook/webhook.go:buildPayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/httproute.go",
+      "target": "function:pkg/issuer/acme/http/httproute.go:ensureGatewayHTTPRoute",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/httproute.go",
+      "target": "function:pkg/issuer/acme/http/httproute.go:getGatewayHTTPRoute",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/httproute.go",
+      "target": "function:pkg/issuer/acme/http/httproute.go:createGatewayHTTPRoute",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/httproute.go",
+      "target": "function:pkg/issuer/acme/http/httproute.go:checkAndUpdateGatewayHTTPRoute",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/httproute.go",
+      "target": "function:pkg/issuer/acme/http/httproute.go:generateHTTPRouteSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "function:pkg/issuer/acme/http/ingress.go:getIngressesForChallenge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "function:pkg/issuer/acme/http/ingress.go:ensureIngress",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "function:pkg/issuer/acme/http/ingress.go:createIngress",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "function:pkg/issuer/acme/http/ingress.go:buildIngressResource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "function:pkg/issuer/acme/http/ingress.go:mergeIngressObjectMetaWithIngressResourceTemplate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "function:pkg/issuer/acme/http/ingress.go:addChallengePathToIngress",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "function:pkg/issuer/acme/http/ingress.go:cleanupIngresses",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "function:pkg/issuer/acme/http/ingress.go:ingressPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/pod.go",
+      "target": "function:pkg/issuer/acme/http/pod.go:podLabels",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/pod.go",
+      "target": "function:pkg/issuer/acme/http/pod.go:ensurePod",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/pod.go",
+      "target": "function:pkg/issuer/acme/http/pod.go:getPodsForChallenge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/pod.go",
+      "target": "function:pkg/issuer/acme/http/pod.go:cleanupPods",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/pod.go",
+      "target": "function:pkg/issuer/acme/http/pod.go:buildPod",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/pod.go",
+      "target": "function:pkg/issuer/acme/http/pod.go:buildDefaultPod",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/pod.go",
+      "target": "function:pkg/issuer/acme/http/pod.go:mergePodObjectMetaWithPodTemplate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/util/wait.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "file:pkg/client/clientset/versioned/scheme/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "file:pkg/client/clientset/versioned/scheme/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/webhook/webhook.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/httproute.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/httproute.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/httproute.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/httproute.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/httproute.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/httproute.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/httproute.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/httproute.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/httproute.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "file:internal/controller/feature/features.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "file:pkg/issuer/acme/http/solver/constants.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "file:pkg/issuer/acme/http/solver/solver.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/ingress.go",
+      "target": "file:pkg/util/feature/feature_gate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/pod.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/pod.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/pod.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/pod.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/pod.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/pod.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/pod.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/pod.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/http/pod.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

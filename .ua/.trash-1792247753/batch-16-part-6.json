@@ -1,0 +1,559 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/webhook/admission/custom_validator_webhook.go",
+      "type": "file",
+      "name": "custom_validator_webhook.go",
+      "filePath": "pkg/webhook/admission/custom_validator_webhook.go",
+      "summary": "Adapts cert-manager validation plugins to controller-runtime's admission webhook for create, update, and delete operations, including warning propagation.",
+      "tags": [
+        "admission-webhook",
+        "validation",
+        "adapter",
+        "http-handler"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/webhook/admission/handler.go",
+      "type": "file",
+      "name": "handler.go",
+      "filePath": "pkg/webhook/admission/handler.go",
+      "summary": "Base admission handler that tracks which admission operations a plugin handles and provides a constructor for that operation set.",
+      "tags": [
+        "admission-webhook",
+        "base-class",
+        "operation-dispatch",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/webhook/admission/interfaces.go",
+      "type": "file",
+      "name": "interfaces.go",
+      "filePath": "pkg/webhook/admission/interfaces.go",
+      "summary": "Defines the base, validation, and mutation admission interfaces that all cert-manager webhook plugins implement.",
+      "tags": [
+        "interface",
+        "type-definition",
+        "admission-webhook",
+        "contracts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/webhook/server/server.go",
+      "type": "file",
+      "name": "server.go",
+      "filePath": "pkg/webhook/server/server.go",
+      "summary": "Generic webhook HTTP server that runs the controller-runtime manager, secure webhook listener, healthz/livez endpoints, metrics, and optional pprof with graceful shutdown.",
+      "tags": [
+        "webhook",
+        "http-server",
+        "tls",
+        "observability",
+        "entry-point"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/webhook/admission/custom_validator_webhook.go:NewCustomValidationWebhook",
+      "type": "function",
+      "name": "NewCustomValidationWebhook",
+      "filePath": "pkg/webhook/admission/custom_validator_webhook.go",
+      "lineRange": [
+        33,
+        46
+      ],
+      "summary": "Wraps a ValidationInterface with a scheme-backed decoder in a controller-runtime admission webhook.",
+      "tags": [
+        "factory",
+        "adapter",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/admission/custom_validator_webhook.go:Handle",
+      "type": "function",
+      "name": "Handle",
+      "filePath": "pkg/webhook/admission/custom_validator_webhook.go",
+      "lineRange": [
+        54,
+        124
+      ],
+      "summary": "Decodes create, update, and delete payloads, invokes validation, and returns allowed or denied responses with warnings.",
+      "tags": [
+        "http-handler",
+        "validation",
+        "admission-webhook"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/webhook/admission/handler.go:Handles",
+      "type": "function",
+      "name": "Handles",
+      "filePath": "pkg/webhook/admission/handler.go",
+      "lineRange": [
+        28,
+        30
+      ],
+      "summary": "Reports whether the handler operation set contains the given admission operation.",
+      "tags": [
+        "dispatch",
+        "admission-webhook",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/admission/handler.go:NewHandler",
+      "type": "function",
+      "name": "NewHandler",
+      "filePath": "pkg/webhook/admission/handler.go",
+      "lineRange": [
+        34,
+        40
+      ],
+      "summary": "Creates a Handler configured for the supplied admission operations.",
+      "tags": [
+        "factory",
+        "admission-webhook",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/webhook/admission/interfaces.go:Interface",
+      "type": "class",
+      "name": "Interface",
+      "filePath": "pkg/webhook/admission/interfaces.go",
+      "lineRange": [
+        28,
+        30
+      ],
+      "summary": "Base admission plugin contract requiring an operation-handling predicate.",
+      "tags": [
+        "interface",
+        "contracts",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/webhook/admission/interfaces.go:ValidationInterface",
+      "type": "class",
+      "name": "ValidationInterface",
+      "filePath": "pkg/webhook/admission/interfaces.go",
+      "lineRange": [
+        34,
+        38
+      ],
+      "summary": "Contract for admission plugins that validate create, update, or delete requests and may return warnings.",
+      "tags": [
+        "interface",
+        "validation",
+        "contracts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/webhook/admission/interfaces.go:MutationInterface",
+      "type": "class",
+      "name": "MutationInterface",
+      "filePath": "pkg/webhook/admission/interfaces.go",
+      "lineRange": [
+        42,
+        46
+      ],
+      "summary": "Contract for admission plugins that mutate the incoming unstructured object.",
+      "tags": [
+        "interface",
+        "mutation",
+        "contracts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/server/server.go:Run",
+      "type": "function",
+      "name": "Run",
+      "filePath": "pkg/webhook/server/server.go",
+      "lineRange": [
+        106,
+        273
+      ],
+      "summary": "Starts the controller-runtime manager, webhook listener, healthz endpoints, metrics, and optional pprof with graceful shutdown.",
+      "tags": [
+        "lifecycle",
+        "http-server",
+        "tls",
+        "observability"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/webhook/server/server.go:freePort",
+      "type": "function",
+      "name": "freePort",
+      "filePath": "pkg/webhook/server/server.go",
+      "lineRange": [
+        275,
+        286
+      ],
+      "summary": "Finds an available TCP port on the loopback interface for the webhook listener.",
+      "tags": [
+        "networking",
+        "port-allocation",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/server/server.go:Port",
+      "type": "function",
+      "name": "Port",
+      "filePath": "pkg/webhook/server/server.go",
+      "lineRange": [
+        289,
+        295
+      ],
+      "summary": "Returns the port the webhook listener is using, or ErrNotListening if unset.",
+      "tags": [
+        "accessor",
+        "networking",
+        "webhook"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/server/server.go:handleHealthz",
+      "type": "function",
+      "name": "handleHealthz",
+      "filePath": "pkg/webhook/server/server.go",
+      "lineRange": [
+        297,
+        307
+      ],
+      "summary": "HTTP handler reporting unhealthy when the certificate source has no certificate.",
+      "tags": [
+        "health-check",
+        "http-handler",
+        "tls"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/server/server.go:handleLivez",
+      "type": "function",
+      "name": "handleLivez",
+      "filePath": "pkg/webhook/server/server.go",
+      "lineRange": [
+        309,
+        313
+      ],
+      "summary": "HTTP liveness handler that always returns 200 OK.",
+      "tags": [
+        "health-check",
+        "http-handler",
+        "liveness"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/webhook/server/server.go:Server",
+      "type": "class",
+      "name": "Server",
+      "filePath": "pkg/webhook/server/server.go",
+      "lineRange": [
+        57,
+        104
+      ],
+      "summary": "Webhook server configuration and lifecycle manager with TLS, health, metrics, and profiling settings.",
+      "tags": [
+        "webhook",
+        "http-server",
+        "configuration",
+        "stateful"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/webhook/admission/custom_validator_webhook.go",
+      "target": "function:pkg/webhook/admission/custom_validator_webhook.go:NewCustomValidationWebhook",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/admission/custom_validator_webhook.go",
+      "target": "function:pkg/webhook/admission/custom_validator_webhook.go:NewCustomValidationWebhook",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/admission/custom_validator_webhook.go",
+      "target": "function:pkg/webhook/admission/custom_validator_webhook.go:Handle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/admission/custom_validator_webhook.go",
+      "target": "function:pkg/webhook/admission/custom_validator_webhook.go:Handle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/admission/handler.go",
+      "target": "function:pkg/webhook/admission/handler.go:Handles",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/admission/handler.go",
+      "target": "function:pkg/webhook/admission/handler.go:Handles",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/admission/handler.go",
+      "target": "function:pkg/webhook/admission/handler.go:NewHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/admission/handler.go",
+      "target": "function:pkg/webhook/admission/handler.go:NewHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/admission/interfaces.go",
+      "target": "class:pkg/webhook/admission/interfaces.go:Interface",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/admission/interfaces.go",
+      "target": "class:pkg/webhook/admission/interfaces.go:Interface",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/admission/interfaces.go",
+      "target": "class:pkg/webhook/admission/interfaces.go:ValidationInterface",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/admission/interfaces.go",
+      "target": "class:pkg/webhook/admission/interfaces.go:ValidationInterface",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/admission/interfaces.go",
+      "target": "class:pkg/webhook/admission/interfaces.go:MutationInterface",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/admission/interfaces.go",
+      "target": "class:pkg/webhook/admission/interfaces.go:MutationInterface",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "function:pkg/webhook/server/server.go:Run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "function:pkg/webhook/server/server.go:Run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "function:pkg/webhook/server/server.go:freePort",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "function:pkg/webhook/server/server.go:Port",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "function:pkg/webhook/server/server.go:Port",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "function:pkg/webhook/server/server.go:handleHealthz",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "function:pkg/webhook/server/server.go:handleLivez",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "class:pkg/webhook/server/server.go:Server",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "class:pkg/webhook/server/server.go:Server",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "file:pkg/server/tls/dynamic_source.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "file:pkg/server/tls/file_source.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "file:pkg/server/tls/source.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "file:pkg/util/profiling/profiling.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "file:pkg/webhook/admission/chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "file:pkg/webhook/admission/custom_decoder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "file:pkg/webhook/admission/custom_mutation_webhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "file:pkg/webhook/admission/custom_validator_webhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "file:pkg/webhook/admission/handler.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/server/server.go",
+      "target": "file:pkg/webhook/admission/interfaces.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/webhook/server/server.go:Run",
+      "target": "function:pkg/util/profiling/profiling.go:Install",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/webhook/server/server.go:Run",
+      "target": "function:pkg/webhook/admission/custom_mutation_webhook.go:NewCustomMutationWebhook",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/webhook/server/server.go:Run",
+      "target": "function:pkg/webhook/admission/custom_validator_webhook.go:NewCustomValidationWebhook",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/webhook/server/server.go:Run",
+      "target": "function:pkg/server/listener.go:Listen",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/webhook/server/server.go:Run",
+      "target": "function:pkg/webhook/server/server.go:freePort",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

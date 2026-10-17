@@ -1,0 +1,1119 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/client/informers/externalversions/internalinterfaces/factory_interfaces.go",
+      "type": "file",
+      "name": "factory_interfaces.go",
+      "filePath": "pkg/client/informers/externalversions/internalinterfaces/factory_interfaces.go",
+      "summary": "Shared internal interfaces and functional option types used by all generated informer packages.",
+      "tags": [
+        "generated-code",
+        "informer",
+        "interface",
+        "shared-types",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/informers/externalversions/internalinterfaces/factory_interfaces.go:SharedInformerFactory",
+      "type": "class",
+      "name": "SharedInformerFactory",
+      "filePath": "pkg/client/informers/externalversions/internalinterfaces/factory_interfaces.go",
+      "lineRange": [
+        34,
+        37
+      ],
+      "summary": "Minimal factory contract consumed by generated informer packages to obtain shared informers.",
+      "tags": [
+        "interface",
+        "informer",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/listers/acme/v1/challenge.go",
+      "type": "file",
+      "name": "challenge.go",
+      "filePath": "pkg/client/listers/acme/v1/challenge.go",
+      "summary": "Generated read-only lister for acme/v1 Challenge objects, backed by an informer indexer with cluster-wide and namespace-scoped access.",
+      "tags": [
+        "generated-code",
+        "lister",
+        "acme",
+        "challenge",
+        "cache"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/client/listers/acme/v1/challenge.go:ChallengeLister",
+      "type": "class",
+      "name": "ChallengeLister",
+      "filePath": "pkg/client/listers/acme/v1/challenge.go",
+      "lineRange": [
+        30,
+        37
+      ],
+      "summary": "Cluster-wide read interface for listing and looking up Challenge objects from the cache.",
+      "tags": [
+        "lister",
+        "challenge",
+        "acme",
+        "interface"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/listers/acme/v1/challenge.go:ChallengeNamespaceLister",
+      "type": "class",
+      "name": "ChallengeNamespaceLister",
+      "filePath": "pkg/client/listers/acme/v1/challenge.go",
+      "lineRange": [
+        56,
+        64
+      ],
+      "summary": "Namespace-scoped lister for Challenge objects with list and get operations.",
+      "tags": [
+        "lister",
+        "challenge",
+        "namespace",
+        "interface"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/listers/acme/v1/challenge.go:NewChallengeLister",
+      "type": "function",
+      "name": "NewChallengeLister",
+      "filePath": "pkg/client/listers/acme/v1/challenge.go",
+      "lineRange": [
+        45,
+        47
+      ],
+      "summary": "Wraps a cache indexer in a ChallengeLister.",
+      "tags": [
+        "factory",
+        "lister",
+        "challenge"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/listers/acme/v1/expansion_generated.go",
+      "type": "file",
+      "name": "expansion_generated.go",
+      "filePath": "pkg/client/listers/acme/v1/expansion_generated.go",
+      "summary": "Marker expansion interfaces that let external packages extend the generated acme/v1 Challenge and Order listers.",
+      "tags": [
+        "generated-code",
+        "extension-point",
+        "lister",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/client/listers/acme/v1/order.go",
+      "type": "file",
+      "name": "order.go",
+      "filePath": "pkg/client/listers/acme/v1/order.go",
+      "summary": "Generated read-only lister for acme/v1 Order objects, backed by an informer indexer with cluster-wide and namespace-scoped access.",
+      "tags": [
+        "generated-code",
+        "lister",
+        "acme",
+        "order",
+        "cache"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/client/listers/acme/v1/order.go:OrderLister",
+      "type": "class",
+      "name": "OrderLister",
+      "filePath": "pkg/client/listers/acme/v1/order.go",
+      "lineRange": [
+        30,
+        37
+      ],
+      "summary": "Cluster-wide read interface for listing and looking up Order objects from the cache.",
+      "tags": [
+        "lister",
+        "order",
+        "acme",
+        "interface"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/client/listers/acme/v1/order.go:OrderNamespaceLister",
+      "type": "class",
+      "name": "OrderNamespaceLister",
+      "filePath": "pkg/client/listers/acme/v1/order.go",
+      "lineRange": [
+        56,
+        64
+      ],
+      "summary": "Namespace-scoped lister for Order objects with list and get operations.",
+      "tags": [
+        "lister",
+        "order",
+        "namespace",
+        "interface"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/client/listers/acme/v1/order.go:NewOrderLister",
+      "type": "function",
+      "name": "NewOrderLister",
+      "filePath": "pkg/client/listers/acme/v1/order.go",
+      "lineRange": [
+        45,
+        47
+      ],
+      "summary": "Wraps a cache indexer in an OrderLister.",
+      "tags": [
+        "factory",
+        "lister",
+        "order"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/acmechallenges/finalizer.go",
+      "type": "file",
+      "name": "finalizer.go",
+      "filePath": "pkg/controller/acmechallenges/finalizer.go",
+      "summary": "Helpers that decide whether the ACME cleanup finalizer must be added to a Challenge and whether other finalizers still block its removal.",
+      "tags": [
+        "finalizer",
+        "challenge",
+        "cleanup",
+        "lifecycle",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "type": "file",
+      "name": "scheduler.go",
+      "filePath": "pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "summary": "Implements the ACME challenge scheduler that selects which pending Challenges to process given concurrency limits, state priority and deduplication rules.",
+      "tags": [
+        "scheduler",
+        "challenge",
+        "acme",
+        "concurrency",
+        "controller"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:pkg/controller/acmechallenges/scheduler/scheduler.go:Scheduler",
+      "type": "class",
+      "name": "Scheduler",
+      "filePath": "pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "lineRange": [
+        35,
+        39
+      ],
+      "summary": "Challenge scheduler holding the challenge lister, logger and maximum concurrency setting.",
+      "tags": [
+        "scheduler",
+        "challenge",
+        "concurrency"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmechallenges/scheduler/scheduler.go:New",
+      "type": "function",
+      "name": "New",
+      "filePath": "pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "lineRange": [
+        42,
+        45
+      ],
+      "summary": "Constructs a Scheduler bound to a Challenge lister and a concurrency limit.",
+      "tags": [
+        "factory",
+        "scheduler",
+        "challenge"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmechallenges/scheduler/scheduler.go:ScheduleN",
+      "type": "function",
+      "name": "ScheduleN",
+      "filePath": "pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "lineRange": [
+        51,
+        59
+      ],
+      "summary": "Lists all cached Challenges and returns at most N that should start processing.",
+      "tags": [
+        "scheduler",
+        "challenge",
+        "entry-point"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/acmechallenges/scheduler/scheduler.go:scheduleN",
+      "type": "function",
+      "name": "scheduleN",
+      "filePath": "pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "lineRange": [
+        61,
+        77
+      ],
+      "summary": "Caps the requested batch size by the remaining concurrency budget before selecting candidates.",
+      "tags": [
+        "scheduler",
+        "concurrency",
+        "selection"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/acmechallenges/scheduler/scheduler.go:determineChallengeCandidates",
+      "type": "function",
+      "name": "determineChallengeCandidates",
+      "filePath": "pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "lineRange": [
+        95,
+        135
+      ],
+      "summary": "Filters out in-progress, complete and duplicate Challenges and returns the remaining candidates oldest-first.",
+      "tags": [
+        "scheduler",
+        "filtering",
+        "ordering"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/acmechallenges/scheduler/scheduler.go:compareChallenges",
+      "type": "function",
+      "name": "compareChallenges",
+      "filePath": "pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "lineRange": [
+        180,
+        202
+      ],
+      "summary": "Orders Challenges by state priority and then by creation timestamp so older work is preferred.",
+      "tags": [
+        "ordering",
+        "comparison",
+        "challenge"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/acmechallenges/scheduler/scheduler.go:sortChallenges",
+      "type": "function",
+      "name": "sortChallenges",
+      "filePath": "pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "lineRange": [
+        207,
+        225
+      ],
+      "summary": "Stable sort of Challenges using the scheduler priority comparator.",
+      "tags": [
+        "ordering",
+        "sorting",
+        "challenge"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/acmechallenges/scheduler/scheduler.go:dedupeChallenges",
+      "type": "function",
+      "name": "dedupeChallenges",
+      "filePath": "pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "lineRange": [
+        228,
+        242
+      ],
+      "summary": "Removes duplicate Challenges that share the same authorization URL, keeping the oldest.",
+      "tags": [
+        "deduplication",
+        "challenge",
+        "scheduler"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/controller/acmechallenges/update.go",
+      "type": "file",
+      "name": "update.go",
+      "filePath": "pkg/controller/acmechallenges/update.go",
+      "summary": "Updates Challenge finalizers and status either through plain Update calls or server-side apply, depending on the ServerSideApply feature gate.",
+      "tags": [
+        "update",
+        "server-side-apply",
+        "challenge",
+        "feature-gate",
+        "controller"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/controller/acmechallenges/update.go:objectUpdater",
+      "type": "class",
+      "name": "objectUpdater",
+      "filePath": "pkg/controller/acmechallenges/update.go",
+      "lineRange": [
+        44,
+        46
+      ],
+      "summary": "Abstraction over the logic that reconciles an existing Challenge with a desired one.",
+      "tags": [
+        "interface",
+        "update",
+        "challenge"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/acmechallenges/update.go:defaultObjectUpdater",
+      "type": "class",
+      "name": "defaultObjectUpdater",
+      "filePath": "pkg/controller/acmechallenges/update.go",
+      "lineRange": [
+        48,
+        50
+      ],
+      "summary": "Updater that delegates the actual write to an objectUpdateClient implementation.",
+      "tags": [
+        "update",
+        "challenge",
+        "delegation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/acmechallenges/update.go:objectUpdateClientSSA",
+      "type": "class",
+      "name": "objectUpdateClientSSA",
+      "filePath": "pkg/controller/acmechallenges/update.go",
+      "lineRange": [
+        137,
+        140
+      ],
+      "summary": "Update client that writes Challenges and their status through server-side apply with a fixed field manager.",
+      "tags": [
+        "server-side-apply",
+        "update",
+        "challenge"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmechallenges/update.go:newObjectUpdater",
+      "type": "function",
+      "name": "newObjectUpdater",
+      "filePath": "pkg/controller/acmechallenges/update.go",
+      "lineRange": [
+        52,
+        63
+      ],
+      "summary": "Chooses between the plain update client and the server-side apply client based on the ServerSideApply feature gate.",
+      "tags": [
+        "factory",
+        "feature-gate",
+        "update"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/acmechallenges/update.go:updateObject",
+      "type": "function",
+      "name": "updateObject",
+      "filePath": "pkg/controller/acmechallenges/update.go",
+      "lineRange": [
+        75,
+        123
+      ],
+      "summary": "Rejects changes outside finalizers and status, then applies both updates and aggregates their errors.",
+      "tags": [
+        "update",
+        "validation",
+        "error-handling"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/client/informers/externalversions/internalinterfaces/factory_interfaces.go",
+      "target": "class:pkg/client/informers/externalversions/internalinterfaces/factory_interfaces.go:SharedInformerFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/client/informers/externalversions/internalinterfaces/factory_interfaces.go",
+      "target": "class:pkg/client/informers/externalversions/internalinterfaces/factory_interfaces.go:SharedInformerFactory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/challenge.go",
+      "target": "class:pkg/client/listers/acme/v1/challenge.go:ChallengeLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/challenge.go",
+      "target": "class:pkg/client/listers/acme/v1/challenge.go:ChallengeLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/challenge.go",
+      "target": "class:pkg/client/listers/acme/v1/challenge.go:ChallengeNamespaceLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/challenge.go",
+      "target": "class:pkg/client/listers/acme/v1/challenge.go:ChallengeNamespaceLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/challenge.go",
+      "target": "function:pkg/client/listers/acme/v1/challenge.go:NewChallengeLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/challenge.go",
+      "target": "function:pkg/client/listers/acme/v1/challenge.go:NewChallengeLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/order.go",
+      "target": "class:pkg/client/listers/acme/v1/order.go:OrderLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/order.go",
+      "target": "class:pkg/client/listers/acme/v1/order.go:OrderLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/order.go",
+      "target": "class:pkg/client/listers/acme/v1/order.go:OrderNamespaceLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/order.go",
+      "target": "class:pkg/client/listers/acme/v1/order.go:OrderNamespaceLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/order.go",
+      "target": "function:pkg/client/listers/acme/v1/order.go:NewOrderLister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/order.go",
+      "target": "function:pkg/client/listers/acme/v1/order.go:NewOrderLister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "class:pkg/controller/acmechallenges/scheduler/scheduler.go:Scheduler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "class:pkg/controller/acmechallenges/scheduler/scheduler.go:Scheduler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "function:pkg/controller/acmechallenges/scheduler/scheduler.go:New",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "function:pkg/controller/acmechallenges/scheduler/scheduler.go:New",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "function:pkg/controller/acmechallenges/scheduler/scheduler.go:ScheduleN",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "function:pkg/controller/acmechallenges/scheduler/scheduler.go:ScheduleN",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "function:pkg/controller/acmechallenges/scheduler/scheduler.go:scheduleN",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "function:pkg/controller/acmechallenges/scheduler/scheduler.go:determineChallengeCandidates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "function:pkg/controller/acmechallenges/scheduler/scheduler.go:compareChallenges",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "function:pkg/controller/acmechallenges/scheduler/scheduler.go:sortChallenges",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "function:pkg/controller/acmechallenges/scheduler/scheduler.go:dedupeChallenges",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "class:pkg/controller/acmechallenges/update.go:objectUpdater",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "class:pkg/controller/acmechallenges/update.go:defaultObjectUpdater",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "class:pkg/controller/acmechallenges/update.go:objectUpdateClientSSA",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "function:pkg/controller/acmechallenges/update.go:newObjectUpdater",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "function:pkg/controller/acmechallenges/update.go:updateObject",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/client/informers/externalversions/internalinterfaces/factory_interfaces.go",
+      "target": "file:pkg/client/clientset/versioned/clientset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/challenge.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/challenge.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/challenge.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/challenge.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/challenge.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/challenge.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/challenge.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/challenge.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/order.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/order.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/order.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/order.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/order.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/order.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/order.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/client/listers/acme/v1/order.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/finalizer.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/finalizer.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/finalizer.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/finalizer.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/finalizer.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/finalizer.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/finalizer.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/finalizer.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "file:pkg/acme/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "file:pkg/client/listers/acme/v1/challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "file:pkg/client/listers/acme/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "file:pkg/client/listers/acme/v1/order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/scheduler/scheduler.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:internal/controller/challenges/apply.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:internal/controller/feature/features.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:pkg/client/clientset/versioned/clientset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:pkg/util/feature/feature_gate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:test/unit/gen/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:test/unit/gen/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:test/unit/gen/certificatesigningrequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:test/unit/gen/challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:test/unit/gen/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:test/unit/gen/csr.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:test/unit/gen/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:test/unit/gen/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:test/unit/gen/objectmeta.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:test/unit/gen/order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmechallenges/update.go",
+      "target": "file:test/unit/gen/secret.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/controller/acmechallenges/scheduler/scheduler.go:determineChallengeCandidates",
+      "target": "function:pkg/acme/util.go:IsFinalState",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/acmechallenges/scheduler/scheduler.go:determineChallengeCandidates",
+      "target": "function:pkg/acme/util.go:IsFailureState",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:pkg/controller/acmechallenges/update.go:objectUpdateClientSSA",
+      "target": "function:internal/controller/challenges/apply.go:Apply",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:pkg/controller/acmechallenges/update.go:objectUpdateClientSSA",
+      "target": "function:internal/controller/challenges/apply.go:ApplyStatus",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

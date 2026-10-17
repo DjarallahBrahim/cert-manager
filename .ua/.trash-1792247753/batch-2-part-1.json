@@ -1,0 +1,613 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/api/util/names.go",
+      "type": "file",
+      "name": "names.go",
+      "filePath": "pkg/api/util/names.go",
+      "summary": "Generates deterministic DNS-safe names for ACME and other cert-manager resources using FNV and SHA-256 hashing, with helpers to shorten names to length limits.",
+      "tags": [
+        "utility",
+        "naming",
+        "hashing",
+        "dns"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/api/util/usages.go",
+      "type": "file",
+      "name": "usages.go",
+      "filePath": "pkg/api/util/usages.go",
+      "summary": "Maps cert-manager KeyUsage strings to Go crypto/x509 KeyUsage and ExtKeyUsage values and renders them back to strings.",
+      "tags": [
+        "utility",
+        "x509",
+        "key-usage",
+        "conversion"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/apis/certmanager/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "pkg/apis/certmanager/doc.go",
+      "summary": "Package documentation for the cert-manager.io API group, declaring the group name and Go group name used for code generation.",
+      "tags": [
+        "api-group",
+        "documentation",
+        "kubernetes",
+        "cert-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "file",
+      "name": "const.go",
+      "filePath": "pkg/apis/certmanager/v1/const.go",
+      "summary": "Defines certificate duration and renewal defaults plus Vault authentication mount-path constants for the cert-manager v1 API.",
+      "tags": [
+        "constants",
+        "defaults",
+        "api",
+        "vault"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "pkg/apis/certmanager/v1/doc.go",
+      "summary": "Package-level documentation and deepcopy/OpenAPI code-generation markers for the cert-manager v1 API types.",
+      "tags": [
+        "api",
+        "documentation",
+        "code-generation",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "file",
+      "name": "generic_issuer.go",
+      "filePath": "pkg/apis/certmanager/v1/generic_issuer.go",
+      "summary": "Defines the GenericIssuer interface and the shared accessor/setter methods that let Issuer and ClusterIssuer be handled uniformly by controllers.",
+      "tags": [
+        "interface",
+        "api",
+        "issuer",
+        "abstraction"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Interface plus per-receiver accessor methods let two concrete CRD kinds satisfy a single controller-facing contract."
+    },
+    {
+      "id": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "file",
+      "name": "register.go",
+      "filePath": "pkg/apis/certmanager/v1/register.go",
+      "summary": "Registers the cert-manager v1 API types with the Kubernetes runtime scheme under the cert-manager.io group.",
+      "tags": [
+        "api-registration",
+        "kubernetes",
+        "scheme",
+        "api"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/apis/certmanager/v1/generic_issuer.go:GenericIssuer",
+      "type": "class",
+      "name": "GenericIssuer",
+      "filePath": "pkg/apis/certmanager/v1/generic_issuer.go",
+      "lineRange": [
+        26,
+        33
+      ],
+      "summary": "Interface abstracting Issuer and ClusterIssuer so callers can read metadata, spec and status and produce copies uniformly.",
+      "tags": [
+        "interface",
+        "api",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/names.go:ComputeName",
+      "type": "function",
+      "name": "ComputeName",
+      "filePath": "pkg/api/util/names.go",
+      "lineRange": [
+        31,
+        51
+      ],
+      "summary": "Hashes an arbitrary object with FNV-32 and prefixes it with a DNS-safe shortened prefix to build a deterministic resource name.",
+      "tags": [
+        "naming",
+        "hashing",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/names.go:ComputeSecureUniqueDeterministicNameFromData",
+      "type": "function",
+      "name": "ComputeSecureUniqueDeterministicNameFromData",
+      "filePath": "pkg/api/util/names.go",
+      "lineRange": [
+        58,
+        88
+      ],
+      "summary": "Builds a DNS-safe SHA-256 based deterministic name from input data, truncated to the requested maximum length.",
+      "tags": [
+        "naming",
+        "sha256",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/names.go:DNSSafeShortenToNCharacters",
+      "type": "function",
+      "name": "DNSSafeShortenToNCharacters",
+      "filePath": "pkg/api/util/names.go",
+      "lineRange": [
+        91,
+        108
+      ],
+      "summary": "Truncates and sanitises a string so it remains a valid DNS label within the given length.",
+      "tags": [
+        "dns",
+        "utility",
+        "go"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/names.go:DNSSafeShortenTo52Characters",
+      "type": "function",
+      "name": "DNSSafeShortenTo52Characters",
+      "filePath": "pkg/api/util/names.go",
+      "lineRange": [
+        111,
+        113
+      ],
+      "summary": "Convenience wrapper that shortens strings to 52 characters for ACME resource names.",
+      "tags": [
+        "dns",
+        "utility",
+        "go"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/usages.go:KeyUsageType",
+      "type": "function",
+      "name": "KeyUsageType",
+      "filePath": "pkg/api/util/usages.go",
+      "lineRange": [
+        56,
+        59
+      ],
+      "summary": "Looks up the x509.KeyUsage corresponding to a cert-manager KeyUsage value.",
+      "tags": [
+        "x509",
+        "conversion",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/usages.go:ExtKeyUsageType",
+      "type": "function",
+      "name": "ExtKeyUsageType",
+      "filePath": "pkg/api/util/usages.go",
+      "lineRange": [
+        62,
+        65
+      ],
+      "summary": "Looks up the x509.ExtKeyUsage corresponding to a cert-manager KeyUsage value.",
+      "tags": [
+        "x509",
+        "conversion",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/usages.go:KeyUsageStrings",
+      "type": "function",
+      "name": "KeyUsageStrings",
+      "filePath": "pkg/api/util/usages.go",
+      "lineRange": [
+        68,
+        78
+      ],
+      "summary": "Converts a slice of cert-manager KeyUsages into their string representations.",
+      "tags": [
+        "x509",
+        "serialization",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/usages.go:ExtKeyUsageStrings",
+      "type": "function",
+      "name": "ExtKeyUsageStrings",
+      "filePath": "pkg/api/util/usages.go",
+      "lineRange": [
+        81,
+        89
+      ],
+      "summary": "Converts a slice of cert-manager KeyUsages into extended key usage string representations.",
+      "tags": [
+        "x509",
+        "serialization",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/usages.go:keyUsageString",
+      "type": "function",
+      "name": "keyUsageString",
+      "filePath": "pkg/api/util/usages.go",
+      "lineRange": [
+        92,
+        104
+      ],
+      "summary": "Returns the canonical string for a single x509.KeyUsage entry.",
+      "tags": [
+        "x509",
+        "serialization",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/api/util/usages.go:extKeyUsageString",
+      "type": "function",
+      "name": "extKeyUsageString",
+      "filePath": "pkg/api/util/usages.go",
+      "lineRange": [
+        107,
+        119
+      ],
+      "summary": "Returns the canonical string for a single x509.ExtKeyUsage entry.",
+      "tags": [
+        "x509",
+        "serialization",
+        "key-usage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/apis/certmanager/v1/register.go:Resource",
+      "type": "function",
+      "name": "Resource",
+      "filePath": "pkg/apis/certmanager/v1/register.go",
+      "lineRange": [
+        31,
+        33
+      ],
+      "summary": "Builds a GroupResource for a cert-manager resource name under the cert-manager.io group.",
+      "tags": [
+        "api-registration",
+        "kubernetes",
+        "go"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/apis/certmanager/v1/register.go:addKnownTypes",
+      "type": "function",
+      "name": "addKnownTypes",
+      "filePath": "pkg/apis/certmanager/v1/register.go",
+      "lineRange": [
+        49,
+        62
+      ],
+      "summary": "Adds all cert-manager v1 resource and list types to the given scheme.",
+      "tags": [
+        "api-registration",
+        "kubernetes",
+        "go"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "target": "class:pkg/apis/certmanager/v1/generic_issuer.go:GenericIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "target": "class:pkg/apis/certmanager/v1/generic_issuer.go:GenericIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/names.go",
+      "target": "function:pkg/api/util/names.go:ComputeName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/api/util/names.go",
+      "target": "function:pkg/api/util/names.go:ComputeName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/names.go",
+      "target": "function:pkg/api/util/names.go:ComputeSecureUniqueDeterministicNameFromData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/api/util/names.go",
+      "target": "function:pkg/api/util/names.go:ComputeSecureUniqueDeterministicNameFromData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/names.go",
+      "target": "function:pkg/api/util/names.go:DNSSafeShortenToNCharacters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/api/util/names.go",
+      "target": "function:pkg/api/util/names.go:DNSSafeShortenToNCharacters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/names.go",
+      "target": "function:pkg/api/util/names.go:DNSSafeShortenTo52Characters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/api/util/names.go",
+      "target": "function:pkg/api/util/names.go:DNSSafeShortenTo52Characters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/usages.go",
+      "target": "function:pkg/api/util/usages.go:KeyUsageType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/api/util/usages.go",
+      "target": "function:pkg/api/util/usages.go:KeyUsageType",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/usages.go",
+      "target": "function:pkg/api/util/usages.go:ExtKeyUsageType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/api/util/usages.go",
+      "target": "function:pkg/api/util/usages.go:ExtKeyUsageType",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/usages.go",
+      "target": "function:pkg/api/util/usages.go:KeyUsageStrings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/api/util/usages.go",
+      "target": "function:pkg/api/util/usages.go:KeyUsageStrings",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/usages.go",
+      "target": "function:pkg/api/util/usages.go:ExtKeyUsageStrings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/api/util/usages.go",
+      "target": "function:pkg/api/util/usages.go:ExtKeyUsageStrings",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/api/util/usages.go",
+      "target": "function:pkg/api/util/usages.go:keyUsageString",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/api/util/usages.go",
+      "target": "function:pkg/api/util/usages.go:extKeyUsageString",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/apis/certmanager/v1/register.go",
+      "target": "function:pkg/apis/certmanager/v1/register.go:Resource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/apis/certmanager/v1/register.go",
+      "target": "function:pkg/apis/certmanager/v1/register.go:Resource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/apis/certmanager/v1/register.go",
+      "target": "function:pkg/apis/certmanager/v1/register.go:addKnownTypes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/api/util/usages.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/usages.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/usages.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/usages.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/usages.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/usages.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/usages.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/usages.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/api/util/usages.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/certmanager/v1/register.go",
+      "target": "file:pkg/apis/certmanager/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

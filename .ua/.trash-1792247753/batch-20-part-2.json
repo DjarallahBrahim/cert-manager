@@ -1,0 +1,854 @@
+{
+  "nodes": [
+    {
+      "id": "file:internal/apis/config/webhook/fuzzer/fuzzer.go",
+      "type": "file",
+      "name": "fuzzer.go",
+      "filePath": "internal/apis/config/webhook/fuzzer/fuzzer.go",
+      "summary": "Fuzzer functions for the webhook configuration API that fill pprof and metrics addresses and install recommended logging settings during round-trip fuzz tests.",
+      "tags": [
+        "testing",
+        "fuzzing",
+        "webhook",
+        "configuration"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Uses sigs.k8s.io/randfill FillNoCustom to avoid recursive fuzzing of the custom fill function."
+    },
+    {
+      "id": "file:internal/apis/config/webhook/install/install.go",
+      "type": "file",
+      "name": "install.go",
+      "filePath": "internal/apis/config/webhook/install/install.go",
+      "summary": "Adds the internal and v1alpha1 webhook configuration types to a runtime scheme, used when decoding webhook component config files.",
+      "tags": [
+        "registration",
+        "scheme",
+        "webhook",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/webhook/register.go",
+      "type": "file",
+      "name": "register.go",
+      "filePath": "internal/apis/config/webhook/register.go",
+      "summary": "Registers the internal webhook configuration group version and known types with the Kubernetes runtime scheme, exposing the Resource helper and AddToScheme builder.",
+      "tags": [
+        "registration",
+        "scheme",
+        "webhook",
+        "api-versioning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/webhook/scheme/scheme.go",
+      "type": "file",
+      "name": "scheme.go",
+      "filePath": "internal/apis/config/webhook/scheme/scheme.go",
+      "summary": "Builds a runtime scheme and codec factory containing the webhook configuration types so component config can be decoded and defaulted.",
+      "tags": [
+        "scheme",
+        "serialization",
+        "webhook",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/webhook/types.go",
+      "type": "file",
+      "name": "types.go",
+      "filePath": "internal/apis/config/webhook/types.go",
+      "summary": "Defines the internal WebhookConfiguration type describing webhook listener ports, TLS settings, kubeconfig, logging, feature gates and metrics options.",
+      "tags": [
+        "data-model",
+        "configuration",
+        "webhook",
+        "type-definition"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/apis/config/webhook/v1alpha1/defaults.go",
+      "type": "file",
+      "name": "defaults.go",
+      "filePath": "internal/apis/config/webhook/v1alpha1/defaults.go",
+      "summary": "Defaulting logic for the v1alpha1 webhook configuration, setting secure/healthz ports to 6443/6080 and applying recommended logging defaults.",
+      "tags": [
+        "defaulting",
+        "webhook",
+        "api-versioning",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/webhook/v1alpha1/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "internal/apis/config/webhook/v1alpha1/doc.go",
+      "summary": "Package documentation for the webhook v1alpha1 configuration API, declaring conversion, deepcopy and defaulting generation markers.",
+      "tags": [
+        "documentation",
+        "package-definition",
+        "api-versioning",
+        "code-generation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/webhook/v1alpha1/register.go",
+      "type": "file",
+      "name": "register.go",
+      "filePath": "internal/apis/config/webhook/v1alpha1/register.go",
+      "summary": "Registers the webhook v1alpha1 group version and wires the hand-written defaulting functions into the scheme builder.",
+      "tags": [
+        "registration",
+        "api-versioning",
+        "scheme",
+        "webhook"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go",
+      "type": "file",
+      "name": "zz_generated.conversion.go",
+      "filePath": "internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go",
+      "summary": "Generated conversion functions between the v1alpha1 and internal WebhookConfiguration, delegating TLS config conversion to the shared conversion helpers.",
+      "tags": [
+        "code-generation",
+        "conversion",
+        "api-versioning",
+        "webhook"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/apis/config/webhook/v1alpha1/zz_generated.defaults.go",
+      "type": "file",
+      "name": "zz_generated.defaults.go",
+      "filePath": "internal/apis/config/webhook/v1alpha1/zz_generated.defaults.go",
+      "summary": "Generated defaulting registration for WebhookConfiguration, invoking the webhook defaults and nested dynamic serving config defaults.",
+      "tags": [
+        "code-generation",
+        "defaulting",
+        "api-versioning",
+        "webhook"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/webhook/validation/validation.go",
+      "type": "file",
+      "name": "validation.go",
+      "filePath": "internal/apis/config/webhook/validation/validation.go",
+      "summary": "Validates the webhook component configuration: logging config, TLS settings and port ranges for the healthz and secure listeners.",
+      "tags": [
+        "validation",
+        "webhook",
+        "configuration",
+        "tls"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/webhook/zz_generated.deepcopy.go",
+      "type": "file",
+      "name": "zz_generated.deepcopy.go",
+      "filePath": "internal/apis/config/webhook/zz_generated.deepcopy.go",
+      "summary": "Generated deepcopy implementations for the internal WebhookConfiguration, including its TLS, logging, feature gate and metrics TLS fields.",
+      "tags": [
+        "code-generation",
+        "deepcopy",
+        "webhook",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/config/webhook/install/install.go:Install",
+      "type": "function",
+      "name": "Install",
+      "filePath": "internal/apis/config/webhook/install/install.go",
+      "lineRange": [
+        30,
+        33
+      ],
+      "summary": "Registers both the internal and v1alpha1 webhook configuration types into the supplied runtime scheme.",
+      "tags": [
+        "registration",
+        "scheme",
+        "webhook"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/webhook/register.go:Resource",
+      "type": "function",
+      "name": "Resource",
+      "filePath": "internal/apis/config/webhook/register.go",
+      "lineRange": [
+        35,
+        37
+      ],
+      "summary": "Turns an unqualified resource name into a group-qualified GroupResource for the internal webhook config group version.",
+      "tags": [
+        "registration",
+        "utility",
+        "api-versioning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/webhook/scheme/scheme.go:NewSchemeAndCodecs",
+      "type": "function",
+      "name": "NewSchemeAndCodecs",
+      "filePath": "internal/apis/config/webhook/scheme/scheme.go",
+      "lineRange": [
+        30,
+        40
+      ],
+      "summary": "Creates a runtime scheme with webhook config types registered and returns a matching codec factory for decoding component config.",
+      "tags": [
+        "scheme",
+        "serialization",
+        "webhook"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/config/webhook/types.go:WebhookConfiguration",
+      "type": "class",
+      "name": "WebhookConfiguration",
+      "filePath": "internal/apis/config/webhook/types.go",
+      "lineRange": [
+        28,
+        73
+      ],
+      "summary": "Internal webhook component configuration covering secure and healthz ports, TLS and metrics TLS settings, kubeconfig, logging, feature gates and pprof options.",
+      "tags": [
+        "data-model",
+        "configuration",
+        "webhook"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/config/webhook/v1alpha1/defaults.go:SetDefaults_WebhookConfiguration",
+      "type": "function",
+      "name": "SetDefaults_WebhookConfiguration",
+      "filePath": "internal/apis/config/webhook/v1alpha1/defaults.go",
+      "lineRange": [
+        33,
+        49
+      ],
+      "summary": "Defaults the webhook secure port to 6443, healthz port to 6080 and applies recommended logging configuration.",
+      "tags": [
+        "defaulting",
+        "webhook",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/webhook/v1alpha1/register.go:Resource",
+      "type": "function",
+      "name": "Resource",
+      "filePath": "internal/apis/config/webhook/v1alpha1/register.go",
+      "lineRange": [
+        30,
+        32
+      ],
+      "summary": "Returns the group-qualified GroupResource for a webhook v1alpha1 resource name.",
+      "tags": [
+        "registration",
+        "utility",
+        "api-versioning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/webhook/validation/validation.go:ValidateWebhookConfiguration",
+      "type": "function",
+      "name": "ValidateWebhookConfiguration",
+      "filePath": "internal/apis/config/webhook/validation/validation.go",
+      "lineRange": [
+        27,
+        41
+      ],
+      "summary": "Validates webhook logging and TLS config and enforces that healthz and secure ports fall within the valid port range.",
+      "tags": [
+        "validation",
+        "webhook",
+        "configuration"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:internal/apis/config/webhook/install/install.go",
+      "target": "function:internal/apis/config/webhook/install/install.go:Install",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/webhook/install/install.go",
+      "target": "function:internal/apis/config/webhook/install/install.go:Install",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/webhook/register.go",
+      "target": "function:internal/apis/config/webhook/register.go:Resource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/webhook/register.go",
+      "target": "function:internal/apis/config/webhook/register.go:Resource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/webhook/scheme/scheme.go",
+      "target": "function:internal/apis/config/webhook/scheme/scheme.go:NewSchemeAndCodecs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/webhook/scheme/scheme.go",
+      "target": "function:internal/apis/config/webhook/scheme/scheme.go:NewSchemeAndCodecs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/webhook/types.go",
+      "target": "class:internal/apis/config/webhook/types.go:WebhookConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/webhook/types.go",
+      "target": "class:internal/apis/config/webhook/types.go:WebhookConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/webhook/v1alpha1/defaults.go:SetDefaults_WebhookConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/webhook/v1alpha1/defaults.go:SetDefaults_WebhookConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/register.go",
+      "target": "function:internal/apis/config/webhook/v1alpha1/register.go:Resource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/register.go",
+      "target": "function:internal/apis/config/webhook/v1alpha1/register.go:Resource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/webhook/validation/validation.go",
+      "target": "function:internal/apis/config/webhook/validation/validation.go:ValidateWebhookConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/webhook/validation/validation.go",
+      "target": "function:internal/apis/config/webhook/validation/validation.go:ValidateWebhookConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/webhook/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/config/webhook/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/config/webhook/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/config/webhook/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/config/webhook/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/install/install.go",
+      "target": "file:internal/apis/config/webhook/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/install/install.go",
+      "target": "file:internal/apis/config/webhook/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/install/install.go",
+      "target": "file:internal/apis/config/webhook/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/install/install.go",
+      "target": "file:internal/apis/config/webhook/v1alpha1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/install/install.go",
+      "target": "file:internal/apis/config/webhook/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/install/install.go",
+      "target": "file:internal/apis/config/webhook/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/install/install.go",
+      "target": "file:internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/install/install.go",
+      "target": "file:internal/apis/config/webhook/v1alpha1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/install/install.go",
+      "target": "file:internal/apis/config/webhook/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/register.go",
+      "target": "file:pkg/apis/config/webhook/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/scheme/scheme.go",
+      "target": "file:internal/apis/config/webhook/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/scheme/scheme.go",
+      "target": "file:internal/apis/config/webhook/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/scheme/scheme.go",
+      "target": "file:internal/apis/config/webhook/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/scheme/scheme.go",
+      "target": "file:internal/apis/config/webhook/v1alpha1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/scheme/scheme.go",
+      "target": "file:internal/apis/config/webhook/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/scheme/scheme.go",
+      "target": "file:internal/apis/config/webhook/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/scheme/scheme.go",
+      "target": "file:internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/scheme/scheme.go",
+      "target": "file:internal/apis/config/webhook/v1alpha1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/scheme/scheme.go",
+      "target": "file:internal/apis/config/webhook/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/types.go",
+      "target": "file:internal/apis/config/shared/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/types.go",
+      "target": "file:internal/apis/config/shared/types_leaderelection.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/types.go",
+      "target": "file:internal/apis/config/shared/types_tlsconfig.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/types.go",
+      "target": "file:internal/apis/config/shared/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/webhook/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/webhook/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/webhook/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/webhook/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go",
+      "target": "file:internal/apis/config/webhook/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.defaults.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.defaults.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.defaults.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.defaults.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.defaults.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.defaults.go",
+      "target": "file:internal/apis/config/shared/v1alpha1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.defaults.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.defaults.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.defaults.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/v1alpha1/zz_generated.defaults.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/validation/validation.go",
+      "target": "file:internal/apis/config/shared/validation/validation.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/validation/validation.go",
+      "target": "file:internal/apis/config/webhook/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/validation/validation.go",
+      "target": "file:internal/apis/config/webhook/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/validation/validation.go",
+      "target": "file:internal/apis/config/webhook/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/webhook/validation/validation.go",
+      "target": "file:internal/apis/config/webhook/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:internal/apis/config/webhook/validation/validation.go:ValidateWebhookConfiguration",
+      "target": "function:internal/apis/config/shared/validation/validation.go:ValidateTLSConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

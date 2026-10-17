@@ -1,0 +1,49 @@
+{
+  "nodes": [
+    {
+      "id": "config:make/config/pebble/chart/templates/configmap.yaml",
+      "type": "config",
+      "name": "configmap.yaml",
+      "filePath": "make/config/pebble/chart/templates/configmap.yaml",
+      "summary": "Helm-templated ConfigMap providing the Pebble ACME test server configuration along with its localhost serving certificate and private key, including custom 123h and 456h certificate profiles for cert-manager tests.",
+      "tags": ["configuration", "helm", "acme", "testing", "tls"],
+      "complexity": "moderate",
+      "languageNotes": "Embeds a long-lived self-signed localhost certificate and RSA key inline, and renders profile validityPeriod values with Helm's mul function."
+    },
+    {
+      "id": "config:make/config/pebble/chart/templates/deployment.yaml",
+      "type": "config",
+      "name": "deployment.yaml",
+      "filePath": "make/config/pebble/chart/templates/deployment.yaml",
+      "summary": "Helm-templated Deployment running the Pebble ACME test server on port 14000 with the mounted Pebble config, strict-mode toggle, HTTPS readiness probe, and values-driven resources and node selection.",
+      "tags": ["configuration", "deployment", "helm", "acme", "kubernetes"],
+      "complexity": "moderate",
+      "languageNotes": "Readiness probing targets Pebble's /dir endpoint over HTTPS; nodeSelector is rendered conditionally from values."
+    },
+    {
+      "id": "config:make/config/pebble/chart/templates/service.yaml",
+      "type": "config",
+      "name": "service.yaml",
+      "filePath": "make/config/pebble/chart/templates/service.yaml",
+      "summary": "Helm-templated Service mapping external TCP port 443 to the Pebble container's HTTPS ACME endpoint on port 14000.",
+      "tags": ["configuration", "helm", "kubernetes", "networking", "acme"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:make/config/pebble/chart/templates/deployment.yaml",
+      "target": "config:make/config/pebble/chart/templates/configmap.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:make/config/pebble/chart/templates/service.yaml",
+      "target": "config:make/config/pebble/chart/templates/deployment.yaml",
+      "type": "serves",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "nodes": [
+    {
+      "id": "document:design/20190708.certificate-request-crd.md",
+      "type": "document",
+      "name": "20190708.certificate-request-crd.md",
+      "filePath": "design/20190708.certificate-request-crd.md",
+      "summary": "Design proposal introducing the CertificateRequest CRD as the hand-off point between certificate controllers and issuers, covering API fields, approval/denial conditions, RBAC scope, ACME and issuing controller behaviour, and graduation criteria.",
+      "tags": ["documentation", "design-proposal", "certificate-request", "api-design", "crd"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:design/20191218-security-context-deprecation.md",
+      "type": "document",
+      "name": "20191218-security-context-deprecation.md",
+      "filePath": "design/20191218-security-context-deprecation.md",
+      "summary": "Design note describing how to deprecate the Helm chart's boolean securityContext.enabled in favour of an arbitrary securityContext block, including pseudo-code precedence rules and eight backwards-compatibility test cases.",
+      "tags": ["documentation", "design-proposal", "helm", "backwards-compatibility", "security"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:design/20200326.extensible-certificate-controller.md",
+      "type": "document",
+      "name": "20200326.extensible-certificate-controller.md",
+      "filePath": "design/20200326.extensible-certificate-controller.md",
+      "summary": "Design proposal for refactoring the Certificate controller into composable keymanager, requestmanager, and issuing components, with new API fields that make issuance and private key handling extensible.",
+      "tags": ["documentation", "design-proposal", "controller", "certificate", "refactoring"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:design/20210203.certificate-request-identity.md",
+      "type": "document",
+      "name": "20210203.certificate-request-identity.md",
+      "filePath": "design/20210203.certificate-request-identity.md",
+      "summary": "Design proposal adding user identity (username, UID, groups, extra attributes) to CertificateRequest and propagating it so issuers can make authorisation decisions and embed identity in issued certificates.",
+      "tags": ["documentation", "design-proposal", "certificate-request", "identity", "security"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:design/20210209.certificates.k8s.io-adoption.md",
+      "type": "document",
+      "name": "20210209.certificates.k8s.io-adoption.md",
+      "filePath": "design/20210209.certificates.k8s.io-adoption.md",
+      "summary": "Design proposal for adopting the upstream certificates.k8s.io CertificateSigningRequest API and signer model, covering third-party interoperability, security implications, field mapping, and the migration path away from the CertificateRequest CRD.",
+      "tags": ["documentation", "design-proposal", "certificate-signing-request", "kubernetes", "interoperability"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:design/20220118.certificate-issuance-exponential-backoff.md",
+      "type": "document",
+      "name": "20220118.certificate-issuance-exponential-backoff.md",
+      "filePath": "design/20220118.certificate-issuance-exponential-backoff.md",
+      "summary": "Design proposal introducing exponential backoff for failed certificate issuance attempts, defining new status fields and worked examples for automatic and manually triggered reissuance.",
+      "tags": ["documentation", "design-proposal", "certificate", "retry", "reliability"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:design/20220118.server-side-apply.md",
+      "type": "document",
+      "name": "20220118.server-side-apply.md",
+      "filePath": "design/20220118.server-side-apply.md",
+      "summary": "Design proposal to migrate cert-manager controllers from update/patch semantics to server-side apply, covering field manager naming, conflict resolution, field deletion, and feature-gate rollout.",
+      "tags": ["documentation", "design-proposal", "server-side-apply", "kubernetes", "controller"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:design/20220614-timeouts.md",
+      "type": "document",
+      "name": "20220614-timeouts.md",
+      "filePath": "design/20220614-timeouts.md",
+      "summary": "Design proposal to increase controller and issuer operation timeouts, remove intermediate middleware timeouts, and raise ACME HTTP client timeouts so slow external issuers no longer fail spuriously.",
+      "tags": ["documentation", "design-proposal", "timeouts", "reliability", "acme"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:design/20221205-memory-management.md",
+      "type": "document",
+      "name": "20221205-memory-management.md",
+      "filePath": "design/20221205-memory-management.md",
+      "summary": "Design proposal for cutting cert-manager memory consumption by caching partial object metadata and applying transform functions to strip Secret data before objects enter informer caches, with benchmarks and alternatives analysis.",
+      "tags": ["documentation", "design-proposal", "memory-management", "performance", "kubernetes"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:design/20230302.gomod.md",
+      "type": "document",
+      "name": "20230302.gomod.md",
+      "filePath": "design/20230302.gomod.md",
+      "summary": "Design document describing the split of the cert-manager repository into multiple Go modules (one per binary, separate test modules, and a pkg/apis module) to reduce dependency churn and simplify patching.",
+      "tags": ["documentation", "design-proposal", "go-modules", "build-system", "dependency-management"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:design/20230601.gateway-route-hostnames.md",
+      "type": "document",
+      "name": "20230601.gateway-route-hostnames.md",
+      "filePath": "design/20230601.gateway-route-hostnames.md",
+      "summary": "Design proposal for inferring TLS hostnames from Gateway API Route objects so cert-manager can populate Certificate DNS names automatically from Gateway/HTTPRoute resources.",
+      "tags": ["documentation", "design-proposal", "gateway-api", "certificate", "kubernetes"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:design/20240122.scarf.md",
+      "type": "document",
+      "name": "20240122.scarf.md",
+      "filePath": "design/20240122.scarf.md",
+      "summary": "Short proposal to adopt Scarf.sh for container image download analytics and to decouple cert-manager images from the Jetstack-branded Quay repository as part of CNCF vendor-neutrality work.",
+      "tags": ["documentation", "design-proposal", "telemetry", "container-registry", "cncf"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:design/20240206.helm-resource-policy.md",
+      "type": "document",
+      "name": "20240206.helm-resource-policy.md",
+      "filePath": "design/20240206.helm-resource-policy.md",
+      "summary": "Proposal to add the helm.sh/resource-policy: keep annotation to cert-manager CRDs and standardise CRD upgrade options in the Helm chart so uninstalling the chart does not delete CRDs and user data.",
+      "tags": ["documentation", "design-proposal", "helm", "crd", "deployment"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:design/20240518.push-to-multiple-registries.md",
+      "type": "document",
+      "name": "20240518.push-to-multiple-registries.md",
+      "filePath": "design/20240518.push-to-multiple-registries.md",
+      "summary": "Design proposal enabling release tooling to publish cert-manager image artifacts to multiple container registries, covering mirroring strategy, credentials, failure handling, and rollout criteria.",
+      "tags": ["documentation", "design-proposal", "container-registry", "release-engineering", "deployment"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:design/20240625.push-charts-to-oci.md",
+      "type": "document",
+      "name": "20240625.push-charts-to-oci.md",
+      "filePath": "design/20240625.push-charts-to-oci.md",
+      "summary": "Design proposal for publishing cert-manager Helm charts to an OCI registry in addition to the traditional chart repository, including signing, risks, and graduation criteria.",
+      "tags": ["documentation", "design-proposal", "helm", "oci-registry", "release-engineering"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:design/acme-orders-challenges-crd.md",
+      "type": "document",
+      "name": "acme-orders-challenges-crd.md",
+      "filePath": "design/acme-orders-challenges-crd.md",
+      "summary": "Design proposal introducing first-class ACME Order and Challenge CRDs so order flow state is no longer hidden inside the Certificate status, along with the required API types, order and challenge controllers, and refactoring plan.",
+      "tags": ["documentation", "design-proposal", "acme", "crd", "controller"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:design/template.md",
+      "type": "document",
+      "name": "template.md",
+      "filePath": "design/template.md",
+      "summary": "Reusable design-document template adapted from the Kubernetes KEP template, providing standard sections such as summary, motivation, proposal, design details, test plan, and production readiness for new cert-manager proposals.",
+      "tags": ["documentation", "template", "design-proposal", "process", "governance"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:design/20190708.certificate-request-crd.md",
+      "target": "document:design/20210203.certificate-request-identity.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:design/20190708.certificate-request-crd.md",
+      "target": "document:design/20210209.certificates.k8s.io-adoption.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:design/20210203.certificate-request-identity.md",
+      "target": "document:design/20210209.certificates.k8s.io-adoption.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:design/20200326.extensible-certificate-controller.md",
+      "target": "document:design/20190708.certificate-request-crd.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:design/20220118.certificate-issuance-exponential-backoff.md",
+      "target": "document:design/20200326.extensible-certificate-controller.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:design/20240122.scarf.md",
+      "target": "document:design/20240518.push-to-multiple-registries.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:design/20240518.push-to-multiple-registries.md",
+      "target": "document:design/20240625.push-charts-to-oci.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:design/20240206.helm-resource-policy.md",
+      "target": "document:design/20240625.push-charts-to-oci.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:design/template.md",
+      "target": "document:design/20220614-timeouts.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

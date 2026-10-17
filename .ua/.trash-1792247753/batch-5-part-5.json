@@ -1,0 +1,1377 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/metrics/venafi.go",
+      "type": "file",
+      "name": "venafi.go",
+      "filePath": "pkg/metrics/venafi.go",
+      "summary": "Metric helper recording Venafi client request durations by label.",
+      "tags": [
+        "metrics",
+        "venafi",
+        "observability",
+        "prometheus"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/metrics/venafi.go:ObserveVenafiRequestDuration",
+      "type": "function",
+      "name": "ObserveVenafiRequestDuration",
+      "filePath": "pkg/metrics/venafi.go",
+      "lineRange": [
+        24,
+        26
+      ],
+      "summary": "Observes a Venafi client request duration in seconds with the given labels.",
+      "tags": [
+        "metrics",
+        "venafi",
+        "observability"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/scheduler/scheduler.go",
+      "type": "file",
+      "name": "scheduler.go",
+      "filePath": "pkg/scheduler/scheduler.go",
+      "summary": "Generic scheduled work queue that delays reprocessing of objects using a mockable clock.",
+      "tags": [
+        "scheduler",
+        "work-queue",
+        "concurrency",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/scheduler/scheduler.go:ScheduledWorkQueue",
+      "type": "class",
+      "name": "ScheduledWorkQueue",
+      "filePath": "pkg/scheduler/scheduler.go",
+      "lineRange": [
+        62,
+        70
+      ],
+      "summary": "Interface for adding and forgetting delayed work items.",
+      "tags": [
+        "scheduler",
+        "interface",
+        "work-queue"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/scheduler/scheduler.go:scheduledWorkQueue",
+      "type": "class",
+      "name": "scheduledWorkQueue",
+      "filePath": "pkg/scheduler/scheduler.go",
+      "lineRange": [
+        72,
+        80
+      ],
+      "summary": "Clock-backed implementation of ScheduledWorkQueue.",
+      "tags": [
+        "scheduler",
+        "work-queue",
+        "concurrency"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/scheduler/scheduler.go:afterFunc",
+      "type": "function",
+      "name": "afterFunc",
+      "filePath": "pkg/scheduler/scheduler.go",
+      "lineRange": [
+        28,
+        54
+      ],
+      "summary": "Mockable equivalent of time.AfterFunc with a concurrency-safe cancel function.",
+      "tags": [
+        "scheduler",
+        "timer",
+        "concurrency"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/scheduler/scheduler.go:NewScheduledWorkQueue",
+      "type": "function",
+      "name": "NewScheduledWorkQueue",
+      "filePath": "pkg/scheduler/scheduler.go",
+      "lineRange": [
+        83,
+        92
+      ],
+      "summary": "Creates a work queue driven by the given clock and processing function.",
+      "tags": [
+        "scheduler",
+        "constructor",
+        "work-queue"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/scheduler/scheduler.go:Add",
+      "type": "function",
+      "name": "Add",
+      "filePath": "pkg/scheduler/scheduler.go",
+      "lineRange": [
+        97,
+        110
+      ],
+      "summary": "Schedules processing of an object after the given duration.",
+      "tags": [
+        "scheduler",
+        "work-queue",
+        "timer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/scheduler/scheduler.go:Forget",
+      "type": "function",
+      "name": "Forget",
+      "filePath": "pkg/scheduler/scheduler.go",
+      "lineRange": [
+        113,
+        121
+      ],
+      "summary": "Cancels any pending processing for an object.",
+      "tags": [
+        "scheduler",
+        "work-queue",
+        "lifecycle"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/scheduler/test/fake.go",
+      "type": "file",
+      "name": "fake.go",
+      "filePath": "pkg/scheduler/test/fake.go",
+      "summary": "Test fake for the scheduler ScheduledWorkQueue interface backed by injectable functions.",
+      "tags": [
+        "test-double",
+        "scheduler",
+        "fake",
+        "work-queue"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/scheduler/test/fake.go:FakeScheduler",
+      "type": "class",
+      "name": "FakeScheduler",
+      "filePath": "pkg/scheduler/test/fake.go",
+      "lineRange": [
+        30,
+        33
+      ],
+      "summary": "Fake ScheduledWorkQueue using injectable Add and Forget functions.",
+      "tags": [
+        "test-double",
+        "scheduler",
+        "work-queue"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/scheduler/test/fake.go:Add",
+      "type": "function",
+      "name": "Add",
+      "filePath": "pkg/scheduler/test/fake.go",
+      "lineRange": [
+        35,
+        37
+      ],
+      "summary": "Records scheduled work by delegating to AddFunc.",
+      "tags": [
+        "test-double",
+        "delegation",
+        "scheduler"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/scheduler/test/fake.go:Forget",
+      "type": "function",
+      "name": "Forget",
+      "filePath": "pkg/scheduler/test/fake.go",
+      "lineRange": [
+        39,
+        41
+      ],
+      "summary": "Forgets objects by delegating to ForgetFunc.",
+      "tags": [
+        "test-double",
+        "delegation",
+        "scheduler"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/server/tls/authority/authority.go",
+      "type": "file",
+      "name": "authority.go",
+      "filePath": "pkg/server/tls/authority/authority.go",
+      "summary": "DynamicAuthority manages the CA used to sign webhook serving certificates, regenerating it from a Secret and notifying rotation watchers.",
+      "tags": [
+        "tls",
+        "certificate-authority",
+        "rotation",
+        "kubernetes",
+        "security"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:pkg/server/tls/authority/authority.go:DynamicAuthority",
+      "type": "class",
+      "name": "DynamicAuthority",
+      "filePath": "pkg/server/tls/authority/authority.go",
+      "lineRange": [
+        54,
+        96
+      ],
+      "summary": "CA authority that loads or creates a signing key pair and notifies rotation watchers.",
+      "tags": [
+        "tls",
+        "certificate-authority",
+        "rotation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/server/tls/authority/authority.go:Run",
+      "type": "function",
+      "name": "Run",
+      "filePath": "pkg/server/tls/authority/authority.go",
+      "lineRange": [
+        102,
+        183
+      ],
+      "summary": "Starts the informer loop, ensures the CA exists, and processes Secret events until shutdown.",
+      "tags": [
+        "tls",
+        "controller",
+        "informer",
+        "lifecycle"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/server/tls/authority/authority.go:Sign",
+      "type": "function",
+      "name": "Sign",
+      "filePath": "pkg/server/tls/authority/authority.go",
+      "lineRange": [
+        188,
+        232
+      ],
+      "summary": "Signs a certificate template with the current CA key.",
+      "tags": [
+        "tls",
+        "signing",
+        "certificate-authority"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/server/tls/authority/authority.go:WatchRotation",
+      "type": "function",
+      "name": "WatchRotation",
+      "filePath": "pkg/server/tls/authority/authority.go",
+      "lineRange": [
+        238,
+        244
+      ],
+      "summary": "Registers a channel that receives new CA material when it rotates.",
+      "tags": [
+        "tls",
+        "rotation",
+        "notification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/server/tls/authority/authority.go:StopWatchingRotation",
+      "type": "function",
+      "name": "StopWatchingRotation",
+      "filePath": "pkg/server/tls/authority/authority.go",
+      "lineRange": [
+        246,
+        257
+      ],
+      "summary": "Unregisters a rotation notification channel.",
+      "tags": [
+        "tls",
+        "rotation",
+        "lifecycle"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/server/tls/authority/authority.go:ensureCA",
+      "type": "function",
+      "name": "ensureCA",
+      "filePath": "pkg/server/tls/authority/authority.go",
+      "lineRange": [
+        259,
+        277
+      ],
+      "summary": "Loads the CA from its Secret or generates it when missing.",
+      "tags": [
+        "tls",
+        "certificate-authority",
+        "secrets"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/server/tls/authority/authority.go:notifyWatches",
+      "type": "function",
+      "name": "notifyWatches",
+      "filePath": "pkg/server/tls/authority/authority.go",
+      "lineRange": [
+        279,
+        306
+      ],
+      "summary": "Sends the new certificate and key to all rotation watchers.",
+      "tags": [
+        "tls",
+        "rotation",
+        "notification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/server/tls/authority/authority.go:caRequiresRegeneration",
+      "type": "function",
+      "name": "caRequiresRegeneration",
+      "filePath": "pkg/server/tls/authority/authority.go",
+      "lineRange": [
+        310,
+        342
+      ],
+      "summary": "Determines whether the stored CA is invalid, expiring, or otherwise needs regeneration.",
+      "tags": [
+        "tls",
+        "validation",
+        "rotation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/server/tls/authority/authority.go:regenerateCA",
+      "type": "function",
+      "name": "regenerateCA",
+      "filePath": "pkg/server/tls/authority/authority.go",
+      "lineRange": [
+        347,
+        418
+      ],
+      "summary": "Generates a new CA key pair and persists it to the backing Secret.",
+      "tags": [
+        "tls",
+        "certificate-authority",
+        "rotation",
+        "secrets"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/server/tls/authority/authority.go:handleAdd",
+      "type": "function",
+      "name": "handleAdd",
+      "filePath": "pkg/server/tls/authority/authority.go",
+      "lineRange": [
+        420,
+        425
+      ],
+      "summary": "Handles Secret add events by checking whether the CA needs regeneration.",
+      "tags": [
+        "tls",
+        "event-handler",
+        "informer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/server/tls/authority/authority.go:handleUpdate",
+      "type": "function",
+      "name": "handleUpdate",
+      "filePath": "pkg/server/tls/authority/authority.go",
+      "lineRange": [
+        427,
+        432
+      ],
+      "summary": "Handles Secret update events by checking whether the CA needs regeneration.",
+      "tags": [
+        "tls",
+        "event-handler",
+        "informer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/server/tls/authority/authority.go:handleDelete",
+      "type": "function",
+      "name": "handleDelete",
+      "filePath": "pkg/server/tls/authority/authority.go",
+      "lineRange": [
+        434,
+        439
+      ],
+      "summary": "Handles Secret deletion by triggering CA regeneration.",
+      "tags": [
+        "tls",
+        "event-handler",
+        "informer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/server/tls/dynamic_source.go",
+      "type": "file",
+      "name": "dynamic_source.go",
+      "filePath": "pkg/server/tls/dynamic_source.go",
+      "summary": "Dynamic TLS certificate source for the webhook server that loads, watches, and regenerates serving certificates via the Authority.",
+      "tags": [
+        "tls",
+        "certificate-source",
+        "rotation",
+        "webhook",
+        "kubernetes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:pkg/server/tls/dynamic_source.go:Authority",
+      "type": "class",
+      "name": "Authority",
+      "filePath": "pkg/server/tls/dynamic_source.go",
+      "lineRange": [
+        38,
+        54
+      ],
+      "summary": "Interface for signing certificates and observing CA rotation.",
+      "tags": [
+        "tls",
+        "interface",
+        "certificate-authority"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/server/tls/dynamic_source.go:DynamicSource",
+      "type": "class",
+      "name": "DynamicSource",
+      "filePath": "pkg/server/tls/dynamic_source.go",
+      "lineRange": [
+        58,
+        71
+      ],
+      "summary": "TLS certificate source that serves a certificate and rotates it before expiry.",
+      "tags": [
+        "tls",
+        "certificate-source",
+        "rotation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/server/tls/dynamic_source.go:Start",
+      "type": "function",
+      "name": "Start",
+      "filePath": "pkg/server/tls/dynamic_source.go",
+      "lineRange": [
+        76,
+        196
+      ],
+      "summary": "Runs the certificate load and regeneration loop until the context is cancelled.",
+      "tags": [
+        "tls",
+        "lifecycle",
+        "rotation",
+        "informer"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/server/tls/dynamic_source.go:NeedLeaderElection",
+      "type": "function",
+      "name": "NeedLeaderElection",
+      "filePath": "pkg/server/tls/dynamic_source.go",
+      "lineRange": [
+        199,
+        201
+      ],
+      "summary": "Reports that the certificate source requires leader election.",
+      "tags": [
+        "tls",
+        "lifecycle",
+        "leader-election"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/server/tls/dynamic_source.go:GetCertificate",
+      "type": "function",
+      "name": "GetCertificate",
+      "filePath": "pkg/server/tls/dynamic_source.go",
+      "lineRange": [
+        203,
+        210
+      ],
+      "summary": "Returns the current TLS certificate, regenerating it if needed.",
+      "tags": [
+        "tls",
+        "certificate-source",
+        "accessor"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/server/tls/dynamic_source.go:Healthy",
+      "type": "function",
+      "name": "Healthy",
+      "filePath": "pkg/server/tls/dynamic_source.go",
+      "lineRange": [
+        212,
+        216
+      ],
+      "summary": "Reports whether a certificate is currently loaded.",
+      "tags": [
+        "tls",
+        "health-check"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/server/tls/dynamic_source.go:tryRegenerateCertificate",
+      "type": "function",
+      "name": "tryRegenerateCertificate",
+      "filePath": "pkg/server/tls/dynamic_source.go",
+      "lineRange": [
+        218,
+        227
+      ],
+      "summary": "Attempts regeneration when the renewal deadline has passed.",
+      "tags": [
+        "tls",
+        "rotation",
+        "renewal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/server/tls/dynamic_source.go:regenerateCertificate",
+      "type": "function",
+      "name": "regenerateCertificate",
+      "filePath": "pkg/server/tls/dynamic_source.go",
+      "lineRange": [
+        231,
+        256
+      ],
+      "summary": "Signs a new serving certificate with the Authority.",
+      "tags": [
+        "tls",
+        "signing",
+        "rotation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/server/tls/dynamic_source.go:updateCertificate",
+      "type": "function",
+      "name": "updateCertificate",
+      "filePath": "pkg/server/tls/dynamic_source.go",
+      "lineRange": [
+        258,
+        292
+      ],
+      "summary": "Stores the new key pair and schedules the next renewal.",
+      "tags": [
+        "tls",
+        "rotation",
+        "renewal"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/metrics/venafi.go",
+      "target": "function:pkg/metrics/venafi.go:ObserveVenafiRequestDuration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/metrics/venafi.go",
+      "target": "function:pkg/metrics/venafi.go:ObserveVenafiRequestDuration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/scheduler/scheduler.go",
+      "target": "class:pkg/scheduler/scheduler.go:ScheduledWorkQueue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/scheduler/scheduler.go",
+      "target": "class:pkg/scheduler/scheduler.go:ScheduledWorkQueue",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/scheduler/scheduler.go",
+      "target": "class:pkg/scheduler/scheduler.go:scheduledWorkQueue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/scheduler/scheduler.go",
+      "target": "function:pkg/scheduler/scheduler.go:afterFunc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/scheduler/scheduler.go",
+      "target": "function:pkg/scheduler/scheduler.go:NewScheduledWorkQueue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/scheduler/scheduler.go",
+      "target": "function:pkg/scheduler/scheduler.go:NewScheduledWorkQueue",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/scheduler/scheduler.go",
+      "target": "function:pkg/scheduler/scheduler.go:Add",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/scheduler/scheduler.go",
+      "target": "function:pkg/scheduler/scheduler.go:Add",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/scheduler/scheduler.go",
+      "target": "function:pkg/scheduler/scheduler.go:Forget",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/scheduler/scheduler.go",
+      "target": "function:pkg/scheduler/scheduler.go:Forget",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/scheduler/test/fake.go",
+      "target": "class:pkg/scheduler/test/fake.go:FakeScheduler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/scheduler/test/fake.go",
+      "target": "class:pkg/scheduler/test/fake.go:FakeScheduler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/scheduler/test/fake.go",
+      "target": "function:pkg/scheduler/test/fake.go:Add",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/scheduler/test/fake.go",
+      "target": "function:pkg/scheduler/test/fake.go:Add",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/scheduler/test/fake.go",
+      "target": "function:pkg/scheduler/test/fake.go:Forget",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/scheduler/test/fake.go",
+      "target": "function:pkg/scheduler/test/fake.go:Forget",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "class:pkg/server/tls/authority/authority.go:DynamicAuthority",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "class:pkg/server/tls/authority/authority.go:DynamicAuthority",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "function:pkg/server/tls/authority/authority.go:Run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "function:pkg/server/tls/authority/authority.go:Run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "function:pkg/server/tls/authority/authority.go:Sign",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "function:pkg/server/tls/authority/authority.go:Sign",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "function:pkg/server/tls/authority/authority.go:WatchRotation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "function:pkg/server/tls/authority/authority.go:WatchRotation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "function:pkg/server/tls/authority/authority.go:StopWatchingRotation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "function:pkg/server/tls/authority/authority.go:StopWatchingRotation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "function:pkg/server/tls/authority/authority.go:ensureCA",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "function:pkg/server/tls/authority/authority.go:notifyWatches",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "function:pkg/server/tls/authority/authority.go:caRequiresRegeneration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "function:pkg/server/tls/authority/authority.go:regenerateCA",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "function:pkg/server/tls/authority/authority.go:handleAdd",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "function:pkg/server/tls/authority/authority.go:handleUpdate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "function:pkg/server/tls/authority/authority.go:handleDelete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "class:pkg/server/tls/dynamic_source.go:Authority",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "class:pkg/server/tls/dynamic_source.go:Authority",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "class:pkg/server/tls/dynamic_source.go:DynamicSource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "class:pkg/server/tls/dynamic_source.go:DynamicSource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "function:pkg/server/tls/dynamic_source.go:Start",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "function:pkg/server/tls/dynamic_source.go:Start",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "function:pkg/server/tls/dynamic_source.go:NeedLeaderElection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "function:pkg/server/tls/dynamic_source.go:NeedLeaderElection",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "function:pkg/server/tls/dynamic_source.go:GetCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "function:pkg/server/tls/dynamic_source.go:GetCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "function:pkg/server/tls/dynamic_source.go:Healthy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "function:pkg/server/tls/dynamic_source.go:Healthy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "function:pkg/server/tls/dynamic_source.go:tryRegenerateCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "function:pkg/server/tls/dynamic_source.go:regenerateCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "function:pkg/server/tls/dynamic_source.go:updateCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/scheduler/test/fake.go",
+      "target": "file:pkg/scheduler/scheduler.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:internal/apis/meta/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:internal/apis/meta/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:internal/apis/meta/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:internal/apis/meta/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/util/pki/asn1_util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/util/pki/basicconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/util/pki/certificatetemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/util/pki/csr.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/util/pki/generate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/util/pki/keyusage.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/util/pki/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/util/pki/match.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/util/pki/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/util/pki/parse.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/util/pki/parse_certificate_chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/util/pki/renewaltime.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/util/pki/sans.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/util/pki/subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/authority/authority.go",
+      "target": "file:pkg/util/pki/temporarycertificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/util/pki/asn1_util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/util/pki/basicconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/util/pki/certificatetemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/util/pki/csr.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/util/pki/generate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/util/pki/keyusage.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/util/pki/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/util/pki/match.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/util/pki/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/util/pki/parse.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/util/pki/parse_certificate_chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/util/pki/renewaltime.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/util/pki/sans.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/util/pki/subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/server/tls/dynamic_source.go",
+      "target": "file:pkg/util/pki/temporarycertificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/scheduler/scheduler.go:NewScheduledWorkQueue",
+      "target": "function:pkg/scheduler/scheduler.go:afterFunc",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/scheduler/scheduler.go:Add",
+      "target": "function:pkg/scheduler/scheduler.go:afterFunc",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/server/tls/authority/authority.go:regenerateCA",
+      "target": "function:pkg/util/pki/generate.go:GeneratePrivateKeyForCertificate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/server/tls/dynamic_source.go:tryRegenerateCertificate",
+      "target": "function:pkg/server/tls/dynamic_source.go:regenerateCertificate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/server/tls/dynamic_source.go:regenerateCertificate",
+      "target": "function:pkg/server/tls/dynamic_source.go:updateCertificate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

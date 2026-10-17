@@ -1,0 +1,1641 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 13,
+  "filesSkipped": [
+    "pkg/controller/acmechallenges/OWNERS",
+    "pkg/controller/acmeorders/OWNERS",
+    "pkg/issuer/acme/OWNERS",
+    "pkg/issuer/acme/dns/OWNERS",
+    "pkg/issuer/acme/dns/route53/OWNERS",
+    "pkg/issuer/acme/dns/util/testdata/resolv.conf.1",
+    "pkg/issuer/acme/http/OWNERS",
+    "pkg/issuer/ca/OWNERS",
+    "pkg/issuer/selfsigned/OWNERS",
+    "pkg/issuer/vault/OWNERS",
+    "pkg/metrics/OWNERS",
+    "test/OWNERS"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 13,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 13,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "pkg/apis/experimental/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/controller/test/actions.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 75,
+      "functions": [
+        {
+          "name": "NewCustomMatch",
+          "startLine": 44,
+          "endLine": 49,
+          "params": [
+            "a",
+            "matchFn"
+          ]
+        },
+        {
+          "name": "Action",
+          "startLine": 52,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "Matches",
+          "startLine": 57,
+          "endLine": 59,
+          "params": [
+            "act"
+          ]
+        },
+        {
+          "name": "NewAction",
+          "startLine": 68,
+          "endLine": 72,
+          "params": [
+            "a"
+          ]
+        },
+        {
+          "name": "Action",
+          "startLine": 75,
+          "endLine": 77,
+          "params": []
+        },
+        {
+          "name": "Matches",
+          "startLine": 80,
+          "endLine": 93,
+          "params": [
+            "act"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Action",
+          "startLine": 30,
+          "endLine": 33,
+          "methods": [
+            "Action",
+            "Matches"
+          ],
+          "properties": []
+        },
+        {
+          "name": "customMatchAction",
+          "startLine": 35,
+          "endLine": 38,
+          "methods": [
+            "Action",
+            "Matches"
+          ],
+          "properties": [
+            "action",
+            "matchFn"
+          ]
+        },
+        {
+          "name": "action",
+          "startLine": 61,
+          "endLine": 63,
+          "methods": [
+            "Action",
+            "Matches"
+          ],
+          "properties": [
+            "action"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Action",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "NewCustomMatch",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "Action",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "Matches",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "NewAction",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "Action",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "Matches",
+          "line": 80,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Matches",
+          "callee": "a.matchFn",
+          "lineNumber": 58
+        },
+        {
+          "caller": "Matches",
+          "callee": "cmp.Diff",
+          "lineNumber": 81
+        },
+        {
+          "caller": "Matches",
+          "callee": "cmp.FilterPath",
+          "lineNumber": 84
+        },
+        {
+          "caller": "Matches",
+          "callee": "p.Last().String",
+          "lineNumber": 86
+        },
+        {
+          "caller": "Matches",
+          "callee": "p.Last",
+          "lineNumber": 86
+        },
+        {
+          "caller": "Matches",
+          "callee": "cmp.Ignore",
+          "lineNumber": 87
+        },
+        {
+          "caller": "Matches",
+          "callee": "fmt.Errorf",
+          "lineNumber": 90
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "pkg/controller/test/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 18,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/controller/test/recorder.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "Event",
+          "startLine": 33,
+          "endLine": 35,
+          "params": [
+            "object",
+            "eventtype",
+            "reason",
+            "message"
+          ]
+        },
+        {
+          "name": "Eventf",
+          "startLine": 37,
+          "endLine": 39,
+          "params": [
+            "object",
+            "eventtype",
+            "reason",
+            "messageFmt"
+          ]
+        },
+        {
+          "name": "PastEventf",
+          "startLine": 41,
+          "endLine": 42,
+          "params": [
+            "object",
+            "timestamp",
+            "eventtype",
+            "reason",
+            "messageFmt"
+          ]
+        },
+        {
+          "name": "AnnotatedEventf",
+          "startLine": 44,
+          "endLine": 46,
+          "params": [
+            "object",
+            "annotations",
+            "eventtype",
+            "reason",
+            "messageFmt"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FakeRecorder",
+          "startLine": 29,
+          "endLine": 31,
+          "methods": [
+            "Event",
+            "Eventf",
+            "PastEventf",
+            "AnnotatedEventf"
+          ],
+          "properties": [
+            "Events"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FakeRecorder",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "Event",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "Eventf",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "PastEventf",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "AnnotatedEventf",
+          "line": 44,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Event",
+          "callee": "append",
+          "lineNumber": 34
+        },
+        {
+          "caller": "Event",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 34
+        },
+        {
+          "caller": "Eventf",
+          "callee": "append",
+          "lineNumber": 38
+        },
+        {
+          "caller": "Eventf",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 38
+        },
+        {
+          "caller": "AnnotatedEventf",
+          "callee": "f.Eventf",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/healthz/clock_health.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 70,
+      "functions": [
+        {
+          "name": "NewClockHealthAdaptor",
+          "startLine": 53,
+          "endLine": 60,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "skew",
+          "startLine": 62,
+          "endLine": 68,
+          "params": []
+        },
+        {
+          "name": "Name",
+          "startLine": 71,
+          "endLine": 73,
+          "params": []
+        },
+        {
+          "name": "Check",
+          "startLine": 78,
+          "endLine": 83,
+          "params": [
+            "req"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "clockHealthAdaptor",
+          "startLine": 47,
+          "endLine": 51,
+          "methods": [
+            "skew",
+            "Name",
+            "Check"
+          ],
+          "properties": [
+            "clock",
+            "startTimeReal",
+            "startTimeMonotonic"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewClockHealthAdaptor",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "Name",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "Check",
+          "line": 78,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewClockHealthAdaptor",
+          "callee": "c.Now",
+          "lineNumber": 54
+        },
+        {
+          "caller": "NewClockHealthAdaptor",
+          "callee": "now.Round",
+          "lineNumber": 57
+        },
+        {
+          "caller": "skew",
+          "callee": "c.clock.Now",
+          "lineNumber": 63
+        },
+        {
+          "caller": "skew",
+          "callee": "now.Sub",
+          "lineNumber": 64
+        },
+        {
+          "caller": "skew",
+          "callee": "now.Sub",
+          "lineNumber": 65
+        },
+        {
+          "caller": "skew",
+          "callee": "(realDuration - monotonicDuration).Abs",
+          "lineNumber": 67
+        },
+        {
+          "caller": "Check",
+          "callee": "l.skew",
+          "lineNumber": 79
+        },
+        {
+          "caller": "Check",
+          "callee": "fmt.Errorf",
+          "lineNumber": 80
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/healthz/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/healthz/healthz.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 80,
+      "functions": [
+        {
+          "name": "NewServer",
+          "startLine": 53,
+          "endLine": 67,
+          "params": [
+            "leaderElectionHealthzAdaptorTimeout"
+          ]
+        },
+        {
+          "name": "Start",
+          "startLine": 73,
+          "endLine": 91,
+          "params": [
+            "ctx",
+            "l"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Server",
+          "startLine": 42,
+          "endLine": 48,
+          "methods": [
+            "Start"
+          ],
+          "properties": [
+            "server",
+            "LeaderHealthzAdaptor"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Server",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "NewServer",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "Start",
+          "line": 73,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewServer",
+          "callee": "leaderelection.NewLeaderHealthzAdaptor",
+          "lineNumber": 54
+        },
+        {
+          "caller": "NewServer",
+          "callee": "NewClockHealthAdaptor",
+          "lineNumber": 55
+        },
+        {
+          "caller": "NewServer",
+          "callee": "http.NewServeMux",
+          "lineNumber": 56
+        },
+        {
+          "caller": "NewServer",
+          "callee": "healthz.InstallLivezHandler",
+          "lineNumber": 57
+        },
+        {
+          "caller": "Start",
+          "callee": "g.Go",
+          "lineNumber": 75
+        },
+        {
+          "caller": "Start",
+          "callee": "o.server.Serve",
+          "lineNumber": 76
+        },
+        {
+          "caller": "Start",
+          "callee": "errors.Is",
+          "lineNumber": 76
+        },
+        {
+          "caller": "Start",
+          "callee": "g.Go",
+          "lineNumber": 81
+        },
+        {
+          "caller": "Start",
+          "callee": "ctx.Done",
+          "lineNumber": 82
+        },
+        {
+          "caller": "Start",
+          "callee": "context.WithTimeout",
+          "lineNumber": 84
+        },
+        {
+          "caller": "Start",
+          "callee": "context.Background",
+          "lineNumber": 84
+        },
+        {
+          "caller": "Start",
+          "callee": "cancel",
+          "lineNumber": 85
+        },
+        {
+          "caller": "Start",
+          "callee": "o.server.Shutdown",
+          "lineNumber": 88
+        },
+        {
+          "caller": "Start",
+          "callee": "g.Wait",
+          "lineNumber": 90
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/issuer/venafi/client/fake/connector.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 62,
+      "functions": [
+        {
+          "name": "Default",
+          "startLine": 35,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "Ping",
+          "startLine": 42,
+          "endLine": 47,
+          "params": []
+        },
+        {
+          "name": "ReadZoneConfiguration",
+          "startLine": 49,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "RetrieveCertificate",
+          "startLine": 56,
+          "endLine": 61,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "RequestCertificate",
+          "startLine": 63,
+          "endLine": 68,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "RenewCertificate",
+          "startLine": 70,
+          "endLine": 75,
+          "params": [
+            "req"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Connector",
+          "startLine": 25,
+          "endLine": 33,
+          "methods": [
+            "Default",
+            "Ping",
+            "ReadZoneConfiguration",
+            "RetrieveCertificate",
+            "RequestCertificate",
+            "RenewCertificate"
+          ],
+          "properties": [
+            "PingFunc",
+            "ReadZoneConfigurationFunc",
+            "RetrieveCertificateFunc",
+            "RequestCertificateFunc",
+            "RenewCertificateFunc"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Connector",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "Default",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "Ping",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "ReadZoneConfiguration",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "RetrieveCertificate",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "RequestCertificate",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "RenewCertificate",
+          "line": 70,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Default",
+          "callee": "fake.NewConnector",
+          "lineNumber": 37
+        },
+        {
+          "caller": "Ping",
+          "callee": "f.PingFunc",
+          "lineNumber": 44
+        },
+        {
+          "caller": "Ping",
+          "callee": "f.Connector.Ping",
+          "lineNumber": 46
+        },
+        {
+          "caller": "ReadZoneConfiguration",
+          "callee": "f.ReadZoneConfigurationFunc",
+          "lineNumber": 51
+        },
+        {
+          "caller": "ReadZoneConfiguration",
+          "callee": "f.Connector.ReadZoneConfiguration",
+          "lineNumber": 53
+        },
+        {
+          "caller": "RetrieveCertificate",
+          "callee": "f.RetrieveCertificateFunc",
+          "lineNumber": 58
+        },
+        {
+          "caller": "RetrieveCertificate",
+          "callee": "f.Connector.RetrieveCertificate",
+          "lineNumber": 60
+        },
+        {
+          "caller": "RequestCertificate",
+          "callee": "f.RequestCertificateFunc",
+          "lineNumber": 65
+        },
+        {
+          "caller": "RequestCertificate",
+          "callee": "f.Connector.RequestCertificate",
+          "lineNumber": 67
+        },
+        {
+          "caller": "RenewCertificate",
+          "callee": "f.RenewCertificateFunc",
+          "lineNumber": 72
+        },
+        {
+          "caller": "RenewCertificate",
+          "callee": "f.Connector.RenewCertificate",
+          "lineNumber": 74
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/util/configfile/configfile.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "Load",
+          "startLine": 35,
+          "endLine": 57,
+          "params": [
+            "config"
+          ]
+        },
+        {
+          "name": "NewConfigurationFSLoader",
+          "startLine": 59,
+          "endLine": 73,
+          "params": [
+            "readFileFunc",
+            "filename"
+          ]
+        },
+        {
+          "name": "resolveRelativePaths",
+          "startLine": 75,
+          "endLine": 83,
+          "params": [
+            "paths",
+            "root"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "configurationFSLoader",
+          "startLine": 25,
+          "endLine": 28,
+          "methods": [
+            "Load"
+          ],
+          "properties": [
+            "readFileFunc",
+            "filename"
+          ]
+        },
+        {
+          "name": "ConfigFile",
+          "startLine": 30,
+          "endLine": 33,
+          "methods": [
+            "DecodeAndConfigure",
+            "GetPathRefs"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ConfigFile",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "Load",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "NewConfigurationFSLoader",
+          "line": 59,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Load",
+          "callee": "f.readFileFunc",
+          "lineNumber": 36
+        },
+        {
+          "caller": "Load",
+          "callee": "fmt.Errorf",
+          "lineNumber": 38
+        },
+        {
+          "caller": "Load",
+          "callee": "len",
+          "lineNumber": 41
+        },
+        {
+          "caller": "Load",
+          "callee": "fmt.Errorf",
+          "lineNumber": 42
+        },
+        {
+          "caller": "Load",
+          "callee": "config.DecodeAndConfigure",
+          "lineNumber": 45
+        },
+        {
+          "caller": "Load",
+          "callee": "config.GetPathRefs",
+          "lineNumber": 50
+        },
+        {
+          "caller": "Load",
+          "callee": "resolveRelativePaths",
+          "lineNumber": 53
+        },
+        {
+          "caller": "Load",
+          "callee": "filepath.Dir",
+          "lineNumber": 53
+        },
+        {
+          "caller": "resolveRelativePaths",
+          "callee": "len",
+          "lineNumber": 79
+        },
+        {
+          "caller": "resolveRelativePaths",
+          "callee": "filepath.IsAbs",
+          "lineNumber": 79
+        },
+        {
+          "caller": "resolveRelativePaths",
+          "callee": "filepath.Join",
+          "lineNumber": 80
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "pkg/webhook/handlers/interfaces.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "ValidatingAdmissionHook",
+          "startLine": 25,
+          "endLine": 29,
+          "methods": [
+            "Validate"
+          ],
+          "properties": []
+        },
+        {
+          "name": "MutatingAdmissionHook",
+          "startLine": 31,
+          "endLine": 35,
+          "methods": [
+            "Mutate"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ValidatingAdmissionHook",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "MutatingAdmissionHook",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "test/acme/server/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/acme/suite.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 136,
+      "nonEmptyLines": 118,
+      "functions": [
+        {
+          "name": "TestBasicPresentRecord",
+          "startLine": 32,
+          "endLine": 65,
+          "params": [
+            "t"
+          ]
+        },
+        {
+          "name": "TestExtendedDeletingOneRecordRetainsOthers",
+          "startLine": 71,
+          "endLine": 136,
+          "params": [
+            "t"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestBasicPresentRecord",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "TestExtendedDeletingOneRecordRetainsOthers",
+          "line": 71,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "f.setupNamespace",
+          "lineNumber": 33
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "cleanup",
+          "lineNumber": 34
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "f.buildChallengeRequest",
+          "lineNumber": 35
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "t.Logf",
+          "lineNumber": 37
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "f.testSolver.Present",
+          "lineNumber": 39
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "t.Errorf",
+          "lineNumber": 40
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "func() {\n\t\tif err := f.testSolver.CleanUp(ch); err != nil {\n\t\t\tt.Errorf(\"expected CleanUp to not error, but got: %v\", err)\n\t\t}\n\t}",
+          "lineNumber": 43
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "f.testSolver.CleanUp",
+          "lineNumber": 44
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "t.Errorf",
+          "lineNumber": 45
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "wait.PollUntilContextTimeout",
+          "lineNumber": 50
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "t.Context",
+          "lineNumber": 50
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "f.getPollInterval",
+          "lineNumber": 50
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "f.getPropagationLimit",
+          "lineNumber": 50
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "f.recordHasPropagatedCheck",
+          "lineNumber": 50
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "t.Errorf",
+          "lineNumber": 51
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "f.testSolver.CleanUp",
+          "lineNumber": 56
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "t.Errorf",
+          "lineNumber": 57
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "wait.PollUntilContextTimeout",
+          "lineNumber": 61
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "t.Context",
+          "lineNumber": 61
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "f.getPollInterval",
+          "lineNumber": 61
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "f.getPropagationLimit",
+          "lineNumber": 61
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "f.recordHasBeenDeletedCheck",
+          "lineNumber": 61
+        },
+        {
+          "caller": "TestBasicPresentRecord",
+          "callee": "t.Errorf",
+          "lineNumber": 62
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "t.Skip",
+          "lineNumber": 73
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "f.setupNamespace",
+          "lineNumber": 76
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "cleanup",
+          "lineNumber": 77
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "f.buildChallengeRequest",
+          "lineNumber": 78
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "f.buildChallengeRequest",
+          "lineNumber": 79
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "f.testSolver.Present",
+          "lineNumber": 83
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "t.Errorf",
+          "lineNumber": 84
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "func() {\n\t\tif err := f.testSolver.CleanUp(ch); err != nil {\n\t\t\tt.Errorf(\"expected CleanUp to not error, but got: %v\", err)\n\t\t}\n\t}",
+          "lineNumber": 87
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "f.testSolver.CleanUp",
+          "lineNumber": 88
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "t.Errorf",
+          "lineNumber": 89
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "f.testSolver.Present",
+          "lineNumber": 94
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "t.Errorf",
+          "lineNumber": 95
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "func() {\n\t\tif err := f.testSolver.CleanUp(ch2); err != nil {\n\t\t\tt.Errorf(\"expected CleanUp to not error, but got: %v\", err)\n\t\t}\n\t}",
+          "lineNumber": 98
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "f.testSolver.CleanUp",
+          "lineNumber": 99
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "t.Errorf",
+          "lineNumber": 100
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "wait.PollUntilContextTimeout",
+          "lineNumber": 105
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "t.Context",
+          "lineNumber": 106
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "f.getPollInterval",
+          "lineNumber": 107
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "f.getPropagationLimit",
+          "lineNumber": 108
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "allConditions",
+          "lineNumber": 110
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "f.recordHasPropagatedCheck",
+          "lineNumber": 111
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "f.recordHasPropagatedCheck",
+          "lineNumber": 112
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "t.Errorf",
+          "lineNumber": 114
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "f.testSolver.CleanUp",
+          "lineNumber": 119
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "t.Errorf",
+          "lineNumber": 120
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "wait.PollUntilContextTimeout",
+          "lineNumber": 124
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "t.Context",
+          "lineNumber": 125
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "f.getPollInterval",
+          "lineNumber": 126
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "f.getPropagationLimit",
+          "lineNumber": 127
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "allConditions",
+          "lineNumber": 129
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "f.recordHasBeenDeletedCheck",
+          "lineNumber": 130
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "f.recordHasPropagatedCheck",
+          "lineNumber": 131
+        },
+        {
+          "caller": "TestExtendedDeletingOneRecordRetainsOthers",
+          "callee": "t.Errorf",
+          "lineNumber": 133
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/bin/cloudflare-clean/main.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 156,
+      "nonEmptyLines": 131,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 44,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "Main",
+          "startLine": 56,
+          "endLine": 125,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "shouldDelete",
+          "startLine": 127,
+          "endLine": 142,
+          "params": [
+            "rr"
+          ]
+        },
+        {
+          "name": "convertPagerToSlice",
+          "startLine": 144,
+          "endLine": 156,
+          "params": [
+            "arr"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Main",
+          "line": 56,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "util.SetupExitHandler",
+          "lineNumber": 45
+        },
+        {
+          "caller": "main",
+          "callee": "context.Background",
+          "lineNumber": 45
+        },
+        {
+          "caller": "main",
+          "callee": "exit",
+          "lineNumber": 46
+        },
+        {
+          "caller": "main",
+          "callee": "flag.Parse",
+          "lineNumber": 48
+        },
+        {
+          "caller": "main",
+          "callee": "Main",
+          "lineNumber": 50
+        },
+        {
+          "caller": "main",
+          "callee": "log.Print",
+          "lineNumber": 51
+        },
+        {
+          "caller": "main",
+          "callee": "util.SetExitCode",
+          "lineNumber": 52
+        },
+        {
+          "caller": "Main",
+          "callee": "cf.NewClient",
+          "lineNumber": 57
+        },
+        {
+          "caller": "Main",
+          "callee": "option.WithAPIKey",
+          "lineNumber": 58
+        },
+        {
+          "caller": "Main",
+          "callee": "option.WithAPIEmail",
+          "lineNumber": 59
+        },
+        {
+          "caller": "Main",
+          "callee": "fmt.Errorf",
+          "lineNumber": 62
+        },
+        {
+          "caller": "Main",
+          "callee": "convertPagerToSlice",
+          "lineNumber": 65
+        },
+        {
+          "caller": "Main",
+          "callee": "cl.Zones.ListAutoPaging",
+          "lineNumber": 65
+        },
+        {
+          "caller": "Main",
+          "callee": "cf.F",
+          "lineNumber": 66
+        },
+        {
+          "caller": "Main",
+          "callee": "fmt.Errorf",
+          "lineNumber": 69
+        },
+        {
+          "caller": "Main",
+          "callee": "len",
+          "lineNumber": 71
+        },
+        {
+          "caller": "Main",
+          "callee": "fmt.Errorf",
+          "lineNumber": 72
+        },
+        {
+          "caller": "Main",
+          "callee": "len",
+          "lineNumber": 74
+        },
+        {
+          "caller": "Main",
+          "callee": "fmt.Errorf",
+          "lineNumber": 75
+        },
+        {
+          "caller": "Main",
+          "callee": "convertPagerToSlice",
+          "lineNumber": 78
+        },
+        {
+          "caller": "Main",
+          "callee": "cl.DNS.Records.ListAutoPaging",
+          "lineNumber": 78
+        },
+        {
+          "caller": "Main",
+          "callee": "cf.F",
+          "lineNumber": 79
+        },
+        {
+          "caller": "Main",
+          "callee": "cf.F",
+          "lineNumber": 80
+        },
+        {
+          "caller": "Main",
+          "callee": "fmt.Errorf",
+          "lineNumber": 83
+        },
+        {
+          "caller": "Main",
+          "callee": "log.Printf",
+          "lineNumber": 86
+        },
+        {
+          "caller": "Main",
+          "callee": "len",
+          "lineNumber": 86
+        },
+        {
+          "caller": "Main",
+          "callee": "shouldDelete",
+          "lineNumber": 91
+        },
+        {
+          "caller": "Main",
+          "callee": "log.Printf",
+          "lineNumber": 92
+        },
+        {
+          "caller": "Main",
+          "callee": "log.Printf",
+          "lineNumber": 98
+        },
+        {
+          "caller": "Main",
+          "callee": "cl.DNS.Records.Delete",
+          "lineNumber": 103
+        },
+        {
+          "caller": "Main",
+          "callee": "cf.F",
+          "lineNumber": 104
+        },
+        {
+          "caller": "Main",
+          "callee": "log.Printf",
+          "lineNumber": 107
+        },
+        {
+          "caller": "Main",
+          "callee": "append",
+          "lineNumber": 108
+        },
+        {
+          "caller": "Main",
+          "callee": "log.Printf",
+          "lineNumber": 111
+        },
+        {
+          "caller": "Main",
+          "callee": "len",
+          "lineNumber": 115
+        },
+        {
+          "caller": "Main",
+          "callee": "fmt.Errorf",
+          "lineNumber": 116
+        },
+        {
+          "caller": "Main",
+          "callee": "len",
+          "lineNumber": 116
+        },
+        {
+          "caller": "Main",
+          "callee": "log.Print",
+          "lineNumber": 119
+        },
+        {
+          "caller": "Main",
+          "callee": "log.Printf",
+          "lineNumber": 120
+        },
+        {
+          "caller": "Main",
+          "callee": "log.Printf",
+          "lineNumber": 121
+        },
+        {
+          "caller": "Main",
+          "callee": "log.Printf",
+          "lineNumber": 122
+        },
+        {
+          "caller": "shouldDelete",
+          "callee": "time.Now().Add",
+          "lineNumber": 132
+        },
+        {
+          "caller": "shouldDelete",
+          "callee": "time.Now",
+          "lineNumber": 132
+        },
+        {
+          "caller": "shouldDelete",
+          "callee": "rr.ModifiedOn.After",
+          "lineNumber": 133
+        },
+        {
+          "caller": "shouldDelete",
+          "callee": "rr.CreatedOn.After",
+          "lineNumber": 134
+        },
+        {
+          "caller": "shouldDelete",
+          "callee": "len",
+          "lineNumber": 137
+        },
+        {
+          "caller": "shouldDelete",
+          "callee": "len",
+          "lineNumber": 137
+        },
+        {
+          "caller": "shouldDelete",
+          "callee": "len",
+          "lineNumber": 138
+        },
+        {
+          "caller": "convertPagerToSlice",
+          "callee": "arr.Next",
+          "lineNumber": 147
+        },
+        {
+          "caller": "convertPagerToSlice",
+          "callee": "append",
+          "lineNumber": 148
+        },
+        {
+          "caller": "convertPagerToSlice",
+          "callee": "arr.Current",
+          "lineNumber": 148
+        },
+        {
+          "caller": "convertPagerToSlice",
+          "callee": "arr.Err",
+          "lineNumber": 151
+        },
+        {
+          "caller": "convertPagerToSlice",
+          "callee": "arr.Err",
+          "lineNumber": 152
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    }
+  ]
+}

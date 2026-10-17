@@ -1,0 +1,687 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/controller/acmeorders/checks.go",
+      "type": "file",
+      "name": "checks.go",
+      "filePath": "pkg/controller/acmeorders/checks.go",
+      "summary": "Event handler helpers that map Issuer and ClusterIssuer changes to the ACME Orders referencing them and enqueue those Orders for reconciliation.",
+      "tags": [
+        "event-handler",
+        "order",
+        "issuer",
+        "workqueue",
+        "controller"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/checks.go:handleGenericIssuerFunc",
+      "type": "function",
+      "name": "handleGenericIssuerFunc",
+      "filePath": "pkg/controller/acmeorders/checks.go",
+      "lineRange": [
+        32,
+        55
+      ],
+      "summary": "Builds an event handler that resolves affected Orders for a changed Issuer and adds them to the work queue.",
+      "tags": [
+        "event-handler",
+        "workqueue",
+        "issuer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/checks.go:ordersForGenericIssuer",
+      "type": "function",
+      "name": "ordersForGenericIssuer",
+      "filePath": "pkg/controller/acmeorders/checks.go",
+      "lineRange": [
+        57,
+        83
+      ],
+      "summary": "Lists all Orders and filters them by issuer kind, namespace and name to find those observing the given issuer.",
+      "tags": [
+        "filtering",
+        "order",
+        "issuer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/controller/acmeorders/selectors/dns_names.go",
+      "type": "file",
+      "name": "dns_names.go",
+      "filePath": "pkg/controller/acmeorders/selectors/dns_names.go",
+      "summary": "DNS name selector used by ACME solver matching to accept certificates whose DNS names appear in the selector allow list.",
+      "tags": [
+        "selector",
+        "dns",
+        "solver",
+        "matching",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/selectors/dns_names.go:DNSNames",
+      "type": "function",
+      "name": "DNSNames",
+      "filePath": "pkg/controller/acmeorders/selectors/dns_names.go",
+      "lineRange": [
+        27,
+        31
+      ],
+      "summary": "Constructs a selector that matches the DNS names explicitly listed on a solver selector.",
+      "tags": [
+        "factory",
+        "selector",
+        "dns"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/acmeorders/selectors/dns_names.go:dnsNamesSelector",
+      "type": "class",
+      "name": "dnsNamesSelector",
+      "filePath": "pkg/controller/acmeorders/selectors/dns_names.go",
+      "lineRange": [
+        33,
+        35
+      ],
+      "summary": "Selector implementation holding the allowed DNS names.",
+      "tags": [
+        "selector",
+        "dns",
+        "matching"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/selectors/dns_names.go:Matches",
+      "type": "function",
+      "name": "Matches",
+      "filePath": "pkg/controller/acmeorders/selectors/dns_names.go",
+      "lineRange": [
+        37,
+        47
+      ],
+      "summary": "Returns true and a score of 1 when the DNS name is in the allow list, or true with score 0 when the list is empty.",
+      "tags": [
+        "matching",
+        "dns",
+        "scoring"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/acmeorders/selectors/dns_zones.go",
+      "type": "file",
+      "name": "dns_zones.go",
+      "filePath": "pkg/controller/acmeorders/selectors/dns_zones.go",
+      "summary": "DNS zone selector that matches certificate DNS names against allowed zones using label-aware domain comparison.",
+      "tags": [
+        "selector",
+        "dns",
+        "zone",
+        "solver",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/selectors/dns_zones.go:DNSZones",
+      "type": "function",
+      "name": "DNSZones",
+      "filePath": "pkg/controller/acmeorders/selectors/dns_zones.go",
+      "lineRange": [
+        26,
+        30
+      ],
+      "summary": "Constructs a selector that matches DNS names falling inside any configured zone.",
+      "tags": [
+        "factory",
+        "selector",
+        "dns"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/acmeorders/selectors/dns_zones.go:dnsZonesSelector",
+      "type": "class",
+      "name": "dnsZonesSelector",
+      "filePath": "pkg/controller/acmeorders/selectors/dns_zones.go",
+      "lineRange": [
+        32,
+        34
+      ],
+      "summary": "Selector implementation holding the allowed DNS zones.",
+      "tags": [
+        "selector",
+        "dns",
+        "zone"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/selectors/dns_zones.go:Matches",
+      "type": "function",
+      "name": "Matches",
+      "filePath": "pkg/controller/acmeorders/selectors/dns_zones.go",
+      "lineRange": [
+        36,
+        54
+      ],
+      "summary": "Uses label counting to find the most specific zone containing the DNS name and returns its label count as the score.",
+      "tags": [
+        "matching",
+        "dns",
+        "scoring"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/controller/acmeorders/selectors/labels.go",
+      "type": "file",
+      "name": "labels.go",
+      "filePath": "pkg/controller/acmeorders/selectors/labels.go",
+      "summary": "Label selector that requires certificate metadata to carry all labels declared on an ACME challenge solver selector.",
+      "tags": [
+        "selector",
+        "labels",
+        "metadata",
+        "solver",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/selectors/labels.go:Labels",
+      "type": "function",
+      "name": "Labels",
+      "filePath": "pkg/controller/acmeorders/selectors/labels.go",
+      "lineRange": [
+        25,
+        29
+      ],
+      "summary": "Constructs a selector from the match labels declared on a solver selector.",
+      "tags": [
+        "factory",
+        "selector",
+        "labels"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/acmeorders/selectors/labels.go:labelSelector",
+      "type": "class",
+      "name": "labelSelector",
+      "filePath": "pkg/controller/acmeorders/selectors/labels.go",
+      "lineRange": [
+        31,
+        33
+      ],
+      "summary": "Selector implementation holding the required label set.",
+      "tags": [
+        "selector",
+        "labels",
+        "matching"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/acmeorders/selectors/labels.go:Matches",
+      "type": "function",
+      "name": "Matches",
+      "filePath": "pkg/controller/acmeorders/selectors/labels.go",
+      "lineRange": [
+        35,
+        52
+      ],
+      "summary": "Checks that every required label is present with the exact value and returns the number of matched labels.",
+      "tags": [
+        "matching",
+        "labels",
+        "scoring"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "function:pkg/controller/acmeorders/checks.go:handleGenericIssuerFunc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "function:pkg/controller/acmeorders/checks.go:ordersForGenericIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_names.go",
+      "target": "function:pkg/controller/acmeorders/selectors/dns_names.go:DNSNames",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_names.go",
+      "target": "function:pkg/controller/acmeorders/selectors/dns_names.go:DNSNames",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_names.go",
+      "target": "class:pkg/controller/acmeorders/selectors/dns_names.go:dnsNamesSelector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_names.go",
+      "target": "function:pkg/controller/acmeorders/selectors/dns_names.go:Matches",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_names.go",
+      "target": "function:pkg/controller/acmeorders/selectors/dns_names.go:Matches",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_zones.go",
+      "target": "function:pkg/controller/acmeorders/selectors/dns_zones.go:DNSZones",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_zones.go",
+      "target": "function:pkg/controller/acmeorders/selectors/dns_zones.go:DNSZones",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_zones.go",
+      "target": "class:pkg/controller/acmeorders/selectors/dns_zones.go:dnsZonesSelector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_zones.go",
+      "target": "function:pkg/controller/acmeorders/selectors/dns_zones.go:Matches",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_zones.go",
+      "target": "function:pkg/controller/acmeorders/selectors/dns_zones.go:Matches",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/labels.go",
+      "target": "function:pkg/controller/acmeorders/selectors/labels.go:Labels",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/labels.go",
+      "target": "function:pkg/controller/acmeorders/selectors/labels.go:Labels",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/labels.go",
+      "target": "class:pkg/controller/acmeorders/selectors/labels.go:labelSelector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/labels.go",
+      "target": "function:pkg/controller/acmeorders/selectors/labels.go:Matches",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/labels.go",
+      "target": "function:pkg/controller/acmeorders/selectors/labels.go:Matches",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/client/listers/acme/v1/challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/client/listers/acme/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/checks.go",
+      "target": "file:pkg/client/listers/acme/v1/order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_names.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_names.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_names.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_names.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_names.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_names.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_names.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_names.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_zones.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_zones.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_zones.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_zones.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_zones.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_zones.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_zones.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/dns_zones.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/labels.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/labels.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/labels.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/labels.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/labels.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/labels.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/labels.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/acmeorders/selectors/labels.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/controller/acmeorders/checks.go:handleGenericIssuerFunc",
+      "target": "function:pkg/controller/acmeorders/checks.go:ordersForGenericIssuer",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

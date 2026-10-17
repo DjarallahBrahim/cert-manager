@@ -1,0 +1,1455 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/controller/builder.go",
+      "type": "file",
+      "name": "builder.go",
+      "filePath": "pkg/controller/builder.go",
+      "summary": "Provides the controller Builder and its constructor, letting controller packages register an implementation, optional duration logic and run the controller through the shared context.",
+      "tags": [
+        "controller",
+        "builder",
+        "registration",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/builder.go:NewBuilder",
+      "type": "function",
+      "name": "NewBuilder",
+      "filePath": "pkg/controller/builder.go",
+      "lineRange": [
+        44,
+        49
+      ],
+      "summary": "Creates a Builder bound to the controller context and a controller name, deferring implementation selection to For.",
+      "tags": [
+        "factory",
+        "controller",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/builder.go:For",
+      "type": "function",
+      "name": "For",
+      "filePath": "pkg/controller/builder.go",
+      "lineRange": [
+        51,
+        54
+      ],
+      "summary": "Sets the controller implementation the Builder will start and returns the Builder for chaining.",
+      "tags": [
+        "builder",
+        "fluent-api",
+        "controller"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/builder.go:With",
+      "type": "function",
+      "name": "With",
+      "filePath": "pkg/controller/builder.go",
+      "lineRange": [
+        59,
+        65
+      ],
+      "summary": "Registers a function that reports how long the controller loop should wait between runs.",
+      "tags": [
+        "builder",
+        "scheduling",
+        "controller"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/builder.go:Complete",
+      "type": "function",
+      "name": "Complete",
+      "filePath": "pkg/controller/builder.go",
+      "lineRange": [
+        67,
+        82
+      ],
+      "summary": "Starts the controller implementation and runs its registered duration functions until shutdown.",
+      "tags": [
+        "builder",
+        "lifecycle",
+        "controller"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/builder.go:Builder",
+      "type": "class",
+      "name": "Builder",
+      "filePath": "pkg/controller/builder.go",
+      "lineRange": [
+        27,
+        41
+      ],
+      "summary": "Fluent builder that assembles a controller implementation and its run duration functions before starting it.",
+      "tags": [
+        "builder",
+        "factory",
+        "controller"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/cainjector/indexers.go",
+      "type": "file",
+      "name": "indexers.go",
+      "filePath": "pkg/controller/cainjector/indexers.go",
+      "summary": "Defines field indexers and mapping functions that translate Secrets and certificate-bearing resources into reconcile requests for the cainjector controllers.",
+      "tags": [
+        "cainjector",
+        "indexer",
+        "kubernetes",
+        "event-handler"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Uses controller-runtime field indexes because annotation-based filtering cannot be expressed as a list/watch selector."
+    },
+    {
+      "id": "function:pkg/controller/cainjector/indexers.go:certFromSecretToInjectableMapFuncBuilder",
+      "type": "function",
+      "name": "certFromSecretToInjectableMapFuncBuilder",
+      "filePath": "pkg/controller/cainjector/indexers.go",
+      "lineRange": [
+        48,
+        91
+      ],
+      "summary": "Builds a mapping function that resolves Secrets to injectable objects whose certificate annotation matches the Secret.",
+      "tags": [
+        "cainjector",
+        "indexer",
+        "secret",
+        "mapping"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/cainjector/indexers.go:certToInjectableMapFuncBuilder",
+      "type": "function",
+      "name": "certToInjectableMapFuncBuilder",
+      "filePath": "pkg/controller/cainjector/indexers.go",
+      "lineRange": [
+        97,
+        127
+      ],
+      "summary": "Builds a mapping function that resolves Certificate resources to injectables referencing them by annotation.",
+      "tags": [
+        "cainjector",
+        "indexer",
+        "certificate",
+        "mapping"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/cainjector/indexers.go:secretForInjectableMapFuncBuilder",
+      "type": "function",
+      "name": "secretForInjectableMapFuncBuilder",
+      "filePath": "pkg/controller/cainjector/indexers.go",
+      "lineRange": [
+        134,
+        165
+      ],
+      "summary": "Builds a mapping function that finds the Secret holding the certificate referenced by an injectable.",
+      "tags": [
+        "cainjector",
+        "indexer",
+        "secret",
+        "mapping"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/cainjector/indexers.go:injectableCAFromIndexer",
+      "type": "function",
+      "name": "injectableCAFromIndexer",
+      "filePath": "pkg/controller/cainjector/indexers.go",
+      "lineRange": [
+        169,
+        186
+      ],
+      "summary": "Extracts the injectable object referenced by a field index lookup on a Certificate event.",
+      "tags": [
+        "cainjector",
+        "indexer",
+        "extraction"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/cainjector/indexers.go:injectableCAFromSecretIndexer",
+      "type": "function",
+      "name": "injectableCAFromSecretIndexer",
+      "filePath": "pkg/controller/cainjector/indexers.go",
+      "lineRange": [
+        190,
+        207
+      ],
+      "summary": "Extracts the injectable object referenced by a field index lookup on a Secret event.",
+      "tags": [
+        "cainjector",
+        "indexer",
+        "extraction"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/cainjector/indexers.go:hasInjectableAnnotation",
+      "type": "function",
+      "name": "hasInjectableAnnotation",
+      "filePath": "pkg/controller/cainjector/indexers.go",
+      "lineRange": [
+        212,
+        224
+      ],
+      "summary": "Reports whether an object carries the cainjector injectable annotation.",
+      "tags": [
+        "cainjector",
+        "annotation",
+        "predicate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/cainjector/injectables.go",
+      "type": "file",
+      "name": "injectables.go",
+      "filePath": "pkg/controller/cainjector/injectables.go",
+      "summary": "Implements the injectable target abstractions for mutating/validating webhooks, APIServices and CRD conversion webhooks, including server-side-apply patch builders for injecting CA bundles.",
+      "tags": [
+        "cainjector",
+        "ca-injection",
+        "webhook",
+        "patch",
+        "kubernetes"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Patch structs mirror the Kubernetes API shape so SSA can update only the caBundle field."
+    },
+    {
+      "id": "class:pkg/controller/cainjector/injectables.go:InjectTarget",
+      "type": "class",
+      "name": "InjectTarget",
+      "filePath": "pkg/controller/cainjector/injectables.go",
+      "lineRange": [
+        68,
+        83
+      ],
+      "summary": "Interface describing an injectable object that can be fetched, converted to an SSA apply object and have its CA updated.",
+      "tags": [
+        "interface",
+        "cainjector",
+        "ca-injection"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/cainjector/injectables.go:mutatingWebhookTarget",
+      "type": "class",
+      "name": "mutatingWebhookTarget",
+      "filePath": "pkg/controller/cainjector/injectables.go",
+      "lineRange": [
+        107,
+        109
+      ],
+      "summary": "Injectable target wrapping a MutatingWebhookConfiguration and patching each webhook client config CA bundle.",
+      "tags": [
+        "cainjector",
+        "webhook",
+        "ca-injection"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/cainjector/injectables.go:validatingWebhookTarget",
+      "type": "class",
+      "name": "validatingWebhookTarget",
+      "filePath": "pkg/controller/cainjector/injectables.go",
+      "lineRange": [
+        156,
+        158
+      ],
+      "summary": "Injectable target wrapping a ValidatingWebhookConfiguration and patching its webhook CA bundles.",
+      "tags": [
+        "cainjector",
+        "webhook",
+        "ca-injection"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/cainjector/injectables.go:apiServiceTarget",
+      "type": "class",
+      "name": "apiServiceTarget",
+      "filePath": "pkg/controller/cainjector/injectables.go",
+      "lineRange": [
+        205,
+        207
+      ],
+      "summary": "Injectable target wrapping an APIService and patching its CA bundle through server-side apply.",
+      "tags": [
+        "cainjector",
+        "apiservice",
+        "ca-injection"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/cainjector/injectables.go:crdConversionTarget",
+      "type": "class",
+      "name": "crdConversionTarget",
+      "filePath": "pkg/controller/cainjector/injectables.go",
+      "lineRange": [
+        257,
+        259
+      ],
+      "summary": "Injectable target wrapping a CustomResourceDefinition conversion webhook and patching its client config CA bundle.",
+      "tags": [
+        "cainjector",
+        "crd",
+        "ca-injection"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/cainjector/reconciler.go",
+      "type": "file",
+      "name": "reconciler.go",
+      "filePath": "pkg/controller/cainjector/reconciler.go",
+      "summary": "Implements the cainjector reconciler that resolves a CA data source for an annotated resource and writes the resulting bundle into the injectable target.",
+      "tags": [
+        "cainjector",
+        "reconciler",
+        "controller-runtime",
+        "certificates"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/cainjector/reconciler.go:Reconcile",
+      "type": "function",
+      "name": "Reconcile",
+      "filePath": "pkg/controller/cainjector/reconciler.go",
+      "lineRange": [
+        70,
+        144
+      ],
+      "summary": "Reconciles an injectable target by selecting its configured CA source and injecting the resulting bundle.",
+      "tags": [
+        "reconciler",
+        "cainjector",
+        "ca-injection"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/cainjector/reconciler.go:caDataSourceFor",
+      "type": "function",
+      "name": "caDataSourceFor",
+      "filePath": "pkg/controller/cainjector/reconciler.go",
+      "lineRange": [
+        146,
+        153
+      ],
+      "summary": "Selects the CA data source implementation appropriate for an object based on its annotations.",
+      "tags": [
+        "cainjector",
+        "factory",
+        "annotation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/cainjector/reconciler.go:dropNotFound",
+      "type": "function",
+      "name": "dropNotFound",
+      "filePath": "pkg/controller/cainjector/reconciler.go",
+      "lineRange": [
+        158,
+        163
+      ],
+      "summary": "Suppresses Kubernetes NotFound errors so missing referenced resources are treated as no-ops.",
+      "tags": [
+        "error-handling",
+        "utility",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/cainjector/reconciler.go:owningCertForSecret",
+      "type": "function",
+      "name": "owningCertForSecret",
+      "filePath": "pkg/controller/cainjector/reconciler.go",
+      "lineRange": [
+        176,
+        185
+      ],
+      "summary": "Returns the Certificate that owns a Secret through its controller reference.",
+      "tags": [
+        "secret",
+        "ownership",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/cainjector/reconciler.go:splitNamespacedName",
+      "type": "function",
+      "name": "splitNamespacedName",
+      "filePath": "pkg/controller/cainjector/reconciler.go",
+      "lineRange": [
+        189,
+        195
+      ],
+      "summary": "Splits a namespaced name annotation into its namespace and name components.",
+      "tags": [
+        "utility",
+        "parsing",
+        "annotation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/cainjector/reconciler.go:reconciler",
+      "type": "class",
+      "name": "reconciler",
+      "filePath": "pkg/controller/cainjector/reconciler.go",
+      "lineRange": [
+        45,
+        66
+      ],
+      "summary": "Cainjector reconciler holding the target factory, CA sources and field manager used to inject bundles.",
+      "tags": [
+        "reconciler",
+        "cainjector",
+        "controller-runtime"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/controller/cainjector/setup.go",
+      "type": "file",
+      "name": "setup.go",
+      "filePath": "pkg/controller/cainjector/setup.go",
+      "summary": "Registers all cainjector controllers with the controller-runtime manager, wiring watches, field indexes and target kinds according to feature gates and setup options.",
+      "tags": [
+        "cainjector",
+        "setup",
+        "controller-runtime",
+        "feature-gate"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/cainjector/setup.go:RegisterAllInjectors",
+      "type": "function",
+      "name": "RegisterAllInjectors",
+      "filePath": "pkg/controller/cainjector/setup.go",
+      "lineRange": [
+        96,
+        207
+      ],
+      "summary": "Registers a cainjector controller for each enabled target kind, wiring watches, predicates and field indexes.",
+      "tags": [
+        "setup",
+        "cainjector",
+        "controller-runtime"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/cainjector/setup.go:dataFromSliceOrFile",
+      "type": "function",
+      "name": "dataFromSliceOrFile",
+      "filePath": "pkg/controller/cainjector/setup.go",
+      "lineRange": [
+        211,
+        223
+      ],
+      "summary": "Reads CA data either from an inline byte slice or from a file path.",
+      "tags": [
+        "utility",
+        "configuration",
+        "io"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/cainjector/setup.go:SetupOptions",
+      "type": "class",
+      "name": "SetupOptions",
+      "filePath": "pkg/controller/cainjector/setup.go",
+      "lineRange": [
+        59,
+        63
+      ],
+      "summary": "Options controlling namespace scoping, certificate data sources and which reconcilers are enabled.",
+      "tags": [
+        "configuration",
+        "cainjector",
+        "options"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/cainjector/sources.go",
+      "type": "file",
+      "name": "sources.go",
+      "filePath": "pkg/controller/cainjector/sources.go",
+      "summary": "Implements the CA data sources cainjector reads from: the root CA Secret, kubeconfig, Certificate resources and Secrets owned by a Certificate.",
+      "tags": [
+        "cainjector",
+        "ca-source",
+        "certificates",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/controller/cainjector/sources.go:caDataSource",
+      "type": "class",
+      "name": "caDataSource",
+      "filePath": "pkg/controller/cainjector/sources.go",
+      "lineRange": [
+        40,
+        53
+      ],
+      "summary": "Interface for CA data sources that report whether they are configured and read a CA bundle.",
+      "tags": [
+        "interface",
+        "cainjector",
+        "ca-source"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/cainjector/sources.go:kubeconfigDataSource",
+      "type": "class",
+      "name": "kubeconfigDataSource",
+      "filePath": "pkg/controller/cainjector/sources.go",
+      "lineRange": [
+        58,
+        60
+      ],
+      "summary": "CA source that returns the CA bundle embedded in the controller kubeconfig.",
+      "tags": [
+        "cainjector",
+        "kubeconfig",
+        "ca-source"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/cainjector/sources.go:certificateDataSource",
+      "type": "class",
+      "name": "certificateDataSource",
+      "filePath": "pkg/controller/cainjector/sources.go",
+      "lineRange": [
+        73,
+        75
+      ],
+      "summary": "CA source that reads the CA from a Certificate and its Secret.",
+      "tags": [
+        "cainjector",
+        "certificate",
+        "ca-source"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/cainjector/sources.go:secretDataSource",
+      "type": "class",
+      "name": "secretDataSource",
+      "filePath": "pkg/controller/cainjector/sources.go",
+      "lineRange": [
+        148,
+        150
+      ],
+      "summary": "CA source that reads the CA from a Secret referenced by the injectable.",
+      "tags": [
+        "cainjector",
+        "secret",
+        "ca-source"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "type": "file",
+      "name": "controller.go",
+      "filePath": "pkg/controller/certificate-shim/gateways/controller.go",
+      "summary": "Registers and runs the Gateway shim controller that creates Certificates for Gateway TLS listeners and re-enqueues Gateways when those Certificates change.",
+      "tags": [
+        "controller",
+        "gateway-api",
+        "shim",
+        "certificates"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/gateways/controller.go:Register",
+      "type": "function",
+      "name": "Register",
+      "filePath": "pkg/controller/certificate-shim/gateways/controller.go",
+      "lineRange": [
+        49,
+        85
+      ],
+      "summary": "Registers the Gateway shim controller with the shared controller context and sets up Gateway and Certificate informers.",
+      "tags": [
+        "controller",
+        "gateway-api",
+        "registration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/gateways/controller.go:ProcessItem",
+      "type": "function",
+      "name": "ProcessItem",
+      "filePath": "pkg/controller/certificate-shim/gateways/controller.go",
+      "lineRange": [
+        87,
+        100
+      ],
+      "summary": "Processes a queued Gateway key, skipping deleted Gateways and invoking the shim sync function.",
+      "tags": [
+        "controller",
+        "queue",
+        "gateway-api"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/gateways/controller.go:certificateHandler",
+      "type": "function",
+      "name": "certificateHandler",
+      "filePath": "pkg/controller/certificate-shim/gateways/controller.go",
+      "lineRange": [
+        117,
+        144
+      ],
+      "summary": "Informer event handler that enqueues the owning Gateway when a shim-managed Certificate changes.",
+      "tags": [
+        "event-handler",
+        "gateway-api",
+        "queue"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/controller/certificate-shim/gateways/controller.go:controller",
+      "type": "class",
+      "name": "controller",
+      "filePath": "pkg/controller/certificate-shim/gateways/controller.go",
+      "lineRange": [
+        41,
+        47
+      ],
+      "summary": "Gateway shim controller holding the Gateway lister and the sync function used to reconcile TLS listeners.",
+      "tags": [
+        "controller",
+        "gateway-api",
+        "shim"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/controller/builder.go",
+      "target": "function:pkg/controller/builder.go:NewBuilder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/builder.go",
+      "target": "function:pkg/controller/builder.go:NewBuilder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/builder.go",
+      "target": "function:pkg/controller/builder.go:For",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/builder.go",
+      "target": "function:pkg/controller/builder.go:For",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/builder.go",
+      "target": "function:pkg/controller/builder.go:With",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/builder.go",
+      "target": "function:pkg/controller/builder.go:With",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/builder.go",
+      "target": "function:pkg/controller/builder.go:Complete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/builder.go",
+      "target": "function:pkg/controller/builder.go:Complete",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/builder.go",
+      "target": "class:pkg/controller/builder.go:Builder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/builder.go",
+      "target": "class:pkg/controller/builder.go:Builder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/cainjector/indexers.go",
+      "target": "function:pkg/controller/cainjector/indexers.go:certFromSecretToInjectableMapFuncBuilder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/indexers.go",
+      "target": "function:pkg/controller/cainjector/indexers.go:certToInjectableMapFuncBuilder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/indexers.go",
+      "target": "function:pkg/controller/cainjector/indexers.go:secretForInjectableMapFuncBuilder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/indexers.go",
+      "target": "function:pkg/controller/cainjector/indexers.go:injectableCAFromIndexer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/indexers.go",
+      "target": "function:pkg/controller/cainjector/indexers.go:injectableCAFromSecretIndexer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/indexers.go",
+      "target": "function:pkg/controller/cainjector/indexers.go:hasInjectableAnnotation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/indexers.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/indexers.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/indexers.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/indexers.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/indexers.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/indexers.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/indexers.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/indexers.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/indexers.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/injectables.go",
+      "target": "class:pkg/controller/cainjector/injectables.go:InjectTarget",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/injectables.go",
+      "target": "class:pkg/controller/cainjector/injectables.go:InjectTarget",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/cainjector/injectables.go",
+      "target": "class:pkg/controller/cainjector/injectables.go:mutatingWebhookTarget",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/injectables.go",
+      "target": "class:pkg/controller/cainjector/injectables.go:validatingWebhookTarget",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/injectables.go",
+      "target": "class:pkg/controller/cainjector/injectables.go:apiServiceTarget",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/injectables.go",
+      "target": "class:pkg/controller/cainjector/injectables.go:crdConversionTarget",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/injectables.go",
+      "target": "file:internal/cainjector/bundle/bundle.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/injectables.go",
+      "target": "file:internal/cainjector/feature/features.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/injectables.go",
+      "target": "file:pkg/util/feature/feature_gate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/reconciler.go",
+      "target": "function:pkg/controller/cainjector/reconciler.go:Reconcile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/reconciler.go",
+      "target": "function:pkg/controller/cainjector/reconciler.go:Reconcile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/cainjector/reconciler.go",
+      "target": "function:pkg/controller/cainjector/reconciler.go:caDataSourceFor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/reconciler.go",
+      "target": "function:pkg/controller/cainjector/reconciler.go:dropNotFound",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/reconciler.go",
+      "target": "function:pkg/controller/cainjector/reconciler.go:owningCertForSecret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/reconciler.go",
+      "target": "function:pkg/controller/cainjector/reconciler.go:splitNamespacedName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/reconciler.go",
+      "target": "class:pkg/controller/cainjector/reconciler.go:reconciler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/reconciler.go",
+      "target": "file:internal/cainjector/feature/features.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/reconciler.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/reconciler.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/reconciler.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/reconciler.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/reconciler.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/reconciler.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/reconciler.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/reconciler.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/reconciler.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/reconciler.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/reconciler.go",
+      "target": "file:pkg/util/feature/feature_gate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/setup.go",
+      "target": "function:pkg/controller/cainjector/setup.go:RegisterAllInjectors",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/setup.go",
+      "target": "function:pkg/controller/cainjector/setup.go:RegisterAllInjectors",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/cainjector/setup.go",
+      "target": "function:pkg/controller/cainjector/setup.go:dataFromSliceOrFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/setup.go",
+      "target": "class:pkg/controller/cainjector/setup.go:SetupOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/setup.go",
+      "target": "class:pkg/controller/cainjector/setup.go:SetupOptions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/cainjector/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/setup.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/setup.go",
+      "target": "file:pkg/util/useragent.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/setup.go",
+      "target": "file:pkg/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/setup.go",
+      "target": "file:pkg/util/version.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/sources.go",
+      "target": "class:pkg/controller/cainjector/sources.go:caDataSource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/sources.go",
+      "target": "class:pkg/controller/cainjector/sources.go:kubeconfigDataSource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/sources.go",
+      "target": "class:pkg/controller/cainjector/sources.go:certificateDataSource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/sources.go",
+      "target": "class:pkg/controller/cainjector/sources.go:secretDataSource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/cainjector/sources.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/sources.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/sources.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/sources.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/sources.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/sources.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/sources.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/sources.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/sources.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/sources.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/sources.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/sources.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/sources.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/cainjector/sources.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "function:pkg/controller/certificate-shim/gateways/controller.go:Register",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "function:pkg/controller/certificate-shim/gateways/controller.go:Register",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "function:pkg/controller/certificate-shim/gateways/controller.go:ProcessItem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "function:pkg/controller/certificate-shim/gateways/controller.go:ProcessItem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "function:pkg/controller/certificate-shim/gateways/controller.go:certificateHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "class:pkg/controller/certificate-shim/gateways/controller.go:controller",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "file:pkg/controller/certificate-shim/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "file:pkg/controller/certificate-shim/sync.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/gateways/controller.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

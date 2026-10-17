@@ -1,0 +1,161 @@
+{
+  "nodes": [
+    {
+      "id": "document:make/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "make/README.md",
+      "summary": "Developer guide to cert-manager's GNU Make tooling, covering target documentation conventions, .PHONY usage, prerequisite types, and automatic tool provisioning.",
+      "tags": ["documentation", "build-system", "makefile", "development"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:make/cluster.sh",
+      "type": "file",
+      "name": "cluster.sh",
+      "filePath": "make/cluster.sh",
+      "summary": "Creates or validates a local kind cluster for development, selecting a pinned node image per Kubernetes version and patching CoreDNS for example.com test domains.",
+      "tags": ["script", "development", "kubernetes", "kind", "entry-point"],
+      "complexity": "moderate",
+      "languageNotes": "Bash script with dynamic flag-to-variable assignment via eval and bash process substitution for Corefile comparison."
+    },
+    {
+      "id": "function:make/cluster.sh:help",
+      "type": "function",
+      "name": "help",
+      "filePath": "make/cluster.sh",
+      "lineRange": [31, 58],
+      "summary": "Prints usage, flags, and environment variables for the kind cluster script, then exits.",
+      "tags": ["utility", "cli", "help-text"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/cluster.sh:setup_kind",
+      "type": "function",
+      "name": "setup_kind",
+      "filePath": "make/cluster.sh",
+      "lineRange": [122, 170],
+      "summary": "Creates the kind cluster if absent, then verifies kube context, API responsiveness, Kubernetes version, and CoreDNS Corefile, failing with remediation hints.",
+      "tags": ["kubernetes", "kind", "cluster-setup", "validation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:make/e2e-ci.sh",
+      "type": "file",
+      "name": "e2e-ci.sh",
+      "filePath": "make/e2e-ci.sh",
+      "summary": "Thin CI wrapper that runs the end-to-end suite through Make with two flake attempts, CI mode enabled, and kind logs captured on exit.",
+      "tags": ["script", "ci-cd", "testing", "e2e"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:make/e2e.sh",
+      "type": "file",
+      "name": "e2e.sh",
+      "filePath": "make/e2e.sh",
+      "summary": "Runs cert-manager's Ginkgo end-to-end suite against an existing kind cluster, translating environment variables into ginkgo flags and emitting JUnit artifacts.",
+      "tags": ["script", "testing", "e2e", "ginkgo", "entry-point"],
+      "complexity": "moderate",
+      "languageNotes": "Documents a parallelism/performance experiment in comments and disables Ginkgo parallelism when focusing a test so logs stream."
+    },
+    {
+      "id": "function:make/e2e.sh:help",
+      "type": "function",
+      "name": "help",
+      "filePath": "make/e2e.sh",
+      "lineRange": [84, 148],
+      "summary": "Prints usage, environment variables, and a worked example of reconstructing a Ginkgo test name for focused re-runs.",
+      "tags": ["utility", "cli", "help-text", "testing"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:make/kind_images.sh",
+      "type": "file",
+      "name": "kind_images.sh",
+      "filePath": "make/kind_images.sh",
+      "summary": "Generated shell fragment mapping supported Kubernetes minor versions to pinned kind node image digests.",
+      "tags": ["script", "generated", "kubernetes", "kind", "configuration"],
+      "complexity": "simple",
+      "languageNotes": "Sourced rather than executed; contains only variable assignments."
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:make/cluster.sh",
+      "target": "function:make/cluster.sh:help",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:make/cluster.sh",
+      "target": "function:make/cluster.sh:setup_kind",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:make/e2e.sh",
+      "target": "function:make/e2e.sh:help",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:make/cluster.sh",
+      "target": "file:make/kind_images.sh",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/cluster.sh",
+      "target": "file:make/config/lib.sh",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/cluster.sh",
+      "target": "file:make/config/kind/cluster.yaml",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/e2e.sh",
+      "target": "file:make/config/lib.sh",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/e2e.sh",
+      "target": "file:test/e2e/e2e_test.go",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:make/e2e-ci.sh",
+      "target": "file:make/e2e.sh",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:make/README.md",
+      "target": "file:make/cluster.sh",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:make/README.md",
+      "target": "file:make/e2e.sh",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

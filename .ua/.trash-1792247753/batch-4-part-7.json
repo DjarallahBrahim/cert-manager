@@ -1,0 +1,1173 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/controller/clusterissuers/checks.go",
+      "type": "file",
+      "name": "checks.go",
+      "filePath": "pkg/controller/clusterissuers/checks.go",
+      "summary": "Event-handler predicate that maps Secret changes to the ClusterIssuers referencing them.",
+      "tags": [
+        "event-handler",
+        "clusterissuer",
+        "secret",
+        "informer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/clusterissuers/checks.go:issuersForSecret",
+      "type": "function",
+      "name": "issuersForSecret",
+      "filePath": "pkg/controller/clusterissuers/checks.go",
+      "lineRange": [
+        28,
+        105
+      ],
+      "summary": "Returns the ClusterIssuers whose configuration references the changed Secret.",
+      "tags": [
+        "lookup",
+        "clusterissuer",
+        "secret",
+        "event-handler"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/controller/clusterissuers/controller.go",
+      "type": "file",
+      "name": "controller.go",
+      "filePath": "pkg/controller/clusterissuers/controller.go",
+      "summary": "Controller that reconciles ClusterIssuer resources by watching Secrets and enqueuing the affected cluster-scoped issuers.",
+      "tags": [
+        "controller",
+        "clusterissuer",
+        "reconciliation",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/controller/clusterissuers/controller.go:controller",
+      "type": "class",
+      "name": "controller",
+      "filePath": "pkg/controller/clusterissuers/controller.go",
+      "lineRange": [
+        38,
+        65
+      ],
+      "summary": "ClusterIssuer controller state holding listers, queue, client, factory and namespace configuration.",
+      "tags": [
+        "controller",
+        "clusterissuer",
+        "state",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/clusterissuers/controller.go:Register",
+      "type": "function",
+      "name": "Register",
+      "filePath": "pkg/controller/clusterissuers/controller.go",
+      "lineRange": [
+        70,
+        112
+      ],
+      "summary": "Sets up ClusterIssuer and Secret informers and event handlers and registers the controller with the run loop.",
+      "tags": [
+        "controller-setup",
+        "informer",
+        "registration",
+        "clusterissuer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/clusterissuers/controller.go:secretEvent",
+      "type": "function",
+      "name": "secretEvent",
+      "filePath": "pkg/controller/clusterissuers/controller.go",
+      "lineRange": [
+        115,
+        136
+      ],
+      "summary": "Maps a Secret event to the ClusterIssuers that reference it and enqueues them.",
+      "tags": [
+        "event-handler",
+        "secret",
+        "clusterissuer",
+        "queue"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/clusterissuers/controller.go:ProcessItem",
+      "type": "function",
+      "name": "ProcessItem",
+      "filePath": "pkg/controller/clusterissuers/controller.go",
+      "lineRange": [
+        138,
+        154
+      ],
+      "summary": "Fetches a ClusterIssuer from the lister and runs Sync on it.",
+      "tags": [
+        "reconcile",
+        "sync",
+        "clusterissuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/clusterissuers/sync.go",
+      "type": "file",
+      "name": "sync.go",
+      "filePath": "pkg/controller/clusterissuers/sync.go",
+      "summary": "Sync logic that verifies ClusterIssuer configuration, runs issuer-specific setup and updates its status conditions.",
+      "tags": [
+        "sync",
+        "clusterissuer",
+        "status",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/clusterissuers/sync.go:Sync",
+      "type": "function",
+      "name": "Sync",
+      "filePath": "pkg/controller/clusterissuers/sync.go",
+      "lineRange": [
+        41,
+        68
+      ],
+      "summary": "Runs issuer setup for a ClusterIssuer and updates its status conditions, adding backoff hints on failure.",
+      "tags": [
+        "sync",
+        "clusterissuer",
+        "setup",
+        "status"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/clusterissuers/sync.go:updateIssuerStatus",
+      "type": "function",
+      "name": "updateIssuerStatus",
+      "filePath": "pkg/controller/clusterissuers/sync.go",
+      "lineRange": [
+        70,
+        80
+      ],
+      "summary": "Persists changed ClusterIssuer status when it differs from the stored object.",
+      "tags": [
+        "status-update",
+        "clusterissuer",
+        "persistence"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/context.go",
+      "type": "file",
+      "name": "context.go",
+      "filePath": "pkg/controller/context.go",
+      "summary": "Defines the shared controller Context and its options, plus the factory that builds Kubernetes clients, informers, metrics and ACME registries for every controller.",
+      "tags": [
+        "context",
+        "dependency-injection",
+        "kubernetes",
+        "clients",
+        "factory"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Groups typed option structs and builds a per-component Context so each controller can select its own listers while sharing clients."
+    },
+    {
+      "id": "class:pkg/controller/context.go:Context",
+      "type": "class",
+      "name": "Context",
+      "filePath": "pkg/controller/context.go",
+      "lineRange": [
+        75,
+        130
+      ],
+      "summary": "Shared controller dependencies: clients, schemes, clock, metrics, recorder and informer factories.",
+      "tags": [
+        "context",
+        "dependency-injection",
+        "clients",
+        "informers"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/controller/context.go:ContextOptions",
+      "type": "class",
+      "name": "ContextOptions",
+      "filePath": "pkg/controller/context.go",
+      "lineRange": [
+        133,
+        158
+      ],
+      "summary": "Options for creating a Context: API server connection, QPS/burst limits and namespace.",
+      "tags": [
+        "options",
+        "configuration",
+        "kubernetes",
+        "context"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/context.go:ConfigOptions",
+      "type": "class",
+      "name": "ConfigOptions",
+      "filePath": "pkg/controller/context.go",
+      "lineRange": [
+        160,
+        163
+      ],
+      "summary": "Feature flags for optional API integrations, currently Gateway API support.",
+      "tags": [
+        "options",
+        "feature-flags",
+        "gateway-api"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/context.go:IssuerOptions",
+      "type": "class",
+      "name": "IssuerOptions",
+      "filePath": "pkg/controller/context.go",
+      "lineRange": [
+        165,
+        178
+      ],
+      "summary": "Issuer-related settings: cluster resource namespace and ambient credential defaults.",
+      "tags": [
+        "options",
+        "issuer",
+        "namespace",
+        "credentials"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/context.go:ACMEOptions",
+      "type": "class",
+      "name": "ACMEOptions",
+      "filePath": "pkg/controller/context.go",
+      "lineRange": [
+        180,
+        214
+      ],
+      "summary": "ACME solver settings including HTTP-01 resource limits, nameservers and DNS-01 retry behaviour.",
+      "tags": [
+        "options",
+        "acme",
+        "solver",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/context.go:IngressShimOptions",
+      "type": "class",
+      "name": "IngressShimOptions",
+      "filePath": "pkg/controller/context.go",
+      "lineRange": [
+        219,
+        225
+      ],
+      "summary": "Default issuer and annotation settings used by the ingress-shim controller.",
+      "tags": [
+        "options",
+        "ingress-shim",
+        "annotations",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/context.go:CertificateOptions",
+      "type": "class",
+      "name": "CertificateOptions",
+      "filePath": "pkg/controller/context.go",
+      "lineRange": [
+        227,
+        234
+      ],
+      "summary": "Certificate controller settings controlling owner references and copied annotation prefixes.",
+      "tags": [
+        "options",
+        "certificate",
+        "annotations",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/context.go:SchedulerOptions",
+      "type": "class",
+      "name": "SchedulerOptions",
+      "filePath": "pkg/controller/context.go",
+      "lineRange": [
+        236,
+        240
+      ],
+      "summary": "Scheduler settings controlling the number of concurrent ACME challenges.",
+      "tags": [
+        "options",
+        "scheduler",
+        "concurrency",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/context.go:ContextFactory",
+      "type": "class",
+      "name": "ContextFactory",
+      "filePath": "pkg/controller/context.go",
+      "lineRange": [
+        244,
+        254
+      ],
+      "summary": "Factory holding the base REST config and logger used to build per-component Contexts.",
+      "tags": [
+        "factory",
+        "context",
+        "dependency-injection",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/context.go:NewContextFactory",
+      "type": "function",
+      "name": "NewContextFactory",
+      "filePath": "pkg/controller/context.go",
+      "lineRange": [
+        260,
+        334
+      ],
+      "summary": "Creates a ContextFactory, normalising the REST config, settings defaults and initialising the clock and logger.",
+      "tags": [
+        "factory",
+        "configuration",
+        "kubernetes",
+        "context"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/context.go:Build",
+      "type": "function",
+      "name": "Build",
+      "filePath": "pkg/controller/context.go",
+      "lineRange": [
+        338,
+        373
+      ],
+      "summary": "Builds a full Context for a component, creating clients, informer factories, metrics and the ACME account registry.",
+      "tags": [
+        "builder",
+        "dependency-injection",
+        "clients",
+        "context"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/context.go:buildClients",
+      "type": "function",
+      "name": "buildClients",
+      "filePath": "pkg/controller/context.go",
+      "lineRange": [
+        386,
+        438
+      ],
+      "summary": "Creates the Kubernetes, cert-manager, Gateway API and metadata clients, optionally falling back when Gateway API is unavailable.",
+      "tags": [
+        "clients",
+        "kubernetes",
+        "gateway-api",
+        "factory"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/controller/clusterissuers/checks.go",
+      "target": "function:pkg/controller/clusterissuers/checks.go:issuersForSecret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "class:pkg/controller/clusterissuers/controller.go:controller",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "function:pkg/controller/clusterissuers/controller.go:Register",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "function:pkg/controller/clusterissuers/controller.go:Register",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "function:pkg/controller/clusterissuers/controller.go:secretEvent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "function:pkg/controller/clusterissuers/controller.go:ProcessItem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "function:pkg/controller/clusterissuers/controller.go:ProcessItem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:pkg/client/clientset/versioned/clientset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:pkg/issuer/factory.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:pkg/issuer/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:pkg/issuer/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/controller.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/controller/clusterissuers/controller.go:ProcessItem",
+      "target": "function:pkg/controller/clusterissuers/sync.go:Sync",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/sync.go",
+      "target": "function:pkg/controller/clusterissuers/sync.go:Sync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/sync.go",
+      "target": "function:pkg/controller/clusterissuers/sync.go:Sync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/sync.go",
+      "target": "function:pkg/controller/clusterissuers/sync.go:updateIssuerStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/sync.go",
+      "target": "file:internal/controller/feature/features.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/sync.go",
+      "target": "file:internal/controller/issuers/apply.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/sync.go",
+      "target": "file:pkg/controller/globals/timeout.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/sync.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/clusterissuers/sync.go",
+      "target": "file:pkg/util/feature/feature_gate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "class:pkg/controller/context.go:Context",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "class:pkg/controller/context.go:Context",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "class:pkg/controller/context.go:ContextOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "class:pkg/controller/context.go:ContextOptions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "class:pkg/controller/context.go:ConfigOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "class:pkg/controller/context.go:ConfigOptions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "class:pkg/controller/context.go:IssuerOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "class:pkg/controller/context.go:IssuerOptions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "class:pkg/controller/context.go:ACMEOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "class:pkg/controller/context.go:ACMEOptions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "class:pkg/controller/context.go:IngressShimOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "class:pkg/controller/context.go:IngressShimOptions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "class:pkg/controller/context.go:CertificateOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "class:pkg/controller/context.go:CertificateOptions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "class:pkg/controller/context.go:SchedulerOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "class:pkg/controller/context.go:SchedulerOptions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "class:pkg/controller/context.go:ContextFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "class:pkg/controller/context.go:ContextFactory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "function:pkg/controller/context.go:NewContextFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "function:pkg/controller/context.go:NewContextFactory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "function:pkg/controller/context.go:Build",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "function:pkg/controller/context.go:Build",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "function:pkg/controller/context.go:buildClients",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:internal/controller/feature/features.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:internal/kube/config.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/acme/accounts/client.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/acme/accounts/registry.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/client/clientset/versioned/clientset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/client/clientset/versioned/scheme/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/client/clientset/versioned/scheme/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/client/informers/externalversions/factory.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/client/informers/externalversions/generic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/metrics/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/metrics/metrics.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/metrics/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/util/feature/feature_gate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/util/useragent.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/context.go",
+      "target": "file:pkg/util/version.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/controller/context.go:NewContextFactory",
+      "target": "function:pkg/controller/context.go:buildClients",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/context.go:Build",
+      "target": "function:pkg/controller/context.go:buildClients",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

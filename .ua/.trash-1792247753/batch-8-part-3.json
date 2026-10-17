@@ -1,0 +1,918 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/acme/server/rfc2136.go",
+      "type": "file",
+      "name": "rfc2136.go",
+      "filePath": "test/acme/server/rfc2136.go",
+      "summary": "Test DNS handler that answers RFC 2136-style queries for the ACME DNS01 integration test zone.",
+      "tags": [
+        "test",
+        "dns",
+        "acme",
+        "rfc2136",
+        "test-server"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/acme/server/rfc2136.go:rfc2136Handler",
+      "type": "class",
+      "name": "rfc2136Handler",
+      "filePath": "test/acme/server/rfc2136.go",
+      "lineRange": [
+        31,
+        39
+      ],
+      "summary": "DNS handler serving the fixed records required by the ACME DNS01 RFC 2136 test flow.",
+      "tags": [
+        "test",
+        "dns",
+        "acme",
+        "test-server",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/acme/server/rfc2136.go:ServeDNS",
+      "type": "function",
+      "name": "ServeDNS",
+      "filePath": "test/acme/server/rfc2136.go",
+      "lineRange": [
+        42,
+        108
+      ],
+      "summary": "Answers incoming DNS queries for the test zone and returns the matching A, TXT or SOA records.",
+      "tags": [
+        "test",
+        "dns",
+        "acme",
+        "test-server"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/acme/server/server.go",
+      "type": "file",
+      "name": "server.go",
+      "filePath": "test/acme/server/server.go",
+      "summary": "Minimal DNS server wrapper used by ACME integration tests to serve authoritative answers on a local address.",
+      "tags": [
+        "test",
+        "dns",
+        "test-server",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/acme/server/server.go:BasicServer",
+      "type": "class",
+      "name": "BasicServer",
+      "filePath": "test/acme/server/server.go",
+      "lineRange": [
+        36,
+        59
+      ],
+      "summary": "Test DNS server wrapper holding the listener and server state.",
+      "tags": [
+        "test",
+        "dns",
+        "test-server",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/acme/server/server.go:Run",
+      "type": "function",
+      "name": "Run",
+      "filePath": "test/acme/server/server.go",
+      "lineRange": [
+        62,
+        64
+      ],
+      "summary": "Starts the DNS server on the default test address.",
+      "tags": [
+        "test",
+        "dns",
+        "test-server"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/acme/server/server.go:RunWithAddress",
+      "type": "function",
+      "name": "RunWithAddress",
+      "filePath": "test/acme/server/server.go",
+      "lineRange": [
+        67,
+        125
+      ],
+      "summary": "Starts the DNS server on the supplied address and network, returning after it is ready.",
+      "tags": [
+        "test",
+        "dns",
+        "test-server"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/acme/server/server.go:ListenAddr",
+      "type": "function",
+      "name": "ListenAddr",
+      "filePath": "test/acme/server/server.go",
+      "lineRange": [
+        127,
+        129
+      ],
+      "summary": "Returns the address the test DNS server is listening on.",
+      "tags": [
+        "test",
+        "dns",
+        "test-server"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/acme/server/server.go:Shutdown",
+      "type": "function",
+      "name": "Shutdown",
+      "filePath": "test/acme/server/server.go",
+      "lineRange": [
+        131,
+        133
+      ],
+      "summary": "Stops the test DNS server and releases its listener.",
+      "tags": [
+        "test",
+        "dns",
+        "test-server"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/unit/crypto/crypto.go",
+      "type": "file",
+      "name": "crypto.go",
+      "filePath": "test/unit/crypto/crypto.go",
+      "summary": "Test helpers that build cryptographically consistent certificate bundles containing a private key, CSR, certificate and chain.",
+      "tags": [
+        "test",
+        "cryptography",
+        "fixtures",
+        "pki"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:test/unit/crypto/crypto.go:CryptoBundle",
+      "type": "class",
+      "name": "CryptoBundle",
+      "filePath": "test/unit/crypto/crypto.go",
+      "lineRange": [
+        41,
+        72
+      ],
+      "summary": "Bundle of private key, CSR and signed certificate data used by PKI unit tests.",
+      "tags": [
+        "test",
+        "cryptography",
+        "fixtures",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/crypto/crypto.go:MustCreateCryptoBundle",
+      "type": "function",
+      "name": "MustCreateCryptoBundle",
+      "filePath": "test/unit/crypto/crypto.go",
+      "lineRange": [
+        75,
+        81
+      ],
+      "summary": "Creates a CryptoBundle or fails the test immediately on error.",
+      "tags": [
+        "test",
+        "cryptography",
+        "fixtures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/crypto/crypto.go:CreateCryptoBundle",
+      "type": "function",
+      "name": "CreateCryptoBundle",
+      "filePath": "test/unit/crypto/crypto.go",
+      "lineRange": [
+        83,
+        203
+      ],
+      "summary": "Generates a private key, CSR and self-signed certificate chain that satisfy the Certificate spec.",
+      "tags": [
+        "test",
+        "cryptography",
+        "fixtures"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/unit/crypto/crypto.go:generateCSRImpl",
+      "type": "function",
+      "name": "generateCSRImpl",
+      "filePath": "test/unit/crypto/crypto.go",
+      "lineRange": [
+        205,
+        226
+      ],
+      "summary": "Builds a certificate request for the Certificate spec using the supplied private key.",
+      "tags": [
+        "test",
+        "cryptography",
+        "fixtures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/crypto/crypto.go:MustGenerateCSRImpl",
+      "type": "function",
+      "name": "MustGenerateCSRImpl",
+      "filePath": "test/unit/crypto/crypto.go",
+      "lineRange": [
+        229,
+        235
+      ],
+      "summary": "Test wrapper around CSR generation that fails the test on error.",
+      "tags": [
+        "test",
+        "cryptography",
+        "fixtures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/crypto/crypto.go:MustCreatePEMPrivateKey",
+      "type": "function",
+      "name": "MustCreatePEMPrivateKey",
+      "filePath": "test/unit/crypto/crypto.go",
+      "lineRange": [
+        238,
+        248
+      ],
+      "summary": "Generates a fresh private key and returns its PEM encoding, failing the test on error.",
+      "tags": [
+        "test",
+        "cryptography",
+        "fixtures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/crypto/crypto.go:MustCreateCertWithNotBeforeAfter",
+      "type": "function",
+      "name": "MustCreateCertWithNotBeforeAfter",
+      "filePath": "test/unit/crypto/crypto.go",
+      "lineRange": [
+        252,
+        272
+      ],
+      "summary": "Signs a certificate with explicit notBefore and notAfter values for expiry tests.",
+      "tags": [
+        "test",
+        "cryptography",
+        "fixtures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/crypto/crypto.go:MustCreateCert",
+      "type": "function",
+      "name": "MustCreateCert",
+      "filePath": "test/unit/crypto/crypto.go",
+      "lineRange": [
+        275,
+        292
+      ],
+      "summary": "Signs a certificate for the supplied spec and key, failing the test on error.",
+      "tags": [
+        "test",
+        "cryptography",
+        "fixtures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/unit/discovery/discovery.go",
+      "type": "file",
+      "name": "discovery.go",
+      "filePath": "test/unit/discovery/discovery.go",
+      "summary": "Fake Kubernetes discovery client used in unit tests, with configurable server groups, resources and legacy behavior.",
+      "tags": [
+        "test",
+        "kubernetes",
+        "fake-client",
+        "discovery"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/unit/discovery/discovery.go:Discovery",
+      "type": "class",
+      "name": "Discovery",
+      "filePath": "test/unit/discovery/discovery.go",
+      "lineRange": [
+        30,
+        41
+      ],
+      "summary": "Fake Kubernetes discovery client implementing the discovery interface for unit tests.",
+      "tags": [
+        "test",
+        "kubernetes",
+        "fake-client",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/discovery/discovery.go:NewDiscovery",
+      "type": "function",
+      "name": "NewDiscovery",
+      "filePath": "test/unit/discovery/discovery.go",
+      "lineRange": [
+        43,
+        56
+      ],
+      "summary": "Creates a fake discovery client with configurable group and resource responses.",
+      "tags": [
+        "test",
+        "kubernetes",
+        "fake-client"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/acme/server/rfc2136.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/acme/server/rfc2136.go",
+      "target": "class:test/acme/server/rfc2136.go:rfc2136Handler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/acme/server/rfc2136.go",
+      "target": "function:test/acme/server/rfc2136.go:ServeDNS",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/acme/server/rfc2136.go",
+      "target": "function:test/acme/server/rfc2136.go:ServeDNS",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/acme/server/server.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/acme/server/server.go",
+      "target": "class:test/acme/server/server.go:BasicServer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/acme/server/server.go",
+      "target": "class:test/acme/server/server.go:BasicServer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/acme/server/server.go",
+      "target": "function:test/acme/server/server.go:Run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/acme/server/server.go",
+      "target": "function:test/acme/server/server.go:Run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/acme/server/server.go",
+      "target": "function:test/acme/server/server.go:RunWithAddress",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/acme/server/server.go",
+      "target": "function:test/acme/server/server.go:RunWithAddress",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/acme/server/server.go",
+      "target": "function:test/acme/server/server.go:ListenAddr",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/acme/server/server.go",
+      "target": "function:test/acme/server/server.go:ListenAddr",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/acme/server/server.go",
+      "target": "function:test/acme/server/server.go:Shutdown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/acme/server/server.go",
+      "target": "function:test/acme/server/server.go:Shutdown",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/api/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/api/util/duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/api/util/issuers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/api/util/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/api/util/names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/api/util/usages.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/util/pki/asn1_util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/util/pki/basicconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/util/pki/certificatetemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/util/pki/csr.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/util/pki/generate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/util/pki/keyusage.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/util/pki/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/util/pki/match.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/util/pki/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/util/pki/parse.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/util/pki/parse_certificate_chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/util/pki/renewaltime.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/util/pki/sans.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/util/pki/subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/util/pki/temporarycertificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:test/unit/gen/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:test/unit/gen/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:test/unit/gen/certificatesigningrequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:test/unit/gen/challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:test/unit/gen/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:test/unit/gen/csr.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:test/unit/gen/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:test/unit/gen/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:test/unit/gen/objectmeta.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:test/unit/gen/order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:test/unit/gen/secret.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "class:test/unit/crypto/crypto.go:CryptoBundle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "class:test/unit/crypto/crypto.go:CryptoBundle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "function:test/unit/crypto/crypto.go:MustCreateCryptoBundle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "function:test/unit/crypto/crypto.go:MustCreateCryptoBundle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "function:test/unit/crypto/crypto.go:CreateCryptoBundle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "function:test/unit/crypto/crypto.go:CreateCryptoBundle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "function:test/unit/crypto/crypto.go:generateCSRImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "function:test/unit/crypto/crypto.go:MustGenerateCSRImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "function:test/unit/crypto/crypto.go:MustGenerateCSRImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "function:test/unit/crypto/crypto.go:MustCreatePEMPrivateKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "function:test/unit/crypto/crypto.go:MustCreatePEMPrivateKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "function:test/unit/crypto/crypto.go:MustCreateCertWithNotBeforeAfter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "function:test/unit/crypto/crypto.go:MustCreateCertWithNotBeforeAfter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "function:test/unit/crypto/crypto.go:MustCreateCert",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "function:test/unit/crypto/crypto.go:MustCreateCert",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/discovery/discovery.go",
+      "target": "class:test/unit/discovery/discovery.go:Discovery",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/discovery/discovery.go",
+      "target": "class:test/unit/discovery/discovery.go:Discovery",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/discovery/discovery.go",
+      "target": "function:test/unit/discovery/discovery.go:NewDiscovery",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/discovery/discovery.go",
+      "target": "function:test/unit/discovery/discovery.go:NewDiscovery",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/crypto/crypto.go",
+      "target": "file:pkg/util/pki/certificatetemplate.go",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

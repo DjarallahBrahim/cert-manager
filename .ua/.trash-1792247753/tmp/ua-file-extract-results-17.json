@@ -1,0 +1,2612 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 29,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 29,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 29,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/vaultkubernetesauth.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "VaultKubernetesAuth",
+          "startLine": 36,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "WithPath",
+          "startLine": 43,
+          "endLine": 46,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithSecretRef",
+          "startLine": 51,
+          "endLine": 54,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithServiceAccountRef",
+          "startLine": 59,
+          "endLine": 62,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithRole",
+          "startLine": 67,
+          "endLine": 70,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "VaultKubernetesAuthApplyConfiguration",
+          "startLine": 27,
+          "endLine": 32,
+          "methods": [
+            "WithPath",
+            "WithSecretRef",
+            "WithServiceAccountRef",
+            "WithRole"
+          ],
+          "properties": [
+            "Path",
+            "SecretRef",
+            "ServiceAccountRef",
+            "Role"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "VaultKubernetesAuthApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "VaultKubernetesAuth",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "WithPath",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "WithSecretRef",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "WithServiceAccountRef",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "WithRole",
+          "line": 67,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/venaficloud.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "VenafiCloud",
+          "startLine": 34,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "WithURL",
+          "startLine": 41,
+          "endLine": 44,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAPITokenSecretRef",
+          "startLine": 49,
+          "endLine": 52,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "VenafiCloudApplyConfiguration",
+          "startLine": 27,
+          "endLine": 30,
+          "methods": [
+            "WithURL",
+            "WithAPITokenSecretRef"
+          ],
+          "properties": [
+            "URL",
+            "APITokenSecretRef"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "VenafiCloudApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "VenafiCloud",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "WithURL",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "WithAPITokenSecretRef",
+          "line": 49,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/venafiissuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "VenafiIssuer",
+          "startLine": 31,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "WithZone",
+          "startLine": 38,
+          "endLine": 41,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithTPP",
+          "startLine": 46,
+          "endLine": 49,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithCloud",
+          "startLine": 54,
+          "endLine": 57,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "VenafiIssuerApplyConfiguration",
+          "startLine": 23,
+          "endLine": 27,
+          "methods": [
+            "WithZone",
+            "WithTPP",
+            "WithCloud"
+          ],
+          "properties": [
+            "Zone",
+            "TPP",
+            "Cloud"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "VenafiIssuerApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "VenafiIssuer",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "WithZone",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "WithTPP",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "WithCloud",
+          "line": 54,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/venafitpp.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "VenafiTPP",
+          "startLine": 36,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "WithURL",
+          "startLine": 43,
+          "endLine": 46,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithCredentialsRef",
+          "startLine": 51,
+          "endLine": 54,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithCABundle",
+          "startLine": 59,
+          "endLine": 64,
+          "params": []
+        },
+        {
+          "name": "WithCABundleSecretRef",
+          "startLine": 69,
+          "endLine": 72,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "VenafiTPPApplyConfiguration",
+          "startLine": 27,
+          "endLine": 32,
+          "methods": [
+            "WithURL",
+            "WithCredentialsRef",
+            "WithCABundle",
+            "WithCABundleSecretRef"
+          ],
+          "properties": [
+            "URL",
+            "CredentialsRef",
+            "CABundle",
+            "CABundleSecretRef"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "VenafiTPPApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "VenafiTPP",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "WithURL",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "WithCredentialsRef",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "WithCABundle",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "WithCABundleSecretRef",
+          "line": 69,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithCABundle",
+          "callee": "append",
+          "lineNumber": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/x509subject.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 116,
+      "nonEmptyLines": 101,
+      "functions": [
+        {
+          "name": "X509Subject",
+          "startLine": 36,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "WithOrganizations",
+          "startLine": 43,
+          "endLine": 48,
+          "params": []
+        },
+        {
+          "name": "WithCountries",
+          "startLine": 53,
+          "endLine": 58,
+          "params": []
+        },
+        {
+          "name": "WithOrganizationalUnits",
+          "startLine": 63,
+          "endLine": 68,
+          "params": []
+        },
+        {
+          "name": "WithLocalities",
+          "startLine": 73,
+          "endLine": 78,
+          "params": []
+        },
+        {
+          "name": "WithProvinces",
+          "startLine": 83,
+          "endLine": 88,
+          "params": []
+        },
+        {
+          "name": "WithStreetAddresses",
+          "startLine": 93,
+          "endLine": 98,
+          "params": []
+        },
+        {
+          "name": "WithPostalCodes",
+          "startLine": 103,
+          "endLine": 108,
+          "params": []
+        },
+        {
+          "name": "WithSerialNumber",
+          "startLine": 113,
+          "endLine": 116,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "X509SubjectApplyConfiguration",
+          "startLine": 23,
+          "endLine": 32,
+          "methods": [
+            "WithOrganizations",
+            "WithCountries",
+            "WithOrganizationalUnits",
+            "WithLocalities",
+            "WithProvinces",
+            "WithStreetAddresses",
+            "WithPostalCodes",
+            "WithSerialNumber"
+          ],
+          "properties": [
+            "Organizations",
+            "Countries",
+            "OrganizationalUnits",
+            "Localities",
+            "Provinces",
+            "StreetAddresses",
+            "PostalCodes",
+            "SerialNumber"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "X509SubjectApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "X509Subject",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "WithOrganizations",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "WithCountries",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "WithOrganizationalUnits",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "WithLocalities",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "WithProvinces",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "WithStreetAddresses",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "WithPostalCodes",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "WithSerialNumber",
+          "line": 113,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithOrganizations",
+          "callee": "append",
+          "lineNumber": 45
+        },
+        {
+          "caller": "WithCountries",
+          "callee": "append",
+          "lineNumber": 55
+        },
+        {
+          "caller": "WithOrganizationalUnits",
+          "callee": "append",
+          "lineNumber": 65
+        },
+        {
+          "caller": "WithLocalities",
+          "callee": "append",
+          "lineNumber": 75
+        },
+        {
+          "caller": "WithProvinces",
+          "callee": "append",
+          "lineNumber": 85
+        },
+        {
+          "caller": "WithStreetAddresses",
+          "callee": "append",
+          "lineNumber": 95
+        },
+        {
+          "caller": "WithPostalCodes",
+          "callee": "append",
+          "lineNumber": 105
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/internal/internal.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 1920,
+      "nonEmptyLines": 1911,
+      "functions": [
+        {
+          "name": "Parser",
+          "startLine": 28,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Parser",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Parser",
+          "callee": "parserOnce.Do",
+          "lineNumber": 29
+        },
+        {
+          "caller": "Parser",
+          "callee": "typed.NewParser",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Parser",
+          "callee": "panic",
+          "lineNumber": 33
+        },
+        {
+          "caller": "Parser",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/meta/v1/issuerreference.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "IssuerReference",
+          "startLine": 31,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "WithName",
+          "startLine": 38,
+          "endLine": 41,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithKind",
+          "startLine": 46,
+          "endLine": 49,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithGroup",
+          "startLine": 54,
+          "endLine": 57,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IssuerReferenceApplyConfiguration",
+          "startLine": 23,
+          "endLine": 27,
+          "methods": [
+            "WithName",
+            "WithKind",
+            "WithGroup"
+          ],
+          "properties": [
+            "Name",
+            "Kind",
+            "Group"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IssuerReferenceApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "IssuerReference",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "WithName",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "WithKind",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "WithGroup",
+          "line": 54,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/meta/v1/localobjectreference.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "LocalObjectReference",
+          "startLine": 29,
+          "endLine": 31,
+          "params": []
+        },
+        {
+          "name": "WithName",
+          "startLine": 36,
+          "endLine": 39,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LocalObjectReferenceApplyConfiguration",
+          "startLine": 23,
+          "endLine": 25,
+          "methods": [
+            "WithName"
+          ],
+          "properties": [
+            "Name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LocalObjectReferenceApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "LocalObjectReference",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "WithName",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/meta/v1/secretkeyselector.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "SecretKeySelector",
+          "startLine": 30,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "WithName",
+          "startLine": 37,
+          "endLine": 40,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithKey",
+          "startLine": 45,
+          "endLine": 48,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecretKeySelectorApplyConfiguration",
+          "startLine": 23,
+          "endLine": 26,
+          "methods": [
+            "WithName",
+            "WithKey"
+          ],
+          "properties": [
+            "Key"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SecretKeySelectorApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "SecretKeySelector",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "WithName",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "WithKey",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/utils.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 200,
+      "nonEmptyLines": 189,
+      "functions": [
+        {
+          "name": "ForKind",
+          "startLine": 36,
+          "endLine": 196,
+          "params": [
+            "kind"
+          ]
+        },
+        {
+          "name": "NewTypeConverter",
+          "startLine": 198,
+          "endLine": 200,
+          "params": [
+            "scheme"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ForKind",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "NewTypeConverter",
+          "line": 198,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 39
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 41
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 43
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 45
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 47
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 49
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 51
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 53
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 55
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 57
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 59
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 61
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 63
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 65
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 67
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 69
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 71
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 73
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 75
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 77
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 79
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 81
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 83
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 85
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 87
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 89
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 91
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 93
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 95
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 97
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 99
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 101
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 103
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 105
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 107
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 109
+        },
+        {
+          "caller": "ForKind",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 111
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 115
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 117
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 119
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 121
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 123
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 125
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 127
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 129
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 131
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 133
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 135
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 137
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 139
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 141
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 143
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 145
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 147
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 149
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 151
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 153
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 155
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 157
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 159
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 161
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 163
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 165
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 167
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 169
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 171
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 173
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 175
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 177
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 179
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 181
+        },
+        {
+          "caller": "ForKind",
+          "callee": "certmanagerv1.SchemeGroupVersion.WithKind",
+          "lineNumber": 183
+        },
+        {
+          "caller": "ForKind",
+          "callee": "metav1.SchemeGroupVersion.WithKind",
+          "lineNumber": 187
+        },
+        {
+          "caller": "ForKind",
+          "callee": "metav1.SchemeGroupVersion.WithKind",
+          "lineNumber": 189
+        },
+        {
+          "caller": "ForKind",
+          "callee": "metav1.SchemeGroupVersion.WithKind",
+          "lineNumber": 191
+        },
+        {
+          "caller": "NewTypeConverter",
+          "callee": "managedfields.NewSchemeTypeConverter",
+          "lineNumber": 199
+        },
+        {
+          "caller": "NewTypeConverter",
+          "callee": "internal.Parser",
+          "lineNumber": 199
+        }
+      ],
+      "metrics": {
+        "importCount": 97,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 138,
+      "nonEmptyLines": 120,
+      "functions": [
+        {
+          "name": "NewSimpleClientset",
+          "startLine": 44,
+          "endLine": 70,
+          "params": []
+        },
+        {
+          "name": "Discovery",
+          "startLine": 81,
+          "endLine": 83,
+          "params": []
+        },
+        {
+          "name": "Tracker",
+          "startLine": 85,
+          "endLine": 87,
+          "params": []
+        },
+        {
+          "name": "NewClientset",
+          "startLine": 93,
+          "endLine": 123,
+          "params": []
+        },
+        {
+          "name": "AcmeV1",
+          "startLine": 131,
+          "endLine": 133,
+          "params": []
+        },
+        {
+          "name": "CertmanagerV1",
+          "startLine": 136,
+          "endLine": 138,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "Clientset",
+          "startLine": 75,
+          "endLine": 79,
+          "methods": [
+            "Discovery",
+            "Tracker",
+            "AcmeV1",
+            "CertmanagerV1"
+          ],
+          "properties": [
+            "discovery",
+            "tracker"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewSimpleClientset",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "Clientset",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "Discovery",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "Tracker",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "NewClientset",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "AcmeV1",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "CertmanagerV1",
+          "line": 136,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewSimpleClientset",
+          "callee": "testing.NewObjectTracker",
+          "lineNumber": 45
+        },
+        {
+          "caller": "NewSimpleClientset",
+          "callee": "codecs.UniversalDecoder",
+          "lineNumber": 45
+        },
+        {
+          "caller": "NewSimpleClientset",
+          "callee": "o.Add",
+          "lineNumber": 47
+        },
+        {
+          "caller": "NewSimpleClientset",
+          "callee": "panic",
+          "lineNumber": 48
+        },
+        {
+          "caller": "NewSimpleClientset",
+          "callee": "cs.AddReactor",
+          "lineNumber": 54
+        },
+        {
+          "caller": "NewSimpleClientset",
+          "callee": "testing.ObjectReaction",
+          "lineNumber": 54
+        },
+        {
+          "caller": "NewSimpleClientset",
+          "callee": "cs.AddWatchReactor",
+          "lineNumber": 55
+        },
+        {
+          "caller": "NewSimpleClientset",
+          "callee": "action.GetResource",
+          "lineNumber": 60
+        },
+        {
+          "caller": "NewSimpleClientset",
+          "callee": "action.GetNamespace",
+          "lineNumber": 61
+        },
+        {
+          "caller": "NewSimpleClientset",
+          "callee": "o.Watch",
+          "lineNumber": 62
+        },
+        {
+          "caller": "NewClientset",
+          "callee": "testing.NewFieldManagedObjectTracker",
+          "lineNumber": 94
+        },
+        {
+          "caller": "NewClientset",
+          "callee": "codecs.UniversalDecoder",
+          "lineNumber": 96
+        },
+        {
+          "caller": "NewClientset",
+          "callee": "applyconfigurations.NewTypeConverter",
+          "lineNumber": 97
+        },
+        {
+          "caller": "NewClientset",
+          "callee": "o.Add",
+          "lineNumber": 100
+        },
+        {
+          "caller": "NewClientset",
+          "callee": "panic",
+          "lineNumber": 101
+        },
+        {
+          "caller": "NewClientset",
+          "callee": "cs.AddReactor",
+          "lineNumber": 107
+        },
+        {
+          "caller": "NewClientset",
+          "callee": "testing.ObjectReaction",
+          "lineNumber": 107
+        },
+        {
+          "caller": "NewClientset",
+          "callee": "cs.AddWatchReactor",
+          "lineNumber": 108
+        },
+        {
+          "caller": "NewClientset",
+          "callee": "action.GetResource",
+          "lineNumber": 113
+        },
+        {
+          "caller": "NewClientset",
+          "callee": "action.GetNamespace",
+          "lineNumber": 114
+        },
+        {
+          "caller": "NewClientset",
+          "callee": "o.Watch",
+          "lineNumber": 115
+        }
+      ],
+      "metrics": {
+        "importCount": 24,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/scheme/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/acme/v1/challenge.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "newChallenges",
+          "startLine": 63,
+          "endLine": 74,
+          "params": [
+            "c",
+            "namespace"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ChallengesGetter",
+          "startLine": 35,
+          "endLine": 37,
+          "methods": [
+            "Challenges"
+          ],
+          "properties": []
+        },
+        {
+          "name": "ChallengeInterface",
+          "startLine": 40,
+          "endLine": 55,
+          "methods": [
+            "Create",
+            "Update",
+            "UpdateStatus",
+            "Delete",
+            "DeleteCollection",
+            "Get",
+            "List",
+            "Watch",
+            "Patch",
+            "Apply",
+            "ApplyStatus"
+          ],
+          "properties": []
+        },
+        {
+          "name": "challenges",
+          "startLine": 58,
+          "endLine": 60,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ChallengesGetter",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "ChallengeInterface",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "newChallenges",
+          "callee": "gentype.NewClientWithListAndApply",
+          "lineNumber": 65
+        },
+        {
+          "caller": "newChallenges",
+          "callee": "c.RESTClient",
+          "lineNumber": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 47,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/acme/v1/fake/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/acme/v1/fake/fake_challenge.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "newFakeChallenges",
+          "startLine": 34,
+          "endLine": 49,
+          "params": [
+            "fake",
+            "namespace"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "fakeChallenges",
+          "startLine": 29,
+          "endLine": 32,
+          "methods": [],
+          "properties": [
+            "Fake"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "newFakeChallenges",
+          "callee": "gentype.NewFakeClientWithListAndApply",
+          "lineNumber": 36
+        },
+        {
+          "caller": "newFakeChallenges",
+          "callee": "v1.SchemeGroupVersion.WithResource",
+          "lineNumber": 39
+        },
+        {
+          "caller": "newFakeChallenges",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 40
+        },
+        {
+          "caller": "newFakeChallenges",
+          "callee": "gentype.ToPointerSlice",
+          "lineNumber": 44
+        },
+        {
+          "caller": "newFakeChallenges",
+          "callee": "gentype.FromPointerSlice",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 50,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/acme/v1/fake/fake_order.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "newFakeOrders",
+          "startLine": 34,
+          "endLine": 49,
+          "params": [
+            "fake",
+            "namespace"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "fakeOrders",
+          "startLine": 29,
+          "endLine": 32,
+          "methods": [],
+          "properties": [
+            "Fake"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "newFakeOrders",
+          "callee": "gentype.NewFakeClientWithListAndApply",
+          "lineNumber": 36
+        },
+        {
+          "caller": "newFakeOrders",
+          "callee": "v1.SchemeGroupVersion.WithResource",
+          "lineNumber": 39
+        },
+        {
+          "caller": "newFakeOrders",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 40
+        },
+        {
+          "caller": "newFakeOrders",
+          "callee": "gentype.ToPointerSlice",
+          "lineNumber": 44
+        },
+        {
+          "caller": "newFakeOrders",
+          "callee": "gentype.FromPointerSlice",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 50,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/acme/v1/order.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "newOrders",
+          "startLine": 63,
+          "endLine": 74,
+          "params": [
+            "c",
+            "namespace"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OrdersGetter",
+          "startLine": 35,
+          "endLine": 37,
+          "methods": [
+            "Orders"
+          ],
+          "properties": []
+        },
+        {
+          "name": "OrderInterface",
+          "startLine": 40,
+          "endLine": 55,
+          "methods": [
+            "Create",
+            "Update",
+            "UpdateStatus",
+            "Delete",
+            "DeleteCollection",
+            "Get",
+            "List",
+            "Watch",
+            "Patch",
+            "Apply",
+            "ApplyStatus"
+          ],
+          "properties": []
+        },
+        {
+          "name": "orders",
+          "startLine": 58,
+          "endLine": 60,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "OrdersGetter",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "OrderInterface",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "newOrders",
+          "callee": "gentype.NewClientWithListAndApply",
+          "lineNumber": 65
+        },
+        {
+          "caller": "newOrders",
+          "callee": "c.RESTClient",
+          "lineNumber": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 47,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificate.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "newCertificates",
+          "startLine": 63,
+          "endLine": 74,
+          "params": [
+            "c",
+            "namespace"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertificatesGetter",
+          "startLine": 35,
+          "endLine": 37,
+          "methods": [
+            "Certificates"
+          ],
+          "properties": []
+        },
+        {
+          "name": "CertificateInterface",
+          "startLine": 40,
+          "endLine": 55,
+          "methods": [
+            "Create",
+            "Update",
+            "UpdateStatus",
+            "Delete",
+            "DeleteCollection",
+            "Get",
+            "List",
+            "Watch",
+            "Patch",
+            "Apply",
+            "ApplyStatus"
+          ],
+          "properties": []
+        },
+        {
+          "name": "certificates",
+          "startLine": 58,
+          "endLine": 60,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificatesGetter",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateInterface",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "newCertificates",
+          "callee": "gentype.NewClientWithListAndApply",
+          "lineNumber": 65
+        },
+        {
+          "caller": "newCertificates",
+          "callee": "c.RESTClient",
+          "lineNumber": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 46,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certificaterequest.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "newCertificateRequests",
+          "startLine": 63,
+          "endLine": 74,
+          "params": [
+            "c",
+            "namespace"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertificateRequestsGetter",
+          "startLine": 35,
+          "endLine": 37,
+          "methods": [
+            "CertificateRequests"
+          ],
+          "properties": []
+        },
+        {
+          "name": "CertificateRequestInterface",
+          "startLine": 40,
+          "endLine": 55,
+          "methods": [
+            "Create",
+            "Update",
+            "UpdateStatus",
+            "Delete",
+            "DeleteCollection",
+            "Get",
+            "List",
+            "Watch",
+            "Patch",
+            "Apply",
+            "ApplyStatus"
+          ],
+          "properties": []
+        },
+        {
+          "name": "certificateRequests",
+          "startLine": 58,
+          "endLine": 60,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateRequestsGetter",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateRequestInterface",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "newCertificateRequests",
+          "callee": "gentype.NewClientWithListAndApply",
+          "lineNumber": 65
+        },
+        {
+          "caller": "newCertificateRequests",
+          "callee": "c.RESTClient",
+          "lineNumber": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 46,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/certmanager/v1/clusterissuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "newClusterIssuers",
+          "startLine": 63,
+          "endLine": 74,
+          "params": [
+            "c"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ClusterIssuersGetter",
+          "startLine": 35,
+          "endLine": 37,
+          "methods": [
+            "ClusterIssuers"
+          ],
+          "properties": []
+        },
+        {
+          "name": "ClusterIssuerInterface",
+          "startLine": 40,
+          "endLine": 55,
+          "methods": [
+            "Create",
+            "Update",
+            "UpdateStatus",
+            "Delete",
+            "DeleteCollection",
+            "Get",
+            "List",
+            "Watch",
+            "Patch",
+            "Apply",
+            "ApplyStatus"
+          ],
+          "properties": []
+        },
+        {
+          "name": "clusterIssuers",
+          "startLine": 58,
+          "endLine": 60,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ClusterIssuersGetter",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "ClusterIssuerInterface",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "newClusterIssuers",
+          "callee": "gentype.NewClientWithListAndApply",
+          "lineNumber": 65
+        },
+        {
+          "caller": "newClusterIssuers",
+          "callee": "c.RESTClient",
+          "lineNumber": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 46,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/certmanager/v1/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificate.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "newFakeCertificates",
+          "startLine": 34,
+          "endLine": 49,
+          "params": [
+            "fake",
+            "namespace"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "fakeCertificates",
+          "startLine": 29,
+          "endLine": 32,
+          "methods": [],
+          "properties": [
+            "Fake"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "newFakeCertificates",
+          "callee": "gentype.NewFakeClientWithListAndApply",
+          "lineNumber": 36
+        },
+        {
+          "caller": "newFakeCertificates",
+          "callee": "v1.SchemeGroupVersion.WithResource",
+          "lineNumber": 39
+        },
+        {
+          "caller": "newFakeCertificates",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 40
+        },
+        {
+          "caller": "newFakeCertificates",
+          "callee": "gentype.ToPointerSlice",
+          "lineNumber": 44
+        },
+        {
+          "caller": "newFakeCertificates",
+          "callee": "gentype.FromPointerSlice",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 51,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certificaterequest.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "newFakeCertificateRequests",
+          "startLine": 34,
+          "endLine": 53,
+          "params": [
+            "fake",
+            "namespace"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "fakeCertificateRequests",
+          "startLine": 29,
+          "endLine": 32,
+          "methods": [],
+          "properties": [
+            "Fake"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "newFakeCertificateRequests",
+          "callee": "gentype.NewFakeClientWithListAndApply",
+          "lineNumber": 36
+        },
+        {
+          "caller": "newFakeCertificateRequests",
+          "callee": "v1.SchemeGroupVersion.WithResource",
+          "lineNumber": 39
+        },
+        {
+          "caller": "newFakeCertificateRequests",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 40
+        },
+        {
+          "caller": "newFakeCertificateRequests",
+          "callee": "gentype.ToPointerSlice",
+          "lineNumber": 45
+        },
+        {
+          "caller": "newFakeCertificateRequests",
+          "callee": "gentype.FromPointerSlice",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 51,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_certmanager_client.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 40,
+      "functions": [
+        {
+          "name": "Certificates",
+          "startLine": 31,
+          "endLine": 33,
+          "params": [
+            "namespace"
+          ]
+        },
+        {
+          "name": "CertificateRequests",
+          "startLine": 35,
+          "endLine": 37,
+          "params": [
+            "namespace"
+          ]
+        },
+        {
+          "name": "ClusterIssuers",
+          "startLine": 39,
+          "endLine": 41,
+          "params": []
+        },
+        {
+          "name": "Issuers",
+          "startLine": 43,
+          "endLine": 45,
+          "params": [
+            "namespace"
+          ]
+        },
+        {
+          "name": "RESTClient",
+          "startLine": 49,
+          "endLine": 52,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "FakeCertmanagerV1",
+          "startLine": 27,
+          "endLine": 29,
+          "methods": [
+            "Certificates",
+            "CertificateRequests",
+            "ClusterIssuers",
+            "Issuers",
+            "RESTClient"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "FakeCertmanagerV1",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "Certificates",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateRequests",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "ClusterIssuers",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "Issuers",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "RESTClient",
+          "line": 49,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Certificates",
+          "callee": "newFakeCertificates",
+          "lineNumber": 32
+        },
+        {
+          "caller": "CertificateRequests",
+          "callee": "newFakeCertificateRequests",
+          "lineNumber": 36
+        },
+        {
+          "caller": "ClusterIssuers",
+          "callee": "newFakeClusterIssuers",
+          "lineNumber": 40
+        },
+        {
+          "caller": "Issuers",
+          "callee": "newFakeIssuers",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_clusterissuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "newFakeClusterIssuers",
+          "startLine": 34,
+          "endLine": 51,
+          "params": [
+            "fake"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "fakeClusterIssuers",
+          "startLine": 29,
+          "endLine": 32,
+          "methods": [],
+          "properties": [
+            "Fake"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "newFakeClusterIssuers",
+          "callee": "gentype.NewFakeClientWithListAndApply",
+          "lineNumber": 36
+        },
+        {
+          "caller": "newFakeClusterIssuers",
+          "callee": "v1.SchemeGroupVersion.WithResource",
+          "lineNumber": 39
+        },
+        {
+          "caller": "newFakeClusterIssuers",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 40
+        },
+        {
+          "caller": "newFakeClusterIssuers",
+          "callee": "gentype.ToPointerSlice",
+          "lineNumber": 44
+        },
+        {
+          "caller": "newFakeClusterIssuers",
+          "callee": "gentype.FromPointerSlice",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 51,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/certmanager/v1/fake/fake_issuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "newFakeIssuers",
+          "startLine": 34,
+          "endLine": 49,
+          "params": [
+            "fake",
+            "namespace"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "fakeIssuers",
+          "startLine": 29,
+          "endLine": 32,
+          "methods": [],
+          "properties": [
+            "Fake"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "newFakeIssuers",
+          "callee": "gentype.NewFakeClientWithListAndApply",
+          "lineNumber": 36
+        },
+        {
+          "caller": "newFakeIssuers",
+          "callee": "v1.SchemeGroupVersion.WithResource",
+          "lineNumber": 39
+        },
+        {
+          "caller": "newFakeIssuers",
+          "callee": "v1.SchemeGroupVersion.WithKind",
+          "lineNumber": 40
+        },
+        {
+          "caller": "newFakeIssuers",
+          "callee": "gentype.ToPointerSlice",
+          "lineNumber": 44
+        },
+        {
+          "caller": "newFakeIssuers",
+          "callee": "gentype.FromPointerSlice",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 51,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/certmanager/v1/generated_expansion.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "CertificateExpansion",
+          "startLine": 21,
+          "endLine": 21,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "CertificateRequestExpansion",
+          "startLine": 23,
+          "endLine": 23,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "ClusterIssuerExpansion",
+          "startLine": 25,
+          "endLine": 25,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "IssuerExpansion",
+          "startLine": 27,
+          "endLine": 27,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateExpansion",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateRequestExpansion",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "ClusterIssuerExpansion",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "IssuerExpansion",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/certmanager/v1/issuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "newIssuers",
+          "startLine": 63,
+          "endLine": 74,
+          "params": [
+            "c",
+            "namespace"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IssuersGetter",
+          "startLine": 35,
+          "endLine": 37,
+          "methods": [
+            "Issuers"
+          ],
+          "properties": []
+        },
+        {
+          "name": "IssuerInterface",
+          "startLine": 40,
+          "endLine": 55,
+          "methods": [
+            "Create",
+            "Update",
+            "UpdateStatus",
+            "Delete",
+            "DeleteCollection",
+            "Get",
+            "List",
+            "Watch",
+            "Patch",
+            "Apply",
+            "ApplyStatus"
+          ],
+          "properties": []
+        },
+        {
+          "name": "issuers",
+          "startLine": 58,
+          "endLine": 60,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IssuersGetter",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "IssuerInterface",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "newIssuers",
+          "callee": "gentype.NewClientWithListAndApply",
+          "lineNumber": 65
+        },
+        {
+          "caller": "newIssuers",
+          "callee": "c.RESTClient",
+          "lineNumber": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 46,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 3
+      }
+    }
+  ]
+}

@@ -1,0 +1,1590 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/unit/gen/issuer.go",
+      "type": "file",
+      "name": "issuer.go",
+      "filePath": "test/unit/gen/issuer.go",
+      "summary": "Functional-option builders for Issuer and ClusterIssuer fixtures, covering ACME, CA, Vault, SelfSigned and Venafi configurations.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder",
+        "issuer"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:ClusterIssuer",
+      "type": "function",
+      "name": "ClusterIssuer",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        29,
+        38
+      ],
+      "summary": "Creates a ClusterIssuer fixture with the supplied name.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:ClusterIssuerFrom",
+      "type": "function",
+      "name": "ClusterIssuerFrom",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        40,
+        45
+      ],
+      "summary": "Copies an existing ClusterIssuer as the base for mutation.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:ClusterIssuerWithRandomName",
+      "type": "function",
+      "name": "ClusterIssuerWithRandomName",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        49,
+        59
+      ],
+      "summary": "Creates a ClusterIssuer fixture with a random name suffix.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:Issuer",
+      "type": "function",
+      "name": "Issuer",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        61,
+        69
+      ],
+      "summary": "Creates an Issuer fixture with the supplied name.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:IssuerFrom",
+      "type": "function",
+      "name": "IssuerFrom",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        71,
+        77
+      ],
+      "summary": "Copies an existing Issuer as the base for mutation.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:IssuerWithRandomName",
+      "type": "function",
+      "name": "IssuerWithRandomName",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        81,
+        91
+      ],
+      "summary": "Creates an Issuer fixture with a random name suffix.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerACME",
+      "type": "function",
+      "name": "SetIssuerACME",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        93,
+        97
+      ],
+      "summary": "Sets the ACME issuer configuration.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerACMEPreferredChain",
+      "type": "function",
+      "name": "SetIssuerACMEPreferredChain",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        99,
+        107
+      ],
+      "summary": "Sets the ACME preferred certificate chain.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerACMEURL",
+      "type": "function",
+      "name": "SetIssuerACMEURL",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        109,
+        117
+      ],
+      "summary": "Sets the ACME server URL.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerACMEEmail",
+      "type": "function",
+      "name": "SetIssuerACMEEmail",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        119,
+        127
+      ],
+      "summary": "Sets the ACME account email.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerACMEProfile",
+      "type": "function",
+      "name": "SetIssuerACMEProfile",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        129,
+        137
+      ],
+      "summary": "Sets the ACME profile name.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerACMEPrivKeyRef",
+      "type": "function",
+      "name": "SetIssuerACMEPrivKeyRef",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        139,
+        151
+      ],
+      "summary": "Sets the ACME account private key secret reference.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerACMESolvers",
+      "type": "function",
+      "name": "SetIssuerACMESolvers",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        152,
+        160
+      ],
+      "summary": "Sets the ACME challenge solvers.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerACMEDuration",
+      "type": "function",
+      "name": "SetIssuerACMEDuration",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        162,
+        170
+      ],
+      "summary": "Enables or disables the ACME duration feature.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerACMESkipTLSVerify",
+      "type": "function",
+      "name": "SetIssuerACMESkipTLSVerify",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        172,
+        180
+      ],
+      "summary": "Sets whether ACME skips TLS verification.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerACMEDisableAccountKeyGeneration",
+      "type": "function",
+      "name": "SetIssuerACMEDisableAccountKeyGeneration",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        182,
+        190
+      ],
+      "summary": "Toggles automatic ACME account key generation.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerACMEEAB",
+      "type": "function",
+      "name": "SetIssuerACMEEAB",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        192,
+        208
+      ],
+      "summary": "Configures ACME external account binding credentials.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerACMEEABWithKeyAlgorithm",
+      "type": "function",
+      "name": "SetIssuerACMEEABWithKeyAlgorithm",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        212,
+        229
+      ],
+      "summary": "Configures external account binding credentials together with a key algorithm.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerACMEAccountURL",
+      "type": "function",
+      "name": "SetIssuerACMEAccountURL",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        231,
+        239
+      ],
+      "summary": "Sets the registered ACME account URL in the issuer status.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerACMELastRegisteredEmail",
+      "type": "function",
+      "name": "SetIssuerACMELastRegisteredEmail",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        241,
+        249
+      ],
+      "summary": "Sets the last registered ACME email in the issuer status.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerACMELastPrivateKeyHash",
+      "type": "function",
+      "name": "SetIssuerACMELastPrivateKeyHash",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        251,
+        259
+      ],
+      "summary": "Sets the last ACME private key hash in the issuer status.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerCA",
+      "type": "function",
+      "name": "SetIssuerCA",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        261,
+        265
+      ],
+      "summary": "Sets the CA issuer configuration.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerCASecretName",
+      "type": "function",
+      "name": "SetIssuerCASecretName",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        267,
+        275
+      ],
+      "summary": "Sets the secret name used by the CA issuer.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerVault",
+      "type": "function",
+      "name": "SetIssuerVault",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        277,
+        281
+      ],
+      "summary": "Sets the Vault issuer configuration.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerVaultURL",
+      "type": "function",
+      "name": "SetIssuerVaultURL",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        283,
+        291
+      ],
+      "summary": "Sets the Vault server URL.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerVaultPath",
+      "type": "function",
+      "name": "SetIssuerVaultPath",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        293,
+        301
+      ],
+      "summary": "Sets the Vault authentication path.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerVaultCABundle",
+      "type": "function",
+      "name": "SetIssuerVaultCABundle",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        303,
+        311
+      ],
+      "summary": "Sets the Vault CA bundle.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerVaultCABundleSecretRef",
+      "type": "function",
+      "name": "SetIssuerVaultCABundleSecretRef",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        313,
+        326
+      ],
+      "summary": "Sets the secret reference holding the Vault CA bundle.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerVaultClientCertSecretRef",
+      "type": "function",
+      "name": "SetIssuerVaultClientCertSecretRef",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        328,
+        341
+      ],
+      "summary": "Sets the secret reference holding the Vault client certificate.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerVaultClientKeySecretRef",
+      "type": "function",
+      "name": "SetIssuerVaultClientKeySecretRef",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        343,
+        356
+      ],
+      "summary": "Sets the secret reference holding the Vault client key.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerVaultTokenAuth",
+      "type": "function",
+      "name": "SetIssuerVaultTokenAuth",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        358,
+        371
+      ],
+      "summary": "Configures token authentication for Vault.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerVaultAppRoleAuth",
+      "type": "function",
+      "name": "SetIssuerVaultAppRoleAuth",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        372,
+        389
+      ],
+      "summary": "Configures AppRole authentication for Vault.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerVaultClientCertificateAuth",
+      "type": "function",
+      "name": "SetIssuerVaultClientCertificateAuth",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        391,
+        402
+      ],
+      "summary": "Configures client certificate authentication for Vault.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerVaultKubernetesAuthSecret",
+      "type": "function",
+      "name": "SetIssuerVaultKubernetesAuthSecret",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        404,
+        422
+      ],
+      "summary": "Configures Vault Kubernetes authentication using a secret reference.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerVaultKubernetesAuthServiceAccount",
+      "type": "function",
+      "name": "SetIssuerVaultKubernetesAuthServiceAccount",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        424,
+        439
+      ],
+      "summary": "Configures Vault Kubernetes authentication using a service account.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerSelfSigned",
+      "type": "function",
+      "name": "SetIssuerSelfSigned",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        441,
+        445
+      ],
+      "summary": "Sets the SelfSigned issuer configuration.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerVenafi",
+      "type": "function",
+      "name": "SetIssuerVenafi",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        447,
+        451
+      ],
+      "summary": "Sets the Venafi issuer configuration.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:AddIssuerCondition",
+      "type": "function",
+      "name": "AddIssuerCondition",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        453,
+        457
+      ],
+      "summary": "Appends a condition to the issuer status.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/issuer.go:SetIssuerNamespace",
+      "type": "function",
+      "name": "SetIssuerNamespace",
+      "filePath": "test/unit/gen/issuer.go",
+      "lineRange": [
+        459,
+        463
+      ],
+      "summary": "Sets the Issuer namespace.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/unit/gen/objectmeta.go",
+      "type": "file",
+      "name": "objectmeta.go",
+      "filePath": "test/unit/gen/objectmeta.go",
+      "summary": "Builds Kubernetes ObjectMeta fixtures with generated names for tests.",
+      "tags": [
+        "test",
+        "fixtures",
+        "kubernetes",
+        "objectmeta"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/objectmeta.go:ObjectMeta",
+      "type": "function",
+      "name": "ObjectMeta",
+      "filePath": "test/unit/gen/objectmeta.go",
+      "lineRange": [
+        37,
+        46
+      ],
+      "summary": "Builds an ObjectMeta fixture with the supplied name.",
+      "tags": [
+        "test",
+        "fixtures",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/unit/gen/secret.go",
+      "type": "file",
+      "name": "secret.go",
+      "filePath": "test/unit/gen/secret.go",
+      "summary": "Functional-option builders for Kubernetes Secret fixtures used in unit tests.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder",
+        "secret"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/secret.go:Secret",
+      "type": "function",
+      "name": "Secret",
+      "filePath": "test/unit/gen/secret.go",
+      "lineRange": [
+        25,
+        33
+      ],
+      "summary": "Creates a Secret fixture with the supplied name.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/secret.go:SecretFrom",
+      "type": "function",
+      "name": "SecretFrom",
+      "filePath": "test/unit/gen/secret.go",
+      "lineRange": [
+        35,
+        41
+      ],
+      "summary": "Copies an existing Secret as the base for further mutation.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/secret.go:SetSecretNamespace",
+      "type": "function",
+      "name": "SetSecretNamespace",
+      "filePath": "test/unit/gen/secret.go",
+      "lineRange": [
+        43,
+        47
+      ],
+      "summary": "Sets the Secret namespace.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/secret.go:SetSecretAnnotations",
+      "type": "function",
+      "name": "SetSecretAnnotations",
+      "filePath": "test/unit/gen/secret.go",
+      "lineRange": [
+        49,
+        56
+      ],
+      "summary": "Replaces the Secret annotations.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/secret.go:SetSecretData",
+      "type": "function",
+      "name": "SetSecretData",
+      "filePath": "test/unit/gen/secret.go",
+      "lineRange": [
+        58,
+        65
+      ],
+      "summary": "Sets the Secret data map.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:ClusterIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:ClusterIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:ClusterIssuerFrom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:ClusterIssuerFrom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:ClusterIssuerWithRandomName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:ClusterIssuerWithRandomName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:Issuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:Issuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:IssuerFrom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:IssuerFrom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:IssuerWithRandomName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:IssuerWithRandomName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACME",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACME",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEPreferredChain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEPreferredChain",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEURL",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEURL",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEEmail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEEmail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEProfile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEProfile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEPrivKeyRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEPrivKeyRef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMESolvers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMESolvers",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEDuration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEDuration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMESkipTLSVerify",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMESkipTLSVerify",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEDisableAccountKeyGeneration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEDisableAccountKeyGeneration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEEAB",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEEAB",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEEABWithKeyAlgorithm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEEABWithKeyAlgorithm",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEAccountURL",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMEAccountURL",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMELastRegisteredEmail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMELastRegisteredEmail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMELastPrivateKeyHash",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerACMELastPrivateKeyHash",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerCA",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerCA",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerCASecretName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerCASecretName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVault",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVault",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultURL",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultURL",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultPath",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultCABundle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultCABundle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultCABundleSecretRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultCABundleSecretRef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultClientCertSecretRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultClientCertSecretRef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultClientKeySecretRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultClientKeySecretRef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultTokenAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultTokenAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultAppRoleAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultAppRoleAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultClientCertificateAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultClientCertificateAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultKubernetesAuthSecret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultKubernetesAuthSecret",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultKubernetesAuthServiceAccount",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVaultKubernetesAuthServiceAccount",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerSelfSigned",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerSelfSigned",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVenafi",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerVenafi",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:AddIssuerCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:AddIssuerCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerNamespace",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/issuer.go",
+      "target": "function:test/unit/gen/issuer.go:SetIssuerNamespace",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/objectmeta.go",
+      "target": "function:test/unit/gen/objectmeta.go:ObjectMeta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/objectmeta.go",
+      "target": "function:test/unit/gen/objectmeta.go:ObjectMeta",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/secret.go",
+      "target": "function:test/unit/gen/secret.go:Secret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/secret.go",
+      "target": "function:test/unit/gen/secret.go:Secret",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/secret.go",
+      "target": "function:test/unit/gen/secret.go:SecretFrom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/secret.go",
+      "target": "function:test/unit/gen/secret.go:SecretFrom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/secret.go",
+      "target": "function:test/unit/gen/secret.go:SetSecretNamespace",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/secret.go",
+      "target": "function:test/unit/gen/secret.go:SetSecretNamespace",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/secret.go",
+      "target": "function:test/unit/gen/secret.go:SetSecretAnnotations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/secret.go",
+      "target": "function:test/unit/gen/secret.go:SetSecretAnnotations",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/secret.go",
+      "target": "function:test/unit/gen/secret.go:SetSecretData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/secret.go",
+      "target": "function:test/unit/gen/secret.go:SetSecretData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

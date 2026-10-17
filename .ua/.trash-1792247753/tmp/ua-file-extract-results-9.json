@@ -1,0 +1,4471 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 30,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 30,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 30,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmechallenge.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "ACMEChallenge",
+          "startLine": 31,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "WithURL",
+          "startLine": 38,
+          "endLine": 41,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithToken",
+          "startLine": 46,
+          "endLine": 49,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithType",
+          "startLine": 54,
+          "endLine": 57,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEChallengeApplyConfiguration",
+          "startLine": 23,
+          "endLine": 27,
+          "methods": [
+            "WithURL",
+            "WithToken",
+            "WithType"
+          ],
+          "properties": [
+            "URL",
+            "Token",
+            "Type"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEChallengeApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallenge",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "WithURL",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "WithToken",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "WithType",
+          "line": 54,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolver.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "ACMEChallengeSolver",
+          "startLine": 31,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "WithSelector",
+          "startLine": 38,
+          "endLine": 41,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithHTTP01",
+          "startLine": 46,
+          "endLine": 49,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithDNS01",
+          "startLine": 54,
+          "endLine": 57,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEChallengeSolverApplyConfiguration",
+          "startLine": 23,
+          "endLine": 27,
+          "methods": [
+            "WithSelector",
+            "WithHTTP01",
+            "WithDNS01"
+          ],
+          "properties": [
+            "Selector",
+            "HTTP01",
+            "DNS01"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEChallengeSolverApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolver",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "WithSelector",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "WithHTTP01",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "WithDNS01",
+          "line": 54,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "ACMEChallengeSolverHTTP01",
+          "startLine": 30,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "WithIngress",
+          "startLine": 37,
+          "endLine": 40,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithGatewayHTTPRoute",
+          "startLine": 45,
+          "endLine": 48,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEChallengeSolverHTTP01ApplyConfiguration",
+          "startLine": 23,
+          "endLine": 26,
+          "methods": [
+            "WithIngress",
+            "WithGatewayHTTPRoute"
+          ],
+          "properties": [
+            "Ingress",
+            "GatewayHTTPRoute"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEChallengeSolverHTTP01ApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "WithIngress",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "WithGatewayHTTPRoute",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01gatewayhttproute.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "ACMEChallengeSolverHTTP01GatewayHTTPRoute",
+          "startLine": 37,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "WithServiceType",
+          "startLine": 44,
+          "endLine": 47,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithLabels",
+          "startLine": 53,
+          "endLine": 61,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithParentRefs",
+          "startLine": 66,
+          "endLine": 71,
+          "params": []
+        },
+        {
+          "name": "WithPodTemplate",
+          "startLine": 76,
+          "endLine": 79,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEChallengeSolverHTTP01GatewayHTTPRouteApplyConfiguration",
+          "startLine": 28,
+          "endLine": 33,
+          "methods": [
+            "WithServiceType",
+            "WithLabels",
+            "WithParentRefs",
+            "WithPodTemplate"
+          ],
+          "properties": [
+            "ServiceType",
+            "Labels",
+            "ParentRefs",
+            "PodTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEChallengeSolverHTTP01GatewayHTTPRouteApplyConfiguration",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01GatewayHTTPRoute",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "WithServiceType",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "WithLabels",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "WithParentRefs",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "WithPodTemplate",
+          "line": 76,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 54
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "make",
+          "lineNumber": 55
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 55
+        },
+        {
+          "caller": "WithParentRefs",
+          "callee": "append",
+          "lineNumber": 68
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingress.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 88,
+      "nonEmptyLines": 74,
+      "functions": [
+        {
+          "name": "ACMEChallengeSolverHTTP01Ingress",
+          "startLine": 38,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "WithServiceType",
+          "startLine": 45,
+          "endLine": 48,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithIngressClassName",
+          "startLine": 53,
+          "endLine": 56,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithClass",
+          "startLine": 61,
+          "endLine": 64,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithName",
+          "startLine": 69,
+          "endLine": 72,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithPodTemplate",
+          "startLine": 77,
+          "endLine": 80,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithIngressTemplate",
+          "startLine": 85,
+          "endLine": 88,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressApplyConfiguration",
+          "startLine": 27,
+          "endLine": 34,
+          "methods": [
+            "WithServiceType",
+            "WithIngressClassName",
+            "WithClass",
+            "WithName",
+            "WithPodTemplate",
+            "WithIngressTemplate"
+          ],
+          "properties": [
+            "ServiceType",
+            "IngressClassName",
+            "Class",
+            "Name",
+            "PodTemplate",
+            "IngressTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01Ingress",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "WithServiceType",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "WithIngressClassName",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "WithClass",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "WithName",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "WithPodTemplate",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "WithIngressTemplate",
+          "line": 85,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingressobjectmeta.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressObjectMeta",
+          "startLine": 30,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "WithAnnotations",
+          "startLine": 38,
+          "endLine": 46,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithLabels",
+          "startLine": 52,
+          "endLine": 60,
+          "params": [
+            "entries"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressObjectMetaApplyConfiguration",
+          "startLine": 23,
+          "endLine": 26,
+          "methods": [
+            "WithAnnotations",
+            "WithLabels"
+          ],
+          "properties": [
+            "Annotations",
+            "Labels"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressObjectMetaApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressObjectMeta",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "WithAnnotations",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "WithLabels",
+          "line": 52,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 39
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "make",
+          "lineNumber": 40
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 40
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 53
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "make",
+          "lineNumber": 54
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodobjectmeta.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodObjectMeta",
+          "startLine": 30,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "WithAnnotations",
+          "startLine": 38,
+          "endLine": 46,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithLabels",
+          "startLine": 52,
+          "endLine": 60,
+          "params": [
+            "entries"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodObjectMetaApplyConfiguration",
+          "startLine": 23,
+          "endLine": 26,
+          "methods": [
+            "WithAnnotations",
+            "WithLabels"
+          ],
+          "properties": [
+            "Annotations",
+            "Labels"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodObjectMetaApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodObjectMeta",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "WithAnnotations",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "WithLabels",
+          "line": 52,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 39
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "make",
+          "lineNumber": 40
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 40
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 53
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "make",
+          "lineNumber": 54
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodresources.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodResources",
+          "startLine": 34,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "WithLimits",
+          "startLine": 41,
+          "endLine": 44,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithRequests",
+          "startLine": 49,
+          "endLine": 52,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodResourcesApplyConfiguration",
+          "startLine": 27,
+          "endLine": 30,
+          "methods": [
+            "WithLimits",
+            "WithRequests"
+          ],
+          "properties": [
+            "Limits",
+            "Requests"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodResourcesApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodResources",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "WithLimits",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "WithRequests",
+          "line": 49,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodsecuritycontext.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 119,
+      "nonEmptyLines": 102,
+      "functions": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodSecurityContext",
+          "startLine": 41,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "WithSELinuxOptions",
+          "startLine": 48,
+          "endLine": 51,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithRunAsUser",
+          "startLine": 56,
+          "endLine": 59,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithRunAsGroup",
+          "startLine": 64,
+          "endLine": 67,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithRunAsNonRoot",
+          "startLine": 72,
+          "endLine": 75,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithSupplementalGroups",
+          "startLine": 80,
+          "endLine": 85,
+          "params": []
+        },
+        {
+          "name": "WithFSGroup",
+          "startLine": 90,
+          "endLine": 93,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithSysctls",
+          "startLine": 98,
+          "endLine": 103,
+          "params": []
+        },
+        {
+          "name": "WithFSGroupChangePolicy",
+          "startLine": 108,
+          "endLine": 111,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithSeccompProfile",
+          "startLine": 116,
+          "endLine": 119,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodSecurityContextApplyConfiguration",
+          "startLine": 27,
+          "endLine": 37,
+          "methods": [
+            "WithSELinuxOptions",
+            "WithRunAsUser",
+            "WithRunAsGroup",
+            "WithRunAsNonRoot",
+            "WithSupplementalGroups",
+            "WithFSGroup",
+            "WithSysctls",
+            "WithFSGroupChangePolicy",
+            "WithSeccompProfile"
+          ],
+          "properties": [
+            "SELinuxOptions",
+            "RunAsUser",
+            "RunAsGroup",
+            "RunAsNonRoot",
+            "SupplementalGroups",
+            "FSGroup",
+            "Sysctls",
+            "FSGroupChangePolicy",
+            "SeccompProfile"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodSecurityContextApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodSecurityContext",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "WithSELinuxOptions",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "WithRunAsUser",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "WithRunAsGroup",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "WithRunAsNonRoot",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "WithSupplementalGroups",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "WithFSGroup",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "WithSysctls",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "WithFSGroupChangePolicy",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "WithSeccompProfile",
+          "line": 116,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithSupplementalGroups",
+          "callee": "append",
+          "lineNumber": 82
+        },
+        {
+          "caller": "WithSysctls",
+          "callee": "append",
+          "lineNumber": 100
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodspec.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 116,
+      "nonEmptyLines": 100,
+      "functions": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodSpec",
+          "startLine": 40,
+          "endLine": 42,
+          "params": []
+        },
+        {
+          "name": "WithNodeSelector",
+          "startLine": 48,
+          "endLine": 56,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithAffinity",
+          "startLine": 61,
+          "endLine": 64,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithTolerations",
+          "startLine": 69,
+          "endLine": 74,
+          "params": []
+        },
+        {
+          "name": "WithPriorityClassName",
+          "startLine": 79,
+          "endLine": 82,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithServiceAccountName",
+          "startLine": 87,
+          "endLine": 90,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithImagePullSecrets",
+          "startLine": 95,
+          "endLine": 100,
+          "params": []
+        },
+        {
+          "name": "WithSecurityContext",
+          "startLine": 105,
+          "endLine": 108,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithResources",
+          "startLine": 113,
+          "endLine": 116,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodSpecApplyConfiguration",
+          "startLine": 27,
+          "endLine": 36,
+          "methods": [
+            "WithNodeSelector",
+            "WithAffinity",
+            "WithTolerations",
+            "WithPriorityClassName",
+            "WithServiceAccountName",
+            "WithImagePullSecrets",
+            "WithSecurityContext",
+            "WithResources"
+          ],
+          "properties": [
+            "NodeSelector",
+            "Affinity",
+            "Tolerations",
+            "PriorityClassName",
+            "ServiceAccountName",
+            "ImagePullSecrets",
+            "SecurityContext",
+            "Resources"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodSpecApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodSpec",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "WithNodeSelector",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "WithAffinity",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "WithTolerations",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "WithPriorityClassName",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "WithServiceAccountName",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "WithImagePullSecrets",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "WithSecurityContext",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "WithResources",
+          "line": 113,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithNodeSelector",
+          "callee": "len",
+          "lineNumber": 49
+        },
+        {
+          "caller": "WithNodeSelector",
+          "callee": "make",
+          "lineNumber": 50
+        },
+        {
+          "caller": "WithNodeSelector",
+          "callee": "len",
+          "lineNumber": 50
+        },
+        {
+          "caller": "WithTolerations",
+          "callee": "append",
+          "lineNumber": 71
+        },
+        {
+          "caller": "WithImagePullSecrets",
+          "callee": "append",
+          "lineNumber": 97
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresspodtemplate.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 76,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodTemplate",
+          "startLine": 30,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "WithAnnotations",
+          "startLine": 38,
+          "endLine": 47,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithLabels",
+          "startLine": 53,
+          "endLine": 62,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "ensureACMEChallengeSolverHTTP01IngressPodObjectMetaApplyConfigurationExists",
+          "startLine": 64,
+          "endLine": 68,
+          "params": []
+        },
+        {
+          "name": "WithSpec",
+          "startLine": 73,
+          "endLine": 76,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodTemplateApplyConfiguration",
+          "startLine": 23,
+          "endLine": 26,
+          "methods": [
+            "WithAnnotations",
+            "WithLabels",
+            "ensureACMEChallengeSolverHTTP01IngressPodObjectMetaApplyConfigurationExists",
+            "WithSpec"
+          ],
+          "properties": [
+            "Spec"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodTemplateApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressPodTemplate",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "WithAnnotations",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "WithLabels",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "WithSpec",
+          "line": 73,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithAnnotations",
+          "callee": "b.ensureACMEChallengeSolverHTTP01IngressPodObjectMetaApplyConfigurationExists",
+          "lineNumber": 39
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 40
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "make",
+          "lineNumber": 41
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 41
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "b.ensureACMEChallengeSolverHTTP01IngressPodObjectMetaApplyConfigurationExists",
+          "lineNumber": 54
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 55
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "make",
+          "lineNumber": 56
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmechallengesolverhttp01ingresstemplate.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 57,
+      "functions": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressTemplate",
+          "startLine": 29,
+          "endLine": 31,
+          "params": []
+        },
+        {
+          "name": "WithAnnotations",
+          "startLine": 37,
+          "endLine": 46,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithLabels",
+          "startLine": 52,
+          "endLine": 61,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "ensureACMEChallengeSolverHTTP01IngressObjectMetaApplyConfigurationExists",
+          "startLine": 63,
+          "endLine": 67,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressTemplateApplyConfiguration",
+          "startLine": 23,
+          "endLine": 25,
+          "methods": [
+            "WithAnnotations",
+            "WithLabels",
+            "ensureACMEChallengeSolverHTTP01IngressObjectMetaApplyConfigurationExists"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressTemplateApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEChallengeSolverHTTP01IngressTemplate",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "WithAnnotations",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "WithLabels",
+          "line": 52,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithAnnotations",
+          "callee": "b.ensureACMEChallengeSolverHTTP01IngressObjectMetaApplyConfigurationExists",
+          "lineNumber": 38
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 39
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "make",
+          "lineNumber": 40
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 40
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "b.ensureACMEChallengeSolverHTTP01IngressObjectMetaApplyConfigurationExists",
+          "lineNumber": 53
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 54
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "make",
+          "lineNumber": 55
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmeexternalaccountbinding.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "ACMEExternalAccountBinding",
+          "startLine": 36,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "WithKeyID",
+          "startLine": 43,
+          "endLine": 46,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithKey",
+          "startLine": 51,
+          "endLine": 54,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithKeyAlgorithm",
+          "startLine": 59,
+          "endLine": 62,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEExternalAccountBindingApplyConfiguration",
+          "startLine": 28,
+          "endLine": 32,
+          "methods": [
+            "WithKeyID",
+            "WithKey",
+            "WithKeyAlgorithm"
+          ],
+          "properties": [
+            "KeyID",
+            "Key",
+            "KeyAlgorithm"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEExternalAccountBindingApplyConfiguration",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEExternalAccountBinding",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "WithKeyID",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "WithKey",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "WithKeyAlgorithm",
+          "line": 59,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmeissuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 140,
+      "nonEmptyLines": 121,
+      "functions": [
+        {
+          "name": "ACMEIssuer",
+          "startLine": 43,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "WithEmail",
+          "startLine": 50,
+          "endLine": 53,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithServer",
+          "startLine": 58,
+          "endLine": 61,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithPreferredChain",
+          "startLine": 66,
+          "endLine": 69,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithCABundle",
+          "startLine": 74,
+          "endLine": 79,
+          "params": []
+        },
+        {
+          "name": "WithSkipTLSVerify",
+          "startLine": 84,
+          "endLine": 87,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithExternalAccountBinding",
+          "startLine": 92,
+          "endLine": 95,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithPrivateKey",
+          "startLine": 100,
+          "endLine": 103,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithSolvers",
+          "startLine": 108,
+          "endLine": 116,
+          "params": []
+        },
+        {
+          "name": "WithDisableAccountKeyGeneration",
+          "startLine": 121,
+          "endLine": 124,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithEnableDurationFeature",
+          "startLine": 129,
+          "endLine": 132,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithProfile",
+          "startLine": 137,
+          "endLine": 140,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEIssuerApplyConfiguration",
+          "startLine": 27,
+          "endLine": 39,
+          "methods": [
+            "WithEmail",
+            "WithServer",
+            "WithPreferredChain",
+            "WithCABundle",
+            "WithSkipTLSVerify",
+            "WithExternalAccountBinding",
+            "WithPrivateKey",
+            "WithSolvers",
+            "WithDisableAccountKeyGeneration",
+            "WithEnableDurationFeature",
+            "WithProfile"
+          ],
+          "properties": [
+            "Email",
+            "Server",
+            "PreferredChain",
+            "CABundle",
+            "SkipTLSVerify",
+            "ExternalAccountBinding",
+            "PrivateKey",
+            "Solvers",
+            "DisableAccountKeyGeneration",
+            "EnableDurationFeature",
+            "Profile"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEIssuerApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuer",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "WithEmail",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "WithServer",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "WithPreferredChain",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "WithCABundle",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "WithSkipTLSVerify",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "WithExternalAccountBinding",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "WithPrivateKey",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "WithSolvers",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "WithDisableAccountKeyGeneration",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "WithEnableDurationFeature",
+          "line": 129,
+          "isDefault": false
+        },
+        {
+          "name": "WithProfile",
+          "line": 137,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithCABundle",
+          "callee": "append",
+          "lineNumber": 76
+        },
+        {
+          "caller": "WithSolvers",
+          "callee": "panic",
+          "lineNumber": 111
+        },
+        {
+          "caller": "WithSolvers",
+          "callee": "append",
+          "lineNumber": 113
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 13,
+        "functionCount": 12,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01provideracmedns.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "ACMEIssuerDNS01ProviderAcmeDNS",
+          "startLine": 34,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "WithHost",
+          "startLine": 41,
+          "endLine": 44,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAccountSecret",
+          "startLine": 49,
+          "endLine": 52,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEIssuerDNS01ProviderAcmeDNSApplyConfiguration",
+          "startLine": 27,
+          "endLine": 30,
+          "methods": [
+            "WithHost",
+            "WithAccountSecret"
+          ],
+          "properties": [
+            "Host",
+            "AccountSecret"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEIssuerDNS01ProviderAcmeDNSApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderAcmeDNS",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "WithHost",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "WithAccountSecret",
+          "line": 49,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerakamai.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "ACMEIssuerDNS01ProviderAkamai",
+          "startLine": 36,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "WithServiceConsumerDomain",
+          "startLine": 43,
+          "endLine": 46,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithClientToken",
+          "startLine": 51,
+          "endLine": 54,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithClientSecret",
+          "startLine": 59,
+          "endLine": 62,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAccessToken",
+          "startLine": 67,
+          "endLine": 70,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEIssuerDNS01ProviderAkamaiApplyConfiguration",
+          "startLine": 27,
+          "endLine": 32,
+          "methods": [
+            "WithServiceConsumerDomain",
+            "WithClientToken",
+            "WithClientSecret",
+            "WithAccessToken"
+          ],
+          "properties": [
+            "ServiceConsumerDomain",
+            "ClientToken",
+            "ClientSecret",
+            "AccessToken"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEIssuerDNS01ProviderAkamaiApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderAkamai",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "WithServiceConsumerDomain",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "WithClientToken",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "WithClientSecret",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "WithAccessToken",
+          "line": 67,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerazuredns.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 107,
+      "nonEmptyLines": 91,
+      "functions": [
+        {
+          "name": "ACMEIssuerDNS01ProviderAzureDNS",
+          "startLine": 41,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "WithClientID",
+          "startLine": 48,
+          "endLine": 51,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithClientSecret",
+          "startLine": 56,
+          "endLine": 59,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithSubscriptionID",
+          "startLine": 64,
+          "endLine": 67,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithTenantID",
+          "startLine": 72,
+          "endLine": 75,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithResourceGroupName",
+          "startLine": 80,
+          "endLine": 83,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithHostedZoneName",
+          "startLine": 88,
+          "endLine": 91,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithEnvironment",
+          "startLine": 96,
+          "endLine": 99,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithManagedIdentity",
+          "startLine": 104,
+          "endLine": 107,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEIssuerDNS01ProviderAzureDNSApplyConfiguration",
+          "startLine": 28,
+          "endLine": 37,
+          "methods": [
+            "WithClientID",
+            "WithClientSecret",
+            "WithSubscriptionID",
+            "WithTenantID",
+            "WithResourceGroupName",
+            "WithHostedZoneName",
+            "WithEnvironment",
+            "WithManagedIdentity"
+          ],
+          "properties": [
+            "ClientID",
+            "ClientSecret",
+            "SubscriptionID",
+            "TenantID",
+            "ResourceGroupName",
+            "HostedZoneName",
+            "Environment",
+            "ManagedIdentity"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEIssuerDNS01ProviderAzureDNSApplyConfiguration",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderAzureDNS",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "WithClientID",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "WithClientSecret",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "WithSubscriptionID",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "WithTenantID",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "WithResourceGroupName",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "WithHostedZoneName",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "WithEnvironment",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "WithManagedIdentity",
+          "line": 104,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 10,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerclouddns.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 50,
+      "functions": [
+        {
+          "name": "ACMEIssuerDNS01ProviderCloudDNS",
+          "startLine": 35,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "WithServiceAccount",
+          "startLine": 42,
+          "endLine": 45,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithProject",
+          "startLine": 50,
+          "endLine": 53,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithHostedZoneName",
+          "startLine": 58,
+          "endLine": 61,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEIssuerDNS01ProviderCloudDNSApplyConfiguration",
+          "startLine": 27,
+          "endLine": 31,
+          "methods": [
+            "WithServiceAccount",
+            "WithProject",
+            "WithHostedZoneName"
+          ],
+          "properties": [
+            "ServiceAccount",
+            "Project",
+            "HostedZoneName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEIssuerDNS01ProviderCloudDNSApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderCloudDNS",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "WithServiceAccount",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "WithProject",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "WithHostedZoneName",
+          "line": 58,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providercloudflare.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 50,
+      "functions": [
+        {
+          "name": "ACMEIssuerDNS01ProviderCloudflare",
+          "startLine": 35,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "WithEmail",
+          "startLine": 42,
+          "endLine": 45,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAPIKey",
+          "startLine": 50,
+          "endLine": 53,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAPIToken",
+          "startLine": 58,
+          "endLine": 61,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEIssuerDNS01ProviderCloudflareApplyConfiguration",
+          "startLine": 27,
+          "endLine": 31,
+          "methods": [
+            "WithEmail",
+            "WithAPIKey",
+            "WithAPIToken"
+          ],
+          "properties": [
+            "Email",
+            "APIKey",
+            "APIToken"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEIssuerDNS01ProviderCloudflareApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderCloudflare",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "WithEmail",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "WithAPIKey",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "WithAPIToken",
+          "line": 58,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerdigitalocean.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "ACMEIssuerDNS01ProviderDigitalOcean",
+          "startLine": 33,
+          "endLine": 35,
+          "params": []
+        },
+        {
+          "name": "WithToken",
+          "startLine": 40,
+          "endLine": 43,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEIssuerDNS01ProviderDigitalOceanApplyConfiguration",
+          "startLine": 27,
+          "endLine": 29,
+          "methods": [
+            "WithToken"
+          ],
+          "properties": [
+            "Token"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEIssuerDNS01ProviderDigitalOceanApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderDigitalOcean",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "WithToken",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerrfc2136.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 80,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "ACMEIssuerDNS01ProviderRFC2136",
+          "startLine": 38,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "WithNameserver",
+          "startLine": 45,
+          "endLine": 48,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithTSIGSecret",
+          "startLine": 53,
+          "endLine": 56,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithTSIGKeyName",
+          "startLine": 61,
+          "endLine": 64,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithTSIGAlgorithm",
+          "startLine": 69,
+          "endLine": 72,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithProtocol",
+          "startLine": 77,
+          "endLine": 80,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEIssuerDNS01ProviderRFC2136ApplyConfiguration",
+          "startLine": 28,
+          "endLine": 34,
+          "methods": [
+            "WithNameserver",
+            "WithTSIGSecret",
+            "WithTSIGKeyName",
+            "WithTSIGAlgorithm",
+            "WithProtocol"
+          ],
+          "properties": [
+            "Nameserver",
+            "TSIGSecret",
+            "TSIGKeyName",
+            "TSIGAlgorithm",
+            "Protocol"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEIssuerDNS01ProviderRFC2136ApplyConfiguration",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderRFC2136",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "WithNameserver",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "WithTSIGSecret",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "WithTSIGKeyName",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "WithTSIGAlgorithm",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "WithProtocol",
+          "line": 77,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerroute53.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 97,
+      "nonEmptyLines": 82,
+      "functions": [
+        {
+          "name": "ACMEIssuerDNS01ProviderRoute53",
+          "startLine": 39,
+          "endLine": 41,
+          "params": []
+        },
+        {
+          "name": "WithAuth",
+          "startLine": 46,
+          "endLine": 49,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAccessKeyID",
+          "startLine": 54,
+          "endLine": 57,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithSecretAccessKeyID",
+          "startLine": 62,
+          "endLine": 65,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithSecretAccessKey",
+          "startLine": 70,
+          "endLine": 73,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithRole",
+          "startLine": 78,
+          "endLine": 81,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithHostedZoneID",
+          "startLine": 86,
+          "endLine": 89,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithRegion",
+          "startLine": 94,
+          "endLine": 97,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEIssuerDNS01ProviderRoute53ApplyConfiguration",
+          "startLine": 27,
+          "endLine": 35,
+          "methods": [
+            "WithAuth",
+            "WithAccessKeyID",
+            "WithSecretAccessKeyID",
+            "WithSecretAccessKey",
+            "WithRole",
+            "WithHostedZoneID",
+            "WithRegion"
+          ],
+          "properties": [
+            "Auth",
+            "AccessKeyID",
+            "SecretAccessKeyID",
+            "SecretAccessKey",
+            "Role",
+            "HostedZoneID",
+            "Region"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEIssuerDNS01ProviderRoute53ApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderRoute53",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "WithAuth",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "WithAccessKeyID",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "WithSecretAccessKeyID",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "WithSecretAccessKey",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "WithRole",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "WithHostedZoneID",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "WithRegion",
+          "line": 94,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerdns01providerwebhook.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 50,
+      "functions": [
+        {
+          "name": "ACMEIssuerDNS01ProviderWebhook",
+          "startLine": 35,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "WithGroupName",
+          "startLine": 42,
+          "endLine": 45,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithSolverName",
+          "startLine": 50,
+          "endLine": 53,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithConfig",
+          "startLine": 58,
+          "endLine": 61,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEIssuerDNS01ProviderWebhookApplyConfiguration",
+          "startLine": 27,
+          "endLine": 31,
+          "methods": [
+            "WithGroupName",
+            "WithSolverName",
+            "WithConfig"
+          ],
+          "properties": [
+            "GroupName",
+            "SolverName",
+            "Config"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEIssuerDNS01ProviderWebhookApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerDNS01ProviderWebhook",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "WithGroupName",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "WithSolverName",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "WithConfig",
+          "line": 58,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/acmeissuerstatus.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "ACMEIssuerStatus",
+          "startLine": 31,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "WithURI",
+          "startLine": 38,
+          "endLine": 41,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithLastRegisteredEmail",
+          "startLine": 46,
+          "endLine": 49,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithLastPrivateKeyHash",
+          "startLine": 54,
+          "endLine": 57,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ACMEIssuerStatusApplyConfiguration",
+          "startLine": 23,
+          "endLine": 27,
+          "methods": [
+            "WithURI",
+            "WithLastRegisteredEmail",
+            "WithLastPrivateKeyHash"
+          ],
+          "properties": [
+            "URI",
+            "LastRegisteredEmail",
+            "LastPrivateKeyHash"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ACMEIssuerStatusApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEIssuerStatus",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "WithURI",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "WithLastRegisteredEmail",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "WithLastPrivateKeyHash",
+          "line": 54,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/azuremanagedidentity.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "AzureManagedIdentity",
+          "startLine": 31,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "WithClientID",
+          "startLine": 38,
+          "endLine": 41,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithResourceID",
+          "startLine": 46,
+          "endLine": 49,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithTenantID",
+          "startLine": 54,
+          "endLine": 57,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AzureManagedIdentityApplyConfiguration",
+          "startLine": 23,
+          "endLine": 27,
+          "methods": [
+            "WithClientID",
+            "WithResourceID",
+            "WithTenantID"
+          ],
+          "properties": [
+            "ClientID",
+            "ResourceID",
+            "TenantID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AzureManagedIdentityApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "AzureManagedIdentity",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "WithClientID",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "WithResourceID",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "WithTenantID",
+          "line": 54,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/certificatednsnameselector.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 57,
+      "functions": [
+        {
+          "name": "CertificateDNSNameSelector",
+          "startLine": 31,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "WithMatchLabels",
+          "startLine": 39,
+          "endLine": 47,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithDNSNames",
+          "startLine": 52,
+          "endLine": 57,
+          "params": []
+        },
+        {
+          "name": "WithDNSZones",
+          "startLine": 62,
+          "endLine": 67,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertificateDNSNameSelectorApplyConfiguration",
+          "startLine": 23,
+          "endLine": 27,
+          "methods": [
+            "WithMatchLabels",
+            "WithDNSNames",
+            "WithDNSZones"
+          ],
+          "properties": [
+            "MatchLabels",
+            "DNSNames",
+            "DNSZones"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateDNSNameSelectorApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateDNSNameSelector",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "WithMatchLabels",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "WithDNSNames",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "WithDNSZones",
+          "line": 62,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithMatchLabels",
+          "callee": "len",
+          "lineNumber": 40
+        },
+        {
+          "caller": "WithMatchLabels",
+          "callee": "make",
+          "lineNumber": 41
+        },
+        {
+          "caller": "WithMatchLabels",
+          "callee": "len",
+          "lineNumber": 41
+        },
+        {
+          "caller": "WithDNSNames",
+          "callee": "append",
+          "lineNumber": 54
+        },
+        {
+          "caller": "WithDNSZones",
+          "callee": "append",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/challenge.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 281,
+      "nonEmptyLines": 247,
+      "functions": [
+        {
+          "name": "Challenge",
+          "startLine": 41,
+          "endLine": 48,
+          "params": [
+            "name",
+            "namespace"
+          ]
+        },
+        {
+          "name": "ExtractChallenge",
+          "startLine": 61,
+          "endLine": 63,
+          "params": [
+            "challenge",
+            "fieldManager"
+          ]
+        },
+        {
+          "name": "ExtractChallengeStatus",
+          "startLine": 68,
+          "endLine": 70,
+          "params": [
+            "challenge",
+            "fieldManager"
+          ]
+        },
+        {
+          "name": "extractChallenge",
+          "startLine": 72,
+          "endLine": 84,
+          "params": [
+            "challenge",
+            "fieldManager",
+            "subresource"
+          ]
+        },
+        {
+          "name": "IsApplyConfiguration",
+          "startLine": 85,
+          "endLine": 85,
+          "params": []
+        },
+        {
+          "name": "WithKind",
+          "startLine": 90,
+          "endLine": 93,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAPIVersion",
+          "startLine": 98,
+          "endLine": 101,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithName",
+          "startLine": 106,
+          "endLine": 110,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithGenerateName",
+          "startLine": 115,
+          "endLine": 119,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithNamespace",
+          "startLine": 124,
+          "endLine": 128,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithUID",
+          "startLine": 133,
+          "endLine": 137,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithResourceVersion",
+          "startLine": 142,
+          "endLine": 146,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithGeneration",
+          "startLine": 151,
+          "endLine": 155,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithCreationTimestamp",
+          "startLine": 160,
+          "endLine": 164,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithDeletionTimestamp",
+          "startLine": 169,
+          "endLine": 173,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithDeletionGracePeriodSeconds",
+          "startLine": 178,
+          "endLine": 182,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithLabels",
+          "startLine": 188,
+          "endLine": 197,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithAnnotations",
+          "startLine": 203,
+          "endLine": 212,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithOwnerReferences",
+          "startLine": 217,
+          "endLine": 226,
+          "params": []
+        },
+        {
+          "name": "WithFinalizers",
+          "startLine": 231,
+          "endLine": 237,
+          "params": []
+        },
+        {
+          "name": "ensureObjectMetaApplyConfigurationExists",
+          "startLine": 239,
+          "endLine": 243,
+          "params": []
+        },
+        {
+          "name": "WithSpec",
+          "startLine": 248,
+          "endLine": 251,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithStatus",
+          "startLine": 256,
+          "endLine": 259,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "GetKind",
+          "startLine": 262,
+          "endLine": 264,
+          "params": []
+        },
+        {
+          "name": "GetAPIVersion",
+          "startLine": 267,
+          "endLine": 269,
+          "params": []
+        },
+        {
+          "name": "GetName",
+          "startLine": 272,
+          "endLine": 275,
+          "params": []
+        },
+        {
+          "name": "GetNamespace",
+          "startLine": 278,
+          "endLine": 281,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ChallengeApplyConfiguration",
+          "startLine": 32,
+          "endLine": 37,
+          "methods": [
+            "IsApplyConfiguration",
+            "WithKind",
+            "WithAPIVersion",
+            "WithName",
+            "WithGenerateName",
+            "WithNamespace",
+            "WithUID",
+            "WithResourceVersion",
+            "WithGeneration",
+            "WithCreationTimestamp",
+            "WithDeletionTimestamp",
+            "WithDeletionGracePeriodSeconds",
+            "WithLabels",
+            "WithAnnotations",
+            "WithOwnerReferences",
+            "WithFinalizers",
+            "ensureObjectMetaApplyConfigurationExists",
+            "WithSpec",
+            "WithStatus",
+            "GetKind",
+            "GetAPIVersion",
+            "GetName",
+            "GetNamespace"
+          ],
+          "properties": [
+            "Spec",
+            "Status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ChallengeApplyConfiguration",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "Challenge",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "ExtractChallenge",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "ExtractChallengeStatus",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "IsApplyConfiguration",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "WithKind",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "WithAPIVersion",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "WithName",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "WithGenerateName",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "WithNamespace",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "WithUID",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "WithResourceVersion",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "WithGeneration",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "WithCreationTimestamp",
+          "line": 160,
+          "isDefault": false
+        },
+        {
+          "name": "WithDeletionTimestamp",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "WithDeletionGracePeriodSeconds",
+          "line": 178,
+          "isDefault": false
+        },
+        {
+          "name": "WithLabels",
+          "line": 188,
+          "isDefault": false
+        },
+        {
+          "name": "WithAnnotations",
+          "line": 203,
+          "isDefault": false
+        },
+        {
+          "name": "WithOwnerReferences",
+          "line": 217,
+          "isDefault": false
+        },
+        {
+          "name": "WithFinalizers",
+          "line": 231,
+          "isDefault": false
+        },
+        {
+          "name": "WithSpec",
+          "line": 248,
+          "isDefault": false
+        },
+        {
+          "name": "WithStatus",
+          "line": 256,
+          "isDefault": false
+        },
+        {
+          "name": "GetKind",
+          "line": 262,
+          "isDefault": false
+        },
+        {
+          "name": "GetAPIVersion",
+          "line": 267,
+          "isDefault": false
+        },
+        {
+          "name": "GetName",
+          "line": 272,
+          "isDefault": false
+        },
+        {
+          "name": "GetNamespace",
+          "line": 278,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Challenge",
+          "callee": "b.WithName",
+          "lineNumber": 43
+        },
+        {
+          "caller": "Challenge",
+          "callee": "b.WithNamespace",
+          "lineNumber": 44
+        },
+        {
+          "caller": "Challenge",
+          "callee": "b.WithKind",
+          "lineNumber": 45
+        },
+        {
+          "caller": "Challenge",
+          "callee": "b.WithAPIVersion",
+          "lineNumber": 46
+        },
+        {
+          "caller": "ExtractChallenge",
+          "callee": "extractChallenge",
+          "lineNumber": 62
+        },
+        {
+          "caller": "ExtractChallengeStatus",
+          "callee": "extractChallenge",
+          "lineNumber": 69
+        },
+        {
+          "caller": "extractChallenge",
+          "callee": "managedfields.ExtractInto",
+          "lineNumber": 74
+        },
+        {
+          "caller": "extractChallenge",
+          "callee": "internal.Parser().Type",
+          "lineNumber": 74
+        },
+        {
+          "caller": "extractChallenge",
+          "callee": "internal.Parser",
+          "lineNumber": 74
+        },
+        {
+          "caller": "extractChallenge",
+          "callee": "b.WithName",
+          "lineNumber": 78
+        },
+        {
+          "caller": "extractChallenge",
+          "callee": "b.WithNamespace",
+          "lineNumber": 79
+        },
+        {
+          "caller": "extractChallenge",
+          "callee": "b.WithKind",
+          "lineNumber": 81
+        },
+        {
+          "caller": "extractChallenge",
+          "callee": "b.WithAPIVersion",
+          "lineNumber": 82
+        },
+        {
+          "caller": "WithName",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 107
+        },
+        {
+          "caller": "WithGenerateName",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 116
+        },
+        {
+          "caller": "WithNamespace",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 125
+        },
+        {
+          "caller": "WithUID",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 134
+        },
+        {
+          "caller": "WithResourceVersion",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 143
+        },
+        {
+          "caller": "WithGeneration",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 152
+        },
+        {
+          "caller": "WithCreationTimestamp",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 161
+        },
+        {
+          "caller": "WithDeletionTimestamp",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 170
+        },
+        {
+          "caller": "WithDeletionGracePeriodSeconds",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 179
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 189
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 190
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "make",
+          "lineNumber": 191
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 191
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 204
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 205
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "make",
+          "lineNumber": 206
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 206
+        },
+        {
+          "caller": "WithOwnerReferences",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 218
+        },
+        {
+          "caller": "WithOwnerReferences",
+          "callee": "panic",
+          "lineNumber": 221
+        },
+        {
+          "caller": "WithOwnerReferences",
+          "callee": "append",
+          "lineNumber": 223
+        },
+        {
+          "caller": "WithFinalizers",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 232
+        },
+        {
+          "caller": "WithFinalizers",
+          "callee": "append",
+          "lineNumber": 234
+        },
+        {
+          "caller": "GetName",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 273
+        },
+        {
+          "caller": "GetNamespace",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 279
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 26,
+        "functionCount": 27,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/challengespec.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 116,
+      "nonEmptyLines": 99,
+      "functions": [
+        {
+          "name": "ChallengeSpec",
+          "startLine": 42,
+          "endLine": 44,
+          "params": []
+        },
+        {
+          "name": "WithURL",
+          "startLine": 49,
+          "endLine": 52,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAuthorizationURL",
+          "startLine": 57,
+          "endLine": 60,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithDNSName",
+          "startLine": 65,
+          "endLine": 68,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithWildcard",
+          "startLine": 73,
+          "endLine": 76,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithType",
+          "startLine": 81,
+          "endLine": 84,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithToken",
+          "startLine": 89,
+          "endLine": 92,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithKey",
+          "startLine": 97,
+          "endLine": 100,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithSolver",
+          "startLine": 105,
+          "endLine": 108,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithIssuerRef",
+          "startLine": 113,
+          "endLine": 116,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ChallengeSpecApplyConfiguration",
+          "startLine": 28,
+          "endLine": 38,
+          "methods": [
+            "WithURL",
+            "WithAuthorizationURL",
+            "WithDNSName",
+            "WithWildcard",
+            "WithType",
+            "WithToken",
+            "WithKey",
+            "WithSolver",
+            "WithIssuerRef"
+          ],
+          "properties": [
+            "URL",
+            "AuthorizationURL",
+            "DNSName",
+            "Wildcard",
+            "Type",
+            "Token",
+            "Key",
+            "Solver",
+            "IssuerRef"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ChallengeSpecApplyConfiguration",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "ChallengeSpec",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "WithURL",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "WithAuthorizationURL",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "WithDNSName",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "WithWildcard",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "WithType",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "WithToken",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "WithKey",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "WithSolver",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "WithIssuerRef",
+          "line": 113,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 11,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/order.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 281,
+      "nonEmptyLines": 247,
+      "functions": [
+        {
+          "name": "Order",
+          "startLine": 41,
+          "endLine": 48,
+          "params": [
+            "name",
+            "namespace"
+          ]
+        },
+        {
+          "name": "ExtractOrder",
+          "startLine": 61,
+          "endLine": 63,
+          "params": [
+            "order",
+            "fieldManager"
+          ]
+        },
+        {
+          "name": "ExtractOrderStatus",
+          "startLine": 68,
+          "endLine": 70,
+          "params": [
+            "order",
+            "fieldManager"
+          ]
+        },
+        {
+          "name": "extractOrder",
+          "startLine": 72,
+          "endLine": 84,
+          "params": [
+            "order",
+            "fieldManager",
+            "subresource"
+          ]
+        },
+        {
+          "name": "IsApplyConfiguration",
+          "startLine": 85,
+          "endLine": 85,
+          "params": []
+        },
+        {
+          "name": "WithKind",
+          "startLine": 90,
+          "endLine": 93,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAPIVersion",
+          "startLine": 98,
+          "endLine": 101,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithName",
+          "startLine": 106,
+          "endLine": 110,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithGenerateName",
+          "startLine": 115,
+          "endLine": 119,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithNamespace",
+          "startLine": 124,
+          "endLine": 128,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithUID",
+          "startLine": 133,
+          "endLine": 137,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithResourceVersion",
+          "startLine": 142,
+          "endLine": 146,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithGeneration",
+          "startLine": 151,
+          "endLine": 155,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithCreationTimestamp",
+          "startLine": 160,
+          "endLine": 164,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithDeletionTimestamp",
+          "startLine": 169,
+          "endLine": 173,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithDeletionGracePeriodSeconds",
+          "startLine": 178,
+          "endLine": 182,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithLabels",
+          "startLine": 188,
+          "endLine": 197,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithAnnotations",
+          "startLine": 203,
+          "endLine": 212,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithOwnerReferences",
+          "startLine": 217,
+          "endLine": 226,
+          "params": []
+        },
+        {
+          "name": "WithFinalizers",
+          "startLine": 231,
+          "endLine": 237,
+          "params": []
+        },
+        {
+          "name": "ensureObjectMetaApplyConfigurationExists",
+          "startLine": 239,
+          "endLine": 243,
+          "params": []
+        },
+        {
+          "name": "WithSpec",
+          "startLine": 248,
+          "endLine": 251,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithStatus",
+          "startLine": 256,
+          "endLine": 259,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "GetKind",
+          "startLine": 262,
+          "endLine": 264,
+          "params": []
+        },
+        {
+          "name": "GetAPIVersion",
+          "startLine": 267,
+          "endLine": 269,
+          "params": []
+        },
+        {
+          "name": "GetName",
+          "startLine": 272,
+          "endLine": 275,
+          "params": []
+        },
+        {
+          "name": "GetNamespace",
+          "startLine": 278,
+          "endLine": 281,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "OrderApplyConfiguration",
+          "startLine": 32,
+          "endLine": 37,
+          "methods": [
+            "IsApplyConfiguration",
+            "WithKind",
+            "WithAPIVersion",
+            "WithName",
+            "WithGenerateName",
+            "WithNamespace",
+            "WithUID",
+            "WithResourceVersion",
+            "WithGeneration",
+            "WithCreationTimestamp",
+            "WithDeletionTimestamp",
+            "WithDeletionGracePeriodSeconds",
+            "WithLabels",
+            "WithAnnotations",
+            "WithOwnerReferences",
+            "WithFinalizers",
+            "ensureObjectMetaApplyConfigurationExists",
+            "WithSpec",
+            "WithStatus",
+            "GetKind",
+            "GetAPIVersion",
+            "GetName",
+            "GetNamespace"
+          ],
+          "properties": [
+            "Spec",
+            "Status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OrderApplyConfiguration",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "Order",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "ExtractOrder",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "ExtractOrderStatus",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "IsApplyConfiguration",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "WithKind",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "WithAPIVersion",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "WithName",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "WithGenerateName",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "WithNamespace",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "WithUID",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "WithResourceVersion",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "WithGeneration",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "WithCreationTimestamp",
+          "line": 160,
+          "isDefault": false
+        },
+        {
+          "name": "WithDeletionTimestamp",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "WithDeletionGracePeriodSeconds",
+          "line": 178,
+          "isDefault": false
+        },
+        {
+          "name": "WithLabels",
+          "line": 188,
+          "isDefault": false
+        },
+        {
+          "name": "WithAnnotations",
+          "line": 203,
+          "isDefault": false
+        },
+        {
+          "name": "WithOwnerReferences",
+          "line": 217,
+          "isDefault": false
+        },
+        {
+          "name": "WithFinalizers",
+          "line": 231,
+          "isDefault": false
+        },
+        {
+          "name": "WithSpec",
+          "line": 248,
+          "isDefault": false
+        },
+        {
+          "name": "WithStatus",
+          "line": 256,
+          "isDefault": false
+        },
+        {
+          "name": "GetKind",
+          "line": 262,
+          "isDefault": false
+        },
+        {
+          "name": "GetAPIVersion",
+          "line": 267,
+          "isDefault": false
+        },
+        {
+          "name": "GetName",
+          "line": 272,
+          "isDefault": false
+        },
+        {
+          "name": "GetNamespace",
+          "line": 278,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Order",
+          "callee": "b.WithName",
+          "lineNumber": 43
+        },
+        {
+          "caller": "Order",
+          "callee": "b.WithNamespace",
+          "lineNumber": 44
+        },
+        {
+          "caller": "Order",
+          "callee": "b.WithKind",
+          "lineNumber": 45
+        },
+        {
+          "caller": "Order",
+          "callee": "b.WithAPIVersion",
+          "lineNumber": 46
+        },
+        {
+          "caller": "ExtractOrder",
+          "callee": "extractOrder",
+          "lineNumber": 62
+        },
+        {
+          "caller": "ExtractOrderStatus",
+          "callee": "extractOrder",
+          "lineNumber": 69
+        },
+        {
+          "caller": "extractOrder",
+          "callee": "managedfields.ExtractInto",
+          "lineNumber": 74
+        },
+        {
+          "caller": "extractOrder",
+          "callee": "internal.Parser().Type",
+          "lineNumber": 74
+        },
+        {
+          "caller": "extractOrder",
+          "callee": "internal.Parser",
+          "lineNumber": 74
+        },
+        {
+          "caller": "extractOrder",
+          "callee": "b.WithName",
+          "lineNumber": 78
+        },
+        {
+          "caller": "extractOrder",
+          "callee": "b.WithNamespace",
+          "lineNumber": 79
+        },
+        {
+          "caller": "extractOrder",
+          "callee": "b.WithKind",
+          "lineNumber": 81
+        },
+        {
+          "caller": "extractOrder",
+          "callee": "b.WithAPIVersion",
+          "lineNumber": 82
+        },
+        {
+          "caller": "WithName",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 107
+        },
+        {
+          "caller": "WithGenerateName",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 116
+        },
+        {
+          "caller": "WithNamespace",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 125
+        },
+        {
+          "caller": "WithUID",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 134
+        },
+        {
+          "caller": "WithResourceVersion",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 143
+        },
+        {
+          "caller": "WithGeneration",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 152
+        },
+        {
+          "caller": "WithCreationTimestamp",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 161
+        },
+        {
+          "caller": "WithDeletionTimestamp",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 170
+        },
+        {
+          "caller": "WithDeletionGracePeriodSeconds",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 179
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 189
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 190
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "make",
+          "lineNumber": 191
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 191
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 204
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 205
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "make",
+          "lineNumber": 206
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 206
+        },
+        {
+          "caller": "WithOwnerReferences",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 218
+        },
+        {
+          "caller": "WithOwnerReferences",
+          "callee": "panic",
+          "lineNumber": 221
+        },
+        {
+          "caller": "WithOwnerReferences",
+          "callee": "append",
+          "lineNumber": 223
+        },
+        {
+          "caller": "WithFinalizers",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 232
+        },
+        {
+          "caller": "WithFinalizers",
+          "callee": "append",
+          "lineNumber": 234
+        },
+        {
+          "caller": "GetName",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 273
+        },
+        {
+          "caller": "GetNamespace",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 279
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 26,
+        "functionCount": 27,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/orderspec.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 104,
+      "nonEmptyLines": 89,
+      "functions": [
+        {
+          "name": "OrderSpec",
+          "startLine": 40,
+          "endLine": 42,
+          "params": []
+        },
+        {
+          "name": "WithRequest",
+          "startLine": 47,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "WithIssuerRef",
+          "startLine": 57,
+          "endLine": 60,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithCommonName",
+          "startLine": 65,
+          "endLine": 68,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithDNSNames",
+          "startLine": 73,
+          "endLine": 78,
+          "params": []
+        },
+        {
+          "name": "WithIPAddresses",
+          "startLine": 83,
+          "endLine": 88,
+          "params": []
+        },
+        {
+          "name": "WithDuration",
+          "startLine": 93,
+          "endLine": 96,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithProfile",
+          "startLine": 101,
+          "endLine": 104,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OrderSpecApplyConfiguration",
+          "startLine": 28,
+          "endLine": 36,
+          "methods": [
+            "WithRequest",
+            "WithIssuerRef",
+            "WithCommonName",
+            "WithDNSNames",
+            "WithIPAddresses",
+            "WithDuration",
+            "WithProfile"
+          ],
+          "properties": [
+            "Request",
+            "IssuerRef",
+            "CommonName",
+            "DNSNames",
+            "IPAddresses",
+            "Duration",
+            "Profile"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OrderSpecApplyConfiguration",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "OrderSpec",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "WithRequest",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "WithIssuerRef",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "WithCommonName",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "WithDNSNames",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "WithIPAddresses",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "WithDuration",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "WithProfile",
+          "line": 101,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithRequest",
+          "callee": "append",
+          "lineNumber": 49
+        },
+        {
+          "caller": "WithDNSNames",
+          "callee": "append",
+          "lineNumber": 75
+        },
+        {
+          "caller": "WithIPAddresses",
+          "callee": "append",
+          "lineNumber": 85
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    }
+  ]
+}

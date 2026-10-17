@@ -1,0 +1,1073 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/issuer/factory.go",
+      "type": "file",
+      "name": "factory.go",
+      "filePath": "pkg/issuer/factory.go",
+      "summary": "Implements the global issuer constructor registry and the Factory that resolves a GenericIssuer to a concrete issuer implementation.",
+      "tags": [
+        "issuer",
+        "factory",
+        "registry",
+        "dispatch",
+        "plugin"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/issuer/factory.go:Factory",
+      "type": "class",
+      "name": "Factory",
+      "filePath": "pkg/issuer/factory.go",
+      "lineRange": [
+        51,
+        53
+      ],
+      "summary": "Interface for resolving a GenericIssuer to a concrete issuer implementation.",
+      "tags": [
+        "issuer",
+        "interface",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/factory.go:RegisterIssuer",
+      "type": "function",
+      "name": "RegisterIssuer",
+      "filePath": "pkg/issuer/factory.go",
+      "lineRange": [
+        42,
+        46
+      ],
+      "summary": "Registers an issuer constructor under a unique name for later lookup by the factory.",
+      "tags": [
+        "registry",
+        "issuer",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/factory.go:NewFactory",
+      "type": "function",
+      "name": "NewFactory",
+      "filePath": "pkg/issuer/factory.go",
+      "lineRange": [
+        62,
+        64
+      ],
+      "summary": "Creates the default Factory bound to a controller Context.",
+      "tags": [
+        "factory",
+        "constructor",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/factory.go:IssuerFor",
+      "type": "function",
+      "name": "IssuerFor",
+      "filePath": "pkg/issuer/factory.go",
+      "lineRange": [
+        71,
+        84
+      ],
+      "summary": "Resolves the issuer kind and name to a registered constructor and instantiates it, returning an error for unknown issuers.",
+      "tags": [
+        "factory",
+        "dispatch",
+        "error-handling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/fake/factory.go",
+      "type": "file",
+      "name": "factory.go",
+      "filePath": "pkg/issuer/fake/factory.go",
+      "summary": "Test fake implementing the issuer Factory interface with a pluggable IssuerForFunc.",
+      "tags": [
+        "test-double",
+        "issuer",
+        "factory",
+        "fake"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/issuer/fake/factory.go:Factory",
+      "type": "class",
+      "name": "Factory",
+      "filePath": "pkg/issuer/fake/factory.go",
+      "lineRange": [
+        24,
+        26
+      ],
+      "summary": "Configurable fake of the issuer Factory interface.",
+      "tags": [
+        "test-double",
+        "factory",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/fake/factory.go:IssuerFor",
+      "type": "function",
+      "name": "IssuerFor",
+      "filePath": "pkg/issuer/fake/factory.go",
+      "lineRange": [
+        30,
+        32
+      ],
+      "summary": "Delegates issuer resolution to IssuerForFunc so tests can stub the result.",
+      "tags": [
+        "test-double",
+        "delegation",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/fake/helper.go",
+      "type": "file",
+      "name": "helper.go",
+      "filePath": "pkg/issuer/fake/helper.go",
+      "summary": "Test fake implementing the issuer Helper interface via a configurable GetGenericIssuerFunc.",
+      "tags": [
+        "test-double",
+        "issuer",
+        "helper",
+        "fake"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/issuer/fake/helper.go:Helper",
+      "type": "class",
+      "name": "Helper",
+      "filePath": "pkg/issuer/fake/helper.go",
+      "lineRange": [
+        25,
+        27
+      ],
+      "summary": "Configurable fake of the issuer Helper interface.",
+      "tags": [
+        "test-double",
+        "helper",
+        "issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/fake/helper.go:GetGenericIssuer",
+      "type": "function",
+      "name": "GetGenericIssuer",
+      "filePath": "pkg/issuer/fake/helper.go",
+      "lineRange": [
+        31,
+        33
+      ],
+      "summary": "Delegates issuer lookup to GetGenericIssuerFunc for stubbing in tests.",
+      "tags": [
+        "test-double",
+        "delegation",
+        "lookup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/fake/issuer.go",
+      "type": "file",
+      "name": "issuer.go",
+      "filePath": "pkg/issuer/fake/issuer.go",
+      "summary": "Test fake implementing the issuer Interface with injectable Setup and Issue functions.",
+      "tags": [
+        "test-double",
+        "issuer",
+        "fake",
+        "setup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/issuer/fake/issuer.go:Issuer",
+      "type": "class",
+      "name": "Issuer",
+      "filePath": "pkg/issuer/fake/issuer.go",
+      "lineRange": [
+        26,
+        29
+      ],
+      "summary": "Configurable fake of the issuer Interface with injectable setup and issue hooks.",
+      "tags": [
+        "test-double",
+        "issuer",
+        "fake"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/fake/issuer.go:Setup",
+      "type": "function",
+      "name": "Setup",
+      "filePath": "pkg/issuer/fake/issuer.go",
+      "lineRange": [
+        36,
+        38
+      ],
+      "summary": "Delegates issuer setup to SetupFunc.",
+      "tags": [
+        "test-double",
+        "delegation",
+        "setup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/fake/issuer.go:Issue",
+      "type": "function",
+      "name": "Issue",
+      "filePath": "pkg/issuer/fake/issuer.go",
+      "lineRange": [
+        42,
+        44
+      ],
+      "summary": "Delegates certificate issuance to IssueFunc.",
+      "tags": [
+        "test-double",
+        "delegation",
+        "issuance"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/helper.go",
+      "type": "file",
+      "name": "helper.go",
+      "filePath": "pkg/issuer/helper.go",
+      "summary": "Provides a Helper that looks up Issuer or ClusterIssuer resources by IssuerReference and namespace.",
+      "tags": [
+        "issuer",
+        "lookup",
+        "helper",
+        "kubernetes",
+        "lister"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/issuer/helper.go:Helper",
+      "type": "class",
+      "name": "Helper",
+      "filePath": "pkg/issuer/helper.go",
+      "lineRange": [
+        29,
+        31
+      ],
+      "summary": "Interface for resolving IssuerReferences to Issuer or ClusterIssuer resources.",
+      "tags": [
+        "issuer",
+        "interface",
+        "lookup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/helper.go:NewHelper",
+      "type": "function",
+      "name": "NewHelper",
+      "filePath": "pkg/issuer/helper.go",
+      "lineRange": [
+        45,
+        50
+      ],
+      "summary": "Constructs a Helper backed by the provided Issuer and ClusterIssuer listers.",
+      "tags": [
+        "helper",
+        "constructor",
+        "lister"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/helper.go:GetGenericIssuer",
+      "type": "function",
+      "name": "GetGenericIssuer",
+      "filePath": "pkg/issuer/helper.go",
+      "lineRange": [
+        57,
+        74
+      ],
+      "summary": "Looks up the referenced Issuer in the namespace or the ClusterIssuer for cluster-scoped references.",
+      "tags": [
+        "lookup",
+        "issuer",
+        "kubernetes",
+        "error-handling"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "class:pkg/issuer/factory.go:Factory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "class:pkg/issuer/factory.go:Factory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "function:pkg/issuer/factory.go:RegisterIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "function:pkg/issuer/factory.go:RegisterIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "function:pkg/issuer/factory.go:NewFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "function:pkg/issuer/factory.go:NewFactory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "function:pkg/issuer/factory.go:IssuerFor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "function:pkg/issuer/factory.go:IssuerFor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/fake/factory.go",
+      "target": "class:pkg/issuer/fake/factory.go:Factory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/fake/factory.go",
+      "target": "class:pkg/issuer/fake/factory.go:Factory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/fake/factory.go",
+      "target": "function:pkg/issuer/fake/factory.go:IssuerFor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/fake/factory.go",
+      "target": "function:pkg/issuer/fake/factory.go:IssuerFor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "class:pkg/issuer/fake/helper.go:Helper",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "class:pkg/issuer/fake/helper.go:Helper",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "function:pkg/issuer/fake/helper.go:GetGenericIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "function:pkg/issuer/fake/helper.go:GetGenericIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/fake/issuer.go",
+      "target": "class:pkg/issuer/fake/issuer.go:Issuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/fake/issuer.go",
+      "target": "class:pkg/issuer/fake/issuer.go:Issuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/fake/issuer.go",
+      "target": "function:pkg/issuer/fake/issuer.go:Setup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/fake/issuer.go",
+      "target": "function:pkg/issuer/fake/issuer.go:Setup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/fake/issuer.go",
+      "target": "function:pkg/issuer/fake/issuer.go:Issue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/fake/issuer.go",
+      "target": "function:pkg/issuer/fake/issuer.go:Issue",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "class:pkg/issuer/helper.go:Helper",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "class:pkg/issuer/helper.go:Helper",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "function:pkg/issuer/helper.go:NewHelper",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "function:pkg/issuer/helper.go:NewHelper",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "function:pkg/issuer/helper.go:GetGenericIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "function:pkg/issuer/helper.go:GetGenericIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/api/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/api/util/duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/api/util/issuers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/api/util/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/api/util/names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/api/util/usages.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/factory.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/factory.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/factory.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/factory.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/factory.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/factory.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/factory.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/factory.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/factory.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/factory.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/factory.go",
+      "target": "file:pkg/issuer/factory.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/factory.go",
+      "target": "file:pkg/issuer/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/factory.go",
+      "target": "file:pkg/issuer/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "file:pkg/issuer/factory.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "file:pkg/issuer/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/helper.go",
+      "target": "file:pkg/issuer/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/issuer.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/issuer.go",
+      "target": "file:pkg/issuer/factory.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/issuer.go",
+      "target": "file:pkg/issuer/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/fake/issuer.go",
+      "target": "file:pkg/issuer/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "file:pkg/client/listers/certmanager/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/helper.go",
+      "target": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/issuer/factory.go:IssuerFor",
+      "target": "function:pkg/api/util/issuers.go:NameForIssuer",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

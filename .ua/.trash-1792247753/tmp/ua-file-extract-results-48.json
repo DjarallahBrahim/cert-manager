@@ -1,0 +1,1051 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 20,
+  "filesSkipped": [
+    "make/_shared/licenses/licenses.tmpl",
+    "make/_shared/repository-base/base/OWNERS_ALIASES",
+    "make/_shared/repository-base/renovate-bootstrap-config.json5",
+    "make/config/pebble/Containerfile.pebble",
+    "make/config/pebble/chart/.helmignore"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 20,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 20
+    }
+  },
+  "results": [
+    {
+      "path": "make/_shared/licenses/00_mod.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 15,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 0
+      }
+    },
+    {
+      "path": "make/_shared/licenses/01_mod.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 62,
+      "steps": [
+        {
+          "name": "generate-go-licenses",
+          "startLine": 32,
+          "endLine": 32
+        },
+        {
+          "name": "generate-go-licenses",
+          "startLine": 42,
+          "endLine": 42
+        },
+        {
+          "name": "generate-go-licenses",
+          "startLine": 45,
+          "endLine": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 3
+      }
+    },
+    {
+      "path": "make/_shared/repository-base/01_mod.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 32,
+      "steps": [
+        {
+          "name": "generate-base",
+          "startLine": 25,
+          "endLine": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 1
+      }
+    },
+    {
+      "path": "make/_shared/repository-base/base/.github/chainguard/make-self-upgrade.sts.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 8,
+      "sections": [
+        {
+          "heading": "issuer",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "subject_pattern",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "permissions",
+          "level": 1,
+          "line": 7
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "make/_shared/repository-base/base/.github/chainguard/renovate.sts.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "sections": [
+        {
+          "heading": "issuer",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "subject_pattern",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "permissions",
+          "level": 1,
+          "line": 7
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "make/_shared/repository-base/base/.github/workflows/make-self-upgrade.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 114,
+      "nonEmptyLines": 97,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "concurrency",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "on",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "permissions",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "jobs",
+          "level": 1,
+          "line": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "make/_shared/repository-base/base/.github/workflows/renovate.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 62,
+      "nonEmptyLines": 51,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "on",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "permissions",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "jobs",
+          "level": 1,
+          "line": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "make/_shared/repository-base/base/Makefile",
+      "language": "makefile",
+      "fileCategory": "infra",
+      "totalLines": 116,
+      "nonEmptyLines": 97,
+      "steps": [
+        {
+          "name": "FORCE",
+          "startLine": 47,
+          "endLine": 48
+        },
+        {
+          "name": "noop",
+          "startLine": 49,
+          "endLine": 50
+        },
+        {
+          "name": "clean",
+          "startLine": 105,
+          "endLine": 107
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 3
+      }
+    },
+    {
+      "path": "make/_shared/tools/00_mod.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 726,
+      "nonEmptyLines": 628,
+      "steps": [
+        {
+          "name": "__require-ctr",
+          "startLine": 61,
+          "endLine": 62
+        },
+        {
+          "name": "print-go-version",
+          "startLine": 224,
+          "endLine": 226
+        },
+        {
+          "name": "__require-go",
+          "startLine": 312,
+          "endLine": 313
+        },
+        {
+          "name": "vendor-go",
+          "startLine": 334,
+          "endLine": 335
+        },
+        {
+          "name": "unvendor-go",
+          "startLine": 337,
+          "endLine": 339
+        },
+        {
+          "name": "which-go",
+          "startLine": 344,
+          "endLine": 347
+        },
+        {
+          "name": "non-go-tools",
+          "startLine": 713,
+          "endLine": 714
+        },
+        {
+          "name": "go-tools",
+          "startLine": 721,
+          "endLine": 722
+        },
+        {
+          "name": "tools",
+          "startLine": 726,
+          "endLine": 727
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 9
+      }
+    },
+    {
+      "path": "make/_shared_new/helm/01_mod.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 18,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 0
+      }
+    },
+    {
+      "path": "make/_shared_new/helm/crds.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 74,
+      "steps": [
+        {
+          "name": "generate-crds",
+          "startLine": 56,
+          "endLine": 89
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 1
+      }
+    },
+    {
+      "path": "make/_shared_new/helm/deploy.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 47,
+      "steps": [
+        {
+          "name": "install",
+          "startLine": 31,
+          "endLine": 38
+        },
+        {
+          "name": "uninstall",
+          "startLine": 42,
+          "endLine": 46
+        },
+        {
+          "name": "template",
+          "startLine": 50,
+          "endLine": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 3
+      }
+    },
+    {
+      "path": "make/_shared_new/helm/helm.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 189,
+      "nonEmptyLines": 157,
+      "steps": [
+        {
+          "name": "ifneq",
+          "startLine": 30,
+          "endLine": 30
+        },
+        {
+          "name": "helm-chart-oci-push",
+          "startLine": 77,
+          "endLine": 85
+        },
+        {
+          "name": "helm-chart",
+          "startLine": 89,
+          "endLine": 90
+        },
+        {
+          "name": "generate-helm-docs",
+          "startLine": 97,
+          "endLine": 99
+        },
+        {
+          "name": "generate-helm-schema",
+          "startLine": 105,
+          "endLine": 107
+        },
+        {
+          "name": "verify-helm-values",
+          "startLine": 113,
+          "endLine": 115
+        },
+        {
+          "name": "verify-pod-security-standards",
+          "startLine": 161,
+          "endLine": 167
+        },
+        {
+          "name": "verify-helm-lint",
+          "startLine": 173,
+          "endLine": 175
+        },
+        {
+          "name": "verify-helm-kubeconform",
+          "startLine": 181,
+          "endLine": 188
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 9
+      }
+    },
+    {
+      "path": "make/base_images.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 0
+      }
+    },
+    {
+      "path": "make/ci.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 69,
+      "steps": [
+        {
+          "name": "verify-modules",
+          "startLine": 16,
+          "endLine": 18
+        },
+        {
+          "name": "verify-chart",
+          "startLine": 22,
+          "endLine": 24
+        },
+        {
+          "name": "verify-errexit",
+          "startLine": 26,
+          "endLine": 28
+        },
+        {
+          "name": "generate-codegen",
+          "startLine": 32,
+          "endLine": 42
+        },
+        {
+          "name": "generate-helm-docs",
+          "startLine": 46,
+          "endLine": 52
+        },
+        {
+          "name": "generate-helm-schema",
+          "startLine": 58,
+          "endLine": 60
+        },
+        {
+          "name": "verify-helm-values",
+          "startLine": 66,
+          "endLine": 68
+        },
+        {
+          "name": "ci-presubmit",
+          "startLine": 76,
+          "endLine": 77
+        },
+        {
+          "name": "generate-all",
+          "startLine": 84,
+          "endLine": 85
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 9
+      }
+    },
+    {
+      "path": "make/config/kind/cluster.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 41,
+      "nonEmptyLines": 40,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 27
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 28
+        },
+        {
+          "heading": "kubeadmConfigPatches",
+          "level": 1,
+          "line": 29
+        },
+        {
+          "heading": "nodes",
+          "level": 1,
+          "line": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "make/config/kyverno/kustomization.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 41,
+      "nonEmptyLines": 40,
+      "sections": [
+        {
+          "heading": "resources",
+          "level": 1,
+          "line": 16
+        },
+        {
+          "heading": "patches",
+          "level": 1,
+          "line": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "make/config/kyverno/policy.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 1105,
+      "nonEmptyLines": 1105,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 67
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 68
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 69
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 81
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 142
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 143
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 144
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 158
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 189
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 190
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 191
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 204
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 234
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 235
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 236
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 248
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 286
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 287
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 288
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 302
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 344
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 345
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 346
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 358
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 396
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 397
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 398
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 410
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 448
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 449
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 450
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 463
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 502
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 503
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 504
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 516
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 596
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 597
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 598
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 611
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 641
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 642
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 643
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 655
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 696
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 697
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 698
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 711
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 762
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 763
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 764
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 779
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 810
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 811
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 812
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 826
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 860
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 861
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 862
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 874
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 919
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 920
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 921
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 936
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 994
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 995
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 996
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 1010
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 1044
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 1045
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 1046
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 1060
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 76
+      }
+    },
+    {
+      "path": "make/config/lib.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 103,
+      "nonEmptyLines": 92,
+      "functions": [
+        {
+          "name": "should_color",
+          "startLine": 40,
+          "endLine": 48,
+          "params": []
+        },
+        {
+          "name": "color",
+          "startLine": 68,
+          "endLine": 86,
+          "params": []
+        },
+        {
+          "name": "trace",
+          "startLine": 95,
+          "endLine": 103,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "make/config/pebble/chart/Chart.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 4
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    }
+  ]
+}

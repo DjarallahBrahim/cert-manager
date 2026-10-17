@@ -1,0 +1,1332 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/e2e/suite/certificates/foregrounddeletion.go",
+      "type": "file",
+      "name": "foregrounddeletion.go",
+      "filePath": "test/e2e/suite/certificates/foregrounddeletion.go",
+      "summary": "Ginkgo test verifying that foreground deletion of a Certificate does not recreate its CertificateRequest or Secret.",
+      "tags": [
+        "test",
+        "e2e",
+        "certificates",
+        "deletion",
+        "ginkgo"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/certificates/literalsubjectrdns.go",
+      "type": "file",
+      "name": "literalsubjectrdns.go",
+      "filePath": "test/e2e/suite/certificates/literalsubjectrdns.go",
+      "summary": "Ginkgo test covering parsing of literal subject RDNs into the issued certificate subject.",
+      "tags": [
+        "test",
+        "e2e",
+        "certificates",
+        "literal-subject",
+        "ginkgo"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/certificates/othernamesan.go",
+      "type": "file",
+      "name": "othernamesan.go",
+      "filePath": "test/e2e/suite/certificates/othernamesan.go",
+      "summary": "Ginkgo test covering OtherName subject alternative names on Certificates and their encoding in issued certificates.",
+      "tags": [
+        "test",
+        "e2e",
+        "certificates",
+        "san",
+        "ginkgo"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/certificates/secrettemplate.go",
+      "type": "file",
+      "name": "secrettemplate.go",
+      "filePath": "test/e2e/suite/certificates/secrettemplate.go",
+      "summary": "Ginkgo test verifying Certificate secretTemplate labels and annotations are applied to the target Secret and reconciled on change.",
+      "tags": [
+        "test",
+        "e2e",
+        "certificates",
+        "secret-template",
+        "ginkgo"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:test/e2e/suite/certificatesigningrequests/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "test/e2e/suite/certificatesigningrequests/doc.go",
+      "summary": "Package documentation for the CertificateSigningRequest e2e suite, importing its self-signed sub-suite.",
+      "tags": [
+        "test",
+        "e2e",
+        "documentation",
+        "certificate-signing-request",
+        "suite"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/suite/certificatesigningrequests/selfsigned/selfsigned.go",
+      "type": "file",
+      "name": "selfsigned.go",
+      "filePath": "test/e2e/suite/certificatesigningrequests/selfsigned/selfsigned.go",
+      "summary": "Ginkgo test ensuring a self-signed CertificateSigningRequest is signed even when its private key Secret is created afterwards.",
+      "tags": [
+        "test",
+        "e2e",
+        "self-signed",
+        "certificate-signing-request",
+        "secret"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "type": "file",
+      "name": "acme.go",
+      "filePath": "test/e2e/suite/conformance/certificates/acme/acme.go",
+      "summary": "Conformance certificate test suite for ACME issuers, provisioning HTTP-01 (Ingress and Gateway) and DNS-01 issuers against staging and in-cluster ACME servers.",
+      "tags": [
+        "test",
+        "conformance",
+        "acme",
+        "certificates",
+        "issuers"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:test/e2e/suite/conformance/certificates/acme/acme.go:acmeIssuerProvisioner",
+      "type": "class",
+      "name": "acmeIssuerProvisioner",
+      "filePath": "test/e2e/suite/conformance/certificates/acme/acme.go",
+      "lineRange": [
+        169,
+        172
+      ],
+      "summary": "Provisioner that creates and deletes ACME Issuers/ClusterIssuers and their supporting secrets for conformance tests.",
+      "tags": [
+        "test",
+        "acme",
+        "issuer",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/acme/acme.go:runACMEIssuerTests",
+      "type": "function",
+      "name": "runACMEIssuerTests",
+      "filePath": "test/e2e/suite/conformance/certificates/acme/acme.go",
+      "lineRange": [
+        48,
+        167
+      ],
+      "summary": "Registers the ACME conformance tests, wiring solver and server variants into the shared certificate test definitions.",
+      "tags": [
+        "test",
+        "conformance",
+        "acme",
+        "suite-registration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/acme/acme.go:delete",
+      "type": "function",
+      "name": "delete",
+      "filePath": "test/e2e/suite/conformance/certificates/acme/acme.go",
+      "lineRange": [
+        174,
+        184
+      ],
+      "summary": "Deletes the referenced issuer object and logs any error.",
+      "tags": [
+        "test",
+        "acme",
+        "cleanup",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createHTTP01IngressIssuer",
+      "type": "function",
+      "name": "createHTTP01IngressIssuer",
+      "filePath": "test/e2e/suite/conformance/certificates/acme/acme.go",
+      "lineRange": [
+        192,
+        216
+      ],
+      "summary": "Creates a namespaced ACME Issuer using the HTTP-01 Ingress solver.",
+      "tags": [
+        "test",
+        "acme",
+        "http-01",
+        "issuer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createHTTP01IngressClusterIssuer",
+      "type": "function",
+      "name": "createHTTP01IngressClusterIssuer",
+      "filePath": "test/e2e/suite/conformance/certificates/acme/acme.go",
+      "lineRange": [
+        218,
+        242
+      ],
+      "summary": "Creates a cluster-scoped ACME ClusterIssuer using the HTTP-01 Ingress solver.",
+      "tags": [
+        "test",
+        "acme",
+        "http-01",
+        "cluster-issuer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createHTTP01GatewayIssuer",
+      "type": "function",
+      "name": "createHTTP01GatewayIssuer",
+      "filePath": "test/e2e/suite/conformance/certificates/acme/acme.go",
+      "lineRange": [
+        244,
+        278
+      ],
+      "summary": "Creates a namespaced ACME Issuer using the HTTP-01 Gateway API solver.",
+      "tags": [
+        "test",
+        "acme",
+        "http-01",
+        "gateway-api"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createPublicACMEServerStagingHTTP01Issuer",
+      "type": "function",
+      "name": "createPublicACMEServerStagingHTTP01Issuer",
+      "filePath": "test/e2e/suite/conformance/certificates/acme/acme.go",
+      "lineRange": [
+        280,
+        310
+      ],
+      "summary": "Creates an issuer pointed at the public ACME staging server using the HTTP-01 Ingress solver.",
+      "tags": [
+        "test",
+        "acme",
+        "staging",
+        "issuer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createHTTP01GatewayClusterIssuer",
+      "type": "function",
+      "name": "createHTTP01GatewayClusterIssuer",
+      "filePath": "test/e2e/suite/conformance/certificates/acme/acme.go",
+      "lineRange": [
+        312,
+        346
+      ],
+      "summary": "Creates a cluster-scoped ACME ClusterIssuer using the HTTP-01 Gateway API solver.",
+      "tags": [
+        "test",
+        "acme",
+        "http-01",
+        "gateway-api"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createHTTP01IngressIssuerSpec",
+      "type": "function",
+      "name": "createHTTP01IngressIssuerSpec",
+      "filePath": "test/e2e/suite/conformance/certificates/acme/acme.go",
+      "lineRange": [
+        348,
+        373
+      ],
+      "summary": "Builds the ACME Issuer spec for the HTTP-01 Ingress solver against the given server URL.",
+      "tags": [
+        "test",
+        "acme",
+        "issuer-spec",
+        "factory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createHTTP01GatewayIssuerSpec",
+      "type": "function",
+      "name": "createHTTP01GatewayIssuerSpec",
+      "filePath": "test/e2e/suite/conformance/certificates/acme/acme.go",
+      "lineRange": [
+        375,
+        406
+      ],
+      "summary": "Builds the ACME Issuer spec for the HTTP-01 Gateway solver with the given server URL and solver labels.",
+      "tags": [
+        "test",
+        "acme",
+        "issuer-spec",
+        "gateway-api"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createDNS01Issuer",
+      "type": "function",
+      "name": "createDNS01Issuer",
+      "filePath": "test/e2e/suite/conformance/certificates/acme/acme.go",
+      "lineRange": [
+        408,
+        431
+      ],
+      "summary": "Creates a namespaced ACME Issuer using the DNS-01 solver against the configured DNS server.",
+      "tags": [
+        "test",
+        "acme",
+        "dns-01",
+        "issuer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createDNS01ClusterIssuer",
+      "type": "function",
+      "name": "createDNS01ClusterIssuer",
+      "filePath": "test/e2e/suite/conformance/certificates/acme/acme.go",
+      "lineRange": [
+        433,
+        456
+      ],
+      "summary": "Creates a cluster-scoped ACME ClusterIssuer using the DNS-01 solver.",
+      "tags": [
+        "test",
+        "acme",
+        "dns-01",
+        "cluster-issuer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createDNS01IssuerSpec",
+      "type": "function",
+      "name": "createDNS01IssuerSpec",
+      "filePath": "test/e2e/suite/conformance/certificates/acme/acme.go",
+      "lineRange": [
+        458,
+        482
+      ],
+      "summary": "Builds the ACME Issuer spec for the DNS-01 solver with the given server URL and DNS server.",
+      "tags": [
+        "test",
+        "acme",
+        "issuer-spec",
+        "dns-01"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/acme/acme.go:ensureEABSecret",
+      "type": "function",
+      "name": "ensureEABSecret",
+      "filePath": "test/e2e/suite/conformance/certificates/acme/acme.go",
+      "lineRange": [
+        484,
+        513
+      ],
+      "summary": "Creates or updates the External Account Binding secret required by the ACME server when configured.",
+      "tags": [
+        "test",
+        "acme",
+        "external-account-binding",
+        "secret"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/conformance/certificates/ca/ca.go",
+      "type": "file",
+      "name": "ca.go",
+      "filePath": "test/e2e/suite/conformance/certificates/ca/ca.go",
+      "summary": "Conformance certificate test suite for CA issuers, generating a root CA key pair Secret and wiring it into Issuer and ClusterIssuer objects.",
+      "tags": [
+        "test",
+        "conformance",
+        "ca-issuer",
+        "certificates",
+        "issuers"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/e2e/suite/conformance/certificates/ca/ca.go:ca",
+      "type": "class",
+      "name": "ca",
+      "filePath": "test/e2e/suite/conformance/certificates/ca/ca.go",
+      "lineRange": [
+        50,
+        52
+      ],
+      "summary": "Provisioner holding the root CA Secret name used to build CA issuers for conformance tests.",
+      "tags": [
+        "test",
+        "ca-issuer",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/ca/ca.go:createCAIssuer",
+      "type": "function",
+      "name": "createCAIssuer",
+      "filePath": "test/e2e/suite/conformance/certificates/ca/ca.go",
+      "lineRange": [
+        54,
+        81
+      ],
+      "summary": "Creates a namespaced CA Issuer referencing the generated root CA Secret.",
+      "tags": [
+        "test",
+        "ca-issuer",
+        "issuer",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/ca/ca.go:createCAClusterIssuer",
+      "type": "function",
+      "name": "createCAClusterIssuer",
+      "filePath": "test/e2e/suite/conformance/certificates/ca/ca.go",
+      "lineRange": [
+        83,
+        110
+      ],
+      "summary": "Creates a cluster-scoped CA ClusterIssuer backed by a root CA Secret in the cluster resource namespace.",
+      "tags": [
+        "test",
+        "ca-issuer",
+        "cluster-issuer",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/ca/ca.go:deleteCAClusterIssuer",
+      "type": "function",
+      "name": "deleteCAClusterIssuer",
+      "filePath": "test/e2e/suite/conformance/certificates/ca/ca.go",
+      "lineRange": [
+        112,
+        120
+      ],
+      "summary": "Deletes the referenced ClusterIssuer, logging failures.",
+      "tags": [
+        "test",
+        "ca-issuer",
+        "cleanup",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/ca/ca.go:createCAIssuerSpec",
+      "type": "function",
+      "name": "createCAIssuerSpec",
+      "filePath": "test/e2e/suite/conformance/certificates/ca/ca.go",
+      "lineRange": [
+        122,
+        130
+      ],
+      "summary": "Builds the CA Issuer spec pointing at the given root certificate Secret name.",
+      "tags": [
+        "test",
+        "ca-issuer",
+        "issuer-spec",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/ca/ca.go:newSigningKeypairSecret",
+      "type": "function",
+      "name": "newSigningKeypairSecret",
+      "filePath": "test/e2e/suite/conformance/certificates/ca/ca.go",
+      "lineRange": [
+        184,
+        194
+      ],
+      "summary": "Generates a self-signed CA key pair and returns it as a Kubernetes TLS Secret.",
+      "tags": [
+        "test",
+        "ca-issuer",
+        "secret",
+        "key-generation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/suite/conformance/certificates/external/external.go",
+      "type": "file",
+      "name": "external.go",
+      "filePath": "test/e2e/suite/conformance/certificates/external/external.go",
+      "summary": "Conformance suite for externally managed issuers: derives namespaced and cluster-scoped Issuers from a prototype supplied by the test.",
+      "tags": [
+        "test",
+        "conformance",
+        "external-issuer",
+        "certificates",
+        "fixtures"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/e2e/suite/conformance/certificates/external/external.go:issuerBuilder",
+      "type": "class",
+      "name": "issuerBuilder",
+      "filePath": "test/e2e/suite/conformance/certificates/external/external.go",
+      "lineRange": [
+        69,
+        72
+      ],
+      "summary": "Builder that holds a prototype issuer and the cluster resource namespace used to materialise test issuers.",
+      "tags": [
+        "test",
+        "external-issuer",
+        "builder",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/external/external.go:newIssuerBuilder",
+      "type": "function",
+      "name": "newIssuerBuilder",
+      "filePath": "test/e2e/suite/conformance/certificates/external/external.go",
+      "lineRange": [
+        74,
+        87
+      ],
+      "summary": "Creates an issuer builder for the given issuer kind using the framework cluster resource namespace.",
+      "tags": [
+        "test",
+        "external-issuer",
+        "builder",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/external/external.go:nameForTestObject",
+      "type": "function",
+      "name": "nameForTestObject",
+      "filePath": "test/e2e/suite/conformance/certificates/external/external.go",
+      "lineRange": [
+        89,
+        98
+      ],
+      "summary": "Derives a unique, DNS-safe object name for the current test.",
+      "tags": [
+        "test",
+        "fixtures",
+        "naming",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/external/external.go:secretAndIssuerForTest",
+      "type": "function",
+      "name": "secretAndIssuerForTest",
+      "filePath": "test/e2e/suite/conformance/certificates/external/external.go",
+      "lineRange": [
+        100,
+        117
+      ],
+      "summary": "Produces the secret and issuer pair to create for the current test from the prototype.",
+      "tags": [
+        "test",
+        "external-issuer",
+        "fixtures",
+        "builders"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/external/external.go:create",
+      "type": "function",
+      "name": "create",
+      "filePath": "test/e2e/suite/conformance/certificates/external/external.go",
+      "lineRange": [
+        119,
+        138
+      ],
+      "summary": "Creates the test Secret and Issuer/ClusterIssuer and registers cleanup actions.",
+      "tags": [
+        "test",
+        "external-issuer",
+        "kubernetes",
+        "setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/external/external.go:delete",
+      "type": "function",
+      "name": "delete",
+      "filePath": "test/e2e/suite/conformance/certificates/external/external.go",
+      "lineRange": [
+        140,
+        153
+      ],
+      "summary": "Deletes the created Issuer/ClusterIssuer and Secret, logging failures.",
+      "tags": [
+        "test",
+        "external-issuer",
+        "cleanup",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go",
+      "type": "file",
+      "name": "selfsigned.go",
+      "filePath": "test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go",
+      "summary": "Conformance certificate test suite for self-signed issuers, creating namespaced and cluster-scoped issuers without external dependencies.",
+      "tags": [
+        "test",
+        "conformance",
+        "self-signed",
+        "certificates",
+        "issuers"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go:createSelfSignedIssuer",
+      "type": "function",
+      "name": "createSelfSignedIssuer",
+      "filePath": "test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go",
+      "lineRange": [
+        47,
+        68
+      ],
+      "summary": "Creates a namespaced self-signed Issuer and registers cleanup.",
+      "tags": [
+        "test",
+        "self-signed",
+        "issuer",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go:deleteSelfSignedClusterIssuer",
+      "type": "function",
+      "name": "deleteSelfSignedClusterIssuer",
+      "filePath": "test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go",
+      "lineRange": [
+        70,
+        73
+      ],
+      "summary": "Deletes the referenced self-signed ClusterIssuer, ignoring not-found errors.",
+      "tags": [
+        "test",
+        "self-signed",
+        "cleanup",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go:createSelfSignedClusterIssuer",
+      "type": "function",
+      "name": "createSelfSignedClusterIssuer",
+      "filePath": "test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go",
+      "lineRange": [
+        75,
+        96
+      ],
+      "summary": "Creates a cluster-scoped self-signed ClusterIssuer and registers cleanup.",
+      "tags": [
+        "test",
+        "self-signed",
+        "cluster-issuer",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go:createSelfSignedIssuerSpec",
+      "type": "function",
+      "name": "createSelfSignedIssuerSpec",
+      "filePath": "test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go",
+      "lineRange": [
+        98,
+        104
+      ],
+      "summary": "Returns the minimal self-signed Issuer spec used by the conformance suite.",
+      "tags": [
+        "test",
+        "self-signed",
+        "issuer-spec",
+        "factory"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/e2e/suite/certificates/foregrounddeletion.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/foregrounddeletion.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/foregrounddeletion.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/foregrounddeletion.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/foregrounddeletion.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/foregrounddeletion.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/literalsubjectrdns.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/literalsubjectrdns.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/literalsubjectrdns.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/literalsubjectrdns.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/literalsubjectrdns.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/literalsubjectrdns.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/othernamesan.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/othernamesan.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/othernamesan.go",
+      "target": "file:test/e2e/framework/matcher/have_condition_matcher.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/othernamesan.go",
+      "target": "file:test/e2e/framework/matcher/san_matchers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/othernamesan.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/othernamesan.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/othernamesan.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/othernamesan.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/secrettemplate.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/secrettemplate.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/secrettemplate.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/secrettemplate.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/secrettemplate.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificates/secrettemplate.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificatesigningrequests/doc.go",
+      "target": "file:test/e2e/suite/certificatesigningrequests/selfsigned/selfsigned.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/certificatesigningrequests/selfsigned/selfsigned.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "class:test/e2e/suite/conformance/certificates/acme/acme.go:acmeIssuerProvisioner",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "function:test/e2e/suite/conformance/certificates/acme/acme.go:runACMEIssuerTests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "function:test/e2e/suite/conformance/certificates/acme/acme.go:delete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createHTTP01IngressIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createHTTP01IngressClusterIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createHTTP01GatewayIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createPublicACMEServerStagingHTTP01Issuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createHTTP01GatewayClusterIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createHTTP01IngressIssuerSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createHTTP01GatewayIssuerSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createDNS01Issuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createDNS01ClusterIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "function:test/e2e/suite/conformance/certificates/acme/acme.go:createDNS01IssuerSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "function:test/e2e/suite/conformance/certificates/acme/acme.go:ensureEABSecret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "file:test/e2e/framework/helper/featureset/featureset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "file:test/e2e/suite/conformance/certificates/suite.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "file:test/e2e/suite/conformance/certificates/tests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/ca/ca.go",
+      "target": "class:test/e2e/suite/conformance/certificates/ca/ca.go:ca",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/ca/ca.go",
+      "target": "function:test/e2e/suite/conformance/certificates/ca/ca.go:createCAIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/ca/ca.go",
+      "target": "function:test/e2e/suite/conformance/certificates/ca/ca.go:createCAClusterIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/ca/ca.go",
+      "target": "function:test/e2e/suite/conformance/certificates/ca/ca.go:deleteCAClusterIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/ca/ca.go",
+      "target": "function:test/e2e/suite/conformance/certificates/ca/ca.go:createCAIssuerSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/ca/ca.go",
+      "target": "function:test/e2e/suite/conformance/certificates/ca/ca.go:newSigningKeypairSecret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/ca/ca.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/ca/ca.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/ca/ca.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/ca/ca.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/ca/ca.go",
+      "target": "file:test/e2e/suite/conformance/certificates/suite.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/ca/ca.go",
+      "target": "file:test/e2e/suite/conformance/certificates/tests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/external/external.go",
+      "target": "class:test/e2e/suite/conformance/certificates/external/external.go:issuerBuilder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/external/external.go",
+      "target": "function:test/e2e/suite/conformance/certificates/external/external.go:newIssuerBuilder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/external/external.go",
+      "target": "function:test/e2e/suite/conformance/certificates/external/external.go:nameForTestObject",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/external/external.go",
+      "target": "function:test/e2e/suite/conformance/certificates/external/external.go:secretAndIssuerForTest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/external/external.go",
+      "target": "function:test/e2e/suite/conformance/certificates/external/external.go:create",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/external/external.go",
+      "target": "function:test/e2e/suite/conformance/certificates/external/external.go:delete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/external/external.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/external/external.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/external/external.go",
+      "target": "file:test/e2e/framework/helper/featureset/featureset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/external/external.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/external/external.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/external/external.go",
+      "target": "file:test/e2e/suite/conformance/certificates/suite.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/external/external.go",
+      "target": "file:test/e2e/suite/conformance/certificates/tests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go",
+      "target": "function:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go:createSelfSignedIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go",
+      "target": "function:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go:deleteSelfSignedClusterIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go",
+      "target": "function:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go:createSelfSignedClusterIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go",
+      "target": "function:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go:createSelfSignedIssuerSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go",
+      "target": "file:test/e2e/suite/conformance/certificates/suite.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go",
+      "target": "file:test/e2e/suite/conformance/certificates/tests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/acme/acme.go",
+      "target": "class:test/e2e/suite/conformance/certificates/suite.go:Suite",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/ca/ca.go",
+      "target": "class:test/e2e/suite/conformance/certificates/suite.go:Suite",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/external/external.go",
+      "target": "class:test/e2e/suite/conformance/certificates/suite.go:Suite",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go",
+      "target": "class:test/e2e/suite/conformance/certificates/suite.go:Suite",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

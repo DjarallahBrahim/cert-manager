@@ -1,0 +1,1144 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go",
+      "type": "file",
+      "name": "types_tlsconfig.go",
+      "filePath": "pkg/apis/config/shared/v1alpha1/types_tlsconfig.go",
+      "summary": "Defines the shared TLS serving configuration type along with its dynamic and filesystem certificate source variants used by all cert-manager components.",
+      "tags": ["data-model", "api-types", "tls", "configuration"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go:TLSConfig",
+      "type": "class",
+      "name": "TLSConfig",
+      "filePath": "pkg/apis/config/shared/v1alpha1/types_tlsconfig.go",
+      "lineRange": [21, 41],
+      "summary": "Shared TLS settings controlling cipher suites, minimum TLS version and whether certificates come from the filesystem or a dynamically managed secret.",
+      "tags": ["data-model", "api-types", "tls", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go:DynamicServingConfig",
+      "type": "class",
+      "name": "DynamicServingConfig",
+      "filePath": "pkg/apis/config/shared/v1alpha1/types_tlsconfig.go",
+      "lineRange": [45, 59],
+      "summary": "Configures dynamically generated serving certificates from a Secret, including namespace, name, DNS names and leaf certificate duration.",
+      "tags": ["data-model", "api-types", "tls", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go:FilesystemServingConfig",
+      "type": "class",
+      "name": "FilesystemServingConfig",
+      "filePath": "pkg/apis/config/shared/v1alpha1/types_tlsconfig.go",
+      "lineRange": [63, 69],
+      "summary": "Points TLS serving at a certificate and key pair on the local filesystem.",
+      "tags": ["data-model", "api-types", "tls", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go",
+      "type": "file",
+      "name": "zz_generated.deepcopy.go",
+      "filePath": "pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go",
+      "summary": "Generated deep-copy implementations for the shared configuration types (Duration, leader election and TLS configs).",
+      "tags": ["generated", "deepcopy", "code-generation", "configuration"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go:DeepCopyInto",
+      "type": "function",
+      "name": "DeepCopyInto",
+      "filePath": "pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go",
+      "lineRange": [25, 29],
+      "summary": "Deep-copies a shared configuration struct into the supplied receiver, cloning nested slices and pointer fields (equivalent generated methods exist for the other shared config types).",
+      "tags": ["generated", "deepcopy", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go:DeepCopy",
+      "type": "function",
+      "name": "DeepCopy",
+      "filePath": "pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go",
+      "lineRange": [32, 39],
+      "summary": "Allocates and returns a deep copy of a shared configuration struct by delegating to the generated DeepCopyInto method.",
+      "tags": ["generated", "deepcopy", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/apis/config/webhook/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "pkg/apis/config/webhook/doc.go",
+      "summary": "Package documentation and group-name declaration for the webhook configuration API group (webhook.config.cert-manager.io).",
+      "tags": ["package-doc", "api-group", "configuration", "entry-point"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/apis/config/webhook/v1alpha1/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "pkg/apis/config/webhook/v1alpha1/doc.go",
+      "summary": "Package-level documentation for the webhook configuration v1alpha1 API package, carrying the deepcopy code-generation marker.",
+      "tags": ["package-doc", "api-version", "code-generation", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/apis/config/webhook/v1alpha1/register.go",
+      "type": "file",
+      "name": "register.go",
+      "filePath": "pkg/apis/config/webhook/v1alpha1/register.go",
+      "summary": "Registers the webhook v1alpha1 configuration types with the Kubernetes scheme and exposes a resource GroupResource helper.",
+      "tags": ["api-registration", "scheme", "kubernetes", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/apis/config/webhook/v1alpha1/register.go:Resource",
+      "type": "function",
+      "name": "Resource",
+      "filePath": "pkg/apis/config/webhook/v1alpha1/register.go",
+      "lineRange": [31, 33],
+      "summary": "Returns the GroupResource for a named webhook configuration resource within the v1alpha1 scheme group.",
+      "tags": ["api-registration", "resource", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/apis/config/webhook/v1alpha1/types.go",
+      "type": "file",
+      "name": "types.go",
+      "filePath": "pkg/apis/config/webhook/v1alpha1/types.go",
+      "summary": "Defines the v1alpha1 WebhookConfiguration API type covering serving ports, TLS, kubeconfig, logging, feature gates and metrics settings.",
+      "tags": ["data-model", "api-types", "configuration", "kubernetes"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/apis/config/webhook/v1alpha1/types.go:WebhookConfiguration",
+      "type": "class",
+      "name": "WebhookConfiguration",
+      "filePath": "pkg/apis/config/webhook/v1alpha1/types.go",
+      "lineRange": [28, 75],
+      "summary": "Top-level configuration for the cert-manager webhook component, including secure and health ports, TLS settings, API server access, logging, feature gates and metrics.",
+      "tags": ["data-model", "api-types", "configuration", "kubernetes"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go",
+      "type": "file",
+      "name": "zz_generated.deepcopy.go",
+      "filePath": "pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go",
+      "summary": "Generated deep-copy implementations for the webhook v1alpha1 configuration type, cloning nested TLS, logging and metrics config.",
+      "tags": ["generated", "deepcopy", "code-generation", "kubernetes"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go:DeepCopyInto",
+      "type": "function",
+      "name": "DeepCopyInto",
+      "filePath": "pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go",
+      "lineRange": [29, 53],
+      "summary": "Deep-copies a WebhookConfiguration into the supplied receiver, cloning the TLS, logging and metrics configuration and their slices.",
+      "tags": ["generated", "deepcopy", "utility"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go:DeepCopy",
+      "type": "function",
+      "name": "DeepCopy",
+      "filePath": "pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go",
+      "lineRange": [56, 63],
+      "summary": "Allocates and returns a deep copy of a WebhookConfiguration by delegating to the generated DeepCopyInto method.",
+      "tags": ["generated", "deepcopy", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go:DeepCopyObject",
+      "type": "function",
+      "name": "DeepCopyObject",
+      "filePath": "pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go",
+      "lineRange": [66, 71],
+      "summary": "Implements runtime.Object by returning a deep copy of WebhookConfiguration as an untyped object.",
+      "tags": ["generated", "deepcopy", "kubernetes", "interface-implementation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/cainjector/configfile/configfile.go",
+      "type": "file",
+      "name": "configfile.go",
+      "filePath": "pkg/cainjector/configfile/configfile.go",
+      "summary": "Implements config-file loading for cainjector: decodes the internal CAInjectorConfiguration from a scheme-aware decoder and exposes referenced file paths for watching.",
+      "tags": ["configuration", "config-loader", "serialization", "cainjector"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/cainjector/configfile/configfile.go:CAInjectorConfigFile",
+      "type": "class",
+      "name": "CAInjectorConfigFile",
+      "filePath": "pkg/cainjector/configfile/configfile.go",
+      "lineRange": [28, 30],
+      "summary": "Wraps a decoded internal CAInjectorConfiguration and provides the decode and path-reference methods required by the shared config file interface.",
+      "tags": ["configuration", "config-loader", "data-model"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/cainjector/configfile/configfile.go:New",
+      "type": "function",
+      "name": "New",
+      "filePath": "pkg/cainjector/configfile/configfile.go",
+      "lineRange": [32, 36],
+      "summary": "Creates an empty CAInjectorConfigFile so flags can bind to it before the configuration file is decoded.",
+      "tags": ["factory", "configuration", "config-loader"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/cainjector/configfile/configfile.go:decodeConfiguration",
+      "type": "function",
+      "name": "decodeConfiguration",
+      "filePath": "pkg/cainjector/configfile/configfile.go",
+      "lineRange": [38, 56],
+      "summary": "Builds a scheme-aware universal decoder and decodes raw configuration bytes into an internal CAInjectorConfiguration, returning descriptive errors for empty or invalid data.",
+      "tags": ["serialization", "config-loader", "validation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/cainjector/configfile/configfile.go:DecodeAndConfigure",
+      "type": "function",
+      "name": "DecodeAndConfigure",
+      "filePath": "pkg/cainjector/configfile/configfile.go",
+      "lineRange": [58, 66],
+      "summary": "Decodes the supplied configuration bytes and stores the resulting CAInjectorConfiguration on the receiver.",
+      "tags": ["config-loader", "serialization", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/cainjector/configfile/configfile.go:GetPathRefs",
+      "type": "function",
+      "name": "GetPathRefs",
+      "filePath": "pkg/cainjector/configfile/configfile.go",
+      "lineRange": [68, 75],
+      "summary": "Returns the filesystem paths referenced by the loaded cainjector configuration so the config watcher can monitor them.",
+      "tags": ["config-loader", "file-watching", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/cainjector/configfile/configfile.go:CAInjectorConfigurationPathRefs",
+      "type": "function",
+      "name": "CAInjectorConfigurationPathRefs",
+      "filePath": "pkg/cainjector/configfile/configfile.go",
+      "lineRange": [80, 86],
+      "summary": "Collects every filesystem path (kubeconfig and TLS files) referenced by a cainjector configuration for change tracking.",
+      "tags": ["config-loader", "file-watching", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/acmechallenges/checks.go",
+      "type": "file",
+      "name": "checks.go",
+      "filePath": "pkg/controller/acmechallenges/checks.go",
+      "summary": "Placeholder for the ACME challenges controller checks; currently declares no checks at all.",
+      "tags": ["placeholder", "controller", "acme", "no-op"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/configfile/configfile.go",
+      "type": "file",
+      "name": "configfile.go",
+      "filePath": "pkg/controller/configfile/configfile.go",
+      "summary": "Implements config-file loading for the controller: decodes the internal ControllerConfiguration and exposes referenced file paths for watching.",
+      "tags": ["configuration", "config-loader", "serialization", "controller"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/controller/configfile/configfile.go:ControllerConfigFile",
+      "type": "class",
+      "name": "ControllerConfigFile",
+      "filePath": "pkg/controller/configfile/configfile.go",
+      "lineRange": [28, 30],
+      "summary": "Wraps a decoded internal ControllerConfiguration and provides the decode and path-reference methods required by the shared config file interface.",
+      "tags": ["configuration", "config-loader", "data-model"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/configfile/configfile.go:New",
+      "type": "function",
+      "name": "New",
+      "filePath": "pkg/controller/configfile/configfile.go",
+      "lineRange": [32, 36],
+      "summary": "Creates an empty ControllerConfigFile so flags can bind to it before the configuration file is decoded.",
+      "tags": ["factory", "configuration", "config-loader"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/configfile/configfile.go:decodeConfiguration",
+      "type": "function",
+      "name": "decodeConfiguration",
+      "filePath": "pkg/controller/configfile/configfile.go",
+      "lineRange": [38, 56],
+      "summary": "Builds a scheme-aware universal decoder and decodes raw configuration bytes into an internal ControllerConfiguration, returning descriptive errors for empty or invalid data.",
+      "tags": ["serialization", "config-loader", "validation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/configfile/configfile.go:DecodeAndConfigure",
+      "type": "function",
+      "name": "DecodeAndConfigure",
+      "filePath": "pkg/controller/configfile/configfile.go",
+      "lineRange": [58, 66],
+      "summary": "Decodes the supplied configuration bytes and stores the resulting ControllerConfiguration on the receiver.",
+      "tags": ["config-loader", "serialization", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/configfile/configfile.go:GetPathRefs",
+      "type": "function",
+      "name": "GetPathRefs",
+      "filePath": "pkg/controller/configfile/configfile.go",
+      "lineRange": [68, 75],
+      "summary": "Returns the filesystem paths referenced by the loaded controller configuration so the config watcher can monitor them.",
+      "tags": ["config-loader", "file-watching", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/configfile/configfile.go:ControllerConfigurationPathRefs",
+      "type": "function",
+      "name": "ControllerConfigurationPathRefs",
+      "filePath": "pkg/controller/configfile/configfile.go",
+      "lineRange": [80, 85],
+      "summary": "Collects every filesystem path (kubeconfig and TLS files) referenced by a controller configuration for change tracking.",
+      "tags": ["config-loader", "file-watching", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/webhook/configfile/configfile.go",
+      "type": "file",
+      "name": "configfile.go",
+      "filePath": "pkg/webhook/configfile/configfile.go",
+      "summary": "Implements config-file loading for the webhook: decodes the internal WebhookConfiguration and exposes referenced file paths for watching.",
+      "tags": ["configuration", "config-loader", "serialization", "webhook"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/webhook/configfile/configfile.go:WebhookConfigFile",
+      "type": "class",
+      "name": "WebhookConfigFile",
+      "filePath": "pkg/webhook/configfile/configfile.go",
+      "lineRange": [28, 30],
+      "summary": "Wraps a decoded internal WebhookConfiguration and provides the decode and path-reference methods required by the shared config file interface.",
+      "tags": ["configuration", "config-loader", "data-model"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/configfile/configfile.go:New",
+      "type": "function",
+      "name": "New",
+      "filePath": "pkg/webhook/configfile/configfile.go",
+      "lineRange": [32, 36],
+      "summary": "Creates an empty WebhookConfigFile so flags can bind to it before the configuration file is decoded.",
+      "tags": ["factory", "configuration", "config-loader"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/configfile/configfile.go:decodeConfiguration",
+      "type": "function",
+      "name": "decodeConfiguration",
+      "filePath": "pkg/webhook/configfile/configfile.go",
+      "lineRange": [38, 56],
+      "summary": "Builds a scheme-aware universal decoder and decodes raw configuration bytes into an internal WebhookConfiguration, returning descriptive errors for empty or invalid data.",
+      "tags": ["serialization", "config-loader", "validation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/webhook/configfile/configfile.go:DecodeAndConfigure",
+      "type": "function",
+      "name": "DecodeAndConfigure",
+      "filePath": "pkg/webhook/configfile/configfile.go",
+      "lineRange": [58, 66],
+      "summary": "Decodes the supplied configuration bytes and stores the resulting WebhookConfiguration on the receiver.",
+      "tags": ["config-loader", "serialization", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/configfile/configfile.go:GetPathRefs",
+      "type": "function",
+      "name": "GetPathRefs",
+      "filePath": "pkg/webhook/configfile/configfile.go",
+      "lineRange": [68, 75],
+      "summary": "Returns the filesystem paths referenced by the loaded webhook configuration so the config watcher can monitor them.",
+      "tags": ["config-loader", "file-watching", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/configfile/configfile.go:WebhookConfigurationPathRefs",
+      "type": "function",
+      "name": "WebhookConfigurationPathRefs",
+      "filePath": "pkg/webhook/configfile/configfile.go",
+      "lineRange": [80, 88],
+      "summary": "Collects every filesystem path (kubeconfig and TLS files) referenced by a webhook configuration for change tracking.",
+      "tags": ["config-loader", "file-watching", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/webhook/options/options.go",
+      "type": "file",
+      "name": "options.go",
+      "filePath": "pkg/webhook/options/options.go",
+      "summary": "Builds the webhook's default internal configuration and binds every webhook setting (TLS, logging, feature gates, metrics, ports) to command-line flags.",
+      "tags": ["entry-point", "cli-flags", "configuration", "webhook"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/webhook/options/options.go:WebhookFlags",
+      "type": "class",
+      "name": "WebhookFlags",
+      "filePath": "pkg/webhook/options/options.go",
+      "lineRange": [33, 36],
+      "summary": "Flag-binding structure holding the webhook configuration while command-line flags are parsed.",
+      "tags": ["cli-flags", "configuration", "data-model"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/options/options.go:NewWebhookFlags",
+      "type": "function",
+      "name": "NewWebhookFlags",
+      "filePath": "pkg/webhook/options/options.go",
+      "lineRange": [38, 40],
+      "summary": "Creates a WebhookFlags instance pre-populated with a default webhook configuration.",
+      "tags": ["factory", "cli-flags", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/options/options.go:AddFlags",
+      "type": "function",
+      "name": "AddFlags",
+      "filePath": "pkg/webhook/options/options.go",
+      "lineRange": [42, 44],
+      "summary": "Registers the --config flag that points the webhook at its configuration file.",
+      "tags": ["cli-flags", "configuration", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/webhook/options/options.go:NewWebhookConfiguration",
+      "type": "function",
+      "name": "NewWebhookConfiguration",
+      "filePath": "pkg/webhook/options/options.go",
+      "lineRange": [46, 58],
+      "summary": "Builds the defaulted internal webhook configuration by decoding the v1alpha1 versioned defaults and converting them to the internal API version.",
+      "tags": ["configuration", "defaults", "conversion"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/webhook/options/options.go:AddConfigFlags",
+      "type": "function",
+      "name": "AddConfigFlags",
+      "filePath": "pkg/webhook/options/options.go",
+      "lineRange": [60, 109],
+      "summary": "Binds all webhook configuration fields to command-line flags, including ports, kubeconfig, TLS cipher suites and versions, feature gates, logging and metrics options.",
+      "tags": ["cli-flags", "configuration", "validation"],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/apis/config/webhook/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/webhook/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/config/webhook/v1alpha1/types.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/config/webhook/v1alpha1/types.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/types_duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/config/webhook/v1alpha1/types.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/types_leaderelection.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/config/webhook/v1alpha1/types.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/config/webhook/v1alpha1/types.go",
+      "target": "file:pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/cainjector/configfile/configfile.go",
+      "target": "file:internal/apis/config/cainjector/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/cainjector/configfile/configfile.go",
+      "target": "file:internal/apis/config/cainjector/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/cainjector/configfile/configfile.go",
+      "target": "file:internal/apis/config/cainjector/scheme/scheme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/cainjector/configfile/configfile.go",
+      "target": "file:internal/apis/config/cainjector/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/cainjector/configfile/configfile.go",
+      "target": "file:internal/apis/config/cainjector/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/configfile/configfile.go",
+      "target": "file:internal/apis/config/controller/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/configfile/configfile.go",
+      "target": "file:internal/apis/config/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/configfile/configfile.go",
+      "target": "file:internal/apis/config/controller/scheme/scheme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/configfile/configfile.go",
+      "target": "file:internal/apis/config/controller/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/configfile/configfile.go",
+      "target": "file:internal/apis/config/controller/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/configfile/configfile.go",
+      "target": "file:internal/apis/config/webhook/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/configfile/configfile.go",
+      "target": "file:internal/apis/config/webhook/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/configfile/configfile.go",
+      "target": "file:internal/apis/config/webhook/scheme/scheme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/configfile/configfile.go",
+      "target": "file:internal/apis/config/webhook/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/configfile/configfile.go",
+      "target": "file:internal/apis/config/webhook/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "file:internal/apis/config/webhook/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "file:internal/apis/config/webhook/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "file:internal/apis/config/webhook/scheme/scheme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "file:internal/apis/config/webhook/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "file:internal/apis/config/webhook/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "file:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "file:pkg/util/feature/feature_gate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go",
+      "target": "class:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go:TLSConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go",
+      "target": "class:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go:DynamicServingConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go",
+      "target": "class:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go:FilesystemServingConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go",
+      "target": "function:pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go:DeepCopyInto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go",
+      "target": "function:pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go:DeepCopy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/apis/config/webhook/v1alpha1/register.go",
+      "target": "function:pkg/apis/config/webhook/v1alpha1/register.go:Resource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/apis/config/webhook/v1alpha1/types.go",
+      "target": "class:pkg/apis/config/webhook/v1alpha1/types.go:WebhookConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go",
+      "target": "function:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go:DeepCopyInto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go",
+      "target": "function:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go:DeepCopy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go",
+      "target": "function:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go:DeepCopyObject",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/cainjector/configfile/configfile.go",
+      "target": "class:pkg/cainjector/configfile/configfile.go:CAInjectorConfigFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/cainjector/configfile/configfile.go",
+      "target": "function:pkg/cainjector/configfile/configfile.go:New",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/cainjector/configfile/configfile.go",
+      "target": "function:pkg/cainjector/configfile/configfile.go:decodeConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/cainjector/configfile/configfile.go",
+      "target": "function:pkg/cainjector/configfile/configfile.go:DecodeAndConfigure",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/cainjector/configfile/configfile.go",
+      "target": "function:pkg/cainjector/configfile/configfile.go:GetPathRefs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/cainjector/configfile/configfile.go",
+      "target": "function:pkg/cainjector/configfile/configfile.go:CAInjectorConfigurationPathRefs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/configfile/configfile.go",
+      "target": "class:pkg/controller/configfile/configfile.go:ControllerConfigFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/configfile/configfile.go",
+      "target": "function:pkg/controller/configfile/configfile.go:New",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/configfile/configfile.go",
+      "target": "function:pkg/controller/configfile/configfile.go:decodeConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/configfile/configfile.go",
+      "target": "function:pkg/controller/configfile/configfile.go:DecodeAndConfigure",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/configfile/configfile.go",
+      "target": "function:pkg/controller/configfile/configfile.go:GetPathRefs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/controller/configfile/configfile.go",
+      "target": "function:pkg/controller/configfile/configfile.go:ControllerConfigurationPathRefs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/webhook/configfile/configfile.go",
+      "target": "class:pkg/webhook/configfile/configfile.go:WebhookConfigFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/webhook/configfile/configfile.go",
+      "target": "function:pkg/webhook/configfile/configfile.go:New",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/webhook/configfile/configfile.go",
+      "target": "function:pkg/webhook/configfile/configfile.go:decodeConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/webhook/configfile/configfile.go",
+      "target": "function:pkg/webhook/configfile/configfile.go:DecodeAndConfigure",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/webhook/configfile/configfile.go",
+      "target": "function:pkg/webhook/configfile/configfile.go:GetPathRefs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/webhook/configfile/configfile.go",
+      "target": "function:pkg/webhook/configfile/configfile.go:WebhookConfigurationPathRefs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "class:pkg/webhook/options/options.go:WebhookFlags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "function:pkg/webhook/options/options.go:NewWebhookFlags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "function:pkg/webhook/options/options.go:AddFlags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "function:pkg/webhook/options/options.go:NewWebhookConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "function:pkg/webhook/options/options.go:AddConfigFlags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go",
+      "target": "class:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go:TLSConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go",
+      "target": "class:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go:DynamicServingConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go",
+      "target": "class:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go:FilesystemServingConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go",
+      "target": "function:pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go:DeepCopyInto",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go",
+      "target": "function:pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go:DeepCopy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/apis/config/webhook/v1alpha1/register.go",
+      "target": "function:pkg/apis/config/webhook/v1alpha1/register.go:Resource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/apis/config/webhook/v1alpha1/types.go",
+      "target": "class:pkg/apis/config/webhook/v1alpha1/types.go:WebhookConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go",
+      "target": "function:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go:DeepCopyInto",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go",
+      "target": "function:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go:DeepCopy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go",
+      "target": "function:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go:DeepCopyObject",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/cainjector/configfile/configfile.go",
+      "target": "class:pkg/cainjector/configfile/configfile.go:CAInjectorConfigFile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/cainjector/configfile/configfile.go",
+      "target": "function:pkg/cainjector/configfile/configfile.go:New",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/cainjector/configfile/configfile.go",
+      "target": "function:pkg/cainjector/configfile/configfile.go:DecodeAndConfigure",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/cainjector/configfile/configfile.go",
+      "target": "function:pkg/cainjector/configfile/configfile.go:GetPathRefs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/cainjector/configfile/configfile.go",
+      "target": "function:pkg/cainjector/configfile/configfile.go:CAInjectorConfigurationPathRefs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/configfile/configfile.go",
+      "target": "class:pkg/controller/configfile/configfile.go:ControllerConfigFile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/configfile/configfile.go",
+      "target": "function:pkg/controller/configfile/configfile.go:New",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/configfile/configfile.go",
+      "target": "function:pkg/controller/configfile/configfile.go:DecodeAndConfigure",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/configfile/configfile.go",
+      "target": "function:pkg/controller/configfile/configfile.go:GetPathRefs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/configfile/configfile.go",
+      "target": "function:pkg/controller/configfile/configfile.go:ControllerConfigurationPathRefs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/configfile/configfile.go",
+      "target": "class:pkg/webhook/configfile/configfile.go:WebhookConfigFile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/configfile/configfile.go",
+      "target": "function:pkg/webhook/configfile/configfile.go:New",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/configfile/configfile.go",
+      "target": "function:pkg/webhook/configfile/configfile.go:DecodeAndConfigure",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/configfile/configfile.go",
+      "target": "function:pkg/webhook/configfile/configfile.go:GetPathRefs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/configfile/configfile.go",
+      "target": "function:pkg/webhook/configfile/configfile.go:WebhookConfigurationPathRefs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "class:pkg/webhook/options/options.go:WebhookFlags",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "function:pkg/webhook/options/options.go:NewWebhookFlags",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "function:pkg/webhook/options/options.go:AddFlags",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "function:pkg/webhook/options/options.go:NewWebhookConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/webhook/options/options.go",
+      "target": "function:pkg/webhook/options/options.go:AddConfigFlags",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/webhook/options/options.go:NewWebhookConfiguration",
+      "target": "function:internal/apis/config/webhook/scheme/scheme.go:NewSchemeAndCodecs",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/cainjector/configfile/configfile.go:decodeConfiguration",
+      "target": "function:internal/apis/config/cainjector/scheme/scheme.go:NewSchemeAndCodecs",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/configfile/configfile.go:decodeConfiguration",
+      "target": "function:internal/apis/config/controller/scheme/scheme.go:NewSchemeAndCodecs",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/webhook/configfile/configfile.go:decodeConfiguration",
+      "target": "function:internal/apis/config/webhook/scheme/scheme.go:NewSchemeAndCodecs",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/webhook/options/options.go:AddConfigFlags",
+      "target": "function:pkg/logs/logs.go:AddFlags",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

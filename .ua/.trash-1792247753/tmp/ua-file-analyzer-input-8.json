@@ -1,0 +1,487 @@
+{
+ "projectRoot": "/Users/samtyga/Desktop/work/cert-manager",
+ "batchFiles": [
+  {
+   "path": "pkg/util/pki/generate.go",
+   "language": "go",
+   "sizeLines": 224,
+   "fileCategory": "code"
+  },
+  {
+   "path": "pkg/util/pki/keyusage.go",
+   "language": "go",
+   "sizeLines": 207,
+   "fileCategory": "code"
+  },
+  {
+   "path": "pkg/util/pki/kube.go",
+   "language": "go",
+   "sizeLines": 86,
+   "fileCategory": "code"
+  },
+  {
+   "path": "pkg/util/pki/match.go",
+   "language": "go",
+   "sizeLines": 398,
+   "fileCategory": "code"
+  },
+  {
+   "path": "pkg/util/pki/nameconstraints.go",
+   "language": "go",
+   "sizeLines": 316,
+   "fileCategory": "code"
+  },
+  {
+   "path": "pkg/util/pki/parse.go",
+   "language": "go",
+   "sizeLines": 143,
+   "fileCategory": "code"
+  },
+  {
+   "path": "pkg/util/pki/parse_certificate_chain.go",
+   "language": "go",
+   "sizeLines": 271,
+   "fileCategory": "code"
+  },
+  {
+   "path": "pkg/util/pki/renewaltime.go",
+   "language": "go",
+   "sizeLines": 76,
+   "fileCategory": "code"
+  },
+  {
+   "path": "pkg/util/pki/sans.go",
+   "language": "go",
+   "sizeLines": 284,
+   "fileCategory": "code"
+  },
+  {
+   "path": "pkg/util/pki/subject.go",
+   "language": "go",
+   "sizeLines": 139,
+   "fileCategory": "code"
+  },
+  {
+   "path": "pkg/util/pki/temporarycertificate.go",
+   "language": "go",
+   "sizeLines": 68,
+   "fileCategory": "code"
+  },
+  {
+   "path": "pkg/util/predicate/certificate.go",
+   "language": "go",
+   "sizeLines": 46,
+   "fileCategory": "code"
+  },
+  {
+   "path": "pkg/util/predicate/certificaterequest.go",
+   "language": "go",
+   "sizeLines": 37,
+   "fileCategory": "code"
+  },
+  {
+   "path": "pkg/util/predicate/generic.go",
+   "language": "go",
+   "sizeLines": 38,
+   "fileCategory": "code"
+  },
+  {
+   "path": "pkg/util/predicate/predicate.go",
+   "language": "go",
+   "sizeLines": 58,
+   "fileCategory": "code"
+  },
+  {
+   "path": "pkg/util/useragent.go",
+   "language": "go",
+   "sizeLines": 83,
+   "fileCategory": "code"
+  },
+  {
+   "path": "pkg/util/util.go",
+   "language": "go",
+   "sizeLines": 138,
+   "fileCategory": "code"
+  },
+  {
+   "path": "pkg/util/version.go",
+   "language": "go",
+   "sizeLines": 60,
+   "fileCategory": "code"
+  },
+  {
+   "path": "test/acme/server/rfc2136.go",
+   "language": "go",
+   "sizeLines": 117,
+   "fileCategory": "code"
+  },
+  {
+   "path": "test/acme/server/server.go",
+   "language": "go",
+   "sizeLines": 141,
+   "fileCategory": "code"
+  },
+  {
+   "path": "test/unit/crypto/crypto.go",
+   "language": "go",
+   "sizeLines": 292,
+   "fileCategory": "code"
+  },
+  {
+   "path": "test/unit/discovery/discovery.go",
+   "language": "go",
+   "sizeLines": 112,
+   "fileCategory": "code"
+  },
+  {
+   "path": "test/unit/gen/certificate.go",
+   "language": "go",
+   "sizeLines": 302,
+   "fileCategory": "code"
+  },
+  {
+   "path": "test/unit/gen/certificaterequest.go",
+   "language": "go",
+   "sizeLines": 204,
+   "fileCategory": "code"
+  },
+  {
+   "path": "test/unit/gen/certificatesigningrequest.go",
+   "language": "go",
+   "sizeLines": 161,
+   "fileCategory": "code"
+  },
+  {
+   "path": "test/unit/gen/conditions.go",
+   "language": "go",
+   "sizeLines": 68,
+   "fileCategory": "code"
+  },
+  {
+   "path": "test/unit/gen/csr.go",
+   "language": "go",
+   "sizeLines": 230,
+   "fileCategory": "code"
+  },
+  {
+   "path": "test/unit/gen/doc.go",
+   "language": "go",
+   "sizeLines": 18,
+   "fileCategory": "code"
+  },
+  {
+   "path": "test/unit/gen/issuer.go",
+   "language": "go",
+   "sizeLines": 463,
+   "fileCategory": "code"
+  },
+  {
+   "path": "test/unit/gen/objectmeta.go",
+   "language": "go",
+   "sizeLines": 46,
+   "fileCategory": "code"
+  },
+  {
+   "path": "test/unit/gen/secret.go",
+   "language": "go",
+   "sizeLines": 65,
+   "fileCategory": "code"
+  },
+  {
+   "path": "test/webhook/testwebhook.go",
+   "language": "go",
+   "sizeLines": 212,
+   "fileCategory": "code"
+  }
+ ],
+ "batchImportData": {
+  "pkg/util/pki/generate.go": [
+   "pkg/apis/certmanager/v1/const.go",
+   "pkg/apis/certmanager/v1/doc.go",
+   "pkg/apis/certmanager/v1/generic_issuer.go",
+   "pkg/apis/certmanager/v1/register.go",
+   "pkg/apis/certmanager/v1/types.go",
+   "pkg/apis/certmanager/v1/types_certificate.go",
+   "pkg/apis/certmanager/v1/types_certificaterequest.go",
+   "pkg/apis/certmanager/v1/types_issuer.go",
+   "pkg/apis/certmanager/v1/zz_generated.deepcopy.go"
+  ],
+  "pkg/util/pki/keyusage.go": [],
+  "pkg/util/pki/kube.go": [
+   "pkg/api/util/conditions.go",
+   "pkg/api/util/duration.go",
+   "pkg/api/util/issuers.go",
+   "pkg/api/util/kube.go",
+   "pkg/api/util/names.go",
+   "pkg/api/util/usages.go",
+   "pkg/apis/certmanager/v1/const.go",
+   "pkg/apis/certmanager/v1/doc.go",
+   "pkg/apis/certmanager/v1/generic_issuer.go",
+   "pkg/apis/certmanager/v1/register.go",
+   "pkg/apis/certmanager/v1/types.go",
+   "pkg/apis/certmanager/v1/types_certificate.go",
+   "pkg/apis/certmanager/v1/types_certificaterequest.go",
+   "pkg/apis/certmanager/v1/types_issuer.go",
+   "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+   "pkg/apis/experimental/v1alpha1/types.go"
+  ],
+  "pkg/util/pki/match.go": [
+   "pkg/apis/certmanager/doc.go",
+   "pkg/apis/certmanager/v1/const.go",
+   "pkg/apis/certmanager/v1/doc.go",
+   "pkg/apis/certmanager/v1/generic_issuer.go",
+   "pkg/apis/certmanager/v1/register.go",
+   "pkg/apis/certmanager/v1/types.go",
+   "pkg/apis/certmanager/v1/types_certificate.go",
+   "pkg/apis/certmanager/v1/types_certificaterequest.go",
+   "pkg/apis/certmanager/v1/types_issuer.go",
+   "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+   "pkg/util/useragent.go",
+   "pkg/util/util.go",
+   "pkg/util/version.go"
+  ],
+  "pkg/util/pki/nameconstraints.go": [],
+  "pkg/util/pki/parse.go": [
+   "internal/pem/decode.go",
+   "pkg/util/errors/errors.go"
+  ],
+  "pkg/util/pki/parse_certificate_chain.go": [
+   "pkg/util/errors/errors.go"
+  ],
+  "pkg/util/pki/renewaltime.go": [],
+  "pkg/util/pki/sans.go": [],
+  "pkg/util/pki/subject.go": [],
+  "pkg/util/pki/temporarycertificate.go": [
+   "pkg/apis/certmanager/v1/const.go",
+   "pkg/apis/certmanager/v1/doc.go",
+   "pkg/apis/certmanager/v1/generic_issuer.go",
+   "pkg/apis/certmanager/v1/register.go",
+   "pkg/apis/certmanager/v1/types.go",
+   "pkg/apis/certmanager/v1/types_certificate.go",
+   "pkg/apis/certmanager/v1/types_certificaterequest.go",
+   "pkg/apis/certmanager/v1/types_issuer.go",
+   "pkg/apis/certmanager/v1/zz_generated.deepcopy.go"
+  ],
+  "pkg/util/predicate/certificate.go": [
+   "pkg/apis/certmanager/v1/const.go",
+   "pkg/apis/certmanager/v1/doc.go",
+   "pkg/apis/certmanager/v1/generic_issuer.go",
+   "pkg/apis/certmanager/v1/register.go",
+   "pkg/apis/certmanager/v1/types.go",
+   "pkg/apis/certmanager/v1/types_certificate.go",
+   "pkg/apis/certmanager/v1/types_certificaterequest.go",
+   "pkg/apis/certmanager/v1/types_issuer.go",
+   "pkg/apis/certmanager/v1/zz_generated.deepcopy.go"
+  ],
+  "pkg/util/predicate/certificaterequest.go": [
+   "pkg/apis/certmanager/v1/const.go",
+   "pkg/apis/certmanager/v1/doc.go",
+   "pkg/apis/certmanager/v1/generic_issuer.go",
+   "pkg/apis/certmanager/v1/register.go",
+   "pkg/apis/certmanager/v1/types.go",
+   "pkg/apis/certmanager/v1/types_certificate.go",
+   "pkg/apis/certmanager/v1/types_certificaterequest.go",
+   "pkg/apis/certmanager/v1/types_issuer.go",
+   "pkg/apis/certmanager/v1/zz_generated.deepcopy.go"
+  ],
+  "pkg/util/predicate/generic.go": [],
+  "pkg/util/predicate/predicate.go": [],
+  "pkg/util/useragent.go": [],
+  "pkg/util/util.go": [
+   "pkg/apis/certmanager/v1/const.go",
+   "pkg/apis/certmanager/v1/doc.go",
+   "pkg/apis/certmanager/v1/generic_issuer.go",
+   "pkg/apis/certmanager/v1/register.go",
+   "pkg/apis/certmanager/v1/types.go",
+   "pkg/apis/certmanager/v1/types_certificate.go",
+   "pkg/apis/certmanager/v1/types_certificaterequest.go",
+   "pkg/apis/certmanager/v1/types_issuer.go",
+   "pkg/apis/certmanager/v1/zz_generated.deepcopy.go"
+  ],
+  "pkg/util/version.go": [],
+  "test/acme/server/rfc2136.go": [
+   "pkg/logs/logs.go"
+  ],
+  "test/acme/server/server.go": [
+   "pkg/logs/logs.go"
+  ],
+  "test/unit/crypto/crypto.go": [
+   "pkg/api/util/conditions.go",
+   "pkg/api/util/duration.go",
+   "pkg/api/util/issuers.go",
+   "pkg/api/util/kube.go",
+   "pkg/api/util/names.go",
+   "pkg/api/util/usages.go",
+   "pkg/apis/certmanager/v1/const.go",
+   "pkg/apis/certmanager/v1/doc.go",
+   "pkg/apis/certmanager/v1/generic_issuer.go",
+   "pkg/apis/certmanager/v1/register.go",
+   "pkg/apis/certmanager/v1/types.go",
+   "pkg/apis/certmanager/v1/types_certificate.go",
+   "pkg/apis/certmanager/v1/types_certificaterequest.go",
+   "pkg/apis/certmanager/v1/types_issuer.go",
+   "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+   "pkg/apis/meta/v1/doc.go",
+   "pkg/apis/meta/v1/register.go",
+   "pkg/apis/meta/v1/types.go",
+   "pkg/apis/meta/v1/zz_generated.deepcopy.go",
+   "pkg/util/pki/asn1_util.go",
+   "pkg/util/pki/basicconstraints.go",
+   "pkg/util/pki/certificatetemplate.go",
+   "pkg/util/pki/csr.go",
+   "pkg/util/pki/generate.go",
+   "pkg/util/pki/keyusage.go",
+   "pkg/util/pki/kube.go",
+   "pkg/util/pki/match.go",
+   "pkg/util/pki/nameconstraints.go",
+   "pkg/util/pki/parse.go",
+   "pkg/util/pki/parse_certificate_chain.go",
+   "pkg/util/pki/renewaltime.go",
+   "pkg/util/pki/sans.go",
+   "pkg/util/pki/subject.go",
+   "pkg/util/pki/temporarycertificate.go",
+   "test/unit/gen/certificate.go",
+   "test/unit/gen/certificaterequest.go",
+   "test/unit/gen/certificatesigningrequest.go",
+   "test/unit/gen/challenge.go",
+   "test/unit/gen/conditions.go",
+   "test/unit/gen/csr.go",
+   "test/unit/gen/doc.go",
+   "test/unit/gen/issuer.go",
+   "test/unit/gen/objectmeta.go",
+   "test/unit/gen/order.go",
+   "test/unit/gen/secret.go"
+  ],
+  "test/unit/discovery/discovery.go": [],
+  "test/unit/gen/certificate.go": [
+   "internal/apis/certmanager/v1/defaults.go",
+   "internal/apis/certmanager/v1/doc.go",
+   "internal/apis/certmanager/v1/register.go",
+   "internal/apis/certmanager/v1/zz_generated.conversion.go",
+   "internal/apis/certmanager/v1/zz_generated.defaults.go",
+   "pkg/apis/certmanager/v1/const.go",
+   "pkg/apis/certmanager/v1/doc.go",
+   "pkg/apis/certmanager/v1/generic_issuer.go",
+   "pkg/apis/certmanager/v1/register.go",
+   "pkg/apis/certmanager/v1/types.go",
+   "pkg/apis/certmanager/v1/types_certificate.go",
+   "pkg/apis/certmanager/v1/types_certificaterequest.go",
+   "pkg/apis/certmanager/v1/types_issuer.go",
+   "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+   "pkg/apis/meta/v1/doc.go",
+   "pkg/apis/meta/v1/register.go",
+   "pkg/apis/meta/v1/types.go",
+   "pkg/apis/meta/v1/zz_generated.deepcopy.go"
+  ],
+  "test/unit/gen/certificaterequest.go": [
+   "internal/apis/certmanager/v1/defaults.go",
+   "internal/apis/certmanager/v1/doc.go",
+   "internal/apis/certmanager/v1/register.go",
+   "internal/apis/certmanager/v1/zz_generated.conversion.go",
+   "internal/apis/certmanager/v1/zz_generated.defaults.go",
+   "pkg/apis/certmanager/v1/const.go",
+   "pkg/apis/certmanager/v1/doc.go",
+   "pkg/apis/certmanager/v1/generic_issuer.go",
+   "pkg/apis/certmanager/v1/register.go",
+   "pkg/apis/certmanager/v1/types.go",
+   "pkg/apis/certmanager/v1/types_certificate.go",
+   "pkg/apis/certmanager/v1/types_certificaterequest.go",
+   "pkg/apis/certmanager/v1/types_issuer.go",
+   "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+   "pkg/apis/meta/v1/doc.go",
+   "pkg/apis/meta/v1/register.go",
+   "pkg/apis/meta/v1/types.go",
+   "pkg/apis/meta/v1/zz_generated.deepcopy.go"
+  ],
+  "test/unit/gen/certificatesigningrequest.go": [
+   "pkg/apis/experimental/v1alpha1/types.go"
+  ],
+  "test/unit/gen/conditions.go": [
+   "pkg/apis/certmanager/v1/const.go",
+   "pkg/apis/certmanager/v1/doc.go",
+   "pkg/apis/certmanager/v1/generic_issuer.go",
+   "pkg/apis/certmanager/v1/register.go",
+   "pkg/apis/certmanager/v1/types.go",
+   "pkg/apis/certmanager/v1/types_certificate.go",
+   "pkg/apis/certmanager/v1/types_certificaterequest.go",
+   "pkg/apis/certmanager/v1/types_issuer.go",
+   "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+   "pkg/apis/meta/v1/doc.go",
+   "pkg/apis/meta/v1/register.go",
+   "pkg/apis/meta/v1/types.go",
+   "pkg/apis/meta/v1/zz_generated.deepcopy.go"
+  ],
+  "test/unit/gen/csr.go": [
+   "pkg/apis/certmanager/v1/const.go",
+   "pkg/apis/certmanager/v1/doc.go",
+   "pkg/apis/certmanager/v1/generic_issuer.go",
+   "pkg/apis/certmanager/v1/register.go",
+   "pkg/apis/certmanager/v1/types.go",
+   "pkg/apis/certmanager/v1/types_certificate.go",
+   "pkg/apis/certmanager/v1/types_certificaterequest.go",
+   "pkg/apis/certmanager/v1/types_issuer.go",
+   "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+   "pkg/util/pki/asn1_util.go",
+   "pkg/util/pki/basicconstraints.go",
+   "pkg/util/pki/certificatetemplate.go",
+   "pkg/util/pki/csr.go",
+   "pkg/util/pki/generate.go",
+   "pkg/util/pki/keyusage.go",
+   "pkg/util/pki/kube.go",
+   "pkg/util/pki/match.go",
+   "pkg/util/pki/nameconstraints.go",
+   "pkg/util/pki/parse.go",
+   "pkg/util/pki/parse_certificate_chain.go",
+   "pkg/util/pki/renewaltime.go",
+   "pkg/util/pki/sans.go",
+   "pkg/util/pki/subject.go",
+   "pkg/util/pki/temporarycertificate.go"
+  ],
+  "test/unit/gen/doc.go": [],
+  "test/unit/gen/issuer.go": [
+   "pkg/apis/acme/v1/const.go",
+   "pkg/apis/acme/v1/doc.go",
+   "pkg/apis/acme/v1/register.go",
+   "pkg/apis/acme/v1/types.go",
+   "pkg/apis/acme/v1/types_challenge.go",
+   "pkg/apis/acme/v1/types_issuer.go",
+   "pkg/apis/acme/v1/types_order.go",
+   "pkg/apis/acme/v1/zz_generated.deepcopy.go",
+   "pkg/apis/certmanager/v1/const.go",
+   "pkg/apis/certmanager/v1/doc.go",
+   "pkg/apis/certmanager/v1/generic_issuer.go",
+   "pkg/apis/certmanager/v1/register.go",
+   "pkg/apis/certmanager/v1/types.go",
+   "pkg/apis/certmanager/v1/types_certificate.go",
+   "pkg/apis/certmanager/v1/types_certificaterequest.go",
+   "pkg/apis/certmanager/v1/types_issuer.go",
+   "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+   "pkg/apis/meta/v1/doc.go",
+   "pkg/apis/meta/v1/register.go",
+   "pkg/apis/meta/v1/types.go",
+   "pkg/apis/meta/v1/zz_generated.deepcopy.go"
+  ],
+  "test/unit/gen/objectmeta.go": [],
+  "test/unit/gen/secret.go": [],
+  "test/webhook/testwebhook.go": [
+   "internal/webhook/webhook.go",
+   "pkg/util/pki/asn1_util.go",
+   "pkg/util/pki/basicconstraints.go",
+   "pkg/util/pki/certificatetemplate.go",
+   "pkg/util/pki/csr.go",
+   "pkg/util/pki/generate.go",
+   "pkg/util/pki/keyusage.go",
+   "pkg/util/pki/kube.go",
+   "pkg/util/pki/match.go",
+   "pkg/util/pki/nameconstraints.go",
+   "pkg/util/pki/parse.go",
+   "pkg/util/pki/parse_certificate_chain.go",
+   "pkg/util/pki/renewaltime.go",
+   "pkg/util/pki/sans.go",
+   "pkg/util/pki/subject.go",
+   "pkg/util/pki/temporarycertificate.go",
+   "pkg/webhook/options/options.go",
+   "pkg/webhook/server/server.go"
+  ]
+ }
+}

@@ -1,0 +1,7020 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 33,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 33,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 33,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "pkg/api/util/names.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 113,
+      "nonEmptyLines": 91,
+      "functions": [
+        {
+          "name": "ComputeName",
+          "startLine": 31,
+          "endLine": 51,
+          "params": [
+            "prefix",
+            "obj"
+          ]
+        },
+        {
+          "name": "ComputeSecureUniqueDeterministicNameFromData",
+          "startLine": 58,
+          "endLine": 88,
+          "params": [
+            "fullName",
+            "maxNameLength"
+          ]
+        },
+        {
+          "name": "DNSSafeShortenToNCharacters",
+          "startLine": 91,
+          "endLine": 108,
+          "params": [
+            "in",
+            "maxLength"
+          ]
+        },
+        {
+          "name": "DNSSafeShortenTo52Characters",
+          "startLine": 111,
+          "endLine": 113,
+          "params": [
+            "in"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ComputeName",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "ComputeSecureUniqueDeterministicNameFromData",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "DNSSafeShortenToNCharacters",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "DNSSafeShortenTo52Characters",
+          "line": 111,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ComputeName",
+          "callee": "json.Marshal",
+          "lineNumber": 32
+        },
+        {
+          "caller": "ComputeName",
+          "callee": "fnv.New32",
+          "lineNumber": 37
+        },
+        {
+          "caller": "ComputeName",
+          "callee": "hashF.Write",
+          "lineNumber": 38
+        },
+        {
+          "caller": "ComputeName",
+          "callee": "DNSSafeShortenTo52Characters",
+          "lineNumber": 45
+        },
+        {
+          "caller": "ComputeName",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 50
+        },
+        {
+          "caller": "ComputeName",
+          "callee": "hashF.Sum32",
+          "lineNumber": 50
+        },
+        {
+          "caller": "ComputeSecureUniqueDeterministicNameFromData",
+          "callee": "fmt.Errorf",
+          "lineNumber": 61
+        },
+        {
+          "caller": "ComputeSecureUniqueDeterministicNameFromData",
+          "callee": "len",
+          "lineNumber": 64
+        },
+        {
+          "caller": "ComputeSecureUniqueDeterministicNameFromData",
+          "callee": "sha256.New",
+          "lineNumber": 68
+        },
+        {
+          "caller": "ComputeSecureUniqueDeterministicNameFromData",
+          "callee": "hash.Write",
+          "lineNumber": 70
+        },
+        {
+          "caller": "ComputeSecureUniqueDeterministicNameFromData",
+          "callee": "DNSSafeShortenToNCharacters",
+          "lineNumber": 80
+        },
+        {
+          "caller": "ComputeSecureUniqueDeterministicNameFromData",
+          "callee": "hash.Sum",
+          "lineNumber": 81
+        },
+        {
+          "caller": "ComputeSecureUniqueDeterministicNameFromData",
+          "callee": "len",
+          "lineNumber": 83
+        },
+        {
+          "caller": "ComputeSecureUniqueDeterministicNameFromData",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 84
+        },
+        {
+          "caller": "ComputeSecureUniqueDeterministicNameFromData",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 87
+        },
+        {
+          "caller": "DNSSafeShortenToNCharacters",
+          "callee": "regexp.MustCompile",
+          "lineNumber": 92
+        },
+        {
+          "caller": "DNSSafeShortenToNCharacters",
+          "callee": "len",
+          "lineNumber": 94
+        },
+        {
+          "caller": "DNSSafeShortenToNCharacters",
+          "callee": "alphaNumeric.FindAllStringIndex",
+          "lineNumber": 102
+        },
+        {
+          "caller": "DNSSafeShortenToNCharacters",
+          "callee": "len",
+          "lineNumber": 103
+        },
+        {
+          "caller": "DNSSafeShortenToNCharacters",
+          "callee": "len",
+          "lineNumber": 107
+        },
+        {
+          "caller": "DNSSafeShortenTo52Characters",
+          "callee": "DNSSafeShortenToNCharacters",
+          "lineNumber": 112
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/api/util/usages.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 119,
+      "nonEmptyLines": 97,
+      "functions": [
+        {
+          "name": "KeyUsageType",
+          "startLine": 56,
+          "endLine": 59,
+          "params": [
+            "usage"
+          ]
+        },
+        {
+          "name": "ExtKeyUsageType",
+          "startLine": 62,
+          "endLine": 65,
+          "params": [
+            "usage"
+          ]
+        },
+        {
+          "name": "KeyUsageStrings",
+          "startLine": 68,
+          "endLine": 78,
+          "params": [
+            "usage"
+          ]
+        },
+        {
+          "name": "ExtKeyUsageStrings",
+          "startLine": 81,
+          "endLine": 89,
+          "params": [
+            "usage"
+          ]
+        },
+        {
+          "name": "keyUsageString",
+          "startLine": 92,
+          "endLine": 104,
+          "params": [
+            "usage"
+          ]
+        },
+        {
+          "name": "extKeyUsageString",
+          "startLine": 107,
+          "endLine": 119,
+          "params": [
+            "usage"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "KeyUsageType",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "ExtKeyUsageType",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "KeyUsageStrings",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "ExtKeyUsageStrings",
+          "line": 81,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "KeyUsageStrings",
+          "callee": "append",
+          "lineNumber": 73
+        },
+        {
+          "caller": "KeyUsageStrings",
+          "callee": "keyUsageString",
+          "lineNumber": 73
+        },
+        {
+          "caller": "ExtKeyUsageStrings",
+          "callee": "append",
+          "lineNumber": 85
+        },
+        {
+          "caller": "ExtKeyUsageStrings",
+          "callee": "extKeyUsageString",
+          "lineNumber": 85
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 4,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/certmanager/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/certmanager/v1/const.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 36,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/certmanager/v1/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 18,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/certmanager/v1/generic_issuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 74,
+      "functions": [
+        {
+          "name": "GetObjectMeta",
+          "startLine": 38,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "GetSpec",
+          "startLine": 41,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "GetStatus",
+          "startLine": 44,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "SetSpec",
+          "startLine": 47,
+          "endLine": 49,
+          "params": [
+            "spec"
+          ]
+        },
+        {
+          "name": "SetStatus",
+          "startLine": 50,
+          "endLine": 52,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "Copy",
+          "startLine": 53,
+          "endLine": 55,
+          "params": []
+        },
+        {
+          "name": "GetObjectMeta",
+          "startLine": 56,
+          "endLine": 58,
+          "params": []
+        },
+        {
+          "name": "GetSpec",
+          "startLine": 59,
+          "endLine": 61,
+          "params": []
+        },
+        {
+          "name": "GetStatus",
+          "startLine": 62,
+          "endLine": 64,
+          "params": []
+        },
+        {
+          "name": "SetSpec",
+          "startLine": 65,
+          "endLine": 67,
+          "params": [
+            "spec"
+          ]
+        },
+        {
+          "name": "SetStatus",
+          "startLine": 68,
+          "endLine": 70,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "Copy",
+          "startLine": 71,
+          "endLine": 73,
+          "params": []
+        },
+        {
+          "name": "ACMEStatus",
+          "startLine": 76,
+          "endLine": 85,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "GenericIssuer",
+          "startLine": 26,
+          "endLine": 33,
+          "methods": [
+            "GetObjectMeta",
+            "GetSpec",
+            "GetStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "GenericIssuer",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "GetObjectMeta",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "GetSpec",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "GetStatus",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "SetSpec",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "SetStatus",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "Copy",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "GetObjectMeta",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "GetSpec",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "GetStatus",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "SetSpec",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "SetStatus",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "Copy",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "ACMEStatus",
+          "line": 76,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Copy",
+          "callee": "c.DeepCopy",
+          "lineNumber": 54
+        },
+        {
+          "caller": "Copy",
+          "callee": "c.DeepCopy",
+          "lineNumber": 72
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 14,
+        "functionCount": 13,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/apis/certmanager/v1/register.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "Resource",
+          "startLine": 31,
+          "endLine": 33,
+          "params": [
+            "resource"
+          ]
+        },
+        {
+          "name": "init",
+          "startLine": 41,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "addKnownTypes",
+          "startLine": 49,
+          "endLine": 62,
+          "params": [
+            "scheme"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Resource",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource(resource).GroupResource",
+          "lineNumber": 32
+        },
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource",
+          "lineNumber": 32
+        },
+        {
+          "caller": "init",
+          "callee": "localSchemeBuilder.Register",
+          "lineNumber": 45
+        },
+        {
+          "caller": "addKnownTypes",
+          "callee": "scheme.AddKnownTypes",
+          "lineNumber": 50
+        },
+        {
+          "caller": "addKnownTypes",
+          "callee": "metav1.AddToGroupVersion",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/certmanager/v1/types.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 310,
+      "nonEmptyLines": 257,
+      "functions": [
+        {
+          "name": "DefaultKeyUsages",
+          "startLine": 303,
+          "endLine": 310,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DefaultKeyUsages",
+          "line": 303,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/certmanager/v1/types_certificate.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 771,
+      "nonEmptyLines": 674,
+      "classes": [
+        {
+          "name": "Certificate",
+          "startLine": 42,
+          "endLine": 60,
+          "methods": [],
+          "properties": [
+            "Spec",
+            "Status"
+          ]
+        },
+        {
+          "name": "CertificateList",
+          "startLine": 65,
+          "endLine": 74,
+          "methods": [],
+          "properties": [
+            "Items"
+          ]
+        },
+        {
+          "name": "CertificateSpec",
+          "startLine": 132,
+          "endLine": 326,
+          "methods": [],
+          "properties": [
+            "Subject",
+            "LiteralSubject",
+            "CommonName",
+            "Duration",
+            "RenewBefore",
+            "RenewBeforePercentage",
+            "DNSNames",
+            "IPAddresses",
+            "URIs",
+            "OtherNames",
+            "EmailAddresses",
+            "SecretName",
+            "SecretTemplate",
+            "Keystores",
+            "IssuerRef",
+            "IsCA",
+            "Usages",
+            "PrivateKey",
+            "SignatureAlgorithm",
+            "EncodeUsagesInRequest",
+            "RevisionHistoryLimit",
+            "AdditionalOutputFormats",
+            "NameConstraints"
+          ]
+        },
+        {
+          "name": "OtherName",
+          "startLine": 328,
+          "endLine": 337,
+          "methods": [],
+          "properties": [
+            "OID",
+            "UTF8Value"
+          ]
+        },
+        {
+          "name": "CertificatePrivateKey",
+          "startLine": 343,
+          "endLine": 391,
+          "methods": [],
+          "properties": [
+            "RotationPolicy",
+            "Encoding",
+            "Algorithm",
+            "Size"
+          ]
+        },
+        {
+          "name": "CertificateAdditionalOutputFormat",
+          "startLine": 446,
+          "endLine": 450,
+          "methods": [],
+          "properties": [
+            "Type"
+          ]
+        },
+        {
+          "name": "X509Subject",
+          "startLine": 453,
+          "endLine": 485,
+          "methods": [],
+          "properties": [
+            "Organizations",
+            "Countries",
+            "OrganizationalUnits",
+            "Localities",
+            "Provinces",
+            "StreetAddresses",
+            "PostalCodes",
+            "SerialNumber"
+          ]
+        },
+        {
+          "name": "CertificateKeystores",
+          "startLine": 489,
+          "endLine": 499,
+          "methods": [],
+          "properties": [
+            "JKS",
+            "PKCS12"
+          ]
+        },
+        {
+          "name": "JKSKeystore",
+          "startLine": 503,
+          "endLine": 532,
+          "methods": [],
+          "properties": [
+            "Create",
+            "Alias",
+            "PasswordSecretRef",
+            "Password"
+          ]
+        },
+        {
+          "name": "PKCS12Keystore",
+          "startLine": 536,
+          "endLine": 572,
+          "methods": [],
+          "properties": [
+            "Create",
+            "Profile",
+            "PasswordSecretRef",
+            "Password"
+          ]
+        },
+        {
+          "name": "CertificateStatus",
+          "startLine": 589,
+          "endLine": 654,
+          "methods": [],
+          "properties": [
+            "Conditions",
+            "LastFailureTime",
+            "NotBefore",
+            "NotAfter",
+            "RenewalTime",
+            "Revision",
+            "NextPrivateKeySecretName",
+            "FailedIssuanceAttempts"
+          ]
+        },
+        {
+          "name": "CertificateCondition",
+          "startLine": 657,
+          "endLine": 686,
+          "methods": [],
+          "properties": [
+            "Type",
+            "Status",
+            "LastTransitionTime",
+            "Reason",
+            "Message",
+            "ObservedGeneration"
+          ]
+        },
+        {
+          "name": "CertificateSecretTemplate",
+          "startLine": 721,
+          "endLine": 729,
+          "methods": [],
+          "properties": [
+            "Annotations",
+            "Labels"
+          ]
+        },
+        {
+          "name": "NameConstraints",
+          "startLine": 732,
+          "endLine": 747,
+          "methods": [],
+          "properties": [
+            "Critical",
+            "Permitted",
+            "Excluded"
+          ]
+        },
+        {
+          "name": "NameConstraintItem",
+          "startLine": 749,
+          "endLine": 771,
+          "methods": [],
+          "properties": [
+            "DNSDomains",
+            "IPRanges",
+            "EmailAddresses",
+            "URIDomains"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Certificate",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateList",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateSpec",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "OtherName",
+          "line": 328,
+          "isDefault": false
+        },
+        {
+          "name": "CertificatePrivateKey",
+          "line": 343,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateAdditionalOutputFormat",
+          "line": 446,
+          "isDefault": false
+        },
+        {
+          "name": "X509Subject",
+          "line": 453,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateKeystores",
+          "line": 489,
+          "isDefault": false
+        },
+        {
+          "name": "JKSKeystore",
+          "line": 503,
+          "isDefault": false
+        },
+        {
+          "name": "PKCS12Keystore",
+          "line": 536,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateStatus",
+          "line": 589,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateCondition",
+          "line": 657,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateSecretTemplate",
+          "line": 721,
+          "isDefault": false
+        },
+        {
+          "name": "NameConstraints",
+          "line": 732,
+          "isDefault": false
+        },
+        {
+          "name": "NameConstraintItem",
+          "line": 749,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 15,
+        "functionCount": 0,
+        "classCount": 15
+      }
+    },
+    {
+      "path": "pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 258,
+      "nonEmptyLines": 221,
+      "classes": [
+        {
+          "name": "CertificateRequest",
+          "startLine": 67,
+          "endLine": 85,
+          "methods": [],
+          "properties": [
+            "Spec",
+            "Status"
+          ]
+        },
+        {
+          "name": "CertificateRequestList",
+          "startLine": 90,
+          "endLine": 99,
+          "methods": [],
+          "properties": [
+            "Items"
+          ]
+        },
+        {
+          "name": "CertificateRequestSpec",
+          "startLine": 108,
+          "endLine": 174,
+          "methods": [],
+          "properties": [
+            "Duration",
+            "IssuerRef",
+            "Request",
+            "IsCA",
+            "Usages",
+            "Username",
+            "UID",
+            "Groups",
+            "Extra"
+          ]
+        },
+        {
+          "name": "CertificateRequestStatus",
+          "startLine": 178,
+          "endLine": 205,
+          "methods": [],
+          "properties": [
+            "Conditions",
+            "Certificate",
+            "CA",
+            "FailureTime"
+          ]
+        },
+        {
+          "name": "CertificateRequestCondition",
+          "startLine": 208,
+          "endLine": 230,
+          "methods": [],
+          "properties": [
+            "Type",
+            "Status",
+            "LastTransitionTime",
+            "Reason",
+            "Message"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateRequest",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateRequestList",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateRequestSpec",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateRequestStatus",
+          "line": 178,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateRequestCondition",
+          "line": 208,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 5,
+        "functionCount": 0,
+        "classCount": 5
+      }
+    },
+    {
+      "path": "pkg/apis/certmanager/v1/types_issuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 450,
+      "nonEmptyLines": 376,
+      "classes": [
+        {
+          "name": "ClusterIssuer",
+          "startLine": 41,
+          "endLine": 51,
+          "methods": [],
+          "properties": [
+            "Spec",
+            "Status"
+          ]
+        },
+        {
+          "name": "ClusterIssuerList",
+          "startLine": 56,
+          "endLine": 61,
+          "methods": [],
+          "properties": [
+            "Items"
+          ]
+        },
+        {
+          "name": "Issuer",
+          "startLine": 76,
+          "endLine": 86,
+          "methods": [],
+          "properties": [
+            "Spec",
+            "Status"
+          ]
+        },
+        {
+          "name": "IssuerList",
+          "startLine": 91,
+          "endLine": 96,
+          "methods": [],
+          "properties": [
+            "Items"
+          ]
+        },
+        {
+          "name": "IssuerSpec",
+          "startLine": 100,
+          "endLine": 102,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "IssuerConfig",
+          "startLine": 106,
+          "endLine": 132,
+          "methods": [],
+          "properties": [
+            "ACME",
+            "CA",
+            "Vault",
+            "SelfSigned",
+            "Venafi"
+          ]
+        },
+        {
+          "name": "VenafiIssuer",
+          "startLine": 136,
+          "endLine": 152,
+          "methods": [],
+          "properties": [
+            "Zone",
+            "TPP",
+            "Cloud"
+          ]
+        },
+        {
+          "name": "VenafiTPP",
+          "startLine": 155,
+          "endLine": 179,
+          "methods": [],
+          "properties": [
+            "URL",
+            "CredentialsRef",
+            "CABundle",
+            "CABundleSecretRef"
+          ]
+        },
+        {
+          "name": "VenafiCloud",
+          "startLine": 182,
+          "endLine": 190,
+          "methods": [],
+          "properties": [
+            "URL",
+            "APITokenSecretRef"
+          ]
+        },
+        {
+          "name": "SelfSignedIssuer",
+          "startLine": 194,
+          "endLine": 201,
+          "methods": [],
+          "properties": [
+            "CRLDistributionPoints"
+          ]
+        },
+        {
+          "name": "VaultIssuer",
+          "startLine": 205,
+          "endLine": 253,
+          "methods": [],
+          "properties": [
+            "Auth",
+            "Server",
+            "ServerName",
+            "Path",
+            "Namespace",
+            "CABundle",
+            "CABundleSecretRef",
+            "ClientCertSecretRef",
+            "ClientKeySecretRef"
+          ]
+        },
+        {
+          "name": "VaultAuth",
+          "startLine": 257,
+          "endLine": 277,
+          "methods": [],
+          "properties": [
+            "TokenSecretRef",
+            "AppRole",
+            "ClientCertificate",
+            "Kubernetes"
+          ]
+        },
+        {
+          "name": "VaultAppRole",
+          "startLine": 281,
+          "endLine": 295,
+          "methods": [],
+          "properties": [
+            "Path",
+            "RoleId",
+            "SecretRef"
+          ]
+        },
+        {
+          "name": "VaultClientCertificateAuth",
+          "startLine": 299,
+          "endLine": 317,
+          "methods": [],
+          "properties": [
+            "Path",
+            "SecretName",
+            "Name"
+          ]
+        },
+        {
+          "name": "VaultKubernetesAuth",
+          "startLine": 321,
+          "endLine": 347,
+          "methods": [],
+          "properties": [
+            "Path",
+            "SecretRef",
+            "ServiceAccountRef",
+            "Role"
+          ]
+        },
+        {
+          "name": "ServiceAccountRef",
+          "startLine": 354,
+          "endLine": 362,
+          "methods": [],
+          "properties": [
+            "Name",
+            "TokenAudiences"
+          ]
+        },
+        {
+          "name": "CAIssuer",
+          "startLine": 364,
+          "endLine": 391,
+          "methods": [],
+          "properties": [
+            "SecretName",
+            "CRLDistributionPoints",
+            "OCSPServers",
+            "IssuingCertificateURLs"
+          ]
+        },
+        {
+          "name": "IssuerStatus",
+          "startLine": 394,
+          "endLine": 407,
+          "methods": [],
+          "properties": [
+            "Conditions",
+            "ACME"
+          ]
+        },
+        {
+          "name": "IssuerCondition",
+          "startLine": 410,
+          "endLine": 439,
+          "methods": [],
+          "properties": [
+            "Type",
+            "Status",
+            "LastTransitionTime",
+            "Reason",
+            "Message",
+            "ObservedGeneration"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ClusterIssuer",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "ClusterIssuerList",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "Issuer",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "IssuerList",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "IssuerSpec",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "IssuerConfig",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "VenafiIssuer",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "VenafiTPP",
+          "line": 155,
+          "isDefault": false
+        },
+        {
+          "name": "VenafiCloud",
+          "line": 182,
+          "isDefault": false
+        },
+        {
+          "name": "SelfSignedIssuer",
+          "line": 194,
+          "isDefault": false
+        },
+        {
+          "name": "VaultIssuer",
+          "line": 205,
+          "isDefault": false
+        },
+        {
+          "name": "VaultAuth",
+          "line": 257,
+          "isDefault": false
+        },
+        {
+          "name": "VaultAppRole",
+          "line": 281,
+          "isDefault": false
+        },
+        {
+          "name": "VaultClientCertificateAuth",
+          "line": 299,
+          "isDefault": false
+        },
+        {
+          "name": "VaultKubernetesAuth",
+          "line": 321,
+          "isDefault": false
+        },
+        {
+          "name": "ServiceAccountRef",
+          "line": 354,
+          "isDefault": false
+        },
+        {
+          "name": "CAIssuer",
+          "line": 364,
+          "isDefault": false
+        },
+        {
+          "name": "IssuerStatus",
+          "line": 394,
+          "isDefault": false
+        },
+        {
+          "name": "IssuerCondition",
+          "line": 410,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 19,
+        "functionCount": 0,
+        "classCount": 19
+      }
+    },
+    {
+      "path": "pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 1201,
+      "nonEmptyLines": 1108,
+      "functions": [
+        {
+          "name": "DeepCopyInto",
+          "startLine": 32,
+          "endLine": 50,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 53,
+          "endLine": 60,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 63,
+          "endLine": 70,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 73,
+          "endLine": 80,
+          "params": []
+        },
+        {
+          "name": "DeepCopyObject",
+          "startLine": 83,
+          "endLine": 88,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 91,
+          "endLine": 94,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 97,
+          "endLine": 104,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 107,
+          "endLine": 114,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 117,
+          "endLine": 124,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 127,
+          "endLine": 140,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 143,
+          "endLine": 150,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 153,
+          "endLine": 165,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 168,
+          "endLine": 175,
+          "params": []
+        },
+        {
+          "name": "DeepCopyObject",
+          "startLine": 178,
+          "endLine": 183,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 186,
+          "endLine": 189,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 192,
+          "endLine": 199,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 202,
+          "endLine": 209,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 212,
+          "endLine": 219,
+          "params": []
+        },
+        {
+          "name": "DeepCopyObject",
+          "startLine": 222,
+          "endLine": 227,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 230,
+          "endLine": 237,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 240,
+          "endLine": 247,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 250,
+          "endLine": 262,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 265,
+          "endLine": 272,
+          "params": []
+        },
+        {
+          "name": "DeepCopyObject",
+          "startLine": 275,
+          "endLine": 280,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 283,
+          "endLine": 322,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 325,
+          "endLine": 332,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 335,
+          "endLine": 359,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 362,
+          "endLine": 369,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 372,
+          "endLine": 389,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 392,
+          "endLine": 399,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 402,
+          "endLine": 491,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 494,
+          "endLine": 501,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 504,
+          "endLine": 545,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 548,
+          "endLine": 555,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 558,
+          "endLine": 565,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 568,
+          "endLine": 575,
+          "params": []
+        },
+        {
+          "name": "DeepCopyObject",
+          "startLine": 578,
+          "endLine": 583,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 586,
+          "endLine": 598,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 601,
+          "endLine": 608,
+          "params": []
+        },
+        {
+          "name": "DeepCopyObject",
+          "startLine": 611,
+          "endLine": 616,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 619,
+          "endLine": 626,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 629,
+          "endLine": 636,
+          "params": []
+        },
+        {
+          "name": "DeepCopyObject",
+          "startLine": 639,
+          "endLine": 644,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 647,
+          "endLine": 654,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 657,
+          "endLine": 664,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 667,
+          "endLine": 695,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 698,
+          "endLine": 705,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 708,
+          "endLine": 720,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 723,
+          "endLine": 730,
+          "params": []
+        },
+        {
+          "name": "DeepCopyObject",
+          "startLine": 733,
+          "endLine": 738,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 741,
+          "endLine": 745,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 748,
+          "endLine": 755,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 758,
+          "endLine": 773,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 776,
+          "endLine": 783,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 786,
+          "endLine": 800,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 803,
+          "endLine": 810,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 813,
+          "endLine": 836,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 839,
+          "endLine": 846,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 849,
+          "endLine": 862,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 865,
+          "endLine": 872,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 875,
+          "endLine": 878,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 881,
+          "endLine": 888,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 891,
+          "endLine": 900,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 903,
+          "endLine": 910,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 913,
+          "endLine": 921,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 924,
+          "endLine": 931,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 934,
+          "endLine": 942,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 945,
+          "endLine": 952,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 955,
+          "endLine": 959,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 962,
+          "endLine": 969,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 972,
+          "endLine": 995,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 998,
+          "endLine": 1005,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 1008,
+          "endLine": 1011,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 1014,
+          "endLine": 1021,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 1024,
+          "endLine": 1048,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 1051,
+          "endLine": 1058,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 1061,
+          "endLine": 1070,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 1073,
+          "endLine": 1080,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 1083,
+          "endLine": 1087,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 1090,
+          "endLine": 1097,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 1100,
+          "endLine": 1113,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 1116,
+          "endLine": 1123,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 1126,
+          "endLine": 1140,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 1143,
+          "endLine": 1150,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 1153,
+          "endLine": 1191,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 1194,
+          "endLine": 1201,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeepCopyInto",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyObject",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 153,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 168,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyObject",
+          "line": 178,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 186,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 192,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 202,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 212,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyObject",
+          "line": 222,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 230,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 240,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 250,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 265,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyObject",
+          "line": 275,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 283,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 325,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 335,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 362,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 372,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 392,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 402,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 494,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 504,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 548,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 558,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 568,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyObject",
+          "line": 578,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 586,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 601,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyObject",
+          "line": 611,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 619,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 629,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyObject",
+          "line": 639,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 647,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 657,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 667,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 698,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 708,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 723,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyObject",
+          "line": 733,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 741,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 748,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 758,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 776,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 786,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 803,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 813,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 839,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 849,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 865,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 875,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 881,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 891,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 903,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 913,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 924,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 934,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 945,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 955,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 962,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 972,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 998,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 1008,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 1014,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 1024,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 1051,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 1061,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 1073,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 1083,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 1090,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 1100,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 1116,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 1126,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 1143,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 1153,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 1194,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 36
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 36
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 37
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 41
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 41
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 42
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 46
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 46
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 47
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 57
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 58
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.ObjectMeta.DeepCopyInto",
+          "lineNumber": 66
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Spec.DeepCopyInto",
+          "lineNumber": 67
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Status.DeepCopyInto",
+          "lineNumber": 68
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 77
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 78
+        },
+        {
+          "caller": "DeepCopyObject",
+          "callee": "in.DeepCopy",
+          "lineNumber": 84
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 101
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 102
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopy",
+          "lineNumber": 111
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 121
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 122
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 131
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 132
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 136
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 137
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 147
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 148
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.ListMeta.DeepCopyInto",
+          "lineNumber": 156
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 159
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 159
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in)[i].DeepCopyInto",
+          "lineNumber": 161
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 172
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 173
+        },
+        {
+          "caller": "DeepCopyObject",
+          "callee": "in.DeepCopy",
+          "lineNumber": 179
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 196
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 197
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.ObjectMeta.DeepCopyInto",
+          "lineNumber": 205
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Spec.DeepCopyInto",
+          "lineNumber": 206
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Status.DeepCopyInto",
+          "lineNumber": 207
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 216
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 217
+        },
+        {
+          "caller": "DeepCopyObject",
+          "callee": "in.DeepCopy",
+          "lineNumber": 223
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopy",
+          "lineNumber": 234
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 244
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 245
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.ListMeta.DeepCopyInto",
+          "lineNumber": 253
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 256
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 256
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in)[i].DeepCopyInto",
+          "lineNumber": 258
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 269
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 270
+        },
+        {
+          "caller": "DeepCopyObject",
+          "callee": "in.DeepCopy",
+          "lineNumber": 276
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 287
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 293
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 293
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 294
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 298
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 298
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 299
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 303
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 303
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 304
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 308
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 308
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 315
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 315
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 316
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 329
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 330
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 339
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 339
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in)[i].DeepCopyInto",
+          "lineNumber": 341
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 346
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 346
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 347
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 351
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 351
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 352
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopy",
+          "lineNumber": 356
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 366
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 367
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 376
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 376
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 383
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 383
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 396
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 397
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 406
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 407
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 411
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 416
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 421
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 426
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 426
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 427
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 431
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 431
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 432
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 436
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 436
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 437
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 441
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 441
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 442
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 446
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 446
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 447
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 451
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 452
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 456
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 457
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 462
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 462
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 463
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 467
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 472
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 477
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 482
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 482
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 483
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 487
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 488
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 498
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 499
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 508
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 508
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in)[i].DeepCopyInto",
+          "lineNumber": 510
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopy",
+          "lineNumber": 515
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopy",
+          "lineNumber": 519
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopy",
+          "lineNumber": 523
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopy",
+          "lineNumber": 527
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 531
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 536
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 541
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 552
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 553
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.ObjectMeta.DeepCopyInto",
+          "lineNumber": 561
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Spec.DeepCopyInto",
+          "lineNumber": 562
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Status.DeepCopyInto",
+          "lineNumber": 563
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 572
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 573
+        },
+        {
+          "caller": "DeepCopyObject",
+          "callee": "in.DeepCopy",
+          "lineNumber": 579
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.ListMeta.DeepCopyInto",
+          "lineNumber": 589
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 592
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 592
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in)[i].DeepCopyInto",
+          "lineNumber": 594
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 605
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 606
+        },
+        {
+          "caller": "DeepCopyObject",
+          "callee": "in.DeepCopy",
+          "lineNumber": 612
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.ObjectMeta.DeepCopyInto",
+          "lineNumber": 622
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Spec.DeepCopyInto",
+          "lineNumber": 623
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Status.DeepCopyInto",
+          "lineNumber": 624
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 633
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 634
+        },
+        {
+          "caller": "DeepCopyObject",
+          "callee": "in.DeepCopy",
+          "lineNumber": 640
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopy",
+          "lineNumber": 651
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 661
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 662
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 671
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 672
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 676
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 677
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 681
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 682
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 686
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 687
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 691
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 692
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 702
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 703
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.ListMeta.DeepCopyInto",
+          "lineNumber": 711
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 714
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 714
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in)[i].DeepCopyInto",
+          "lineNumber": 716
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 727
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 728
+        },
+        {
+          "caller": "DeepCopyObject",
+          "callee": "in.DeepCopy",
+          "lineNumber": 734
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.IssuerConfig.DeepCopyInto",
+          "lineNumber": 743
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 752
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 753
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 762
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 762
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in)[i].DeepCopyInto",
+          "lineNumber": 764
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 769
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 780
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 781
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 790
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 796
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 807
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 808
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 817
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 817
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 818
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 822
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 822
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 823
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 827
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 827
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 828
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 832
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 832
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 833
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 843
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 844
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 853
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 854
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 858
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 859
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 869
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 870
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 885
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 886
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 896
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 907
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 908
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 917
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 917
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 918
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 928
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 929
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 938
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 938
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 939
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 949
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 950
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 966
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 967
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 976
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 981
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 986
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 991
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 992
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 1002
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 1003
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 1018
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 1019
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "in.Auth.DeepCopyInto",
+          "lineNumber": 1026
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 1029
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 1029
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 1030
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 1034
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 1039
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 1044
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 1055
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 1056
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 1066
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 1067
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 1077
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 1078
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 1094
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 1095
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 1104
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "(*in).DeepCopyInto",
+          "lineNumber": 1105
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 1109
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 1120
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 1121
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 1131
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 1131
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 1132
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "new",
+          "lineNumber": 1136
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 1147
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 1148
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 1157
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 1157
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 1158
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 1162
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 1162
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 1163
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 1167
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 1167
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 1168
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 1172
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 1172
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 1173
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 1177
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 1177
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 1178
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 1182
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 1182
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 1183
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "make",
+          "lineNumber": 1187
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "len",
+          "lineNumber": 1187
+        },
+        {
+          "caller": "DeepCopyInto",
+          "callee": "copy",
+          "lineNumber": 1188
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 1198
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 1199
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 86,
+        "functionCount": 86,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/experimental/v1alpha1/types.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 52,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/meta/v1/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 17,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/meta/v1/register.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 40,
+      "functions": [
+        {
+          "name": "Resource",
+          "startLine": 30,
+          "endLine": 32,
+          "params": [
+            "resource"
+          ]
+        },
+        {
+          "name": "init",
+          "startLine": 40,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "addKnownTypes",
+          "startLine": 48,
+          "endLine": 51,
+          "params": [
+            "scheme"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Resource",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource(resource).GroupResource",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Resource",
+          "callee": "SchemeGroupVersion.WithResource",
+          "lineNumber": 31
+        },
+        {
+          "caller": "init",
+          "callee": "localSchemeBuilder.Register",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/meta/v1/types.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 71,
+      "classes": [
+        {
+          "name": "LocalObjectReference",
+          "startLine": 45,
+          "endLine": 49,
+          "methods": [],
+          "properties": [
+            "Name"
+          ]
+        },
+        {
+          "name": "IssuerReference",
+          "startLine": 52,
+          "endLine": 63,
+          "methods": [],
+          "properties": [
+            "Name",
+            "Kind",
+            "Group"
+          ]
+        },
+        {
+          "name": "SecretKeySelector",
+          "startLine": 71,
+          "endLine": 80,
+          "methods": [],
+          "properties": [
+            "Key"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LocalObjectReference",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "IssuerReference",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "SecretKeySelector",
+          "line": 71,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "DeepCopyInto",
+          "startLine": 25,
+          "endLine": 28,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 31,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 41,
+          "endLine": 44,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 47,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "DeepCopyInto",
+          "startLine": 57,
+          "endLine": 61,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "DeepCopy",
+          "startLine": 64,
+          "endLine": 71,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeepCopyInto",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopyInto",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "DeepCopy",
+          "line": 64,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 35
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 36
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 51
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 52
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "new",
+          "lineNumber": 68
+        },
+        {
+          "caller": "DeepCopy",
+          "callee": "in.DeepCopyInto",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificatecondition.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 76,
+      "functions": [
+        {
+          "name": "CertificateCondition",
+          "startLine": 40,
+          "endLine": 42,
+          "params": []
+        },
+        {
+          "name": "WithType",
+          "startLine": 47,
+          "endLine": 50,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithStatus",
+          "startLine": 55,
+          "endLine": 58,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithLastTransitionTime",
+          "startLine": 63,
+          "endLine": 66,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithReason",
+          "startLine": 71,
+          "endLine": 74,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithMessage",
+          "startLine": 79,
+          "endLine": 82,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithObservedGeneration",
+          "startLine": 87,
+          "endLine": 90,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertificateConditionApplyConfiguration",
+          "startLine": 29,
+          "endLine": 36,
+          "methods": [
+            "WithType",
+            "WithStatus",
+            "WithLastTransitionTime",
+            "WithReason",
+            "WithMessage",
+            "WithObservedGeneration"
+          ],
+          "properties": [
+            "Type",
+            "Status",
+            "LastTransitionTime",
+            "Reason",
+            "Message",
+            "ObservedGeneration"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateConditionApplyConfiguration",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateCondition",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "WithType",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "WithStatus",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "WithLastTransitionTime",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "WithReason",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "WithMessage",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "WithObservedGeneration",
+          "line": 87,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificaterequestcondition.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 68,
+      "functions": [
+        {
+          "name": "CertificateRequestCondition",
+          "startLine": 39,
+          "endLine": 41,
+          "params": []
+        },
+        {
+          "name": "WithType",
+          "startLine": 46,
+          "endLine": 49,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithStatus",
+          "startLine": 54,
+          "endLine": 57,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithLastTransitionTime",
+          "startLine": 62,
+          "endLine": 65,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithReason",
+          "startLine": 70,
+          "endLine": 73,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithMessage",
+          "startLine": 78,
+          "endLine": 81,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertificateRequestConditionApplyConfiguration",
+          "startLine": 29,
+          "endLine": 35,
+          "methods": [
+            "WithType",
+            "WithStatus",
+            "WithLastTransitionTime",
+            "WithReason",
+            "WithMessage"
+          ],
+          "properties": [
+            "Type",
+            "Status",
+            "LastTransitionTime",
+            "Reason",
+            "Message"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateRequestConditionApplyConfiguration",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateRequestCondition",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "WithType",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "WithStatus",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "WithLastTransitionTime",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "WithReason",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "WithMessage",
+          "line": 78,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/issuercondition.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 76,
+      "functions": [
+        {
+          "name": "IssuerCondition",
+          "startLine": 40,
+          "endLine": 42,
+          "params": []
+        },
+        {
+          "name": "WithType",
+          "startLine": 47,
+          "endLine": 50,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithStatus",
+          "startLine": 55,
+          "endLine": 58,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithLastTransitionTime",
+          "startLine": 63,
+          "endLine": 66,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithReason",
+          "startLine": 71,
+          "endLine": 74,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithMessage",
+          "startLine": 79,
+          "endLine": 82,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithObservedGeneration",
+          "startLine": 87,
+          "endLine": 90,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IssuerConditionApplyConfiguration",
+          "startLine": 29,
+          "endLine": 36,
+          "methods": [
+            "WithType",
+            "WithStatus",
+            "WithLastTransitionTime",
+            "WithReason",
+            "WithMessage",
+            "WithObservedGeneration"
+          ],
+          "properties": [
+            "Type",
+            "Status",
+            "LastTransitionTime",
+            "Reason",
+            "Message",
+            "ObservedGeneration"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IssuerConditionApplyConfiguration",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "IssuerCondition",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "WithType",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "WithStatus",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "WithLastTransitionTime",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "WithReason",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "WithMessage",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "WithObservedGeneration",
+          "line": 87,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/fake/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/client/clientset/versioned/typed/certmanager/v1/certmanager_client.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 116,
+      "nonEmptyLines": 96,
+      "functions": [
+        {
+          "name": "Certificates",
+          "startLine": 42,
+          "endLine": 44,
+          "params": [
+            "namespace"
+          ]
+        },
+        {
+          "name": "CertificateRequests",
+          "startLine": 46,
+          "endLine": 48,
+          "params": [
+            "namespace"
+          ]
+        },
+        {
+          "name": "ClusterIssuers",
+          "startLine": 50,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "Issuers",
+          "startLine": 54,
+          "endLine": 56,
+          "params": [
+            "namespace"
+          ]
+        },
+        {
+          "name": "NewForConfig",
+          "startLine": 61,
+          "endLine": 69,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "NewForConfigAndClient",
+          "startLine": 73,
+          "endLine": 81,
+          "params": [
+            "c",
+            "h"
+          ]
+        },
+        {
+          "name": "NewForConfigOrDie",
+          "startLine": 85,
+          "endLine": 91,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "New",
+          "startLine": 94,
+          "endLine": 96,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "setConfigDefaults",
+          "startLine": 98,
+          "endLine": 107,
+          "params": [
+            "config"
+          ]
+        },
+        {
+          "name": "RESTClient",
+          "startLine": 111,
+          "endLine": 116,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertmanagerV1Interface",
+          "startLine": 29,
+          "endLine": 35,
+          "methods": [
+            "RESTClient"
+          ],
+          "properties": []
+        },
+        {
+          "name": "CertmanagerV1Client",
+          "startLine": 38,
+          "endLine": 40,
+          "methods": [
+            "Certificates",
+            "CertificateRequests",
+            "ClusterIssuers",
+            "Issuers",
+            "RESTClient"
+          ],
+          "properties": [
+            "restClient"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertmanagerV1Interface",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "CertmanagerV1Client",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "Certificates",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateRequests",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "ClusterIssuers",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "Issuers",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "NewForConfig",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "NewForConfigAndClient",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "NewForConfigOrDie",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "New",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "RESTClient",
+          "line": 111,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Certificates",
+          "callee": "newCertificates",
+          "lineNumber": 43
+        },
+        {
+          "caller": "CertificateRequests",
+          "callee": "newCertificateRequests",
+          "lineNumber": 47
+        },
+        {
+          "caller": "ClusterIssuers",
+          "callee": "newClusterIssuers",
+          "lineNumber": 51
+        },
+        {
+          "caller": "Issuers",
+          "callee": "newIssuers",
+          "lineNumber": 55
+        },
+        {
+          "caller": "NewForConfig",
+          "callee": "setConfigDefaults",
+          "lineNumber": 63
+        },
+        {
+          "caller": "NewForConfig",
+          "callee": "rest.HTTPClientFor",
+          "lineNumber": 64
+        },
+        {
+          "caller": "NewForConfig",
+          "callee": "NewForConfigAndClient",
+          "lineNumber": 68
+        },
+        {
+          "caller": "NewForConfigAndClient",
+          "callee": "setConfigDefaults",
+          "lineNumber": 75
+        },
+        {
+          "caller": "NewForConfigAndClient",
+          "callee": "rest.RESTClientForConfigAndClient",
+          "lineNumber": 76
+        },
+        {
+          "caller": "NewForConfigOrDie",
+          "callee": "NewForConfig",
+          "lineNumber": 86
+        },
+        {
+          "caller": "NewForConfigOrDie",
+          "callee": "panic",
+          "lineNumber": 88
+        },
+        {
+          "caller": "setConfigDefaults",
+          "callee": "rest.CodecFactoryForGeneratedClient(scheme.Scheme, scheme.Codecs).WithoutConversion",
+          "lineNumber": 102
+        },
+        {
+          "caller": "setConfigDefaults",
+          "callee": "rest.CodecFactoryForGeneratedClient",
+          "lineNumber": 102
+        },
+        {
+          "caller": "setConfigDefaults",
+          "callee": "rest.DefaultKubernetesUserAgent",
+          "lineNumber": 105
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 11,
+        "functionCount": 10,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "pkg/client/informers/externalversions/certmanager/v1/certificate.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 88,
+      "functions": [
+        {
+          "name": "NewCertificateInformer",
+          "startLine": 51,
+          "endLine": 53,
+          "params": [
+            "client",
+            "namespace",
+            "resyncPeriod",
+            "indexers"
+          ]
+        },
+        {
+          "name": "NewFilteredCertificateInformer",
+          "startLine": 58,
+          "endLine": 90,
+          "params": [
+            "client",
+            "namespace",
+            "resyncPeriod",
+            "indexers",
+            "tweakListOptions"
+          ]
+        },
+        {
+          "name": "defaultInformer",
+          "startLine": 92,
+          "endLine": 94,
+          "params": [
+            "client",
+            "resyncPeriod"
+          ]
+        },
+        {
+          "name": "Informer",
+          "startLine": 96,
+          "endLine": 98,
+          "params": []
+        },
+        {
+          "name": "Lister",
+          "startLine": 100,
+          "endLine": 102,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertificateInformer",
+          "startLine": 37,
+          "endLine": 40,
+          "methods": [
+            "Informer",
+            "Lister"
+          ],
+          "properties": []
+        },
+        {
+          "name": "certificateInformer",
+          "startLine": 42,
+          "endLine": 46,
+          "methods": [
+            "defaultInformer",
+            "Informer",
+            "Lister"
+          ],
+          "properties": [
+            "factory",
+            "tweakListOptions",
+            "namespace"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateInformer",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "NewCertificateInformer",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "NewFilteredCertificateInformer",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "Informer",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "Lister",
+          "line": 100,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewCertificateInformer",
+          "callee": "NewFilteredCertificateInformer",
+          "lineNumber": 52
+        },
+        {
+          "caller": "NewFilteredCertificateInformer",
+          "callee": "cache.NewSharedIndexInformer",
+          "lineNumber": 59
+        },
+        {
+          "caller": "NewFilteredCertificateInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 63
+        },
+        {
+          "caller": "NewFilteredCertificateInformer",
+          "callee": "client.CertmanagerV1().Certificates(namespace).List",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredCertificateInformer",
+          "callee": "client.CertmanagerV1().Certificates",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredCertificateInformer",
+          "callee": "client.CertmanagerV1",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredCertificateInformer",
+          "callee": "context.Background",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredCertificateInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 69
+        },
+        {
+          "caller": "NewFilteredCertificateInformer",
+          "callee": "client.CertmanagerV1().Certificates(namespace).Watch",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredCertificateInformer",
+          "callee": "client.CertmanagerV1().Certificates",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredCertificateInformer",
+          "callee": "client.CertmanagerV1",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredCertificateInformer",
+          "callee": "context.Background",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredCertificateInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 75
+        },
+        {
+          "caller": "NewFilteredCertificateInformer",
+          "callee": "client.CertmanagerV1().Certificates(namespace).List",
+          "lineNumber": 77
+        },
+        {
+          "caller": "NewFilteredCertificateInformer",
+          "callee": "client.CertmanagerV1().Certificates",
+          "lineNumber": 77
+        },
+        {
+          "caller": "NewFilteredCertificateInformer",
+          "callee": "client.CertmanagerV1",
+          "lineNumber": 77
+        },
+        {
+          "caller": "NewFilteredCertificateInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 81
+        },
+        {
+          "caller": "NewFilteredCertificateInformer",
+          "callee": "client.CertmanagerV1().Certificates(namespace).Watch",
+          "lineNumber": 83
+        },
+        {
+          "caller": "NewFilteredCertificateInformer",
+          "callee": "client.CertmanagerV1().Certificates",
+          "lineNumber": 83
+        },
+        {
+          "caller": "NewFilteredCertificateInformer",
+          "callee": "client.CertmanagerV1",
+          "lineNumber": 83
+        },
+        {
+          "caller": "defaultInformer",
+          "callee": "NewFilteredCertificateInformer",
+          "lineNumber": 93
+        },
+        {
+          "caller": "Informer",
+          "callee": "f.factory.InformerFor",
+          "lineNumber": 97
+        },
+        {
+          "caller": "Lister",
+          "callee": "certmanagerv1.NewCertificateLister",
+          "lineNumber": 101
+        },
+        {
+          "caller": "Lister",
+          "callee": "f.Informer().GetIndexer",
+          "lineNumber": 101
+        },
+        {
+          "caller": "Lister",
+          "callee": "f.Informer",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 16,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "pkg/client/informers/externalversions/certmanager/v1/certificaterequest.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 88,
+      "functions": [
+        {
+          "name": "NewCertificateRequestInformer",
+          "startLine": 51,
+          "endLine": 53,
+          "params": [
+            "client",
+            "namespace",
+            "resyncPeriod",
+            "indexers"
+          ]
+        },
+        {
+          "name": "NewFilteredCertificateRequestInformer",
+          "startLine": 58,
+          "endLine": 90,
+          "params": [
+            "client",
+            "namespace",
+            "resyncPeriod",
+            "indexers",
+            "tweakListOptions"
+          ]
+        },
+        {
+          "name": "defaultInformer",
+          "startLine": 92,
+          "endLine": 94,
+          "params": [
+            "client",
+            "resyncPeriod"
+          ]
+        },
+        {
+          "name": "Informer",
+          "startLine": 96,
+          "endLine": 98,
+          "params": []
+        },
+        {
+          "name": "Lister",
+          "startLine": 100,
+          "endLine": 102,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertificateRequestInformer",
+          "startLine": 37,
+          "endLine": 40,
+          "methods": [
+            "Informer",
+            "Lister"
+          ],
+          "properties": []
+        },
+        {
+          "name": "certificateRequestInformer",
+          "startLine": 42,
+          "endLine": 46,
+          "methods": [
+            "defaultInformer",
+            "Informer",
+            "Lister"
+          ],
+          "properties": [
+            "factory",
+            "tweakListOptions",
+            "namespace"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateRequestInformer",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "NewCertificateRequestInformer",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "NewFilteredCertificateRequestInformer",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "Informer",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "Lister",
+          "line": 100,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewCertificateRequestInformer",
+          "callee": "NewFilteredCertificateRequestInformer",
+          "lineNumber": 52
+        },
+        {
+          "caller": "NewFilteredCertificateRequestInformer",
+          "callee": "cache.NewSharedIndexInformer",
+          "lineNumber": 59
+        },
+        {
+          "caller": "NewFilteredCertificateRequestInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 63
+        },
+        {
+          "caller": "NewFilteredCertificateRequestInformer",
+          "callee": "client.CertmanagerV1().CertificateRequests(namespace).List",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredCertificateRequestInformer",
+          "callee": "client.CertmanagerV1().CertificateRequests",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredCertificateRequestInformer",
+          "callee": "client.CertmanagerV1",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredCertificateRequestInformer",
+          "callee": "context.Background",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredCertificateRequestInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 69
+        },
+        {
+          "caller": "NewFilteredCertificateRequestInformer",
+          "callee": "client.CertmanagerV1().CertificateRequests(namespace).Watch",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredCertificateRequestInformer",
+          "callee": "client.CertmanagerV1().CertificateRequests",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredCertificateRequestInformer",
+          "callee": "client.CertmanagerV1",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredCertificateRequestInformer",
+          "callee": "context.Background",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredCertificateRequestInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 75
+        },
+        {
+          "caller": "NewFilteredCertificateRequestInformer",
+          "callee": "client.CertmanagerV1().CertificateRequests(namespace).List",
+          "lineNumber": 77
+        },
+        {
+          "caller": "NewFilteredCertificateRequestInformer",
+          "callee": "client.CertmanagerV1().CertificateRequests",
+          "lineNumber": 77
+        },
+        {
+          "caller": "NewFilteredCertificateRequestInformer",
+          "callee": "client.CertmanagerV1",
+          "lineNumber": 77
+        },
+        {
+          "caller": "NewFilteredCertificateRequestInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 81
+        },
+        {
+          "caller": "NewFilteredCertificateRequestInformer",
+          "callee": "client.CertmanagerV1().CertificateRequests(namespace).Watch",
+          "lineNumber": 83
+        },
+        {
+          "caller": "NewFilteredCertificateRequestInformer",
+          "callee": "client.CertmanagerV1().CertificateRequests",
+          "lineNumber": 83
+        },
+        {
+          "caller": "NewFilteredCertificateRequestInformer",
+          "callee": "client.CertmanagerV1",
+          "lineNumber": 83
+        },
+        {
+          "caller": "defaultInformer",
+          "callee": "NewFilteredCertificateRequestInformer",
+          "lineNumber": 93
+        },
+        {
+          "caller": "Informer",
+          "callee": "f.factory.InformerFor",
+          "lineNumber": 97
+        },
+        {
+          "caller": "Lister",
+          "callee": "certmanagerv1.NewCertificateRequestLister",
+          "lineNumber": 101
+        },
+        {
+          "caller": "Lister",
+          "callee": "f.Informer().GetIndexer",
+          "lineNumber": 101
+        },
+        {
+          "caller": "Lister",
+          "callee": "f.Informer",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 16,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "pkg/client/informers/externalversions/certmanager/v1/clusterissuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 101,
+      "nonEmptyLines": 87,
+      "functions": [
+        {
+          "name": "NewClusterIssuerInformer",
+          "startLine": 50,
+          "endLine": 52,
+          "params": [
+            "client",
+            "resyncPeriod",
+            "indexers"
+          ]
+        },
+        {
+          "name": "NewFilteredClusterIssuerInformer",
+          "startLine": 57,
+          "endLine": 89,
+          "params": [
+            "client",
+            "resyncPeriod",
+            "indexers",
+            "tweakListOptions"
+          ]
+        },
+        {
+          "name": "defaultInformer",
+          "startLine": 91,
+          "endLine": 93,
+          "params": [
+            "client",
+            "resyncPeriod"
+          ]
+        },
+        {
+          "name": "Informer",
+          "startLine": 95,
+          "endLine": 97,
+          "params": []
+        },
+        {
+          "name": "Lister",
+          "startLine": 99,
+          "endLine": 101,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ClusterIssuerInformer",
+          "startLine": 37,
+          "endLine": 40,
+          "methods": [
+            "Informer",
+            "Lister"
+          ],
+          "properties": []
+        },
+        {
+          "name": "clusterIssuerInformer",
+          "startLine": 42,
+          "endLine": 45,
+          "methods": [
+            "defaultInformer",
+            "Informer",
+            "Lister"
+          ],
+          "properties": [
+            "factory",
+            "tweakListOptions"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ClusterIssuerInformer",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "NewClusterIssuerInformer",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "NewFilteredClusterIssuerInformer",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "Informer",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "Lister",
+          "line": 99,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewClusterIssuerInformer",
+          "callee": "NewFilteredClusterIssuerInformer",
+          "lineNumber": 51
+        },
+        {
+          "caller": "NewFilteredClusterIssuerInformer",
+          "callee": "cache.NewSharedIndexInformer",
+          "lineNumber": 58
+        },
+        {
+          "caller": "NewFilteredClusterIssuerInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 62
+        },
+        {
+          "caller": "NewFilteredClusterIssuerInformer",
+          "callee": "client.CertmanagerV1().ClusterIssuers().List",
+          "lineNumber": 64
+        },
+        {
+          "caller": "NewFilteredClusterIssuerInformer",
+          "callee": "client.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 64
+        },
+        {
+          "caller": "NewFilteredClusterIssuerInformer",
+          "callee": "client.CertmanagerV1",
+          "lineNumber": 64
+        },
+        {
+          "caller": "NewFilteredClusterIssuerInformer",
+          "callee": "context.Background",
+          "lineNumber": 64
+        },
+        {
+          "caller": "NewFilteredClusterIssuerInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 68
+        },
+        {
+          "caller": "NewFilteredClusterIssuerInformer",
+          "callee": "client.CertmanagerV1().ClusterIssuers().Watch",
+          "lineNumber": 70
+        },
+        {
+          "caller": "NewFilteredClusterIssuerInformer",
+          "callee": "client.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 70
+        },
+        {
+          "caller": "NewFilteredClusterIssuerInformer",
+          "callee": "client.CertmanagerV1",
+          "lineNumber": 70
+        },
+        {
+          "caller": "NewFilteredClusterIssuerInformer",
+          "callee": "context.Background",
+          "lineNumber": 70
+        },
+        {
+          "caller": "NewFilteredClusterIssuerInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 74
+        },
+        {
+          "caller": "NewFilteredClusterIssuerInformer",
+          "callee": "client.CertmanagerV1().ClusterIssuers().List",
+          "lineNumber": 76
+        },
+        {
+          "caller": "NewFilteredClusterIssuerInformer",
+          "callee": "client.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 76
+        },
+        {
+          "caller": "NewFilteredClusterIssuerInformer",
+          "callee": "client.CertmanagerV1",
+          "lineNumber": 76
+        },
+        {
+          "caller": "NewFilteredClusterIssuerInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 80
+        },
+        {
+          "caller": "NewFilteredClusterIssuerInformer",
+          "callee": "client.CertmanagerV1().ClusterIssuers().Watch",
+          "lineNumber": 82
+        },
+        {
+          "caller": "NewFilteredClusterIssuerInformer",
+          "callee": "client.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 82
+        },
+        {
+          "caller": "NewFilteredClusterIssuerInformer",
+          "callee": "client.CertmanagerV1",
+          "lineNumber": 82
+        },
+        {
+          "caller": "defaultInformer",
+          "callee": "NewFilteredClusterIssuerInformer",
+          "lineNumber": 92
+        },
+        {
+          "caller": "Informer",
+          "callee": "f.factory.InformerFor",
+          "lineNumber": 96
+        },
+        {
+          "caller": "Lister",
+          "callee": "certmanagerv1.NewClusterIssuerLister",
+          "lineNumber": 100
+        },
+        {
+          "caller": "Lister",
+          "callee": "f.Informer().GetIndexer",
+          "lineNumber": 100
+        },
+        {
+          "caller": "Lister",
+          "callee": "f.Informer",
+          "lineNumber": 100
+        }
+      ],
+      "metrics": {
+        "importCount": 16,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "pkg/client/informers/externalversions/certmanager/v1/issuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 88,
+      "functions": [
+        {
+          "name": "NewIssuerInformer",
+          "startLine": 51,
+          "endLine": 53,
+          "params": [
+            "client",
+            "namespace",
+            "resyncPeriod",
+            "indexers"
+          ]
+        },
+        {
+          "name": "NewFilteredIssuerInformer",
+          "startLine": 58,
+          "endLine": 90,
+          "params": [
+            "client",
+            "namespace",
+            "resyncPeriod",
+            "indexers",
+            "tweakListOptions"
+          ]
+        },
+        {
+          "name": "defaultInformer",
+          "startLine": 92,
+          "endLine": 94,
+          "params": [
+            "client",
+            "resyncPeriod"
+          ]
+        },
+        {
+          "name": "Informer",
+          "startLine": 96,
+          "endLine": 98,
+          "params": []
+        },
+        {
+          "name": "Lister",
+          "startLine": 100,
+          "endLine": 102,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "IssuerInformer",
+          "startLine": 37,
+          "endLine": 40,
+          "methods": [
+            "Informer",
+            "Lister"
+          ],
+          "properties": []
+        },
+        {
+          "name": "issuerInformer",
+          "startLine": 42,
+          "endLine": 46,
+          "methods": [
+            "defaultInformer",
+            "Informer",
+            "Lister"
+          ],
+          "properties": [
+            "factory",
+            "tweakListOptions",
+            "namespace"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IssuerInformer",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "NewIssuerInformer",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "NewFilteredIssuerInformer",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "Informer",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "Lister",
+          "line": 100,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewIssuerInformer",
+          "callee": "NewFilteredIssuerInformer",
+          "lineNumber": 52
+        },
+        {
+          "caller": "NewFilteredIssuerInformer",
+          "callee": "cache.NewSharedIndexInformer",
+          "lineNumber": 59
+        },
+        {
+          "caller": "NewFilteredIssuerInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 63
+        },
+        {
+          "caller": "NewFilteredIssuerInformer",
+          "callee": "client.CertmanagerV1().Issuers(namespace).List",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredIssuerInformer",
+          "callee": "client.CertmanagerV1().Issuers",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredIssuerInformer",
+          "callee": "client.CertmanagerV1",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredIssuerInformer",
+          "callee": "context.Background",
+          "lineNumber": 65
+        },
+        {
+          "caller": "NewFilteredIssuerInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 69
+        },
+        {
+          "caller": "NewFilteredIssuerInformer",
+          "callee": "client.CertmanagerV1().Issuers(namespace).Watch",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredIssuerInformer",
+          "callee": "client.CertmanagerV1().Issuers",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredIssuerInformer",
+          "callee": "client.CertmanagerV1",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredIssuerInformer",
+          "callee": "context.Background",
+          "lineNumber": 71
+        },
+        {
+          "caller": "NewFilteredIssuerInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 75
+        },
+        {
+          "caller": "NewFilteredIssuerInformer",
+          "callee": "client.CertmanagerV1().Issuers(namespace).List",
+          "lineNumber": 77
+        },
+        {
+          "caller": "NewFilteredIssuerInformer",
+          "callee": "client.CertmanagerV1().Issuers",
+          "lineNumber": 77
+        },
+        {
+          "caller": "NewFilteredIssuerInformer",
+          "callee": "client.CertmanagerV1",
+          "lineNumber": 77
+        },
+        {
+          "caller": "NewFilteredIssuerInformer",
+          "callee": "tweakListOptions",
+          "lineNumber": 81
+        },
+        {
+          "caller": "NewFilteredIssuerInformer",
+          "callee": "client.CertmanagerV1().Issuers(namespace).Watch",
+          "lineNumber": 83
+        },
+        {
+          "caller": "NewFilteredIssuerInformer",
+          "callee": "client.CertmanagerV1().Issuers",
+          "lineNumber": 83
+        },
+        {
+          "caller": "NewFilteredIssuerInformer",
+          "callee": "client.CertmanagerV1",
+          "lineNumber": 83
+        },
+        {
+          "caller": "defaultInformer",
+          "callee": "NewFilteredIssuerInformer",
+          "lineNumber": 93
+        },
+        {
+          "caller": "Informer",
+          "callee": "f.factory.InformerFor",
+          "lineNumber": 97
+        },
+        {
+          "caller": "Lister",
+          "callee": "certmanagerv1.NewIssuerLister",
+          "lineNumber": 101
+        },
+        {
+          "caller": "Lister",
+          "callee": "f.Informer().GetIndexer",
+          "lineNumber": 101
+        },
+        {
+          "caller": "Lister",
+          "callee": "f.Informer",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 16,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "pkg/client/listers/certmanager/v1/certificate.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "NewCertificateLister",
+          "startLine": 45,
+          "endLine": 47,
+          "params": [
+            "indexer"
+          ]
+        },
+        {
+          "name": "Certificates",
+          "startLine": 50,
+          "endLine": 52,
+          "params": [
+            "namespace"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertificateLister",
+          "startLine": 30,
+          "endLine": 37,
+          "methods": [
+            "List",
+            "Certificates"
+          ],
+          "properties": []
+        },
+        {
+          "name": "certificateLister",
+          "startLine": 40,
+          "endLine": 42,
+          "methods": [
+            "Certificates"
+          ],
+          "properties": []
+        },
+        {
+          "name": "CertificateNamespaceLister",
+          "startLine": 56,
+          "endLine": 64,
+          "methods": [
+            "List",
+            "Get"
+          ],
+          "properties": []
+        },
+        {
+          "name": "certificateNamespaceLister",
+          "startLine": 68,
+          "endLine": 70,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateLister",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "NewCertificateLister",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "Certificates",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateNamespaceLister",
+          "line": 56,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewCertificateLister",
+          "callee": "listers.New",
+          "lineNumber": 46
+        },
+        {
+          "caller": "NewCertificateLister",
+          "callee": "certmanagerv1.Resource",
+          "lineNumber": 46
+        },
+        {
+          "caller": "Certificates",
+          "callee": "listers.NewNamespaced",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "pkg/client/listers/certmanager/v1/certificaterequest.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "NewCertificateRequestLister",
+          "startLine": 45,
+          "endLine": 47,
+          "params": [
+            "indexer"
+          ]
+        },
+        {
+          "name": "CertificateRequests",
+          "startLine": 50,
+          "endLine": 52,
+          "params": [
+            "namespace"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertificateRequestLister",
+          "startLine": 30,
+          "endLine": 37,
+          "methods": [
+            "List",
+            "CertificateRequests"
+          ],
+          "properties": []
+        },
+        {
+          "name": "certificateRequestLister",
+          "startLine": 40,
+          "endLine": 42,
+          "methods": [
+            "CertificateRequests"
+          ],
+          "properties": []
+        },
+        {
+          "name": "CertificateRequestNamespaceLister",
+          "startLine": 56,
+          "endLine": 64,
+          "methods": [
+            "List",
+            "Get"
+          ],
+          "properties": []
+        },
+        {
+          "name": "certificateRequestNamespaceLister",
+          "startLine": 68,
+          "endLine": 70,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateRequestLister",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "NewCertificateRequestLister",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateRequests",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateRequestNamespaceLister",
+          "line": 56,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewCertificateRequestLister",
+          "callee": "listers.New",
+          "lineNumber": 46
+        },
+        {
+          "caller": "NewCertificateRequestLister",
+          "callee": "certmanagerv1.Resource",
+          "lineNumber": 46
+        },
+        {
+          "caller": "CertificateRequests",
+          "callee": "listers.NewNamespaced",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "NewClusterIssuerLister",
+          "startLine": 46,
+          "endLine": 48,
+          "params": [
+            "indexer"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ClusterIssuerLister",
+          "startLine": 30,
+          "endLine": 38,
+          "methods": [
+            "List",
+            "Get"
+          ],
+          "properties": []
+        },
+        {
+          "name": "clusterIssuerLister",
+          "startLine": 41,
+          "endLine": 43,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ClusterIssuerLister",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "NewClusterIssuerLister",
+          "line": 46,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewClusterIssuerLister",
+          "callee": "listers.New",
+          "lineNumber": 47
+        },
+        {
+          "caller": "NewClusterIssuerLister",
+          "callee": "certmanagerv1.Resource",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "pkg/client/listers/certmanager/v1/expansion_generated.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "CertificateListerExpansion",
+          "startLine": 23,
+          "endLine": 23,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "CertificateNamespaceListerExpansion",
+          "startLine": 27,
+          "endLine": 27,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "CertificateRequestListerExpansion",
+          "startLine": 31,
+          "endLine": 31,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "CertificateRequestNamespaceListerExpansion",
+          "startLine": 35,
+          "endLine": 35,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "ClusterIssuerListerExpansion",
+          "startLine": 39,
+          "endLine": 39,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "IssuerListerExpansion",
+          "startLine": 43,
+          "endLine": 43,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "IssuerNamespaceListerExpansion",
+          "startLine": 47,
+          "endLine": 47,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateListerExpansion",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateNamespaceListerExpansion",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateRequestListerExpansion",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateRequestNamespaceListerExpansion",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "ClusterIssuerListerExpansion",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "IssuerListerExpansion",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "IssuerNamespaceListerExpansion",
+          "line": 47,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 0,
+        "classCount": 7
+      }
+    },
+    {
+      "path": "pkg/client/listers/certmanager/v1/issuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "NewIssuerLister",
+          "startLine": 45,
+          "endLine": 47,
+          "params": [
+            "indexer"
+          ]
+        },
+        {
+          "name": "Issuers",
+          "startLine": 50,
+          "endLine": 52,
+          "params": [
+            "namespace"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IssuerLister",
+          "startLine": 30,
+          "endLine": 37,
+          "methods": [
+            "List",
+            "Issuers"
+          ],
+          "properties": []
+        },
+        {
+          "name": "issuerLister",
+          "startLine": 40,
+          "endLine": 42,
+          "methods": [
+            "Issuers"
+          ],
+          "properties": []
+        },
+        {
+          "name": "IssuerNamespaceLister",
+          "startLine": 56,
+          "endLine": 64,
+          "methods": [
+            "List",
+            "Get"
+          ],
+          "properties": []
+        },
+        {
+          "name": "issuerNamespaceLister",
+          "startLine": 68,
+          "endLine": 70,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IssuerLister",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "NewIssuerLister",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "Issuers",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "IssuerNamespaceLister",
+          "line": 56,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewIssuerLister",
+          "callee": "listers.New",
+          "lineNumber": 46
+        },
+        {
+          "caller": "NewIssuerLister",
+          "callee": "certmanagerv1.Resource",
+          "lineNumber": 46
+        },
+        {
+          "caller": "Issuers",
+          "callee": "listers.NewNamespaced",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "pkg/controller/acmechallenges/controller.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 236,
+      "nonEmptyLines": 196,
+      "functions": [
+        {
+          "name": "Register",
+          "startLine": 86,
+          "endLine": 166,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "runScheduler",
+          "startLine": 180,
+          "endLine": 203,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "ProcessItem",
+          "startLine": 205,
+          "endLine": 222,
+          "params": [
+            "ctx",
+            "key"
+          ]
+        },
+        {
+          "name": "init",
+          "startLine": 228,
+          "endLine": 236,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "controller",
+          "startLine": 44,
+          "endLine": 84,
+          "methods": [
+            "Register",
+            "runScheduler",
+            "ProcessItem"
+          ],
+          "properties": [
+            "helper",
+            "accountRegistry",
+            "challengeLister",
+            "issuerLister",
+            "clusterIssuerLister",
+            "secretLister",
+            "dnsSolver",
+            "httpSolver",
+            "scheduler",
+            "recorder",
+            "queue",
+            "log",
+            "dns01Nameservers",
+            "DNS01CheckRetryPeriod"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Register",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "ProcessItem",
+          "line": 205,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Register",
+          "callee": "logf.FromContext",
+          "lineNumber": 88
+        },
+        {
+          "caller": "Register",
+          "callee": "workqueue.NewTypedRateLimitingQueueWithConfig",
+          "lineNumber": 91
+        },
+        {
+          "caller": "Register",
+          "callee": "controllerpkg.DefaultACMERateLimiter",
+          "lineNumber": 92
+        },
+        {
+          "caller": "Register",
+          "callee": "ctx.SharedInformerFactory.Acme().V1().Challenges",
+          "lineNumber": 99
+        },
+        {
+          "caller": "Register",
+          "callee": "ctx.SharedInformerFactory.Acme().V1",
+          "lineNumber": 99
+        },
+        {
+          "caller": "Register",
+          "callee": "ctx.SharedInformerFactory.Acme",
+          "lineNumber": 99
+        },
+        {
+          "caller": "Register",
+          "callee": "ctx.SharedInformerFactory.Certmanager().V1().Issuers",
+          "lineNumber": 100
+        },
+        {
+          "caller": "Register",
+          "callee": "ctx.SharedInformerFactory.Certmanager().V1",
+          "lineNumber": 100
+        },
+        {
+          "caller": "Register",
+          "callee": "ctx.SharedInformerFactory.Certmanager",
+          "lineNumber": 100
+        },
+        {
+          "caller": "Register",
+          "callee": "ctx.KubeSharedInformerFactory.Secrets",
+          "lineNumber": 101
+        },
+        {
+          "caller": "Register",
+          "callee": "ctx.HTTP01ResourceMetadataInformersFactory.ForResource",
+          "lineNumber": 104
+        },
+        {
+          "caller": "Register",
+          "callee": "corev1.SchemeGroupVersion.WithResource",
+          "lineNumber": 104
+        },
+        {
+          "caller": "Register",
+          "callee": "ctx.HTTP01ResourceMetadataInformersFactory.ForResource",
+          "lineNumber": 105
+        },
+        {
+          "caller": "Register",
+          "callee": "corev1.SchemeGroupVersion.WithResource",
+          "lineNumber": 105
+        },
+        {
+          "caller": "Register",
+          "callee": "ctx.KubeSharedInformerFactory.Ingresses",
+          "lineNumber": 106
+        },
+        {
+          "caller": "Register",
+          "callee": "challengeInformer.Informer",
+          "lineNumber": 111
+        },
+        {
+          "caller": "Register",
+          "callee": "issuerInformer.Informer",
+          "lineNumber": 112
+        },
+        {
+          "caller": "Register",
+          "callee": "secretInformer.Informer",
+          "lineNumber": 113
+        },
+        {
+          "caller": "Register",
+          "callee": "podInformer.Informer",
+          "lineNumber": 114
+        },
+        {
+          "caller": "Register",
+          "callee": "serviceInformer.Informer",
+          "lineNumber": 115
+        },
+        {
+          "caller": "Register",
+          "callee": "ingressInformer.Informer",
+          "lineNumber": 116
+        },
+        {
+          "caller": "Register",
+          "callee": "ctx.GWShared.Gateway().V1().HTTPRoutes",
+          "lineNumber": 120
+        },
+        {
+          "caller": "Register",
+          "callee": "ctx.GWShared.Gateway().V1",
+          "lineNumber": 120
+        },
+        {
+          "caller": "Register",
+          "callee": "ctx.GWShared.Gateway",
+          "lineNumber": 120
+        },
+        {
+          "caller": "Register",
+          "callee": "append",
+          "lineNumber": 121
+        },
+        {
+          "caller": "Register",
+          "callee": "gwAPIHTTPRouteInformer.Informer",
+          "lineNumber": 121
+        },
+        {
+          "caller": "Register",
+          "callee": "challengeInformer.Lister",
+          "lineNumber": 125
+        },
+        {
+          "caller": "Register",
+          "callee": "issuerInformer.Lister",
+          "lineNumber": 126
+        },
+        {
+          "caller": "Register",
+          "callee": "secretInformer.Lister",
+          "lineNumber": 127
+        },
+        {
+          "caller": "Register",
+          "callee": "ctx.SharedInformerFactory.Certmanager().V1().ClusterIssuers",
+          "lineNumber": 132
+        },
+        {
+          "caller": "Register",
+          "callee": "ctx.SharedInformerFactory.Certmanager().V1",
+          "lineNumber": 132
+        },
+        {
+          "caller": "Register",
+          "callee": "ctx.SharedInformerFactory.Certmanager",
+          "lineNumber": 132
+        },
+        {
+          "caller": "Register",
+          "callee": "append",
+          "lineNumber": 133
+        },
+        {
+          "caller": "Register",
+          "callee": "clusterIssuerInformer.Informer",
+          "lineNumber": 133
+        },
+        {
+          "caller": "Register",
+          "callee": "clusterIssuerInformer.Lister",
+          "lineNumber": 134
+        },
+        {
+          "caller": "Register",
+          "callee": "challengeInformer.Informer().AddEventHandler",
+          "lineNumber": 138
+        },
+        {
+          "caller": "Register",
+          "callee": "challengeInformer.Informer",
+          "lineNumber": 138
+        },
+        {
+          "caller": "Register",
+          "callee": "fmt.Errorf",
+          "lineNumber": 139
+        },
+        {
+          "caller": "Register",
+          "callee": "issuer.NewHelper",
+          "lineNumber": 142
+        },
+        {
+          "caller": "Register",
+          "callee": "scheduler.New",
+          "lineNumber": 143
+        },
+        {
+          "caller": "Register",
+          "callee": "logf.NewContext",
+          "lineNumber": 143
+        },
+        {
+          "caller": "Register",
+          "callee": "http.NewSolver",
+          "lineNumber": 148
+        },
+        {
+          "caller": "Register",
+          "callee": "dns.NewSolver",
+          "lineNumber": 152
+        },
+        {
+          "caller": "Register",
+          "callee": "newObjectUpdater",
+          "lineNumber": 163
+        },
+        {
+          "caller": "runScheduler",
+          "callee": "logf.FromContext",
+          "lineNumber": 181
+        },
+        {
+          "caller": "runScheduler",
+          "callee": "c.scheduler.ScheduleN",
+          "lineNumber": 183
+        },
+        {
+          "caller": "runScheduler",
+          "callee": "log.Error",
+          "lineNumber": 185
+        },
+        {
+          "caller": "runScheduler",
+          "callee": "logf.WithResource",
+          "lineNumber": 190
+        },
+        {
+          "caller": "runScheduler",
+          "callee": "chOriginal.DeepCopy",
+          "lineNumber": 191
+        },
+        {
+          "caller": "runScheduler",
+          "callee": "c.updateObject",
+          "lineNumber": 193
+        },
+        {
+          "caller": "runScheduler",
+          "callee": "log.Error",
+          "lineNumber": 194
+        },
+        {
+          "caller": "runScheduler",
+          "callee": "c.recorder.Event",
+          "lineNumber": 197
+        },
+        {
+          "caller": "runScheduler",
+          "callee": "len",
+          "lineNumber": 200
+        },
+        {
+          "caller": "runScheduler",
+          "callee": "log.V(logf.DebugLevel).Info",
+          "lineNumber": 201
+        },
+        {
+          "caller": "runScheduler",
+          "callee": "log.V",
+          "lineNumber": 201
+        },
+        {
+          "caller": "runScheduler",
+          "callee": "len",
+          "lineNumber": 201
+        },
+        {
+          "caller": "ProcessItem",
+          "callee": "logf.FromContext",
+          "lineNumber": 206
+        },
+        {
+          "caller": "ProcessItem",
+          "callee": "c.challengeLister.Challenges(namespace).Get",
+          "lineNumber": 209
+        },
+        {
+          "caller": "ProcessItem",
+          "callee": "c.challengeLister.Challenges",
+          "lineNumber": 209
+        },
+        {
+          "caller": "ProcessItem",
+          "callee": "k8sErrors.IsNotFound",
+          "lineNumber": 210
+        },
+        {
+          "caller": "ProcessItem",
+          "callee": "logf.NewContext",
+          "lineNumber": 220
+        },
+        {
+          "caller": "ProcessItem",
+          "callee": "logf.WithResource",
+          "lineNumber": 220
+        },
+        {
+          "caller": "ProcessItem",
+          "callee": "c.Sync",
+          "lineNumber": 221
+        },
+        {
+          "caller": "init",
+          "callee": "controllerpkg.Register",
+          "lineNumber": 229
+        },
+        {
+          "caller": "init",
+          "callee": "controllerpkg.NewBuilder(ctx, ControllerName).\n\t\t\tFor(c).\n\t\t\tWith(c.runScheduler, time.Second).\n\t\t\tComplete",
+          "lineNumber": 231
+        },
+        {
+          "caller": "init",
+          "callee": "controllerpkg.NewBuilder(ctx, ControllerName).\n\t\t\tFor(c).\n\t\t\tWith",
+          "lineNumber": 231
+        },
+        {
+          "caller": "init",
+          "callee": "controllerpkg.NewBuilder(ctx, ControllerName).\n\t\t\tFor",
+          "lineNumber": 231
+        },
+        {
+          "caller": "init",
+          "callee": "controllerpkg.NewBuilder",
+          "lineNumber": 231
+        }
+      ],
+      "metrics": {
+        "importCount": 32,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/controller/acmeorders/controller.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 227,
+      "nonEmptyLines": 192,
+      "functions": [
+        {
+          "name": "NewController",
+          "startLine": 76,
+          "endLine": 162,
+          "params": [
+            "log",
+            "ctx",
+            "isNamespaced"
+          ]
+        },
+        {
+          "name": "ProcessItem",
+          "startLine": 164,
+          "endLine": 180,
+          "params": [
+            "ctx",
+            "key"
+          ]
+        },
+        {
+          "name": "orderGetterFunc",
+          "startLine": 183,
+          "endLine": 187,
+          "params": [
+            "orderLister"
+          ]
+        },
+        {
+          "name": "Register",
+          "startLine": 204,
+          "endLine": 219,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "init",
+          "startLine": 221,
+          "endLine": 227,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "controller",
+          "startLine": 43,
+          "endLine": 73,
+          "methods": [
+            "ProcessItem"
+          ],
+          "properties": [
+            "helper",
+            "accountRegistry",
+            "orderLister",
+            "challengeLister",
+            "issuerLister",
+            "clusterIssuerLister",
+            "secretLister",
+            "clock",
+            "recorder",
+            "cmClient",
+            "fieldManager",
+            "queue",
+            "scheduledWorkQueue"
+          ]
+        },
+        {
+          "name": "controllerWrapper",
+          "startLine": 197,
+          "endLine": 199,
+          "methods": [
+            "Register"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewController",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "ProcessItem",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "Register",
+          "line": 204,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NewController",
+          "callee": "workqueue.NewTypedRateLimitingQueueWithConfig",
+          "lineNumber": 83
+        },
+        {
+          "caller": "NewController",
+          "callee": "controllerpkg.DefaultACMERateLimiter",
+          "lineNumber": 84
+        },
+        {
+          "caller": "NewController",
+          "callee": "scheduler.NewScheduledWorkQueue",
+          "lineNumber": 91
+        },
+        {
+          "caller": "NewController",
+          "callee": "ctx.SharedInformerFactory.Acme().V1().Orders",
+          "lineNumber": 94
+        },
+        {
+          "caller": "NewController",
+          "callee": "ctx.SharedInformerFactory.Acme().V1",
+          "lineNumber": 94
+        },
+        {
+          "caller": "NewController",
+          "callee": "ctx.SharedInformerFactory.Acme",
+          "lineNumber": 94
+        },
+        {
+          "caller": "NewController",
+          "callee": "ctx.SharedInformerFactory.Certmanager().V1().Issuers",
+          "lineNumber": 95
+        },
+        {
+          "caller": "NewController",
+          "callee": "ctx.SharedInformerFactory.Certmanager().V1",
+          "lineNumber": 95
+        },
+        {
+          "caller": "NewController",
+          "callee": "ctx.SharedInformerFactory.Certmanager",
+          "lineNumber": 95
+        },
+        {
+          "caller": "NewController",
+          "callee": "ctx.SharedInformerFactory.Acme().V1().Challenges",
+          "lineNumber": 96
+        },
+        {
+          "caller": "NewController",
+          "callee": "ctx.SharedInformerFactory.Acme().V1",
+          "lineNumber": 96
+        },
+        {
+          "caller": "NewController",
+          "callee": "ctx.SharedInformerFactory.Acme",
+          "lineNumber": 96
+        },
+        {
+          "caller": "NewController",
+          "callee": "ctx.KubeSharedInformerFactory.Secrets",
+          "lineNumber": 97
+        },
+        {
+          "caller": "NewController",
+          "callee": "orderInformer.Informer",
+          "lineNumber": 102
+        },
+        {
+          "caller": "NewController",
+          "callee": "issuerInformer.Informer",
+          "lineNumber": 103
+        },
+        {
+          "caller": "NewController",
+          "callee": "challengeInformer.Informer",
+          "lineNumber": 104
+        },
+        {
+          "caller": "NewController",
+          "callee": "secretInformer.Informer",
+          "lineNumber": 105
+        },
+        {
+          "caller": "NewController",
+          "callee": "orderInformer.Lister",
+          "lineNumber": 109
+        },
+        {
+          "caller": "NewController",
+          "callee": "issuerInformer.Lister",
+          "lineNumber": 110
+        },
+        {
+          "caller": "NewController",
+          "callee": "challengeInformer.Lister",
+          "lineNumber": 111
+        },
+        {
+          "caller": "NewController",
+          "callee": "secretInformer.Lister",
+          "lineNumber": 112
+        },
+        {
+          "caller": "NewController",
+          "callee": "ctx.SharedInformerFactory.Certmanager().V1().ClusterIssuers",
+          "lineNumber": 118
+        },
+        {
+          "caller": "NewController",
+          "callee": "ctx.SharedInformerFactory.Certmanager().V1",
+          "lineNumber": 118
+        },
+        {
+          "caller": "NewController",
+          "callee": "ctx.SharedInformerFactory.Certmanager",
+          "lineNumber": 118
+        },
+        {
+          "caller": "NewController",
+          "callee": "append",
+          "lineNumber": 119
+        },
+        {
+          "caller": "NewController",
+          "callee": "clusterIssuerInformer.Informer",
+          "lineNumber": 119
+        },
+        {
+          "caller": "NewController",
+          "callee": "clusterIssuerInformer.Lister",
+          "lineNumber": 120
+        },
+        {
+          "caller": "NewController",
+          "callee": "clusterIssuerInformer.Informer().AddEventHandler",
+          "lineNumber": 122
+        },
+        {
+          "caller": "NewController",
+          "callee": "clusterIssuerInformer.Informer",
+          "lineNumber": 122
+        },
+        {
+          "caller": "NewController",
+          "callee": "handleGenericIssuerFunc",
+          "lineNumber": 123
+        },
+        {
+          "caller": "NewController",
+          "callee": "fmt.Errorf",
+          "lineNumber": 125
+        },
+        {
+          "caller": "NewController",
+          "callee": "orderInformer.Informer().AddEventHandler",
+          "lineNumber": 130
+        },
+        {
+          "caller": "NewController",
+          "callee": "orderInformer.Informer",
+          "lineNumber": 130
+        },
+        {
+          "caller": "NewController",
+          "callee": "fmt.Errorf",
+          "lineNumber": 133
+        },
+        {
+          "caller": "NewController",
+          "callee": "issuerInformer.Informer().AddEventHandler",
+          "lineNumber": 135
+        },
+        {
+          "caller": "NewController",
+          "callee": "issuerInformer.Informer",
+          "lineNumber": 135
+        },
+        {
+          "caller": "NewController",
+          "callee": "handleGenericIssuerFunc",
+          "lineNumber": 136
+        },
+        {
+          "caller": "NewController",
+          "callee": "fmt.Errorf",
+          "lineNumber": 138
+        },
+        {
+          "caller": "NewController",
+          "callee": "challengeInformer.Informer().AddEventHandler",
+          "lineNumber": 140
+        },
+        {
+          "caller": "NewController",
+          "callee": "challengeInformer.Informer",
+          "lineNumber": 140
+        },
+        {
+          "caller": "NewController",
+          "callee": "controllerpkg.HandleOwnedResourceNamespacedFunc",
+          "lineNumber": 141
+        },
+        {
+          "caller": "NewController",
+          "callee": "orderGetterFunc",
+          "lineNumber": 141
+        },
+        {
+          "caller": "NewController",
+          "callee": "fmt.Errorf",
+          "lineNumber": 143
+        },
+        {
+          "caller": "NewController",
+          "callee": "issuer.NewHelper",
+          "lineNumber": 155
+        },
+        {
+          "caller": "ProcessItem",
+          "callee": "logf.FromContext",
+          "lineNumber": 165
+        },
+        {
+          "caller": "ProcessItem",
+          "callee": "c.orderLister.Orders(namespace).Get",
+          "lineNumber": 168
+        },
+        {
+          "caller": "ProcessItem",
+          "callee": "c.orderLister.Orders",
+          "lineNumber": 168
+        },
+        {
+          "caller": "ProcessItem",
+          "callee": "k8sErrors.IsNotFound",
+          "lineNumber": 169
+        },
+        {
+          "caller": "ProcessItem",
+          "callee": "logf.NewContext",
+          "lineNumber": 178
+        },
+        {
+          "caller": "ProcessItem",
+          "callee": "logf.WithResource",
+          "lineNumber": 178
+        },
+        {
+          "caller": "ProcessItem",
+          "callee": "c.Sync",
+          "lineNumber": 179
+        },
+        {
+          "caller": "orderGetterFunc",
+          "callee": "orderLister.Orders(namespace).Get",
+          "lineNumber": 185
+        },
+        {
+          "caller": "orderGetterFunc",
+          "callee": "orderLister.Orders",
+          "lineNumber": 185
+        },
+        {
+          "caller": "Register",
+          "callee": "logf.FromContext",
+          "lineNumber": 206
+        },
+        {
+          "caller": "Register",
+          "callee": "NewController",
+          "lineNumber": 211
+        },
+        {
+          "caller": "init",
+          "callee": "controllerpkg.Register",
+          "lineNumber": 222
+        },
+        {
+          "caller": "init",
+          "callee": "controllerpkg.NewBuilder(ctx, ControllerName).\n\t\t\tFor(&controllerWrapper{}).\n\t\t\tComplete",
+          "lineNumber": 223
+        },
+        {
+          "caller": "init",
+          "callee": "controllerpkg.NewBuilder(ctx, ControllerName).\n\t\t\tFor",
+          "lineNumber": 223
+        },
+        {
+          "caller": "init",
+          "callee": "controllerpkg.NewBuilder",
+          "lineNumber": 223
+        }
+      ],
+      "metrics": {
+        "importCount": 35,
+        "exportCount": 3,
+        "functionCount": 5,
+        "classCount": 2
+      }
+    }
+  ]
+}

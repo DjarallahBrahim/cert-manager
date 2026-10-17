@@ -1,0 +1,852 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "type": "file",
+      "name": "rfc2136.go",
+      "filePath": "test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "summary": "Defines the RFC2136 addon used by ACME e2e tests to expose an RFC2136 DNS-01 challenge solver whose nameserver is taken from the ACME server test configuration.",
+      "tags": [
+        "test",
+        "e2e",
+        "acme",
+        "dns01",
+        "addon"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/acme/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "test/e2e/suite/issuers/acme/doc.go",
+      "summary": "Package documentation and blank-import barrel that registers the ACME certificate and CertificateRequest e2e suites with the shared framework.",
+      "tags": [
+        "test",
+        "barrel",
+        "entry-point",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/acme/issuer.go",
+      "type": "file",
+      "name": "issuer.go",
+      "filePath": "test/e2e/suite/issuers/acme/issuer.go",
+      "summary": "Ginkgo suite covering ACME Issuer lifecycle behaviour: account registration, readiness conditions, secret key handling and reconciliation of issuer changes.",
+      "tags": [
+        "test",
+        "e2e",
+        "acme",
+        "issuer",
+        "integration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/ca/certificate.go",
+      "type": "file",
+      "name": "certificate.go",
+      "filePath": "test/e2e/suite/issuers/ca/certificate.go",
+      "summary": "End-to-end tests for Certificates issued by CA Issuers, validating generated keys, DNS names, subject fields, chain validity and certificate rotation.",
+      "tags": [
+        "test",
+        "e2e",
+        "ca-issuer",
+        "certificate",
+        "validation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/ca/certificaterequest.go",
+      "type": "file",
+      "name": "certificaterequest.go",
+      "filePath": "test/e2e/suite/issuers/ca/certificaterequest.go",
+      "summary": "End-to-end tests for CertificateRequests signed by CA Issuers, checking IPs, URIs, key usages, approval conditions and private key output.",
+      "tags": [
+        "test",
+        "e2e",
+        "ca-issuer",
+        "certificate-request",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/ca/clusterissuer.go",
+      "type": "file",
+      "name": "clusterissuer.go",
+      "filePath": "test/e2e/suite/issuers/ca/clusterissuer.go",
+      "summary": "Verifies that CA ClusterIssuers become Ready from a signing keypair stored in the cluster resource namespace and surface validation errors.",
+      "tags": [
+        "test",
+        "e2e",
+        "ca-issuer",
+        "clusterissuer",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/ca/fixtures.go",
+      "type": "file",
+      "name": "fixtures.go",
+      "filePath": "test/e2e/suite/issuers/ca/fixtures.go",
+      "summary": "Provides hardcoded CA root and intermediate keypair/certificate fixtures plus helpers that wrap them into Kubernetes Secrets for the CA issuer tests.",
+      "tags": [
+        "test",
+        "fixtures",
+        "ca-issuer",
+        "certificate",
+        "secrets"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Large inline PEM blocks hold pre-generated certificate chains that must match the embedded signing keys."
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/ca/issuer.go",
+      "type": "file",
+      "name": "issuer.go",
+      "filePath": "test/e2e/suite/issuers/ca/issuer.go",
+      "summary": "Checks that a CA Issuer is created, reports Ready from a valid signing keypair, and fails when the referenced secret is missing or malformed.",
+      "tags": [
+        "test",
+        "e2e",
+        "ca-issuer",
+        "issuer",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "test/e2e/suite/issuers/doc.go",
+      "summary": "Blank-import barrel that pulls in the ACME, CA, SelfSigned, Vault and Venafi issuer test suites so they register with Ginkgo.",
+      "tags": [
+        "test",
+        "barrel",
+        "entry-point",
+        "issuers"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go:RFC2136",
+      "type": "class",
+      "name": "RFC2136",
+      "filePath": "test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "lineRange": [
+        27,
+        30
+      ],
+      "summary": "Addon type that captures the ACME test server nameserver and produces an RFC2136 DNS-01 solver configuration.",
+      "tags": [
+        "test",
+        "addon",
+        "dns01",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go:Setup",
+      "type": "function",
+      "name": "Setup",
+      "filePath": "test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "lineRange": [
+        32,
+        35
+      ],
+      "summary": "Stores the configured ACME DNS server as the RFC2136 nameserver to use during provisioning.",
+      "tags": [
+        "test",
+        "setup",
+        "addon",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go:Provision",
+      "type": "function",
+      "name": "Provision",
+      "filePath": "test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "lineRange": [
+        40,
+        48
+      ],
+      "summary": "Builds the RFC2136 DNS-01 provider config and base domain returned to ACME tests.",
+      "tags": [
+        "test",
+        "provisioning",
+        "dns01",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go:Deprovision",
+      "type": "function",
+      "name": "Deprovision",
+      "filePath": "test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "lineRange": [
+        50,
+        52
+      ],
+      "summary": "No-op teardown for the RFC2136 addon since no external resources are created.",
+      "tags": [
+        "test",
+        "teardown",
+        "addon"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go:Details",
+      "type": "function",
+      "name": "Details",
+      "filePath": "test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "lineRange": [
+        54,
+        56
+      ],
+      "summary": "Returns the accumulated addon details including the RFC2136 provider config and base domain.",
+      "tags": [
+        "test",
+        "accessor",
+        "addon"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go:SupportsGlobal",
+      "type": "function",
+      "name": "SupportsGlobal",
+      "filePath": "test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "lineRange": [
+        58,
+        60
+      ],
+      "summary": "Reports that the RFC2136 addon cannot be shared globally across test namespaces.",
+      "tags": [
+        "test",
+        "addon",
+        "capability"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/ca/fixtures.go:newSigningKeypairSecret",
+      "type": "function",
+      "name": "newSigningKeypairSecret",
+      "filePath": "test/e2e/suite/issuers/ca/fixtures.go",
+      "lineRange": [
+        87,
+        97
+      ],
+      "summary": "Builds a Secret containing the hardcoded root CA certificate and matching private key used as a CA issuer signing keypair.",
+      "tags": [
+        "test",
+        "fixtures",
+        "secrets",
+        "ca-issuer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/ca/fixtures.go:newSigningIssuer1KeypairSecret",
+      "type": "function",
+      "name": "newSigningIssuer1KeypairSecret",
+      "filePath": "test/e2e/suite/issuers/ca/fixtures.go",
+      "lineRange": [
+        160,
+        170
+      ],
+      "summary": "Builds a Secret with the first intermediate issuer certificate chain and key for chained CA issuer tests.",
+      "tags": [
+        "test",
+        "fixtures",
+        "secrets",
+        "intermediate-ca"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/ca/fixtures.go:newSigningIssuer2KeypairSecret",
+      "type": "function",
+      "name": "newSigningIssuer2KeypairSecret",
+      "filePath": "test/e2e/suite/issuers/ca/fixtures.go",
+      "lineRange": [
+        233,
+        243
+      ],
+      "summary": "Builds a Secret with the second intermediate issuer certificate chain and key for chained CA issuer tests.",
+      "tags": [
+        "test",
+        "fixtures",
+        "secrets",
+        "intermediate-ca"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "file:test/e2e/framework/addon/globals.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "file:test/e2e/framework/config/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "file:test/e2e/framework/config/addons.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "file:test/e2e/framework/config/certmanager.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "file:test/e2e/framework/config/config.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "file:test/e2e/framework/config/gateway.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "file:test/e2e/framework/config/ginkgo.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "file:test/e2e/framework/config/helm.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "file:test/e2e/framework/config/ingress_controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "file:test/e2e/framework/config/samplewebhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "file:test/e2e/framework/config/suite.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "file:test/e2e/framework/config/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/doc.go",
+      "target": "file:test/e2e/suite/issuers/acme/certificate/http01.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/doc.go",
+      "target": "file:test/e2e/suite/issuers/acme/certificate/notafter.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/doc.go",
+      "target": "file:test/e2e/suite/issuers/acme/certificate/webhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/doc.go",
+      "target": "file:test/e2e/suite/issuers/acme/certificaterequest/dns01.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/doc.go",
+      "target": "file:test/e2e/suite/issuers/acme/certificaterequest/http01.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/doc.go",
+      "target": "file:test/e2e/suite/issuers/acme/certificaterequest/profiles.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/issuer.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/issuer.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/issuer.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/issuer.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/issuer.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/issuer.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/certificate.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/certificate.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/certificate.go",
+      "target": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/certificate.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/certificate.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/certificate.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/certificate.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/certificaterequest.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/certificaterequest.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/certificaterequest.go",
+      "target": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/certificaterequest.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/certificaterequest.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/certificaterequest.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/certificaterequest.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/clusterissuer.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/clusterissuer.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/clusterissuer.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/clusterissuer.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/clusterissuer.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/clusterissuer.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/issuer.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/issuer.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/issuer.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/issuer.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/issuer.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/issuer.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/doc.go",
+      "target": "file:test/e2e/suite/issuers/acme/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/doc.go",
+      "target": "file:test/e2e/suite/issuers/acme/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/doc.go",
+      "target": "file:test/e2e/suite/issuers/ca/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/doc.go",
+      "target": "file:test/e2e/suite/issuers/ca/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/doc.go",
+      "target": "file:test/e2e/suite/issuers/ca/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/doc.go",
+      "target": "file:test/e2e/suite/issuers/ca/fixtures.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/doc.go",
+      "target": "file:test/e2e/suite/issuers/ca/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/doc.go",
+      "target": "file:test/e2e/suite/issuers/selfsigned/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/doc.go",
+      "target": "file:test/e2e/suite/issuers/selfsigned/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/doc.go",
+      "target": "file:test/e2e/suite/issuers/selfsigned/fixtures.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/doc.go",
+      "target": "file:test/e2e/suite/issuers/vault/import.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/doc.go",
+      "target": "file:test/e2e/suite/issuers/vault/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/doc.go",
+      "target": "file:test/e2e/suite/issuers/vault/mtls.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/doc.go",
+      "target": "file:test/e2e/suite/issuers/venafi/import.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "class:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go:RFC2136",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "function:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go:Setup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "function:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go:Provision",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "function:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go:Deprovision",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "function:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go:Details",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "function:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go:SupportsGlobal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/fixtures.go",
+      "target": "function:test/e2e/suite/issuers/ca/fixtures.go:newSigningKeypairSecret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/fixtures.go",
+      "target": "function:test/e2e/suite/issuers/ca/fixtures.go:newSigningIssuer1KeypairSecret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/ca/fixtures.go",
+      "target": "function:test/e2e/suite/issuers/ca/fixtures.go:newSigningIssuer2KeypairSecret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "class:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go:RFC2136",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "function:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go:Setup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "function:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go:Provision",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "function:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go:Deprovision",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "function:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go:Details",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go",
+      "target": "function:test/e2e/suite/issuers/acme/dnsproviders/rfc2136.go:SupportsGlobal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

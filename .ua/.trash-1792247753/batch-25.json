@@ -1,0 +1,311 @@
+{
+  "nodes": [
+    {
+      "id": "file:cmd/startupapicheck/main.go",
+      "type": "file",
+      "name": "main.go",
+      "filePath": "cmd/startupapicheck/main.go",
+      "summary": "Entry point for the startupapicheck binary: configures logging, builds the root cobra command, registers the check subcommand, and maps errors to exit codes.",
+      "tags": ["entry-point", "main", "cli", "kubernetes", "health-check"],
+      "complexity": "simple",
+      "languageNotes": "Registers logging flags manually to preserve cmctl compatibility for the valueless -v flag."
+    },
+    {
+      "id": "file:cmd/startupapicheck/pkg/check/api/api.go",
+      "type": "file",
+      "name": "api.go",
+      "filePath": "cmd/startupapicheck/pkg/check/api/api.go",
+      "summary": "Implements the `check api` subcommand, polling the cert-manager API with an API checker until CRDs and webhooks are ready or the configured wait timeout expires.",
+      "tags": ["cli", "api-check", "health-check", "polling", "kubernetes"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:cmd/startupapicheck/pkg/check/check.go",
+      "type": "file",
+      "name": "check.go",
+      "filePath": "cmd/startupapicheck/pkg/check/check.go",
+      "summary": "Defines the `check` parent cobra command and attaches the `api` subcommand to it.",
+      "tags": ["cli", "cobra-command", "command-group", "health-check"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:cmd/startupapicheck/pkg/factory/factory.go",
+      "type": "file",
+      "name": "factory.go",
+      "filePath": "cmd/startupapicheck/pkg/factory/factory.go",
+      "summary": "Provides a Kubernetes client factory that registers kubeconfig flags and populates the namespace, enforcement flag, and REST config during cobra PreRun.",
+      "tags": ["factory", "kubernetes", "client-config", "cli-flags"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cmd/startupapicheck/main.go:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "cmd/startupapicheck/main.go",
+      "lineRange": [32, 79],
+      "summary": "Initializes logging and signal handling, constructs the startupapicheck root command with logging flags, adds the check command, and executes it with exit-code mapping.",
+      "tags": ["entry-point", "main", "cobra-command", "logging"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:cmd/startupapicheck/pkg/check/api/api.go:Options",
+      "type": "class",
+      "name": "Options",
+      "filePath": "cmd/startupapicheck/pkg/check/api/api.go",
+      "lineRange": [36, 48],
+      "summary": "Command options for `check api`, holding the API checker, wait and interval durations, and the embedded Kubernetes client factory.",
+      "tags": ["options", "struct", "api-check", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:cmd/startupapicheck/pkg/check/api/api.go:Complete",
+      "type": "function",
+      "name": "Complete",
+      "filePath": "cmd/startupapicheck/pkg/check/api/api.go",
+      "lineRange": [51, 63],
+      "summary": "Constructs the cert-manager API checker from the factory's REST config and namespace, completing the command options.",
+      "tags": ["options", "initialization", "api-check", "factory"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:cmd/startupapicheck/pkg/check/api/api.go:NewCmdCheckApi",
+      "type": "function",
+      "name": "NewCmdCheckApi",
+      "filePath": "cmd/startupapicheck/pkg/check/api/api.go",
+      "lineRange": [66, 91],
+      "summary": "Builds the `check api` cobra command, binding wait/interval flags, wiring Complete and Run into PreRun/RunE, and creating the client factory.",
+      "tags": ["cobra-command", "constructor", "cli", "api-check"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cmd/startupapicheck/pkg/check/api/api.go:Run",
+      "type": "function",
+      "name": "Run",
+      "filePath": "cmd/startupapicheck/pkg/check/api/api.go",
+      "lineRange": [94, 133],
+      "summary": "Polls the cert-manager API until the check succeeds or the wait window elapses, translating errors to simple messages and setting process exit codes on failure.",
+      "tags": ["api-check", "polling", "error-handling", "health-check"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cmd/startupapicheck/pkg/check/check.go:NewCmdCheck",
+      "type": "function",
+      "name": "NewCmdCheck",
+      "filePath": "cmd/startupapicheck/pkg/check/check.go",
+      "lineRange": [28, 33],
+      "summary": "Creates the `check` parent command and adds the `api` subcommand constructed by the api package.",
+      "tags": ["cobra-command", "constructor", "command-group"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:cmd/startupapicheck/pkg/check/check.go:NewCmdCreateBare",
+      "type": "function",
+      "name": "NewCmdCreateBare",
+      "filePath": "cmd/startupapicheck/pkg/check/check.go",
+      "lineRange": [36, 42],
+      "summary": "Returns a bare `check` cobra command with only its use and description set, used as the base for adding subcommands.",
+      "tags": ["cobra-command", "constructor", "command-group"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:cmd/startupapicheck/pkg/factory/factory.go:Factory",
+      "type": "class",
+      "name": "Factory",
+      "filePath": "cmd/startupapicheck/pkg/factory/factory.go",
+      "lineRange": [31, 45],
+      "summary": "Holds a Kubernetes REST client getter plus the resolved namespace, namespace-enforcement flag, and REST config used by commands to reach the cluster.",
+      "tags": ["factory", "kubernetes", "client-config", "struct"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:cmd/startupapicheck/pkg/factory/factory.go:New",
+      "type": "function",
+      "name": "New",
+      "filePath": "cmd/startupapicheck/pkg/factory/factory.go",
+      "lineRange": [52, 75],
+      "summary": "Creates a Factory, registers standard kubeconfig flags on the command, and chains the factory completion into the command's PreRunE.",
+      "tags": ["factory", "constructor", "cli-flags", "kubernetes"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cmd/startupapicheck/pkg/factory/factory.go:complete",
+      "type": "function",
+      "name": "complete",
+      "filePath": "cmd/startupapicheck/pkg/factory/factory.go",
+      "lineRange": [79, 93],
+      "summary": "Resolves the namespace and REST config from the kubeconfig loader, populating the factory before command execution.",
+      "tags": ["initialization", "kubernetes", "client-config", "namespace"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:cmd/startupapicheck/main.go",
+      "target": "file:cmd/startupapicheck/pkg/check/check.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:cmd/startupapicheck/pkg/check/api/api.go",
+      "target": "file:cmd/startupapicheck/pkg/factory/factory.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:cmd/startupapicheck/pkg/check/check.go",
+      "target": "file:cmd/startupapicheck/pkg/check/api/api.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:cmd/startupapicheck/main.go",
+      "target": "function:cmd/startupapicheck/main.go:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/startupapicheck/pkg/check/api/api.go",
+      "target": "class:cmd/startupapicheck/pkg/check/api/api.go:Options",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/startupapicheck/pkg/check/api/api.go",
+      "target": "function:cmd/startupapicheck/pkg/check/api/api.go:Complete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/startupapicheck/pkg/check/api/api.go",
+      "target": "function:cmd/startupapicheck/pkg/check/api/api.go:NewCmdCheckApi",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/startupapicheck/pkg/check/api/api.go",
+      "target": "function:cmd/startupapicheck/pkg/check/api/api.go:Run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/startupapicheck/pkg/check/check.go",
+      "target": "function:cmd/startupapicheck/pkg/check/check.go:NewCmdCheck",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/startupapicheck/pkg/check/check.go",
+      "target": "function:cmd/startupapicheck/pkg/check/check.go:NewCmdCreateBare",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/startupapicheck/pkg/factory/factory.go",
+      "target": "class:cmd/startupapicheck/pkg/factory/factory.go:Factory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/startupapicheck/pkg/factory/factory.go",
+      "target": "function:cmd/startupapicheck/pkg/factory/factory.go:New",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/startupapicheck/pkg/factory/factory.go",
+      "target": "function:cmd/startupapicheck/pkg/factory/factory.go:complete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:cmd/startupapicheck/pkg/check/api/api.go",
+      "target": "class:cmd/startupapicheck/pkg/check/api/api.go:Options",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:cmd/startupapicheck/pkg/check/api/api.go",
+      "target": "function:cmd/startupapicheck/pkg/check/api/api.go:Complete",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:cmd/startupapicheck/pkg/check/api/api.go",
+      "target": "function:cmd/startupapicheck/pkg/check/api/api.go:NewCmdCheckApi",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:cmd/startupapicheck/pkg/check/api/api.go",
+      "target": "function:cmd/startupapicheck/pkg/check/api/api.go:Run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:cmd/startupapicheck/pkg/check/check.go",
+      "target": "function:cmd/startupapicheck/pkg/check/check.go:NewCmdCheck",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:cmd/startupapicheck/pkg/check/check.go",
+      "target": "function:cmd/startupapicheck/pkg/check/check.go:NewCmdCreateBare",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:cmd/startupapicheck/pkg/factory/factory.go",
+      "target": "class:cmd/startupapicheck/pkg/factory/factory.go:Factory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:cmd/startupapicheck/pkg/factory/factory.go",
+      "target": "function:cmd/startupapicheck/pkg/factory/factory.go:New",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:cmd/startupapicheck/pkg/check/api/api.go:NewCmdCheckApi",
+      "target": "function:cmd/startupapicheck/pkg/factory/factory.go:New",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:cmd/startupapicheck/pkg/check/check.go:NewCmdCheck",
+      "target": "function:cmd/startupapicheck/pkg/check/api/api.go:NewCmdCheckApi",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:cmd/startupapicheck/main.go:main",
+      "target": "function:cmd/startupapicheck/pkg/check/check.go:NewCmdCheck",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

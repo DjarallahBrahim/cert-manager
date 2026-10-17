@@ -1,0 +1,808 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 19,
+  "filesSkipped": [
+    "deploy/charts/cert-manager/templates/NOTES.txt"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 19,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 19
+    }
+  },
+  "results": [
+    {
+      "path": "deploy/charts/cert-manager/templates/cainjector-config.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 19,
+      "nonEmptyLines": 19,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "data",
+          "level": 1,
+          "line": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/templates/cainjector-deployment.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 173,
+      "nonEmptyLines": 173,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/templates/cainjector-poddisruptionbudget.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 29,
+      "nonEmptyLines": 28,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/templates/cainjector-psp-clusterrole.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 20,
+      "nonEmptyLines": 20,
+      "sections": [
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "rules",
+          "level": 1,
+          "line": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/templates/cainjector-psp-clusterrolebinding.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 22,
+      "nonEmptyLines": 22,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "roleRef",
+          "level": 1,
+          "line": 13
+        },
+        {
+          "heading": "subjects",
+          "level": 1,
+          "line": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/templates/cainjector-psp.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 51,
+      "nonEmptyLines": 51,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/templates/cainjector-rbac.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 156,
+      "nonEmptyLines": 151,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "rules",
+          "level": 1,
+          "line": 13
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 33
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 34
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 35
+        },
+        {
+          "heading": "roleRef",
+          "level": 1,
+          "line": 43
+        },
+        {
+          "heading": "subjects",
+          "level": 1,
+          "line": 47
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 54
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 55
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 56
+        },
+        {
+          "heading": "rules",
+          "level": 1,
+          "line": 65
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 83
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 84
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 85
+        },
+        {
+          "heading": "roleRef",
+          "level": 1,
+          "line": 94
+        },
+        {
+          "heading": "subjects",
+          "level": 1,
+          "line": 98
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 111
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 112
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 113
+        },
+        {
+          "heading": "rules",
+          "level": 1,
+          "line": 122
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 136
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 137
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 138
+        },
+        {
+          "heading": "roleRef",
+          "level": 1,
+          "line": 147
+        },
+        {
+          "heading": "subjects",
+          "level": 1,
+          "line": 151
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 27
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/templates/cainjector-service.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 32,
+      "nonEmptyLines": 32,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/templates/cainjector-serviceaccount.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 27,
+      "nonEmptyLines": 27,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "automountServiceAccountToken",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "imagePullSecrets",
+          "level": 1,
+          "line": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/templates/controller-config.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 19,
+      "nonEmptyLines": 19,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "data",
+          "level": 1,
+          "line": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/templates/crd-acme.cert-manager.io_challenges.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 3281,
+      "nonEmptyLines": 3250,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/templates/crd-acme.cert-manager.io_orders.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 274,
+      "nonEmptyLines": 274,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/templates/crd-cert-manager.io_certificaterequests.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 319,
+      "nonEmptyLines": 310,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/templates/crd-cert-manager.io_certificates.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 816,
+      "nonEmptyLines": 792,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/templates/crd-cert-manager.io_clusterissuers.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 3815,
+      "nonEmptyLines": 3784,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/templates/crd-cert-manager.io_issuers.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 3814,
+      "nonEmptyLines": 3783,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/templates/deployment.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 244,
+      "nonEmptyLines": 243,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/templates/extras-objects.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": "deploy/charts/cert-manager/templates/networkpolicy-egress.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 19,
+      "nonEmptyLines": 19,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 7
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    }
+  ]
+}

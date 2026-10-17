@@ -1,0 +1,1256 @@
+{
+  "nodes": [
+    {
+      "id": "file:make/config/samplewebhook/sample/main.go",
+      "type": "file",
+      "name": "main.go",
+      "filePath": "make/config/samplewebhook/sample/main.go",
+      "summary": "Reference external ACME DNS01 solver webhook that implements the Solver interface and hands process startup to the cert-manager webhook library.",
+      "tags": [
+        "example",
+        "webhook",
+        "acme",
+        "dns01",
+        "entry-point"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/acme/util.go",
+      "type": "file",
+      "name": "util.go",
+      "filePath": "pkg/acme/util.go",
+      "summary": "Small ACME helpers that classify challenge/order states as final or failing and that default private key secret selectors to tls.key.",
+      "tags": [
+        "utility",
+        "acme",
+        "state-machine",
+        "defaulting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/acme/webhook/apis/acme/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "pkg/acme/webhook/apis/acme/doc.go",
+      "summary": "Package documentation for the ACME webhook API group used by external DNS01 solver implementations.",
+      "tags": [
+        "documentation",
+        "api-types",
+        "webhook",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/acme/webhook/apis/acme/v1alpha1/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "pkg/acme/webhook/apis/acme/v1alpha1/doc.go",
+      "summary": "Package documentation for the v1alpha1 ACME webhook solver API, noting the API group name and version registration.",
+      "tags": [
+        "documentation",
+        "api-types",
+        "webhook",
+        "v1alpha1"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/acme/webhook/apis/acme/v1alpha1/register.go",
+      "type": "file",
+      "name": "register.go",
+      "filePath": "pkg/acme/webhook/apis/acme/v1alpha1/register.go",
+      "summary": "Registers ACME webhook v1alpha1 types (ChallengePayload) with the scheme, sets the group version, and exposes the Resource helper.",
+      "tags": [
+        "api-types",
+        "registration",
+        "scheme",
+        "webhook"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "type": "file",
+      "name": "types.go",
+      "filePath": "pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "summary": "Defines ChallengePayload, ChallengeRequest, ChallengeResponse, and ChallengeAction - the wire contract exchanged between cert-manager and external DNS01 solver webhooks.",
+      "tags": [
+        "api-types",
+        "data-model",
+        "webhook",
+        "acme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/acme/webhook/apis/acme/v1alpha1/zz_generated.deepcopy.go",
+      "type": "file",
+      "name": "zz_generated.deepcopy.go",
+      "filePath": "pkg/acme/webhook/apis/acme/v1alpha1/zz_generated.deepcopy.go",
+      "summary": "Generated deep-copy and DeepCopyObject implementations for the ACME webhook v1alpha1 API types.",
+      "tags": [
+        "generated",
+        "deepcopy",
+        "api-types",
+        "boilerplate"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "type": "file",
+      "name": "apiserver.go",
+      "filePath": "pkg/acme/webhook/apiserver/apiserver.go",
+      "summary": "Builds a Kubernetes generic API server that exposes one ChallengePayload API group per registered ACME solver and runs solver Initialize post-start hooks.",
+      "tags": [
+        "apiserver",
+        "webhook",
+        "kubernetes",
+        "server-bootstrap"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:pkg/acme/webhook/cmd/cmd.go",
+      "type": "file",
+      "name": "cmd.go",
+      "filePath": "pkg/acme/webhook/cmd/cmd.go",
+      "summary": "Process entry point for the webhook server that wires logging, signal/exit handling, GOMAXPROCS, and the Cobra start command.",
+      "tags": [
+        "cli",
+        "entry-point",
+        "webhook",
+        "cobra"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/acme/webhook/cmd/server/start.go",
+      "type": "file",
+      "name": "start.go",
+      "filePath": "pkg/acme/webhook/cmd/server/start.go",
+      "summary": "Cobra command plus options struct for launching the ACME solver webhook apiserver, including option completion, validation, config assembly, and run.",
+      "tags": [
+        "cli",
+        "webhook",
+        "apiserver",
+        "options"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/acme/webhook/openapi/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "pkg/acme/webhook/openapi/doc.go",
+      "summary": "Package documentation for the generated OpenAPI definitions exposed by the ACME webhook apiserver.",
+      "tags": [
+        "documentation",
+        "openapi",
+        "api-schema",
+        "webhook"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:make/config/samplewebhook/sample/main.go:customDNSProviderSolver",
+      "type": "class",
+      "name": "customDNSProviderSolver",
+      "filePath": "make/config/samplewebhook/sample/main.go",
+      "lineRange": [
+        52,
+        60
+      ],
+      "summary": "Example Solver implementation that demonstrates the hooks an external DNS provider webhook must provide.",
+      "tags": [
+        "example",
+        "webhook",
+        "acme",
+        "solver"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/config/samplewebhook/sample/main.go:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "make/config/samplewebhook/sample/main.go",
+      "lineRange": [
+        33,
+        46
+      ],
+      "summary": "Validates GROUP_NAME and starts the webhook server with the example solver registered.",
+      "tags": [
+        "entry-point",
+        "webhook",
+        "example"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/config/samplewebhook/sample/main.go:Present",
+      "type": "function",
+      "name": "Present",
+      "filePath": "make/config/samplewebhook/sample/main.go",
+      "lineRange": [
+        101,
+        112
+      ],
+      "summary": "Decodes the challenge configuration and logs it where the real DNS record creation would happen.",
+      "tags": [
+        "example",
+        "webhook",
+        "dns01"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/config/samplewebhook/sample/main.go:CleanUp",
+      "type": "function",
+      "name": "CleanUp",
+      "filePath": "make/config/samplewebhook/sample/main.go",
+      "lineRange": [
+        120,
+        123
+      ],
+      "summary": "Placeholder cleanup hook where a real solver would delete the challenge TXT record.",
+      "tags": [
+        "example",
+        "webhook",
+        "dns01"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/config/samplewebhook/sample/main.go:Initialize",
+      "type": "function",
+      "name": "Initialize",
+      "filePath": "make/config/samplewebhook/sample/main.go",
+      "lineRange": [
+        134,
+        147
+      ],
+      "summary": "Post-start hook stub documenting how to build a Kubernetes clientset for the solver.",
+      "tags": [
+        "example",
+        "webhook",
+        "initialization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:make/config/samplewebhook/sample/main.go:loadConfig",
+      "type": "function",
+      "name": "loadConfig",
+      "filePath": "make/config/samplewebhook/sample/main.go",
+      "lineRange": [
+        151,
+        162
+      ],
+      "summary": "Unmarshals the raw solver JSON config into the example config struct, tolerating a nil config.",
+      "tags": [
+        "utility",
+        "serialization",
+        "example"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/acme/util.go:IsFinalState",
+      "type": "function",
+      "name": "IsFinalState",
+      "filePath": "pkg/acme/util.go",
+      "lineRange": [
+        30,
+        35
+      ],
+      "summary": "Reports whether an ACME state is terminal, treating Valid as final and delegating failure detection.",
+      "tags": [
+        "acme",
+        "state-machine",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/acme/util.go:IsFailureState",
+      "type": "function",
+      "name": "IsFailureState",
+      "filePath": "pkg/acme/util.go",
+      "lineRange": [
+        37,
+        44
+      ],
+      "summary": "Reports whether an ACME state is Invalid, Expired, or Errored.",
+      "tags": [
+        "acme",
+        "state-machine",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/acme/util.go:PrivateKeySelector",
+      "type": "function",
+      "name": "PrivateKeySelector",
+      "filePath": "pkg/acme/util.go",
+      "lineRange": [
+        48,
+        53
+      ],
+      "summary": "Defaults the secret key selector to tls.key when no key is specified.",
+      "tags": [
+        "acme",
+        "defaulting",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/acme/webhook/apis/acme/v1alpha1/register.go:Resource",
+      "type": "function",
+      "name": "Resource",
+      "filePath": "pkg/acme/webhook/apis/acme/v1alpha1/register.go",
+      "lineRange": [
+        31,
+        33
+      ],
+      "summary": "Returns the GroupResource for a named resource in the webhook acme/v1alpha1 group.",
+      "tags": [
+        "utility",
+        "registration",
+        "webhook"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/acme/webhook/apis/acme/v1alpha1/types.go:ChallengePayload",
+      "type": "class",
+      "name": "ChallengePayload",
+      "filePath": "pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "lineRange": [
+        29,
+        39
+      ],
+      "summary": "Request/response envelope submitted to a solver webhook, carrying optional request and response fields.",
+      "tags": [
+        "api-types",
+        "data-model",
+        "webhook"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/acme/webhook/apis/acme/v1alpha1/types.go:ChallengeRequest",
+      "type": "class",
+      "name": "ChallengeRequest",
+      "filePath": "pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "lineRange": [
+        43,
+        112
+      ],
+      "summary": "Describes a solver request: action, challenge type, DNS name, key, resolved FQDN/zone, and provider config.",
+      "tags": [
+        "api-types",
+        "data-model",
+        "webhook",
+        "dns01"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/acme/webhook/apis/acme/v1alpha1/types.go:ChallengeResponse",
+      "type": "class",
+      "name": "ChallengeResponse",
+      "filePath": "pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "lineRange": [
+        126,
+        139
+      ],
+      "summary": "Solver response carrying the request UID, a success flag, and optional failure status.",
+      "tags": [
+        "api-types",
+        "data-model",
+        "webhook"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/acme/webhook/apiserver/apiserver.go:Config",
+      "type": "class",
+      "name": "Config",
+      "filePath": "pkg/acme/webhook/apiserver/apiserver.go",
+      "lineRange": [
+        63,
+        66
+      ],
+      "summary": "Combines the generic recommended apiserver config with webhook-specific extra config.",
+      "tags": [
+        "apiserver",
+        "configuration",
+        "webhook"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/acme/webhook/apiserver/apiserver.go:ExtraConfig",
+      "type": "class",
+      "name": "ExtraConfig",
+      "filePath": "pkg/acme/webhook/apiserver/apiserver.go",
+      "lineRange": [
+        68,
+        75
+      ],
+      "summary": "Holds the solver API group name and the list of registered solvers.",
+      "tags": [
+        "apiserver",
+        "configuration",
+        "webhook"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/acme/webhook/apiserver/apiserver.go:ChallengeServer",
+      "type": "class",
+      "name": "ChallengeServer",
+      "filePath": "pkg/acme/webhook/apiserver/apiserver.go",
+      "lineRange": [
+        78,
+        80
+      ],
+      "summary": "Wraps the generic API server that serves the challenge payload API.",
+      "tags": [
+        "apiserver",
+        "webhook",
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/acme/webhook/apiserver/apiserver.go:Complete",
+      "type": "function",
+      "name": "Complete",
+      "filePath": "pkg/acme/webhook/apiserver/apiserver.go",
+      "lineRange": [
+        95,
+        105
+      ],
+      "summary": "Completes the generic apiserver configuration, adding default OpenAPI configs and effective version.",
+      "tags": [
+        "apiserver",
+        "configuration",
+        "initialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/acme/webhook/apiserver/apiserver.go:New",
+      "type": "function",
+      "name": "New",
+      "filePath": "pkg/acme/webhook/apiserver/apiserver.go",
+      "lineRange": [
+        111,
+        171
+      ],
+      "summary": "Builds the challenge server, installs an API group per solver, and registers solver Initialize post-start hooks.",
+      "tags": [
+        "apiserver",
+        "factory",
+        "webhook"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/acme/webhook/apiserver/apiserver.go:appendUniqueGroupVersion",
+      "type": "function",
+      "name": "appendUniqueGroupVersion",
+      "filePath": "pkg/acme/webhook/apiserver/apiserver.go",
+      "lineRange": [
+        182,
+        195
+      ],
+      "summary": "Appends a GroupVersion to a slice only when it is not already present.",
+      "tags": [
+        "utility",
+        "slice-handling",
+        "apiserver"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/acme/webhook/cmd/cmd.go:RunWebhookServer",
+      "type": "function",
+      "name": "RunWebhookServer",
+      "filePath": "pkg/acme/webhook/cmd/cmd.go",
+      "lineRange": [
+        38,
+        57
+      ],
+      "summary": "Sets up logging and exit handling, tunes GOMAXPROCS, and executes the webhook server command.",
+      "tags": [
+        "cli",
+        "entry-point",
+        "logging"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/acme/webhook/cmd/server/start.go:WebhookServerOptions",
+      "type": "class",
+      "name": "WebhookServerOptions",
+      "filePath": "pkg/acme/webhook/cmd/server/start.go",
+      "lineRange": [
+        35,
+        42
+      ],
+      "summary": "Options for the webhook apiserver: logging, recommended generic options, solver group, and solvers.",
+      "tags": [
+        "cli",
+        "configuration",
+        "options"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/acme/webhook/cmd/server/start.go:NewWebhookServerOptions",
+      "type": "function",
+      "name": "NewWebhookServerOptions",
+      "filePath": "pkg/acme/webhook/cmd/server/start.go",
+      "lineRange": [
+        44,
+        61
+      ],
+      "summary": "Creates webhook server options, disabling etcd, admission, and priority-and-fairness defaults.",
+      "tags": [
+        "factory",
+        "configuration",
+        "options"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/acme/webhook/cmd/server/start.go:NewCommandStartWebhookServer",
+      "type": "function",
+      "name": "NewCommandStartWebhookServer",
+      "filePath": "pkg/acme/webhook/cmd/server/start.go",
+      "lineRange": [
+        63,
+        91
+      ],
+      "summary": "Builds the Cobra command whose RunE completes, validates, and runs the webhook server.",
+      "tags": [
+        "cli",
+        "cobra",
+        "entry-point"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/acme/webhook/cmd/server/start.go:Validate",
+      "type": "function",
+      "name": "Validate",
+      "filePath": "pkg/acme/webhook/cmd/server/start.go",
+      "lineRange": [
+        93,
+        103
+      ],
+      "summary": "Applies logging flags and validates the recommended apiserver options.",
+      "tags": [
+        "validation",
+        "cli",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/acme/webhook/cmd/server/start.go:Config",
+      "type": "function",
+      "name": "Config",
+      "filePath": "pkg/acme/webhook/cmd/server/start.go",
+      "lineRange": [
+        112,
+        131
+      ],
+      "summary": "Generates self-signed serving certificates and assembles the webhook apiserver config.",
+      "tags": [
+        "configuration",
+        "apiserver",
+        "tls"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/acme/webhook/cmd/server/start.go:RunWebhookServer",
+      "type": "function",
+      "name": "RunWebhookServer",
+      "filePath": "pkg/acme/webhook/cmd/server/start.go",
+      "lineRange": [
+        135,
+        146
+      ],
+      "summary": "Completes the config, creates the apiserver, and runs it until the context is canceled.",
+      "tags": [
+        "apiserver",
+        "lifecycle",
+        "cli"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:make/config/samplewebhook/sample/main.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:make/config/samplewebhook/sample/main.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:make/config/samplewebhook/sample/main.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:make/config/samplewebhook/sample/main.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:make/config/samplewebhook/sample/main.go",
+      "target": "file:pkg/acme/webhook/cmd/cmd.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/util.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/util.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/util.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/util.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/util.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/util.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/util.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/util.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/util.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/util.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/util.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/util.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/apis/acme/v1alpha1/register.go",
+      "target": "file:pkg/acme/webhook/apis/acme/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "file:pkg/acme/webhook/openapi/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "file:pkg/acme/webhook/openapi/zz_generated.openapi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "file:pkg/acme/webhook/registry/challengepayload/challenge_payload.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "file:pkg/acme/webhook/webhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/cmd.go",
+      "target": "file:internal/cmd/util/exit.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/cmd.go",
+      "target": "file:internal/cmd/util/signal.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/cmd.go",
+      "target": "file:internal/cmd/util/signal_posix.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/cmd.go",
+      "target": "file:internal/cmd/util/signal_windows.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/cmd.go",
+      "target": "file:pkg/acme/webhook/cmd/server/start.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/cmd.go",
+      "target": "file:pkg/acme/webhook/webhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/cmd.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/server/start.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/server/start.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/server/start.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/server/start.go",
+      "target": "file:pkg/acme/webhook/apis/acme/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/server/start.go",
+      "target": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/server/start.go",
+      "target": "file:pkg/acme/webhook/webhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/server/start.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:make/config/samplewebhook/sample/main.go",
+      "target": "class:make/config/samplewebhook/sample/main.go:customDNSProviderSolver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/config/samplewebhook/sample/main.go",
+      "target": "function:make/config/samplewebhook/sample/main.go:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/config/samplewebhook/sample/main.go",
+      "target": "function:make/config/samplewebhook/sample/main.go:Present",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/config/samplewebhook/sample/main.go",
+      "target": "function:make/config/samplewebhook/sample/main.go:Present",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:make/config/samplewebhook/sample/main.go",
+      "target": "function:make/config/samplewebhook/sample/main.go:CleanUp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/config/samplewebhook/sample/main.go",
+      "target": "function:make/config/samplewebhook/sample/main.go:CleanUp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:make/config/samplewebhook/sample/main.go",
+      "target": "function:make/config/samplewebhook/sample/main.go:Initialize",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:make/config/samplewebhook/sample/main.go",
+      "target": "function:make/config/samplewebhook/sample/main.go:Initialize",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:make/config/samplewebhook/sample/main.go",
+      "target": "function:make/config/samplewebhook/sample/main.go:loadConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/util.go",
+      "target": "function:pkg/acme/util.go:IsFinalState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/util.go",
+      "target": "function:pkg/acme/util.go:IsFinalState",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/util.go",
+      "target": "function:pkg/acme/util.go:IsFailureState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/util.go",
+      "target": "function:pkg/acme/util.go:IsFailureState",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/util.go",
+      "target": "function:pkg/acme/util.go:PrivateKeySelector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/util.go",
+      "target": "function:pkg/acme/util.go:PrivateKeySelector",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/webhook/apis/acme/v1alpha1/register.go",
+      "target": "function:pkg/acme/webhook/apis/acme/v1alpha1/register.go:Resource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/webhook/apis/acme/v1alpha1/register.go",
+      "target": "function:pkg/acme/webhook/apis/acme/v1alpha1/register.go:Resource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "target": "class:pkg/acme/webhook/apis/acme/v1alpha1/types.go:ChallengePayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "target": "class:pkg/acme/webhook/apis/acme/v1alpha1/types.go:ChallengePayload",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "target": "class:pkg/acme/webhook/apis/acme/v1alpha1/types.go:ChallengeRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "target": "class:pkg/acme/webhook/apis/acme/v1alpha1/types.go:ChallengeRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "target": "class:pkg/acme/webhook/apis/acme/v1alpha1/types.go:ChallengeResponse",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/webhook/apis/acme/v1alpha1/types.go",
+      "target": "class:pkg/acme/webhook/apis/acme/v1alpha1/types.go:ChallengeResponse",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "class:pkg/acme/webhook/apiserver/apiserver.go:Config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "class:pkg/acme/webhook/apiserver/apiserver.go:Config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "class:pkg/acme/webhook/apiserver/apiserver.go:ExtraConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "class:pkg/acme/webhook/apiserver/apiserver.go:ExtraConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "class:pkg/acme/webhook/apiserver/apiserver.go:ChallengeServer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "class:pkg/acme/webhook/apiserver/apiserver.go:ChallengeServer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "function:pkg/acme/webhook/apiserver/apiserver.go:Complete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "function:pkg/acme/webhook/apiserver/apiserver.go:Complete",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "function:pkg/acme/webhook/apiserver/apiserver.go:New",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "function:pkg/acme/webhook/apiserver/apiserver.go:New",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "function:pkg/acme/webhook/apiserver/apiserver.go:appendUniqueGroupVersion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/cmd.go",
+      "target": "function:pkg/acme/webhook/cmd/cmd.go:RunWebhookServer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/cmd.go",
+      "target": "function:pkg/acme/webhook/cmd/cmd.go:RunWebhookServer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/server/start.go",
+      "target": "class:pkg/acme/webhook/cmd/server/start.go:WebhookServerOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/server/start.go",
+      "target": "class:pkg/acme/webhook/cmd/server/start.go:WebhookServerOptions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/server/start.go",
+      "target": "function:pkg/acme/webhook/cmd/server/start.go:NewWebhookServerOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/server/start.go",
+      "target": "function:pkg/acme/webhook/cmd/server/start.go:NewWebhookServerOptions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/server/start.go",
+      "target": "function:pkg/acme/webhook/cmd/server/start.go:NewCommandStartWebhookServer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/server/start.go",
+      "target": "function:pkg/acme/webhook/cmd/server/start.go:NewCommandStartWebhookServer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/server/start.go",
+      "target": "function:pkg/acme/webhook/cmd/server/start.go:Validate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/server/start.go",
+      "target": "function:pkg/acme/webhook/cmd/server/start.go:Validate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/server/start.go",
+      "target": "function:pkg/acme/webhook/cmd/server/start.go:Config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/server/start.go",
+      "target": "function:pkg/acme/webhook/cmd/server/start.go:Config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/server/start.go",
+      "target": "function:pkg/acme/webhook/cmd/server/start.go:RunWebhookServer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/server/start.go",
+      "target": "function:pkg/acme/webhook/cmd/server/start.go:RunWebhookServer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:make/config/samplewebhook/sample/main.go",
+      "target": "function:pkg/acme/webhook/cmd/cmd.go:RunWebhookServer",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/webhook/cmd/cmd.go",
+      "target": "function:pkg/acme/webhook/cmd/server/start.go:NewCommandStartWebhookServer",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/acme/webhook/cmd/server/start.go:RunWebhookServer",
+      "target": "function:pkg/acme/webhook/apiserver/apiserver.go:New",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/acme/webhook/apiserver/apiserver.go",
+      "target": "function:pkg/acme/webhook/registry/challengepayload/challenge_payload.go:NewREST",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:make/config/samplewebhook/sample/main.go:customDNSProviderSolver",
+      "target": "class:pkg/acme/webhook/webhook.go:Solver",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    }
+  ]
+}

@@ -1,0 +1,696 @@
+{
+  "nodes": [
+    {
+      "id": "file:internal/apis/config/cainjector/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "internal/apis/config/cainjector/doc.go",
+      "summary": "Package-level documentation for the internal cainjector configuration API group, declaring the group name and deepcopy code-generation markers.",
+      "tags": [
+        "package-doc",
+        "api-group",
+        "code-generation",
+        "internal-api"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/cainjector/fuzzer/fuzzer.go",
+      "type": "file",
+      "name": "fuzzer.go",
+      "filePath": "internal/apis/config/cainjector/fuzzer/fuzzer.go",
+      "summary": "Provides randfill fuzzer functions for the internal cainjector configuration, seeding defaults so API round-trip tests do not mutate values.",
+      "tags": [
+        "testing",
+        "fuzzing",
+        "round-trip",
+        "api-group"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/cainjector/install/install.go",
+      "type": "file",
+      "name": "install.go",
+      "filePath": "internal/apis/config/cainjector/install/install.go",
+      "summary": "Registers the cainjector internal and v1alpha1 configuration types into a runtime scheme via a single exported Install helper.",
+      "tags": [
+        "scheme-registration",
+        "initialization",
+        "api-group",
+        "entry-point"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/cainjector/register.go",
+      "type": "file",
+      "name": "register.go",
+      "filePath": "internal/apis/config/cainjector/register.go",
+      "summary": "Defines the internal cainjector config GroupVersion, Resource helper and known-type registration for the scheme.",
+      "tags": [
+        "api-group",
+        "registration",
+        "type-definition",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/cainjector/scheme/scheme.go",
+      "type": "file",
+      "name": "scheme.go",
+      "filePath": "internal/apis/config/cainjector/scheme/scheme.go",
+      "summary": "Builds a runtime scheme and codec factory preloaded with the internal and v1alpha1 cainjector configuration types.",
+      "tags": [
+        "scheme",
+        "serialization",
+        "factory",
+        "api-group"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/cainjector/types.go",
+      "type": "file",
+      "name": "types.go",
+      "filePath": "internal/apis/config/cainjector/types.go",
+      "summary": "Defines the internal CAInjectorConfiguration type plus the data-source and injectable-resource enablement sub-configs consumed by the cainjector binary.",
+      "tags": [
+        "data-model",
+        "configuration",
+        "api-group",
+        "type-definition"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/apis/config/cainjector/v1alpha1/defaults.go",
+      "type": "file",
+      "name": "defaults.go",
+      "filePath": "internal/apis/config/cainjector/v1alpha1/defaults.go",
+      "summary": "Implements defaulting for the cainjector v1alpha1 configuration, filling logging, metrics and watch-enablement fields when unset.",
+      "tags": [
+        "defaulting",
+        "configuration",
+        "api-group",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/apis/config/cainjector/v1alpha1/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "internal/apis/config/cainjector/v1alpha1/doc.go",
+      "summary": "Versioned package documentation for cainjector config v1alpha1 that declares the conversion, defaulter and group-name code-generation directives.",
+      "tags": [
+        "package-doc",
+        "api-group",
+        "code-generation",
+        "versioning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/apis/config/cainjector/v1alpha1/register.go",
+      "type": "file",
+      "name": "register.go",
+      "filePath": "internal/apis/config/cainjector/v1alpha1/register.go",
+      "summary": "Registers the cainjector config v1alpha1 GroupVersion, its Resource helper and the local scheme builder used for conversions and defaulting.",
+      "tags": [
+        "api-group",
+        "registration",
+        "scheme",
+        "versioning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/apis/config/cainjector/types.go:CAInjectorConfiguration",
+      "type": "class",
+      "name": "CAInjectorConfiguration",
+      "filePath": "internal/apis/config/cainjector/types.go",
+      "lineRange": [
+        28,
+        72
+      ],
+      "summary": "Root internal cainjector configuration object holding kubeconfig, namespace scope, leader election, logging, feature gates and metrics TLS settings.",
+      "tags": [
+        "data-model",
+        "configuration",
+        "root-object",
+        "api-group"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/config/cainjector/types.go:EnableDataSourceConfig",
+      "type": "class",
+      "name": "EnableDataSourceConfig",
+      "filePath": "internal/apis/config/cainjector/types.go",
+      "lineRange": [
+        74,
+        78
+      ],
+      "summary": "Flags which cert-manager resources cainjector watches as sources of CA data.",
+      "tags": [
+        "data-model",
+        "configuration",
+        "cainjector"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/apis/config/cainjector/types.go:EnableInjectableConfig",
+      "type": "class",
+      "name": "EnableInjectableConfig",
+      "filePath": "internal/apis/config/cainjector/types.go",
+      "lineRange": [
+        80,
+        100
+      ],
+      "summary": "Selects which resource kinds (webhook configurations, CRDs, APIServices) cainjector injects CA data into.",
+      "tags": [
+        "data-model",
+        "configuration",
+        "cainjector"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/apis/config/cainjector/install/install.go:Install",
+      "type": "function",
+      "name": "Install",
+      "filePath": "internal/apis/config/cainjector/install/install.go",
+      "lineRange": [
+        30,
+        33
+      ],
+      "summary": "Adds the cainjector internal and v1alpha1 configuration types to the supplied runtime scheme, panicking on registration errors.",
+      "tags": [
+        "scheme-registration",
+        "initialization",
+        "api-group"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/cainjector/register.go:Resource",
+      "type": "function",
+      "name": "Resource",
+      "filePath": "internal/apis/config/cainjector/register.go",
+      "lineRange": [
+        35,
+        37
+      ],
+      "summary": "Returns the GroupResource for a cainjector config resource name under the internal group version.",
+      "tags": [
+        "api-group",
+        "registration",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/cainjector/scheme/scheme.go:NewSchemeAndCodecs",
+      "type": "function",
+      "name": "NewSchemeAndCodecs",
+      "filePath": "internal/apis/config/cainjector/scheme/scheme.go",
+      "lineRange": [
+        30,
+        40
+      ],
+      "summary": "Constructs a runtime scheme populated with cainjector config types and returns it alongside a matching codec factory.",
+      "tags": [
+        "scheme",
+        "factory",
+        "serialization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/cainjector/v1alpha1/defaults.go:SetDefaults_CAInjectorConfiguration",
+      "type": "function",
+      "name": "SetDefaults_CAInjectorConfiguration",
+      "filePath": "internal/apis/config/cainjector/v1alpha1/defaults.go",
+      "lineRange": [
+        33,
+        43
+      ],
+      "summary": "Applies cainjector configuration defaults, notably the recommended logging configuration for the root object.",
+      "tags": [
+        "defaulting",
+        "configuration",
+        "api-group"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/cainjector/v1alpha1/defaults.go:SetDefaults_EnableDataSourceConfig",
+      "type": "function",
+      "name": "SetDefaults_EnableDataSourceConfig",
+      "filePath": "internal/apis/config/cainjector/v1alpha1/defaults.go",
+      "lineRange": [
+        45,
+        49
+      ],
+      "summary": "Enables certificate watching by default for cainjector's data-source configuration.",
+      "tags": [
+        "defaulting",
+        "configuration",
+        "cainjector"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/cainjector/v1alpha1/defaults.go:SetDefaults_EnableInjectableConfig",
+      "type": "function",
+      "name": "SetDefaults_EnableInjectableConfig",
+      "filePath": "internal/apis/config/cainjector/v1alpha1/defaults.go",
+      "lineRange": [
+        51,
+        64
+      ],
+      "summary": "Enables webhook configurations, CRDs and APIServices as injection targets by default.",
+      "tags": [
+        "defaulting",
+        "configuration",
+        "cainjector"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/apis/config/cainjector/v1alpha1/register.go:Resource",
+      "type": "function",
+      "name": "Resource",
+      "filePath": "internal/apis/config/cainjector/v1alpha1/register.go",
+      "lineRange": [
+        30,
+        32
+      ],
+      "summary": "Returns the GroupResource for a cainjector config resource name under the v1alpha1 group version.",
+      "tags": [
+        "api-group",
+        "registration",
+        "utility",
+        "versioning"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:internal/apis/config/cainjector/types.go",
+      "target": "class:internal/apis/config/cainjector/types.go:CAInjectorConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/types.go",
+      "target": "class:internal/apis/config/cainjector/types.go:CAInjectorConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/types.go",
+      "target": "class:internal/apis/config/cainjector/types.go:EnableDataSourceConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/types.go",
+      "target": "class:internal/apis/config/cainjector/types.go:EnableDataSourceConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/types.go",
+      "target": "class:internal/apis/config/cainjector/types.go:EnableInjectableConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/types.go",
+      "target": "class:internal/apis/config/cainjector/types.go:EnableInjectableConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/install/install.go",
+      "target": "function:internal/apis/config/cainjector/install/install.go:Install",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/install/install.go",
+      "target": "function:internal/apis/config/cainjector/install/install.go:Install",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/register.go",
+      "target": "function:internal/apis/config/cainjector/register.go:Resource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/register.go",
+      "target": "function:internal/apis/config/cainjector/register.go:Resource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/scheme/scheme.go",
+      "target": "function:internal/apis/config/cainjector/scheme/scheme.go:NewSchemeAndCodecs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/scheme/scheme.go",
+      "target": "function:internal/apis/config/cainjector/scheme/scheme.go:NewSchemeAndCodecs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/cainjector/v1alpha1/defaults.go:SetDefaults_CAInjectorConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/cainjector/v1alpha1/defaults.go:SetDefaults_CAInjectorConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/cainjector/v1alpha1/defaults.go:SetDefaults_EnableDataSourceConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/cainjector/v1alpha1/defaults.go:SetDefaults_EnableDataSourceConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/cainjector/v1alpha1/defaults.go:SetDefaults_EnableInjectableConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/defaults.go",
+      "target": "function:internal/apis/config/cainjector/v1alpha1/defaults.go:SetDefaults_EnableInjectableConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/register.go",
+      "target": "function:internal/apis/config/cainjector/v1alpha1/register.go:Resource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/register.go",
+      "target": "function:internal/apis/config/cainjector/v1alpha1/register.go:Resource",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/config/cainjector/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/config/cainjector/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/config/cainjector/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/fuzzer/fuzzer.go",
+      "target": "file:internal/apis/config/cainjector/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/install/install.go",
+      "target": "file:internal/apis/config/cainjector/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/install/install.go",
+      "target": "file:internal/apis/config/cainjector/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/install/install.go",
+      "target": "file:internal/apis/config/cainjector/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/install/install.go",
+      "target": "file:internal/apis/config/cainjector/v1alpha1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/install/install.go",
+      "target": "file:internal/apis/config/cainjector/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/install/install.go",
+      "target": "file:internal/apis/config/cainjector/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/install/install.go",
+      "target": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/install/install.go",
+      "target": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/install/install.go",
+      "target": "file:internal/apis/config/cainjector/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/register.go",
+      "target": "file:pkg/apis/config/cainjector/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/scheme/scheme.go",
+      "target": "file:internal/apis/config/cainjector/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/scheme/scheme.go",
+      "target": "file:internal/apis/config/cainjector/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/scheme/scheme.go",
+      "target": "file:internal/apis/config/cainjector/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/scheme/scheme.go",
+      "target": "file:internal/apis/config/cainjector/v1alpha1/defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/scheme/scheme.go",
+      "target": "file:internal/apis/config/cainjector/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/scheme/scheme.go",
+      "target": "file:internal/apis/config/cainjector/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/scheme/scheme.go",
+      "target": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/scheme/scheme.go",
+      "target": "file:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/scheme/scheme.go",
+      "target": "file:internal/apis/config/cainjector/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/types.go",
+      "target": "file:internal/apis/config/shared/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/types.go",
+      "target": "file:internal/apis/config/shared/types_leaderelection.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/types.go",
+      "target": "file:internal/apis/config/shared/types_tlsconfig.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/types.go",
+      "target": "file:internal/apis/config/shared/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/cainjector/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/cainjector/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/cainjector/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/defaults.go",
+      "target": "file:pkg/apis/config/cainjector/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/cainjector/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/cainjector/v1alpha1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/cainjector/v1alpha1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/cainjector/v1alpha1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/apis/config/cainjector/v1alpha1/register.go",
+      "target": "file:pkg/apis/config/cainjector/v1alpha1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

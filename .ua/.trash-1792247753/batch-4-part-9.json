@@ -1,0 +1,1383 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/controller/test/context_builder.go",
+      "type": "file",
+      "name": "context_builder.go",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "summary": "Configurable fake controller Context builder used by unit tests to simulate Kubernetes clients, informers, actions and events.",
+      "tags": [
+        "test",
+        "fake",
+        "builder",
+        "context",
+        "kubernetes"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Uses client-go fake clientsets and reactors to record expected actions and events for controller unit tests."
+    },
+    {
+      "id": "class:pkg/controller/test/context_builder.go:Builder",
+      "type": "class",
+      "name": "Builder",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "lineRange": [
+        67,
+        93
+      ],
+      "summary": "Fluent test builder holding fake objects, expected actions and events, clock and cleanup hooks.",
+      "tags": [
+        "test",
+        "builder",
+        "fake",
+        "context"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/test/context_builder.go:generateNameReactor",
+      "type": "function",
+      "name": "generateNameReactor",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "lineRange": [
+        95,
+        103
+      ],
+      "summary": "Reactor that emulates API server generateName behaviour for create actions.",
+      "tags": [
+        "test",
+        "reactor",
+        "fake",
+        "kubernetes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/test/context_builder.go:Init",
+      "type": "function",
+      "name": "Init",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "lineRange": [
+        114,
+        178
+      ],
+      "summary": "Initialises the fake context with fake clients, informers, reactors and a running informer factory.",
+      "tags": [
+        "test",
+        "initialisation",
+        "fake",
+        "context"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/test/context_builder.go:InitWithRESTConfig",
+      "type": "function",
+      "name": "InitWithRESTConfig",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "lineRange": [
+        182,
+        185
+      ],
+      "summary": "Initialises the builder with an explicit REST config.",
+      "tags": [
+        "test",
+        "initialisation",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/test/context_builder.go:FakeKubeClient",
+      "type": "function",
+      "name": "FakeKubeClient",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "lineRange": [
+        187,
+        189
+      ],
+      "summary": "Returns the fake Kubernetes clientset created for the test context.",
+      "tags": [
+        "test",
+        "accessor",
+        "fake-client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/test/context_builder.go:FakeKubeInformerFactory",
+      "type": "function",
+      "name": "FakeKubeInformerFactory",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "lineRange": [
+        191,
+        193
+      ],
+      "summary": "Returns the fake Kubernetes informer factory created for the test context.",
+      "tags": [
+        "test",
+        "accessor",
+        "informer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/test/context_builder.go:FakeCMClient",
+      "type": "function",
+      "name": "FakeCMClient",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "lineRange": [
+        195,
+        197
+      ],
+      "summary": "Returns the fake cert-manager clientset created for the test context.",
+      "tags": [
+        "test",
+        "accessor",
+        "fake-client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/test/context_builder.go:FakeGWClient",
+      "type": "function",
+      "name": "FakeGWClient",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "lineRange": [
+        199,
+        201
+      ],
+      "summary": "Returns the fake Gateway API clientset created for the test context.",
+      "tags": [
+        "test",
+        "accessor",
+        "fake-client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/test/context_builder.go:FakeCMInformerFactory",
+      "type": "function",
+      "name": "FakeCMInformerFactory",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "lineRange": [
+        203,
+        205
+      ],
+      "summary": "Returns the fake cert-manager informer factory created for the test context.",
+      "tags": [
+        "test",
+        "accessor",
+        "informer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/test/context_builder.go:FakeMetadataClient",
+      "type": "function",
+      "name": "FakeMetadataClient",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "lineRange": [
+        207,
+        209
+      ],
+      "summary": "Returns the fake metadata client created for the test context.",
+      "tags": [
+        "test",
+        "accessor",
+        "fake-client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/test/context_builder.go:FakeDiscoveryClient",
+      "type": "function",
+      "name": "FakeDiscoveryClient",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "lineRange": [
+        211,
+        213
+      ],
+      "summary": "Returns the fake discovery client created for the test context.",
+      "tags": [
+        "test",
+        "accessor",
+        "discovery"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/test/context_builder.go:CheckAndFinish",
+      "type": "function",
+      "name": "CheckAndFinish",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "lineRange": [
+        218,
+        233
+      ],
+      "summary": "Verifies expected actions and events and stops the fake informers when the test completes.",
+      "tags": [
+        "test",
+        "assertion",
+        "lifecycle"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/test/context_builder.go:AllEventsCalled",
+      "type": "function",
+      "name": "AllEventsCalled",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "lineRange": [
+        235,
+        243
+      ],
+      "summary": "Asserts that every expected event was emitted by the code under test.",
+      "tags": [
+        "test",
+        "assertion",
+        "events"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/test/context_builder.go:AllActionsExecuted",
+      "type": "function",
+      "name": "AllActionsExecuted",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "lineRange": [
+        246,
+        295
+      ],
+      "summary": "Asserts that every expected client action was executed, reporting the remaining actions on failure.",
+      "tags": [
+        "test",
+        "assertion",
+        "actions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/test/context_builder.go:Stop",
+      "type": "function",
+      "name": "Stop",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "lineRange": [
+        303,
+        312
+      ],
+      "summary": "Stops the fake informer factories created by the builder.",
+      "tags": [
+        "test",
+        "lifecycle",
+        "informer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/test/context_builder.go:Start",
+      "type": "function",
+      "name": "Start",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "lineRange": [
+        314,
+        322
+      ],
+      "summary": "Starts the fake informer factories created by the builder.",
+      "tags": [
+        "test",
+        "lifecycle",
+        "informer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/test/context_builder.go:Sync",
+      "type": "function",
+      "name": "Sync",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "lineRange": [
+        332,
+        349
+      ],
+      "summary": "Waits for the fake informer caches to sync, failing the test on error or timeout.",
+      "tags": [
+        "test",
+        "informer-sync",
+        "synchronisation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/test/context_builder.go:Events",
+      "type": "function",
+      "name": "Events",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "lineRange": [
+        351,
+        357
+      ],
+      "summary": "Records expected events that the test asserts were emitted.",
+      "tags": [
+        "test",
+        "events",
+        "assertion"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/test/context_builder.go:mustAllSync",
+      "type": "function",
+      "name": "mustAllSync",
+      "filePath": "pkg/controller/test/context_builder.go",
+      "lineRange": [
+        359,
+        367
+      ],
+      "summary": "Blocks until all informer sync functions report synced or the timeout elapses.",
+      "tags": [
+        "test",
+        "informer-sync",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/util.go",
+      "type": "file",
+      "name": "util.go",
+      "filePath": "pkg/controller/util.go",
+      "summary": "Shared controller utilities including workqueue rate limiters, owner-reference event handlers and Secret annotation copying.",
+      "tags": [
+        "utility",
+        "workqueue",
+        "event-handler",
+        "rate-limiter",
+        "kubernetes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/util.go:DefaultItemBasedRateLimiter",
+      "type": "function",
+      "name": "DefaultItemBasedRateLimiter",
+      "filePath": "pkg/controller/util.go",
+      "lineRange": [
+        39,
+        41
+      ],
+      "summary": "Returns an exponential rate limiter with a 5 second base delay and 5 minute maximum.",
+      "tags": [
+        "rate-limiter",
+        "workqueue",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/util.go:DefaultCertificateRateLimiter",
+      "type": "function",
+      "name": "DefaultCertificateRateLimiter",
+      "filePath": "pkg/controller/util.go",
+      "lineRange": [
+        45,
+        47
+      ],
+      "summary": "Returns an exponential rate limiter tuned for Certificate controllers with a 1 second base delay.",
+      "tags": [
+        "rate-limiter",
+        "workqueue",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/util.go:DefaultACMERateLimiter",
+      "type": "function",
+      "name": "DefaultACMERateLimiter",
+      "filePath": "pkg/controller/util.go",
+      "lineRange": [
+        51,
+        53
+      ],
+      "summary": "Returns an exponential rate limiter tuned for ACME controllers with a 5 second base delay and 30 minute maximum.",
+      "tags": [
+        "rate-limiter",
+        "workqueue",
+        "acme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/util.go:QueuingEventHandler",
+      "type": "class",
+      "name": "QueuingEventHandler",
+      "filePath": "pkg/controller/util.go",
+      "lineRange": [
+        114,
+        116
+      ],
+      "summary": "Informer event handler that enqueues every added or updated object without filtering.",
+      "tags": [
+        "event-handler",
+        "queue",
+        "informer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/util.go:BlockingEventHandler",
+      "type": "class",
+      "name": "BlockingEventHandler",
+      "filePath": "pkg/controller/util.go",
+      "lineRange": [
+        156,
+        158
+      ],
+      "summary": "Informer event handler that runs a custom work function synchronously for each event.",
+      "tags": [
+        "event-handler",
+        "informer",
+        "callback"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/util.go:HandleOwnedResourceNamespacedFunc",
+      "type": "function",
+      "name": "HandleOwnedResourceNamespacedFunc",
+      "filePath": "pkg/controller/util.go",
+      "lineRange": [
+        58,
+        110
+      ],
+      "summary": "Returns an event handler that enqueues the owners of an object by resolving its owner references.",
+      "tags": [
+        "event-handler",
+        "owner-reference",
+        "workqueue",
+        "generics"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/util.go:BuildAnnotationsToCopy",
+      "type": "function",
+      "name": "BuildAnnotationsToCopy",
+      "filePath": "pkg/controller/util.go",
+      "lineRange": [
+        191,
+        214
+      ],
+      "summary": "Selects annotations whose keys match the configured prefixes so they can be copied onto generated resources.",
+      "tags": [
+        "annotations",
+        "filtering",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/util.go:ToSecret",
+      "type": "function",
+      "name": "ToSecret",
+      "filePath": "pkg/controller/util.go",
+      "lineRange": [
+        216,
+        234
+      ],
+      "summary": "Converts an unstructured or typed object into a core Secret for informer-based lookups.",
+      "tags": [
+        "conversion",
+        "secret",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/issuer/acme/acme.go",
+      "type": "file",
+      "name": "acme.go",
+      "filePath": "pkg/issuer/acme/acme.go",
+      "summary": "ACME issuer implementation that wires account registration, secret-backed account keys and the HTTP-01 solver into the issuer interface.",
+      "tags": [
+        "issuer",
+        "acme",
+        "certificate",
+        "factory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/issuer/acme/acme.go:Acme",
+      "type": "class",
+      "name": "Acme",
+      "filePath": "pkg/issuer/acme/acme.go",
+      "lineRange": [
+        38,
+        53
+      ],
+      "summary": "ACME issuer state holding the secret client, recorder, account registry, client builder and resource namespace.",
+      "tags": [
+        "issuer",
+        "acme",
+        "state",
+        "certificate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/acme.go:New",
+      "type": "function",
+      "name": "New",
+      "filePath": "pkg/issuer/acme/acme.go",
+      "lineRange": [
+        56,
+        69
+      ],
+      "summary": "Constructs the ACME issuer from the controller context and registers its account key getter.",
+      "tags": [
+        "factory",
+        "issuer",
+        "acme",
+        "context"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "class:pkg/controller/test/context_builder.go:Builder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "class:pkg/controller/test/context_builder.go:Builder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:generateNameReactor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:Init",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:Init",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:InitWithRESTConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:InitWithRESTConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:FakeKubeClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:FakeKubeClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:FakeKubeInformerFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:FakeKubeInformerFactory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:FakeCMClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:FakeCMClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:FakeGWClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:FakeGWClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:FakeCMInformerFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:FakeCMInformerFactory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:FakeMetadataClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:FakeMetadataClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:FakeDiscoveryClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:FakeDiscoveryClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:CheckAndFinish",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:CheckAndFinish",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:AllEventsCalled",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:AllEventsCalled",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:AllActionsExecuted",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:AllActionsExecuted",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:Stop",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:Stop",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:Start",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:Start",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:Sync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:Sync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:Events",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:Events",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "function:pkg/controller/test/context_builder.go:mustAllSync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/api/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/api/util/duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/api/util/issuers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/api/util/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/api/util/names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/api/util/usages.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/client/clientset/versioned/fake/clientset_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/client/clientset/versioned/fake/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/client/clientset/versioned/fake/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/client/informers/externalversions/factory.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/client/informers/externalversions/generic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/metrics/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/metrics/metrics.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/metrics/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/util/useragent.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:pkg/util/version.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/test/context_builder.go",
+      "target": "file:test/unit/discovery/discovery.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/util.go",
+      "target": "function:pkg/controller/util.go:DefaultItemBasedRateLimiter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/util.go",
+      "target": "function:pkg/controller/util.go:DefaultItemBasedRateLimiter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/util.go",
+      "target": "function:pkg/controller/util.go:DefaultCertificateRateLimiter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/util.go",
+      "target": "function:pkg/controller/util.go:DefaultCertificateRateLimiter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/util.go",
+      "target": "function:pkg/controller/util.go:DefaultACMERateLimiter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/util.go",
+      "target": "function:pkg/controller/util.go:DefaultACMERateLimiter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/util.go",
+      "target": "class:pkg/controller/util.go:QueuingEventHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/util.go",
+      "target": "class:pkg/controller/util.go:QueuingEventHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/util.go",
+      "target": "class:pkg/controller/util.go:BlockingEventHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/util.go",
+      "target": "class:pkg/controller/util.go:BlockingEventHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/util.go",
+      "target": "function:pkg/controller/util.go:HandleOwnedResourceNamespacedFunc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/util.go",
+      "target": "function:pkg/controller/util.go:HandleOwnedResourceNamespacedFunc",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/util.go",
+      "target": "function:pkg/controller/util.go:BuildAnnotationsToCopy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/util.go",
+      "target": "function:pkg/controller/util.go:BuildAnnotationsToCopy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/util.go",
+      "target": "function:pkg/controller/util.go:ToSecret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/util.go",
+      "target": "function:pkg/controller/util.go:ToSecret",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/util.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "class:pkg/issuer/acme/acme.go:Acme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "class:pkg/issuer/acme/acme.go:Acme",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "function:pkg/issuer/acme/acme.go:New",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "function:pkg/issuer/acme/acme.go:New",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/acme/accounts/client.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/acme/accounts/registry.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/api/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/api/util/duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/api/util/issuers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/api/util/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/api/util/names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/api/util/usages.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/issuer/factory.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/issuer/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/issuer/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/acme.go",
+      "target": "file:pkg/util/kube/pki.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

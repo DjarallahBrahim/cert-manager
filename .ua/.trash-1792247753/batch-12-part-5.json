@@ -1,0 +1,989 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/e2e/framework/config/samplewebhook.go",
+      "type": "file",
+      "name": "samplewebhook.go",
+      "filePath": "test/e2e/framework/config/samplewebhook.go",
+      "summary": "Configuration for the sample DNS-01 webhook addon, including API group and solver name.",
+      "tags": [
+        "configuration",
+        "test",
+        "webhook",
+        "dns01"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/framework/config/samplewebhook.go:DNS01Webhook",
+      "type": "class",
+      "name": "DNS01Webhook",
+      "filePath": "test/e2e/framework/config/samplewebhook.go",
+      "lineRange": [
+        23,
+        29
+      ],
+      "summary": "Holds the webhook API group and solver name used by DNS-01 tests.",
+      "tags": [
+        "webhook",
+        "dns01",
+        "configuration",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/config/suite.go",
+      "type": "file",
+      "name": "suite.go",
+      "filePath": "test/e2e/framework/config/suite.go",
+      "summary": "Per-suite e2e configuration, currently nested ACME and Cloudflare credentials, with flag registration and validation.",
+      "tags": [
+        "configuration",
+        "test",
+        "acme",
+        "cloudflare"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/framework/config/suite.go:Suite",
+      "type": "class",
+      "name": "Suite",
+      "filePath": "test/e2e/framework/config/suite.go",
+      "lineRange": [
+        24,
+        26
+      ],
+      "summary": "Top-level per-suite configuration that currently contains ACME settings.",
+      "tags": [
+        "suite",
+        "configuration",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/framework/config/suite.go:ACME",
+      "type": "class",
+      "name": "ACME",
+      "filePath": "test/e2e/framework/config/suite.go",
+      "lineRange": [
+        28,
+        30
+      ],
+      "summary": "ACME suite settings containing DNS provider credentials.",
+      "tags": [
+        "acme",
+        "configuration",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/framework/config/suite.go:Cloudflare",
+      "type": "class",
+      "name": "Cloudflare",
+      "filePath": "test/e2e/framework/config/suite.go",
+      "lineRange": [
+        32,
+        36
+      ],
+      "summary": "Cloudflare domain, email, and API key used by ACME DNS-01 tests.",
+      "tags": [
+        "cloudflare",
+        "credentials",
+        "configuration",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/config/suite.go:AddFlags",
+      "type": "function",
+      "name": "AddFlags",
+      "filePath": "test/e2e/framework/config/suite.go",
+      "lineRange": [
+        56,
+        63
+      ],
+      "summary": "Registers Cloudflare domain, email, and API key flags.",
+      "tags": [
+        "cloudflare",
+        "flags",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/config/venafi.go",
+      "type": "file",
+      "name": "venafi.go",
+      "filePath": "test/e2e/framework/config/venafi.go",
+      "summary": "Venafi TPP and Cloud connection configuration with flag registration and validation for Venafi issuer tests.",
+      "tags": [
+        "configuration",
+        "test",
+        "venafi",
+        "credentials"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/e2e/framework/config/venafi.go:Venafi",
+      "type": "class",
+      "name": "Venafi",
+      "filePath": "test/e2e/framework/config/venafi.go",
+      "lineRange": [
+        25,
+        28
+      ],
+      "summary": "Groups Venafi TPP and Cloud configuration for the e2e suite.",
+      "tags": [
+        "venafi",
+        "configuration",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/framework/config/venafi.go:VenafiTPPConfiguration",
+      "type": "class",
+      "name": "VenafiTPPConfiguration",
+      "filePath": "test/e2e/framework/config/venafi.go",
+      "lineRange": [
+        30,
+        36
+      ],
+      "summary": "TPP URL, zone, username, password, and access token settings.",
+      "tags": [
+        "venafi",
+        "tpp",
+        "configuration",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/framework/config/venafi.go:VenafiCloudConfiguration",
+      "type": "class",
+      "name": "VenafiCloudConfiguration",
+      "filePath": "test/e2e/framework/config/venafi.go",
+      "lineRange": [
+        38,
+        41
+      ],
+      "summary": "Venafi Cloud zone and API token settings.",
+      "tags": [
+        "venafi",
+        "cloud",
+        "configuration",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/framework.go",
+      "type": "file",
+      "name": "framework.go",
+      "filePath": "test/e2e/framework/framework.go",
+      "summary": "Core e2e Framework that creates a namespace and Kubernetes/cert-manager clients per test, tracks required addons, and guarantees cleanup.",
+      "tags": [
+        "test",
+        "framework",
+        "kubernetes",
+        "lifecycle",
+        "entry-point"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Registers Ginkgo BeforeEach/AfterEach hooks from the constructor and combines Kubernetes, cert-manager, apiextensions, and apiregistration schemes."
+    },
+    {
+      "id": "class:test/e2e/framework/framework.go:Framework",
+      "type": "class",
+      "name": "Framework",
+      "filePath": "test/e2e/framework/framework.go",
+      "lineRange": [
+        52,
+        81
+      ],
+      "summary": "Per-test e2e context holding config, clientsets, scheme, namespace, cleanup handle, and required addons.",
+      "tags": [
+        "framework",
+        "kubernetes",
+        "lifecycle",
+        "struct"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/framework.go:NewFramework",
+      "type": "function",
+      "name": "NewFramework",
+      "filePath": "test/e2e/framework/framework.go",
+      "lineRange": [
+        93,
+        111
+      ],
+      "summary": "Creates the framework, builds a combined Kubernetes/cert-manager scheme, and hooks Ginkgo BeforeEach/AfterEach.",
+      "tags": [
+        "framework",
+        "initialization",
+        "ginkgo"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/framework.go:BeforeEach",
+      "type": "function",
+      "name": "BeforeEach",
+      "filePath": "test/e2e/framework/framework.go",
+      "lineRange": [
+        114,
+        157
+      ],
+      "summary": "Builds clients from the kubeconfig, creates a test namespace, and installs a cleanup action.",
+      "tags": [
+        "framework",
+        "setup",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/framework.go:AfterEach",
+      "type": "function",
+      "name": "AfterEach",
+      "filePath": "test/e2e/framework/framework.go",
+      "lineRange": [
+        160,
+        178
+      ],
+      "summary": "Prints addon logs on failure, deletes the test namespace, and runs cleanup actions.",
+      "tags": [
+        "framework",
+        "cleanup",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/framework.go:printAddonLogs",
+      "type": "function",
+      "name": "printAddonLogs",
+      "filePath": "test/e2e/framework/framework.go",
+      "lineRange": [
+        180,
+        194
+      ],
+      "summary": "Fetches addon logs and writes them to the Ginkgo writer when a test fails.",
+      "tags": [
+        "framework",
+        "logging",
+        "debugging"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/framework.go:RequireGlobalAddon",
+      "type": "function",
+      "name": "RequireGlobalAddon",
+      "filePath": "test/e2e/framework/framework.go",
+      "lineRange": [
+        202,
+        208
+      ],
+      "summary": "Asserts that a global addon was provisioned by the suite before the test runs.",
+      "tags": [
+        "framework",
+        "addon",
+        "assertion"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/framework.go:RequireAddon",
+      "type": "function",
+      "name": "RequireAddon",
+      "filePath": "test/e2e/framework/framework.go",
+      "lineRange": [
+        216,
+        230
+      ],
+      "summary": "Registers a per-test addon and ensures it is provisioned before the test runs.",
+      "tags": [
+        "framework",
+        "addon",
+        "setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/framework.go:CertManagerDescribe",
+      "type": "function",
+      "name": "CertManagerDescribe",
+      "filePath": "test/e2e/framework/framework.go",
+      "lineRange": [
+        237,
+        239
+      ],
+      "summary": "Wraps Ginkgo Describe with cert-manager e2e suite conventions.",
+      "tags": [
+        "framework",
+        "ginkgo",
+        "test-suite"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/framework.go:ConformanceDescribe",
+      "type": "function",
+      "name": "ConformanceDescribe",
+      "filePath": "test/e2e/framework/framework.go",
+      "lineRange": [
+        241,
+        243
+      ],
+      "summary": "Wraps Ginkgo Describe for conformance test suites.",
+      "tags": [
+        "framework",
+        "ginkgo",
+        "conformance"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/helper/certificaterequests.go",
+      "type": "file",
+      "name": "certificaterequests.go",
+      "filePath": "test/e2e/framework/helper/certificaterequests.go",
+      "summary": "Helper routines that wait for and validate issued CertificateRequests, including expected key usage checks.",
+      "tags": [
+        "test",
+        "helper",
+        "certificaterequest",
+        "validation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/certificaterequests.go:WaitForCertificateRequestReady",
+      "type": "function",
+      "name": "WaitForCertificateRequestReady",
+      "filePath": "test/e2e/framework/helper/certificaterequests.go",
+      "lineRange": [
+        47,
+        80
+      ],
+      "summary": "Polls until the named CertificateRequest has a Ready condition and surfaces a Failed reason as an error.",
+      "tags": [
+        "certificaterequest",
+        "wait",
+        "helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/certificaterequests.go:ValidateIssuedCertificateRequest",
+      "type": "function",
+      "name": "ValidateIssuedCertificateRequest",
+      "filePath": "test/e2e/framework/helper/certificaterequests.go",
+      "lineRange": [
+        86,
+        196
+      ],
+      "summary": "Validates the issued certificate data against the request, issuer expectations, and expected key usages.",
+      "tags": [
+        "certificaterequest",
+        "validation",
+        "certificate"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/certificaterequests.go:WaitCertificateRequestIssuedValid",
+      "type": "function",
+      "name": "WaitCertificateRequestIssuedValid",
+      "filePath": "test/e2e/framework/helper/certificaterequests.go",
+      "lineRange": [
+        198,
+        220
+      ],
+      "summary": "Waits for CertificateRequest readiness and then validates the issued certificate.",
+      "tags": [
+        "certificaterequest",
+        "wait",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/certificaterequests.go:WaitCertificateRequestIssuedValidTLS",
+      "type": "function",
+      "name": "WaitCertificateRequestIssuedValidTLS",
+      "filePath": "test/e2e/framework/helper/certificaterequests.go",
+      "lineRange": [
+        222,
+        265
+      ],
+      "summary": "Waits for readiness, validates issuance, and verifies the resulting TLS chain against the root CA.",
+      "tags": [
+        "certificaterequest",
+        "tls",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/certificaterequests.go:computeExpectedKeyUsages",
+      "type": "function",
+      "name": "computeExpectedKeyUsages",
+      "filePath": "test/e2e/framework/helper/certificaterequests.go",
+      "lineRange": [
+        275,
+        320
+      ],
+      "summary": "Derives expected key usages from the request, issuer spec, CA flag, and key algorithm.",
+      "tags": [
+        "certificaterequest",
+        "key-usage",
+        "validation"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/e2e/framework/config/samplewebhook.go",
+      "target": "class:test/e2e/framework/config/samplewebhook.go:DNS01Webhook",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/samplewebhook.go",
+      "target": "class:test/e2e/framework/config/samplewebhook.go:DNS01Webhook",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/suite.go",
+      "target": "class:test/e2e/framework/config/suite.go:Suite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/suite.go",
+      "target": "class:test/e2e/framework/config/suite.go:Suite",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/suite.go",
+      "target": "class:test/e2e/framework/config/suite.go:ACME",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/suite.go",
+      "target": "class:test/e2e/framework/config/suite.go:ACME",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/suite.go",
+      "target": "class:test/e2e/framework/config/suite.go:Cloudflare",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/suite.go",
+      "target": "class:test/e2e/framework/config/suite.go:Cloudflare",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/suite.go",
+      "target": "function:test/e2e/framework/config/suite.go:AddFlags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/suite.go",
+      "target": "function:test/e2e/framework/config/suite.go:AddFlags",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/venafi.go",
+      "target": "class:test/e2e/framework/config/venafi.go:Venafi",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/venafi.go",
+      "target": "class:test/e2e/framework/config/venafi.go:Venafi",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/venafi.go",
+      "target": "class:test/e2e/framework/config/venafi.go:VenafiTPPConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/venafi.go",
+      "target": "class:test/e2e/framework/config/venafi.go:VenafiTPPConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/venafi.go",
+      "target": "class:test/e2e/framework/config/venafi.go:VenafiCloudConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/venafi.go",
+      "target": "class:test/e2e/framework/config/venafi.go:VenafiCloudConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "class:test/e2e/framework/framework.go:Framework",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "class:test/e2e/framework/framework.go:Framework",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "function:test/e2e/framework/framework.go:NewFramework",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "function:test/e2e/framework/framework.go:NewFramework",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "function:test/e2e/framework/framework.go:BeforeEach",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "function:test/e2e/framework/framework.go:BeforeEach",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "function:test/e2e/framework/framework.go:AfterEach",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "function:test/e2e/framework/framework.go:AfterEach",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "function:test/e2e/framework/framework.go:printAddonLogs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "function:test/e2e/framework/framework.go:RequireGlobalAddon",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "function:test/e2e/framework/framework.go:RequireGlobalAddon",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "function:test/e2e/framework/framework.go:RequireAddon",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "function:test/e2e/framework/framework.go:RequireAddon",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "function:test/e2e/framework/framework.go:CertManagerDescribe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "function:test/e2e/framework/framework.go:CertManagerDescribe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "function:test/e2e/framework/framework.go:ConformanceDescribe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "function:test/e2e/framework/framework.go:ConformanceDescribe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/certificaterequests.go:WaitForCertificateRequestReady",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/certificaterequests.go:WaitForCertificateRequestReady",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/certificaterequests.go:ValidateIssuedCertificateRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/certificaterequests.go:ValidateIssuedCertificateRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/certificaterequests.go:WaitCertificateRequestIssuedValid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/certificaterequests.go:WaitCertificateRequestIssuedValid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/certificaterequests.go:WaitCertificateRequestIssuedValidTLS",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/certificaterequests.go:WaitCertificateRequestIssuedValidTLS",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificaterequests.go",
+      "target": "function:test/e2e/framework/helper/certificaterequests.go:computeExpectedKeyUsages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/addon/globals.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/config/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/config/addons.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/config/certmanager.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/config/config.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/config/gateway.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/config/ginkgo.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/config/helm.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/config/ingress_controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/config/samplewebhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/config/suite.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/config/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/helper/certificaterequests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/helper/certificates.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/helper/certificatesigningrequests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/helper/describe.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/helper/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/helper/kubectl.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/helper/secret.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/helper/validate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/log/log.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/util/config.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/framework.go",
+      "target": "file:test/e2e/framework/util/errors/errors.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificaterequests.go",
+      "target": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificaterequests.go",
+      "target": "file:test/e2e/framework/log/log.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:test/e2e/framework/framework.go:NewFramework",
+      "target": "function:test/e2e/framework/framework.go:BeforeEach",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/framework.go:NewFramework",
+      "target": "function:test/e2e/framework/framework.go:AfterEach",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/framework.go:AfterEach",
+      "target": "function:test/e2e/framework/framework.go:printAddonLogs",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/framework.go:RequireAddon",
+      "target": "function:test/e2e/framework/framework.go:BeforeEach",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/framework.go:RequireGlobalAddon",
+      "target": "function:test/e2e/framework/framework.go:BeforeEach",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/certificaterequests.go:WaitCertificateRequestIssuedValid",
+      "target": "function:test/e2e/framework/helper/certificaterequests.go:WaitForCertificateRequestReady",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/certificaterequests.go:WaitCertificateRequestIssuedValid",
+      "target": "function:test/e2e/framework/helper/certificaterequests.go:ValidateIssuedCertificateRequest",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/certificaterequests.go:WaitCertificateRequestIssuedValidTLS",
+      "target": "function:test/e2e/framework/helper/certificaterequests.go:WaitCertificateRequestIssuedValid",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/certificaterequests.go:ValidateIssuedCertificateRequest",
+      "target": "function:test/e2e/framework/helper/certificaterequests.go:computeExpectedKeyUsages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

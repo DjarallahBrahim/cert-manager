@@ -1,0 +1,847 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 19,
+  "filesSkipped": [
+    "make/config/pebble/chart/templates/_helpers.tpl",
+    "make/config/samplewebhook/Containerfile.samplewebhook",
+    "make/config/samplewebhook/chart/.helmignore",
+    "make/config/samplewebhook/chart/templates/_helpers.tpl",
+    "pkg/acme/OWNERS",
+    "pkg/apis/OWNERS"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 19,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 2,
+      "failed": 0,
+      "skipped": 17
+    }
+  },
+  "results": [
+    {
+      "path": "make/config/pebble/chart/values.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 16,
+      "nonEmptyLines": 15,
+      "sections": [
+        {
+          "heading": "replicaCount",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "image",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "service",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "resources",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "strict",
+          "level": 1,
+          "line": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "make/config/projectcontour/contour.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 170,
+      "nonEmptyLines": 169,
+      "sections": [
+        {
+          "heading": "gateway",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "disablePermitInsecure",
+          "level": 1,
+          "line": 28
+        },
+        {
+          "heading": "tls",
+          "level": 1,
+          "line": 29
+        },
+        {
+          "heading": "accesslog-format",
+          "level": 1,
+          "line": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "make/config/projectcontour/gateway.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 22,
+      "nonEmptyLines": 21,
+      "sections": [
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "kind",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "metadata",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "spec",
+          "level": 1,
+          "line": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "make/config/samplewebhook/chart/Chart.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 5,
+      "nonEmptyLines": 5,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "appVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "make/config/samplewebhook/chart/values.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 43,
+      "nonEmptyLines": 35,
+      "sections": [
+        {
+          "heading": "groupName",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "certManager",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "image",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "nameOverride",
+          "level": 1,
+          "line": 20
+        },
+        {
+          "heading": "fullnameOverride",
+          "level": 1,
+          "line": 21
+        },
+        {
+          "heading": "service",
+          "level": 1,
+          "line": 23
+        },
+        {
+          "heading": "resources",
+          "level": 1,
+          "line": 27
+        },
+        {
+          "heading": "nodeSelector",
+          "level": 1,
+          "line": 39
+        },
+        {
+          "heading": "tolerations",
+          "level": 1,
+          "line": 41
+        },
+        {
+          "heading": "affinity",
+          "level": 1,
+          "line": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "make/containers.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 149,
+      "nonEmptyLines": 124,
+      "steps": [
+        {
+          "name": "all-containers",
+          "startLine": 52,
+          "endLine": 53
+        },
+        {
+          "name": "cert-manager-controller-linux",
+          "startLine": 55,
+          "endLine": 56
+        },
+        {
+          "name": "cert-manager-webhook-linux",
+          "startLine": 68,
+          "endLine": 69
+        },
+        {
+          "name": "cert-manager-cainjector-linux",
+          "startLine": 81,
+          "endLine": 82
+        },
+        {
+          "name": "cert-manager-acmesolver-linux",
+          "startLine": 94,
+          "endLine": 95
+        },
+        {
+          "name": "cert-manager-startupapicheck-linux",
+          "startLine": 107,
+          "endLine": 108
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 6
+      }
+    },
+    {
+      "path": "make/e2e-setup.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 540,
+      "nonEmptyLines": 494,
+      "steps": [
+        {
+          "name": "e2e-setup-kind",
+          "startLine": 84,
+          "endLine": 87
+        },
+        {
+          "name": "kind-exists",
+          "startLine": 104,
+          "endLine": 105
+        },
+        {
+          "name": "e2e-setup",
+          "startLine": 117,
+          "endLine": 118
+        },
+        {
+          "name": "preload-kind-image",
+          "startLine": 170,
+          "endLine": 171
+        },
+        {
+          "name": "preload-kind-image",
+          "startLine": 173,
+          "endLine": 174
+        },
+        {
+          "name": "e2e-setup-certmanager",
+          "startLine": 311,
+          "endLine": 327
+        },
+        {
+          "name": "e2e-setup-certmanager",
+          "startLine": 330,
+          "endLine": 355
+        },
+        {
+          "name": "e2e-setup-bind",
+          "startLine": 359,
+          "endLine": 363
+        },
+        {
+          "name": "e2e-setup-gatewayapi",
+          "startLine": 365,
+          "endLine": 368
+        },
+        {
+          "name": "e2e-setup-ingressnginx",
+          "startLine": 386,
+          "endLine": 407
+        },
+        {
+          "name": "e2e-setup-kyverno",
+          "startLine": 409,
+          "endLine": 429
+        },
+        {
+          "name": "e2e-setup-pebble",
+          "startLine": 455,
+          "endLine": 462
+        },
+        {
+          "name": "e2e-setup-samplewebhook",
+          "startLine": 477,
+          "endLine": 484
+        },
+        {
+          "name": "e2e-setup-projectcontour",
+          "startLine": 486,
+          "endLine": 522
+        },
+        {
+          "name": "e2e-setup-sampleexternalissuer",
+          "startLine": 524,
+          "endLine": 527
+        },
+        {
+          "name": "e2e-setup-vault",
+          "startLine": 531,
+          "endLine": 532
+        },
+        {
+          "name": "kind-logs",
+          "startLine": 537,
+          "endLine": 541
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 17
+      }
+    },
+    {
+      "path": "make/git.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 38,
+      "steps": [
+        {
+          "name": "gitver",
+          "startLine": 18,
+          "endLine": 23
+        },
+        {
+          "name": "release-version",
+          "startLine": 25,
+          "endLine": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 2
+      }
+    },
+    {
+      "path": "make/ko.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 81,
+      "steps": [
+        {
+          "name": "ko-images-push",
+          "startLine": 69,
+          "endLine": 70
+        },
+        {
+          "name": "ko-deploy-certmanager",
+          "startLine": 74,
+          "endLine": 92
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 2
+      }
+    },
+    {
+      "path": "make/licenses.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 32,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 0
+      }
+    },
+    {
+      "path": "make/manifests.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 173,
+      "nonEmptyLines": 134,
+      "steps": [
+        {
+          "name": "helm-chart",
+          "startLine": 25,
+          "endLine": 26
+        },
+        {
+          "name": "helm-chart-signature",
+          "startLine": 31,
+          "endLine": 32
+        },
+        {
+          "name": "static-manifests",
+          "startLine": 34,
+          "endLine": 35
+        },
+        {
+          "name": "release-manifests",
+          "startLine": 44,
+          "endLine": 45
+        },
+        {
+          "name": "release-manifests-signed",
+          "startLine": 53,
+          "endLine": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 5
+      }
+    },
+    {
+      "path": "make/release.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 132,
+      "nonEmptyLines": 115,
+      "steps": [
+        {
+          "name": "release-artifacts",
+          "startLine": 38,
+          "endLine": 39
+        },
+        {
+          "name": "release-artifacts-signed",
+          "startLine": 45,
+          "endLine": 46
+        },
+        {
+          "name": "release",
+          "startLine": 55,
+          "endLine": 57
+        },
+        {
+          "name": "upload-release",
+          "startLine": 63,
+          "endLine": 63
+        },
+        {
+          "name": "release-containers",
+          "startLine": 79,
+          "endLine": 80
+        },
+        {
+          "name": "release-container-bundles",
+          "startLine": 82,
+          "endLine": 83
+        },
+        {
+          "name": "release-container-metadata",
+          "startLine": 106,
+          "endLine": 107
+        },
+        {
+          "name": "forcetime",
+          "startLine": 119,
+          "endLine": 121
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 8
+      }
+    },
+    {
+      "path": "make/scan.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 36,
+      "steps": [
+        {
+          "name": "trivy-scan-all",
+          "startLine": 22,
+          "endLine": 23
+        },
+        {
+          "name": "trivy-scan-controller",
+          "startLine": 25,
+          "endLine": 27
+        },
+        {
+          "name": "trivy-scan-acmesolver",
+          "startLine": 29,
+          "endLine": 31
+        },
+        {
+          "name": "trivy-scan-webhook",
+          "startLine": 33,
+          "endLine": 35
+        },
+        {
+          "name": "trivy-scan-cainjector",
+          "startLine": 37,
+          "endLine": 39
+        },
+        {
+          "name": "trivy-scan-startupapicheck",
+          "startLine": 41,
+          "endLine": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 6
+      }
+    },
+    {
+      "path": "make/server.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 109,
+      "nonEmptyLines": 77,
+      "steps": [
+        {
+          "name": "server-binaries",
+          "startLine": 16,
+          "endLine": 17
+        },
+        {
+          "name": "controller",
+          "startLine": 22,
+          "endLine": 23
+        },
+        {
+          "name": "acmesolver",
+          "startLine": 40,
+          "endLine": 41
+        },
+        {
+          "name": "webhook",
+          "startLine": 58,
+          "endLine": 59
+        },
+        {
+          "name": "cainjector",
+          "startLine": 76,
+          "endLine": 77
+        },
+        {
+          "name": "cainjector",
+          "startLine": 94,
+          "endLine": 95
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 6
+      }
+    },
+    {
+      "path": "make/test.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 197,
+      "nonEmptyLines": 171,
+      "steps": [
+        {
+          "name": "test",
+          "startLine": 37,
+          "endLine": 39
+        },
+        {
+          "name": "test-ci",
+          "startLine": 48,
+          "endLine": 63
+        },
+        {
+          "name": "unit-test",
+          "startLine": 70,
+          "endLine": 71
+        },
+        {
+          "name": "unit-test-core-module",
+          "startLine": 73,
+          "endLine": 75
+        },
+        {
+          "name": "unit-test-acmesolver",
+          "startLine": 77,
+          "endLine": 79
+        },
+        {
+          "name": "unit-test-cainjector",
+          "startLine": 81,
+          "endLine": 83
+        },
+        {
+          "name": "unit-test-controller",
+          "startLine": 85,
+          "endLine": 87
+        },
+        {
+          "name": "unit-test-webhook",
+          "startLine": 89,
+          "endLine": 91
+        },
+        {
+          "name": "unit-test-thirdparty",
+          "startLine": 93,
+          "endLine": 95
+        },
+        {
+          "name": "update-config-api-defaults",
+          "startLine": 97,
+          "endLine": 101
+        },
+        {
+          "name": "setup-integration-tests",
+          "startLine": 103,
+          "endLine": 104
+        },
+        {
+          "name": "integration-test",
+          "startLine": 111,
+          "endLine": 113
+        },
+        {
+          "name": "livedns-test",
+          "startLine": 119,
+          "endLine": 121
+        },
+        {
+          "name": "e2e",
+          "startLine": 141,
+          "endLine": 143
+        },
+        {
+          "name": "e2e-ci",
+          "startLine": 145,
+          "endLine": 149
+        },
+        {
+          "name": "e2e-build",
+          "startLine": 176,
+          "endLine": 177
+        },
+        {
+          "name": "test-upgrade",
+          "startLine": 188,
+          "endLine": 192
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 17
+      }
+    },
+    {
+      "path": "make/third_party.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 34,
+      "steps": [
+        {
+          "name": "update-third-party",
+          "startLine": 27,
+          "endLine": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 1
+      }
+    },
+    {
+      "path": "make/util.mk",
+      "language": "mk",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 30,
+      "steps": [
+        {
+          "name": "print-bindir",
+          "startLine": 25,
+          "endLine": 27
+        },
+        {
+          "name": "print-sources",
+          "startLine": 29,
+          "endLine": 31
+        },
+        {
+          "name": "print-source-dirs",
+          "startLine": 33,
+          "endLine": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 3
+      }
+    },
+    {
+      "path": "pkg/apis/config/shared/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 14,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "pkg/apis/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

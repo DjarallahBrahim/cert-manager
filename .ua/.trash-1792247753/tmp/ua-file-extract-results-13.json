@@ -1,0 +1,6088 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 30,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 30,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 30,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "test/e2e/framework/helper/kubectl.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 53,
+      "functions": [
+        {
+          "name": "Describe",
+          "startLine": 34,
+          "endLine": 37,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "DescribeResource",
+          "startLine": 39,
+          "endLine": 41,
+          "params": [
+            "ctx",
+            "resource",
+            "name"
+          ]
+        },
+        {
+          "name": "Kubectl",
+          "startLine": 43,
+          "endLine": 50,
+          "params": [
+            "ns"
+          ]
+        },
+        {
+          "name": "Run",
+          "startLine": 52,
+          "endLine": 64,
+          "params": [
+            "ctx"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Kubectl",
+          "startLine": 27,
+          "endLine": 32,
+          "methods": [
+            "Describe",
+            "DescribeResource",
+            "Run"
+          ],
+          "properties": [
+            "namespace",
+            "kubectl",
+            "kubeconfig",
+            "kubecontext"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Kubectl",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "Describe",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "DescribeResource",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "Kubectl",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "Run",
+          "line": 52,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Describe",
+          "callee": "strings.Join",
+          "lineNumber": 35
+        },
+        {
+          "caller": "Describe",
+          "callee": "k.Run",
+          "lineNumber": 36
+        },
+        {
+          "caller": "DescribeResource",
+          "callee": "k.Run",
+          "lineNumber": 40
+        },
+        {
+          "caller": "Run",
+          "callee": "append",
+          "lineNumber": 55
+        },
+        {
+          "caller": "Run",
+          "callee": "append",
+          "lineNumber": 59
+        },
+        {
+          "caller": "Run",
+          "callee": "exec.CommandContext",
+          "lineNumber": 60
+        },
+        {
+          "caller": "Run",
+          "callee": "cmd.Run",
+          "lineNumber": 63
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "test/e2e/framework/helper/secret.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "WaitForSecretCertificateData",
+          "startLine": 33,
+          "endLine": 59,
+          "params": [
+            "ctx",
+            "ns",
+            "name",
+            "timeout"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WaitForSecretCertificateData",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WaitForSecretCertificateData",
+          "callee": "log.LogBackoff",
+          "lineNumber": 35
+        },
+        {
+          "caller": "WaitForSecretCertificateData",
+          "callee": "done",
+          "lineNumber": 36
+        },
+        {
+          "caller": "WaitForSecretCertificateData",
+          "callee": "wait.PollUntilContextTimeout",
+          "lineNumber": 37
+        },
+        {
+          "caller": "WaitForSecretCertificateData",
+          "callee": "logf",
+          "lineNumber": 39
+        },
+        {
+          "caller": "WaitForSecretCertificateData",
+          "callee": "h.KubeClient.CoreV1().Secrets(ns).Get",
+          "lineNumber": 40
+        },
+        {
+          "caller": "WaitForSecretCertificateData",
+          "callee": "h.KubeClient.CoreV1().Secrets",
+          "lineNumber": 40
+        },
+        {
+          "caller": "WaitForSecretCertificateData",
+          "callee": "h.KubeClient.CoreV1",
+          "lineNumber": 40
+        },
+        {
+          "caller": "WaitForSecretCertificateData",
+          "callee": "fmt.Errorf",
+          "lineNumber": 42
+        },
+        {
+          "caller": "WaitForSecretCertificateData",
+          "callee": "len",
+          "lineNumber": 45
+        },
+        {
+          "caller": "WaitForSecretCertificateData",
+          "callee": "logf",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/framework/helper/validate.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 103,
+      "nonEmptyLines": 83,
+      "functions": [
+        {
+          "name": "ValidateCertificate",
+          "startLine": 37,
+          "endLine": 62,
+          "params": [
+            "certificate"
+          ]
+        },
+        {
+          "name": "ValidateCertificateRequest",
+          "startLine": 65,
+          "endLine": 83,
+          "params": [
+            "name",
+            "key"
+          ]
+        },
+        {
+          "name": "ValidateCertificateSigningRequest",
+          "startLine": 86,
+          "endLine": 103,
+          "params": [
+            "name",
+            "key"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ValidateCertificate",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "ValidateCertificateRequest",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "ValidateCertificateSigningRequest",
+          "line": 86,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ValidateCertificate",
+          "callee": "len",
+          "lineNumber": 38
+        },
+        {
+          "caller": "ValidateCertificate",
+          "callee": "validation.CertificateSetForUnsupportedFeatureSet",
+          "lineNumber": 39
+        },
+        {
+          "caller": "ValidateCertificate",
+          "callee": "featureset.NewFeatureSet",
+          "lineNumber": 39
+        },
+        {
+          "caller": "ValidateCertificate",
+          "callee": "h.KubeClient.CoreV1().Secrets(certificate.Namespace).Get",
+          "lineNumber": 42
+        },
+        {
+          "caller": "ValidateCertificate",
+          "callee": "h.KubeClient.CoreV1().Secrets",
+          "lineNumber": 42
+        },
+        {
+          "caller": "ValidateCertificate",
+          "callee": "h.KubeClient.CoreV1",
+          "lineNumber": 42
+        },
+        {
+          "caller": "ValidateCertificate",
+          "callee": "context.TODO",
+          "lineNumber": 42
+        },
+        {
+          "caller": "ValidateCertificate",
+          "callee": "fn",
+          "lineNumber": 48
+        },
+        {
+          "caller": "ValidateCertificate",
+          "callee": "log.Logf",
+          "lineNumber": 51
+        },
+        {
+          "caller": "ValidateCertificate",
+          "callee": "append",
+          "lineNumber": 52
+        },
+        {
+          "caller": "ValidateCertificate",
+          "callee": "h.describeCMObject",
+          "lineNumber": 52
+        },
+        {
+          "caller": "ValidateCertificate",
+          "callee": "log.Logf",
+          "lineNumber": 54
+        },
+        {
+          "caller": "ValidateCertificate",
+          "callee": "append",
+          "lineNumber": 55
+        },
+        {
+          "caller": "ValidateCertificate",
+          "callee": "h.describeKubeObject",
+          "lineNumber": 55
+        },
+        {
+          "caller": "ValidateCertificate",
+          "callee": "kerrors.NewAggregate",
+          "lineNumber": 57
+        },
+        {
+          "caller": "ValidateCertificateRequest",
+          "callee": "len",
+          "lineNumber": 66
+        },
+        {
+          "caller": "ValidateCertificateRequest",
+          "callee": "validation.CertificateRequestSetForUnsupportedFeatureSet",
+          "lineNumber": 67
+        },
+        {
+          "caller": "ValidateCertificateRequest",
+          "callee": "featureset.NewFeatureSet",
+          "lineNumber": 67
+        },
+        {
+          "caller": "ValidateCertificateRequest",
+          "callee": "h.CMClient.CertmanagerV1().CertificateRequests(name.Namespace).Get",
+          "lineNumber": 70
+        },
+        {
+          "caller": "ValidateCertificateRequest",
+          "callee": "h.CMClient.CertmanagerV1().CertificateRequests",
+          "lineNumber": 70
+        },
+        {
+          "caller": "ValidateCertificateRequest",
+          "callee": "h.CMClient.CertmanagerV1",
+          "lineNumber": 70
+        },
+        {
+          "caller": "ValidateCertificateRequest",
+          "callee": "context.TODO",
+          "lineNumber": 70
+        },
+        {
+          "caller": "ValidateCertificateRequest",
+          "callee": "fn",
+          "lineNumber": 76
+        },
+        {
+          "caller": "ValidateCertificateSigningRequest",
+          "callee": "len",
+          "lineNumber": 87
+        },
+        {
+          "caller": "ValidateCertificateSigningRequest",
+          "callee": "validation.CertificateSigningRequestSetForUnsupportedFeatureSet",
+          "lineNumber": 88
+        },
+        {
+          "caller": "ValidateCertificateSigningRequest",
+          "callee": "featureset.NewFeatureSet",
+          "lineNumber": 88
+        },
+        {
+          "caller": "ValidateCertificateSigningRequest",
+          "callee": "h.KubeClient.CertificatesV1().CertificateSigningRequests().Get",
+          "lineNumber": 90
+        },
+        {
+          "caller": "ValidateCertificateSigningRequest",
+          "callee": "h.KubeClient.CertificatesV1().CertificateSigningRequests",
+          "lineNumber": 90
+        },
+        {
+          "caller": "ValidateCertificateSigningRequest",
+          "callee": "h.KubeClient.CertificatesV1",
+          "lineNumber": 90
+        },
+        {
+          "caller": "ValidateCertificateSigningRequest",
+          "callee": "context.TODO",
+          "lineNumber": 90
+        },
+        {
+          "caller": "ValidateCertificateSigningRequest",
+          "callee": "fn",
+          "lineNumber": 96
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 298,
+      "nonEmptyLines": 251,
+      "functions": [
+        {
+          "name": "ExpectValidCertificate",
+          "startLine": 40,
+          "endLine": 43,
+          "params": [
+            "cr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectCertificateOrganizationToMatch",
+          "startLine": 47,
+          "endLine": 63,
+          "params": [
+            "cr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectValidPrivateKeyData",
+          "startLine": 67,
+          "endLine": 95,
+          "params": [
+            "cr",
+            "key"
+          ]
+        },
+        {
+          "name": "ExpectCertificateDNSNamesToMatch",
+          "startLine": 100,
+          "endLine": 116,
+          "params": [
+            "cr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectCertificateURIsToMatch",
+          "startLine": 120,
+          "endLine": 137,
+          "params": [
+            "cr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectCertificateIPsToMatch",
+          "startLine": 141,
+          "endLine": 158,
+          "params": [
+            "cr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectValidCommonName",
+          "startLine": 161,
+          "endLine": 183,
+          "params": [
+            "cr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectKeyUsageExtKeyUsageServerAuth",
+          "startLine": 187,
+          "endLine": 197,
+          "params": [
+            "cr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectKeyUsageExtKeyUsageClientAuth",
+          "startLine": 201,
+          "endLine": 211,
+          "params": [
+            "cr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectEmailsToMatch",
+          "startLine": 214,
+          "endLine": 229,
+          "params": [
+            "cr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectValidBasicConstraints",
+          "startLine": 232,
+          "endLine": 246,
+          "params": [
+            "cr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectConditionApproved",
+          "startLine": 250,
+          "endLine": 256,
+          "params": [
+            "cr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectConditionNotDenied",
+          "startLine": 260,
+          "endLine": 266,
+          "params": [
+            "cr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectDurationToMatch",
+          "startLine": 269,
+          "endLine": 272,
+          "params": [
+            "cr",
+            "key"
+          ]
+        },
+        {
+          "name": "ExpectDuration",
+          "startLine": 274,
+          "endLine": 298,
+          "params": [
+            "expectedDuration",
+            "fuzz"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ExpectValidCertificate",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectCertificateOrganizationToMatch",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectValidPrivateKeyData",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectCertificateDNSNamesToMatch",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectCertificateURIsToMatch",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectCertificateIPsToMatch",
+          "line": 141,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectValidCommonName",
+          "line": 161,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectKeyUsageExtKeyUsageServerAuth",
+          "line": 187,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectKeyUsageExtKeyUsageClientAuth",
+          "line": 201,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectEmailsToMatch",
+          "line": 214,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectValidBasicConstraints",
+          "line": 232,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectConditionApproved",
+          "line": 250,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectConditionNotDenied",
+          "line": 260,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectDurationToMatch",
+          "line": 269,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectDuration",
+          "line": 274,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ExpectValidCertificate",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 41
+        },
+        {
+          "caller": "ExpectCertificateOrganizationToMatch",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 48
+        },
+        {
+          "caller": "ExpectCertificateOrganizationToMatch",
+          "callee": "pki.DecodeX509CertificateRequestBytes",
+          "lineNumber": 52
+        },
+        {
+          "caller": "ExpectCertificateOrganizationToMatch",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 58
+        },
+        {
+          "caller": "ExpectCertificateOrganizationToMatch",
+          "callee": "fmt.Errorf",
+          "lineNumber": 59
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 68
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "key.Public",
+          "lineNumber": 74
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "pub.Equal",
+          "lineNumber": 76
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "pub.Equal",
+          "lineNumber": 78
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "pub.Equal",
+          "lineNumber": 80
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "fmt.Errorf",
+          "lineNumber": 82
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "equal",
+          "lineNumber": 86
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "errors.New",
+          "lineNumber": 91
+        },
+        {
+          "caller": "ExpectCertificateDNSNamesToMatch",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 101
+        },
+        {
+          "caller": "ExpectCertificateDNSNamesToMatch",
+          "callee": "pki.DecodeX509CertificateRequestBytes",
+          "lineNumber": 105
+        },
+        {
+          "caller": "ExpectCertificateDNSNamesToMatch",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 110
+        },
+        {
+          "caller": "ExpectCertificateDNSNamesToMatch",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 111
+        },
+        {
+          "caller": "ExpectCertificateDNSNamesToMatch",
+          "callee": "append",
+          "lineNumber": 111
+        },
+        {
+          "caller": "ExpectCertificateDNSNamesToMatch",
+          "callee": "fmt.Errorf",
+          "lineNumber": 112
+        },
+        {
+          "caller": "ExpectCertificateURIsToMatch",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 121
+        },
+        {
+          "caller": "ExpectCertificateURIsToMatch",
+          "callee": "pki.DecodeX509CertificateRequestBytes",
+          "lineNumber": 125
+        },
+        {
+          "caller": "ExpectCertificateURIsToMatch",
+          "callee": "pki.URLsToString",
+          "lineNumber": 130
+        },
+        {
+          "caller": "ExpectCertificateURIsToMatch",
+          "callee": "pki.URLsToString",
+          "lineNumber": 131
+        },
+        {
+          "caller": "ExpectCertificateURIsToMatch",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 132
+        },
+        {
+          "caller": "ExpectCertificateURIsToMatch",
+          "callee": "fmt.Errorf",
+          "lineNumber": 133
+        },
+        {
+          "caller": "ExpectCertificateIPsToMatch",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 142
+        },
+        {
+          "caller": "ExpectCertificateIPsToMatch",
+          "callee": "pki.DecodeX509CertificateRequestBytes",
+          "lineNumber": 146
+        },
+        {
+          "caller": "ExpectCertificateIPsToMatch",
+          "callee": "pki.IPAddressesToString",
+          "lineNumber": 151
+        },
+        {
+          "caller": "ExpectCertificateIPsToMatch",
+          "callee": "pki.IPAddressesToString",
+          "lineNumber": 152
+        },
+        {
+          "caller": "ExpectCertificateIPsToMatch",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 153
+        },
+        {
+          "caller": "ExpectCertificateIPsToMatch",
+          "callee": "fmt.Errorf",
+          "lineNumber": 154
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 162
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "pki.DecodeX509CertificateRequestBytes",
+          "lineNumber": 166
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "len",
+          "lineNumber": 173
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "len",
+          "lineNumber": 173
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "slices.Contains",
+          "lineNumber": 175
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "slices.Contains",
+          "lineNumber": 175
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "pki.IPAddressesToString",
+          "lineNumber": 175
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "fmt.Errorf",
+          "lineNumber": 176
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "pki.IPAddressesToString",
+          "lineNumber": 176
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "fmt.Errorf",
+          "lineNumber": 179
+        },
+        {
+          "caller": "ExpectKeyUsageExtKeyUsageServerAuth",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 188
+        },
+        {
+          "caller": "ExpectKeyUsageExtKeyUsageServerAuth",
+          "callee": "slices.Contains",
+          "lineNumber": 193
+        },
+        {
+          "caller": "ExpectKeyUsageExtKeyUsageServerAuth",
+          "callee": "fmt.Errorf",
+          "lineNumber": 194
+        },
+        {
+          "caller": "ExpectKeyUsageExtKeyUsageClientAuth",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 202
+        },
+        {
+          "caller": "ExpectKeyUsageExtKeyUsageClientAuth",
+          "callee": "slices.Contains",
+          "lineNumber": 207
+        },
+        {
+          "caller": "ExpectKeyUsageExtKeyUsageClientAuth",
+          "callee": "fmt.Errorf",
+          "lineNumber": 208
+        },
+        {
+          "caller": "ExpectEmailsToMatch",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 215
+        },
+        {
+          "caller": "ExpectEmailsToMatch",
+          "callee": "pki.DecodeX509CertificateRequestBytes",
+          "lineNumber": 219
+        },
+        {
+          "caller": "ExpectEmailsToMatch",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 224
+        },
+        {
+          "caller": "ExpectEmailsToMatch",
+          "callee": "fmt.Errorf",
+          "lineNumber": 225
+        },
+        {
+          "caller": "ExpectValidBasicConstraints",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 233
+        },
+        {
+          "caller": "ExpectValidBasicConstraints",
+          "callee": "fmt.Errorf",
+          "lineNumber": 239
+        },
+        {
+          "caller": "ExpectConditionApproved",
+          "callee": "apiutil.CertificateRequestIsApproved",
+          "lineNumber": 251
+        },
+        {
+          "caller": "ExpectConditionApproved",
+          "callee": "fmt.Errorf",
+          "lineNumber": 252
+        },
+        {
+          "caller": "ExpectConditionNotDenied",
+          "callee": "apiutil.CertificateRequestIsDenied",
+          "lineNumber": 261
+        },
+        {
+          "caller": "ExpectConditionNotDenied",
+          "callee": "fmt.Errorf",
+          "lineNumber": 262
+        },
+        {
+          "caller": "ExpectDurationToMatch",
+          "callee": "apiutil.DefaultCertDuration",
+          "lineNumber": 270
+        },
+        {
+          "caller": "ExpectDurationToMatch",
+          "callee": "ExpectDuration(certDuration, 30*time.Second)",
+          "lineNumber": 271
+        },
+        {
+          "caller": "ExpectDurationToMatch",
+          "callee": "ExpectDuration",
+          "lineNumber": 271
+        },
+        {
+          "caller": "ExpectDuration",
+          "callee": "len",
+          "lineNumber": 277
+        },
+        {
+          "caller": "ExpectDuration",
+          "callee": "fmt.Errorf",
+          "lineNumber": 278
+        },
+        {
+          "caller": "ExpectDuration",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 280
+        },
+        {
+          "caller": "ExpectDuration",
+          "callee": "cert.NotAfter.Sub",
+          "lineNumber": 287
+        },
+        {
+          "caller": "ExpectDuration",
+          "callee": "fmt.Errorf",
+          "lineNumber": 289
+        },
+        {
+          "caller": "ExpectDuration",
+          "callee": "cert.NotBefore.Format",
+          "lineNumber": 292
+        },
+        {
+          "caller": "ExpectDuration",
+          "callee": "cert.NotAfter.Format",
+          "lineNumber": 292
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 15,
+        "functionCount": 15,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/framework/helper/validation/certificates/certificates.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 451,
+      "nonEmptyLines": 378,
+      "functions": [
+        {
+          "name": "ExpectValidKeysInSecret",
+          "startLine": 43,
+          "endLine": 58,
+          "params": [
+            "_",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectValidAnnotations",
+          "startLine": 61,
+          "endLine": 72,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectValidPrivateKeyData",
+          "startLine": 75,
+          "endLine": 91,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectValidCertificate",
+          "startLine": 94,
+          "endLine": 106,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectCertificateOrganizationToMatch",
+          "startLine": 109,
+          "endLine": 141,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectCertificateDNSNamesToMatch",
+          "startLine": 144,
+          "endLine": 157,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectCertificateURIsToMatch",
+          "startLine": 160,
+          "endLine": 173,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectCertificateIPsToMatch",
+          "startLine": 176,
+          "endLine": 189,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectValidCommonName",
+          "startLine": 192,
+          "endLine": 210,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectValidNotAfterDate",
+          "startLine": 213,
+          "endLine": 227,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectKeyUsageExtKeyUsageServerAuth",
+          "startLine": 230,
+          "endLine": 240,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectKeyUsageExtKeyUsageClientAuth",
+          "startLine": 243,
+          "endLine": 253,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectKeyUsageUsageDigitalSignature",
+          "startLine": 256,
+          "endLine": 271,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectKeyUsageUsageDataEncipherment",
+          "startLine": 274,
+          "endLine": 289,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectEmailsToMatch",
+          "startLine": 292,
+          "endLine": 303,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectCorrectTrustChain",
+          "startLine": 306,
+          "endLine": 338,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectCARootCertificate",
+          "startLine": 341,
+          "endLine": 351,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectConditionReadyObservedGeneration",
+          "startLine": 356,
+          "endLine": 365,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectValidBasicConstraints",
+          "startLine": 368,
+          "endLine": 381,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectValidAdditionalOutputFormats",
+          "startLine": 385,
+          "endLine": 418,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectDurationToMatch",
+          "startLine": 421,
+          "endLine": 424,
+          "params": [
+            "certificate",
+            "secret"
+          ]
+        },
+        {
+          "name": "ExpectDuration",
+          "startLine": 427,
+          "endLine": 451,
+          "params": [
+            "expectedDuration",
+            "fuzz"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ExpectValidKeysInSecret",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectValidAnnotations",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectValidPrivateKeyData",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectValidCertificate",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectCertificateOrganizationToMatch",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectCertificateDNSNamesToMatch",
+          "line": 144,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectCertificateURIsToMatch",
+          "line": 160,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectCertificateIPsToMatch",
+          "line": 176,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectValidCommonName",
+          "line": 192,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectValidNotAfterDate",
+          "line": 213,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectKeyUsageExtKeyUsageServerAuth",
+          "line": 230,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectKeyUsageExtKeyUsageClientAuth",
+          "line": 243,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectKeyUsageUsageDigitalSignature",
+          "line": 256,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectKeyUsageUsageDataEncipherment",
+          "line": 274,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectEmailsToMatch",
+          "line": 292,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectCorrectTrustChain",
+          "line": 306,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectCARootCertificate",
+          "line": 341,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectConditionReadyObservedGeneration",
+          "line": 356,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectValidBasicConstraints",
+          "line": 368,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectValidAdditionalOutputFormats",
+          "line": 385,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectDurationToMatch",
+          "line": 421,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectDuration",
+          "line": 427,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ExpectValidKeysInSecret",
+          "callee": "fmt.Errorf",
+          "lineNumber": 55
+        },
+        {
+          "caller": "ExpectValidAnnotations",
+          "callee": "fmt.Errorf",
+          "lineNumber": 64
+        },
+        {
+          "caller": "ExpectValidAnnotations",
+          "callee": "fmt.Errorf",
+          "lineNumber": 68
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "fmt.Errorf",
+          "lineNumber": 78
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "pki.DecodePrivateKeyBytes",
+          "lineNumber": 80
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "pki.PrivateKeyMatchesSpec",
+          "lineNumber": 85
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "len",
+          "lineNumber": 86
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "fmt.Errorf",
+          "lineNumber": 87
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "strings.Join",
+          "lineNumber": 87
+        },
+        {
+          "caller": "ExpectValidCertificate",
+          "callee": "fmt.Errorf",
+          "lineNumber": 97
+        },
+        {
+          "caller": "ExpectValidCertificate",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 100
+        },
+        {
+          "caller": "ExpectCertificateOrganizationToMatch",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 110
+        },
+        {
+          "caller": "ExpectCertificateOrganizationToMatch",
+          "callee": "pki.UnmarshalSubjectStringToRDNSequence",
+          "lineNumber": 120
+        },
+        {
+          "caller": "ExpectCertificateOrganizationToMatch",
+          "callee": "atv.Type.Equal",
+          "lineNumber": 127
+        },
+        {
+          "caller": "ExpectCertificateOrganizationToMatch",
+          "callee": "append",
+          "lineNumber": 129
+        },
+        {
+          "caller": "ExpectCertificateOrganizationToMatch",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 136
+        },
+        {
+          "caller": "ExpectCertificateOrganizationToMatch",
+          "callee": "fmt.Errorf",
+          "lineNumber": 137
+        },
+        {
+          "caller": "ExpectCertificateDNSNamesToMatch",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 145
+        },
+        {
+          "caller": "ExpectCertificateDNSNamesToMatch",
+          "callee": "sets.New",
+          "lineNumber": 150
+        },
+        {
+          "caller": "ExpectCertificateDNSNamesToMatch",
+          "callee": "sets.New",
+          "lineNumber": 151
+        },
+        {
+          "caller": "ExpectCertificateDNSNamesToMatch",
+          "callee": "x509DNSNames.IsSuperset",
+          "lineNumber": 152
+        },
+        {
+          "caller": "ExpectCertificateDNSNamesToMatch",
+          "callee": "fmt.Errorf",
+          "lineNumber": 153
+        },
+        {
+          "caller": "ExpectCertificateDNSNamesToMatch",
+          "callee": "sets.List",
+          "lineNumber": 153
+        },
+        {
+          "caller": "ExpectCertificateDNSNamesToMatch",
+          "callee": "sets.List",
+          "lineNumber": 153
+        },
+        {
+          "caller": "ExpectCertificateURIsToMatch",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 161
+        },
+        {
+          "caller": "ExpectCertificateURIsToMatch",
+          "callee": "pki.URLsToString",
+          "lineNumber": 166
+        },
+        {
+          "caller": "ExpectCertificateURIsToMatch",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 168
+        },
+        {
+          "caller": "ExpectCertificateURIsToMatch",
+          "callee": "fmt.Errorf",
+          "lineNumber": 169
+        },
+        {
+          "caller": "ExpectCertificateIPsToMatch",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 177
+        },
+        {
+          "caller": "ExpectCertificateIPsToMatch",
+          "callee": "pki.IPAddressesToString",
+          "lineNumber": 182
+        },
+        {
+          "caller": "ExpectCertificateIPsToMatch",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 184
+        },
+        {
+          "caller": "ExpectCertificateIPsToMatch",
+          "callee": "fmt.Errorf",
+          "lineNumber": 185
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 193
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "len",
+          "lineNumber": 200
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "len",
+          "lineNumber": 200
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "slices.Contains",
+          "lineNumber": 202
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "slices.Contains",
+          "lineNumber": 202
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "pki.IPAddressesToString",
+          "lineNumber": 202
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "fmt.Errorf",
+          "lineNumber": 203
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "pki.IPAddressesToString",
+          "lineNumber": 203
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "fmt.Errorf",
+          "lineNumber": 206
+        },
+        {
+          "caller": "ExpectValidNotAfterDate",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 214
+        },
+        {
+          "caller": "ExpectValidNotAfterDate",
+          "callee": "fmt.Errorf",
+          "lineNumber": 219
+        },
+        {
+          "caller": "ExpectValidNotAfterDate",
+          "callee": "cert.NotAfter.Equal",
+          "lineNumber": 222
+        },
+        {
+          "caller": "ExpectValidNotAfterDate",
+          "callee": "fmt.Errorf",
+          "lineNumber": 223
+        },
+        {
+          "caller": "ExpectKeyUsageExtKeyUsageServerAuth",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 231
+        },
+        {
+          "caller": "ExpectKeyUsageExtKeyUsageServerAuth",
+          "callee": "slices.Contains",
+          "lineNumber": 236
+        },
+        {
+          "caller": "ExpectKeyUsageExtKeyUsageServerAuth",
+          "callee": "fmt.Errorf",
+          "lineNumber": 237
+        },
+        {
+          "caller": "ExpectKeyUsageExtKeyUsageClientAuth",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 244
+        },
+        {
+          "caller": "ExpectKeyUsageExtKeyUsageClientAuth",
+          "callee": "slices.Contains",
+          "lineNumber": 249
+        },
+        {
+          "caller": "ExpectKeyUsageExtKeyUsageClientAuth",
+          "callee": "fmt.Errorf",
+          "lineNumber": 250
+        },
+        {
+          "caller": "ExpectKeyUsageUsageDigitalSignature",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 257
+        },
+        {
+          "caller": "ExpectKeyUsageUsageDigitalSignature",
+          "callee": "fmt.Errorf",
+          "lineNumber": 267
+        },
+        {
+          "caller": "ExpectKeyUsageUsageDataEncipherment",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 275
+        },
+        {
+          "caller": "ExpectKeyUsageUsageDataEncipherment",
+          "callee": "fmt.Errorf",
+          "lineNumber": 285
+        },
+        {
+          "caller": "ExpectEmailsToMatch",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 293
+        },
+        {
+          "caller": "ExpectEmailsToMatch",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 298
+        },
+        {
+          "caller": "ExpectEmailsToMatch",
+          "callee": "fmt.Errorf",
+          "lineNumber": 299
+        },
+        {
+          "caller": "ExpectCorrectTrustChain",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 307
+        },
+        {
+          "caller": "ExpectCorrectTrustChain",
+          "callee": "len",
+          "lineNumber": 313
+        },
+        {
+          "caller": "ExpectCorrectTrustChain",
+          "callee": "x509.NewCertPool",
+          "lineNumber": 317
+        },
+        {
+          "caller": "ExpectCorrectTrustChain",
+          "callee": "rootCertPool.AppendCertsFromPEM",
+          "lineNumber": 318
+        },
+        {
+          "caller": "ExpectCorrectTrustChain",
+          "callee": "x509.NewCertPool",
+          "lineNumber": 319
+        },
+        {
+          "caller": "ExpectCorrectTrustChain",
+          "callee": "intermediateCertPool.AppendCertsFromPEM",
+          "lineNumber": 320
+        },
+        {
+          "caller": "ExpectCorrectTrustChain",
+          "callee": "cert.Verify",
+          "lineNumber": 327
+        },
+        {
+          "caller": "ExpectCorrectTrustChain",
+          "callee": "fmt.Errorf",
+          "lineNumber": 328
+        },
+        {
+          "caller": "ExpectCorrectTrustChain",
+          "callee": "dump.Pretty",
+          "lineNumber": 330
+        },
+        {
+          "caller": "ExpectCorrectTrustChain",
+          "callee": "dump.Pretty",
+          "lineNumber": 331
+        },
+        {
+          "caller": "ExpectCorrectTrustChain",
+          "callee": "dump.Pretty",
+          "lineNumber": 332
+        },
+        {
+          "caller": "ExpectCARootCertificate",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 342
+        },
+        {
+          "caller": "ExpectCARootCertificate",
+          "callee": "bytes.Equal",
+          "lineNumber": 346
+        },
+        {
+          "caller": "ExpectCARootCertificate",
+          "callee": "fmt.Errorf",
+          "lineNumber": 347
+        },
+        {
+          "caller": "ExpectConditionReadyObservedGeneration",
+          "callee": "apiutil.GetCertificateCondition",
+          "lineNumber": 357
+        },
+        {
+          "caller": "ExpectConditionReadyObservedGeneration",
+          "callee": "fmt.Errorf",
+          "lineNumber": 360
+        },
+        {
+          "caller": "ExpectValidBasicConstraints",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 369
+        },
+        {
+          "caller": "ExpectValidBasicConstraints",
+          "callee": "fmt.Errorf",
+          "lineNumber": 375
+        },
+        {
+          "caller": "ExpectValidAdditionalOutputFormats",
+          "callee": "len",
+          "lineNumber": 386
+        },
+        {
+          "caller": "ExpectValidAdditionalOutputFormats",
+          "callee": "pem.Decode",
+          "lineNumber": 392
+        },
+        {
+          "caller": "ExpectValidAdditionalOutputFormats",
+          "callee": "bytes.Equal",
+          "lineNumber": 393
+        },
+        {
+          "caller": "ExpectValidAdditionalOutputFormats",
+          "callee": "fmt.Errorf",
+          "lineNumber": 394
+        },
+        {
+          "caller": "ExpectValidAdditionalOutputFormats",
+          "callee": "fmt.Errorf",
+          "lineNumber": 397
+        },
+        {
+          "caller": "ExpectValidAdditionalOutputFormats",
+          "callee": "strings.Join",
+          "lineNumber": 403
+        },
+        {
+          "caller": "ExpectValidAdditionalOutputFormats",
+          "callee": "string",
+          "lineNumber": 403
+        },
+        {
+          "caller": "ExpectValidAdditionalOutputFormats",
+          "callee": "string",
+          "lineNumber": 403
+        },
+        {
+          "caller": "ExpectValidAdditionalOutputFormats",
+          "callee": "bytes.Equal",
+          "lineNumber": 404
+        },
+        {
+          "caller": "ExpectValidAdditionalOutputFormats",
+          "callee": "fmt.Errorf",
+          "lineNumber": 405
+        },
+        {
+          "caller": "ExpectValidAdditionalOutputFormats",
+          "callee": "fmt.Errorf",
+          "lineNumber": 408
+        },
+        {
+          "caller": "ExpectValidAdditionalOutputFormats",
+          "callee": "fmt.Errorf",
+          "lineNumber": 412
+        },
+        {
+          "caller": "ExpectDurationToMatch",
+          "callee": "apiutil.DefaultCertDuration",
+          "lineNumber": 422
+        },
+        {
+          "caller": "ExpectDurationToMatch",
+          "callee": "ExpectDuration(certDuration, 30*time.Second)",
+          "lineNumber": 423
+        },
+        {
+          "caller": "ExpectDurationToMatch",
+          "callee": "ExpectDuration",
+          "lineNumber": 423
+        },
+        {
+          "caller": "ExpectDuration",
+          "callee": "fmt.Errorf",
+          "lineNumber": 431
+        },
+        {
+          "caller": "ExpectDuration",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 433
+        },
+        {
+          "caller": "ExpectDuration",
+          "callee": "cert.NotAfter.Sub",
+          "lineNumber": 440
+        },
+        {
+          "caller": "ExpectDuration",
+          "callee": "fmt.Errorf",
+          "lineNumber": 442
+        },
+        {
+          "caller": "ExpectDuration",
+          "callee": "cert.NotBefore.Format",
+          "lineNumber": 445
+        },
+        {
+          "caller": "ExpectDuration",
+          "callee": "cert.NotAfter.Format",
+          "lineNumber": 445
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 22,
+        "functionCount": 22,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/framework/helper/validation/certificatesigningrequests/certificatesigningrequests.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 352,
+      "nonEmptyLines": 295,
+      "functions": [
+        {
+          "name": "ExpectValidCertificate",
+          "startLine": 42,
+          "endLine": 45,
+          "params": [
+            "csr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectCertificateOrganizationToMatch",
+          "startLine": 49,
+          "endLine": 65,
+          "params": [
+            "csr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectValidPrivateKeyData",
+          "startLine": 69,
+          "endLine": 97,
+          "params": [
+            "csr",
+            "key"
+          ]
+        },
+        {
+          "name": "ExpectCertificateDNSNamesToMatch",
+          "startLine": 102,
+          "endLine": 118,
+          "params": [
+            "csr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectCertificateURIsToMatch",
+          "startLine": 122,
+          "endLine": 139,
+          "params": [
+            "csr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectCertificateIPsToMatch",
+          "startLine": 143,
+          "endLine": 160,
+          "params": [
+            "csr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectValidCommonName",
+          "startLine": 163,
+          "endLine": 185,
+          "params": [
+            "csr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectDurationToMatch",
+          "startLine": 188,
+          "endLine": 194,
+          "params": [
+            "csr",
+            "signer"
+          ]
+        },
+        {
+          "name": "ExpectDuration",
+          "startLine": 197,
+          "endLine": 217,
+          "params": [
+            "expectedDuration",
+            "fuzz"
+          ]
+        },
+        {
+          "name": "ExpectKeyUsageExtKeyUsageServerAuth",
+          "startLine": 221,
+          "endLine": 231,
+          "params": [
+            "csr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectKeyUsageExtKeyUsageClientAuth",
+          "startLine": 235,
+          "endLine": 245,
+          "params": [
+            "csr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectKeyUsageUsageDigitalSignature",
+          "startLine": 249,
+          "endLine": 265,
+          "params": [
+            "csr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectKeyUsageUsageDataEncipherment",
+          "startLine": 269,
+          "endLine": 285,
+          "params": [
+            "csr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectEmailsToMatch",
+          "startLine": 288,
+          "endLine": 303,
+          "params": [
+            "csr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectValidBasicConstraints",
+          "startLine": 306,
+          "endLine": 322,
+          "params": [
+            "csr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectConditionApproved",
+          "startLine": 326,
+          "endLine": 332,
+          "params": [
+            "csr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectConditionNotDenied",
+          "startLine": 336,
+          "endLine": 342,
+          "params": [
+            "csr",
+            "_"
+          ]
+        },
+        {
+          "name": "ExpectConditionNotFailed",
+          "startLine": 346,
+          "endLine": 352,
+          "params": [
+            "csr",
+            "_"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ExpectValidCertificate",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectCertificateOrganizationToMatch",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectValidPrivateKeyData",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectCertificateDNSNamesToMatch",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectCertificateURIsToMatch",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectCertificateIPsToMatch",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectValidCommonName",
+          "line": 163,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectDurationToMatch",
+          "line": 188,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectDuration",
+          "line": 197,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectKeyUsageExtKeyUsageServerAuth",
+          "line": 221,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectKeyUsageExtKeyUsageClientAuth",
+          "line": 235,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectKeyUsageUsageDigitalSignature",
+          "line": 249,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectKeyUsageUsageDataEncipherment",
+          "line": 269,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectEmailsToMatch",
+          "line": 288,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectValidBasicConstraints",
+          "line": 306,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectConditionApproved",
+          "line": 326,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectConditionNotDenied",
+          "line": 336,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectConditionNotFailed",
+          "line": 346,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ExpectValidCertificate",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 43
+        },
+        {
+          "caller": "ExpectCertificateOrganizationToMatch",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 50
+        },
+        {
+          "caller": "ExpectCertificateOrganizationToMatch",
+          "callee": "pki.DecodeX509CertificateRequestBytes",
+          "lineNumber": 54
+        },
+        {
+          "caller": "ExpectCertificateOrganizationToMatch",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ExpectCertificateOrganizationToMatch",
+          "callee": "fmt.Errorf",
+          "lineNumber": 61
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 70
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "key.Public",
+          "lineNumber": 76
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "pub.Equal",
+          "lineNumber": 78
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "pub.Equal",
+          "lineNumber": 80
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "pub.Equal",
+          "lineNumber": 82
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "fmt.Errorf",
+          "lineNumber": 84
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "equal",
+          "lineNumber": 88
+        },
+        {
+          "caller": "ExpectValidPrivateKeyData",
+          "callee": "errors.New",
+          "lineNumber": 93
+        },
+        {
+          "caller": "ExpectCertificateDNSNamesToMatch",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 103
+        },
+        {
+          "caller": "ExpectCertificateDNSNamesToMatch",
+          "callee": "pki.DecodeX509CertificateRequestBytes",
+          "lineNumber": 107
+        },
+        {
+          "caller": "ExpectCertificateDNSNamesToMatch",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 112
+        },
+        {
+          "caller": "ExpectCertificateDNSNamesToMatch",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 113
+        },
+        {
+          "caller": "ExpectCertificateDNSNamesToMatch",
+          "callee": "append",
+          "lineNumber": 113
+        },
+        {
+          "caller": "ExpectCertificateDNSNamesToMatch",
+          "callee": "fmt.Errorf",
+          "lineNumber": 114
+        },
+        {
+          "caller": "ExpectCertificateURIsToMatch",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 123
+        },
+        {
+          "caller": "ExpectCertificateURIsToMatch",
+          "callee": "pki.DecodeX509CertificateRequestBytes",
+          "lineNumber": 127
+        },
+        {
+          "caller": "ExpectCertificateURIsToMatch",
+          "callee": "pki.URLsToString",
+          "lineNumber": 132
+        },
+        {
+          "caller": "ExpectCertificateURIsToMatch",
+          "callee": "pki.URLsToString",
+          "lineNumber": 133
+        },
+        {
+          "caller": "ExpectCertificateURIsToMatch",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 134
+        },
+        {
+          "caller": "ExpectCertificateURIsToMatch",
+          "callee": "fmt.Errorf",
+          "lineNumber": 135
+        },
+        {
+          "caller": "ExpectCertificateIPsToMatch",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 144
+        },
+        {
+          "caller": "ExpectCertificateIPsToMatch",
+          "callee": "pki.DecodeX509CertificateRequestBytes",
+          "lineNumber": 148
+        },
+        {
+          "caller": "ExpectCertificateIPsToMatch",
+          "callee": "pki.IPAddressesToString",
+          "lineNumber": 153
+        },
+        {
+          "caller": "ExpectCertificateIPsToMatch",
+          "callee": "pki.IPAddressesToString",
+          "lineNumber": 154
+        },
+        {
+          "caller": "ExpectCertificateIPsToMatch",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 155
+        },
+        {
+          "caller": "ExpectCertificateIPsToMatch",
+          "callee": "fmt.Errorf",
+          "lineNumber": 156
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 164
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "pki.DecodeX509CertificateRequestBytes",
+          "lineNumber": 168
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "len",
+          "lineNumber": 175
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "len",
+          "lineNumber": 175
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "slices.Contains",
+          "lineNumber": 177
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "slices.Contains",
+          "lineNumber": 177
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "pki.IPAddressesToString",
+          "lineNumber": 177
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "fmt.Errorf",
+          "lineNumber": 178
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "pki.IPAddressesToString",
+          "lineNumber": 178
+        },
+        {
+          "caller": "ExpectValidCommonName",
+          "callee": "fmt.Errorf",
+          "lineNumber": 181
+        },
+        {
+          "caller": "ExpectDurationToMatch",
+          "callee": "pki.DurationFromCertificateSigningRequest",
+          "lineNumber": 189
+        },
+        {
+          "caller": "ExpectDurationToMatch",
+          "callee": "ExpectDuration(certDuration, 30*time.Second)",
+          "lineNumber": 193
+        },
+        {
+          "caller": "ExpectDurationToMatch",
+          "callee": "ExpectDuration",
+          "lineNumber": 193
+        },
+        {
+          "caller": "ExpectDuration",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 199
+        },
+        {
+          "caller": "ExpectDuration",
+          "callee": "cert.NotAfter.Sub",
+          "lineNumber": 206
+        },
+        {
+          "caller": "ExpectDuration",
+          "callee": "fmt.Errorf",
+          "lineNumber": 208
+        },
+        {
+          "caller": "ExpectDuration",
+          "callee": "cert.NotBefore.Format",
+          "lineNumber": 211
+        },
+        {
+          "caller": "ExpectDuration",
+          "callee": "cert.NotAfter.Format",
+          "lineNumber": 211
+        },
+        {
+          "caller": "ExpectKeyUsageExtKeyUsageServerAuth",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 222
+        },
+        {
+          "caller": "ExpectKeyUsageExtKeyUsageServerAuth",
+          "callee": "slices.Contains",
+          "lineNumber": 227
+        },
+        {
+          "caller": "ExpectKeyUsageExtKeyUsageServerAuth",
+          "callee": "fmt.Errorf",
+          "lineNumber": 228
+        },
+        {
+          "caller": "ExpectKeyUsageExtKeyUsageClientAuth",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 236
+        },
+        {
+          "caller": "ExpectKeyUsageExtKeyUsageClientAuth",
+          "callee": "slices.Contains",
+          "lineNumber": 241
+        },
+        {
+          "caller": "ExpectKeyUsageExtKeyUsageClientAuth",
+          "callee": "fmt.Errorf",
+          "lineNumber": 242
+        },
+        {
+          "caller": "ExpectKeyUsageUsageDigitalSignature",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 250
+        },
+        {
+          "caller": "ExpectKeyUsageUsageDigitalSignature",
+          "callee": "fmt.Errorf",
+          "lineNumber": 261
+        },
+        {
+          "caller": "ExpectKeyUsageUsageDataEncipherment",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 270
+        },
+        {
+          "caller": "ExpectKeyUsageUsageDataEncipherment",
+          "callee": "fmt.Errorf",
+          "lineNumber": 281
+        },
+        {
+          "caller": "ExpectEmailsToMatch",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 289
+        },
+        {
+          "caller": "ExpectEmailsToMatch",
+          "callee": "pki.DecodeX509CertificateRequestBytes",
+          "lineNumber": 293
+        },
+        {
+          "caller": "ExpectEmailsToMatch",
+          "callee": "util.EqualUnsorted",
+          "lineNumber": 298
+        },
+        {
+          "caller": "ExpectEmailsToMatch",
+          "callee": "fmt.Errorf",
+          "lineNumber": 299
+        },
+        {
+          "caller": "ExpectValidBasicConstraints",
+          "callee": "pki.DecodeX509CertificateBytes",
+          "lineNumber": 307
+        },
+        {
+          "caller": "ExpectValidBasicConstraints",
+          "callee": "fmt.Errorf",
+          "lineNumber": 315
+        },
+        {
+          "caller": "ExpectConditionApproved",
+          "callee": "ctrlutil.CertificateSigningRequestIsApproved",
+          "lineNumber": 327
+        },
+        {
+          "caller": "ExpectConditionApproved",
+          "callee": "fmt.Errorf",
+          "lineNumber": 328
+        },
+        {
+          "caller": "ExpectConditionNotDenied",
+          "callee": "ctrlutil.CertificateSigningRequestIsDenied",
+          "lineNumber": 337
+        },
+        {
+          "caller": "ExpectConditionNotDenied",
+          "callee": "fmt.Errorf",
+          "lineNumber": 338
+        },
+        {
+          "caller": "ExpectConditionNotFailed",
+          "callee": "ctrlutil.CertificateSigningRequestIsFailed",
+          "lineNumber": 347
+        },
+        {
+          "caller": "ExpectConditionNotFailed",
+          "callee": "fmt.Errorf",
+          "lineNumber": 348
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 18,
+        "functionCount": 18,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/framework/helper/validation/validation.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 147,
+      "nonEmptyLines": 114,
+      "functions": [
+        {
+          "name": "CertificateSetForUnsupportedFeatureSet",
+          "startLine": 26,
+          "endLine": 72,
+          "params": [
+            "fs"
+          ]
+        },
+        {
+          "name": "CertificateRequestSetForUnsupportedFeatureSet",
+          "startLine": 74,
+          "endLine": 108,
+          "params": [
+            "fs"
+          ]
+        },
+        {
+          "name": "CertificateSigningRequestSetForUnsupportedFeatureSet",
+          "startLine": 110,
+          "endLine": 147,
+          "params": [
+            "fs"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateSetForUnsupportedFeatureSet",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateRequestSetForUnsupportedFeatureSet",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateSigningRequestSetForUnsupportedFeatureSet",
+          "line": 110,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "CertificateSetForUnsupportedFeatureSet",
+          "callee": "fs.Has",
+          "lineNumber": 43
+        },
+        {
+          "caller": "CertificateSetForUnsupportedFeatureSet",
+          "callee": "append",
+          "lineNumber": 44
+        },
+        {
+          "caller": "CertificateSetForUnsupportedFeatureSet",
+          "callee": "fs.Has",
+          "lineNumber": 47
+        },
+        {
+          "caller": "CertificateSetForUnsupportedFeatureSet",
+          "callee": "append",
+          "lineNumber": 48
+        },
+        {
+          "caller": "CertificateSetForUnsupportedFeatureSet",
+          "callee": "fs.Has",
+          "lineNumber": 51
+        },
+        {
+          "caller": "CertificateSetForUnsupportedFeatureSet",
+          "callee": "append",
+          "lineNumber": 52
+        },
+        {
+          "caller": "CertificateSetForUnsupportedFeatureSet",
+          "callee": "fs.Has",
+          "lineNumber": 55
+        },
+        {
+          "caller": "CertificateSetForUnsupportedFeatureSet",
+          "callee": "append",
+          "lineNumber": 56
+        },
+        {
+          "caller": "CertificateSetForUnsupportedFeatureSet",
+          "callee": "fs.Has",
+          "lineNumber": 59
+        },
+        {
+          "caller": "CertificateSetForUnsupportedFeatureSet",
+          "callee": "append",
+          "lineNumber": 60
+        },
+        {
+          "caller": "CertificateSetForUnsupportedFeatureSet",
+          "callee": "fs.Has",
+          "lineNumber": 63
+        },
+        {
+          "caller": "CertificateSetForUnsupportedFeatureSet",
+          "callee": "append",
+          "lineNumber": 64
+        },
+        {
+          "caller": "CertificateSetForUnsupportedFeatureSet",
+          "callee": "fs.Has",
+          "lineNumber": 66
+        },
+        {
+          "caller": "CertificateSetForUnsupportedFeatureSet",
+          "callee": "append",
+          "lineNumber": 67
+        },
+        {
+          "caller": "CertificateRequestSetForUnsupportedFeatureSet",
+          "callee": "fs.Has",
+          "lineNumber": 87
+        },
+        {
+          "caller": "CertificateRequestSetForUnsupportedFeatureSet",
+          "callee": "append",
+          "lineNumber": 88
+        },
+        {
+          "caller": "CertificateRequestSetForUnsupportedFeatureSet",
+          "callee": "fs.Has",
+          "lineNumber": 91
+        },
+        {
+          "caller": "CertificateRequestSetForUnsupportedFeatureSet",
+          "callee": "append",
+          "lineNumber": 92
+        },
+        {
+          "caller": "CertificateRequestSetForUnsupportedFeatureSet",
+          "callee": "fs.Has",
+          "lineNumber": 95
+        },
+        {
+          "caller": "CertificateRequestSetForUnsupportedFeatureSet",
+          "callee": "append",
+          "lineNumber": 96
+        },
+        {
+          "caller": "CertificateRequestSetForUnsupportedFeatureSet",
+          "callee": "fs.Has",
+          "lineNumber": 99
+        },
+        {
+          "caller": "CertificateRequestSetForUnsupportedFeatureSet",
+          "callee": "append",
+          "lineNumber": 100
+        },
+        {
+          "caller": "CertificateRequestSetForUnsupportedFeatureSet",
+          "callee": "fs.Has",
+          "lineNumber": 103
+        },
+        {
+          "caller": "CertificateRequestSetForUnsupportedFeatureSet",
+          "callee": "append",
+          "lineNumber": 104
+        },
+        {
+          "caller": "CertificateSigningRequestSetForUnsupportedFeatureSet",
+          "callee": "fs.Has",
+          "lineNumber": 126
+        },
+        {
+          "caller": "CertificateSigningRequestSetForUnsupportedFeatureSet",
+          "callee": "append",
+          "lineNumber": 127
+        },
+        {
+          "caller": "CertificateSigningRequestSetForUnsupportedFeatureSet",
+          "callee": "fs.Has",
+          "lineNumber": 130
+        },
+        {
+          "caller": "CertificateSigningRequestSetForUnsupportedFeatureSet",
+          "callee": "append",
+          "lineNumber": 131
+        },
+        {
+          "caller": "CertificateSigningRequestSetForUnsupportedFeatureSet",
+          "callee": "fs.Has",
+          "lineNumber": 134
+        },
+        {
+          "caller": "CertificateSigningRequestSetForUnsupportedFeatureSet",
+          "callee": "append",
+          "lineNumber": 135
+        },
+        {
+          "caller": "CertificateSigningRequestSetForUnsupportedFeatureSet",
+          "callee": "fs.Has",
+          "lineNumber": 138
+        },
+        {
+          "caller": "CertificateSigningRequestSetForUnsupportedFeatureSet",
+          "callee": "append",
+          "lineNumber": 139
+        },
+        {
+          "caller": "CertificateSigningRequestSetForUnsupportedFeatureSet",
+          "callee": "fs.Has",
+          "lineNumber": 142
+        },
+        {
+          "caller": "CertificateSigningRequestSetForUnsupportedFeatureSet",
+          "callee": "append",
+          "lineNumber": 143
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/framework/log/log.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 68,
+      "functions": [
+        {
+          "name": "nowStamp",
+          "startLine": 30,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "logf",
+          "startLine": 34,
+          "endLine": 36,
+          "params": [
+            "level",
+            "format"
+          ]
+        },
+        {
+          "name": "Logf",
+          "startLine": 38,
+          "endLine": 40,
+          "params": [
+            "format"
+          ]
+        },
+        {
+          "name": "LogBackoff",
+          "startLine": 53,
+          "endLine": 83,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Logf",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "LogBackoff",
+          "line": 53,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "nowStamp",
+          "callee": "time.Now().Format",
+          "lineNumber": 31
+        },
+        {
+          "caller": "nowStamp",
+          "callee": "time.Now",
+          "lineNumber": 31
+        },
+        {
+          "caller": "logf",
+          "callee": "fmt.Fprintf",
+          "lineNumber": 35
+        },
+        {
+          "caller": "logf",
+          "callee": "nowStamp",
+          "lineNumber": 35
+        },
+        {
+          "caller": "Logf",
+          "callee": "logf",
+          "lineNumber": 39
+        },
+        {
+          "caller": "LogBackoff",
+          "callee": "time.Now",
+          "lineNumber": 61
+        },
+        {
+          "caller": "LogBackoff",
+          "callee": "Logf",
+          "lineNumber": 64
+        },
+        {
+          "caller": "LogBackoff",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 64
+        },
+        {
+          "caller": "LogBackoff",
+          "callee": "time.Since(start).Truncate",
+          "lineNumber": 64
+        },
+        {
+          "caller": "LogBackoff",
+          "callee": "time.Since",
+          "lineNumber": 64
+        },
+        {
+          "caller": "LogBackoff",
+          "callee": "time.Now",
+          "lineNumber": 68
+        },
+        {
+          "caller": "LogBackoff",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 70
+        },
+        {
+          "caller": "LogBackoff",
+          "callee": "once.Do",
+          "lineNumber": 71
+        },
+        {
+          "caller": "LogBackoff",
+          "callee": "Logf",
+          "lineNumber": 72
+        },
+        {
+          "caller": "LogBackoff",
+          "callee": "time.Since",
+          "lineNumber": 75
+        },
+        {
+          "caller": "LogBackoff",
+          "callee": "time.Now",
+          "lineNumber": 79
+        },
+        {
+          "caller": "LogBackoff",
+          "callee": "backoff.Step",
+          "lineNumber": 80
+        },
+        {
+          "caller": "LogBackoff",
+          "callee": "Logf",
+          "lineNumber": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/framework/matcher/have_condition_matcher.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 218,
+      "nonEmptyLines": 186,
+      "functions": [
+        {
+          "name": "HaveCondition",
+          "startLine": 32,
+          "endLine": 37,
+          "params": [
+            "f",
+            "condition"
+          ]
+        },
+        {
+          "name": "toGenericCondition",
+          "startLine": 42,
+          "endLine": 53,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "getUpToDateResource",
+          "startLine": 55,
+          "endLine": 66,
+          "params": [
+            "obj"
+          ]
+        },
+        {
+          "name": "extractConditionSlice",
+          "startLine": 68,
+          "endLine": 87,
+          "params": [
+            "obj"
+          ]
+        },
+        {
+          "name": "String",
+          "startLine": 102,
+          "endLine": 116,
+          "params": []
+        },
+        {
+          "name": "Match",
+          "startLine": 120,
+          "endLine": 147,
+          "params": [
+            "actual"
+          ]
+        },
+        {
+          "name": "matches",
+          "startLine": 149,
+          "endLine": 166,
+          "params": [
+            "expected",
+            "actual"
+          ]
+        },
+        {
+          "name": "buildGenericCondition",
+          "startLine": 168,
+          "endLine": 180,
+          "params": [
+            "cType",
+            "status",
+            "reason"
+          ]
+        },
+        {
+          "name": "FailureMessage",
+          "startLine": 182,
+          "endLine": 199,
+          "params": [
+            "actual"
+          ]
+        },
+        {
+          "name": "NegatedFailureMessage",
+          "startLine": 201,
+          "endLine": 218,
+          "params": [
+            "actual"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "conditionMatcher",
+          "startLine": 91,
+          "endLine": 94,
+          "methods": [
+            "getUpToDateResource",
+            "Match",
+            "FailureMessage",
+            "NegatedFailureMessage"
+          ],
+          "properties": [
+            "f",
+            "condition"
+          ]
+        },
+        {
+          "name": "genericCondition",
+          "startLine": 96,
+          "endLine": 100,
+          "methods": [
+            "String"
+          ],
+          "properties": [
+            "Type",
+            "Status",
+            "Reason"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HaveCondition",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "String",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "Match",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "FailureMessage",
+          "line": 182,
+          "isDefault": false
+        },
+        {
+          "name": "NegatedFailureMessage",
+          "line": 201,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toGenericCondition",
+          "callee": "buildGenericCondition",
+          "lineNumber": 45
+        },
+        {
+          "caller": "toGenericCondition",
+          "callee": "string",
+          "lineNumber": 45
+        },
+        {
+          "caller": "toGenericCondition",
+          "callee": "string",
+          "lineNumber": 45
+        },
+        {
+          "caller": "toGenericCondition",
+          "callee": "buildGenericCondition",
+          "lineNumber": 47
+        },
+        {
+          "caller": "toGenericCondition",
+          "callee": "string",
+          "lineNumber": 47
+        },
+        {
+          "caller": "toGenericCondition",
+          "callee": "string",
+          "lineNumber": 47
+        },
+        {
+          "caller": "toGenericCondition",
+          "callee": "buildGenericCondition",
+          "lineNumber": 49
+        },
+        {
+          "caller": "toGenericCondition",
+          "callee": "string",
+          "lineNumber": 49
+        },
+        {
+          "caller": "toGenericCondition",
+          "callee": "string",
+          "lineNumber": 49
+        },
+        {
+          "caller": "toGenericCondition",
+          "callee": "fmt.Errorf",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getUpToDateResource",
+          "callee": "c.f.CertManagerClientSet.CertmanagerV1().Certificates(obj.Namespace).Get",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getUpToDateResource",
+          "callee": "c.f.CertManagerClientSet.CertmanagerV1().Certificates",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getUpToDateResource",
+          "callee": "c.f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getUpToDateResource",
+          "callee": "context.TODO",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getUpToDateResource",
+          "callee": "c.f.CertManagerClientSet.CertmanagerV1().Issuers(obj.Namespace).Get",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getUpToDateResource",
+          "callee": "c.f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getUpToDateResource",
+          "callee": "c.f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getUpToDateResource",
+          "callee": "context.TODO",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getUpToDateResource",
+          "callee": "c.f.CertManagerClientSet.CertmanagerV1().CertificateRequests(obj.Namespace).Get",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getUpToDateResource",
+          "callee": "c.f.CertManagerClientSet.CertmanagerV1().CertificateRequests",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getUpToDateResource",
+          "callee": "c.f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getUpToDateResource",
+          "callee": "context.TODO",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getUpToDateResource",
+          "callee": "fmt.Errorf",
+          "lineNumber": 64
+        },
+        {
+          "caller": "extractConditionSlice",
+          "callee": "append",
+          "lineNumber": 73
+        },
+        {
+          "caller": "extractConditionSlice",
+          "callee": "append",
+          "lineNumber": 77
+        },
+        {
+          "caller": "extractConditionSlice",
+          "callee": "append",
+          "lineNumber": 81
+        },
+        {
+          "caller": "extractConditionSlice",
+          "callee": "fmt.Errorf",
+          "lineNumber": 84
+        },
+        {
+          "caller": "String",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 115
+        },
+        {
+          "caller": "Match",
+          "callee": "toGenericCondition",
+          "lineNumber": 121
+        },
+        {
+          "caller": "Match",
+          "callee": "c.getUpToDateResource",
+          "lineNumber": 126
+        },
+        {
+          "caller": "Match",
+          "callee": "extractConditionSlice",
+          "lineNumber": 131
+        },
+        {
+          "caller": "Match",
+          "callee": "toGenericCondition",
+          "lineNumber": 137
+        },
+        {
+          "caller": "Match",
+          "callee": "matches",
+          "lineNumber": 141
+        },
+        {
+          "caller": "matches",
+          "callee": "reflect.DeepEqual",
+          "lineNumber": 151
+        },
+        {
+          "caller": "matches",
+          "callee": "reflect.DeepEqual",
+          "lineNumber": 156
+        },
+        {
+          "caller": "matches",
+          "callee": "reflect.DeepEqual",
+          "lineNumber": 161
+        },
+        {
+          "caller": "FailureMessage",
+          "callee": "toGenericCondition",
+          "lineNumber": 183
+        },
+        {
+          "caller": "FailureMessage",
+          "callee": "c.getUpToDateResource",
+          "lineNumber": 188
+        },
+        {
+          "caller": "FailureMessage",
+          "callee": "extractConditionSlice",
+          "lineNumber": 193
+        },
+        {
+          "caller": "FailureMessage",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 198
+        },
+        {
+          "caller": "FailureMessage",
+          "callee": "expected.String",
+          "lineNumber": 198
+        },
+        {
+          "caller": "NegatedFailureMessage",
+          "callee": "toGenericCondition",
+          "lineNumber": 202
+        },
+        {
+          "caller": "NegatedFailureMessage",
+          "callee": "c.getUpToDateResource",
+          "lineNumber": 207
+        },
+        {
+          "caller": "NegatedFailureMessage",
+          "callee": "extractConditionSlice",
+          "lineNumber": 212
+        },
+        {
+          "caller": "NegatedFailureMessage",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 217
+        },
+        {
+          "caller": "NegatedFailureMessage",
+          "callee": "expected.String",
+          "lineNumber": 217
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 5,
+        "functionCount": 10,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "test/e2e/framework/matcher/san_matchers.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 142,
+      "nonEmptyLines": 112,
+      "functions": [
+        {
+          "name": "HaveSameSANsAs",
+          "startLine": 35,
+          "endLine": 37,
+          "params": [
+            "certWithExpectedSAN"
+          ]
+        },
+        {
+          "name": "SANEquals",
+          "startLine": 40,
+          "endLine": 48,
+          "params": [
+            "sanExtensionExpected"
+          ]
+        },
+        {
+          "name": "Match",
+          "startLine": 55,
+          "endLine": 95,
+          "params": [
+            "actual"
+          ]
+        },
+        {
+          "name": "sortGeneralNamesByTagBytes",
+          "startLine": 99,
+          "endLine": 114,
+          "params": [
+            "generalNames"
+          ]
+        },
+        {
+          "name": "FailureMessage",
+          "startLine": 116,
+          "endLine": 118,
+          "params": [
+            "actual"
+          ]
+        },
+        {
+          "name": "NegatedFailureMessage",
+          "startLine": 120,
+          "endLine": 123,
+          "params": [
+            "actual"
+          ]
+        },
+        {
+          "name": "extractSANsFromCertificate",
+          "startLine": 127,
+          "endLine": 142,
+          "params": [
+            "certDER"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SANMatcher",
+          "startLine": 50,
+          "endLine": 52,
+          "methods": [
+            "Match",
+            "FailureMessage",
+            "NegatedFailureMessage"
+          ],
+          "properties": [
+            "SANExtensionExpected"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HaveSameSANsAs",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "SANEquals",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "SANMatcher",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "Match",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "FailureMessage",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "NegatedFailureMessage",
+          "line": 120,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "HaveSameSANsAs",
+          "callee": "SANEquals",
+          "lineNumber": 36
+        },
+        {
+          "caller": "HaveSameSANsAs",
+          "callee": "extractSANsFromCertificate",
+          "lineNumber": 36
+        },
+        {
+          "caller": "SANEquals",
+          "callee": "extension.Id.Equal",
+          "lineNumber": 42
+        },
+        {
+          "caller": "SANEquals",
+          "callee": "Fail",
+          "lineNumber": 43
+        },
+        {
+          "caller": "Match",
+          "callee": "fmt.Errorf",
+          "lineNumber": 58
+        },
+        {
+          "caller": "Match",
+          "callee": "extension.Id.Equal",
+          "lineNumber": 64
+        },
+        {
+          "caller": "Match",
+          "callee": "fmt.Errorf",
+          "lineNumber": 71
+        },
+        {
+          "caller": "Match",
+          "callee": "asn1.Unmarshal",
+          "lineNumber": 75
+        },
+        {
+          "caller": "Match",
+          "callee": "len",
+          "lineNumber": 78
+        },
+        {
+          "caller": "Match",
+          "callee": "fmt.Errorf",
+          "lineNumber": 79
+        },
+        {
+          "caller": "Match",
+          "callee": "asn1.Unmarshal",
+          "lineNumber": 83
+        },
+        {
+          "caller": "Match",
+          "callee": "len",
+          "lineNumber": 86
+        },
+        {
+          "caller": "Match",
+          "callee": "fmt.Errorf",
+          "lineNumber": 87
+        },
+        {
+          "caller": "Match",
+          "callee": "sortGeneralNamesByTagBytes",
+          "lineNumber": 90
+        },
+        {
+          "caller": "Match",
+          "callee": "sortGeneralNamesByTagBytes",
+          "lineNumber": 91
+        },
+        {
+          "caller": "Match",
+          "callee": "reflect.DeepEqual",
+          "lineNumber": 93
+        },
+        {
+          "caller": "sortGeneralNamesByTagBytes",
+          "callee": "sort.Slice",
+          "lineNumber": 101
+        },
+        {
+          "caller": "sortGeneralNamesByTagBytes",
+          "callee": "base64.StdEncoding.EncodeToString",
+          "lineNumber": 109
+        },
+        {
+          "caller": "sortGeneralNamesByTagBytes",
+          "callee": "base64.StdEncoding.EncodeToString",
+          "lineNumber": 109
+        },
+        {
+          "caller": "FailureMessage",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 117
+        },
+        {
+          "caller": "NegatedFailureMessage",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 121
+        },
+        {
+          "caller": "extractSANsFromCertificate",
+          "callee": "pem.Decode",
+          "lineNumber": 128
+        },
+        {
+          "caller": "extractSANsFromCertificate",
+          "callee": "Expect(rest).To",
+          "lineNumber": 129
+        },
+        {
+          "caller": "extractSANsFromCertificate",
+          "callee": "Expect",
+          "lineNumber": 129
+        },
+        {
+          "caller": "extractSANsFromCertificate",
+          "callee": "BeEmpty",
+          "lineNumber": 129
+        },
+        {
+          "caller": "extractSANsFromCertificate",
+          "callee": "x509.ParseCertificate",
+          "lineNumber": 131
+        },
+        {
+          "caller": "extractSANsFromCertificate",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 132
+        },
+        {
+          "caller": "extractSANsFromCertificate",
+          "callee": "Expect",
+          "lineNumber": 132
+        },
+        {
+          "caller": "extractSANsFromCertificate",
+          "callee": "HaveOccurred",
+          "lineNumber": 132
+        },
+        {
+          "caller": "extractSANsFromCertificate",
+          "callee": "extension.Id.Equal",
+          "lineNumber": 135
+        },
+        {
+          "caller": "extractSANsFromCertificate",
+          "callee": "Fail",
+          "lineNumber": 140
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "test/e2e/framework/testenv.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "CreateKubeNamespace",
+          "startLine": 37,
+          "endLine": 45,
+          "params": [
+            "ctx",
+            "baseName"
+          ]
+        },
+        {
+          "name": "CreateKubeResourceQuota",
+          "startLine": 49,
+          "endLine": 67,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "DeleteKubeNamespace",
+          "startLine": 70,
+          "endLine": 72,
+          "params": [
+            "ctx",
+            "namespace"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CreateKubeNamespace",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "CreateKubeResourceQuota",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "DeleteKubeNamespace",
+          "line": 70,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "CreateKubeNamespace",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 40
+        },
+        {
+          "caller": "CreateKubeNamespace",
+          "callee": "f.KubeClientSet.CoreV1().Namespaces().Create",
+          "lineNumber": 44
+        },
+        {
+          "caller": "CreateKubeNamespace",
+          "callee": "f.KubeClientSet.CoreV1().Namespaces",
+          "lineNumber": 44
+        },
+        {
+          "caller": "CreateKubeNamespace",
+          "callee": "f.KubeClientSet.CoreV1",
+          "lineNumber": 44
+        },
+        {
+          "caller": "CreateKubeResourceQuota",
+          "callee": "resource.MustParse",
+          "lineNumber": 57
+        },
+        {
+          "caller": "CreateKubeResourceQuota",
+          "callee": "resource.MustParse",
+          "lineNumber": 58
+        },
+        {
+          "caller": "CreateKubeResourceQuota",
+          "callee": "resource.MustParse",
+          "lineNumber": 59
+        },
+        {
+          "caller": "CreateKubeResourceQuota",
+          "callee": "resource.MustParse",
+          "lineNumber": 60
+        },
+        {
+          "caller": "CreateKubeResourceQuota",
+          "callee": "resource.MustParse",
+          "lineNumber": 61
+        },
+        {
+          "caller": "CreateKubeResourceQuota",
+          "callee": "resource.MustParse",
+          "lineNumber": 62
+        },
+        {
+          "caller": "CreateKubeResourceQuota",
+          "callee": "f.KubeClientSet.CoreV1().ResourceQuotas(f.Namespace.Name).Create",
+          "lineNumber": 66
+        },
+        {
+          "caller": "CreateKubeResourceQuota",
+          "callee": "f.KubeClientSet.CoreV1().ResourceQuotas",
+          "lineNumber": 66
+        },
+        {
+          "caller": "CreateKubeResourceQuota",
+          "callee": "f.KubeClientSet.CoreV1",
+          "lineNumber": 66
+        },
+        {
+          "caller": "DeleteKubeNamespace",
+          "callee": "f.KubeClientSet.CoreV1().Namespaces().Delete",
+          "lineNumber": 71
+        },
+        {
+          "caller": "DeleteKubeNamespace",
+          "callee": "f.KubeClientSet.CoreV1().Namespaces",
+          "lineNumber": 71
+        },
+        {
+          "caller": "DeleteKubeNamespace",
+          "callee": "f.KubeClientSet.CoreV1",
+          "lineNumber": 71
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/framework/util.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 114,
+      "nonEmptyLines": 98,
+      "functions": [
+        {
+          "name": "nowStamp",
+          "startLine": 36,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "Failf",
+          "startLine": 40,
+          "endLine": 44,
+          "params": [
+            "format"
+          ]
+        },
+        {
+          "name": "Skipf",
+          "startLine": 46,
+          "endLine": 50,
+          "params": [
+            "format"
+          ]
+        },
+        {
+          "name": "RequireFeatureGate",
+          "startLine": 52,
+          "endLine": 56,
+          "params": [
+            "featureSet",
+            "gate"
+          ]
+        },
+        {
+          "name": "RbacClusterRoleHasAccessToResource",
+          "startLine": 59,
+          "endLine": 114,
+          "params": [
+            "ctx",
+            "f",
+            "clusterRole",
+            "verb",
+            "resource"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Failf",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "Skipf",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "RequireFeatureGate",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "RbacClusterRoleHasAccessToResource",
+          "line": 59,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "nowStamp",
+          "callee": "time.Now().Format",
+          "lineNumber": 37
+        },
+        {
+          "caller": "nowStamp",
+          "callee": "time.Now",
+          "lineNumber": 37
+        },
+        {
+          "caller": "Failf",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 41
+        },
+        {
+          "caller": "Failf",
+          "callee": "Logf",
+          "lineNumber": 42
+        },
+        {
+          "caller": "Failf",
+          "callee": "Fail",
+          "lineNumber": 43
+        },
+        {
+          "caller": "Failf",
+          "callee": "nowStamp",
+          "lineNumber": 43
+        },
+        {
+          "caller": "Skipf",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 47
+        },
+        {
+          "caller": "Skipf",
+          "callee": "Logf",
+          "lineNumber": 48
+        },
+        {
+          "caller": "Skipf",
+          "callee": "Skip",
+          "lineNumber": 49
+        },
+        {
+          "caller": "Skipf",
+          "callee": "nowStamp",
+          "lineNumber": 49
+        },
+        {
+          "caller": "RequireFeatureGate",
+          "callee": "featureSet.Enabled",
+          "lineNumber": 53
+        },
+        {
+          "caller": "RequireFeatureGate",
+          "callee": "Skipf",
+          "lineNumber": 54
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "By",
+          "lineNumber": 60
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "f.KubeClientSet.CoreV1().ServiceAccounts",
+          "lineNumber": 66
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "f.KubeClientSet.CoreV1",
+          "lineNumber": 66
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "serviceAccountClient.Create",
+          "lineNumber": 67
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 68
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "Expect",
+          "lineNumber": 68
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "HaveOccurred",
+          "lineNumber": 68
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "By",
+          "lineNumber": 71
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "f.KubeClientSet.RbacV1().ClusterRoleBindings",
+          "lineNumber": 85
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "f.KubeClientSet.RbacV1",
+          "lineNumber": 85
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "roleBindingClient.Create",
+          "lineNumber": 86
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 87
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "Expect",
+          "lineNumber": 87
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "HaveOccurred",
+          "lineNumber": 87
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "By",
+          "lineNumber": 89
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "time.Sleep",
+          "lineNumber": 91
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "By",
+          "lineNumber": 93
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "kubernetes.NewForConfig",
+          "lineNumber": 96
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 97
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "Expect",
+          "lineNumber": 97
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "HaveOccurred",
+          "lineNumber": 97
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "By",
+          "lineNumber": 99
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "impersonateClient.AuthorizationV1().SelfSubjectAccessReviews",
+          "lineNumber": 100
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "impersonateClient.AuthorizationV1",
+          "lineNumber": 100
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "sarClient.Create",
+          "lineNumber": 111
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 112
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "Expect",
+          "lineNumber": 112
+        },
+        {
+          "caller": "RbacClusterRoleHasAccessToResource",
+          "callee": "HaveOccurred",
+          "lineNumber": 112
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/framework/util/config.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "RestclientConfig",
+          "startLine": 27,
+          "endLine": 39,
+          "params": [
+            "config",
+            "context"
+          ]
+        },
+        {
+          "name": "LoadConfig",
+          "startLine": 41,
+          "endLine": 47,
+          "params": [
+            "config",
+            "context"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RestclientConfig",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "LoadConfig",
+          "line": 41,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "RestclientConfig",
+          "callee": "fmt.Errorf",
+          "lineNumber": 29
+        },
+        {
+          "caller": "RestclientConfig",
+          "callee": "clientcmd.LoadFromFile",
+          "lineNumber": 31
+        },
+        {
+          "caller": "RestclientConfig",
+          "callee": "fmt.Errorf",
+          "lineNumber": 33
+        },
+        {
+          "caller": "RestclientConfig",
+          "callee": "err.Error",
+          "lineNumber": 33
+        },
+        {
+          "caller": "LoadConfig",
+          "callee": "RestclientConfig",
+          "lineNumber": 42
+        },
+        {
+          "caller": "LoadConfig",
+          "callee": "clientcmd.NewDefaultClientConfig(*c, &clientcmd.ConfigOverrides{}).ClientConfig",
+          "lineNumber": 46
+        },
+        {
+          "caller": "LoadConfig",
+          "callee": "clientcmd.NewDefaultClientConfig",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/framework/util/errors/errors.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "IsSkip",
+          "startLine": 25,
+          "endLine": 30,
+          "params": [
+            "err"
+          ]
+        },
+        {
+          "name": "NewSkip",
+          "startLine": 32,
+          "endLine": 34,
+          "params": [
+            "err"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "skipTestError",
+          "startLine": 21,
+          "endLine": 23,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IsSkip",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "NewSkip",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "test/e2e/suite/certificaterequests/approval/approval.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 513,
+      "nonEmptyLines": 448,
+      "functions": [
+        {
+          "name": "createCRD",
+          "startLine": 448,
+          "endLine": 477,
+          "params": [
+            "testingCtx",
+            "crdclient",
+            "group",
+            "plural",
+            "kind",
+            "scope"
+          ]
+        },
+        {
+          "name": "bindServiceAccountToApprove",
+          "startLine": 479,
+          "endLine": 513,
+          "params": [
+            "testingCtx",
+            "f",
+            "sa",
+            "resourceName"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createCRD",
+          "callee": "crdclient.ApiextensionsV1().CustomResourceDefinitions().Create",
+          "lineNumber": 449
+        },
+        {
+          "caller": "createCRD",
+          "callee": "crdclient.ApiextensionsV1().CustomResourceDefinitions",
+          "lineNumber": 449
+        },
+        {
+          "caller": "createCRD",
+          "callee": "crdclient.ApiextensionsV1",
+          "lineNumber": 449
+        },
+        {
+          "caller": "createCRD",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 451
+        },
+        {
+          "caller": "createCRD",
+          "callee": "Expect(err).ToNot",
+          "lineNumber": 475
+        },
+        {
+          "caller": "createCRD",
+          "callee": "Expect",
+          "lineNumber": 475
+        },
+        {
+          "caller": "createCRD",
+          "callee": "HaveOccurred",
+          "lineNumber": 475
+        },
+        {
+          "caller": "bindServiceAccountToApprove",
+          "callee": "f.KubeClientSet.RbacV1().ClusterRoles().Create",
+          "lineNumber": 480
+        },
+        {
+          "caller": "bindServiceAccountToApprove",
+          "callee": "f.KubeClientSet.RbacV1().ClusterRoles",
+          "lineNumber": 480
+        },
+        {
+          "caller": "bindServiceAccountToApprove",
+          "callee": "f.KubeClientSet.RbacV1",
+          "lineNumber": 480
+        },
+        {
+          "caller": "bindServiceAccountToApprove",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 493
+        },
+        {
+          "caller": "bindServiceAccountToApprove",
+          "callee": "Expect",
+          "lineNumber": 493
+        },
+        {
+          "caller": "bindServiceAccountToApprove",
+          "callee": "HaveOccurred",
+          "lineNumber": 493
+        },
+        {
+          "caller": "bindServiceAccountToApprove",
+          "callee": "f.KubeClientSet.RbacV1().ClusterRoleBindings().Create",
+          "lineNumber": 495
+        },
+        {
+          "caller": "bindServiceAccountToApprove",
+          "callee": "f.KubeClientSet.RbacV1().ClusterRoleBindings",
+          "lineNumber": 495
+        },
+        {
+          "caller": "bindServiceAccountToApprove",
+          "callee": "f.KubeClientSet.RbacV1",
+          "lineNumber": 495
+        },
+        {
+          "caller": "bindServiceAccountToApprove",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 512
+        },
+        {
+          "caller": "bindServiceAccountToApprove",
+          "callee": "Expect",
+          "lineNumber": 512
+        },
+        {
+          "caller": "bindServiceAccountToApprove",
+          "callee": "HaveOccurred",
+          "lineNumber": 512
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/certificaterequests/approval/userinfo.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 220,
+      "nonEmptyLines": 190,
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/certificaterequests/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 17,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/certificaterequests/selfsigned/secret.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 270,
+      "nonEmptyLines": 238,
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/certificates/additionaloutputformats.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 409,
+      "nonEmptyLines": 362,
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/certificates/duplicatesecretname.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 174,
+      "nonEmptyLines": 148,
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/certificates/foregrounddeletion.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 169,
+      "nonEmptyLines": 143,
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/certificates/literalsubjectrdns.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 125,
+      "nonEmptyLines": 105,
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/certificates/othernamesan.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 173,
+      "nonEmptyLines": 147,
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/certificates/secrettemplate.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 481,
+      "nonEmptyLines": 406,
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/certificatesigningrequests/doc.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/certificatesigningrequests/selfsigned/selfsigned.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 318,
+      "nonEmptyLines": 278,
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test/e2e/suite/conformance/certificates/acme/acme.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 513,
+      "nonEmptyLines": 443,
+      "functions": [
+        {
+          "name": "runACMEIssuerTests",
+          "startLine": 48,
+          "endLine": 167,
+          "params": [
+            "eab"
+          ]
+        },
+        {
+          "name": "delete",
+          "startLine": 174,
+          "endLine": 184,
+          "params": [
+            "ctx",
+            "f",
+            "ref"
+          ]
+        },
+        {
+          "name": "createHTTP01IngressIssuer",
+          "startLine": 192,
+          "endLine": 216,
+          "params": [
+            "ctx",
+            "f"
+          ]
+        },
+        {
+          "name": "createHTTP01IngressClusterIssuer",
+          "startLine": 218,
+          "endLine": 242,
+          "params": [
+            "ctx",
+            "f"
+          ]
+        },
+        {
+          "name": "createHTTP01GatewayIssuer",
+          "startLine": 244,
+          "endLine": 278,
+          "params": [
+            "ctx",
+            "f"
+          ]
+        },
+        {
+          "name": "createPublicACMEServerStagingHTTP01Issuer",
+          "startLine": 280,
+          "endLine": 310,
+          "params": [
+            "ctx",
+            "f"
+          ]
+        },
+        {
+          "name": "createHTTP01GatewayClusterIssuer",
+          "startLine": 312,
+          "endLine": 346,
+          "params": [
+            "ctx",
+            "f"
+          ]
+        },
+        {
+          "name": "createHTTP01IngressIssuerSpec",
+          "startLine": 348,
+          "endLine": 373,
+          "params": [
+            "serverURL"
+          ]
+        },
+        {
+          "name": "createHTTP01GatewayIssuerSpec",
+          "startLine": 375,
+          "endLine": 406,
+          "params": [
+            "serverURL",
+            "labels"
+          ]
+        },
+        {
+          "name": "createDNS01Issuer",
+          "startLine": 408,
+          "endLine": 431,
+          "params": [
+            "ctx",
+            "f"
+          ]
+        },
+        {
+          "name": "createDNS01ClusterIssuer",
+          "startLine": 433,
+          "endLine": 456,
+          "params": [
+            "ctx",
+            "f"
+          ]
+        },
+        {
+          "name": "createDNS01IssuerSpec",
+          "startLine": 458,
+          "endLine": 482,
+          "params": [
+            "serverURL",
+            "dnsServer"
+          ]
+        },
+        {
+          "name": "ensureEABSecret",
+          "startLine": 484,
+          "endLine": 513,
+          "params": [
+            "ctx",
+            "f",
+            "ns"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "acmeIssuerProvisioner",
+          "startLine": 169,
+          "endLine": 172,
+          "methods": [
+            "delete",
+            "createHTTP01IngressIssuer",
+            "createHTTP01IngressClusterIssuer",
+            "createHTTP01GatewayIssuer",
+            "createPublicACMEServerStagingHTTP01Issuer",
+            "createHTTP01GatewayClusterIssuer",
+            "createHTTP01IngressIssuerSpec",
+            "createHTTP01GatewayIssuerSpec",
+            "createDNS01Issuer",
+            "createDNS01ClusterIssuer",
+            "createDNS01IssuerSpec",
+            "ensureEABSecret"
+          ],
+          "properties": [
+            "eab",
+            "secretNamespace"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "runACMEIssuerTests",
+          "callee": "featureset.NewFeatureSet",
+          "lineNumber": 51
+        },
+        {
+          "caller": "runACMEIssuerTests",
+          "callee": "unsupportedHTTP01Features.Clone().Insert",
+          "lineNumber": 64
+        },
+        {
+          "caller": "runACMEIssuerTests",
+          "callee": "unsupportedHTTP01Features.Clone",
+          "lineNumber": 64
+        },
+        {
+          "caller": "runACMEIssuerTests",
+          "callee": "featureset.NewFeatureSet",
+          "lineNumber": 72
+        },
+        {
+          "caller": "runACMEIssuerTests",
+          "callee": "unsupportedHTTP01Features.Clone().Insert",
+          "lineNumber": 87
+        },
+        {
+          "caller": "runACMEIssuerTests",
+          "callee": "unsupportedHTTP01Features.Clone",
+          "lineNumber": 87
+        },
+        {
+          "caller": "runACMEIssuerTests",
+          "callee": "(&certificates.Suite{\n\t\tName:                \"ACME HTTP01 Issuer (Ingress)\",\n\t\tHTTP01TestType:      \"Ingress\",\n\t\tCreateIssuerFunc:    provisionerHTTP01.createHTTP01IngressIssuer,\n\t\tDeleteIssuerFunc:    provisionerHTTP01.delete,\n\t\tUnsupportedFeatures: unsupportedHTTP01Features,\n\t}).Define",
+          "lineNumber": 112
+        },
+        {
+          "caller": "runACMEIssuerTests",
+          "callee": "(&certificates.Suite{\n\t\tName:                \"ACME HTTP01 Issuer (Gateway)\",\n\t\tHTTP01TestType:      \"Gateway\",\n\t\tCreateIssuerFunc:    provisionerHTTP01.createHTTP01GatewayIssuer,\n\t\tDeleteIssuerFunc:    provisionerHTTP01.delete,\n\t\tUnsupportedFeatures: unsupportedHTTP01GatewayFeatures,\n\t}).Define",
+          "lineNumber": 120
+        },
+        {
+          "caller": "runACMEIssuerTests",
+          "callee": "(&certificates.Suite{\n\t\tName:                \"ACME DNS01 Issuer\",\n\t\tDomainSuffix:        \"dns01.example.com\",\n\t\tCreateIssuerFunc:    provisionerDNS01.createDNS01Issuer,\n\t\tDeleteIssuerFunc:    provisionerDNS01.delete,\n\t\tUnsupportedFeatures: unsupportedDNS01Features,\n\t}).Define",
+          "lineNumber": 128
+        },
+        {
+          "caller": "runACMEIssuerTests",
+          "callee": "(&certificates.Suite{\n\t\tName:                \"ACME HTTP01 ClusterIssuer (Ingress)\",\n\t\tHTTP01TestType:      \"Ingress\",\n\t\tCreateIssuerFunc:    provisionerHTTP01.createHTTP01IngressClusterIssuer,\n\t\tDeleteIssuerFunc:    provisionerHTTP01.delete,\n\t\tUnsupportedFeatures: unsupportedHTTP01Features,\n\t}).Define",
+          "lineNumber": 136
+        },
+        {
+          "caller": "runACMEIssuerTests",
+          "callee": "(&certificates.Suite{\n\t\tName:                \"ACME HTTP01 ClusterIssuer (Gateway)\",\n\t\tHTTP01TestType:      \"Gateway\",\n\t\tCreateIssuerFunc:    provisionerHTTP01.createHTTP01GatewayClusterIssuer,\n\t\tDeleteIssuerFunc:    provisionerHTTP01.delete,\n\t\tUnsupportedFeatures: unsupportedHTTP01GatewayFeatures,\n\t}).Define",
+          "lineNumber": 144
+        },
+        {
+          "caller": "runACMEIssuerTests",
+          "callee": "(&certificates.Suite{\n\t\tName:                \"ACME DNS01 ClusterIssuer\",\n\t\tDomainSuffix:        \"dns01.example.com\",\n\t\tCreateIssuerFunc:    provisionerDNS01.createDNS01ClusterIssuer,\n\t\tDeleteIssuerFunc:    provisionerDNS01.delete,\n\t\tUnsupportedFeatures: unsupportedDNS01Features,\n\t}).Define",
+          "lineNumber": 152
+        },
+        {
+          "caller": "runACMEIssuerTests",
+          "callee": "(&certificates.Suite{\n\t\tName:                \"Public ACME Server HTTP01 Issuer (Ingress)\",\n\t\tHTTP01TestType:      \"Ingress\",\n\t\tCreateIssuerFunc:    provisionerPACMEHTTP01.createPublicACMEServerStagingHTTP01Issuer,\n\t\tDeleteIssuerFunc:    provisionerPACMEHTTP01.delete,\n\t\tUnsupportedFeatures: unsupportedPublicACMEServerFeatures,\n\t}).Define",
+          "lineNumber": 160
+        },
+        {
+          "caller": "delete",
+          "callee": "f.KubeClientSet.CoreV1().Secrets(a.secretNamespace).Delete",
+          "lineNumber": 176
+        },
+        {
+          "caller": "delete",
+          "callee": "f.KubeClientSet.CoreV1().Secrets",
+          "lineNumber": 176
+        },
+        {
+          "caller": "delete",
+          "callee": "f.KubeClientSet.CoreV1",
+          "lineNumber": 176
+        },
+        {
+          "caller": "delete",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 177
+        },
+        {
+          "caller": "delete",
+          "callee": "Expect",
+          "lineNumber": 177
+        },
+        {
+          "caller": "delete",
+          "callee": "HaveOccurred",
+          "lineNumber": 177
+        },
+        {
+          "caller": "delete",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers().Delete",
+          "lineNumber": 181
+        },
+        {
+          "caller": "delete",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 181
+        },
+        {
+          "caller": "delete",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 181
+        },
+        {
+          "caller": "delete",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 182
+        },
+        {
+          "caller": "delete",
+          "callee": "Expect",
+          "lineNumber": 182
+        },
+        {
+          "caller": "delete",
+          "callee": "HaveOccurred",
+          "lineNumber": 182
+        },
+        {
+          "caller": "createHTTP01IngressIssuer",
+          "callee": "a.ensureEABSecret",
+          "lineNumber": 193
+        },
+        {
+          "caller": "createHTTP01IngressIssuer",
+          "callee": "By",
+          "lineNumber": 195
+        },
+        {
+          "caller": "createHTTP01IngressIssuer",
+          "callee": "a.createHTTP01IngressIssuerSpec",
+          "lineNumber": 200
+        },
+        {
+          "caller": "createHTTP01IngressIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers(f.Namespace.Name).Create",
+          "lineNumber": 203
+        },
+        {
+          "caller": "createHTTP01IngressIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 203
+        },
+        {
+          "caller": "createHTTP01IngressIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 203
+        },
+        {
+          "caller": "createHTTP01IngressIssuer",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 204
+        },
+        {
+          "caller": "createHTTP01IngressIssuer",
+          "callee": "Expect",
+          "lineNumber": 204
+        },
+        {
+          "caller": "createHTTP01IngressIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 204
+        },
+        {
+          "caller": "createHTTP01IngressIssuer",
+          "callee": "By",
+          "lineNumber": 207
+        },
+        {
+          "caller": "createHTTP01IngressIssuer",
+          "callee": "f.Helper().WaitIssuerReady",
+          "lineNumber": 208
+        },
+        {
+          "caller": "createHTTP01IngressIssuer",
+          "callee": "f.Helper",
+          "lineNumber": 208
+        },
+        {
+          "caller": "createHTTP01IngressIssuer",
+          "callee": "Expect(err).ToNot",
+          "lineNumber": 209
+        },
+        {
+          "caller": "createHTTP01IngressIssuer",
+          "callee": "Expect",
+          "lineNumber": 209
+        },
+        {
+          "caller": "createHTTP01IngressIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 209
+        },
+        {
+          "caller": "createHTTP01IngressClusterIssuer",
+          "callee": "a.ensureEABSecret",
+          "lineNumber": 219
+        },
+        {
+          "caller": "createHTTP01IngressClusterIssuer",
+          "callee": "By",
+          "lineNumber": 221
+        },
+        {
+          "caller": "createHTTP01IngressClusterIssuer",
+          "callee": "a.createHTTP01IngressIssuerSpec",
+          "lineNumber": 226
+        },
+        {
+          "caller": "createHTTP01IngressClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers().Create",
+          "lineNumber": 229
+        },
+        {
+          "caller": "createHTTP01IngressClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 229
+        },
+        {
+          "caller": "createHTTP01IngressClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 229
+        },
+        {
+          "caller": "createHTTP01IngressClusterIssuer",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 230
+        },
+        {
+          "caller": "createHTTP01IngressClusterIssuer",
+          "callee": "Expect",
+          "lineNumber": 230
+        },
+        {
+          "caller": "createHTTP01IngressClusterIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 230
+        },
+        {
+          "caller": "createHTTP01IngressClusterIssuer",
+          "callee": "By",
+          "lineNumber": 233
+        },
+        {
+          "caller": "createHTTP01IngressClusterIssuer",
+          "callee": "f.Helper().WaitClusterIssuerReady",
+          "lineNumber": 234
+        },
+        {
+          "caller": "createHTTP01IngressClusterIssuer",
+          "callee": "f.Helper",
+          "lineNumber": 234
+        },
+        {
+          "caller": "createHTTP01IngressClusterIssuer",
+          "callee": "Expect(err).ToNot",
+          "lineNumber": 235
+        },
+        {
+          "caller": "createHTTP01IngressClusterIssuer",
+          "callee": "Expect",
+          "lineNumber": 235
+        },
+        {
+          "caller": "createHTTP01IngressClusterIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 235
+        },
+        {
+          "caller": "createHTTP01GatewayIssuer",
+          "callee": "a.ensureEABSecret",
+          "lineNumber": 245
+        },
+        {
+          "caller": "createHTTP01GatewayIssuer",
+          "callee": "strings.Split",
+          "lineNumber": 247
+        },
+        {
+          "caller": "createHTTP01GatewayIssuer",
+          "callee": "make",
+          "lineNumber": 248
+        },
+        {
+          "caller": "createHTTP01GatewayIssuer",
+          "callee": "strings.Split",
+          "lineNumber": 250
+        },
+        {
+          "caller": "createHTTP01GatewayIssuer",
+          "callee": "len",
+          "lineNumber": 251
+        },
+        {
+          "caller": "createHTTP01GatewayIssuer",
+          "callee": "By",
+          "lineNumber": 257
+        },
+        {
+          "caller": "createHTTP01GatewayIssuer",
+          "callee": "a.createHTTP01GatewayIssuerSpec",
+          "lineNumber": 262
+        },
+        {
+          "caller": "createHTTP01GatewayIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers(f.Namespace.Name).Create",
+          "lineNumber": 265
+        },
+        {
+          "caller": "createHTTP01GatewayIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 265
+        },
+        {
+          "caller": "createHTTP01GatewayIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 265
+        },
+        {
+          "caller": "createHTTP01GatewayIssuer",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 266
+        },
+        {
+          "caller": "createHTTP01GatewayIssuer",
+          "callee": "Expect",
+          "lineNumber": 266
+        },
+        {
+          "caller": "createHTTP01GatewayIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 266
+        },
+        {
+          "caller": "createHTTP01GatewayIssuer",
+          "callee": "By",
+          "lineNumber": 269
+        },
+        {
+          "caller": "createHTTP01GatewayIssuer",
+          "callee": "f.Helper().WaitIssuerReady",
+          "lineNumber": 270
+        },
+        {
+          "caller": "createHTTP01GatewayIssuer",
+          "callee": "f.Helper",
+          "lineNumber": 270
+        },
+        {
+          "caller": "createHTTP01GatewayIssuer",
+          "callee": "Expect(err).ToNot",
+          "lineNumber": 271
+        },
+        {
+          "caller": "createHTTP01GatewayIssuer",
+          "callee": "Expect",
+          "lineNumber": 271
+        },
+        {
+          "caller": "createHTTP01GatewayIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 271
+        },
+        {
+          "caller": "createPublicACMEServerStagingHTTP01Issuer",
+          "callee": "By",
+          "lineNumber": 281
+        },
+        {
+          "caller": "createPublicACMEServerStagingHTTP01Issuer",
+          "callee": "strings.Contains",
+          "lineNumber": 284
+        },
+        {
+          "caller": "createPublicACMEServerStagingHTTP01Issuer",
+          "callee": "a.createHTTP01IngressIssuerSpec",
+          "lineNumber": 294
+        },
+        {
+          "caller": "createPublicACMEServerStagingHTTP01Issuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers(f.Namespace.Name).Create",
+          "lineNumber": 297
+        },
+        {
+          "caller": "createPublicACMEServerStagingHTTP01Issuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 297
+        },
+        {
+          "caller": "createPublicACMEServerStagingHTTP01Issuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 297
+        },
+        {
+          "caller": "createPublicACMEServerStagingHTTP01Issuer",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 298
+        },
+        {
+          "caller": "createPublicACMEServerStagingHTTP01Issuer",
+          "callee": "Expect",
+          "lineNumber": 298
+        },
+        {
+          "caller": "createPublicACMEServerStagingHTTP01Issuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 298
+        },
+        {
+          "caller": "createPublicACMEServerStagingHTTP01Issuer",
+          "callee": "By",
+          "lineNumber": 301
+        },
+        {
+          "caller": "createPublicACMEServerStagingHTTP01Issuer",
+          "callee": "f.Helper().WaitIssuerReady",
+          "lineNumber": 302
+        },
+        {
+          "caller": "createPublicACMEServerStagingHTTP01Issuer",
+          "callee": "f.Helper",
+          "lineNumber": 302
+        },
+        {
+          "caller": "createPublicACMEServerStagingHTTP01Issuer",
+          "callee": "Expect(err).ToNot",
+          "lineNumber": 303
+        },
+        {
+          "caller": "createPublicACMEServerStagingHTTP01Issuer",
+          "callee": "Expect",
+          "lineNumber": 303
+        },
+        {
+          "caller": "createPublicACMEServerStagingHTTP01Issuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 303
+        },
+        {
+          "caller": "createHTTP01GatewayClusterIssuer",
+          "callee": "a.ensureEABSecret",
+          "lineNumber": 313
+        },
+        {
+          "caller": "createHTTP01GatewayClusterIssuer",
+          "callee": "strings.Split",
+          "lineNumber": 315
+        },
+        {
+          "caller": "createHTTP01GatewayClusterIssuer",
+          "callee": "make",
+          "lineNumber": 316
+        },
+        {
+          "caller": "createHTTP01GatewayClusterIssuer",
+          "callee": "strings.Split",
+          "lineNumber": 318
+        },
+        {
+          "caller": "createHTTP01GatewayClusterIssuer",
+          "callee": "len",
+          "lineNumber": 319
+        },
+        {
+          "caller": "createHTTP01GatewayClusterIssuer",
+          "callee": "By",
+          "lineNumber": 326
+        },
+        {
+          "caller": "createHTTP01GatewayClusterIssuer",
+          "callee": "a.createHTTP01GatewayIssuerSpec",
+          "lineNumber": 331
+        },
+        {
+          "caller": "createHTTP01GatewayClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers().Create",
+          "lineNumber": 334
+        },
+        {
+          "caller": "createHTTP01GatewayClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 334
+        },
+        {
+          "caller": "createHTTP01GatewayClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 334
+        },
+        {
+          "caller": "createHTTP01GatewayClusterIssuer",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 335
+        },
+        {
+          "caller": "createHTTP01GatewayClusterIssuer",
+          "callee": "Expect",
+          "lineNumber": 335
+        },
+        {
+          "caller": "createHTTP01GatewayClusterIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 335
+        },
+        {
+          "caller": "createHTTP01GatewayClusterIssuer",
+          "callee": "By",
+          "lineNumber": 337
+        },
+        {
+          "caller": "createHTTP01GatewayClusterIssuer",
+          "callee": "f.Helper().WaitClusterIssuerReady",
+          "lineNumber": 338
+        },
+        {
+          "caller": "createHTTP01GatewayClusterIssuer",
+          "callee": "f.Helper",
+          "lineNumber": 338
+        },
+        {
+          "caller": "createHTTP01GatewayClusterIssuer",
+          "callee": "Expect(err).ToNot",
+          "lineNumber": 339
+        },
+        {
+          "caller": "createHTTP01GatewayClusterIssuer",
+          "callee": "Expect",
+          "lineNumber": 339
+        },
+        {
+          "caller": "createHTTP01GatewayClusterIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 339
+        },
+        {
+          "caller": "createHTTP01GatewayIssuerSpec",
+          "callee": "func() *gwapi.Namespace { n := gwapi.Namespace(\"projectcontour\"); return &n }",
+          "lineNumber": 394
+        },
+        {
+          "caller": "createHTTP01GatewayIssuerSpec",
+          "callee": "gwapi.Namespace",
+          "lineNumber": 394
+        },
+        {
+          "caller": "createDNS01Issuer",
+          "callee": "a.ensureEABSecret",
+          "lineNumber": 409
+        },
+        {
+          "caller": "createDNS01Issuer",
+          "callee": "By",
+          "lineNumber": 411
+        },
+        {
+          "caller": "createDNS01Issuer",
+          "callee": "a.createDNS01IssuerSpec",
+          "lineNumber": 416
+        },
+        {
+          "caller": "createDNS01Issuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers(f.Namespace.Name).Create",
+          "lineNumber": 418
+        },
+        {
+          "caller": "createDNS01Issuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 418
+        },
+        {
+          "caller": "createDNS01Issuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 418
+        },
+        {
+          "caller": "createDNS01Issuer",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 419
+        },
+        {
+          "caller": "createDNS01Issuer",
+          "callee": "Expect",
+          "lineNumber": 419
+        },
+        {
+          "caller": "createDNS01Issuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 419
+        },
+        {
+          "caller": "createDNS01Issuer",
+          "callee": "By",
+          "lineNumber": 422
+        },
+        {
+          "caller": "createDNS01Issuer",
+          "callee": "f.Helper().WaitIssuerReady",
+          "lineNumber": 423
+        },
+        {
+          "caller": "createDNS01Issuer",
+          "callee": "f.Helper",
+          "lineNumber": 423
+        },
+        {
+          "caller": "createDNS01Issuer",
+          "callee": "Expect(err).ToNot",
+          "lineNumber": 424
+        },
+        {
+          "caller": "createDNS01Issuer",
+          "callee": "Expect",
+          "lineNumber": 424
+        },
+        {
+          "caller": "createDNS01Issuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 424
+        },
+        {
+          "caller": "createDNS01ClusterIssuer",
+          "callee": "a.ensureEABSecret",
+          "lineNumber": 434
+        },
+        {
+          "caller": "createDNS01ClusterIssuer",
+          "callee": "By",
+          "lineNumber": 436
+        },
+        {
+          "caller": "createDNS01ClusterIssuer",
+          "callee": "a.createDNS01IssuerSpec",
+          "lineNumber": 441
+        },
+        {
+          "caller": "createDNS01ClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers().Create",
+          "lineNumber": 443
+        },
+        {
+          "caller": "createDNS01ClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 443
+        },
+        {
+          "caller": "createDNS01ClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 443
+        },
+        {
+          "caller": "createDNS01ClusterIssuer",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 444
+        },
+        {
+          "caller": "createDNS01ClusterIssuer",
+          "callee": "Expect",
+          "lineNumber": 444
+        },
+        {
+          "caller": "createDNS01ClusterIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 444
+        },
+        {
+          "caller": "createDNS01ClusterIssuer",
+          "callee": "By",
+          "lineNumber": 447
+        },
+        {
+          "caller": "createDNS01ClusterIssuer",
+          "callee": "f.Helper().WaitClusterIssuerReady",
+          "lineNumber": 448
+        },
+        {
+          "caller": "createDNS01ClusterIssuer",
+          "callee": "f.Helper",
+          "lineNumber": 448
+        },
+        {
+          "caller": "createDNS01ClusterIssuer",
+          "callee": "Expect(err).ToNot",
+          "lineNumber": 449
+        },
+        {
+          "caller": "createDNS01ClusterIssuer",
+          "callee": "Expect",
+          "lineNumber": 449
+        },
+        {
+          "caller": "createDNS01ClusterIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 449
+        },
+        {
+          "caller": "ensureEABSecret",
+          "callee": "f.KubeClientSet.CoreV1().Secrets(ns).Create",
+          "lineNumber": 492
+        },
+        {
+          "caller": "ensureEABSecret",
+          "callee": "f.KubeClientSet.CoreV1().Secrets",
+          "lineNumber": 492
+        },
+        {
+          "caller": "ensureEABSecret",
+          "callee": "f.KubeClientSet.CoreV1",
+          "lineNumber": 492
+        },
+        {
+          "caller": "ensureEABSecret",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 503
+        },
+        {
+          "caller": "ensureEABSecret",
+          "callee": "Expect",
+          "lineNumber": 503
+        },
+        {
+          "caller": "ensureEABSecret",
+          "callee": "HaveOccurred",
+          "lineNumber": 503
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 0,
+        "functionCount": 13,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "test/e2e/suite/conformance/certificates/ca/ca.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 194,
+      "nonEmptyLines": 162,
+      "functions": [
+        {
+          "name": "createCAIssuer",
+          "startLine": 54,
+          "endLine": 81,
+          "params": [
+            "ctx",
+            "f"
+          ]
+        },
+        {
+          "name": "createCAClusterIssuer",
+          "startLine": 83,
+          "endLine": 110,
+          "params": [
+            "ctx",
+            "f"
+          ]
+        },
+        {
+          "name": "deleteCAClusterIssuer",
+          "startLine": 112,
+          "endLine": 120,
+          "params": [
+            "ctx",
+            "f",
+            "issuer"
+          ]
+        },
+        {
+          "name": "createCAIssuerSpec",
+          "startLine": 122,
+          "endLine": 130,
+          "params": [
+            "rootCertSecretName"
+          ]
+        },
+        {
+          "name": "newSigningKeypairSecret",
+          "startLine": 184,
+          "endLine": 194,
+          "params": [
+            "name"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ca",
+          "startLine": 50,
+          "endLine": 52,
+          "methods": [
+            "createCAIssuer",
+            "createCAClusterIssuer",
+            "deleteCAClusterIssuer"
+          ],
+          "properties": [
+            "secretName"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createCAIssuer",
+          "callee": "By",
+          "lineNumber": 55
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "f.KubeClientSet.CoreV1().Secrets(f.Namespace.Name).Create",
+          "lineNumber": 57
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "f.KubeClientSet.CoreV1().Secrets",
+          "lineNumber": 57
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "f.KubeClientSet.CoreV1",
+          "lineNumber": 57
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "newSigningKeypairSecret",
+          "lineNumber": 57
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "Expect",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers(f.Namespace.Name).Create",
+          "lineNumber": 62
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 62
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 62
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "createCAIssuerSpec",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 69
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "Expect",
+          "lineNumber": 69
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 69
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "By",
+          "lineNumber": 72
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "f.Helper().WaitIssuerReady",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "f.Helper",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "Expect(err).ToNot",
+          "lineNumber": 74
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "Expect",
+          "lineNumber": 74
+        },
+        {
+          "caller": "createCAIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 74
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "By",
+          "lineNumber": 84
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "f.KubeClientSet.CoreV1().Secrets(f.Config.Addons.CertManager.ClusterResourceNamespace).Create",
+          "lineNumber": 86
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "f.KubeClientSet.CoreV1().Secrets",
+          "lineNumber": 86
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "f.KubeClientSet.CoreV1",
+          "lineNumber": 86
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "newSigningKeypairSecret",
+          "lineNumber": 86
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 87
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "Expect",
+          "lineNumber": 87
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 87
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers().Create",
+          "lineNumber": 91
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 91
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 91
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "createCAIssuerSpec",
+          "lineNumber": 95
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 98
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "Expect",
+          "lineNumber": 98
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 98
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "By",
+          "lineNumber": 101
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "f.Helper().WaitClusterIssuerReady",
+          "lineNumber": 102
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "f.Helper",
+          "lineNumber": 102
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "Expect(err).ToNot",
+          "lineNumber": 103
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "Expect",
+          "lineNumber": 103
+        },
+        {
+          "caller": "createCAClusterIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 103
+        },
+        {
+          "caller": "deleteCAClusterIssuer",
+          "callee": "By",
+          "lineNumber": 113
+        },
+        {
+          "caller": "deleteCAClusterIssuer",
+          "callee": "f.KubeClientSet.CoreV1().Secrets(f.Config.Addons.CertManager.ClusterResourceNamespace).Delete",
+          "lineNumber": 115
+        },
+        {
+          "caller": "deleteCAClusterIssuer",
+          "callee": "f.KubeClientSet.CoreV1().Secrets",
+          "lineNumber": 115
+        },
+        {
+          "caller": "deleteCAClusterIssuer",
+          "callee": "f.KubeClientSet.CoreV1",
+          "lineNumber": 115
+        },
+        {
+          "caller": "deleteCAClusterIssuer",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 116
+        },
+        {
+          "caller": "deleteCAClusterIssuer",
+          "callee": "Expect",
+          "lineNumber": 116
+        },
+        {
+          "caller": "deleteCAClusterIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 116
+        },
+        {
+          "caller": "deleteCAClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers().Delete",
+          "lineNumber": 118
+        },
+        {
+          "caller": "deleteCAClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 118
+        },
+        {
+          "caller": "deleteCAClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 118
+        },
+        {
+          "caller": "deleteCAClusterIssuer",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 119
+        },
+        {
+          "caller": "deleteCAClusterIssuer",
+          "callee": "Expect",
+          "lineNumber": 119
+        },
+        {
+          "caller": "deleteCAClusterIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 119
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "test/e2e/suite/conformance/certificates/external/external.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 153,
+      "nonEmptyLines": 126,
+      "functions": [
+        {
+          "name": "newIssuerBuilder",
+          "startLine": 74,
+          "endLine": 87,
+          "params": [
+            "issuerKind"
+          ]
+        },
+        {
+          "name": "nameForTestObject",
+          "startLine": 89,
+          "endLine": 98,
+          "params": [
+            "f",
+            "suffix"
+          ]
+        },
+        {
+          "name": "secretAndIssuerForTest",
+          "startLine": 100,
+          "endLine": 117,
+          "params": [
+            "f"
+          ]
+        },
+        {
+          "name": "create",
+          "startLine": 119,
+          "endLine": 138,
+          "params": [
+            "ctx",
+            "f"
+          ]
+        },
+        {
+          "name": "delete",
+          "startLine": 140,
+          "endLine": 153,
+          "params": [
+            "ctx",
+            "f",
+            "_"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "issuerBuilder",
+          "startLine": 69,
+          "endLine": 72,
+          "methods": [
+            "nameForTestObject",
+            "secretAndIssuerForTest",
+            "create",
+            "delete"
+          ],
+          "properties": [
+            "clusterResourceNamespace",
+            "prototype"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "nameForTestObject",
+          "callee": "o.prototype.GetKind",
+          "lineNumber": 91
+        },
+        {
+          "caller": "nameForTestObject",
+          "callee": "fmt.Sprintf",
+          "lineNumber": 95
+        },
+        {
+          "caller": "secretAndIssuerForTest",
+          "callee": "o.nameForTestObject",
+          "lineNumber": 101
+        },
+        {
+          "caller": "secretAndIssuerForTest",
+          "callee": "o.nameForTestObject",
+          "lineNumber": 110
+        },
+        {
+          "caller": "secretAndIssuerForTest",
+          "callee": "o.prototype.DeepCopy",
+          "lineNumber": 111
+        },
+        {
+          "caller": "secretAndIssuerForTest",
+          "callee": "issuer.SetName",
+          "lineNumber": 112
+        },
+        {
+          "caller": "secretAndIssuerForTest",
+          "callee": "issuer.SetNamespace",
+          "lineNumber": 113
+        },
+        {
+          "caller": "secretAndIssuerForTest",
+          "callee": "unstructured.SetNestedField",
+          "lineNumber": 114
+        },
+        {
+          "caller": "create",
+          "callee": "By",
+          "lineNumber": 120
+        },
+        {
+          "caller": "create",
+          "callee": "o.secretAndIssuerForTest",
+          "lineNumber": 121
+        },
+        {
+          "caller": "create",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 122
+        },
+        {
+          "caller": "create",
+          "callee": "Expect",
+          "lineNumber": 122
+        },
+        {
+          "caller": "create",
+          "callee": "HaveOccurred",
+          "lineNumber": 122
+        },
+        {
+          "caller": "create",
+          "callee": "crtclient.New",
+          "lineNumber": 124
+        },
+        {
+          "caller": "create",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 125
+        },
+        {
+          "caller": "create",
+          "callee": "Expect",
+          "lineNumber": 125
+        },
+        {
+          "caller": "create",
+          "callee": "HaveOccurred",
+          "lineNumber": 125
+        },
+        {
+          "caller": "create",
+          "callee": "crt.Create",
+          "lineNumber": 127
+        },
+        {
+          "caller": "create",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 128
+        },
+        {
+          "caller": "create",
+          "callee": "Expect",
+          "lineNumber": 128
+        },
+        {
+          "caller": "create",
+          "callee": "HaveOccurred",
+          "lineNumber": 128
+        },
+        {
+          "caller": "create",
+          "callee": "crt.Create",
+          "lineNumber": 130
+        },
+        {
+          "caller": "create",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 131
+        },
+        {
+          "caller": "create",
+          "callee": "Expect",
+          "lineNumber": 131
+        },
+        {
+          "caller": "create",
+          "callee": "HaveOccurred",
+          "lineNumber": 131
+        },
+        {
+          "caller": "create",
+          "callee": "issuer.GroupVersionKind",
+          "lineNumber": 134
+        },
+        {
+          "caller": "create",
+          "callee": "issuer.GroupVersionKind",
+          "lineNumber": 135
+        },
+        {
+          "caller": "create",
+          "callee": "issuer.GetName",
+          "lineNumber": 136
+        },
+        {
+          "caller": "delete",
+          "callee": "By",
+          "lineNumber": 141
+        },
+        {
+          "caller": "delete",
+          "callee": "crtclient.New",
+          "lineNumber": 142
+        },
+        {
+          "caller": "delete",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 143
+        },
+        {
+          "caller": "delete",
+          "callee": "Expect",
+          "lineNumber": 143
+        },
+        {
+          "caller": "delete",
+          "callee": "HaveOccurred",
+          "lineNumber": 143
+        },
+        {
+          "caller": "delete",
+          "callee": "o.secretAndIssuerForTest",
+          "lineNumber": 145
+        },
+        {
+          "caller": "delete",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 146
+        },
+        {
+          "caller": "delete",
+          "callee": "Expect",
+          "lineNumber": 146
+        },
+        {
+          "caller": "delete",
+          "callee": "HaveOccurred",
+          "lineNumber": 146
+        },
+        {
+          "caller": "delete",
+          "callee": "crt.Delete",
+          "lineNumber": 148
+        },
+        {
+          "caller": "delete",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 149
+        },
+        {
+          "caller": "delete",
+          "callee": "Expect",
+          "lineNumber": 149
+        },
+        {
+          "caller": "delete",
+          "callee": "HaveOccurred",
+          "lineNumber": 149
+        },
+        {
+          "caller": "delete",
+          "callee": "crt.Delete",
+          "lineNumber": 151
+        },
+        {
+          "caller": "delete",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 152
+        },
+        {
+          "caller": "delete",
+          "callee": "Expect",
+          "lineNumber": 152
+        },
+        {
+          "caller": "delete",
+          "callee": "HaveOccurred",
+          "lineNumber": 152
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "test/e2e/suite/conformance/certificates/selfsigned/selfsigned.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 104,
+      "nonEmptyLines": 84,
+      "functions": [
+        {
+          "name": "createSelfSignedIssuer",
+          "startLine": 47,
+          "endLine": 68,
+          "params": [
+            "ctx",
+            "f"
+          ]
+        },
+        {
+          "name": "deleteSelfSignedClusterIssuer",
+          "startLine": 70,
+          "endLine": 73,
+          "params": [
+            "ctx",
+            "f",
+            "issuer"
+          ]
+        },
+        {
+          "name": "createSelfSignedClusterIssuer",
+          "startLine": 75,
+          "endLine": 96,
+          "params": [
+            "ctx",
+            "f"
+          ]
+        },
+        {
+          "name": "createSelfSignedIssuerSpec",
+          "startLine": 98,
+          "endLine": 104,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createSelfSignedIssuer",
+          "callee": "By",
+          "lineNumber": 48
+        },
+        {
+          "caller": "createSelfSignedIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers(f.Namespace.Name).Create",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createSelfSignedIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().Issuers",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createSelfSignedIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createSelfSignedIssuer",
+          "callee": "createSelfSignedIssuerSpec",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createSelfSignedIssuer",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 56
+        },
+        {
+          "caller": "createSelfSignedIssuer",
+          "callee": "Expect",
+          "lineNumber": 56
+        },
+        {
+          "caller": "createSelfSignedIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 56
+        },
+        {
+          "caller": "createSelfSignedIssuer",
+          "callee": "By",
+          "lineNumber": 59
+        },
+        {
+          "caller": "createSelfSignedIssuer",
+          "callee": "f.Helper().WaitIssuerReady",
+          "lineNumber": 60
+        },
+        {
+          "caller": "createSelfSignedIssuer",
+          "callee": "f.Helper",
+          "lineNumber": 60
+        },
+        {
+          "caller": "createSelfSignedIssuer",
+          "callee": "Expect(err).ToNot",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createSelfSignedIssuer",
+          "callee": "Expect",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createSelfSignedIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 61
+        },
+        {
+          "caller": "deleteSelfSignedClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers().Delete",
+          "lineNumber": 71
+        },
+        {
+          "caller": "deleteSelfSignedClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 71
+        },
+        {
+          "caller": "deleteSelfSignedClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 71
+        },
+        {
+          "caller": "deleteSelfSignedClusterIssuer",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 72
+        },
+        {
+          "caller": "deleteSelfSignedClusterIssuer",
+          "callee": "Expect",
+          "lineNumber": 72
+        },
+        {
+          "caller": "deleteSelfSignedClusterIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 72
+        },
+        {
+          "caller": "createSelfSignedClusterIssuer",
+          "callee": "By",
+          "lineNumber": 76
+        },
+        {
+          "caller": "createSelfSignedClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers().Create",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createSelfSignedClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1().ClusterIssuers",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createSelfSignedClusterIssuer",
+          "callee": "f.CertManagerClientSet.CertmanagerV1",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createSelfSignedClusterIssuer",
+          "callee": "createSelfSignedIssuerSpec",
+          "lineNumber": 82
+        },
+        {
+          "caller": "createSelfSignedClusterIssuer",
+          "callee": "Expect(err).NotTo",
+          "lineNumber": 84
+        },
+        {
+          "caller": "createSelfSignedClusterIssuer",
+          "callee": "Expect",
+          "lineNumber": 84
+        },
+        {
+          "caller": "createSelfSignedClusterIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 84
+        },
+        {
+          "caller": "createSelfSignedClusterIssuer",
+          "callee": "By",
+          "lineNumber": 87
+        },
+        {
+          "caller": "createSelfSignedClusterIssuer",
+          "callee": "f.Helper().WaitClusterIssuerReady",
+          "lineNumber": 88
+        },
+        {
+          "caller": "createSelfSignedClusterIssuer",
+          "callee": "f.Helper",
+          "lineNumber": 88
+        },
+        {
+          "caller": "createSelfSignedClusterIssuer",
+          "callee": "Expect(err).ToNot",
+          "lineNumber": 89
+        },
+        {
+          "caller": "createSelfSignedClusterIssuer",
+          "callee": "Expect",
+          "lineNumber": 89
+        },
+        {
+          "caller": "createSelfSignedClusterIssuer",
+          "callee": "HaveOccurred",
+          "lineNumber": 89
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    }
+  ]
+}

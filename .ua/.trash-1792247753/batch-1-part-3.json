@@ -1,0 +1,1779 @@
+{
+  "nodes": [
+    {
+      "id": "file:internal/controller/certificates/policies/checks.go",
+      "type": "file",
+      "name": "checks.go",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "summary": "Collection of policy check functions that decide whether a Certificate Secret and its CertificateRequests are current, valid, and correctly managed.",
+      "tags": [
+        "policy",
+        "validation",
+        "certificates",
+        "controller"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:internal/controller/certificates/policies/constants.go",
+      "type": "file",
+      "name": "constants.go",
+      "filePath": "internal/controller/certificates/policies/constants.go",
+      "summary": "Defines the policy violation reason constants used by certificate policy checks and their human-readable meanings.",
+      "tags": [
+        "constants",
+        "policy",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:internal/controller/certificates/policies/gatherer.go",
+      "type": "file",
+      "name": "gatherer.go",
+      "filePath": "internal/controller/certificates/policies/gatherer.go",
+      "summary": "Gathers the Certificate, Secret, and current/next CertificateRequest state required to evaluate certificate policies.",
+      "tags": [
+        "controller",
+        "data-gathering",
+        "certificates",
+        "policy"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:internal/controller/certificates/policies/policies.go",
+      "type": "file",
+      "name": "policies.go",
+      "filePath": "internal/controller/certificates/policies/policies.go",
+      "summary": "Defines the policy input type, chain evaluation, and constructors for trigger, readiness, post-issuance, and temporary-certificate policy chains.",
+      "tags": [
+        "policy",
+        "controller",
+        "factory",
+        "certificates"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/controller/certificates/secrets.go",
+      "type": "file",
+      "name": "secrets.go",
+      "filePath": "internal/controller/certificates/secrets.go",
+      "summary": "Builds annotations and additional output formats (DER and combined PEM) for Secrets managed by a Certificate.",
+      "tags": [
+        "utility",
+        "secrets",
+        "certificates",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:internal/controller/feature/features.go",
+      "type": "file",
+      "name": "features.go",
+      "filePath": "internal/controller/feature/features.go",
+      "summary": "Registers the cert-manager controller feature gates, including server-side apply, Gateway API support, and literal certificate subjects.",
+      "tags": [
+        "feature-gate",
+        "configuration",
+        "controller"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:SecretDoesNotExist",
+      "type": "function",
+      "name": "SecretDoesNotExist",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        43,
+        48
+      ],
+      "summary": "Fails when the Certificate target Secret does not exist.",
+      "tags": [
+        "policy",
+        "secrets",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:SecretIsMissingData",
+      "type": "function",
+      "name": "SecretIsMissingData",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        50,
+        63
+      ],
+      "summary": "Fails when the target Secret is missing required certificate, private key, or CA data.",
+      "tags": [
+        "policy",
+        "secrets",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:SecretPublicKeysDiffer",
+      "type": "function",
+      "name": "SecretPublicKeysDiffer",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        65,
+        84
+      ],
+      "summary": "Fails when the certificate and private key stored in the Secret do not form a valid key pair.",
+      "tags": [
+        "policy",
+        "secrets",
+        "pki"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:SecretPrivateKeyMismatchesSpec",
+      "type": "function",
+      "name": "SecretPrivateKeyMismatchesSpec",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        86,
+        97
+      ],
+      "summary": "Fails when the Secret private key algorithm or size no longer matches the Certificate spec.",
+      "tags": [
+        "policy",
+        "secrets",
+        "pki"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:SecretKeystoreFormatMismatch",
+      "type": "function",
+      "name": "SecretKeystoreFormatMismatch",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        105,
+        157
+      ],
+      "summary": "Fails when configured JKS or PKCS#12 keystores are missing from the Secret or do not match the password secret.",
+      "tags": [
+        "policy",
+        "keystore",
+        "secrets"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:SecretIssuerAnnotationsMismatch",
+      "type": "function",
+      "name": "SecretIssuerAnnotationsMismatch",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        161,
+        172
+      ],
+      "summary": "Fails when the Secret issuer annotations do not match the Certificate issuer reference.",
+      "tags": [
+        "policy",
+        "annotations",
+        "issuers"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:SecretCertificateNameAnnotationsMismatch",
+      "type": "function",
+      "name": "SecretCertificateNameAnnotationsMismatch",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        176,
+        183
+      ],
+      "summary": "Fails when the Secret is annotated as belonging to a different Certificate.",
+      "tags": [
+        "policy",
+        "annotations",
+        "secrets"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:SecretPublicKeyDiffersFromCurrentCertificateRequest",
+      "type": "function",
+      "name": "SecretPublicKeyDiffersFromCurrentCertificateRequest",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        189,
+        212
+      ],
+      "summary": "Fails when the Secret public key differs from the key recorded in the current CertificateRequest.",
+      "tags": [
+        "policy",
+        "pki",
+        "certificaterequest"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:CurrentCertificateRequestMismatchesSpec",
+      "type": "function",
+      "name": "CurrentCertificateRequestMismatchesSpec",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        214,
+        236
+      ],
+      "summary": "Fails when the current CertificateRequest no longer matches the Certificate spec.",
+      "tags": [
+        "policy",
+        "certificaterequest",
+        "certificates"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:currentSecretValidForSpec",
+      "type": "function",
+      "name": "currentSecretValidForSpec",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        241,
+        253
+      ],
+      "summary": "Reports whether the current Secret data is complete and consistent with the Certificate spec.",
+      "tags": [
+        "policy",
+        "secrets",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:CurrentCertificateNearingExpiry",
+      "type": "function",
+      "name": "CurrentCertificateNearingExpiry",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        258,
+        283
+      ],
+      "summary": "Fails when the current certificate has passed its renewal time.",
+      "tags": [
+        "policy",
+        "certificates",
+        "renewal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:CurrentCertificateHasExpired",
+      "type": "function",
+      "name": "CurrentCertificateHasExpired",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        287,
+        299
+      ],
+      "summary": "Fails when the current certificate is expired or has no parseable NotAfter value.",
+      "tags": [
+        "policy",
+        "certificates",
+        "expiry"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:SecretSecretTemplateMismatch",
+      "type": "function",
+      "name": "SecretSecretTemplateMismatch",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        341,
+        355
+      ],
+      "summary": "Fails when labels or annotations from the Certificate secret template are missing or incorrect on the Secret.",
+      "tags": [
+        "policy",
+        "secrets",
+        "secret-template"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:certificateDataAnnotationsForSecret",
+      "type": "function",
+      "name": "certificateDataAnnotationsForSecret",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        357,
+        372
+      ],
+      "summary": "Builds the certificate detail annotations expected on a managed Secret.",
+      "tags": [
+        "policy",
+        "annotations",
+        "secrets"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:secretLabelsAndAnnotationsManagedFields",
+      "type": "function",
+      "name": "secretLabelsAndAnnotationsManagedFields",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        374,
+        411
+      ],
+      "summary": "Decodes the managed fields covering Secret labels and annotations into a comparable structure.",
+      "tags": [
+        "policy",
+        "managed-fields",
+        "secrets"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:SecretManagedLabelsAndAnnotationsManagedFieldsMismatch",
+      "type": "function",
+      "name": "SecretManagedLabelsAndAnnotationsManagedFieldsMismatch",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        420,
+        492
+      ],
+      "summary": "Fails when cert-manager managed fields for Secret labels and annotations are malformed or out of date.",
+      "tags": [
+        "policy",
+        "managed-fields",
+        "secrets"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:SecretSecretTemplateManagedFieldsMismatch",
+      "type": "function",
+      "name": "SecretSecretTemplateManagedFieldsMismatch",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        501,
+        563
+      ],
+      "summary": "Fails when the managed fields of the Secret do not reflect the current secret template.",
+      "tags": [
+        "policy",
+        "managed-fields",
+        "secret-template"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:SecretBaseLabelsMismatch",
+      "type": "function",
+      "name": "SecretBaseLabelsMismatch",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        567,
+        579
+      ],
+      "summary": "Fails when the standard cert-manager labels on the Secret are missing or wrong.",
+      "tags": [
+        "policy",
+        "labels",
+        "secrets"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:SecretCertificateDetailsAnnotationsMismatch",
+      "type": "function",
+      "name": "SecretCertificateDetailsAnnotationsMismatch",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        587,
+        598
+      ],
+      "summary": "Fails when certificate detail annotations on the Secret are missing or incorrect.",
+      "tags": [
+        "policy",
+        "annotations",
+        "secrets"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:SecretAdditionalOutputFormatsMismatch",
+      "type": "function",
+      "name": "SecretAdditionalOutputFormatsMismatch",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        606,
+        628
+      ],
+      "summary": "Fails when the additional output formats stored in the Secret do not match the Certificate spec.",
+      "tags": [
+        "policy",
+        "output-format",
+        "secrets"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:SecretAdditionalOutputFormatsManagedFieldsMismatch",
+      "type": "function",
+      "name": "SecretAdditionalOutputFormatsManagedFieldsMismatch",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        638,
+        692
+      ],
+      "summary": "Fails when the managed fields for additional output formats do not match the Certificate spec.",
+      "tags": [
+        "policy",
+        "managed-fields",
+        "output-format"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:SecretOwnerReferenceManagedFieldMismatch",
+      "type": "function",
+      "name": "SecretOwnerReferenceManagedFieldMismatch",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        700,
+        733
+      ],
+      "summary": "Fails when the managed owner reference field on the Secret does not match expectations.",
+      "tags": [
+        "policy",
+        "managed-fields",
+        "owner-reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:SecretOwnerReferenceMismatch",
+      "type": "function",
+      "name": "SecretOwnerReferenceMismatch",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        738,
+        772
+      ],
+      "summary": "Fails when the Secret owner references do not match the owning Certificate.",
+      "tags": [
+        "policy",
+        "owner-reference",
+        "secrets"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/checks.go:mapsHaveMatchingValues",
+      "type": "function",
+      "name": "mapsHaveMatchingValues",
+      "filePath": "internal/controller/certificates/policies/checks.go",
+      "lineRange": [
+        778,
+        797
+      ],
+      "summary": "Reports whether every key in one map exists with an equal value in another map.",
+      "tags": [
+        "utility",
+        "map",
+        "policy"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:internal/controller/certificates/policies/gatherer.go:Gatherer",
+      "type": "class",
+      "name": "Gatherer",
+      "filePath": "internal/controller/certificates/policies/gatherer.go",
+      "lineRange": [
+        227,
+        230
+      ],
+      "summary": "Interface for building policy input data for a Certificate.",
+      "tags": [
+        "policy",
+        "interface",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/gatherer.go:DataForCertificate",
+      "type": "function",
+      "name": "DataForCertificate",
+      "filePath": "internal/controller/certificates/policies/gatherer.go",
+      "lineRange": [
+        242,
+        321
+      ],
+      "summary": "Collects the Certificate, its Secret, and the current and next CertificateRequests into a policy input.",
+      "tags": [
+        "policy",
+        "data-gathering",
+        "certificates"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:internal/controller/certificates/policies/policies.go:Input",
+      "type": "class",
+      "name": "Input",
+      "filePath": "internal/controller/certificates/policies/policies.go",
+      "lineRange": [
+        27,
+        43
+      ],
+      "summary": "Value object carrying the Certificate, Secret, and current/next CertificateRequests used by policy checks.",
+      "tags": [
+        "data-model",
+        "policy",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/policies.go:NewTriggerPolicyChain",
+      "type": "function",
+      "name": "NewTriggerPolicyChain",
+      "filePath": "internal/controller/certificates/policies/policies.go",
+      "lineRange": [
+        68,
+        82
+      ],
+      "summary": "Builds the policy chain that decides whether a new issuance should be triggered.",
+      "tags": [
+        "policy",
+        "factory",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/policies.go:NewReadinessPolicyChain",
+      "type": "function",
+      "name": "NewReadinessPolicyChain",
+      "filePath": "internal/controller/certificates/policies/policies.go",
+      "lineRange": [
+        86,
+        100
+      ],
+      "summary": "Builds the policy chain that determines whether a Certificate is ready.",
+      "tags": [
+        "policy",
+        "factory",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/policies.go:NewSecretPostIssuancePolicyChain",
+      "type": "function",
+      "name": "NewSecretPostIssuancePolicyChain",
+      "filePath": "internal/controller/certificates/policies/policies.go",
+      "lineRange": [
+        105,
+        119
+      ],
+      "summary": "Builds the policy chain that verifies a Secret after issuance.",
+      "tags": [
+        "policy",
+        "factory",
+        "secrets"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/policies/policies.go:NewTemporaryCertificatePolicyChain",
+      "type": "function",
+      "name": "NewTemporaryCertificatePolicyChain",
+      "filePath": "internal/controller/certificates/policies/policies.go",
+      "lineRange": [
+        123,
+        129
+      ],
+      "summary": "Builds the policy chain used when issuing temporary certificates.",
+      "tags": [
+        "policy",
+        "factory",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/secrets.go:AnnotationsForCertificate",
+      "type": "function",
+      "name": "AnnotationsForCertificate",
+      "filePath": "internal/controller/certificates/secrets.go",
+      "lineRange": [
+        33,
+        84
+      ],
+      "summary": "Builds the annotations describing a Certificate and its issuer for storage on the target Secret.",
+      "tags": [
+        "annotations",
+        "certificates",
+        "secrets"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:internal/controller/certificates/secrets.go:OutputFormatDER",
+      "type": "function",
+      "name": "OutputFormatDER",
+      "filePath": "internal/controller/certificates/secrets.go",
+      "lineRange": [
+        88,
+        97
+      ],
+      "summary": "Encodes the private key in DER format for an additional output format.",
+      "tags": [
+        "serialization",
+        "pki",
+        "output-format"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:internal/controller/certificates/secrets.go:OutputFormatCombinedPEM",
+      "type": "function",
+      "name": "OutputFormatCombinedPEM",
+      "filePath": "internal/controller/certificates/secrets.go",
+      "lineRange": [
+        102,
+        104
+      ],
+      "summary": "Concatenates the private key and certificate into a single PEM blob.",
+      "tags": [
+        "serialization",
+        "pki",
+        "output-format"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:internal/apis/meta/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:internal/apis/meta/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:internal/apis/meta/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:internal/apis/meta/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:internal/controller/certificates/apply.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:internal/controller/certificates/certificates.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:internal/controller/certificates/secrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/util/pki/asn1_util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/util/pki/basicconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/util/pki/certificatetemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/util/pki/csr.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/util/pki/generate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/util/pki/keyusage.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/util/pki/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/util/pki/match.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/util/pki/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/util/pki/parse.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/util/pki/parse_certificate_chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/util/pki/renewaltime.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/util/pki/sans.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/util/pki/subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "file:pkg/util/pki/temporarycertificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretDoesNotExist",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretDoesNotExist",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretIsMissingData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretIsMissingData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretPublicKeysDiffer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretPublicKeysDiffer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretPrivateKeyMismatchesSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretPrivateKeyMismatchesSpec",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretKeystoreFormatMismatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretKeystoreFormatMismatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretIssuerAnnotationsMismatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretIssuerAnnotationsMismatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretCertificateNameAnnotationsMismatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretCertificateNameAnnotationsMismatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretPublicKeyDiffersFromCurrentCertificateRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretPublicKeyDiffersFromCurrentCertificateRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:CurrentCertificateRequestMismatchesSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:CurrentCertificateRequestMismatchesSpec",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:currentSecretValidForSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:CurrentCertificateNearingExpiry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:CurrentCertificateNearingExpiry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:CurrentCertificateHasExpired",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:CurrentCertificateHasExpired",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretSecretTemplateMismatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretSecretTemplateMismatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:certificateDataAnnotationsForSecret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:secretLabelsAndAnnotationsManagedFields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretManagedLabelsAndAnnotationsManagedFieldsMismatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretManagedLabelsAndAnnotationsManagedFieldsMismatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretSecretTemplateManagedFieldsMismatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretSecretTemplateManagedFieldsMismatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretBaseLabelsMismatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretBaseLabelsMismatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretCertificateDetailsAnnotationsMismatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretCertificateDetailsAnnotationsMismatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretAdditionalOutputFormatsMismatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretAdditionalOutputFormatsMismatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretAdditionalOutputFormatsManagedFieldsMismatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretAdditionalOutputFormatsManagedFieldsMismatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretOwnerReferenceManagedFieldMismatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretOwnerReferenceManagedFieldMismatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretOwnerReferenceMismatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:SecretOwnerReferenceMismatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/checks.go",
+      "target": "function:internal/controller/certificates/policies/checks.go:mapsHaveMatchingValues",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:internal/informers/core.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:internal/informers/core_basic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:internal/informers/core_filteredsecrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:internal/informers/fakes.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:internal/informers/transformers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/client/listers/certmanager/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/controller/certificates/informers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/controller/certificates/listers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/util/predicate/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/util/predicate/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/util/predicate/generic.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "file:pkg/util/predicate/predicate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "class:internal/controller/certificates/policies/gatherer.go:Gatherer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "class:internal/controller/certificates/policies/gatherer.go:Gatherer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "function:internal/controller/certificates/policies/gatherer.go:DataForCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/gatherer.go",
+      "target": "function:internal/controller/certificates/policies/gatherer.go:DataForCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/policies.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/policies.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/policies.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/policies.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/policies.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/policies.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/policies.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/policies.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/policies.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/policies.go",
+      "target": "class:internal/controller/certificates/policies/policies.go:Input",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/policies.go",
+      "target": "class:internal/controller/certificates/policies/policies.go:Input",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/policies.go",
+      "target": "function:internal/controller/certificates/policies/policies.go:NewTriggerPolicyChain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/policies.go",
+      "target": "function:internal/controller/certificates/policies/policies.go:NewTriggerPolicyChain",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/policies.go",
+      "target": "function:internal/controller/certificates/policies/policies.go:NewReadinessPolicyChain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/policies.go",
+      "target": "function:internal/controller/certificates/policies/policies.go:NewReadinessPolicyChain",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/policies.go",
+      "target": "function:internal/controller/certificates/policies/policies.go:NewSecretPostIssuancePolicyChain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/policies.go",
+      "target": "function:internal/controller/certificates/policies/policies.go:NewSecretPostIssuancePolicyChain",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/policies.go",
+      "target": "function:internal/controller/certificates/policies/policies.go:NewTemporaryCertificatePolicyChain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/policies/policies.go",
+      "target": "function:internal/controller/certificates/policies/policies.go:NewTemporaryCertificatePolicyChain",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:internal/pem/decode.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/util/pki/asn1_util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/util/pki/basicconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/util/pki/certificatetemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/util/pki/csr.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/util/pki/generate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/util/pki/keyusage.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/util/pki/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/util/pki/match.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/util/pki/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/util/pki/parse.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/util/pki/parse_certificate_chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/util/pki/renewaltime.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/util/pki/sans.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/util/pki/subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/util/pki/temporarycertificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/util/useragent.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "file:pkg/util/version.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "function:internal/controller/certificates/secrets.go:AnnotationsForCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "function:internal/controller/certificates/secrets.go:AnnotationsForCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "function:internal/controller/certificates/secrets.go:OutputFormatDER",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "function:internal/controller/certificates/secrets.go:OutputFormatDER",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "function:internal/controller/certificates/secrets.go:OutputFormatCombinedPEM",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:internal/controller/certificates/secrets.go",
+      "target": "function:internal/controller/certificates/secrets.go:OutputFormatCombinedPEM",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:internal/controller/feature/features.go",
+      "target": "file:pkg/util/feature/feature_gate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

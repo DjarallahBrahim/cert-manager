@@ -1,0 +1,834 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/unit/gen/conditions.go",
+      "type": "file",
+      "name": "conditions.go",
+      "filePath": "test/unit/gen/conditions.go",
+      "summary": "Helpers for building and mutating cert-manager IssuerCondition fixtures in tests.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder",
+        "conditions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/conditions.go:IssuerCondition",
+      "type": "function",
+      "name": "IssuerCondition",
+      "filePath": "test/unit/gen/conditions.go",
+      "lineRange": [
+        28,
+        36
+      ],
+      "summary": "Creates an IssuerCondition fixture of the supplied type.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/conditions.go:IssuerConditionFrom",
+      "type": "function",
+      "name": "IssuerConditionFrom",
+      "filePath": "test/unit/gen/conditions.go",
+      "lineRange": [
+        38,
+        44
+      ],
+      "summary": "Copies an existing IssuerCondition for further mutation.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/conditions.go:SetIssuerConditionStatus",
+      "type": "function",
+      "name": "SetIssuerConditionStatus",
+      "filePath": "test/unit/gen/conditions.go",
+      "lineRange": [
+        46,
+        50
+      ],
+      "summary": "Sets the condition status.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/conditions.go:SetIssuerConditionLastTransitionTime",
+      "type": "function",
+      "name": "SetIssuerConditionLastTransitionTime",
+      "filePath": "test/unit/gen/conditions.go",
+      "lineRange": [
+        52,
+        56
+      ],
+      "summary": "Sets the condition last transition time.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/conditions.go:SetIssuerConditionReason",
+      "type": "function",
+      "name": "SetIssuerConditionReason",
+      "filePath": "test/unit/gen/conditions.go",
+      "lineRange": [
+        58,
+        62
+      ],
+      "summary": "Sets the condition reason.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/conditions.go:SetIssuerConditionMessage",
+      "type": "function",
+      "name": "SetIssuerConditionMessage",
+      "filePath": "test/unit/gen/conditions.go",
+      "lineRange": [
+        64,
+        68
+      ],
+      "summary": "Sets the condition message.",
+      "tags": [
+        "test",
+        "fixtures",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/unit/gen/csr.go",
+      "type": "file",
+      "name": "csr.go",
+      "filePath": "test/unit/gen/csr.go",
+      "summary": "Builds X.509 certificate signing requests for tests, with helpers to set SANs, common name, IPs, URIs and emails.",
+      "tags": [
+        "test",
+        "fixtures",
+        "csr",
+        "x509"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/unit/gen/csr.go:CSRForCertificate",
+      "type": "function",
+      "name": "CSRForCertificate",
+      "filePath": "test/unit/gen/csr.go",
+      "lineRange": [
+        44,
+        58
+      ],
+      "summary": "Builds a CSR matching a Certificate spec using the Certificate's private key.",
+      "tags": [
+        "test",
+        "fixtures",
+        "csr"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/csr.go:CSRWithSignerForCertificate",
+      "type": "function",
+      "name": "CSRWithSignerForCertificate",
+      "filePath": "test/unit/gen/csr.go",
+      "lineRange": [
+        60,
+        80
+      ],
+      "summary": "Builds a CSR for a Certificate spec signed by the supplied signer.",
+      "tags": [
+        "test",
+        "fixtures",
+        "csr"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/csr.go:CSR",
+      "type": "function",
+      "name": "CSR",
+      "filePath": "test/unit/gen/csr.go",
+      "lineRange": [
+        82,
+        105
+      ],
+      "summary": "Creates a CSR fixture with the given key algorithm and default SANs.",
+      "tags": [
+        "test",
+        "fixtures",
+        "csr"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/csr.go:CSRWithSigner",
+      "type": "function",
+      "name": "CSRWithSigner",
+      "filePath": "test/unit/gen/csr.go",
+      "lineRange": [
+        107,
+        165
+      ],
+      "summary": "Creates a CSR with an existing signer and applies the supplied options.",
+      "tags": [
+        "test",
+        "fixtures",
+        "csr"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/unit/gen/csr.go:SetCSRDNSNames",
+      "type": "function",
+      "name": "SetCSRDNSNames",
+      "filePath": "test/unit/gen/csr.go",
+      "lineRange": [
+        167,
+        172
+      ],
+      "summary": "Sets DNS names on the CSR.",
+      "tags": [
+        "test",
+        "fixtures",
+        "csr"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/csr.go:SetCSRIPAddresses",
+      "type": "function",
+      "name": "SetCSRIPAddresses",
+      "filePath": "test/unit/gen/csr.go",
+      "lineRange": [
+        174,
+        179
+      ],
+      "summary": "Sets IP address SANs from net.IP values.",
+      "tags": [
+        "test",
+        "fixtures",
+        "csr"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/csr.go:SetCSRIPAddressesFromStrings",
+      "type": "function",
+      "name": "SetCSRIPAddressesFromStrings",
+      "filePath": "test/unit/gen/csr.go",
+      "lineRange": [
+        181,
+        194
+      ],
+      "summary": "Parses and sets IP address SANs from strings.",
+      "tags": [
+        "test",
+        "fixtures",
+        "csr"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/csr.go:SetCSRURIs",
+      "type": "function",
+      "name": "SetCSRURIs",
+      "filePath": "test/unit/gen/csr.go",
+      "lineRange": [
+        196,
+        201
+      ],
+      "summary": "Sets URI SANs from url.URL values.",
+      "tags": [
+        "test",
+        "fixtures",
+        "csr"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/csr.go:SetCSRURIsFromStrings",
+      "type": "function",
+      "name": "SetCSRURIsFromStrings",
+      "filePath": "test/unit/gen/csr.go",
+      "lineRange": [
+        203,
+        216
+      ],
+      "summary": "Parses and sets URI SANs from strings.",
+      "tags": [
+        "test",
+        "fixtures",
+        "csr"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/csr.go:SetCSRCommonName",
+      "type": "function",
+      "name": "SetCSRCommonName",
+      "filePath": "test/unit/gen/csr.go",
+      "lineRange": [
+        218,
+        223
+      ],
+      "summary": "Sets the CSR subject common name.",
+      "tags": [
+        "test",
+        "fixtures",
+        "csr"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/unit/gen/csr.go:SetCSREmails",
+      "type": "function",
+      "name": "SetCSREmails",
+      "filePath": "test/unit/gen/csr.go",
+      "lineRange": [
+        225,
+        230
+      ],
+      "summary": "Sets email SANs on the CSR.",
+      "tags": [
+        "test",
+        "fixtures",
+        "csr"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/unit/gen/doc.go",
+      "type": "file",
+      "name": "doc.go",
+      "filePath": "test/unit/gen/doc.go",
+      "summary": "Package documentation for the test object generator helpers.",
+      "tags": [
+        "test",
+        "fixtures",
+        "documentation",
+        "package"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "function:test/unit/gen/conditions.go:IssuerCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "function:test/unit/gen/conditions.go:IssuerCondition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "function:test/unit/gen/conditions.go:IssuerConditionFrom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "function:test/unit/gen/conditions.go:IssuerConditionFrom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "function:test/unit/gen/conditions.go:SetIssuerConditionStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "function:test/unit/gen/conditions.go:SetIssuerConditionStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "function:test/unit/gen/conditions.go:SetIssuerConditionLastTransitionTime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "function:test/unit/gen/conditions.go:SetIssuerConditionLastTransitionTime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "function:test/unit/gen/conditions.go:SetIssuerConditionReason",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "function:test/unit/gen/conditions.go:SetIssuerConditionReason",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "function:test/unit/gen/conditions.go:SetIssuerConditionMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/conditions.go",
+      "target": "function:test/unit/gen/conditions.go:SetIssuerConditionMessage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/util/pki/asn1_util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/util/pki/basicconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/util/pki/certificatetemplate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/util/pki/csr.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/util/pki/generate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/util/pki/keyusage.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/util/pki/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/util/pki/match.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/util/pki/nameconstraints.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/util/pki/parse.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/util/pki/parse_certificate_chain.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/util/pki/renewaltime.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/util/pki/sans.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/util/pki/subject.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "file:pkg/util/pki/temporarycertificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:CSRForCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:CSRForCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:CSRWithSignerForCertificate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:CSRWithSignerForCertificate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:CSR",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:CSR",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:CSRWithSigner",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:CSRWithSigner",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:SetCSRDNSNames",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:SetCSRDNSNames",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:SetCSRIPAddresses",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:SetCSRIPAddresses",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:SetCSRIPAddressesFromStrings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:SetCSRIPAddressesFromStrings",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:SetCSRURIs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:SetCSRURIs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:SetCSRURIsFromStrings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:SetCSRURIsFromStrings",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:SetCSRCommonName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:SetCSRCommonName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:SetCSREmails",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/unit/gen/csr.go",
+      "target": "function:test/unit/gen/csr.go:SetCSREmails",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

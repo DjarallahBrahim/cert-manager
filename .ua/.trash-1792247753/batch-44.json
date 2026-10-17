@@ -1,0 +1,66 @@
+{
+  "nodes": [
+    {
+      "id": "config:test/fixtures/upgrade/overlay/cainjector-ops.yaml",
+      "type": "config",
+      "name": "cainjector-ops.yaml",
+      "filePath": "test/fixtures/upgrade/overlay/cainjector-ops.yaml",
+      "summary": "ytt overlay that patches the cert-manager-cainjector Deployment container image using arch and app_version data values, letting upgrade tests substitute locally built cainjector images.",
+      "tags": ["configuration", "test-fixture", "ytt-overlay", "kubernetes", "cainjector"],
+      "complexity": "simple",
+      "languageNotes": "Uses Carvel ytt directives (#@ load, #@overlay/match) to merge into an existing Deployment rather than defining a standalone resource."
+    },
+    {
+      "id": "config:test/fixtures/upgrade/overlay/controller-ops.yaml",
+      "type": "config",
+      "name": "controller-ops.yaml",
+      "filePath": "test/fixtures/upgrade/overlay/controller-ops.yaml",
+      "summary": "ytt overlay that rewrites the cert-manager controller Deployment image from the supplied arch and app_version values, enabling upgrade tests to run against a specific build.",
+      "tags": ["configuration", "test-fixture", "ytt-overlay", "kubernetes", "controller"],
+      "complexity": "simple",
+      "languageNotes": "Carvel ytt overlay matched by Deployment name and container name, keeping the overlay resilient to surrounding manifest changes."
+    },
+    {
+      "id": "config:test/fixtures/upgrade/overlay/values.yaml",
+      "type": "config",
+      "name": "values.yaml",
+      "filePath": "test/fixtures/upgrade/overlay/values.yaml",
+      "summary": "ytt data-values schema stub exposing app_version for the upgrade overlay set; the concrete value is injected at render time by the test harness.",
+      "tags": ["configuration", "test-fixture", "ytt", "data-values", "upgrade"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:test/fixtures/upgrade/overlay/webhook-ops.yaml",
+      "type": "config",
+      "name": "webhook-ops.yaml",
+      "filePath": "test/fixtures/upgrade/overlay/webhook-ops.yaml",
+      "summary": "ytt overlay that replaces the cert-manager webhook Deployment container image using arch and app_version, so upgrade tests exercise a candidate webhook build.",
+      "tags": ["configuration", "test-fixture", "ytt-overlay", "kubernetes", "webhook"],
+      "complexity": "simple",
+      "languageNotes": "Carvel ytt overlay targeting a single container by name inside the webhook Deployment."
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:test/fixtures/upgrade/overlay/cainjector-ops.yaml",
+      "target": "config:test/fixtures/upgrade/overlay/values.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:test/fixtures/upgrade/overlay/controller-ops.yaml",
+      "target": "config:test/fixtures/upgrade/overlay/values.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:test/fixtures/upgrade/overlay/webhook-ops.yaml",
+      "target": "config:test/fixtures/upgrade/overlay/values.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

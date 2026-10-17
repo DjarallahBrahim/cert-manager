@@ -1,0 +1,547 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/e2e/framework/helper/certificates.go",
+      "type": "file",
+      "name": "certificates.go",
+      "filePath": "test/e2e/framework/helper/certificates.go",
+      "summary": "Helper routines that wait for Certificate and Issuer readiness and compare key usages for e2e assertions.",
+      "tags": [
+        "test",
+        "helper",
+        "certificate",
+        "wait",
+        "validation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/certificates.go:WaitForCertificateToExist",
+      "type": "function",
+      "name": "WaitForCertificateToExist",
+      "filePath": "test/e2e/framework/helper/certificates.go",
+      "lineRange": [
+        39,
+        59
+      ],
+      "summary": "Polls until the named Certificate exists in the namespace.",
+      "tags": [
+        "certificate",
+        "wait",
+        "helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/certificates.go:waitForCertificateCondition",
+      "type": "function",
+      "name": "waitForCertificateCondition",
+      "filePath": "test/e2e/framework/helper/certificates.go",
+      "lineRange": [
+        61,
+        96
+      ],
+      "summary": "Polls a Certificate until the supplied condition check passes.",
+      "tags": [
+        "certificate",
+        "wait",
+        "condition"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/certificates.go:WaitForCertificateReadyAndDoneIssuing",
+      "type": "function",
+      "name": "WaitForCertificateReadyAndDoneIssuing",
+      "filePath": "test/e2e/framework/helper/certificates.go",
+      "lineRange": [
+        100,
+        137
+      ],
+      "summary": "Waits for a Certificate to be Ready and finished issuing.",
+      "tags": [
+        "certificate",
+        "wait",
+        "readiness"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/certificates.go:WaitForCertificateNotReadyAndDoneIssuing",
+      "type": "function",
+      "name": "WaitForCertificateNotReadyAndDoneIssuing",
+      "filePath": "test/e2e/framework/helper/certificates.go",
+      "lineRange": [
+        141,
+        178
+      ],
+      "summary": "Waits for a Certificate to be not Ready while issuing has completed.",
+      "tags": [
+        "certificate",
+        "wait",
+        "readiness"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/certificates.go:waitForIssuerCondition",
+      "type": "function",
+      "name": "waitForIssuerCondition",
+      "filePath": "test/e2e/framework/helper/certificates.go",
+      "lineRange": [
+        180,
+        200
+      ],
+      "summary": "Polls a namespaced Issuer until the supplied condition check passes.",
+      "tags": [
+        "issuer",
+        "wait",
+        "condition"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/certificates.go:WaitIssuerReady",
+      "type": "function",
+      "name": "WaitIssuerReady",
+      "filePath": "test/e2e/framework/helper/certificates.go",
+      "lineRange": [
+        204,
+        225
+      ],
+      "summary": "Waits for a namespaced Issuer to become Ready.",
+      "tags": [
+        "issuer",
+        "wait",
+        "readiness"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/certificates.go:waitForClusterIssuerCondition",
+      "type": "function",
+      "name": "waitForClusterIssuerCondition",
+      "filePath": "test/e2e/framework/helper/certificates.go",
+      "lineRange": [
+        227,
+        247
+      ],
+      "summary": "Polls a ClusterIssuer until the supplied condition check passes.",
+      "tags": [
+        "clusterissuer",
+        "wait",
+        "condition"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/certificates.go:WaitClusterIssuerReady",
+      "type": "function",
+      "name": "WaitClusterIssuerReady",
+      "filePath": "test/e2e/framework/helper/certificates.go",
+      "lineRange": [
+        251,
+        271
+      ],
+      "summary": "Waits for a ClusterIssuer to become Ready.",
+      "tags": [
+        "clusterissuer",
+        "wait",
+        "readiness"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/certificates.go:keyUsagesMatch",
+      "type": "function",
+      "name": "keyUsagesMatch",
+      "filePath": "test/e2e/framework/helper/certificates.go",
+      "lineRange": [
+        273,
+        298
+      ],
+      "summary": "Compares expected and actual key usage sets for certificate validation.",
+      "tags": [
+        "key-usage",
+        "validation",
+        "certificate"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/framework/helper/certificatesigningrequests.go",
+      "type": "file",
+      "name": "certificatesigningrequests.go",
+      "filePath": "test/e2e/framework/helper/certificatesigningrequests.go",
+      "summary": "Helper that waits for a Kubernetes CertificateSigningRequest to be signed.",
+      "tags": [
+        "test",
+        "helper",
+        "csr",
+        "wait"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/certificatesigningrequests.go:WaitForCertificateSigningRequestSigned",
+      "type": "function",
+      "name": "WaitForCertificateSigningRequestSigned",
+      "filePath": "test/e2e/framework/helper/certificatesigningrequests.go",
+      "lineRange": [
+        34,
+        61
+      ],
+      "summary": "Polls until the CertificateSigningRequest has a signed certificate attached.",
+      "tags": [
+        "csr",
+        "wait",
+        "kubernetes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/framework/helper/describe.go",
+      "type": "file",
+      "name": "describe.go",
+      "filePath": "test/e2e/framework/helper/describe.go",
+      "summary": "Serializes Kubernetes and cert-manager objects to YAML in the test log for debugging.",
+      "tags": [
+        "test",
+        "helper",
+        "debugging",
+        "serialization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/helper/featureset/featureset.go",
+      "type": "file",
+      "name": "featureset.go",
+      "filePath": "test/e2e/framework/helper/featureset/featureset.go",
+      "summary": "Defines issuer feature flags and feature sets used to skip unsupported conformance tests.",
+      "tags": [
+        "test",
+        "feature-flags",
+        "conformance",
+        "type-definition"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/framework/helper/helper.go",
+      "type": "file",
+      "name": "helper.go",
+      "filePath": "test/e2e/framework/helper/helper.go",
+      "summary": "Shared helper container holding suite config plus Kubernetes and cert-manager clients for test utilities.",
+      "tags": [
+        "test",
+        "helper",
+        "client",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/framework/helper/helper.go:Helper",
+      "type": "class",
+      "name": "Helper",
+      "filePath": "test/e2e/framework/helper/helper.go",
+      "lineRange": [
+        27,
+        32
+      ],
+      "summary": "Holds suite config plus Kubernetes and cert-manager clients for helper methods.",
+      "tags": [
+        "helper",
+        "client",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/helper/helper.go:NewHelper",
+      "type": "function",
+      "name": "NewHelper",
+      "filePath": "test/e2e/framework/helper/helper.go",
+      "lineRange": [
+        34,
+        38
+      ],
+      "summary": "Constructs a Helper bound to the given suite config.",
+      "tags": [
+        "helper",
+        "factory",
+        "initialization"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/e2e/framework/helper/certificates.go",
+      "target": "function:test/e2e/framework/helper/certificates.go:WaitForCertificateToExist",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificates.go",
+      "target": "function:test/e2e/framework/helper/certificates.go:WaitForCertificateToExist",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificates.go",
+      "target": "function:test/e2e/framework/helper/certificates.go:waitForCertificateCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificates.go",
+      "target": "function:test/e2e/framework/helper/certificates.go:WaitForCertificateReadyAndDoneIssuing",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificates.go",
+      "target": "function:test/e2e/framework/helper/certificates.go:WaitForCertificateReadyAndDoneIssuing",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificates.go",
+      "target": "function:test/e2e/framework/helper/certificates.go:WaitForCertificateNotReadyAndDoneIssuing",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificates.go",
+      "target": "function:test/e2e/framework/helper/certificates.go:WaitForCertificateNotReadyAndDoneIssuing",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificates.go",
+      "target": "function:test/e2e/framework/helper/certificates.go:waitForIssuerCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificates.go",
+      "target": "function:test/e2e/framework/helper/certificates.go:WaitIssuerReady",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificates.go",
+      "target": "function:test/e2e/framework/helper/certificates.go:WaitIssuerReady",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificates.go",
+      "target": "function:test/e2e/framework/helper/certificates.go:waitForClusterIssuerCondition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificates.go",
+      "target": "function:test/e2e/framework/helper/certificates.go:WaitClusterIssuerReady",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificates.go",
+      "target": "function:test/e2e/framework/helper/certificates.go:WaitClusterIssuerReady",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificates.go",
+      "target": "function:test/e2e/framework/helper/certificates.go:keyUsagesMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/certificatesigningrequests.go:WaitForCertificateSigningRequestSigned",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificatesigningrequests.go",
+      "target": "function:test/e2e/framework/helper/certificatesigningrequests.go:WaitForCertificateSigningRequestSigned",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/helper.go",
+      "target": "class:test/e2e/framework/helper/helper.go:Helper",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/helper.go",
+      "target": "class:test/e2e/framework/helper/helper.go:Helper",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/helper.go",
+      "target": "function:test/e2e/framework/helper/helper.go:NewHelper",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/helper/helper.go",
+      "target": "function:test/e2e/framework/helper/helper.go:NewHelper",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificates.go",
+      "target": "file:test/e2e/framework/log/log.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/certificatesigningrequests.go",
+      "target": "file:test/e2e/framework/log/log.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/describe.go",
+      "target": "file:test/e2e/framework/log/log.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/helper.go",
+      "target": "file:test/e2e/framework/config/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/helper.go",
+      "target": "file:test/e2e/framework/config/addons.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/helper.go",
+      "target": "file:test/e2e/framework/config/certmanager.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/helper.go",
+      "target": "file:test/e2e/framework/config/config.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/helper.go",
+      "target": "file:test/e2e/framework/config/gateway.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/helper.go",
+      "target": "file:test/e2e/framework/config/ginkgo.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/helper.go",
+      "target": "file:test/e2e/framework/config/helm.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/helper.go",
+      "target": "file:test/e2e/framework/config/ingress_controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/helper.go",
+      "target": "file:test/e2e/framework/config/samplewebhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/helper.go",
+      "target": "file:test/e2e/framework/config/suite.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/helper/helper.go",
+      "target": "file:test/e2e/framework/config/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:test/e2e/framework/helper/certificates.go:WaitForCertificateReadyAndDoneIssuing",
+      "target": "function:test/e2e/framework/helper/certificates.go:waitForCertificateCondition",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/certificates.go:WaitForCertificateNotReadyAndDoneIssuing",
+      "target": "function:test/e2e/framework/helper/certificates.go:waitForCertificateCondition",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/certificates.go:WaitIssuerReady",
+      "target": "function:test/e2e/framework/helper/certificates.go:waitForIssuerCondition",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/framework/helper/certificates.go:WaitClusterIssuerReady",
+      "target": "function:test/e2e/framework/helper/certificates.go:waitForClusterIssuerCondition",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

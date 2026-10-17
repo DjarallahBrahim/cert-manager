@@ -1,0 +1,1408 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "type": "file",
+      "name": "akamai.go",
+      "filePath": "pkg/issuer/acme/dns/akamai/akamai.go",
+      "summary": "Akamai EdgeDNS provider for ACME DNS-01 challenges, managing challenge TXT records through the Open EdgeGrid API.",
+      "tags": [
+        "dns01",
+        "akamai",
+        "provider",
+        "dns"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:pkg/issuer/acme/dns/akamai/akamai.go:OpenEdgegridDNSService",
+      "type": "class",
+      "name": "OpenEdgegridDNSService",
+      "filePath": "pkg/issuer/acme/dns/akamai/akamai.go",
+      "lineRange": [
+        37,
+        42
+      ],
+      "summary": "Interface abstracting the EdgeGrid record operations used by the Akamai provider.",
+      "tags": [
+        "interface",
+        "akamai",
+        "dns"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/issuer/acme/dns/akamai/akamai.go:OpenDNSClient",
+      "type": "class",
+      "name": "OpenDNSClient",
+      "filePath": "pkg/issuer/acme/dns/akamai/akamai.go",
+      "lineRange": [
+        45,
+        47
+      ],
+      "summary": "EdgeGrid-backed implementation of the Akamai DNS record operations.",
+      "tags": [
+        "client",
+        "akamai",
+        "dns"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/issuer/acme/dns/akamai/akamai.go:DNSProvider",
+      "type": "class",
+      "name": "DNSProvider",
+      "filePath": "pkg/issuer/acme/dns/akamai/akamai.go",
+      "lineRange": [
+        50,
+        58
+      ],
+      "summary": "Akamai DNS-01 provider that creates and removes TXT records for challenges.",
+      "tags": [
+        "dns01",
+        "provider",
+        "akamai"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/akamai/akamai.go:NewDNSProvider",
+      "type": "function",
+      "name": "NewDNSProvider",
+      "filePath": "pkg/issuer/acme/dns/akamai/akamai.go",
+      "lineRange": [
+        61,
+        98
+      ],
+      "summary": "Creates an Akamai DNS provider from EdgeGrid service credentials.",
+      "tags": [
+        "factory",
+        "credentials",
+        "akamai"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/akamai/akamai.go:Present",
+      "type": "function",
+      "name": "Present",
+      "filePath": "pkg/issuer/acme/dns/akamai/akamai.go",
+      "lineRange": [
+        110,
+        167
+      ],
+      "summary": "Presents a DNS-01 TXT record for the challenge in the matching Akamai hosted domain.",
+      "tags": [
+        "dns01",
+        "txt-record",
+        "present"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/akamai/akamai.go:CleanUp",
+      "type": "function",
+      "name": "CleanUp",
+      "filePath": "pkg/issuer/acme/dns/akamai/akamai.go",
+      "lineRange": [
+        170,
+        233
+      ],
+      "summary": "Removes the TXT records created for a challenge from Akamai EdgeDNS.",
+      "tags": [
+        "dns01",
+        "txt-record",
+        "cleanup"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/akamai/akamai.go:GetRecord",
+      "type": "function",
+      "name": "GetRecord",
+      "filePath": "pkg/issuer/acme/dns/akamai/akamai.go",
+      "lineRange": [
+        266,
+        284
+      ],
+      "summary": "Fetches a DNS record of a given type from an Akamai zone.",
+      "tags": [
+        "dns",
+        "record",
+        "lookup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "type": "file",
+      "name": "azuredns.go",
+      "filePath": "pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "summary": "Azure DNS provider for ACME DNS-01 challenges supporting service principal, ambient, and managed identity authentication.",
+      "tags": [
+        "dns01",
+        "azure",
+        "provider",
+        "dns"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:pkg/issuer/acme/dns/azuredns/azuredns.go:DNSProvider",
+      "type": "class",
+      "name": "DNSProvider",
+      "filePath": "pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "lineRange": [
+        36,
+        43
+      ],
+      "summary": "Azure DNS provider that manages challenge TXT records in a configured DNS zone.",
+      "tags": [
+        "dns01",
+        "provider",
+        "azure"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/issuer/acme/dns/azuredns/azuredns.go:NormalizedError",
+      "type": "class",
+      "name": "NormalizedError",
+      "filePath": "pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "lineRange": [
+        288,
+        290
+      ],
+      "summary": "Error wrapper that surfaces the underlying Azure SDK cause in a stable form.",
+      "tags": [
+        "error-handling",
+        "azure",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/azuredns/azuredns.go:NewDNSProviderCredentials",
+      "type": "function",
+      "name": "NewDNSProviderCredentials",
+      "filePath": "pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "lineRange": [
+        47,
+        75
+      ],
+      "summary": "Creates an Azure DNS provider from environment, tenant, and credential configuration.",
+      "tags": [
+        "factory",
+        "credentials",
+        "azure"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/azuredns/azuredns.go:getAuthorization",
+      "type": "function",
+      "name": "getAuthorization",
+      "filePath": "pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "lineRange": [
+        89,
+        138
+      ],
+      "summary": "Resolves an Azure authorizer using ambient credentials, managed identity, or a client secret.",
+      "tags": [
+        "authentication",
+        "azure",
+        "credentials"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/azuredns/azuredns.go:Present",
+      "type": "function",
+      "name": "Present",
+      "filePath": "pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "lineRange": [
+        141,
+        157
+      ],
+      "summary": "Creates or updates the TXT record for a DNS-01 challenge in Azure DNS.",
+      "tags": [
+        "dns01",
+        "txt-record",
+        "present"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/azuredns/azuredns.go:CleanUp",
+      "type": "function",
+      "name": "CleanUp",
+      "filePath": "pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "lineRange": [
+        160,
+        171
+      ],
+      "summary": "Removes the TXT records created for a DNS-01 challenge from Azure DNS.",
+      "tags": [
+        "dns01",
+        "cleanup",
+        "azure"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/azuredns/azuredns.go:getHostedZoneName",
+      "type": "function",
+      "name": "getHostedZoneName",
+      "filePath": "pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "lineRange": [
+        173,
+        191
+      ],
+      "summary": "Finds the longest matching Azure DNS zone for a fully qualified domain name.",
+      "tags": [
+        "dns",
+        "zone-lookup",
+        "azure"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/azuredns/azuredns.go:updateTXTRecord",
+      "type": "function",
+      "name": "updateTXTRecord",
+      "filePath": "pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "lineRange": [
+        203,
+        270
+      ],
+      "summary": "Applies create, update, or delete operations to a TXT record set in Azure DNS.",
+      "tags": [
+        "dns",
+        "record-update",
+        "azure"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/azuredns/azuredns.go:Error",
+      "type": "function",
+      "name": "Error",
+      "filePath": "pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "lineRange": [
+        292,
+        342
+      ],
+      "summary": "Formats an Azure DNS API error with status code and request details.",
+      "tags": [
+        "error-handling",
+        "formatting",
+        "azure"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "type": "file",
+      "name": "clouddns.go",
+      "filePath": "pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "summary": "Google Cloud DNS provider for ACME DNS-01 challenges with ambient and service-account credentials.",
+      "tags": [
+        "dns01",
+        "gcp",
+        "clouddns",
+        "provider"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:pkg/issuer/acme/dns/clouddns/clouddns.go:DNSProvider",
+      "type": "class",
+      "name": "DNSProvider",
+      "filePath": "pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "lineRange": [
+        30,
+        36
+      ],
+      "summary": "Cloud DNS provider that manages challenge TXT records in a managed zone.",
+      "tags": [
+        "dns01",
+        "provider",
+        "gcp"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:NewDNSProvider",
+      "type": "function",
+      "name": "NewDNSProvider",
+      "filePath": "pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "lineRange": [
+        39,
+        57
+      ],
+      "summary": "Creates a Cloud DNS provider, choosing service-account or ambient credentials.",
+      "tags": [
+        "factory",
+        "credentials",
+        "gcp"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:NewDNSProviderCredentials",
+      "type": "function",
+      "name": "NewDNSProviderCredentials",
+      "filePath": "pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "lineRange": [
+        73,
+        95
+      ],
+      "summary": "Creates a Cloud DNS provider relying on ambient Google credentials.",
+      "tags": [
+        "factory",
+        "credentials",
+        "gcp"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:NewDNSProviderServiceAccount",
+      "type": "function",
+      "name": "NewDNSProviderServiceAccount",
+      "filePath": "pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "lineRange": [
+        99,
+        112
+      ],
+      "summary": "Creates a Cloud DNS provider from a service-account JSON file.",
+      "tags": [
+        "factory",
+        "service-account",
+        "gcp"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:NewDNSProviderServiceAccountBytes",
+      "type": "function",
+      "name": "NewDNSProviderServiceAccountBytes",
+      "filePath": "pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "lineRange": [
+        116,
+        142
+      ],
+      "summary": "Creates a Cloud DNS provider from raw service-account JSON bytes.",
+      "tags": [
+        "factory",
+        "service-account",
+        "gcp"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:Present",
+      "type": "function",
+      "name": "Present",
+      "filePath": "pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "lineRange": [
+        145,
+        204
+      ],
+      "summary": "Publishes the DNS-01 TXT record in the matching Cloud DNS managed zone.",
+      "tags": [
+        "dns01",
+        "txt-record",
+        "present"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:CleanUp",
+      "type": "function",
+      "name": "CleanUp",
+      "filePath": "pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "lineRange": [
+        207,
+        241
+      ],
+      "summary": "Deletes the TXT records associated with a DNS-01 challenge from Cloud DNS.",
+      "tags": [
+        "dns01",
+        "cleanup",
+        "gcp"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:getHostedZone",
+      "type": "function",
+      "name": "getHostedZone",
+      "filePath": "pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "lineRange": [
+        244,
+        277
+      ],
+      "summary": "Resolves the Cloud DNS managed zone that hosts the given domain.",
+      "tags": [
+        "dns",
+        "zone-lookup",
+        "gcp"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:findTxtRecords",
+      "type": "function",
+      "name": "findTxtRecords",
+      "filePath": "pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "lineRange": [
+        279,
+        302
+      ],
+      "summary": "Lists TXT records in a zone that match the challenge FQDN.",
+      "tags": [
+        "dns",
+        "record-lookup",
+        "gcp"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "type": "file",
+      "name": "cloudflare.go",
+      "filePath": "pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "summary": "Cloudflare DNS provider for ACME DNS-01 challenges using the Cloudflare v4 API.",
+      "tags": [
+        "dns01",
+        "cloudflare",
+        "provider",
+        "dns"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:pkg/issuer/acme/dns/cloudflare/cloudflare.go:DNSProviderType",
+      "type": "class",
+      "name": "DNSProviderType",
+      "filePath": "pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "lineRange": [
+        37,
+        39
+      ],
+      "summary": "Interface describing the Cloudflare HTTP request helper used by the provider.",
+      "tags": [
+        "interface",
+        "cloudflare",
+        "http-client"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/issuer/acme/dns/cloudflare/cloudflare.go:DNSProvider",
+      "type": "class",
+      "name": "DNSProvider",
+      "filePath": "pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "lineRange": [
+        42,
+        49
+      ],
+      "summary": "Cloudflare provider that creates and removes challenge TXT records via the v4 API.",
+      "tags": [
+        "dns01",
+        "provider",
+        "cloudflare"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/cloudflare/cloudflare.go:NewDNSProviderCredentials",
+      "type": "function",
+      "name": "NewDNSProviderCredentials",
+      "filePath": "pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "lineRange": [
+        69,
+        97
+      ],
+      "summary": "Creates a Cloudflare provider from an API token or email and key credentials.",
+      "tags": [
+        "factory",
+        "credentials",
+        "cloudflare"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/cloudflare/cloudflare.go:FindNearestZoneForFQDN",
+      "type": "function",
+      "name": "FindNearestZoneForFQDN",
+      "filePath": "pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "lineRange": [
+        108,
+        145
+      ],
+      "summary": "Finds the most specific Cloudflare zone containing the given FQDN, following CNAMEs.",
+      "tags": [
+        "dns",
+        "zone-lookup",
+        "cloudflare"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/cloudflare/cloudflare.go:Present",
+      "type": "function",
+      "name": "Present",
+      "filePath": "pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "lineRange": [
+        148,
+        181
+      ],
+      "summary": "Creates or updates the TXT record for a DNS-01 challenge in Cloudflare DNS.",
+      "tags": [
+        "dns01",
+        "txt-record",
+        "present"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/cloudflare/cloudflare.go:CleanUp",
+      "type": "function",
+      "name": "CleanUp",
+      "filePath": "pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "lineRange": [
+        184,
+        200
+      ],
+      "summary": "Removes the challenge TXT records from Cloudflare DNS.",
+      "tags": [
+        "dns01",
+        "cleanup",
+        "cloudflare"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/cloudflare/cloudflare.go:findTxtRecord",
+      "type": "function",
+      "name": "findTxtRecord",
+      "filePath": "pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "lineRange": [
+        212,
+        245
+      ],
+      "summary": "Searches Cloudflare DNS for a TXT record matching the FQDN and content.",
+      "tags": [
+        "dns",
+        "record-lookup",
+        "cloudflare"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/cloudflare/cloudflare.go:makeRequest",
+      "type": "function",
+      "name": "makeRequest",
+      "filePath": "pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "lineRange": [
+        247,
+        308
+      ],
+      "summary": "Executes an authenticated Cloudflare API request with retries and response decoding.",
+      "tags": [
+        "http-client",
+        "api",
+        "cloudflare"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "type": "file",
+      "name": "digitalocean.go",
+      "filePath": "pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "summary": "DigitalOcean DNS provider for ACME DNS-01 challenges.",
+      "tags": [
+        "dns01",
+        "digitalocean",
+        "provider",
+        "dns"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:pkg/issuer/acme/dns/digitalocean/digitalocean.go:DNSProvider",
+      "type": "class",
+      "name": "DNSProvider",
+      "filePath": "pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "lineRange": [
+        34,
+        37
+      ],
+      "summary": "DigitalOcean provider that manages challenge TXT records.",
+      "tags": [
+        "dns01",
+        "provider",
+        "digitalocean"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/digitalocean/digitalocean.go:NewDNSProviderCredentials",
+      "type": "function",
+      "name": "NewDNSProviderCredentials",
+      "filePath": "pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "lineRange": [
+        48,
+        66
+      ],
+      "summary": "Creates a DigitalOcean DNS provider from an API token.",
+      "tags": [
+        "factory",
+        "credentials",
+        "digitalocean"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/digitalocean/digitalocean.go:Present",
+      "type": "function",
+      "name": "Present",
+      "filePath": "pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "lineRange": [
+        69,
+        107
+      ],
+      "summary": "Creates or updates the TXT record for a DNS-01 challenge in DigitalOcean DNS.",
+      "tags": [
+        "dns01",
+        "txt-record",
+        "present"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/digitalocean/digitalocean.go:CleanUp",
+      "type": "function",
+      "name": "CleanUp",
+      "filePath": "pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "lineRange": [
+        110,
+        130
+      ],
+      "summary": "Deletes the challenge TXT records from DigitalOcean DNS.",
+      "tags": [
+        "dns01",
+        "cleanup",
+        "digitalocean"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/issuer/acme/dns/digitalocean/digitalocean.go:findTxtRecord",
+      "type": "function",
+      "name": "findTxtRecord",
+      "filePath": "pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "lineRange": [
+        132,
+        161
+      ],
+      "summary": "Looks up TXT records for an FQDN in DigitalOcean DNS.",
+      "tags": [
+        "dns",
+        "record-lookup",
+        "digitalocean"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "target": "class:pkg/issuer/acme/dns/akamai/akamai.go:OpenEdgegridDNSService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "target": "class:pkg/issuer/acme/dns/akamai/akamai.go:OpenEdgegridDNSService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "target": "class:pkg/issuer/acme/dns/akamai/akamai.go:OpenDNSClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "target": "class:pkg/issuer/acme/dns/akamai/akamai.go:OpenDNSClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "target": "class:pkg/issuer/acme/dns/akamai/akamai.go:DNSProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "target": "class:pkg/issuer/acme/dns/akamai/akamai.go:DNSProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "target": "function:pkg/issuer/acme/dns/akamai/akamai.go:NewDNSProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "target": "function:pkg/issuer/acme/dns/akamai/akamai.go:NewDNSProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "target": "function:pkg/issuer/acme/dns/akamai/akamai.go:Present",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "target": "function:pkg/issuer/acme/dns/akamai/akamai.go:Present",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "target": "function:pkg/issuer/acme/dns/akamai/akamai.go:CleanUp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "target": "function:pkg/issuer/acme/dns/akamai/akamai.go:CleanUp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "target": "function:pkg/issuer/acme/dns/akamai/akamai.go:GetRecord",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "target": "function:pkg/issuer/acme/dns/akamai/akamai.go:GetRecord",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "class:pkg/issuer/acme/dns/azuredns/azuredns.go:DNSProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "class:pkg/issuer/acme/dns/azuredns/azuredns.go:DNSProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "class:pkg/issuer/acme/dns/azuredns/azuredns.go:NormalizedError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "class:pkg/issuer/acme/dns/azuredns/azuredns.go:NormalizedError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "function:pkg/issuer/acme/dns/azuredns/azuredns.go:NewDNSProviderCredentials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "function:pkg/issuer/acme/dns/azuredns/azuredns.go:NewDNSProviderCredentials",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "function:pkg/issuer/acme/dns/azuredns/azuredns.go:getAuthorization",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "function:pkg/issuer/acme/dns/azuredns/azuredns.go:Present",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "function:pkg/issuer/acme/dns/azuredns/azuredns.go:Present",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "function:pkg/issuer/acme/dns/azuredns/azuredns.go:CleanUp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "function:pkg/issuer/acme/dns/azuredns/azuredns.go:CleanUp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "function:pkg/issuer/acme/dns/azuredns/azuredns.go:getHostedZoneName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "function:pkg/issuer/acme/dns/azuredns/azuredns.go:updateTXTRecord",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "function:pkg/issuer/acme/dns/azuredns/azuredns.go:Error",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "function:pkg/issuer/acme/dns/azuredns/azuredns.go:Error",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "class:pkg/issuer/acme/dns/clouddns/clouddns.go:DNSProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "class:pkg/issuer/acme/dns/clouddns/clouddns.go:DNSProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:NewDNSProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:NewDNSProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:NewDNSProviderCredentials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:NewDNSProviderCredentials",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:NewDNSProviderServiceAccount",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:NewDNSProviderServiceAccount",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:NewDNSProviderServiceAccountBytes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:NewDNSProviderServiceAccountBytes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:Present",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:Present",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:CleanUp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:CleanUp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:getHostedZone",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "function:pkg/issuer/acme/dns/clouddns/clouddns.go:findTxtRecords",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "target": "class:pkg/issuer/acme/dns/cloudflare/cloudflare.go:DNSProviderType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "target": "class:pkg/issuer/acme/dns/cloudflare/cloudflare.go:DNSProviderType",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "target": "class:pkg/issuer/acme/dns/cloudflare/cloudflare.go:DNSProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "target": "class:pkg/issuer/acme/dns/cloudflare/cloudflare.go:DNSProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "target": "function:pkg/issuer/acme/dns/cloudflare/cloudflare.go:NewDNSProviderCredentials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "target": "function:pkg/issuer/acme/dns/cloudflare/cloudflare.go:NewDNSProviderCredentials",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "target": "function:pkg/issuer/acme/dns/cloudflare/cloudflare.go:FindNearestZoneForFQDN",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "target": "function:pkg/issuer/acme/dns/cloudflare/cloudflare.go:FindNearestZoneForFQDN",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "target": "function:pkg/issuer/acme/dns/cloudflare/cloudflare.go:Present",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "target": "function:pkg/issuer/acme/dns/cloudflare/cloudflare.go:Present",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "target": "function:pkg/issuer/acme/dns/cloudflare/cloudflare.go:CleanUp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "target": "function:pkg/issuer/acme/dns/cloudflare/cloudflare.go:CleanUp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "target": "function:pkg/issuer/acme/dns/cloudflare/cloudflare.go:findTxtRecord",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "target": "function:pkg/issuer/acme/dns/cloudflare/cloudflare.go:makeRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "target": "class:pkg/issuer/acme/dns/digitalocean/digitalocean.go:DNSProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "target": "class:pkg/issuer/acme/dns/digitalocean/digitalocean.go:DNSProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "target": "function:pkg/issuer/acme/dns/digitalocean/digitalocean.go:NewDNSProviderCredentials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "target": "function:pkg/issuer/acme/dns/digitalocean/digitalocean.go:NewDNSProviderCredentials",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "target": "function:pkg/issuer/acme/dns/digitalocean/digitalocean.go:Present",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "target": "function:pkg/issuer/acme/dns/digitalocean/digitalocean.go:Present",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "target": "function:pkg/issuer/acme/dns/digitalocean/digitalocean.go:CleanUp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "target": "function:pkg/issuer/acme/dns/digitalocean/digitalocean.go:CleanUp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "target": "function:pkg/issuer/acme/dns/digitalocean/digitalocean.go:findTxtRecord",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "target": "file:pkg/issuer/acme/dns/util/dns.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "target": "file:pkg/issuer/acme/dns/util/wait.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "file:pkg/issuer/acme/dns/util/dns.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "file:pkg/issuer/acme/dns/util/wait.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "file:pkg/issuer/acme/dns/util/dns.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "file:pkg/issuer/acme/dns/util/wait.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "target": "file:pkg/issuer/acme/dns/util/dns.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "target": "file:pkg/issuer/acme/dns/util/wait.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "target": "file:pkg/issuer/acme/dns/util/dns.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "target": "file:pkg/issuer/acme/dns/util/wait.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:FindZoneByFqdn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/akamai/akamai.go",
+      "target": "function:pkg/issuer/acme/dns/util/dns.go:DNS01LookupFQDN",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:FindZoneByFqdn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/azuredns/azuredns.go",
+      "target": "function:pkg/issuer/acme/dns/util/dns.go:DNS01LookupFQDN",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:FindZoneByFqdn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/clouddns/clouddns.go",
+      "target": "function:pkg/issuer/acme/dns/util/dns.go:DNS01LookupFQDN",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:FindZoneByFqdn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/cloudflare/cloudflare.go",
+      "target": "function:pkg/issuer/acme/dns/util/dns.go:DNS01LookupFQDN",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/issuer/acme/dns/digitalocean/digitalocean.go",
+      "target": "function:pkg/issuer/acme/dns/util/wait.go:FindZoneByFqdn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

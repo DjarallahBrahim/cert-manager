@@ -1,0 +1,641 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "type": "file",
+      "name": "tpp.go",
+      "filePath": "test/e2e/framework/addon/venafi/tpp.go",
+      "summary": "Venafi TPP addon that provisions access tokens and builds TPP-backed Issuer and ClusterIssuer resources for e2e tests.",
+      "tags": [
+        "test",
+        "addon",
+        "venafi",
+        "tpp",
+        "issuer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/e2e/framework/addon/venafi/tpp.go:VenafiTPP",
+      "type": "class",
+      "name": "VenafiTPP",
+      "filePath": "test/e2e/framework/addon/venafi/tpp.go",
+      "lineRange": [
+        34,
+        44
+      ],
+      "summary": "Venafi TPP addon state including namespace, details, and the created credential secret.",
+      "tags": [
+        "venafi",
+        "addon",
+        "configuration",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/framework/addon/venafi/tpp.go:TPPDetails",
+      "type": "class",
+      "name": "TPPDetails",
+      "filePath": "test/e2e/framework/addon/venafi/tpp.go",
+      "lineRange": [
+        48,
+        50
+      ],
+      "summary": "Holds the issuer template used to build Venafi TPP issuers.",
+      "tags": [
+        "venafi",
+        "issuer",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/venafi/tpp.go:Setup",
+      "type": "function",
+      "name": "Setup",
+      "filePath": "test/e2e/framework/addon/venafi/tpp.go",
+      "lineRange": [
+        52,
+        80
+      ],
+      "summary": "Loads suite config and prepares the namespace, TPP URL/zone, and issuer template.",
+      "tags": [
+        "venafi",
+        "setup",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/venafi/tpp.go:Provision",
+      "type": "function",
+      "name": "Provision",
+      "filePath": "test/e2e/framework/addon/venafi/tpp.go",
+      "lineRange": [
+        82,
+        111
+      ],
+      "summary": "Creates the TPP access-token secret and issuer template resources.",
+      "tags": [
+        "venafi",
+        "provisioning",
+        "credentials"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/venafi/tpp.go:Deprovision",
+      "type": "function",
+      "name": "Deprovision",
+      "filePath": "test/e2e/framework/addon/venafi/tpp.go",
+      "lineRange": [
+        117,
+        123
+      ],
+      "summary": "Removes the TPP secret and issuer resources.",
+      "tags": [
+        "venafi",
+        "cleanup",
+        "deprovisioning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/venafi/tpp.go:BuildIssuer",
+      "type": "function",
+      "name": "BuildIssuer",
+      "filePath": "test/e2e/framework/addon/venafi/tpp.go",
+      "lineRange": [
+        129,
+        140
+      ],
+      "summary": "Builds a namespaced Venafi TPP Issuer from the stored template.",
+      "tags": [
+        "venafi",
+        "issuer",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/venafi/tpp.go:BuildClusterIssuer",
+      "type": "function",
+      "name": "BuildClusterIssuer",
+      "filePath": "test/e2e/framework/addon/venafi/tpp.go",
+      "lineRange": [
+        142,
+        153
+      ],
+      "summary": "Builds a cluster-scoped Venafi TPP ClusterIssuer from the stored template.",
+      "tags": [
+        "venafi",
+        "issuer",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/addon/venafi/tpp.go:SetAccessToken",
+      "type": "function",
+      "name": "SetAccessToken",
+      "filePath": "test/e2e/framework/addon/venafi/tpp.go",
+      "lineRange": [
+        156,
+        165
+      ],
+      "summary": "Updates the stored secret with a new Venafi TPP access token.",
+      "tags": [
+        "venafi",
+        "credentials",
+        "secret"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/cleanup.go",
+      "type": "file",
+      "name": "cleanup.go",
+      "filePath": "test/e2e/framework/cleanup.go",
+      "summary": "Registers and runs cleanup callbacks so e2e tests can tear down resources even when a run aborts.",
+      "tags": [
+        "test",
+        "cleanup",
+        "lifecycle",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/cleanup.go:AddCleanupAction",
+      "type": "function",
+      "name": "AddCleanupAction",
+      "filePath": "test/e2e/framework/cleanup.go",
+      "lineRange": [
+        34,
+        40
+      ],
+      "summary": "Registers a cleanup callback and returns a handle that can later remove it.",
+      "tags": [
+        "cleanup",
+        "lifecycle",
+        "registration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/cleanup.go:RunCleanupActions",
+      "type": "function",
+      "name": "RunCleanupActions",
+      "filePath": "test/e2e/framework/cleanup.go",
+      "lineRange": [
+        53,
+        66
+      ],
+      "summary": "Snapshots and runs all registered cleanup callbacks without holding the lock.",
+      "tags": [
+        "cleanup",
+        "lifecycle",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/config/acme.go",
+      "type": "file",
+      "name": "acme.go",
+      "filePath": "test/e2e/framework/config/acme.go",
+      "summary": "ACME server configuration and command-line flags for the e2e suite, covering endpoint, DNS server, challenge IPs, and test identities.",
+      "tags": [
+        "configuration",
+        "test",
+        "acme",
+        "flags"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/framework/config/acme.go:ACMEServer",
+      "type": "class",
+      "name": "ACMEServer",
+      "filePath": "test/e2e/framework/config/acme.go",
+      "lineRange": [
+        23,
+        32
+      ],
+      "summary": "Holds ACME server URL, DNS and ingress/gateway IPs, and test email/private-key values.",
+      "tags": [
+        "acme",
+        "configuration",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/config/acme.go:AddFlags",
+      "type": "function",
+      "name": "AddFlags",
+      "filePath": "test/e2e/framework/config/acme.go",
+      "lineRange": [
+        34,
+        43
+      ],
+      "summary": "Registers ACME endpoint, DNS, challenge IP, and test identity flags on the suite flag set.",
+      "tags": [
+        "acme",
+        "flags",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/config/addons.go",
+      "type": "file",
+      "name": "addons.go",
+      "filePath": "test/e2e/framework/config/addons.go",
+      "summary": "Aggregates configuration for all e2e addons and validates their combined settings.",
+      "tags": [
+        "configuration",
+        "test",
+        "addons",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:test/e2e/framework/config/addons.go:Addons",
+      "type": "class",
+      "name": "Addons",
+      "filePath": "test/e2e/framework/config/addons.go",
+      "lineRange": [
+        24,
+        49
+      ],
+      "summary": "Nested addon configuration covering Helm, ACME, ingress, Gateway, Venafi, cert-manager, and the DNS01 webhook.",
+      "tags": [
+        "addons",
+        "configuration",
+        "struct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/framework/config/addons.go:Validate",
+      "type": "function",
+      "name": "Validate",
+      "filePath": "test/e2e/framework/config/addons.go",
+      "lineRange": [
+        61,
+        71
+      ],
+      "summary": "Validates each nested addon configuration and aggregates the resulting errors.",
+      "tags": [
+        "validation",
+        "addons",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/framework/config/certmanager.go",
+      "type": "file",
+      "name": "certmanager.go",
+      "filePath": "test/e2e/framework/config/certmanager.go",
+      "summary": "Configuration for the cert-manager deployment under test, including cluster resource namespace and service account name.",
+      "tags": [
+        "configuration",
+        "test",
+        "cert-manager",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:test/e2e/framework/config/certmanager.go:CertManager",
+      "type": "class",
+      "name": "CertManager",
+      "filePath": "test/e2e/framework/config/certmanager.go",
+      "lineRange": [
+        23,
+        31
+      ],
+      "summary": "Holds the cluster resource namespace and controller service account name of the cert-manager install.",
+      "tags": [
+        "cert-manager",
+        "configuration",
+        "struct"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "class:test/e2e/framework/addon/venafi/tpp.go:VenafiTPP",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "class:test/e2e/framework/addon/venafi/tpp.go:VenafiTPP",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "class:test/e2e/framework/addon/venafi/tpp.go:TPPDetails",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "class:test/e2e/framework/addon/venafi/tpp.go:TPPDetails",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "function:test/e2e/framework/addon/venafi/tpp.go:Setup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "function:test/e2e/framework/addon/venafi/tpp.go:Setup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "function:test/e2e/framework/addon/venafi/tpp.go:Provision",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "function:test/e2e/framework/addon/venafi/tpp.go:Provision",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "function:test/e2e/framework/addon/venafi/tpp.go:Deprovision",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "function:test/e2e/framework/addon/venafi/tpp.go:Deprovision",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "function:test/e2e/framework/addon/venafi/tpp.go:BuildIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "function:test/e2e/framework/addon/venafi/tpp.go:BuildIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "function:test/e2e/framework/addon/venafi/tpp.go:BuildClusterIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "function:test/e2e/framework/addon/venafi/tpp.go:BuildClusterIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "function:test/e2e/framework/addon/venafi/tpp.go:SetAccessToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "function:test/e2e/framework/addon/venafi/tpp.go:SetAccessToken",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/cleanup.go",
+      "target": "function:test/e2e/framework/cleanup.go:AddCleanupAction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/cleanup.go",
+      "target": "function:test/e2e/framework/cleanup.go:AddCleanupAction",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/cleanup.go",
+      "target": "function:test/e2e/framework/cleanup.go:RunCleanupActions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/cleanup.go",
+      "target": "function:test/e2e/framework/cleanup.go:RunCleanupActions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/acme.go",
+      "target": "class:test/e2e/framework/config/acme.go:ACMEServer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/acme.go",
+      "target": "class:test/e2e/framework/config/acme.go:ACMEServer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/acme.go",
+      "target": "function:test/e2e/framework/config/acme.go:AddFlags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/acme.go",
+      "target": "function:test/e2e/framework/config/acme.go:AddFlags",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/addons.go",
+      "target": "class:test/e2e/framework/config/addons.go:Addons",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/addons.go",
+      "target": "class:test/e2e/framework/config/addons.go:Addons",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/addons.go",
+      "target": "function:test/e2e/framework/config/addons.go:Validate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/addons.go",
+      "target": "function:test/e2e/framework/config/addons.go:Validate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/config/certmanager.go",
+      "target": "class:test/e2e/framework/config/certmanager.go:CertManager",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:test/e2e/framework/config/certmanager.go",
+      "target": "class:test/e2e/framework/config/certmanager.go:CertManager",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "file:test/e2e/framework/addon/base/base.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "file:test/e2e/framework/addon/internal/globals.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "file:test/e2e/framework/config/acme.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "file:test/e2e/framework/config/addons.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "file:test/e2e/framework/config/certmanager.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "file:test/e2e/framework/config/config.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "file:test/e2e/framework/config/gateway.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "file:test/e2e/framework/config/ginkgo.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "file:test/e2e/framework/config/helm.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "file:test/e2e/framework/config/ingress_controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "file:test/e2e/framework/config/samplewebhook.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "file:test/e2e/framework/config/suite.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "file:test/e2e/framework/config/venafi.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/framework/addon/venafi/tpp.go",
+      "target": "file:test/e2e/framework/util/errors/errors.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

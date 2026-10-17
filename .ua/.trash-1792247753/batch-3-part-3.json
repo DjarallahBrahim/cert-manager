@@ -1,0 +1,1159 @@
+{
+  "nodes": [
+    {
+      "id": "file:pkg/controller/certificate-shim/sync.go",
+      "type": "file",
+      "name": "sync.go",
+      "filePath": "pkg/controller/certificate-shim/sync.go",
+      "summary": "Core synchronization logic for the certificate shims: validates Ingress/Gateway resources, builds and updates Certificates, and deletes shim-managed Certificates that are no longer needed.",
+      "tags": [
+        "shim",
+        "sync",
+        "certificates",
+        "validation",
+        "reconciler"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/sync.go:SyncFnFor",
+      "type": "function",
+      "name": "SyncFnFor",
+      "filePath": "pkg/controller/certificate-shim/sync.go",
+      "lineRange": [
+        76,
+        186
+      ],
+      "summary": "Builds the shim sync function that creates, updates and deletes Certificates derived from Ingress/Gateway resources.",
+      "tags": [
+        "shim",
+        "sync",
+        "certificates"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/sync.go:validateIngressLike",
+      "type": "function",
+      "name": "validateIngressLike",
+      "filePath": "pkg/controller/certificate-shim/sync.go",
+      "lineRange": [
+        188,
+        197
+      ],
+      "summary": "Validates the TLS configuration of an Ingress-like resource and returns an aggregate error.",
+      "tags": [
+        "validation",
+        "shim",
+        "ingress"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/sync.go:checkForDuplicateSecretNames",
+      "type": "function",
+      "name": "checkForDuplicateSecretNames",
+      "filePath": "pkg/controller/certificate-shim/sync.go",
+      "lineRange": [
+        199,
+        238
+      ],
+      "summary": "Rejects TLS blocks that reuse the same secret name across hosts.",
+      "tags": [
+        "validation",
+        "secret",
+        "shim"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/sync.go:validateIngressTLSBlock",
+      "type": "function",
+      "name": "validateIngressTLSBlock",
+      "filePath": "pkg/controller/certificate-shim/sync.go",
+      "lineRange": [
+        240,
+        251
+      ],
+      "summary": "Validates a single TLS block, requiring declared hosts and a secret name.",
+      "tags": [
+        "validation",
+        "tls",
+        "shim"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/sync.go:validateGatewayListenerBlock",
+      "type": "function",
+      "name": "validateGatewayListenerBlock",
+      "filePath": "pkg/controller/certificate-shim/sync.go",
+      "lineRange": [
+        253,
+        297
+      ],
+      "summary": "Validates a Gateway listener TLS block and its hostname configuration.",
+      "tags": [
+        "validation",
+        "gateway-api",
+        "tls"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/sync.go:buildCertificates",
+      "type": "function",
+      "name": "buildCertificates",
+      "filePath": "pkg/controller/certificate-shim/sync.go",
+      "lineRange": [
+        299,
+        478
+      ],
+      "summary": "Builds Certificate resources for each TLS block, merging annotations and issuer defaults.",
+      "tags": [
+        "shim",
+        "certificates",
+        "factory"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/sync.go:findCertificatesToBeRemoved",
+      "type": "function",
+      "name": "findCertificatesToBeRemoved",
+      "filePath": "pkg/controller/certificate-shim/sync.go",
+      "lineRange": [
+        480,
+        491
+      ],
+      "summary": "Returns shim-managed Certificates that no longer correspond to a current TLS block.",
+      "tags": [
+        "shim",
+        "cleanup",
+        "certificates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/sync.go:mergeAnnotations",
+      "type": "function",
+      "name": "mergeAnnotations",
+      "filePath": "pkg/controller/certificate-shim/sync.go",
+      "lineRange": [
+        493,
+        503
+      ],
+      "summary": "Merges two annotation maps, with values from the second map taking precedence.",
+      "tags": [
+        "utility",
+        "annotations",
+        "merge"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/sync.go:secretNameUsedIn",
+      "type": "function",
+      "name": "secretNameUsedIn",
+      "filePath": "pkg/controller/certificate-shim/sync.go",
+      "lineRange": [
+        504,
+        526
+      ],
+      "summary": "Reports whether a secret name is still referenced by any TLS block of the resource.",
+      "tags": [
+        "utility",
+        "secret",
+        "shim"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/sync.go:certNeedsUpdate",
+      "type": "function",
+      "name": "certNeedsUpdate",
+      "filePath": "pkg/controller/certificate-shim/sync.go",
+      "lineRange": [
+        529,
+        628
+      ],
+      "summary": "Compares a desired Certificate with the existing one to decide whether an update is required.",
+      "tags": [
+        "certificates",
+        "comparison",
+        "shim"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/sync.go:setIssuerSpecificConfig",
+      "type": "function",
+      "name": "setIssuerSpecificConfig",
+      "filePath": "pkg/controller/certificate-shim/sync.go",
+      "lineRange": [
+        656,
+        684
+      ],
+      "summary": "Copies issuer-specific annotations from the Ingress-like object into the Certificate spec.",
+      "tags": [
+        "shim",
+        "issuer",
+        "annotation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/sync.go:hasShimAnnotation",
+      "type": "function",
+      "name": "hasShimAnnotation",
+      "filePath": "pkg/controller/certificate-shim/sync.go",
+      "lineRange": [
+        697,
+        716
+      ],
+      "summary": "Reports whether the resource carries the shim annotation and is therefore managed.",
+      "tags": [
+        "shim",
+        "annotation",
+        "predicate"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/sync.go:extractExtraAnnotations",
+      "type": "function",
+      "name": "extractExtraAnnotations",
+      "filePath": "pkg/controller/certificate-shim/sync.go",
+      "lineRange": [
+        718,
+        734
+      ],
+      "summary": "Extracts non-shim annotations that should be copied onto the generated Certificate.",
+      "tags": [
+        "shim",
+        "annotation",
+        "extraction"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/sync.go:isDeletedInForeground",
+      "type": "function",
+      "name": "isDeletedInForeground",
+      "filePath": "pkg/controller/certificate-shim/sync.go",
+      "lineRange": [
+        744,
+        756
+      ],
+      "summary": "Detects resources awaiting foreground deletion so the shim can skip them.",
+      "tags": [
+        "shim",
+        "deletion",
+        "predicate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:pkg/controller/certificate-shim/sync.go:issuerForIngressLike",
+      "type": "function",
+      "name": "issuerForIngressLike",
+      "filePath": "pkg/controller/certificate-shim/sync.go",
+      "lineRange": [
+        767,
+        829
+      ],
+      "summary": "Resolves the issuer name, kind and group for an Ingress-like resource from annotations and defaults.",
+      "tags": [
+        "shim",
+        "issuer",
+        "resolution"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "type": "file",
+      "name": "approver.go",
+      "filePath": "pkg/controller/certificaterequests/approver/approver.go",
+      "summary": "Controller that watches CertificateRequests and runs the approval policy chain, approving or denying requests based on configured policy.",
+      "tags": [
+        "controller",
+        "certificaterequest",
+        "approval",
+        "policy"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificaterequests/approver/approver.go:Register",
+      "type": "function",
+      "name": "Register",
+      "filePath": "pkg/controller/certificaterequests/approver/approver.go",
+      "lineRange": [
+        69,
+        92
+      ],
+      "summary": "Registers the approval controller, creating its queue and CertificateRequest informer handlers.",
+      "tags": [
+        "controller",
+        "approval",
+        "registration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificaterequests/approver/approver.go:ProcessItem",
+      "type": "function",
+      "name": "ProcessItem",
+      "filePath": "pkg/controller/certificaterequests/approver/approver.go",
+      "lineRange": [
+        94,
+        112
+      ],
+      "summary": "Dequeues a CertificateRequest key and runs the approval sync for it.",
+      "tags": [
+        "controller",
+        "queue",
+        "approval"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:pkg/controller/certificaterequests/approver/approver.go:Controller",
+      "type": "class",
+      "name": "Controller",
+      "filePath": "pkg/controller/certificaterequests/approver/approver.go",
+      "lineRange": [
+        45,
+        56
+      ],
+      "summary": "Approval controller with a CertificateRequest lister, client, recorder and rate-limited work queue.",
+      "tags": [
+        "controller",
+        "approval",
+        "certificaterequest"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "type": "file",
+      "name": "sync.go",
+      "filePath": "pkg/controller/certificaterequests/approver/sync.go",
+      "summary": "Applies approval decisions to CertificateRequests by updating their conditions and status, using server-side apply when enabled.",
+      "tags": [
+        "certificaterequest",
+        "approval",
+        "status",
+        "sync"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificaterequests/approver/sync.go:Sync",
+      "type": "function",
+      "name": "Sync",
+      "filePath": "pkg/controller/certificaterequests/approver/sync.go",
+      "lineRange": [
+        41,
+        76
+      ],
+      "summary": "Approves or denies a CertificateRequest according to the configured approval policy.",
+      "tags": [
+        "approval",
+        "certificaterequest",
+        "policy"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:pkg/controller/certificaterequests/approver/sync.go:updateStatusOrApply",
+      "type": "function",
+      "name": "updateStatusOrApply",
+      "filePath": "pkg/controller/certificaterequests/approver/sync.go",
+      "lineRange": [
+        78,
+        85
+      ],
+      "summary": "Persists CertificateRequest status using server-side apply or UpdateStatus depending on feature gates.",
+      "tags": [
+        "status",
+        "apply",
+        "certificaterequest"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "function:pkg/controller/certificate-shim/sync.go:SyncFnFor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "function:pkg/controller/certificate-shim/sync.go:SyncFnFor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "function:pkg/controller/certificate-shim/sync.go:validateIngressLike",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "function:pkg/controller/certificate-shim/sync.go:checkForDuplicateSecretNames",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "function:pkg/controller/certificate-shim/sync.go:validateIngressTLSBlock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "function:pkg/controller/certificate-shim/sync.go:validateGatewayListenerBlock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "function:pkg/controller/certificate-shim/sync.go:buildCertificates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "function:pkg/controller/certificate-shim/sync.go:findCertificatesToBeRemoved",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "function:pkg/controller/certificate-shim/sync.go:mergeAnnotations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "function:pkg/controller/certificate-shim/sync.go:secretNameUsedIn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "function:pkg/controller/certificate-shim/sync.go:certNeedsUpdate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "function:pkg/controller/certificate-shim/sync.go:setIssuerSpecificConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "function:pkg/controller/certificate-shim/sync.go:hasShimAnnotation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "function:pkg/controller/certificate-shim/sync.go:extractExtraAnnotations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "function:pkg/controller/certificate-shim/sync.go:isDeletedInForeground",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "function:pkg/controller/certificate-shim/sync.go:issuerForIngressLike",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:internal/controller/certificates/apply.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:internal/controller/certificates/certificates.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:internal/controller/certificates/secrets.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:internal/controller/feature/features.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/acme/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/acme/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/acme/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/acme/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/acme/v1/types_challenge.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/acme/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/acme/v1/types_order.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/acme/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/client/clientset/versioned/clientset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/client/listers/certmanager/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificate-shim/sync.go",
+      "target": "file:pkg/util/feature/feature_gate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "target": "function:pkg/controller/certificaterequests/approver/approver.go:Register",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "target": "function:pkg/controller/certificaterequests/approver/approver.go:Register",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "target": "function:pkg/controller/certificaterequests/approver/approver.go:ProcessItem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "target": "function:pkg/controller/certificaterequests/approver/approver.go:ProcessItem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "target": "class:pkg/controller/certificaterequests/approver/approver.go:Controller",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "target": "class:pkg/controller/certificaterequests/approver/approver.go:Controller",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "target": "file:pkg/client/clientset/versioned/clientset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "target": "file:pkg/client/listers/certmanager/v1/certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "target": "file:pkg/client/listers/certmanager/v1/clusterissuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "target": "file:pkg/client/listers/certmanager/v1/expansion_generated.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "target": "file:pkg/client/listers/certmanager/v1/issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "target": "file:pkg/controller/builder.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "target": "file:pkg/controller/context.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "target": "file:pkg/controller/controller.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "target": "file:pkg/controller/helper.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "target": "file:pkg/controller/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "target": "file:pkg/controller/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/approver.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "function:pkg/controller/certificaterequests/approver/sync.go:Sync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "function:pkg/controller/certificaterequests/approver/sync.go:Sync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "function:pkg/controller/certificaterequests/approver/sync.go:updateStatusOrApply",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:internal/controller/certificaterequests/apply.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:internal/controller/feature/features.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/api/util/conditions.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/api/util/duration.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/api/util/issuers.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/api/util/kube.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/api/util/names.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/api/util/usages.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/const.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/generic_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types_certificaterequest.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/types_issuer.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/apis/meta/v1/doc.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/apis/meta/v1/register.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/apis/meta/v1/types.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/apis/meta/v1/zz_generated.deepcopy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/logs/logs.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pkg/controller/certificaterequests/approver/sync.go",
+      "target": "file:pkg/util/feature/feature_gate.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:pkg/controller/certificate-shim/sync.go:SyncFnFor",
+      "target": "function:pkg/controller/certificate-shim/sync.go:validateIngressLike",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/certificate-shim/sync.go:SyncFnFor",
+      "target": "function:pkg/controller/certificate-shim/sync.go:buildCertificates",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/certificate-shim/sync.go:SyncFnFor",
+      "target": "function:pkg/controller/certificate-shim/sync.go:findCertificatesToBeRemoved",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/certificate-shim/sync.go:SyncFnFor",
+      "target": "function:pkg/controller/certificate-shim/sync.go:extractExtraAnnotations",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/certificate-shim/sync.go:SyncFnFor",
+      "target": "function:pkg/controller/certificate-shim/sync.go:issuerForIngressLike",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/certificate-shim/sync.go:buildCertificates",
+      "target": "function:pkg/controller/certificate-shim/sync.go:mergeAnnotations",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/certificate-shim/sync.go:buildCertificates",
+      "target": "function:pkg/controller/certificate-shim/sync.go:setIssuerSpecificConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/certificate-shim/sync.go:certNeedsUpdate",
+      "target": "function:pkg/controller/certificate-shim/sync.go:mergeAnnotations",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/certificaterequests/approver/approver.go:ProcessItem",
+      "target": "function:pkg/controller/certificaterequests/approver/sync.go:Sync",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:pkg/controller/certificaterequests/approver/sync.go:Sync",
+      "target": "function:pkg/controller/certificaterequests/approver/sync.go:updateStatusOrApply",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

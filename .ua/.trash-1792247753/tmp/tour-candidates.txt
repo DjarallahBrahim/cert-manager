@@ -1,0 +1,502 @@
+file:internal/apis/certmanager/v1/defaults.go	Registers API defaulting functions for cert-manager Certificate and CertificateRequest types, including the runtime default for the private key rotation policy.
+file:internal/apis/certmanager/v1/doc.go	Package documentation and code-generation markers that drive conversion and defaulting generation between the internal and external cert-manager v1 API types.
+file:internal/apis/certmanager/v1/register.go	Registers the internal cert-manager v1 API group and scheme builder and exposes the resource helper used for conversions and serialization.
+file:internal/apis/certmanager/v1/zz_generated.defaults.go	Generated defaulting registration that wires the cert-manager v1 API types into a Kubernetes runtime scheme.
+file:internal/apis/certmanager/validation/certificate.go	Implements admission validation for Certificate resources, checking issuer references, SANs, key usages, durations, keystores, and secret templates.
+file:internal/apis/certmanager/validation/certificaterequest.go	Validates CertificateRequest resources and their approval conditions, including CSR spec consistency and condition transition rules.
+file:internal/cainjector/bundle/bundle.go	Appends certificates to a PEM CA bundle for cainjector, de-duplicating entries and dropping expired certificates.
+file:internal/cainjector/feature/features.go	Defines cainjector-specific feature gates and registers them with the shared cert-manager feature gate registry on init.
+file:pkg/apis/certmanager/doc.go	Package documentation for the cert-manager.io API group, declaring the group name and Go group name used for code generation.
+file:pkg/apis/certmanager/v1/const.go	Defines certificate duration and renewal defaults plus Vault authentication mount-path constants for the cert-manager v1 API.
+file:pkg/apis/certmanager/v1/doc.go	Package-level documentation and deepcopy/OpenAPI code-generation markers for the cert-manager v1 API types.
+file:pkg/apis/certmanager/v1/generic_issuer.go	Defines the GenericIssuer interface and the shared accessor/setter methods that let Issuer and ClusterIssuer be handled uniformly by controllers.
+file:pkg/apis/certmanager/v1/register.go	Registers the cert-manager v1 API types with the Kubernetes runtime scheme under the cert-manager.io group.
+file:pkg/apis/certmanager/v1/types.go	Shared cert-manager v1 constants for label/annotation keys, KeyUsage values, keystore entries, plus the DefaultKeyUsages helper.
+file:pkg/apis/certmanager/v1/types_certificate.go	Defines the Certificate custom resource and its full spec/status surface: subject and SANs, renewal policy, secret and keystore targets, private key settings, conditions and name constraints.
+file:pkg/apis/certmanager/v1/types_certificaterequest.go	Defines the CertificateRequest resource, its issuance parameters, signed output fields and approval/readiness conditions.
+file:pkg/apis/certmanager/v1/types_issuer.go	Defines Issuer and ClusterIssuer resources together with every issuer backend configuration (ACME, CA, Vault, Venafi, SelfSigned), authentication types and status conditions.
+file:pkg/apis/certmanager/v1/zz_generated.deepcopy.go	Generated deep-copy implementations for all cert-manager v1 API types, required for the Kubernetes object runtime contract.
+file:pkg/apis/experimental/v1alpha1/types.go	Experimental annotation keys for CertificateSigningRequests covering requested duration, CA flag, self-signed private keys and Venafi custom fields.
+file:pkg/apis/meta/v1/doc.go	Package documentation for the shared, version-independent meta API types used across cert-manager API groups.
+file:pkg/apis/meta/v1/register.go	Registers the shared meta API types with the Kubernetes scheme so they can be used inside cert-manager resources.
+file:pkg/apis/meta/v1/types.go	Shared reference types reused by cert-manager APIs: local object references, issuer references and Secret key selectors.
+file:pkg/apis/meta/v1/zz_generated.deepcopy.go	Generated deep-copy implementations for the shared meta API reference types.
+file:pkg/controller/builder.go	Provides the controller Builder and its constructor, letting controller packages register an implementation, optional duration logic and run the controller through the shared context.
+file:pkg/controller/certificaterequests/approver/approver.go	Controller that watches CertificateRequests and runs the approval policy chain, approving or denying requests based on configured policy.
+file:pkg/controller/certificaterequests/approver/sync.go	Applies approval decisions to CertificateRequests by updating their conditions and status, using server-side apply when enabled.
+file:pkg/controller/certificaterequests/ca/ca.go	CA issuer implementation that signs CertificateRequests with a CA key pair stored in a Secret.
+file:pkg/controller/certificaterequests/checks.go	Event handler helpers that enqueue CertificateRequests when a generic Issuer they reference changes.
+file:pkg/controller/certificaterequests/controller.go	Generic CertificateRequest controller framework that owns the work queue and informers and delegates signing to an issuer-specific implementation.
+file:pkg/controller/certificaterequests/fake/fake.go	Fake issuer implementation used in tests to stub CertificateRequest signing with a caller-provided function.
+file:pkg/controller/certificaterequests/selfsigned/checks.go	Event handlers that map Secret changes to CertificateRequests referencing them for the self-signed issuer.
+file:pkg/controller/certificaterequests/selfsigned/selfsigned.go	Self-signed issuer implementation that generates a private key and self-signed certificate for CertificateRequests and registers its Secret informer handler.
+file:pkg/controller/certificaterequests/sync.go	Shared CertificateRequest sync routine that validates approval and issuer state, invokes the issuer backend and records conditions.
+file:pkg/controller/certificaterequests/util/reporter.go	Reporter helper that records CertificateRequest conditions and events for pending, failed, denied, invalid and ready states.
+file:pkg/controller/certificaterequests/vault/vault.go	Vault issuer implementation that authenticates to Vault and signs CertificateRequests through the Vault PKI backend.
+file:pkg/controller/certificaterequests/venafi/venafi.go	Venafi issuer implementation that requests and retrieves certificates from Venafi TPP or Venafi Cloud.
+file:pkg/controller/certificates/issuing/internal/keystore.go	Encodes PEM private keys and certificate chains into JKS and PKCS#12 keystores and truststores for Certificate Secrets.
+file:pkg/controller/certificates/issuing/internal/secret.go	Manages the lifecycle of Certificate Secret data, including keystores, additional output formats, owner references and server-side apply updates.
+file:pkg/controller/certificates/issuing/issuing_controller.go	Main issuing controller that drives Certificate issuance, request validation, failure handling and status updates.
+file:pkg/controller/certificates/issuing/secret_manager.go	Ensures the Certificate Secret exists, matches the Certificate and is evaluated by post-issuance policy checks.
+file:pkg/controller/certificates/issuing/temporary.go	Issues and annotates temporary certificates for Certificates that are still awaiting issuance.
+file:pkg/controller/certificates/keymanager/keymanager_controller.go	Key manager controller that creates, tracks and rotates the private key Secrets used by Certificates.
+file:pkg/controller/certificates/readiness/readiness_controller.go	Readiness controller that evaluates the certificate policy chain and updates the Certificate Ready condition.
+file:pkg/controller/certificates/requestmanager/requestmanager_controller.go	Request manager controller that creates, cleans up and tracks CertificateRequests on behalf of Certificates.
+file:pkg/controller/certificates/trigger/trigger_controller.go	Implements the certificates-trigger controller, which compares Certificates and their Secrets against issuance policies and sets the Issuing condition when re-issuance is required.
+file:pkg/controller/context.go	Defines the shared controller Context and its options, plus the factory that builds Kubernetes clients, informers, metrics and ACME registries for every controller.
+file:pkg/controller/controller.go	Generic queueing controller providing the shared Run/worker loop, metrics and duration hooks used by cert-manager controllers.
+file:pkg/controller/helper.go	Helpers that resolve the resource namespace and ambient credential settings for Issuer and ClusterIssuer objects.
+file:pkg/controller/register.go	Controller registry that lets controllers register constructors by name and the runner instantiate them from a ContextFactory.
+file:pkg/controller/util.go	Shared controller utilities including workqueue rate limiters, owner-reference event handlers and Secret annotation copying.
+file:pkg/issuer/acme/acme.go	ACME issuer implementation that wires account registration, secret-backed account keys and the HTTP-01 solver into the issuer interface.
+file:pkg/issuer/acme/http/http.go	HTTP-01 challenge solver that creates and cleans up solver pods, services and Ingress/HTTPRoute resources and verifies challenge reachability.
+file:pkg/issuer/acme/http/solver/constants.go	Constants defining the well-known HTTP path used for ACME HTTP-01 challenge responses.
+file:pkg/issuer/acme/http/solver/solver.go	Minimal in-cluster HTTP server that serves ACME HTTP-01 challenge tokens for a single domain and key pair.
+file:pkg/issuer/ca/ca.go	CA issuer implementation that signs certificate requests with a CA key pair stored in a Kubernetes Secret.
+file:pkg/issuer/ca/setup.go	Setup routine that validates the CA issuer’s signing key pair and marks the Issuer ready or failed.
+file:pkg/issuer/factory.go	Implements the global issuer constructor registry and the Factory that resolves a GenericIssuer to a concrete issuer implementation.
+file:pkg/issuer/fake/factory.go	Test fake implementing the issuer Factory interface with a pluggable IssuerForFunc.
+file:pkg/issuer/fake/helper.go	Test fake implementing the issuer Helper interface via a configurable GetGenericIssuerFunc.
+file:pkg/issuer/fake/issuer.go	Test fake implementing the issuer Interface with injectable Setup and Issue functions.
+file:pkg/issuer/helper.go	Provides a Helper that looks up Issuer or ClusterIssuer resources by IssuerReference and namespace.
+file:pkg/issuer/issuer.go	Defines the issuer Interface contract and IssueResponse payload shared by all issuer implementations.
+file:pkg/issuer/selfsigned/selfsigned.go	SelfSigned issuer implementation that registers itself with the issuer factory and wires the secret lister.
+file:pkg/issuer/selfsigned/setup.go	Marks SelfSigned issuers Ready unconditionally, since no external service needs bootstrapping.
+file:pkg/issuer/vault/setup.go	Validates Vault issuer configuration, builds the Vault client, and reports readiness conditions for auth and seal state.
+file:pkg/issuer/vault/vault.go	Vault issuer implementation that wires secret and service-account token access and registers with the issuer factory.
+file:pkg/issuer/venafi/client/api/customfield.go	Defines the Venafi custom field type and value struct passed on certificate requests.
+file:pkg/issuer/venafi/client/fake/venafi.go	In-memory fake of the Venafi client Interface with function fields for each operation.
+file:pkg/issuer/venafi/client/instrumentedvenaficlient.go	Decorator around a Venafi connector that logs calls and records request duration metrics.
+file:pkg/issuer/venafi/client/request.go	Implements Venafi TPP certificate request and retrieval flows, converting CSR data into vcert requests and custom fields.
+file:pkg/issuer/venafi/client/venaficlient.go	Builds Venafi TPP and Cloud clients from Issuer specs, including HTTP transport, CA bundles, and credential verification.
+file:pkg/issuer/venafi/setup.go	Pings the Venafi endpoint and verifies credentials during issuer setup, recording Ready conditions.
+file:pkg/issuer/venafi/venafi.go	Venafi issuer implementation wiring the client builder, secret lister, and user agent; registers with the issuer factory.
+file:internal/apis/acme/v1/conversion.go	Declares explicit conversion entry points between the internal ACMEIssuer type and its public v1 representation, working around conversion-gen limitations when types cross API groups.
+file:internal/apis/acme/v1/defaults.go	Registers and applies defaults for ACME Challenge and Order objects, filling in issuerRef kind "Issuer" and group "cert-manager.io" when unset.
+file:internal/apis/acme/v1/register.go	Registers the internal acme/v1 group version with the runtime scheme and exposes a Resource helper that builds GroupResource identifiers.
+file:make/config/samplewebhook/sample/main.go	Reference external ACME DNS01 solver webhook that implements the Solver interface and hands process startup to the cert-manager webhook library.
+file:pkg/apis/acme/doc.go	Package documentation for the public ACME API package, describing the cert-manager ACME resource group.
+file:pkg/apis/acme/v1/const.go	Defines the legacy and current ACME finalizer names used by cert-manager controllers.
+file:pkg/apis/acme/v1/doc.go	Package documentation for the public acme.cert-manager.io/v1 API, including the group name and generated-code markers.
+file:pkg/apis/acme/v1/register.go	Registers the public acme.cert-manager.io/v1 group version and its Challenge and Order types with the Kubernetes scheme.
+file:pkg/apis/acme/v1/types.go	Defines annotation, label, and kind constants shared by the ACME controllers, including HTTP01 ingress overrides and solver pod labels.
+file:pkg/apis/acme/v1/types_challenge.go	Defines the Challenge and ChallengeList resources with their spec (type, solver, issuerRef, authz URL) and status (state, reason, timestamps).
+file:pkg/apis/acme/v1/types_issuer.go	Defines the public ACME issuer configuration types: solver selection, HTTP01 ingress/gateway options, and all supported DNS01 providers.
+file:pkg/apis/acme/v1/types_order.go	Defines the ACME v1 API types for Orders, their spec and status, plus the authorization and challenge structures returned by an ACME server.
+file:pkg/apis/acme/v1/zz_generated.deepcopy.go	Generated deep-copy implementations for every ACME v1 API type, providing the runtime.Object cloning required by Kubernetes clients and informer caches.
+file:pkg/controller/certificaterequests/acme/acme.go	ACME issuer implementation for CertificateRequest resources that creates ACME Orders and waits for certificates to be issued.
+file:pkg/issuer/acme/dns/acmedns/acmedns.go	DNS-01 provider that delegates challenge presentation to an external acme-dns service.
+file:pkg/issuer/acme/dns/akamai/akamai.go	Akamai EdgeDNS provider for ACME DNS-01 challenges, managing challenge TXT records through the Open EdgeGrid API.
+file:pkg/issuer/acme/dns/azuredns/azuredns.go	Azure DNS provider for ACME DNS-01 challenges supporting service principal, ambient, and managed identity authentication.
+file:pkg/issuer/acme/dns/clouddns/clouddns.go	Google Cloud DNS provider for ACME DNS-01 challenges with ambient and service-account credentials.
+file:pkg/issuer/acme/dns/cloudflare/cloudflare.go	Cloudflare DNS provider for ACME DNS-01 challenges using the Cloudflare v4 API.
+file:pkg/issuer/acme/dns/digitalocean/digitalocean.go	DigitalOcean DNS provider for ACME DNS-01 challenges.
+file:pkg/issuer/acme/dns/dns.go	Core DNS-01 solver that resolves issuer solver configuration, instantiates DNS providers, and drives challenge presentation and cleanup.
+file:pkg/issuer/acme/dns/rfc2136/provider.go	RFC 2136 dynamic DNS update solver for ACME DNS-01 challenges, loading nameserver and TSIG settings from secrets.
+file:pkg/issuer/acme/dns/rfc2136/tsig.go	TSIG signing and verification helpers used by the RFC 2136 dynamic DNS provider.
+file:pkg/issuer/acme/dns/route53/route53.go	AWS Route53 DNS provider for ACME DNS-01 challenges with IAM, ambient, and web identity credentials.
+file:pkg/issuer/acme/dns/util/dns.go	DNS helper utilities for resolving challenge FQDNs with optional CNAME following.
+file:pkg/issuer/acme/dns/util/wait.go	DNS propagation utilities that query authoritative nameservers until challenge TXT records become visible.
+file:pkg/issuer/acme/dns/webhook/webhook.go	DNS-01 solver that delegates challenge presentation and cleanup to an external webhook service.
+file:pkg/issuer/acme/http/httproute.go	Manages Gateway API HTTPRoutes so HTTP-01 challenge requests reach the solver service.
+file:pkg/issuer/acme/http/ingress.go	Ingress-based HTTP-01 solver that creates and patches Ingresses to serve ACME challenge paths.
+file:pkg/issuer/acme/http/pod.go	Builds, reconciles, and cleans up the solver pods that serve HTTP-01 challenge responses.
+file:pkg/issuer/acme/http/service.go	Creates and cleans up the Service that exposes HTTP-01 solver pods.
+file:internal/apis/acme/doc.go	Package documentation for the internal (unversioned) ACME API group, declaring deepcopy generation and the acme.cert-manager.io group name.
+file:internal/apis/acme/fuzzer/fuzzer.go	Registers randfill fuzzer functions for internal ACME Order and Challenge types, defaulting issuer references and JSON payloads for round-trip serialization tests.
+file:internal/apis/acme/install/install.go	Registers the internal ACME API group together with its v1 and meta versions into a Kubernetes runtime scheme.
+file:internal/apis/acme/register.go	Defines the internal ACME GroupVersion, scheme builder, and resource helper used to register Order and Challenge types.
+file:internal/apis/acme/types_challenge.go	Internal API types for ACME Challenge resources, including the challenge spec (URL, DNS name, token, solver) and its presented/processing status.
+file:internal/apis/acme/types_issuer.go	Internal API types describing ACME issuer configuration, including server and account settings, HTTP-01/DNS-01 challenge solvers, and credentials for every supported DNS provider.
+file:internal/apis/acme/types_order.go	Internal API types for ACME Order resources plus the authorizations and challenges returned by an ACME server.
+file:internal/apis/acme/v1/doc.go	Package documentation for the internal acme/v1 API version, enabling conversion and deepcopy generation.
+file:internal/apis/acme/v1/zz_generated.conversion.go	Generated conversion functions translating between internal ACME types and the public v1 API types, including scheme registration.
+file:internal/apis/acme/v1/zz_generated.defaults.go	Generated registration of defaulting functions for the internal acme/v1 API group.
+file:internal/apis/acme/validation/challenge.go	Admission validation for Challenge resources, enforcing that the challenge spec is immutable after creation.
+file:internal/apis/acme/validation/order.go	Admission validation for Order resources, enforcing immutability of the request, URLs, certificate, and authorization fields on update.
+file:internal/apis/acme/zz_generated.deepcopy.go	Generated deepcopy implementations for every internal ACME API type, supporting safe object caching and scheme registration.
+file:internal/apis/certmanager/doc.go	Package documentation for the internal (unversioned) cert-manager API group.
+file:internal/apis/certmanager/fuzzer/fuzzer.go	Registers fuzzer functions for internal Certificate and CertificateRequest types, extending the ACME fuzzers with sensible defaults for issuer references and durations.
+file:internal/apis/certmanager/generic_issuer.go	Defines the GenericIssuer interface and accessor helpers that abstract uniformly over Issuer and ClusterIssuer objects.
+file:internal/apis/certmanager/install/install.go	Registers the internal cert-manager API group with its internal, v1, and meta versions into a Kubernetes runtime scheme.
+file:internal/apis/certmanager/register.go	Defines the internal cert-manager GroupVersion, scheme builder, and resource helper for Certificate, CertificateRequest, Issuer, and ClusterIssuer.
+file:internal/apis/certmanager/types.go	Declares annotation keys, resource kind constants, key usage values, and signature algorithm constants shared across the internal cert-manager APIs.
+file:internal/apis/certmanager/types_certificate.go	Internal API types for Certificate resources, covering the certificate spec, private key settings, keystores, name constraints, status, and conditions.
+file:internal/apis/certmanager/types_certificaterequest.go	Internal API types for CertificateRequest resources, including the CSR spec, status, and approval/denial conditions.
+file:internal/apis/certmanager/types_issuer.go	Internal API types for Issuer and ClusterIssuer resources and their backends, including ACME, CA, Vault, Venafi, and self-signed configurations.
+file:internal/apis/certmanager/v1/zz_generated.conversion.go	Generated conversion functions translating between internal cert-manager types and the public v1 API types, including scheme registration.
+file:internal/apis/certmanager/validation/clusterissuer.go	Admission validation entry points for ClusterIssuer resources that delegate to the shared issuer spec validation.
+file:internal/apis/certmanager/validation/issuer.go	Comprehensive validation of Issuer and ClusterIssuer specs, covering ACME, CA, self-signed, Vault, and Venafi configurations and their credentials.
+file:internal/apis/certmanager/validation/util/conditions.go	Utility helper for locating a CertificateRequest condition by its condition type.
+file:internal/apis/certmanager/validation/util/nameserver.go	Validates and normalizes RFC2136 nameserver addresses into host:port form, defaulting the port to 53.
+file:internal/apis/certmanager/validation/warnings.go	Defines the warning message constants emitted by the cert-manager validating webhook, including ACME EAB deprecation and private key rotation policy notices.
+file:internal/apis/certmanager/zz_generated.deepcopy.go	Generated deepcopy implementations for every internal cert-manager API type, supporting safe object caching and scheme registration.
+file:internal/apis/meta/doc.go	Package documentation for cert-manager's internal meta API group, enabling deepcopy generation and declaring the meta.cert-manager.io group name.
+file:internal/apis/meta/install/install.go	Registers the internal and v1 meta API types with a Kubernetes runtime scheme so shared reference types can be encoded and decoded.
+file:internal/apis/meta/register.go	Defines scheme registration entry points for the internal meta API group and a helper for building qualified GroupResource names.
+file:internal/apis/meta/types.go	Defines internal meta API types — object and issuer references, secret key selectors, condition statuses, and the TLS CA data key — shared across cert-manager API groups.
+file:internal/apis/meta/v1/conversion.go	Hand-written conversion functions between internal and v1 meta reference types, working around conversion-gen limitations for cross-group types.
+file:internal/apis/meta/v1/defaults.go	Registers defaulting functions for the v1 meta API with the shared scheme builder.
+file:internal/apis/meta/v1/doc.go	Package documentation and code-generation markers for the v1 meta API, driving conversion, deepcopy, and defaulter generation.
+file:internal/apis/meta/v1/register.go	Registers the v1 meta API group version, exposes resource helpers, and wires defaulting functions into the shared scheme builder.
+file:internal/apis/meta/v1/zz_generated.conversion.go	Generated conversion registrations and auto-conversion helpers translating between v1 and internal meta reference types.
+file:internal/apis/meta/v1/zz_generated.defaults.go	Generated defaulting registration that wires the meta v1 defaulting functions into the API scheme.
+file:internal/apis/meta/zz_generated.deepcopy.go	Generated deep-copy implementations for meta reference types, ensuring safe copying of API objects.
+file:pkg/apis/meta/doc.go	Declares the public meta API group name (meta.cert-manager.io) and documents the shared meta types package.
+file:pkg/issuer/acme/dns/rfc2136/rfc2136.go	DNS-01 solver implementing RFC 2136 dynamic DNS updates with optional TSIG authentication, used to create and remove ACME TXT challenge records.
+file:pkg/webhook/admission/chain.go	PluginChain type that fans admission requests out to a sequence of admission plugins, aggregating warnings and errors.
+file:pkg/webhook/admission/custom_decoder.go	Decoders that convert admission request raw extensions into typed internal objects or unstructured objects, preserving GroupVersionKind information.
+file:pkg/webhook/admission/custom_mutation_webhook.go	Adapts cert-manager mutation plugins to controller-runtime's admission webhook, decoding requests and returning JSON patches.
+file:pkg/webhook/admission/custom_validator_webhook.go	Adapts cert-manager validation plugins to controller-runtime's admission webhook for create, update, and delete operations, including warning propagation.
+file:pkg/webhook/admission/handler.go	Base admission handler that tracks which admission operations a plugin handles and provides a constructor for that operation set.
+file:pkg/webhook/admission/interfaces.go	Defines the base, validation, and mutation admission interfaces that all cert-manager webhook plugins implement.
+file:pkg/webhook/server/server.go	Generic webhook HTTP server that runs the controller-runtime manager, secure webhook listener, healthz/livez endpoints, metrics, and optional pprof with graceful shutdown.
+file:internal/apis/config/cainjector/doc.go	Package-level documentation for the internal cainjector configuration API group, declaring the group name and deepcopy code-generation markers.
+file:internal/apis/config/cainjector/fuzzer/fuzzer.go	Provides randfill fuzzer functions for the internal cainjector configuration, seeding defaults so API round-trip tests do not mutate values.
+file:internal/apis/config/cainjector/install/install.go	Registers the cainjector internal and v1alpha1 configuration types into a runtime scheme via a single exported Install helper.
+file:internal/apis/config/cainjector/register.go	Defines the internal cainjector config GroupVersion, Resource helper and known-type registration for the scheme.
+file:internal/apis/config/cainjector/scheme/scheme.go	Builds a runtime scheme and codec factory preloaded with the internal and v1alpha1 cainjector configuration types.
+file:internal/apis/config/cainjector/types.go	Defines the internal CAInjectorConfiguration type plus the data-source and injectable-resource enablement sub-configs consumed by the cainjector binary.
+file:internal/apis/config/cainjector/v1alpha1/defaults.go	Implements defaulting for the cainjector v1alpha1 configuration, filling logging, metrics and watch-enablement fields when unset.
+file:internal/apis/config/cainjector/v1alpha1/doc.go	Versioned package documentation for cainjector config v1alpha1 that declares the conversion, defaulter and group-name code-generation directives.
+file:internal/apis/config/cainjector/v1alpha1/register.go	Registers the cainjector config v1alpha1 GroupVersion, its Resource helper and the local scheme builder used for conversions and defaulting.
+file:internal/apis/config/cainjector/v1alpha1/zz_generated.conversion.go	Generated conversion functions translating between the v1alpha1 and internal cainjector configuration types, delegating shared TLS and leader-election fields to the shared conversions package.
+file:internal/apis/config/cainjector/v1alpha1/zz_generated.defaults.go	Generated defaulting registration that wires the cainjector configuration defaulter, including shared leader-election and serving-TLS defaults, into the scheme.
+file:internal/apis/config/cainjector/validation/validation.go	Validates the cainjector configuration, delegating logging and leader-election checks to shared validators and aggregating field errors.
+file:internal/apis/config/cainjector/zz_generated.deepcopy.go	Generated DeepCopy implementations for the internal cainjector configuration types, deep-copying slices, maps and nested logging/TLS structs.
+file:internal/apis/config/controller/doc.go	Package-level documentation for the internal controller configuration API group, declaring the group name and deepcopy code-generation markers.
+file:internal/apis/config/controller/fuzzer/fuzzer.go	Provides randfill fuzzer functions for the internal controller configuration, populating every defaulted field so API round-trip tests stay stable.
+file:internal/apis/config/controller/install/install.go	Registers the controller internal and v1alpha1 configuration types into a runtime scheme via a single exported Install helper.
+file:internal/apis/config/controller/register.go	Defines the internal controller config GroupVersion, Resource helper and known-type registration for the scheme.
+file:internal/apis/config/controller/scheme/scheme.go	Builds a runtime scheme and codec factory preloaded with the internal and v1alpha1 controller configuration types.
+file:internal/apis/config/controller/types.go	Defines the internal ControllerConfiguration type together with its leader-election, ingress-shim, ACME HTTP01 and ACME DNS01 sub-configurations.
+file:internal/apis/config/controller/v1alpha1/defaults.go	Implements defaulting for the controller v1alpha1 configuration, applying cert-manager's default addresses, controller list, worker counts and ACME solver settings.
+file:internal/apis/config/controller/v1alpha1/doc.go	Versioned package documentation for controller config v1alpha1 that declares the conversion, defaulter and group-name code-generation directives.
+file:internal/apis/config/controller/v1alpha1/register.go	Registers the controller config v1alpha1 GroupVersion, its Resource helper and the local scheme builder used for conversions and defaulting.
+file:internal/apis/config/controller/v1alpha1/zz_generated.conversion.go	Generated conversion functions translating every v1alpha1 controller configuration type to and from its internal counterpart, delegating shared TLS and leader-election fields.
+file:internal/apis/config/controller/v1alpha1/zz_generated.defaults.go	Generated defaulting registration that chains the controller, leader-election, ingress-shim and ACME solver defaulters into the scheme.
+file:internal/apis/config/controller/validation/validation.go	Validates the controller configuration, checking logging, metrics TLS, leader election, ingress-shim defaults and ACME HTTP01/DNS01 solver fields.
+file:internal/apis/config/controller/zz_generated.deepcopy.go	Generated deepcopy implementations for the internal controller configuration API types, covering ControllerConfiguration and its nested IngressShim, ACME HTTP01/DNS01 and leader election structs.
+file:internal/apis/config/shared/doc.go	Package documentation for the shared internal configuration API, declaring the package-level deepcopy generation marker.
+file:internal/apis/config/shared/types_leaderelection.go	Defines the internal LeaderElectionConfig type shared by cert-manager components for leader election tuning.
+file:internal/apis/config/shared/types_tlsconfig.go	Defines internal TLS serving configuration types plus helpers that detect whether filesystem-based or dynamic (CA-generated) serving credentials have been configured.
+file:internal/apis/config/shared/v1alpha1/conversion.go	Hand-written conversion functions between the internal shared config types and their v1alpha1 API representations, including pointer and duration helpers used by generated conversions.
+file:internal/apis/config/shared/v1alpha1/defaults.go	Provides defaulting functions for shared v1alpha1 configuration, filling in dynamic serving leaf duration and leader election timing defaults.
+file:internal/apis/config/shared/v1alpha1/doc.go	Package documentation for the shared v1alpha1 configuration API, declaring conversion, deepcopy and defaulting generation markers.
+file:internal/apis/config/shared/v1alpha1/register.go	Registers the shared v1alpha1 configuration scheme builder by aliasing the controller v1alpha1 SchemeBuilder so shared types join the same scheme.
+file:internal/apis/config/shared/v1alpha1/zz_generated.conversion.go	Generated conversion registry and auto-conversion routines wiring shared internal config types to v1alpha1, including TLS, dynamic/filesystem serving and leader election structs.
+file:internal/apis/config/shared/v1alpha1/zz_generated.defaults.go	Generated defaulting registration that installs the shared v1alpha1 defaulting functions into the scheme.
+file:internal/apis/config/shared/validation/validation.go	Validation helpers for shared configuration: enforces mutually exclusive filesystem/dynamic TLS sources with required fields and sane leader election timings.
+file:internal/apis/config/shared/zz_generated.deepcopy.go	Generated deepcopy implementations for shared internal config types such as TLSConfig, DynamicServingConfig, FilesystemServingConfig and LeaderElectionConfig.
+file:internal/apis/config/webhook/doc.go	Package documentation for the internal webhook component configuration API, marking the package for deepcopy generation.
+file:internal/apis/config/webhook/fuzzer/fuzzer.go	Fuzzer functions for the webhook configuration API that fill pprof and metrics addresses and install recommended logging settings during round-trip fuzz tests.
+file:internal/apis/config/webhook/install/install.go	Adds the internal and v1alpha1 webhook configuration types to a runtime scheme, used when decoding webhook component config files.
+file:internal/apis/config/webhook/register.go	Registers the internal webhook configuration group version and known types with the Kubernetes runtime scheme, exposing the Resource helper and AddToScheme builder.
+file:internal/apis/config/webhook/scheme/scheme.go	Builds a runtime scheme and codec factory containing the webhook configuration types so component config can be decoded and defaulted.
+file:internal/apis/config/webhook/types.go	Defines the internal WebhookConfiguration type describing webhook listener ports, TLS settings, kubeconfig, logging, feature gates and metrics options.
+file:internal/apis/config/webhook/v1alpha1/defaults.go	Defaulting logic for the v1alpha1 webhook configuration, setting secure/healthz ports to 6443/6080 and applying recommended logging defaults.
+file:internal/apis/config/webhook/v1alpha1/doc.go	Package documentation for the webhook v1alpha1 configuration API, declaring conversion, deepcopy and defaulting generation markers.
+file:internal/apis/config/webhook/v1alpha1/register.go	Registers the webhook v1alpha1 group version and wires the hand-written defaulting functions into the scheme builder.
+file:internal/apis/config/webhook/v1alpha1/zz_generated.conversion.go	Generated conversion functions between the v1alpha1 and internal WebhookConfiguration, delegating TLS config conversion to the shared conversion helpers.
+file:internal/apis/config/webhook/v1alpha1/zz_generated.defaults.go	Generated defaulting registration for WebhookConfiguration, invoking the webhook defaults and nested dynamic serving config defaults.
+file:internal/apis/config/webhook/validation/validation.go	Validates the webhook component configuration: logging config, TLS settings and port ranges for the healthz and secure listeners.
+file:internal/apis/config/webhook/zz_generated.deepcopy.go	Generated deepcopy implementations for the internal WebhookConfiguration, including its TLS, logging, feature gate and metrics TLS fields.
+file:pkg/apis/config/cainjector/doc.go	Package documentation and group-name declaration for the public cainjector configuration API group (cainjector.config.cert-manager.io).
+file:pkg/apis/config/cainjector/v1alpha1/doc.go	Package-level documentation for the cainjector configuration v1alpha1 API package, carrying the deepcopy code-generation marker.
+file:pkg/apis/config/cainjector/v1alpha1/register.go	Registers the cainjector v1alpha1 configuration types with the Kubernetes scheme and exposes a helper to build resource GroupResources.
+file:pkg/apis/config/cainjector/v1alpha1/types.go	Defines the v1alpha1 CAInjectorConfiguration API type along with the data-source and injectable-resource toggles that control cainjector behaviour.
+file:pkg/apis/config/cainjector/v1alpha1/zz_generated.deepcopy.go	Generated deep-copy implementations for the cainjector v1alpha1 configuration types, used by the Kubernetes runtime to clone objects safely.
+file:pkg/apis/config/controller/doc.go	Package documentation and group-name declaration for the controller configuration API group (controller.config.cert-manager.io).
+file:pkg/apis/config/controller/v1alpha1/doc.go	Package-level documentation for the controller configuration v1alpha1 API package, carrying the deepcopy code-generation marker.
+file:pkg/apis/config/controller/v1alpha1/register.go	Registers the controller v1alpha1 configuration types with the Kubernetes scheme and exposes a resource GroupResource helper.
+file:pkg/apis/config/controller/v1alpha1/types.go	Defines the v1alpha1 ControllerConfiguration API type and its nested leader-election, ingress-shim, ACME HTTP01 and ACME DNS01 configuration structs.
+file:pkg/apis/config/controller/v1alpha1/zz_generated.deepcopy.go	Generated deep-copy implementations for the controller v1alpha1 configuration types, recursively cloning nested config structs and slices.
+file:pkg/apis/config/shared/v1alpha1/doc.go	Package documentation for the shared v1alpha1 configuration types (durations, leader election, TLS) reused across cert-manager components.
+file:pkg/apis/config/shared/v1alpha1/types_duration.go	Defines a backwards-compatible Duration API type with custom JSON marshalling so fields can accept either a duration string or an integer nanosecond value.
+file:pkg/apis/config/shared/v1alpha1/types_leaderelection.go	Defines the shared leader election configuration type used by all cert-manager components, including lease, renew and retry timings.
+file:pkg/apis/config/shared/v1alpha1/types_tlsconfig.go	Defines the shared TLS serving configuration type along with its dynamic and filesystem certificate source variants used by all cert-manager components.
+file:pkg/apis/config/shared/v1alpha1/zz_generated.deepcopy.go	Generated deep-copy implementations for the shared configuration types (Duration, leader election and TLS configs).
+file:pkg/apis/config/webhook/doc.go	Package documentation and group-name declaration for the webhook configuration API group (webhook.config.cert-manager.io).
+file:pkg/apis/config/webhook/v1alpha1/doc.go	Package-level documentation for the webhook configuration v1alpha1 API package, carrying the deepcopy code-generation marker.
+file:pkg/apis/config/webhook/v1alpha1/register.go	Registers the webhook v1alpha1 configuration types with the Kubernetes scheme and exposes a resource GroupResource helper.
+file:pkg/apis/config/webhook/v1alpha1/types.go	Defines the v1alpha1 WebhookConfiguration API type covering serving ports, TLS, kubeconfig, logging, feature gates and metrics settings.
+file:pkg/apis/config/webhook/v1alpha1/zz_generated.deepcopy.go	Generated deep-copy implementations for the webhook v1alpha1 configuration type, cloning nested TLS, logging and metrics config.
+file:pkg/webhook/configfile/configfile.go	Implements config-file loading for the webhook: decodes the internal WebhookConfiguration and exposes referenced file paths for watching.
+file:pkg/webhook/options/options.go	Builds the webhook's default internal configuration and binds every webhook setting (TLS, logging, feature gates, metrics, ports) to command-line flags.
+file:pkg/issuer/acme/setup.go	ACME issuer setup that loads or generates the account key, registers or verifies the ACME account, and configures the shared client registry.
+file:cmd/cainjector/app/cainjector.go	Builds the cobra command for the cert-manager cainjector binary, wiring flags, optional config-file loading, validation and the run callback together.
+file:cmd/cainjector/app/controller.go	Boots the cainjector controller-runtime manager: configures schemes, cache, leader election, metrics TLS, optional pprof server, and registers all CA injectors.
+file:cmd/cainjector/app/options/options.go	Defines the cainjector flag set and default configuration, registering all command-line flags including data sources, injectables, TLS, logging and controller-runtime options.
+file:cmd/cainjector/main.go	Entry point of the cainjector binary: initializes logging, sets up the exit handler, builds the root command and executes it with error-code propagation.
+file:cmd/controller/app/controller.go	Bootstrap for the cert-manager controller manager: builds the controller context, starts metrics, profiling and healthz servers, acquires leader election, launches informers, and runs the enabled controllers.
+file:cmd/controller/app/options/options.go	Defines the controller CLI flags and constructs the default ControllerConfiguration, then resolves the set of enabled controllers from options and feature gates.
+file:cmd/controller/app/start.go	Builds the controller's cobra server command, loads and validates the ControllerConfiguration from flags or a config file, and invokes the run function. Blank imports register all controller and issuer implementations.
+file:cmd/controller/main.go	Entry point for the cert-manager controller binary: sets up graceful shutdown handling and logging, constructs the server command, and maps execution errors to exit codes.
+file:cmd/startupapicheck/main.go	Entry point for the startupapicheck binary: configures logging, builds the root cobra command, registers the check subcommand, and maps errors to exit codes.
+file:cmd/startupapicheck/pkg/check/api/api.go	Implements the `check api` subcommand, polling the cert-manager API with an API checker until CRDs and webhooks are ready or the configured wait timeout expires.
+file:cmd/startupapicheck/pkg/check/check.go	Defines the `check` parent cobra command and attaches the `api` subcommand to it.
+file:cmd/startupapicheck/pkg/factory/factory.go	Provides a Kubernetes client factory that registers kubeconfig flags and populates the namespace, enforcement flag, and REST config during cobra PreRun.
+pipeline:.github/workflows/govulncheck.yaml	Scheduled GitHub Actions workflow that runs `make verify-govulncheck` nightly on the main branch to detect Go vulnerabilities affecting the project.
+pipeline:.github/workflows/make-self-upgrade.yaml	Scheduled workflow that runs `make upgrade-klone` and `make generate`, commits any changes to a self-upgrade branch, and opens or updates a pull request with the result.
+pipeline:.github/workflows/renovate.yaml	Scheduled workflow running self-hosted Renovate against the repository using `.github/renovate.json5`, with Octo STS credentials, to keep dependencies up to date.
+pipeline:.github/workflows/scorecards.yml	OpenSSF Scorecards supply-chain security workflow that analyzes the default branch and uploads SARIF results to GitHub code scanning.
+config:.clomonitor.yml	CLOMonitor configuration that points the CNCF project-health scanner at cert-manager's license scanning results so the license check passes.
+config:.golangci.yaml	golangci-lint v2 configuration enabling a large curated set of Go linters with exclusions for generated code and third-party paths, plus gci/gofmt import formatting ordered by cert-manager prefix.
+document:CODE_OF_CONDUCT.md	Stub document redirecting readers to the cert-manager organisation Code of Conduct in the community repository.
+document:CONTRIBUTING.md	Stub document pointing contributors to the cert-manager website's contributing guide.
+document:GOVERNANCE.md	Stub document redirecting readers to the cert-manager organisation governance file in the community repository.
+service:Makefile	Auto-generated root Makefile that bootstraps the cert-manager build: sets host OS/arch and git version variables, defines the _bin/artifacts directories, a clean target, and includes the repository-specific and shared make modules.
+document:README.md	Primary project README describing what cert-manager does, its supported issuers, documentation and installation pointers, development and contribution guidance, Go module compatibility caveats, and security reporting instructions.
+document:RELEASE.md	Release documentation covering the release schedule, links to the detailed release process, and the artifacts produced per release: container images, Helm chart, and binaries.
+document:ROADMAP.md	Minimal roadmap stub noting that the project roadmap has moved to the cert-manager community repository.
+document:SECURITY.md	Security policy stub directing vulnerability reporters to the cert-manager organisation security document.
+document:SECURITY_CONTACTS.md	Stub document pointing to the cert-manager organisation security contacts list used for private vulnerability reports.
+document:USERS.md	Stub document redirecting to the cert-manager organisation users list maintained in the community repository.
+config:go.mod	Go module definition for github.com/cert-manager/cert-manager on Go 1.25, pinning Kubernetes, controller-runtime, cloud provider SDKs, Vault, Venafi, and other dependencies required by the certificate issuance components.
+config:go.sum	Generated Go checksum lock file recording module hashes for every direct and transitive dependency in the cert-manager module graph.
+config:klone.yaml	Klone manifest declaring which cert-manager makefile-modules (boilerplate, go, help, licenses, repository-base, tools, helm) are cloned into make/_shared and at which pinned commit, driving the root Makefile includes.
+config:deploy/charts/cert-manager/Chart.template.yaml	Helm chart metadata template for the cert-manager chart, defining the chart name, description, keywords, maintainers, Artifact Hub annotations, and minimum Kubernetes version.
+document:deploy/charts/cert-manager/README.template.md	Helm chart README combining installation, upgrade, and uninstall instructions with a complete auto-generated reference for every chart value (236 headings across global, controller, webhook, cainjector, and ACME solver settings).
+document:deploy/charts/cert-manager/signkey_annotation.txt	Two-line metadata file holding the fingerprint and download URL of the GPG key used to sign cert-manager Helm chart releases, read by the build to annotate the generated Chart.yaml.
+config:deploy/charts/cert-manager/values.schema.json	JSON Schema (draft-07) validating the cert-manager Helm chart values, using 252 nested $defs entries to constrain every top-level value and each component's image, resource, scheduling, and security settings.
+config:deploy/charts/cert-manager/values.yaml	Default values for the cert-manager Helm chart, configuring the controller, webhook, cainjector, ACME solver, startup API check, CRDs, RBAC, monitoring, and shared global scheduling and image-pull settings.
+document:deploy/charts/cert-manager/templates/NOTES.txt	Helm post-install notes displayed after installing the cert-manager chart, warning about the deprecated installCRDs value and the new private key rotation default, then pointing users to Issuer and ingress-shim documentation.
+config:deploy/charts/cert-manager/templates/cainjector-config.yaml	Renders an optional ConfigMap holding the cainjector configuration file, defaulting apiVersion and kind to cainjector.config.cert-manager.io/v1alpha1 CAInjectorConfiguration.
+config:deploy/charts/cert-manager/templates/cainjector-deployment.yaml	Defines the cainjector Deployment, wiring replicas, leader election, feature gates, optional config volume, Prometheus metrics port, security context, scheduling constraints, and image pull secrets for the CA injector component.
+config:deploy/charts/cert-manager/templates/cainjector-poddisruptionbudget.yaml	Optional PodDisruptionBudget for cainjector pods that applies minAvailable or maxUnavailable from values and defaults to minAvailable 1 when neither is configured.
+config:deploy/charts/cert-manager/templates/cainjector-psp-clusterrole.yaml	ClusterRole granting the cainjector service account use of its dedicated PodSecurityPolicy when the deprecated podSecurityPolicy feature is enabled.
+config:deploy/charts/cert-manager/templates/cainjector-psp-clusterrolebinding.yaml	ClusterRoleBinding that binds the cainjector PodSecurityPolicy ClusterRole to the cainjector service account in the release namespace.
+config:deploy/charts/cert-manager/templates/cainjector-psp.yaml	Legacy policy/v1beta1 PodSecurityPolicy restricting cainjector to unprivileged containers, fixed UID/GID 1000, no host namespaces, and a minimal set of volume types.
+config:deploy/charts/cert-manager/templates/cainjector-rbac.yaml	Full RBAC set for cainjector: cluster-wide read and update access to certificates, secrets, webhook configurations, APIServices and CRDs, plus leader-election Role and RoleBinding in the configured namespace.
+config:deploy/charts/cert-manager/templates/cainjector-service.yaml	ClusterIP Service exposing the cainjector Prometheus metrics port 9402, rendered only when monitoring is enabled without a PodMonitor.
+config:deploy/charts/cert-manager/templates/cainjector-serviceaccount.yaml	Creates the cainjector ServiceAccount with configurable token automounting, annotations, labels, and global image pull secrets.
+config:deploy/charts/cert-manager/templates/controller-config.yaml	Renders an optional ConfigMap containing the controller configuration, defaulting apiVersion and kind to controller.config.cert-manager.io/v1alpha1 ControllerConfiguration.
+config:deploy/charts/cert-manager/templates/crd-acme.cert-manager.io_challenges.yaml	CustomResourceDefinition for the namespaced ACME Challenge resource, including the full OpenAPI v3 schema for solver types such as HTTP-01 and DNS-01.
+config:deploy/charts/cert-manager/templates/crd-acme.cert-manager.io_orders.yaml	CustomResourceDefinition for the namespaced ACME Order resource, describing certificate identifiers, issuer references, and authorization status.
+config:deploy/charts/cert-manager/templates/crd-cert-manager.io_certificaterequests.yaml	CustomResourceDefinition for the namespaced CertificateRequest resource, capturing CSR data, issuer reference, requested duration, and issued certificate status.
+config:deploy/charts/cert-manager/templates/crd-cert-manager.io_certificates.yaml	CustomResourceDefinition for the namespaced Certificate resource, defining secretName, DNS names, issuers, keystore options, private key rotation policy, and renewal status.
+config:deploy/charts/cert-manager/templates/crd-cert-manager.io_clusterissuers.yaml	CustomResourceDefinition for the cluster-scoped ClusterIssuer resource, containing the shared IssuerSpec and IssuerStatus schemas for ACME, CA, Vault, Venafi and self-signed issuers.
+config:deploy/charts/cert-manager/templates/crd-cert-manager.io_issuers.yaml	CustomResourceDefinition for the namespaced Issuer resource, defining issuer backends (ACME, CA, Vault, Venafi, self-signed) and their status conditions.
+config:deploy/charts/cert-manager/templates/deployment.yaml	Defines the main cert-manager controller Deployment, configuring replicas, leader election, feature gates, optional config volume, metrics endpoint, security context, and pod scheduling.
+config:deploy/charts/cert-manager/templates/extras-objects.yaml	Generic escape hatch that renders every entry of .Values.extraObjects through Helm's tpl function so users can inject arbitrary additional Kubernetes manifests into the release.
+config:deploy/charts/cert-manager/templates/networkpolicy-egress.yaml	Optional egress NetworkPolicy for the webhook pods, allowing operators to restrict outbound traffic from webhook components via values.
+config:deploy/charts/cert-manager/templates/networkpolicy-webhooks.yaml	Helm template rendering a NetworkPolicy that restricts ingress traffic to the cert-manager webhook pods, with ingress rules supplied from .Values.webhook.networkPolicy.ingress.
+config:deploy/charts/cert-manager/templates/poddisruptionbudget.yaml	Helm template creating a PodDisruptionBudget for the cert-manager controller, defaulting to minAvailable: 1 unless the user sets minAvailable or maxUnavailable.
+config:deploy/charts/cert-manager/templates/podmonitor.yaml	Helm template producing a Prometheus Operator PodMonitor that scrapes the cainjector, controller, and webhook pods on the http-metrics port, failing the render if ServiceMonitor is enabled at the same time.
+config:deploy/charts/cert-manager/templates/psp-clusterrole.yaml	Helm template defining a ClusterRole that grants the `use` verb on the cert-manager PodSecurityPolicy resource by name.
+config:deploy/charts/cert-manager/templates/psp-clusterrolebinding.yaml	Helm template binding the cert-manager PSP ClusterRole to the controller ServiceAccount so the controller may use the PodSecurityPolicy.
+config:deploy/charts/cert-manager/templates/psp.yaml	Helm template defining a restrictive PodSecurityPolicy for cert-manager controller pods, with non-privileged containers, fixed UID/GID 1000, and a whitelist of volume types.
+config:deploy/charts/cert-manager/templates/rbac.yaml	Large Helm template rendering the controller's full RBAC surface: leader-election and token-request Roles/RoleBindings plus ClusterRoles and ClusterRoleBindings for issuers, clusterissuers, certificates, orders, challenges, ingress-shim, approvals, certificate signing requests, and aggregated view/edit roles.
+config:deploy/charts/cert-manager/templates/service.yaml	Helm template creating a ClusterIP Service exposing the controller's Prometheus metrics port 9402 for ServiceMonitor scraping, rendered only when Prometheus is enabled without PodMonitor.
+config:deploy/charts/cert-manager/templates/serviceaccount.yaml	Helm template creating the cert-manager controller ServiceAccount with configurable image pull secrets, automount settings, annotations, and labels.
+config:deploy/charts/cert-manager/templates/servicemonitor.yaml	Helm template rendering a Prometheus Operator ServiceMonitor that scrapes cert-manager component endpoints by target port, with a guard preventing simultaneous PodMonitor enablement.
+config:deploy/charts/cert-manager/templates/startupapicheck-job.yaml	Helm template defining the post-install startup API check Job, which runs the cert-manager image with `check api --wait` to verify the API is serving before the release is considered healthy.
+config:deploy/charts/cert-manager/templates/startupapicheck-psp-clusterrole.yaml	Helm template granting the `use` verb on the startup API check PodSecurityPolicy through a dedicated ClusterRole.
+config:deploy/charts/cert-manager/templates/startupapicheck-psp-clusterrolebinding.yaml	Helm template binding the startup API check PSP ClusterRole to the startupapicheck ServiceAccount.
+config:deploy/charts/cert-manager/templates/startupapicheck-psp.yaml	Helm template defining a PodSecurityPolicy for the startup API check Job pods, permitting only projected and secret volumes with fixed UID/GID 1000.
+config:deploy/charts/cert-manager/templates/startupapicheck-rbac.yaml	Helm template creating a Role and RoleBinding that let the startup API check ServiceAccount create CertificateRequests during the post-install verification.
+config:deploy/charts/cert-manager/templates/startupapicheck-serviceaccount.yaml	Helm template creating the startup API check ServiceAccount with configurable annotations, labels, automount token, and image pull secrets.
+config:deploy/charts/cert-manager/templates/webhook-config.yaml	Helm template packaging the webhook's WebhookConfiguration values into a ConfigMap under config.yaml, defaulting apiVersion and kind before serializing with toYaml.
+config:deploy/charts/cert-manager/templates/webhook-deployment.yaml	Helm template for the cert-manager webhook Deployment, wiring replicas, security context, feature gates, dynamic-serving CA secret flags, health and metrics ports, and the mounted webhook configuration ConfigMap.
+config:deploy/charts/cert-manager/templates/webhook-mutating-webhook.yaml	Helm template registering the MutatingWebhookConfiguration that intercepts CREATE operations on cert-manager CertificateRequests and routes them to the webhook service's /mutate path.
+config:deploy/charts/cert-manager/templates/webhook-poddisruptionbudget.yaml	Helm template creating a PodDisruptionBudget for webhook pods, defaulting to minAvailable: 1 unless the user overrides availability settings.
+config:deploy/charts/cert-manager/templates/webhook-psp-clusterrole.yaml	Helm-templated ClusterRole granting the cert-manager webhook permission to 'use' its PodSecurityPolicy, rendered only when global.podSecurityPolicy.enabled is true.
+config:deploy/charts/cert-manager/templates/webhook-psp-clusterrolebinding.yaml	ClusterRoleBinding that binds the webhook PodSecurityPolicy ClusterRole to the webhook ServiceAccount, gated on the podSecurityPolicy feature flag.
+config:deploy/charts/cert-manager/templates/webhook-psp.yaml	PodSecurityPolicy for the cert-manager webhook pods, disabling privileged mode and privilege escalation while restricting volumes, host access, and runAs/seccomp/AppArmor profiles.
+config:deploy/charts/cert-manager/templates/webhook-rbac.yaml	Bundles all webhook RBAC objects: a namespaced Role/RoleBinding for reading and updating dynamic serving-certificate Secrets and a ClusterRole/ClusterRoleBinding for creating SubjectAccessReviews.
+config:deploy/charts/cert-manager/templates/webhook-service.yaml	Service exposing the webhook over HTTPS on port 443 and optionally a Prometheus metrics port, with configurable service type, IP families, load balancer IP, annotations, and labels.
+config:deploy/charts/cert-manager/templates/webhook-serviceaccount.yaml	ServiceAccount for the webhook pods with configurable token automounting, annotations, labels, and global image pull secrets, created only when webhook.serviceAccount.create is set.
+config:deploy/charts/cert-manager/templates/webhook-validating-webhook.yaml	ValidatingWebhookConfiguration registering webhook.cert-manager.io for CREATE/UPDATE on cert-manager.io and acme.cert-manager.io resources, with CA injection, Equivalent match policy, and a service or URL client config.
+document:deploy/crds/README.md	Short reference note explaining that the CRD YAML files in deploy/crds are source material used to build the officially supported deployment manifests (e.g. the Helm chart) and are not intended for direct use by end users.
+config:deploy/crds/acme.cert-manager.io_challenges.yaml	CustomResourceDefinition for the ACME Challenge resource (challenges.acme.cert-manager.io, v1) defining the full OpenAPI schema for in-flight ACME challenge validation, including solver configuration, DNS-01/HTTP-01 status fields, and challenge state.
+config:deploy/crds/acme.cert-manager.io_orders.yaml	CustomResourceDefinition for the ACME Order resource (orders.acme.cert-manager.io, v1) describing the schema of an ACME order, its authorizations, identifiers, and certificate request references.
+config:deploy/crds/cert-manager.io_certificaterequests.yaml	CustomResourceDefinition for the CertificateRequest resource (certificaterequests.cert-manager.io, v1), defining the CSR payload, issuer reference, and issued certificate response schema.
+config:deploy/crds/cert-manager.io_certificates.yaml	CustomResourceDefinition for the Certificate resource (certificates.cert-manager.io, v1) covering desired certificate specs such as secretName, dnsNames, issuers, keystores, and renewal policy along with status conditions.
+config:deploy/crds/cert-manager.io_clusterissuers.yaml	CustomResourceDefinition for the ClusterIssuer resource (clusterissuers.cert-manager.io, v1), defining the cluster-scoped issuer schema with ACME, CA, Vault, Venafi, and self-signed issuer configurations.
+config:deploy/crds/cert-manager.io_issuers.yaml	CustomResourceDefinition for the namespaced Issuer resource (issuers.cert-manager.io, v1), defining issuer backend configuration for ACME, CA, Vault, Venafi, and self-signed issuers plus their status conditions.
+config:deploy/manifests/01-namespace.yaml	Kubernetes Namespace manifest that creates the cert-manager namespace, prefixed with 01 so it is applied before other deployment resources.
+document:deploy/manifests/README.md	Explains that the static deployment manifests moved to being generated from the official Helm chart and published as GitHub release assets from v0.8 onward.
+config:deploy/manifests/helm-values.yaml	Helm values overlay for the cert-manager chart that pins the release name, sets small CPU/memory requests for the controller and ingress shim, and enables the webhook.
+config:deploy/manifests/namespace.yaml	Minimal Kubernetes Namespace manifest declaring the cert-manager namespace for deployment manifests.
+document:design/20190708.certificate-request-crd.md	Design proposal introducing the CertificateRequest CRD as the hand-off point between certificate controllers and issuers, covering API fields, approval/denial conditions, RBAC scope, ACME and issuing controller behaviour, and graduation criteria.
+document:design/20191218-security-context-deprecation.md	Design note describing how to deprecate the Helm chart's boolean securityContext.enabled in favour of an arbitrary securityContext block, including pseudo-code precedence rules and eight backwards-compatibility test cases.
+document:design/20200326.extensible-certificate-controller.md	Design proposal for refactoring the Certificate controller into composable keymanager, requestmanager, and issuing components, with new API fields that make issuance and private key handling extensible.
+document:design/20210203.certificate-request-identity.md	Design proposal adding user identity (username, UID, groups, extra attributes) to CertificateRequest and propagating it so issuers can make authorisation decisions and embed identity in issued certificates.
+document:design/20210209.certificates.k8s.io-adoption.md	Design proposal for adopting the upstream certificates.k8s.io CertificateSigningRequest API and signer model, covering third-party interoperability, security implications, field mapping, and the migration path away from the CertificateRequest CRD.
+document:design/20220118.certificate-issuance-exponential-backoff.md	Design proposal introducing exponential backoff for failed certificate issuance attempts, defining new status fields and worked examples for automatic and manually triggered reissuance.
+document:design/20220118.server-side-apply.md	Design proposal to migrate cert-manager controllers from update/patch semantics to server-side apply, covering field manager naming, conflict resolution, field deletion, and feature-gate rollout.
+document:design/20220614-timeouts.md	Design proposal to increase controller and issuer operation timeouts, remove intermediate middleware timeouts, and raise ACME HTTP client timeouts so slow external issuers no longer fail spuriously.
+document:design/20221205-memory-management.md	Design proposal for cutting cert-manager memory consumption by caching partial object metadata and applying transform functions to strip Secret data before objects enter informer caches, with benchmarks and alternatives analysis.
+document:design/20230302.gomod.md	Design document describing the split of the cert-manager repository into multiple Go modules (one per binary, separate test modules, and a pkg/apis module) to reduce dependency churn and simplify patching.
+document:design/20230601.gateway-route-hostnames.md	Design proposal for inferring TLS hostnames from Gateway API Route objects so cert-manager can populate Certificate DNS names automatically from Gateway/HTTPRoute resources.
+document:design/20240122.scarf.md	Short proposal to adopt Scarf.sh for container image download analytics and to decouple cert-manager images from the Jetstack-branded Quay repository as part of CNCF vendor-neutrality work.
+document:design/20240206.helm-resource-policy.md	Proposal to add the helm.sh/resource-policy: keep annotation to cert-manager CRDs and standardise CRD upgrade options in the Helm chart so uninstalling the chart does not delete CRDs and user data.
+document:design/20240518.push-to-multiple-registries.md	Design proposal enabling release tooling to publish cert-manager image artifacts to multiple container registries, covering mirroring strategy, credentials, failure handling, and rollout criteria.
+document:design/20240625.push-charts-to-oci.md	Design proposal for publishing cert-manager Helm charts to an OCI registry in addition to the traditional chart repository, including signing, risks, and graduation criteria.
+document:design/acme-orders-challenges-crd.md	Design proposal introducing first-class ACME Order and Challenge CRDs so order flow state is no longer hidden inside the Certificate status, along with the required API types, order and challenge controllers, and refactoring plan.
+document:design/template.md	Reusable design-document template adapted from the Kubernetes KEP template, providing standard sections such as summary, motivation, proposal, design details, test plan, and production readiness for new cert-manager proposals.
+config:hack/artifact-metadata.template.json	Template for release artifact metadata JSON, with TODO placeholders for artifact name, sha256 digest, OS, and architecture filled in by release tooling.
+document:hack/boilerplate-go.txt	Apache 2.0 license header template in Go comment syntax, passed to Kubernetes code generators via --go-header-file so generated files carry the cert-manager copyright notice.
+document:hack/boilerplate-sh.txt	Apache 2.0 license header template in shell comment syntax, prepended to generated shell files such as the kind image list.
+document:hack/boilerplate-yaml.txt	Apache 2.0 license header template in YAML comment syntax with a YEAR placeholder, used when stamping generated YAML manifests.
+document:make/README.md	Developer guide to cert-manager's GNU Make tooling, covering target documentation conventions, .PHONY usage, prerequisite types, and automatic tool provisioning.
+file:make/cluster.sh	Creates or validates a local kind cluster for development, selecting a pinned node image per Kubernetes version and patching CoreDNS for example.com test domains.
+file:make/e2e-ci.sh	Thin CI wrapper that runs the end-to-end suite through Make with two flake attempts, CI mode enabled, and kind logs captured on exit.
+file:make/e2e.sh	Runs cert-manager's Ginkgo end-to-end suite against an existing kind cluster, translating environment variables into ginkgo flags and emitting JUnit artifacts.
+file:make/kind_images.sh	Generated shell fragment mapping supported Kubernetes minor versions to pinned kind node image digests.
+file:make/_shared/tools/util/checkhash.sh	Verifies a file's SHA-256 against an expected hash and, in learn mode, appends the corrected substitution to a file instead of failing.
+file:make/_shared/tools/util/hash.sh	Portable wrapper that prints only the SHA-256 hex digest of a file using shasum on macOS and sha256sum elsewhere.
+file:make/_shared/tools/util/lock.sh	Locks a target file while a tool download is in progress, using flock when available and a temporary file plus trap to publish only complete downloads.
+config:make/_shared_new/helm/crd.template.footer.yaml	One-line Helm template footer that closes the conditional block opened by the CRD header template.
+config:make/_shared_new/helm/crd.template.header.yaml	Helm template header that generates a CustomResourceDefinition, conditionally adding the keep resource-policy annotation and standard labels.
+document:make/_shared_new/helm/crds_dir.README.md	Warns that the CRDs directory holds source definitions for reference and development only, consumed by officially supported deployment methods such as the Helm chart.
+config:make/config/bind/configmap.yaml	ConfigMap supplying BIND9 named.conf plus master zone files for the http01.example.com and dns01.example.com test zones used by cert-manager end-to-end tests.
+config:make/config/bind/deployment.yaml	Kubernetes Deployment that runs a BIND9 DNS server on UDP port 8053 for cert-manager integration tests, mounting the bind ConfigMap into /etc/bind.
+config:make/config/bind/service.yaml	ClusterIP Service exposing the BIND test DNS server on UDP port 53 with a hardcoded cluster IP so tests can address it directly by address.
+config:make/config/pebble/chart/templates/configmap.yaml	Helm-templated ConfigMap providing the Pebble ACME test server configuration along with its localhost serving certificate and private key, including custom 123h and 456h certificate profiles for cert-manager tests.
+config:make/config/pebble/chart/templates/deployment.yaml	Helm-templated Deployment running the Pebble ACME test server on port 14000 with the mounted Pebble config, strict-mode toggle, HTTPS readiness probe, and values-driven resources and node selection.
+config:make/config/pebble/chart/templates/service.yaml	Helm-templated Service mapping external TCP port 443 to the Pebble container's HTTPS ACME endpoint on port 14000.
+document:make/config/samplewebhook/chart/templates/NOTES.txt	Empty Helm NOTES template placeholder for the sample webhook chart; it renders no post-install usage notes.
+config:make/config/samplewebhook/chart/templates/apiservice.yaml	Helm-templated APIService registration exposing the sample webhook as v1alpha1 in its API group, with cert-manager CA injection from the webhook serving certificate.
+config:make/config/samplewebhook/chart/templates/deployment.yaml	Helm-templated Deployment for the sample aggregated API server webhook, serving TLS on port 8443 with the cert-manager-issued serving certificate, health probes, and values-driven scheduling settings.
+config:make/config/samplewebhook/chart/templates/pki.yaml	Helm-templated PKI chain for the sample webhook: a self-signed Issuer, a root CA Certificate, a CA Issuer backed by that root, and a serving Certificate with in-cluster DNS names.
+config:make/config/samplewebhook/chart/templates/rbac.yaml	Helm-templated RBAC bundle for the sample webhook: its ServiceAccount, request-header authentication Role and RoleBinding in kube-system, auth-delegator ClusterRoleBinding, plus a domain-solver ClusterRole and binding for cert-manager.
+config:make/config/samplewebhook/chart/templates/service.yaml	Helm-templated Service exposing the sample webhook's HTTPS port and selecting its pods, used by the APIService registration.
+config:test/fixtures/cert-manager-resources.yaml	Kubernetes test fixture declaring a self-signed Issuer plus two labelled Certificates (test1, test2) that reference it, used to verify that cert-manager reconciles real resources in e2e tests.
+config:test/fixtures/cert-manager-values.yaml	Helm values override used by the test harness to install cert-manager with locally built images, short leader-election timings, and explicit controller, webhook, and cainjector resource limits.
+config:test/fixtures/example-webhook-values.yaml	Minimal example Helm values fragment that sets CPU and memory requests/limits for a webhook container, used as sample input for webhook-related integration tests.
+config:test/fixtures/pebble-values.yaml	Empty Helm values placeholder for the Pebble ACME test server; the fixture file reserves a customization point that currently relies entirely on chart defaults.
+config:test/fixtures/vault-values.yaml	Empty Helm values placeholder for the Vault test deployment, providing a hook for Vault-specific overrides without changing chart defaults today.
+config:test/fixtures/upgrade/overlay/cainjector-ops.yaml	ytt overlay that patches the cert-manager-cainjector Deployment container image using arch and app_version data values, letting upgrade tests substitute locally built cainjector images.
+config:test/fixtures/upgrade/overlay/controller-ops.yaml	ytt overlay that rewrites the cert-manager controller Deployment image from the supplied arch and app_version values, enabling upgrade tests to run against a specific build.
+config:test/fixtures/upgrade/overlay/values.yaml	ytt data-values schema stub exposing app_version for the upgrade overlay set; the concrete value is injected at render time by the test harness.
+config:test/fixtures/upgrade/overlay/webhook-ops.yaml	ytt overlay that replaces the cert-manager webhook Deployment container image using arch and app_version, so upgrade tests exercise a candidate webhook build.
+document:.github/ISSUE_TEMPLATE/bug.md	GitHub issue template that guides reporters through describing a cert-manager bug, expected behaviour, reproduction steps, and environment details.
+document:.github/ISSUE_TEMPLATE/feature-request.md	GitHub issue template for proposing cert-manager features, covering problem statement, desired solution, alternatives, and environment context.
+document:.github/PULL_REQUEST_TEMPLATE.md	Pull request template with sections for motivation, change kind, and release notes to standardize cert-manager contributions.
+config:.github/chainguard/make-self-upgrade.sts.yaml	Chainguard Security Token Service policy granting write access to contents, pull requests, and workflows for the automated self-upgrade workflow on main branches.
+config:.github/chainguard/renovate.sts.yaml	Chainguard STS policy that lets the Renovate bot obtain GitHub tokens with contents, issues, pull request, and workflow permissions on main branches.
+file:cmd/acmesolver/LICENSES	Generated license inventory for the acmesolver binary module, mirroring the go.mod dependency set for release compliance.
+file:cmd/acmesolver/OWNERS	Directory OWNERS file assigning the area/acme label to acmesolver command changes.
+file:cmd/acmesolver/app/app.go	Builds the acmesolver cobra command that runs the HTTP-01 challenge solver with graceful shutdown on context cancellation.
+config:cmd/acmesolver/go.mod	Go module definition for the acmesolver binary, pinning cobra, component-base, and a replace directive that points the cert-manager dependency at the repository root.
+config:cmd/acmesolver/go.sum	Go module checksum database for acmesolver dependencies, ensuring reproducible builds and supply-chain integrity.
+file:cmd/acmesolver/main.go	Entry point of the acmesolver binary that initializes logging, sets up graceful shutdown, and executes the acmesolver cobra command.
+file:cmd/cainjector/LICENSES	Generated license inventory for the cainjector binary module, listing licenses of its Kubernetes and controller-runtime dependencies.
+config:cmd/cainjector/go.mod	Go module definition for the cainjector binary, requiring client-go, apiextensions-apiserver, kube-aggregator, and controller-runtime with a replace to the root module.
+config:cmd/cainjector/go.sum	Go module checksum database for cainjector dependencies, ensuring reproducible builds and supply-chain integrity.
+file:cmd/controller/LICENSES	Generated license inventory for the controller binary module, covering the broad set of cloud DNS and Kubernetes dependencies it imports.
+config:cmd/controller/go.mod	Go module definition for the cert-manager controller binary, pinning cloud DNS SDKs, client-go, and cobra while replacing the cert-manager dependency with the repository root.
+config:cmd/controller/go.sum	Large Go module checksum database for controller dependencies, ensuring reproducible builds and supply-chain integrity.
+file:cmd/startupapicheck/LICENSES	Generated license inventory for the startupapicheck binary module, listing licenses of its CLI-runtime and Kubernetes dependencies.
+config:cmd/startupapicheck/go.mod	Go module definition for the startupapicheck binary, requiring cli-runtime, client-go, controller-runtime, and cobra with a replace to the root module.
+config:cmd/startupapicheck/go.sum	Go module checksum database for startupapicheck dependencies, ensuring reproducible builds and supply-chain integrity.
+file:cmd/webhook/LICENSES	Generated license inventory for the webhook binary module listing every dependency and its SPDX identifier, used for release compliance and CI freshness checks.
+file:cmd/webhook/app/webhook.go	Builds the cert-manager webhook server command, wiring CLI flags, configuration-file loading, feature gates, validation, and the webhook server lifecycle.
+config:cmd/webhook/go.mod	Go module definition for the standalone webhook binary, pinning cobra, component-base, and controller-runtime and replacing the main cert-manager module with the repository root.
+config:cmd/webhook/go.sum	Checksum lock file for the webhook binary module's dependency graph, guaranteeing reproducible and verified Go builds.
+file:cmd/webhook/main.go	Entry point of the cert-manager webhook binary; initializes logging and executes the server command with exit-code handling.
+file:deploy/OWNERS	OWNERS metadata applying the `area/deploy` label to the deployment manifests and Helm chart directory.
+file:deploy/charts/cert-manager/.helmignore	Helm packaging ignore list excluding VCS metadata, editor and backup files, chart templates, and previously built archives from the packaged chart.
+file:deploy/charts/cert-manager/templates/_helpers.tpl	Helm template helpers defining chart naming, fullname truncation, service account names, namespace resolution, image references, and shared labels for every cert-manager component.
+file:deploy/charts/cert-manager/values.linter.exceptions	Allowlist of values-linter exceptions declaring chart values intentionally absent from rendered templates, such as CRD enablement flags and the acmesolver pull policy.
+document:docs/README.md	Short pointer README directing readers to cert-manager.io for documentation and to the separate cert-manager/website repository for contributions.
+config:gcb/build_cert_manager.yaml	Google Cloud Build pipeline triggered on tag pushes that unshallows the checkout and runs `make upload-release` to build, sign, and publish release artifacts to GCS.
+service:hack/containers/Containerfile.acmesolver	Container image definition that copies the prebuilt acmesolver binary and license files into the shared base image and sets it as the entrypoint.
+service:hack/containers/Containerfile.cainjector	Container image definition that copies the prebuilt cainjector binary and license files into the shared base image and sets it as the entrypoint.
+service:hack/containers/Containerfile.controller	Container image definition that copies the prebuilt controller binary and license files into the shared base image and sets it as the entrypoint.
+service:hack/containers/Containerfile.startupapicheck	Container image definition that copies the prebuilt startupapicheck binary and license files into the shared base image and sets it as the entrypoint.
+service:hack/containers/Containerfile.webhook	Container image definition that copies the prebuilt webhook binary and license files into the shared base image and sets it as the entrypoint.
+document:hack/openapi_reports/acme.txt	Baseline of OpenAPI rule violations for the ACME API group, consumed by the openapi verification step to tolerate known naming mismatches.
+document:hack/openapi_reports/client.txt	Baseline of OpenAPI naming and list-type violations across cert-manager and Kubernetes client APIs, keeping generated client verification green.
+config:internal/apis/config/cainjector/v1alpha1/testdata/defaults.json	Golden fixture capturing the fully defaulted cainjector component configuration, used by the v1alpha1 defaulting tests.
+config:internal/apis/config/controller/v1alpha1/testdata/defaults.json	Golden fixture capturing the fully defaulted controller component configuration, including controller enablement, concurrency, and ACME solver settings.
+config:internal/apis/config/webhook/v1alpha1/testdata/defaults.json	Golden fixture capturing the fully defaulted webhook component configuration, covering ports, TLS, logging, and metrics settings.
+file:internal/apis/meta/fuzzer/fuzzer.go	Declares the fuzzer function set for the meta API group, currently returning an empty list so that round-trip fuzz tests use only default Kubernetes fuzzing behaviour.
+document:logo/README.md	Explains the cert-manager logo assets, notes that other organisation repositories reference these files by location, and points to the licence terms.
+file:make/00_mod.mk	Root build configuration that sets repository-wide variables such as Go source lists, build flags, binary names, chart paths, and toolchain options before any other make module is included.
+file:make/02_mod.mk	Aggregates the project's Make modules (CI, tests, containers, release, manifests, licences, scanning) and defines top-level targets for tidying, licence generation, and base-image updates.
+file:make/_shared/boilerplate/00_mod.mk	Defines the default Go license header template path and the overridable go_header_file variable used by the shared boilerplate module.
+file:make/_shared/boilerplate/01_mod.mk	Adds shared make targets that verify every file carries the correct license boilerplate via boilersuite and copy the base LICENSE into the repository.
+document:make/_shared/boilerplate/template/boilerplate.go.txt	Apache 2.0 license header template stamped onto generated and hand-written Go files by the shared boilerplate tooling.
+file:make/_shared/generate-verify/00_mod.mk	Initialises the shared lists of generate and verify targets that individual make modules append to, letting the shared layer discover them generically.
+file:make/_shared/generate-verify/02_mod.mk	Defines the generic generate and verify targets, expanding every registered generate target into a verify-% rule that reruns it in an isolated copy of the repo.
+file:make/_shared/generate-verify/util/verify.sh	Helper that copies the repository to a temporary directory, reruns a supplied make target there, and diffs the result against the working tree to prove generated files are committed.
+config:make/_shared/go/.golangci.override.yaml	Shared golangci-lint v2 overlay that enables a broad linter set, staticcheck tuning, exclusion presets, and gci/gofmt formatters merged into each repo's own lint config.
+file:make/_shared/go/01_mod.mk	Shared Go tooling module providing targets for go.work creation, go mod tidy across modules, govulncheck scanning, and generating/verifying/fixing the golangci-lint configuration.
+document:make/_shared/go/README.md	One-line description of the shared make module that bundles Go static analysis checks.
+pipeline:make/_shared/go/base/.github/workflows/govulncheck.yaml	Generated GitHub Actions workflow that runs make verify-govulncheck nightly and on demand to surface newly disclosed Go vulnerabilities affecting the repository.
+file:make/_shared/help/01_mod.mk	Registers the make help target, forwarding the active MAKEFILE_LIST and make binary to the shared help.sh renderer.
+file:make/_shared/help/help.sh	Renders a categorised make help screen by parsing ## doc comments, @category markers, and target rules out of every included makefile and expanding variable-based target names.
+file:make/_shared/klone/01_mod.mk	Provides klone targets for syncing and upgrading the shared makefile modules, with generate-klone deliberately excluded from automatic generation so versions are pinned manually.
+file:make/_shared/licenses/00_mod.mk	Defines the shared configuration defaults for the license-generation module, currently exposing the empty `license_ignore` allowlist that callers can override.
+file:make/_shared/licenses/01_mod.mk	Generates per-module LICENSES files with go-licenses and packages them as OCI image layers so release artifacts carry dependency license information.
+file:make/_shared/licenses/licenses.tmpl	go-licenses text/template that renders the header guidance plus a dependency-name/license-name table into each generated LICENSES file.
+file:make/_shared/repository-base/01_mod.mk	Provides the `generate-base` target that copies the repository-base template tree into the consuming repo, substituting the GitHub repository name and bootstrapping a Renovate config when absent.
+config:make/_shared/repository-base/base/.github/chainguard/make-self-upgrade.sts.yaml	Chainguard Octo STS trust policy that lets the make-self-upgrade workflow on main or master exchange its OIDC token for a GitHub token with contents, pull request, and workflow write access.
+config:make/_shared/repository-base/base/.github/chainguard/renovate.sts.yaml	Octo STS trust policy granting the Renovate workflow broad repository permissions (administration read, contents/issues/PR/workflow write, statuses) for automated dependency updates.
+pipeline:make/_shared/repository-base/base/.github/workflows/make-self-upgrade.yaml	Scheduled GitHub Actions workflow that bumps the vendored makefile-modules via `make upgrade-klone` and `make generate`, then pushes a self-upgrade branch and opens a labelled pull request.
+pipeline:make/_shared/repository-base/base/.github/workflows/renovate.yaml	Nightly GitHub Actions workflow that runs a self-hosted Renovate bot with a short-lived Octo STS token to keep dependencies of the repository up to date.
+pipeline:make/_shared/repository-base/base/Makefile	Generated repository-base Makefile prelude that configures strict make/shell behaviour, derives host, git and artifact variables, and includes the repository's modular make fragments.
+file:make/_shared/repository-base/base/OWNERS_ALIASES	Generated Kubernetes OWNERS alias file mapping the `cm-maintainers` alias to the list of cert-manager maintainer GitHub handles.
+file:make/_shared/repository-base/renovate-bootstrap-config.json5	Minimal JSON5 Renovate bootstrap config that extends the shared cert-manager Renovate preset and is copied to `.github/renovate.json5` when a repo has none.
+file:make/_shared/tools/00_mod.mk	Central tooling module that pins every CLI and Go tool version, downloads and symlinks them into `_bin/tools`, and defines go-version, vendoring, and tool-listing targets used by all other make fragments.
+file:make/_shared_new/helm/01_mod.mk	Include-only aggregator for the newer Helm module set, pulling in CRD generation unless disabled and always including the chart and deploy fragments.
+file:make/_shared_new/helm/crds.mk	Defines `generate-crds`, which runs controller-gen across Go packages and wraps each CRD in Helm templating before writing manifests into the chart and deploy/crds directory.
+file:make/_shared_new/helm/deploy.mk	Adds `install`, `uninstall`, and `template` targets that drive Helm against the current Kubernetes cluster using the packaged chart archive.
+file:make/_shared_new/helm/helm.mk	Packages, publishes, documents, and verifies the Helm chart, including OCI push, values schema/docs generation, linting, kubeconform validation, and Kyverno pod-security checks.
+file:make/base_images.mk	Autogenerated variable definitions pinning digest-addressed distroless static and dynamic base images for each supported CPU architecture.
+file:make/ci.mk	Repository-specific CI targets that verify Go modules and the chart, run errexit checks, regenerate Kubernetes codegen, and produce Helm docs and values schema.
+config:make/config/kind/cluster.yaml	Unversioned kind cluster configuration used by end-to-end tests, tuning a single control-plane node with a fixed service subnet and etcd fsync disabled for speed.
+config:make/config/kyverno/kustomization.yaml	Kustomize overlay that pulls upstream Kyverno pod-security and best-practice policies and patches them to Enforce mode while excluding non-compliant E2E test namespaces.
+config:make/config/kyverno/policy.yaml	Generated multi-document bundle of Kyverno ClusterPolicies enforcing Kubernetes Pod Security Standards and best practices, with exceptions for end-to-end test namespaces.
+file:make/config/lib.sh	Bash helper library sourced by E2E scripts that defines the shared IP layout and provides colorized output and command tracing utilities.
+service:make/config/pebble/Containerfile.pebble	Minimal container image definition that layers the pebble ACME test server binary onto a caller-supplied base image and runs it as the non-root user 1000.
+file:make/config/pebble/chart/.helmignore	Helm packaging ignore list that excludes VCS metadata, editor files, backups, and OS artifacts from the pebble chart archive.
+config:make/config/pebble/chart/Chart.yaml	Metadata for the pebble Helm chart used to run the mock ACME server during end-to-end tests.
+file:make/config/pebble/chart/templates/_helpers.tpl	Helm helper template for the local Pebble chart defining the name and fullname helpers that derive chart- and release-scoped resource names.
+config:make/config/pebble/chart/values.yaml	Default values for the local Pebble ACME test-server Helm chart, setting the local image, ClusterIP service, resource limits, and Pebble strict mode.
+config:make/config/projectcontour/contour.yaml	Contour configuration used by the e2e Gateway API setup, wiring Contour to the acmesolver Gateway and tuning TLS, logging, and Envoy options.
+config:make/config/projectcontour/gateway.yaml	Kubernetes Gateway API resources defining an acmesolver GatewayClass and an HTTP Gateway consumed by Contour during HTTP-01 e2e tests.
+file:make/config/samplewebhook/Containerfile.samplewebhook	Container image definition that copies the sample webhook binary into a non-root base image and runs it as the entrypoint for e2e webhook tests.
+file:make/config/samplewebhook/chart/.helmignore	Helm ignore list excluding VCS metadata, backups, swap files, and IDE files from the packaged sample webhook chart.
+config:make/config/samplewebhook/chart/Chart.yaml	Helm chart metadata for the example webhook chart declaring its name, chart version, and application version.
+file:make/config/samplewebhook/chart/templates/_helpers.tpl	Helm helper templates defining name, fullname, chart label, and self-signed issuer, CA issuer, certificate, and serving-certificate names for the sample webhook chart.
+config:make/config/samplewebhook/chart/values.yaml	Helm values for the sample webhook chart configuring its DNS group name, cert-manager integration namespace and service account, local image, service port, and scheduling options.
+file:make/containers.mk	Make include that builds and saves multi-architecture container image tarballs for the controller, webhook, cainjector, acmesolver, and startupapicheck binaries.
+file:make/e2e-setup.mk	Make include that provisions a kind cluster and installs cert-manager plus every e2e add-on: Gateway API, Vault, Bind, Pebble, ingress-nginx, Contour, Kyverno, and the sample webhook and external issuer.
+file:make/git.mk	Make include exposing git version metadata targets and maintaining the release-version stamp file used to invalidate container builds after checkouts.
+file:make/ko.mk	Make include with experimental ko-based targets that build and push cert-manager images to an OCI registry and deploy them to the current cluster.
+file:make/licenses.mk	Make include that assembles the license header and license footnote files embedded into cert-manager container images and generated manifests.
+file:make/manifests.mk	Make include that packages the Helm chart, renders the static cert-manager and CRD YAML manifests, and assembles signed release manifest bundles.
+file:make/release.mk	Make include implementing the release pipeline: artifact builds, per-architecture container bundles, metadata generation, signing, and GCS upload.
+file:make/scan.mk	Make include running Trivy vulnerability scans against each cert-manager container image tarball.
+file:make/server.mk	Make include cross-compiling the controller, acmesolver, webhook, cainjector, and startupapicheck Go binaries for five Linux architectures.
+file:make/test.mk	Make include defining the unit, integration, live-DNS, upgrade, and e2e test targets along with JUnit-report variants used in CI.
+file:make/third_party.mk	Make include that syncs the vendored third-party tree, strips autocert, rewrites forked ACME import paths, and refreshes upstream license files.
+file:make/util.mk	Make include providing the get-sources helper and targets that print the binary directory, Go sources, and source directories.
+file:pkg/apis/OWNERS	Kubernetes OWNERS metadata for pkg/apis requiring munnerz as reviewer and applying the area/api label.
+file:pkg/apis/config/shared/doc.go	Package documentation for the shared cert-manager configuration API types; contains only the license header and the shared package clause.
+file:pkg/apis/doc.go	Package documentation for the cert-manager API packages declaring the cert-manager.io domain marker; contains only the license header and package clause.
+file:pkg/apis/experimental/doc.go	Package documentation for the experimental cert-manager API group, declaring the experimental.cert-manager.io group name constant.
+file:pkg/issuer/acme/OWNERS	Kubernetes OWNERS file assigning the area/acme label to the ACME issuer directory.
+file:pkg/issuer/acme/dns/OWNERS	Kubernetes OWNERS file assigning the area/acme/dns01 label to the DNS-01 solver directory.
+file:pkg/issuer/acme/dns/route53/OWNERS	Kubernetes OWNERS file listing approvers and reviewers for the Route53 DNS-01 solver.
+file:pkg/issuer/acme/dns/util/testdata/resolv.conf.1	Test fixture resolv.conf containing a domain and IPv4/IPv6 nameserver entries used by DNS resolver parsing tests.
+file:pkg/issuer/acme/http/OWNERS	Kubernetes OWNERS file assigning the area/acme/http01 label to the HTTP-01 solver directory.
+file:pkg/issuer/ca/OWNERS	Kubernetes OWNERS file assigning the area/ca label to the CA issuer directory.
+file:pkg/issuer/selfsigned/OWNERS	Kubernetes OWNERS file assigning the area/selfsigned label to the self-signed issuer directory.
+file:pkg/issuer/vault/OWNERS	Kubernetes OWNERS file listing approvers and reviewers plus the area/vault label for the Vault issuer.
+file:pkg/issuer/venafi/client/fake/connector.go	Fake Venafi connector implementing the vcert endpoint interface with injectable function hooks for unit tests.
+file:pkg/webhook/handlers/interfaces.go	Defines the ValidatingAdmissionHook and MutatingAdmissionHook interfaces used by the webhook admission handlers.
+document:test/e2e/framework/addon/README.md	Empty placeholder README inside the e2e addon framework directory; it currently contains no documentation content.
+config:test/e2e/go.mod	Go module definition for the cert-manager end-to-end test suite, pinning Kubernetes, controller-runtime, Ginkgo and cloud provider client versions and replacing the main module with the local checkout.
+config:test/e2e/go.sum	Dependency checksum lock file for the e2e test module, recording hashes for every direct and indirect Go module version used by the suite.
+config:test/integration/go.mod	Go module definition for the cert-manager integration test suite, pinning Kubernetes, DNS, gateway-api and controller-runtime dependencies and replacing the main and webhook-binary modules with local paths.
+config:test/integration/go.sum	Dependency checksum lock file for the integration test module, recording hashes for every direct and indirect Go module version used by the suite.
+config:test/integration/rfc2136_dns01/testdata/config.json	Empty JSON object used as test data for the RFC2136 DNS-01 integration test.
+config:test/integration/rfc2136_dns01/testdata/rfc2136-tsig-secret.yaml	Kubernetes Secret manifest holding the base64-encoded TSIG key consumed by the RFC2136 DNS-01 integration test.
+config:test/integration/validation/files/issuers.valid.yaml	Valid Issuer manifest with an ACME solver using an empty Route53 stanza, used to verify that OpenAPI and webhook validation accept credential-less DNS-01 configuration.
+document:third_party/README.md	Explains cert-manager's conventions for vendored third-party code, how to refresh it with make update-third-party, and the steps for adding a new forked sub-folder.
+config:third_party/klone.yaml	Klone configuration declaring the upstream cert-manager crypto fork and commit used to vendor the acme package into third_party/forked.
+document:tools/README.md	Short note explaining that the tools directory is a legacy wrapper kept only for compatibility and may be removed in the future.

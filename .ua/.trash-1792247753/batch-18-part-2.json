@@ -1,0 +1,881 @@
+{
+  "nodes": [
+    {
+      "id": "file:test/e2e/suite/issuers/selfsigned/certificate.go",
+      "type": "file",
+      "name": "certificate.go",
+      "filePath": "test/e2e/suite/issuers/selfsigned/certificate.go",
+      "summary": "End-to-end tests for Certificates issued by a SelfSigned Issuer, verifying keypairs, DNS names, durations and regeneration behaviour.",
+      "tags": [
+        "test",
+        "e2e",
+        "selfsigned",
+        "certificate",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/selfsigned/certificaterequest.go",
+      "type": "file",
+      "name": "certificaterequest.go",
+      "filePath": "test/e2e/suite/issuers/selfsigned/certificaterequest.go",
+      "summary": "End-to-end tests for CertificateRequests served by a SelfSigned Issuer, covering signing, durations, key usages and stored private keys.",
+      "tags": [
+        "test",
+        "e2e",
+        "selfsigned",
+        "certificate-request",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/selfsigned/fixtures.go",
+      "type": "file",
+      "name": "fixtures.go",
+      "filePath": "test/e2e/suite/issuers/selfsigned/fixtures.go",
+      "summary": "Holds hardcoded RSA, ECDSA and Ed25519 private keys, decodes them at init time and offers CSR/secret helpers for the SelfSigned test suite.",
+      "tags": [
+        "test",
+        "fixtures",
+        "key-generation",
+        "csr",
+        "selfsigned"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/vault/certificate/approle.go",
+      "type": "file",
+      "name": "approle.go",
+      "filePath": "test/e2e/suite/issuers/vault/certificate/approle.go",
+      "summary": "Parameterised Vault AppRole e2e suite that issues Certificates from Vault Issuers and ClusterIssuers with and without root CA saving.",
+      "tags": [
+        "test",
+        "e2e",
+        "vault",
+        "approle",
+        "certificate"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/vault/certificate/cert_auth.go",
+      "type": "file",
+      "name": "cert_auth.go",
+      "filePath": "test/e2e/suite/issuers/vault/certificate/cert_auth.go",
+      "summary": "Parameterised Vault client-certificate-auth e2e suite issuing Certificates from Issuers and ClusterIssuers with optional root CA saving.",
+      "tags": [
+        "test",
+        "e2e",
+        "vault",
+        "client-auth",
+        "certificate"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/vault/certificaterequest/approle.go",
+      "type": "file",
+      "name": "approle.go",
+      "filePath": "test/e2e/suite/issuers/vault/certificaterequest/approle.go",
+      "summary": "Vault AppRole e2e tests for CertificateRequests, asserting issued contents, approval state and renewal durations from Vault-backed issuers.",
+      "tags": [
+        "test",
+        "e2e",
+        "vault",
+        "approle",
+        "certificate-request"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/vault/import.go",
+      "type": "file",
+      "name": "import.go",
+      "filePath": "test/e2e/suite/issuers/vault/import.go",
+      "summary": "Blank-import barrel registering the Vault certificate and CertificateRequest test packages.",
+      "tags": [
+        "test",
+        "barrel",
+        "entry-point",
+        "vault"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/vault/issuer.go",
+      "type": "file",
+      "name": "issuer.go",
+      "filePath": "test/e2e/suite/issuers/vault/issuer.go",
+      "summary": "Exercises Vault Issuer configuration end to end: AppRole and Kubernetes auth, secret references, readiness conditions and error reporting.",
+      "tags": [
+        "test",
+        "e2e",
+        "vault",
+        "issuer",
+        "authentication"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:test/e2e/suite/issuers/vault/mtls.go",
+      "type": "file",
+      "name": "mtls.go",
+      "filePath": "test/e2e/suite/issuers/vault/mtls.go",
+      "summary": "Tests Vault Issuers configured for enforced mutual TLS, including client certificate secrets, auth mounts and certificate issuance.",
+      "tags": [
+        "test",
+        "e2e",
+        "vault",
+        "mtls",
+        "issuer"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/selfsigned/fixtures.go:init",
+      "type": "function",
+      "name": "init",
+      "filePath": "test/e2e/suite/issuers/selfsigned/fixtures.go",
+      "lineRange": [
+        31,
+        47
+      ],
+      "summary": "Decodes the embedded RSA, ECDSA and Ed25519 private keys into crypto signers, panicking if a fixture cannot be parsed.",
+      "tags": [
+        "test",
+        "fixtures",
+        "initialization",
+        "key-generation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/selfsigned/fixtures.go:newPrivateKeySecret",
+      "type": "function",
+      "name": "newPrivateKeySecret",
+      "filePath": "test/e2e/suite/issuers/selfsigned/fixtures.go",
+      "lineRange": [
+        91,
+        101
+      ],
+      "summary": "Wraps a PEM encoded private key and optional certificate into a Kubernetes TLS Secret for selfsigned tests.",
+      "tags": [
+        "test",
+        "fixtures",
+        "secrets",
+        "keys"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/selfsigned/fixtures.go:generateCSR",
+      "type": "function",
+      "name": "generateCSR",
+      "filePath": "test/e2e/suite/issuers/selfsigned/fixtures.go",
+      "lineRange": [
+        130,
+        142
+      ],
+      "summary": "Creates a PEM encoded certificate signing request signed by the supplied key with the given common name and DNS names.",
+      "tags": [
+        "test",
+        "csr",
+        "key-generation",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/vault/certificate/approle.go:runVaultAppRoleTests",
+      "type": "function",
+      "name": "runVaultAppRoleTests",
+      "filePath": "test/e2e/suite/issuers/vault/certificate/approle.go",
+      "lineRange": [
+        58,
+        279
+      ],
+      "summary": "Runs the Vault AppRole certificate suite for a given issuer kind, provisioning Vault auth/roles and asserting issued certificate contents.",
+      "tags": [
+        "test",
+        "e2e",
+        "vault",
+        "approle",
+        "orchestration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/vault/certificate/cert_auth.go:runVaultClientCertAuthTest",
+      "type": "function",
+      "name": "runVaultClientCertAuthTest",
+      "filePath": "test/e2e/suite/issuers/vault/certificate/cert_auth.go",
+      "lineRange": [
+        59,
+        289
+      ],
+      "summary": "Runs the Vault client-certificate authentication suite for a given issuer kind, creating client cert secrets and validating issued certificates.",
+      "tags": [
+        "test",
+        "e2e",
+        "vault",
+        "client-auth",
+        "orchestration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:test/e2e/suite/issuers/vault/certificaterequest/approle.go:runVaultAppRoleTests",
+      "type": "function",
+      "name": "runVaultAppRoleTests",
+      "filePath": "test/e2e/suite/issuers/vault/certificaterequest/approle.go",
+      "lineRange": [
+        49,
+        278
+      ],
+      "summary": "Runs the Vault AppRole CertificateRequest suite for a given issuer kind, checking signed request data and renewal durations.",
+      "tags": [
+        "test",
+        "e2e",
+        "vault",
+        "approle",
+        "orchestration"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:test/e2e/suite/issuers/selfsigned/certificate.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/selfsigned/certificate.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/selfsigned/certificate.go",
+      "target": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/selfsigned/certificate.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/selfsigned/certificate.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/selfsigned/certificate.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/selfsigned/certificate.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/selfsigned/certificaterequest.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/selfsigned/certificaterequest.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/selfsigned/certificaterequest.go",
+      "target": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/selfsigned/certificaterequest.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/selfsigned/certificaterequest.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/selfsigned/certificaterequest.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/selfsigned/certificaterequest.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/approle.go",
+      "target": "file:test/e2e/framework/addon/globals.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/approle.go",
+      "target": "file:test/e2e/framework/addon/vault/proxy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/approle.go",
+      "target": "file:test/e2e/framework/addon/vault/setup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/approle.go",
+      "target": "file:test/e2e/framework/addon/vault/vault.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/approle.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/approle.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/approle.go",
+      "target": "file:test/e2e/framework/helper/featureset/featureset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/approle.go",
+      "target": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/approle.go",
+      "target": "file:test/e2e/framework/helper/validation/validation.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/approle.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/approle.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/approle.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/approle.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/cert_auth.go",
+      "target": "file:test/e2e/framework/addon/globals.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/cert_auth.go",
+      "target": "file:test/e2e/framework/addon/vault/proxy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/cert_auth.go",
+      "target": "file:test/e2e/framework/addon/vault/setup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/cert_auth.go",
+      "target": "file:test/e2e/framework/addon/vault/vault.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/cert_auth.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/cert_auth.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/cert_auth.go",
+      "target": "file:test/e2e/framework/helper/featureset/featureset.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/cert_auth.go",
+      "target": "file:test/e2e/framework/helper/validation/certificates/certificates.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/cert_auth.go",
+      "target": "file:test/e2e/framework/helper/validation/validation.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/cert_auth.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/cert_auth.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/cert_auth.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/cert_auth.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificaterequest/approle.go",
+      "target": "file:test/e2e/framework/addon/globals.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificaterequest/approle.go",
+      "target": "file:test/e2e/framework/addon/vault/proxy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificaterequest/approle.go",
+      "target": "file:test/e2e/framework/addon/vault/setup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificaterequest/approle.go",
+      "target": "file:test/e2e/framework/addon/vault/vault.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificaterequest/approle.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificaterequest/approle.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificaterequest/approle.go",
+      "target": "file:test/e2e/framework/helper/validation/certificaterequests/certificaterequests.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificaterequest/approle.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificaterequest/approle.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificaterequest/approle.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificaterequest/approle.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/import.go",
+      "target": "file:test/e2e/suite/issuers/vault/certificate/approle.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/import.go",
+      "target": "file:test/e2e/suite/issuers/vault/certificate/cert_auth.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/import.go",
+      "target": "file:test/e2e/suite/issuers/vault/certificaterequest/approle.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/issuer.go",
+      "target": "file:test/e2e/framework/addon/globals.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/issuer.go",
+      "target": "file:test/e2e/framework/addon/vault/proxy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/issuer.go",
+      "target": "file:test/e2e/framework/addon/vault/setup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/issuer.go",
+      "target": "file:test/e2e/framework/addon/vault/vault.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/issuer.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/issuer.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/issuer.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/issuer.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/issuer.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/issuer.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/mtls.go",
+      "target": "file:test/e2e/framework/addon/globals.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/mtls.go",
+      "target": "file:test/e2e/framework/addon/vault/proxy.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/mtls.go",
+      "target": "file:test/e2e/framework/addon/vault/setup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/mtls.go",
+      "target": "file:test/e2e/framework/addon/vault/vault.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/mtls.go",
+      "target": "file:test/e2e/framework/cleanup.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/mtls.go",
+      "target": "file:test/e2e/framework/framework.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/mtls.go",
+      "target": "file:test/e2e/framework/testenv.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/mtls.go",
+      "target": "file:test/e2e/framework/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/mtls.go",
+      "target": "file:test/e2e/util/domains.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/mtls.go",
+      "target": "file:test/e2e/util/util.go",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/selfsigned/fixtures.go",
+      "target": "function:test/e2e/suite/issuers/selfsigned/fixtures.go:init",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/selfsigned/fixtures.go",
+      "target": "function:test/e2e/suite/issuers/selfsigned/fixtures.go:newPrivateKeySecret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/selfsigned/fixtures.go",
+      "target": "function:test/e2e/suite/issuers/selfsigned/fixtures.go:generateCSR",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/approle.go",
+      "target": "function:test/e2e/suite/issuers/vault/certificate/approle.go:runVaultAppRoleTests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificate/cert_auth.go",
+      "target": "function:test/e2e/suite/issuers/vault/certificate/cert_auth.go:runVaultClientCertAuthTest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:test/e2e/suite/issuers/vault/certificaterequest/approle.go",
+      "target": "function:test/e2e/suite/issuers/vault/certificaterequest/approle.go:runVaultAppRoleTests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "function:test/e2e/suite/issuers/vault/certificate/approle.go:runVaultAppRoleTests",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:NewVaultInitializerAppRole",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/suite/issuers/vault/certificate/approle.go:runVaultAppRoleTests",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:NewVaultAppRoleSecret",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/suite/issuers/vault/certificate/approle.go:runVaultAppRoleTests",
+      "target": "function:test/e2e/util/util.go:WaitForIssuerCondition",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/suite/issuers/vault/certificate/approle.go:runVaultAppRoleTests",
+      "target": "function:test/e2e/util/util.go:NewCertManagerVaultCertificate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/suite/issuers/vault/certificate/cert_auth.go:runVaultClientCertAuthTest",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:NewVaultInitializerClientCertificate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/suite/issuers/vault/certificate/cert_auth.go:runVaultClientCertAuthTest",
+      "target": "function:test/e2e/util/util.go:WaitForIssuerCondition",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/suite/issuers/vault/certificate/cert_auth.go:runVaultClientCertAuthTest",
+      "target": "function:test/e2e/util/util.go:NewCertManagerVaultCertificate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/suite/issuers/vault/certificaterequest/approle.go:runVaultAppRoleTests",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:NewVaultInitializerAppRole",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/suite/issuers/vault/certificaterequest/approle.go:runVaultAppRoleTests",
+      "target": "function:test/e2e/framework/addon/vault/setup.go:NewVaultAppRoleSecret",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:test/e2e/suite/issuers/vault/certificaterequest/approle.go:runVaultAppRoleTests",
+      "target": "function:test/e2e/util/util.go:WaitForIssuerCondition",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

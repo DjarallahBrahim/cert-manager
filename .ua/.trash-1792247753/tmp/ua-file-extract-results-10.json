@@ -1,0 +1,5298 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 30,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 30,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 30,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/route53auth.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "Route53Auth",
+          "startLine": 29,
+          "endLine": 31,
+          "params": []
+        },
+        {
+          "name": "WithKubernetes",
+          "startLine": 36,
+          "endLine": 39,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Route53AuthApplyConfiguration",
+          "startLine": 23,
+          "endLine": 25,
+          "methods": [
+            "WithKubernetes"
+          ],
+          "properties": [
+            "Kubernetes"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Route53AuthApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "Route53Auth",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "WithKubernetes",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/route53kubernetesauth.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "Route53KubernetesAuth",
+          "startLine": 29,
+          "endLine": 31,
+          "params": []
+        },
+        {
+          "name": "WithServiceAccountRef",
+          "startLine": 36,
+          "endLine": 39,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Route53KubernetesAuthApplyConfiguration",
+          "startLine": 23,
+          "endLine": 25,
+          "methods": [
+            "WithServiceAccountRef"
+          ],
+          "properties": [
+            "ServiceAccountRef"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Route53KubernetesAuthApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "Route53KubernetesAuth",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "WithServiceAccountRef",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/acme/v1/serviceaccountref.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "ServiceAccountRef",
+          "startLine": 30,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "WithName",
+          "startLine": 37,
+          "endLine": 40,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithTokenAudiences",
+          "startLine": 45,
+          "endLine": 50,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ServiceAccountRefApplyConfiguration",
+          "startLine": 23,
+          "endLine": 26,
+          "methods": [
+            "WithName",
+            "WithTokenAudiences"
+          ],
+          "properties": [
+            "Name",
+            "TokenAudiences"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ServiceAccountRefApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "ServiceAccountRef",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "WithName",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "WithTokenAudiences",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithTokenAudiences",
+          "callee": "append",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/caissuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 61,
+      "functions": [
+        {
+          "name": "CAIssuer",
+          "startLine": 32,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "WithSecretName",
+          "startLine": 39,
+          "endLine": 42,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithCRLDistributionPoints",
+          "startLine": 47,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "WithOCSPServers",
+          "startLine": 57,
+          "endLine": 62,
+          "params": []
+        },
+        {
+          "name": "WithIssuingCertificateURLs",
+          "startLine": 67,
+          "endLine": 72,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CAIssuerApplyConfiguration",
+          "startLine": 23,
+          "endLine": 28,
+          "methods": [
+            "WithSecretName",
+            "WithCRLDistributionPoints",
+            "WithOCSPServers",
+            "WithIssuingCertificateURLs"
+          ],
+          "properties": [
+            "SecretName",
+            "CRLDistributionPoints",
+            "OCSPServers",
+            "IssuingCertificateURLs"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CAIssuerApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "CAIssuer",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "WithSecretName",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "WithCRLDistributionPoints",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "WithOCSPServers",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "WithIssuingCertificateURLs",
+          "line": 67,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithCRLDistributionPoints",
+          "callee": "append",
+          "lineNumber": 49
+        },
+        {
+          "caller": "WithOCSPServers",
+          "callee": "append",
+          "lineNumber": 59
+        },
+        {
+          "caller": "WithIssuingCertificateURLs",
+          "callee": "append",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificate.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 281,
+      "nonEmptyLines": 247,
+      "functions": [
+        {
+          "name": "Certificate",
+          "startLine": 41,
+          "endLine": 48,
+          "params": [
+            "name",
+            "namespace"
+          ]
+        },
+        {
+          "name": "ExtractCertificate",
+          "startLine": 61,
+          "endLine": 63,
+          "params": [
+            "certificate",
+            "fieldManager"
+          ]
+        },
+        {
+          "name": "ExtractCertificateStatus",
+          "startLine": 68,
+          "endLine": 70,
+          "params": [
+            "certificate",
+            "fieldManager"
+          ]
+        },
+        {
+          "name": "extractCertificate",
+          "startLine": 72,
+          "endLine": 84,
+          "params": [
+            "certificate",
+            "fieldManager",
+            "subresource"
+          ]
+        },
+        {
+          "name": "IsApplyConfiguration",
+          "startLine": 85,
+          "endLine": 85,
+          "params": []
+        },
+        {
+          "name": "WithKind",
+          "startLine": 90,
+          "endLine": 93,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAPIVersion",
+          "startLine": 98,
+          "endLine": 101,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithName",
+          "startLine": 106,
+          "endLine": 110,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithGenerateName",
+          "startLine": 115,
+          "endLine": 119,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithNamespace",
+          "startLine": 124,
+          "endLine": 128,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithUID",
+          "startLine": 133,
+          "endLine": 137,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithResourceVersion",
+          "startLine": 142,
+          "endLine": 146,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithGeneration",
+          "startLine": 151,
+          "endLine": 155,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithCreationTimestamp",
+          "startLine": 160,
+          "endLine": 164,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithDeletionTimestamp",
+          "startLine": 169,
+          "endLine": 173,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithDeletionGracePeriodSeconds",
+          "startLine": 178,
+          "endLine": 182,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithLabels",
+          "startLine": 188,
+          "endLine": 197,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithAnnotations",
+          "startLine": 203,
+          "endLine": 212,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithOwnerReferences",
+          "startLine": 217,
+          "endLine": 226,
+          "params": []
+        },
+        {
+          "name": "WithFinalizers",
+          "startLine": 231,
+          "endLine": 237,
+          "params": []
+        },
+        {
+          "name": "ensureObjectMetaApplyConfigurationExists",
+          "startLine": 239,
+          "endLine": 243,
+          "params": []
+        },
+        {
+          "name": "WithSpec",
+          "startLine": 248,
+          "endLine": 251,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithStatus",
+          "startLine": 256,
+          "endLine": 259,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "GetKind",
+          "startLine": 262,
+          "endLine": 264,
+          "params": []
+        },
+        {
+          "name": "GetAPIVersion",
+          "startLine": 267,
+          "endLine": 269,
+          "params": []
+        },
+        {
+          "name": "GetName",
+          "startLine": 272,
+          "endLine": 275,
+          "params": []
+        },
+        {
+          "name": "GetNamespace",
+          "startLine": 278,
+          "endLine": 281,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertificateApplyConfiguration",
+          "startLine": 32,
+          "endLine": 37,
+          "methods": [
+            "IsApplyConfiguration",
+            "WithKind",
+            "WithAPIVersion",
+            "WithName",
+            "WithGenerateName",
+            "WithNamespace",
+            "WithUID",
+            "WithResourceVersion",
+            "WithGeneration",
+            "WithCreationTimestamp",
+            "WithDeletionTimestamp",
+            "WithDeletionGracePeriodSeconds",
+            "WithLabels",
+            "WithAnnotations",
+            "WithOwnerReferences",
+            "WithFinalizers",
+            "ensureObjectMetaApplyConfigurationExists",
+            "WithSpec",
+            "WithStatus",
+            "GetKind",
+            "GetAPIVersion",
+            "GetName",
+            "GetNamespace"
+          ],
+          "properties": [
+            "Spec",
+            "Status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateApplyConfiguration",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "Certificate",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "ExtractCertificate",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "ExtractCertificateStatus",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "IsApplyConfiguration",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "WithKind",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "WithAPIVersion",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "WithName",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "WithGenerateName",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "WithNamespace",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "WithUID",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "WithResourceVersion",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "WithGeneration",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "WithCreationTimestamp",
+          "line": 160,
+          "isDefault": false
+        },
+        {
+          "name": "WithDeletionTimestamp",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "WithDeletionGracePeriodSeconds",
+          "line": 178,
+          "isDefault": false
+        },
+        {
+          "name": "WithLabels",
+          "line": 188,
+          "isDefault": false
+        },
+        {
+          "name": "WithAnnotations",
+          "line": 203,
+          "isDefault": false
+        },
+        {
+          "name": "WithOwnerReferences",
+          "line": 217,
+          "isDefault": false
+        },
+        {
+          "name": "WithFinalizers",
+          "line": 231,
+          "isDefault": false
+        },
+        {
+          "name": "WithSpec",
+          "line": 248,
+          "isDefault": false
+        },
+        {
+          "name": "WithStatus",
+          "line": 256,
+          "isDefault": false
+        },
+        {
+          "name": "GetKind",
+          "line": 262,
+          "isDefault": false
+        },
+        {
+          "name": "GetAPIVersion",
+          "line": 267,
+          "isDefault": false
+        },
+        {
+          "name": "GetName",
+          "line": 272,
+          "isDefault": false
+        },
+        {
+          "name": "GetNamespace",
+          "line": 278,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Certificate",
+          "callee": "b.WithName",
+          "lineNumber": 43
+        },
+        {
+          "caller": "Certificate",
+          "callee": "b.WithNamespace",
+          "lineNumber": 44
+        },
+        {
+          "caller": "Certificate",
+          "callee": "b.WithKind",
+          "lineNumber": 45
+        },
+        {
+          "caller": "Certificate",
+          "callee": "b.WithAPIVersion",
+          "lineNumber": 46
+        },
+        {
+          "caller": "ExtractCertificate",
+          "callee": "extractCertificate",
+          "lineNumber": 62
+        },
+        {
+          "caller": "ExtractCertificateStatus",
+          "callee": "extractCertificate",
+          "lineNumber": 69
+        },
+        {
+          "caller": "extractCertificate",
+          "callee": "managedfields.ExtractInto",
+          "lineNumber": 74
+        },
+        {
+          "caller": "extractCertificate",
+          "callee": "internal.Parser().Type",
+          "lineNumber": 74
+        },
+        {
+          "caller": "extractCertificate",
+          "callee": "internal.Parser",
+          "lineNumber": 74
+        },
+        {
+          "caller": "extractCertificate",
+          "callee": "b.WithName",
+          "lineNumber": 78
+        },
+        {
+          "caller": "extractCertificate",
+          "callee": "b.WithNamespace",
+          "lineNumber": 79
+        },
+        {
+          "caller": "extractCertificate",
+          "callee": "b.WithKind",
+          "lineNumber": 81
+        },
+        {
+          "caller": "extractCertificate",
+          "callee": "b.WithAPIVersion",
+          "lineNumber": 82
+        },
+        {
+          "caller": "WithName",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 107
+        },
+        {
+          "caller": "WithGenerateName",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 116
+        },
+        {
+          "caller": "WithNamespace",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 125
+        },
+        {
+          "caller": "WithUID",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 134
+        },
+        {
+          "caller": "WithResourceVersion",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 143
+        },
+        {
+          "caller": "WithGeneration",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 152
+        },
+        {
+          "caller": "WithCreationTimestamp",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 161
+        },
+        {
+          "caller": "WithDeletionTimestamp",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 170
+        },
+        {
+          "caller": "WithDeletionGracePeriodSeconds",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 179
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 189
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 190
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "make",
+          "lineNumber": 191
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 191
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 204
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 205
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "make",
+          "lineNumber": 206
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 206
+        },
+        {
+          "caller": "WithOwnerReferences",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 218
+        },
+        {
+          "caller": "WithOwnerReferences",
+          "callee": "panic",
+          "lineNumber": 221
+        },
+        {
+          "caller": "WithOwnerReferences",
+          "callee": "append",
+          "lineNumber": 223
+        },
+        {
+          "caller": "WithFinalizers",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 232
+        },
+        {
+          "caller": "WithFinalizers",
+          "callee": "append",
+          "lineNumber": 234
+        },
+        {
+          "caller": "GetName",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 273
+        },
+        {
+          "caller": "GetNamespace",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 279
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 26,
+        "functionCount": 27,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificateadditionaloutputformat.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "CertificateAdditionalOutputFormat",
+          "startLine": 33,
+          "endLine": 35,
+          "params": []
+        },
+        {
+          "name": "WithType",
+          "startLine": 40,
+          "endLine": 43,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertificateAdditionalOutputFormatApplyConfiguration",
+          "startLine": 27,
+          "endLine": 29,
+          "methods": [
+            "WithType"
+          ],
+          "properties": [
+            "Type"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateAdditionalOutputFormatApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateAdditionalOutputFormat",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "WithType",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificatekeystores.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "CertificateKeystores",
+          "startLine": 30,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "WithJKS",
+          "startLine": 37,
+          "endLine": 40,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithPKCS12",
+          "startLine": 45,
+          "endLine": 48,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertificateKeystoresApplyConfiguration",
+          "startLine": 23,
+          "endLine": 26,
+          "methods": [
+            "WithJKS",
+            "WithPKCS12"
+          ],
+          "properties": [
+            "JKS",
+            "PKCS12"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateKeystoresApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateKeystores",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "WithJKS",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "WithPKCS12",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificateprivatekey.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "CertificatePrivateKey",
+          "startLine": 36,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "WithRotationPolicy",
+          "startLine": 43,
+          "endLine": 46,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithEncoding",
+          "startLine": 51,
+          "endLine": 54,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAlgorithm",
+          "startLine": 59,
+          "endLine": 62,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithSize",
+          "startLine": 67,
+          "endLine": 70,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertificatePrivateKeyApplyConfiguration",
+          "startLine": 27,
+          "endLine": 32,
+          "methods": [
+            "WithRotationPolicy",
+            "WithEncoding",
+            "WithAlgorithm",
+            "WithSize"
+          ],
+          "properties": [
+            "RotationPolicy",
+            "Encoding",
+            "Algorithm",
+            "Size"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificatePrivateKeyApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "CertificatePrivateKey",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "WithRotationPolicy",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "WithEncoding",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "WithAlgorithm",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "WithSize",
+          "line": 67,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificaterequest.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 281,
+      "nonEmptyLines": 247,
+      "functions": [
+        {
+          "name": "CertificateRequest",
+          "startLine": 41,
+          "endLine": 48,
+          "params": [
+            "name",
+            "namespace"
+          ]
+        },
+        {
+          "name": "ExtractCertificateRequest",
+          "startLine": 61,
+          "endLine": 63,
+          "params": [
+            "certificateRequest",
+            "fieldManager"
+          ]
+        },
+        {
+          "name": "ExtractCertificateRequestStatus",
+          "startLine": 68,
+          "endLine": 70,
+          "params": [
+            "certificateRequest",
+            "fieldManager"
+          ]
+        },
+        {
+          "name": "extractCertificateRequest",
+          "startLine": 72,
+          "endLine": 84,
+          "params": [
+            "certificateRequest",
+            "fieldManager",
+            "subresource"
+          ]
+        },
+        {
+          "name": "IsApplyConfiguration",
+          "startLine": 85,
+          "endLine": 85,
+          "params": []
+        },
+        {
+          "name": "WithKind",
+          "startLine": 90,
+          "endLine": 93,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAPIVersion",
+          "startLine": 98,
+          "endLine": 101,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithName",
+          "startLine": 106,
+          "endLine": 110,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithGenerateName",
+          "startLine": 115,
+          "endLine": 119,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithNamespace",
+          "startLine": 124,
+          "endLine": 128,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithUID",
+          "startLine": 133,
+          "endLine": 137,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithResourceVersion",
+          "startLine": 142,
+          "endLine": 146,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithGeneration",
+          "startLine": 151,
+          "endLine": 155,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithCreationTimestamp",
+          "startLine": 160,
+          "endLine": 164,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithDeletionTimestamp",
+          "startLine": 169,
+          "endLine": 173,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithDeletionGracePeriodSeconds",
+          "startLine": 178,
+          "endLine": 182,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithLabels",
+          "startLine": 188,
+          "endLine": 197,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithAnnotations",
+          "startLine": 203,
+          "endLine": 212,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithOwnerReferences",
+          "startLine": 217,
+          "endLine": 226,
+          "params": []
+        },
+        {
+          "name": "WithFinalizers",
+          "startLine": 231,
+          "endLine": 237,
+          "params": []
+        },
+        {
+          "name": "ensureObjectMetaApplyConfigurationExists",
+          "startLine": 239,
+          "endLine": 243,
+          "params": []
+        },
+        {
+          "name": "WithSpec",
+          "startLine": 248,
+          "endLine": 251,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithStatus",
+          "startLine": 256,
+          "endLine": 259,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "GetKind",
+          "startLine": 262,
+          "endLine": 264,
+          "params": []
+        },
+        {
+          "name": "GetAPIVersion",
+          "startLine": 267,
+          "endLine": 269,
+          "params": []
+        },
+        {
+          "name": "GetName",
+          "startLine": 272,
+          "endLine": 275,
+          "params": []
+        },
+        {
+          "name": "GetNamespace",
+          "startLine": 278,
+          "endLine": 281,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertificateRequestApplyConfiguration",
+          "startLine": 32,
+          "endLine": 37,
+          "methods": [
+            "IsApplyConfiguration",
+            "WithKind",
+            "WithAPIVersion",
+            "WithName",
+            "WithGenerateName",
+            "WithNamespace",
+            "WithUID",
+            "WithResourceVersion",
+            "WithGeneration",
+            "WithCreationTimestamp",
+            "WithDeletionTimestamp",
+            "WithDeletionGracePeriodSeconds",
+            "WithLabels",
+            "WithAnnotations",
+            "WithOwnerReferences",
+            "WithFinalizers",
+            "ensureObjectMetaApplyConfigurationExists",
+            "WithSpec",
+            "WithStatus",
+            "GetKind",
+            "GetAPIVersion",
+            "GetName",
+            "GetNamespace"
+          ],
+          "properties": [
+            "Spec",
+            "Status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateRequestApplyConfiguration",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateRequest",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "ExtractCertificateRequest",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "ExtractCertificateRequestStatus",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "IsApplyConfiguration",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "WithKind",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "WithAPIVersion",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "WithName",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "WithGenerateName",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "WithNamespace",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "WithUID",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "WithResourceVersion",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "WithGeneration",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "WithCreationTimestamp",
+          "line": 160,
+          "isDefault": false
+        },
+        {
+          "name": "WithDeletionTimestamp",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "WithDeletionGracePeriodSeconds",
+          "line": 178,
+          "isDefault": false
+        },
+        {
+          "name": "WithLabels",
+          "line": 188,
+          "isDefault": false
+        },
+        {
+          "name": "WithAnnotations",
+          "line": 203,
+          "isDefault": false
+        },
+        {
+          "name": "WithOwnerReferences",
+          "line": 217,
+          "isDefault": false
+        },
+        {
+          "name": "WithFinalizers",
+          "line": 231,
+          "isDefault": false
+        },
+        {
+          "name": "WithSpec",
+          "line": 248,
+          "isDefault": false
+        },
+        {
+          "name": "WithStatus",
+          "line": 256,
+          "isDefault": false
+        },
+        {
+          "name": "GetKind",
+          "line": 262,
+          "isDefault": false
+        },
+        {
+          "name": "GetAPIVersion",
+          "line": 267,
+          "isDefault": false
+        },
+        {
+          "name": "GetName",
+          "line": 272,
+          "isDefault": false
+        },
+        {
+          "name": "GetNamespace",
+          "line": 278,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "CertificateRequest",
+          "callee": "b.WithName",
+          "lineNumber": 43
+        },
+        {
+          "caller": "CertificateRequest",
+          "callee": "b.WithNamespace",
+          "lineNumber": 44
+        },
+        {
+          "caller": "CertificateRequest",
+          "callee": "b.WithKind",
+          "lineNumber": 45
+        },
+        {
+          "caller": "CertificateRequest",
+          "callee": "b.WithAPIVersion",
+          "lineNumber": 46
+        },
+        {
+          "caller": "ExtractCertificateRequest",
+          "callee": "extractCertificateRequest",
+          "lineNumber": 62
+        },
+        {
+          "caller": "ExtractCertificateRequestStatus",
+          "callee": "extractCertificateRequest",
+          "lineNumber": 69
+        },
+        {
+          "caller": "extractCertificateRequest",
+          "callee": "managedfields.ExtractInto",
+          "lineNumber": 74
+        },
+        {
+          "caller": "extractCertificateRequest",
+          "callee": "internal.Parser().Type",
+          "lineNumber": 74
+        },
+        {
+          "caller": "extractCertificateRequest",
+          "callee": "internal.Parser",
+          "lineNumber": 74
+        },
+        {
+          "caller": "extractCertificateRequest",
+          "callee": "b.WithName",
+          "lineNumber": 78
+        },
+        {
+          "caller": "extractCertificateRequest",
+          "callee": "b.WithNamespace",
+          "lineNumber": 79
+        },
+        {
+          "caller": "extractCertificateRequest",
+          "callee": "b.WithKind",
+          "lineNumber": 81
+        },
+        {
+          "caller": "extractCertificateRequest",
+          "callee": "b.WithAPIVersion",
+          "lineNumber": 82
+        },
+        {
+          "caller": "WithName",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 107
+        },
+        {
+          "caller": "WithGenerateName",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 116
+        },
+        {
+          "caller": "WithNamespace",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 125
+        },
+        {
+          "caller": "WithUID",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 134
+        },
+        {
+          "caller": "WithResourceVersion",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 143
+        },
+        {
+          "caller": "WithGeneration",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 152
+        },
+        {
+          "caller": "WithCreationTimestamp",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 161
+        },
+        {
+          "caller": "WithDeletionTimestamp",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 170
+        },
+        {
+          "caller": "WithDeletionGracePeriodSeconds",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 179
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 189
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 190
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "make",
+          "lineNumber": 191
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 191
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 204
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 205
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "make",
+          "lineNumber": 206
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 206
+        },
+        {
+          "caller": "WithOwnerReferences",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 218
+        },
+        {
+          "caller": "WithOwnerReferences",
+          "callee": "panic",
+          "lineNumber": 221
+        },
+        {
+          "caller": "WithOwnerReferences",
+          "callee": "append",
+          "lineNumber": 223
+        },
+        {
+          "caller": "WithFinalizers",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 232
+        },
+        {
+          "caller": "WithFinalizers",
+          "callee": "append",
+          "lineNumber": 234
+        },
+        {
+          "caller": "GetName",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 273
+        },
+        {
+          "caller": "GetNamespace",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 279
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 26,
+        "functionCount": 27,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificaterequestspec.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 129,
+      "nonEmptyLines": 112,
+      "functions": [
+        {
+          "name": "CertificateRequestSpec",
+          "startLine": 43,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "WithDuration",
+          "startLine": 50,
+          "endLine": 53,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithIssuerRef",
+          "startLine": 58,
+          "endLine": 61,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithRequest",
+          "startLine": 66,
+          "endLine": 71,
+          "params": []
+        },
+        {
+          "name": "WithIsCA",
+          "startLine": 76,
+          "endLine": 79,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithUsages",
+          "startLine": 84,
+          "endLine": 89,
+          "params": []
+        },
+        {
+          "name": "WithUsername",
+          "startLine": 94,
+          "endLine": 97,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithUID",
+          "startLine": 102,
+          "endLine": 105,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithGroups",
+          "startLine": 110,
+          "endLine": 115,
+          "params": []
+        },
+        {
+          "name": "WithExtra",
+          "startLine": 121,
+          "endLine": 129,
+          "params": [
+            "entries"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertificateRequestSpecApplyConfiguration",
+          "startLine": 29,
+          "endLine": 39,
+          "methods": [
+            "WithDuration",
+            "WithIssuerRef",
+            "WithRequest",
+            "WithIsCA",
+            "WithUsages",
+            "WithUsername",
+            "WithUID",
+            "WithGroups",
+            "WithExtra"
+          ],
+          "properties": [
+            "Duration",
+            "IssuerRef",
+            "Request",
+            "IsCA",
+            "Usages",
+            "Username",
+            "UID",
+            "Groups",
+            "Extra"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateRequestSpecApplyConfiguration",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateRequestSpec",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "WithDuration",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "WithIssuerRef",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "WithRequest",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "WithIsCA",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "WithUsages",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "WithUsername",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "WithUID",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "WithGroups",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "WithExtra",
+          "line": 121,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithRequest",
+          "callee": "append",
+          "lineNumber": 68
+        },
+        {
+          "caller": "WithUsages",
+          "callee": "append",
+          "lineNumber": 86
+        },
+        {
+          "caller": "WithGroups",
+          "callee": "append",
+          "lineNumber": 112
+        },
+        {
+          "caller": "WithExtra",
+          "callee": "len",
+          "lineNumber": 122
+        },
+        {
+          "caller": "WithExtra",
+          "callee": "make",
+          "lineNumber": 123
+        },
+        {
+          "caller": "WithExtra",
+          "callee": "len",
+          "lineNumber": 123
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 11,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificaterequeststatus.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "CertificateRequestStatus",
+          "startLine": 36,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "WithConditions",
+          "startLine": 43,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "WithCertificate",
+          "startLine": 56,
+          "endLine": 61,
+          "params": []
+        },
+        {
+          "name": "WithCA",
+          "startLine": 66,
+          "endLine": 71,
+          "params": []
+        },
+        {
+          "name": "WithFailureTime",
+          "startLine": 76,
+          "endLine": 79,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertificateRequestStatusApplyConfiguration",
+          "startLine": 27,
+          "endLine": 32,
+          "methods": [
+            "WithConditions",
+            "WithCertificate",
+            "WithCA",
+            "WithFailureTime"
+          ],
+          "properties": [
+            "Conditions",
+            "Certificate",
+            "CA",
+            "FailureTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateRequestStatusApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateRequestStatus",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "WithConditions",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "WithCertificate",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "WithCA",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "WithFailureTime",
+          "line": 76,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithConditions",
+          "callee": "panic",
+          "lineNumber": 46
+        },
+        {
+          "caller": "WithConditions",
+          "callee": "append",
+          "lineNumber": 48
+        },
+        {
+          "caller": "WithCertificate",
+          "callee": "append",
+          "lineNumber": 58
+        },
+        {
+          "caller": "WithCA",
+          "callee": "append",
+          "lineNumber": 68
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificatesecrettemplate.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "CertificateSecretTemplate",
+          "startLine": 30,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "WithAnnotations",
+          "startLine": 38,
+          "endLine": 46,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithLabels",
+          "startLine": 52,
+          "endLine": 60,
+          "params": [
+            "entries"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertificateSecretTemplateApplyConfiguration",
+          "startLine": 23,
+          "endLine": 26,
+          "methods": [
+            "WithAnnotations",
+            "WithLabels"
+          ],
+          "properties": [
+            "Annotations",
+            "Labels"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateSecretTemplateApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateSecretTemplate",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "WithAnnotations",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "WithLabels",
+          "line": 52,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 39
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "make",
+          "lineNumber": 40
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 40
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 53
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "make",
+          "lineNumber": 54
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificatespec.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 263,
+      "nonEmptyLines": 232,
+      "functions": [
+        {
+          "name": "CertificateSpec",
+          "startLine": 57,
+          "endLine": 59,
+          "params": []
+        },
+        {
+          "name": "WithSubject",
+          "startLine": 64,
+          "endLine": 67,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithLiteralSubject",
+          "startLine": 72,
+          "endLine": 75,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithCommonName",
+          "startLine": 80,
+          "endLine": 83,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithDuration",
+          "startLine": 88,
+          "endLine": 91,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithRenewBefore",
+          "startLine": 96,
+          "endLine": 99,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithRenewBeforePercentage",
+          "startLine": 104,
+          "endLine": 107,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithDNSNames",
+          "startLine": 112,
+          "endLine": 117,
+          "params": []
+        },
+        {
+          "name": "WithIPAddresses",
+          "startLine": 122,
+          "endLine": 127,
+          "params": []
+        },
+        {
+          "name": "WithURIs",
+          "startLine": 132,
+          "endLine": 137,
+          "params": []
+        },
+        {
+          "name": "WithOtherNames",
+          "startLine": 142,
+          "endLine": 150,
+          "params": []
+        },
+        {
+          "name": "WithEmailAddresses",
+          "startLine": 155,
+          "endLine": 160,
+          "params": []
+        },
+        {
+          "name": "WithSecretName",
+          "startLine": 165,
+          "endLine": 168,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithSecretTemplate",
+          "startLine": 173,
+          "endLine": 176,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithKeystores",
+          "startLine": 181,
+          "endLine": 184,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithIssuerRef",
+          "startLine": 189,
+          "endLine": 192,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithIsCA",
+          "startLine": 197,
+          "endLine": 200,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithUsages",
+          "startLine": 205,
+          "endLine": 210,
+          "params": []
+        },
+        {
+          "name": "WithPrivateKey",
+          "startLine": 215,
+          "endLine": 218,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithSignatureAlgorithm",
+          "startLine": 223,
+          "endLine": 226,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithEncodeUsagesInRequest",
+          "startLine": 231,
+          "endLine": 234,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithRevisionHistoryLimit",
+          "startLine": 239,
+          "endLine": 242,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAdditionalOutputFormats",
+          "startLine": 247,
+          "endLine": 255,
+          "params": []
+        },
+        {
+          "name": "WithNameConstraints",
+          "startLine": 260,
+          "endLine": 263,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertificateSpecApplyConfiguration",
+          "startLine": 29,
+          "endLine": 53,
+          "methods": [
+            "WithSubject",
+            "WithLiteralSubject",
+            "WithCommonName",
+            "WithDuration",
+            "WithRenewBefore",
+            "WithRenewBeforePercentage",
+            "WithDNSNames",
+            "WithIPAddresses",
+            "WithURIs",
+            "WithOtherNames",
+            "WithEmailAddresses",
+            "WithSecretName",
+            "WithSecretTemplate",
+            "WithKeystores",
+            "WithIssuerRef",
+            "WithIsCA",
+            "WithUsages",
+            "WithPrivateKey",
+            "WithSignatureAlgorithm",
+            "WithEncodeUsagesInRequest",
+            "WithRevisionHistoryLimit",
+            "WithAdditionalOutputFormats",
+            "WithNameConstraints"
+          ],
+          "properties": [
+            "Subject",
+            "LiteralSubject",
+            "CommonName",
+            "Duration",
+            "RenewBefore",
+            "RenewBeforePercentage",
+            "DNSNames",
+            "IPAddresses",
+            "URIs",
+            "OtherNames",
+            "EmailAddresses",
+            "SecretName",
+            "SecretTemplate",
+            "Keystores",
+            "IssuerRef",
+            "IsCA",
+            "Usages",
+            "PrivateKey",
+            "SignatureAlgorithm",
+            "EncodeUsagesInRequest",
+            "RevisionHistoryLimit",
+            "AdditionalOutputFormats",
+            "NameConstraints"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateSpecApplyConfiguration",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateSpec",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "WithSubject",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "WithLiteralSubject",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "WithCommonName",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "WithDuration",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "WithRenewBefore",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "WithRenewBeforePercentage",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "WithDNSNames",
+          "line": 112,
+          "isDefault": false
+        },
+        {
+          "name": "WithIPAddresses",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "WithURIs",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "WithOtherNames",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "WithEmailAddresses",
+          "line": 155,
+          "isDefault": false
+        },
+        {
+          "name": "WithSecretName",
+          "line": 165,
+          "isDefault": false
+        },
+        {
+          "name": "WithSecretTemplate",
+          "line": 173,
+          "isDefault": false
+        },
+        {
+          "name": "WithKeystores",
+          "line": 181,
+          "isDefault": false
+        },
+        {
+          "name": "WithIssuerRef",
+          "line": 189,
+          "isDefault": false
+        },
+        {
+          "name": "WithIsCA",
+          "line": 197,
+          "isDefault": false
+        },
+        {
+          "name": "WithUsages",
+          "line": 205,
+          "isDefault": false
+        },
+        {
+          "name": "WithPrivateKey",
+          "line": 215,
+          "isDefault": false
+        },
+        {
+          "name": "WithSignatureAlgorithm",
+          "line": 223,
+          "isDefault": false
+        },
+        {
+          "name": "WithEncodeUsagesInRequest",
+          "line": 231,
+          "isDefault": false
+        },
+        {
+          "name": "WithRevisionHistoryLimit",
+          "line": 239,
+          "isDefault": false
+        },
+        {
+          "name": "WithAdditionalOutputFormats",
+          "line": 247,
+          "isDefault": false
+        },
+        {
+          "name": "WithNameConstraints",
+          "line": 260,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithDNSNames",
+          "callee": "append",
+          "lineNumber": 114
+        },
+        {
+          "caller": "WithIPAddresses",
+          "callee": "append",
+          "lineNumber": 124
+        },
+        {
+          "caller": "WithURIs",
+          "callee": "append",
+          "lineNumber": 134
+        },
+        {
+          "caller": "WithOtherNames",
+          "callee": "panic",
+          "lineNumber": 145
+        },
+        {
+          "caller": "WithOtherNames",
+          "callee": "append",
+          "lineNumber": 147
+        },
+        {
+          "caller": "WithEmailAddresses",
+          "callee": "append",
+          "lineNumber": 157
+        },
+        {
+          "caller": "WithUsages",
+          "callee": "append",
+          "lineNumber": 207
+        },
+        {
+          "caller": "WithAdditionalOutputFormats",
+          "callee": "panic",
+          "lineNumber": 250
+        },
+        {
+          "caller": "WithAdditionalOutputFormats",
+          "callee": "append",
+          "lineNumber": 252
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 25,
+        "functionCount": 24,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/certificatestatus.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 95,
+      "functions": [
+        {
+          "name": "CertificateStatus",
+          "startLine": 40,
+          "endLine": 42,
+          "params": []
+        },
+        {
+          "name": "WithConditions",
+          "startLine": 47,
+          "endLine": 55,
+          "params": []
+        },
+        {
+          "name": "WithLastFailureTime",
+          "startLine": 60,
+          "endLine": 63,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithNotBefore",
+          "startLine": 68,
+          "endLine": 71,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithNotAfter",
+          "startLine": 76,
+          "endLine": 79,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithRenewalTime",
+          "startLine": 84,
+          "endLine": 87,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithRevision",
+          "startLine": 92,
+          "endLine": 95,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithNextPrivateKeySecretName",
+          "startLine": 100,
+          "endLine": 103,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithFailedIssuanceAttempts",
+          "startLine": 108,
+          "endLine": 111,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CertificateStatusApplyConfiguration",
+          "startLine": 27,
+          "endLine": 36,
+          "methods": [
+            "WithConditions",
+            "WithLastFailureTime",
+            "WithNotBefore",
+            "WithNotAfter",
+            "WithRenewalTime",
+            "WithRevision",
+            "WithNextPrivateKeySecretName",
+            "WithFailedIssuanceAttempts"
+          ],
+          "properties": [
+            "Conditions",
+            "LastFailureTime",
+            "NotBefore",
+            "NotAfter",
+            "RenewalTime",
+            "Revision",
+            "NextPrivateKeySecretName",
+            "FailedIssuanceAttempts"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CertificateStatusApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "CertificateStatus",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "WithConditions",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "WithLastFailureTime",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "WithNotBefore",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "WithNotAfter",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "WithRenewalTime",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "WithRevision",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "WithNextPrivateKeySecretName",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "WithFailedIssuanceAttempts",
+          "line": 108,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithConditions",
+          "callee": "panic",
+          "lineNumber": 50
+        },
+        {
+          "caller": "WithConditions",
+          "callee": "append",
+          "lineNumber": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/clusterissuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 279,
+      "nonEmptyLines": 245,
+      "functions": [
+        {
+          "name": "ClusterIssuer",
+          "startLine": 41,
+          "endLine": 47,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "ExtractClusterIssuer",
+          "startLine": 60,
+          "endLine": 62,
+          "params": [
+            "clusterIssuer",
+            "fieldManager"
+          ]
+        },
+        {
+          "name": "ExtractClusterIssuerStatus",
+          "startLine": 67,
+          "endLine": 69,
+          "params": [
+            "clusterIssuer",
+            "fieldManager"
+          ]
+        },
+        {
+          "name": "extractClusterIssuer",
+          "startLine": 71,
+          "endLine": 82,
+          "params": [
+            "clusterIssuer",
+            "fieldManager",
+            "subresource"
+          ]
+        },
+        {
+          "name": "IsApplyConfiguration",
+          "startLine": 83,
+          "endLine": 83,
+          "params": []
+        },
+        {
+          "name": "WithKind",
+          "startLine": 88,
+          "endLine": 91,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAPIVersion",
+          "startLine": 96,
+          "endLine": 99,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithName",
+          "startLine": 104,
+          "endLine": 108,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithGenerateName",
+          "startLine": 113,
+          "endLine": 117,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithNamespace",
+          "startLine": 122,
+          "endLine": 126,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithUID",
+          "startLine": 131,
+          "endLine": 135,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithResourceVersion",
+          "startLine": 140,
+          "endLine": 144,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithGeneration",
+          "startLine": 149,
+          "endLine": 153,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithCreationTimestamp",
+          "startLine": 158,
+          "endLine": 162,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithDeletionTimestamp",
+          "startLine": 167,
+          "endLine": 171,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithDeletionGracePeriodSeconds",
+          "startLine": 176,
+          "endLine": 180,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithLabels",
+          "startLine": 186,
+          "endLine": 195,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithAnnotations",
+          "startLine": 201,
+          "endLine": 210,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithOwnerReferences",
+          "startLine": 215,
+          "endLine": 224,
+          "params": []
+        },
+        {
+          "name": "WithFinalizers",
+          "startLine": 229,
+          "endLine": 235,
+          "params": []
+        },
+        {
+          "name": "ensureObjectMetaApplyConfigurationExists",
+          "startLine": 237,
+          "endLine": 241,
+          "params": []
+        },
+        {
+          "name": "WithSpec",
+          "startLine": 246,
+          "endLine": 249,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithStatus",
+          "startLine": 254,
+          "endLine": 257,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "GetKind",
+          "startLine": 260,
+          "endLine": 262,
+          "params": []
+        },
+        {
+          "name": "GetAPIVersion",
+          "startLine": 265,
+          "endLine": 267,
+          "params": []
+        },
+        {
+          "name": "GetName",
+          "startLine": 270,
+          "endLine": 273,
+          "params": []
+        },
+        {
+          "name": "GetNamespace",
+          "startLine": 276,
+          "endLine": 279,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ClusterIssuerApplyConfiguration",
+          "startLine": 32,
+          "endLine": 37,
+          "methods": [
+            "IsApplyConfiguration",
+            "WithKind",
+            "WithAPIVersion",
+            "WithName",
+            "WithGenerateName",
+            "WithNamespace",
+            "WithUID",
+            "WithResourceVersion",
+            "WithGeneration",
+            "WithCreationTimestamp",
+            "WithDeletionTimestamp",
+            "WithDeletionGracePeriodSeconds",
+            "WithLabels",
+            "WithAnnotations",
+            "WithOwnerReferences",
+            "WithFinalizers",
+            "ensureObjectMetaApplyConfigurationExists",
+            "WithSpec",
+            "WithStatus",
+            "GetKind",
+            "GetAPIVersion",
+            "GetName",
+            "GetNamespace"
+          ],
+          "properties": [
+            "Spec",
+            "Status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ClusterIssuerApplyConfiguration",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "ClusterIssuer",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "ExtractClusterIssuer",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "ExtractClusterIssuerStatus",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "IsApplyConfiguration",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "WithKind",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "WithAPIVersion",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "WithName",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "WithGenerateName",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "WithNamespace",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "WithUID",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "WithResourceVersion",
+          "line": 140,
+          "isDefault": false
+        },
+        {
+          "name": "WithGeneration",
+          "line": 149,
+          "isDefault": false
+        },
+        {
+          "name": "WithCreationTimestamp",
+          "line": 158,
+          "isDefault": false
+        },
+        {
+          "name": "WithDeletionTimestamp",
+          "line": 167,
+          "isDefault": false
+        },
+        {
+          "name": "WithDeletionGracePeriodSeconds",
+          "line": 176,
+          "isDefault": false
+        },
+        {
+          "name": "WithLabels",
+          "line": 186,
+          "isDefault": false
+        },
+        {
+          "name": "WithAnnotations",
+          "line": 201,
+          "isDefault": false
+        },
+        {
+          "name": "WithOwnerReferences",
+          "line": 215,
+          "isDefault": false
+        },
+        {
+          "name": "WithFinalizers",
+          "line": 229,
+          "isDefault": false
+        },
+        {
+          "name": "WithSpec",
+          "line": 246,
+          "isDefault": false
+        },
+        {
+          "name": "WithStatus",
+          "line": 254,
+          "isDefault": false
+        },
+        {
+          "name": "GetKind",
+          "line": 260,
+          "isDefault": false
+        },
+        {
+          "name": "GetAPIVersion",
+          "line": 265,
+          "isDefault": false
+        },
+        {
+          "name": "GetName",
+          "line": 270,
+          "isDefault": false
+        },
+        {
+          "name": "GetNamespace",
+          "line": 276,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ClusterIssuer",
+          "callee": "b.WithName",
+          "lineNumber": 43
+        },
+        {
+          "caller": "ClusterIssuer",
+          "callee": "b.WithKind",
+          "lineNumber": 44
+        },
+        {
+          "caller": "ClusterIssuer",
+          "callee": "b.WithAPIVersion",
+          "lineNumber": 45
+        },
+        {
+          "caller": "ExtractClusterIssuer",
+          "callee": "extractClusterIssuer",
+          "lineNumber": 61
+        },
+        {
+          "caller": "ExtractClusterIssuerStatus",
+          "callee": "extractClusterIssuer",
+          "lineNumber": 68
+        },
+        {
+          "caller": "extractClusterIssuer",
+          "callee": "managedfields.ExtractInto",
+          "lineNumber": 73
+        },
+        {
+          "caller": "extractClusterIssuer",
+          "callee": "internal.Parser().Type",
+          "lineNumber": 73
+        },
+        {
+          "caller": "extractClusterIssuer",
+          "callee": "internal.Parser",
+          "lineNumber": 73
+        },
+        {
+          "caller": "extractClusterIssuer",
+          "callee": "b.WithName",
+          "lineNumber": 77
+        },
+        {
+          "caller": "extractClusterIssuer",
+          "callee": "b.WithKind",
+          "lineNumber": 79
+        },
+        {
+          "caller": "extractClusterIssuer",
+          "callee": "b.WithAPIVersion",
+          "lineNumber": 80
+        },
+        {
+          "caller": "WithName",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 105
+        },
+        {
+          "caller": "WithGenerateName",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 114
+        },
+        {
+          "caller": "WithNamespace",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 123
+        },
+        {
+          "caller": "WithUID",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 132
+        },
+        {
+          "caller": "WithResourceVersion",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 141
+        },
+        {
+          "caller": "WithGeneration",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 150
+        },
+        {
+          "caller": "WithCreationTimestamp",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 159
+        },
+        {
+          "caller": "WithDeletionTimestamp",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 168
+        },
+        {
+          "caller": "WithDeletionGracePeriodSeconds",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 177
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 187
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 188
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "make",
+          "lineNumber": 189
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 189
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 202
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 203
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "make",
+          "lineNumber": 204
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 204
+        },
+        {
+          "caller": "WithOwnerReferences",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 216
+        },
+        {
+          "caller": "WithOwnerReferences",
+          "callee": "panic",
+          "lineNumber": 219
+        },
+        {
+          "caller": "WithOwnerReferences",
+          "callee": "append",
+          "lineNumber": 221
+        },
+        {
+          "caller": "WithFinalizers",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 230
+        },
+        {
+          "caller": "WithFinalizers",
+          "callee": "append",
+          "lineNumber": 232
+        },
+        {
+          "caller": "GetName",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 271
+        },
+        {
+          "caller": "GetNamespace",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 277
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 26,
+        "functionCount": 27,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/issuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 281,
+      "nonEmptyLines": 247,
+      "functions": [
+        {
+          "name": "Issuer",
+          "startLine": 41,
+          "endLine": 48,
+          "params": [
+            "name",
+            "namespace"
+          ]
+        },
+        {
+          "name": "ExtractIssuer",
+          "startLine": 61,
+          "endLine": 63,
+          "params": [
+            "issuer",
+            "fieldManager"
+          ]
+        },
+        {
+          "name": "ExtractIssuerStatus",
+          "startLine": 68,
+          "endLine": 70,
+          "params": [
+            "issuer",
+            "fieldManager"
+          ]
+        },
+        {
+          "name": "extractIssuer",
+          "startLine": 72,
+          "endLine": 84,
+          "params": [
+            "issuer",
+            "fieldManager",
+            "subresource"
+          ]
+        },
+        {
+          "name": "IsApplyConfiguration",
+          "startLine": 85,
+          "endLine": 85,
+          "params": []
+        },
+        {
+          "name": "WithKind",
+          "startLine": 90,
+          "endLine": 93,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAPIVersion",
+          "startLine": 98,
+          "endLine": 101,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithName",
+          "startLine": 106,
+          "endLine": 110,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithGenerateName",
+          "startLine": 115,
+          "endLine": 119,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithNamespace",
+          "startLine": 124,
+          "endLine": 128,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithUID",
+          "startLine": 133,
+          "endLine": 137,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithResourceVersion",
+          "startLine": 142,
+          "endLine": 146,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithGeneration",
+          "startLine": 151,
+          "endLine": 155,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithCreationTimestamp",
+          "startLine": 160,
+          "endLine": 164,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithDeletionTimestamp",
+          "startLine": 169,
+          "endLine": 173,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithDeletionGracePeriodSeconds",
+          "startLine": 178,
+          "endLine": 182,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithLabels",
+          "startLine": 188,
+          "endLine": 197,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithAnnotations",
+          "startLine": 203,
+          "endLine": 212,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "WithOwnerReferences",
+          "startLine": 217,
+          "endLine": 226,
+          "params": []
+        },
+        {
+          "name": "WithFinalizers",
+          "startLine": 231,
+          "endLine": 237,
+          "params": []
+        },
+        {
+          "name": "ensureObjectMetaApplyConfigurationExists",
+          "startLine": 239,
+          "endLine": 243,
+          "params": []
+        },
+        {
+          "name": "WithSpec",
+          "startLine": 248,
+          "endLine": 251,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithStatus",
+          "startLine": 256,
+          "endLine": 259,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "GetKind",
+          "startLine": 262,
+          "endLine": 264,
+          "params": []
+        },
+        {
+          "name": "GetAPIVersion",
+          "startLine": 267,
+          "endLine": 269,
+          "params": []
+        },
+        {
+          "name": "GetName",
+          "startLine": 272,
+          "endLine": 275,
+          "params": []
+        },
+        {
+          "name": "GetNamespace",
+          "startLine": 278,
+          "endLine": 281,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "IssuerApplyConfiguration",
+          "startLine": 32,
+          "endLine": 37,
+          "methods": [
+            "IsApplyConfiguration",
+            "WithKind",
+            "WithAPIVersion",
+            "WithName",
+            "WithGenerateName",
+            "WithNamespace",
+            "WithUID",
+            "WithResourceVersion",
+            "WithGeneration",
+            "WithCreationTimestamp",
+            "WithDeletionTimestamp",
+            "WithDeletionGracePeriodSeconds",
+            "WithLabels",
+            "WithAnnotations",
+            "WithOwnerReferences",
+            "WithFinalizers",
+            "ensureObjectMetaApplyConfigurationExists",
+            "WithSpec",
+            "WithStatus",
+            "GetKind",
+            "GetAPIVersion",
+            "GetName",
+            "GetNamespace"
+          ],
+          "properties": [
+            "Spec",
+            "Status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IssuerApplyConfiguration",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "Issuer",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "ExtractIssuer",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "ExtractIssuerStatus",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "IsApplyConfiguration",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "WithKind",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "WithAPIVersion",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "WithName",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "WithGenerateName",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "WithNamespace",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "WithUID",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "WithResourceVersion",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "WithGeneration",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "WithCreationTimestamp",
+          "line": 160,
+          "isDefault": false
+        },
+        {
+          "name": "WithDeletionTimestamp",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "WithDeletionGracePeriodSeconds",
+          "line": 178,
+          "isDefault": false
+        },
+        {
+          "name": "WithLabels",
+          "line": 188,
+          "isDefault": false
+        },
+        {
+          "name": "WithAnnotations",
+          "line": 203,
+          "isDefault": false
+        },
+        {
+          "name": "WithOwnerReferences",
+          "line": 217,
+          "isDefault": false
+        },
+        {
+          "name": "WithFinalizers",
+          "line": 231,
+          "isDefault": false
+        },
+        {
+          "name": "WithSpec",
+          "line": 248,
+          "isDefault": false
+        },
+        {
+          "name": "WithStatus",
+          "line": 256,
+          "isDefault": false
+        },
+        {
+          "name": "GetKind",
+          "line": 262,
+          "isDefault": false
+        },
+        {
+          "name": "GetAPIVersion",
+          "line": 267,
+          "isDefault": false
+        },
+        {
+          "name": "GetName",
+          "line": 272,
+          "isDefault": false
+        },
+        {
+          "name": "GetNamespace",
+          "line": 278,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Issuer",
+          "callee": "b.WithName",
+          "lineNumber": 43
+        },
+        {
+          "caller": "Issuer",
+          "callee": "b.WithNamespace",
+          "lineNumber": 44
+        },
+        {
+          "caller": "Issuer",
+          "callee": "b.WithKind",
+          "lineNumber": 45
+        },
+        {
+          "caller": "Issuer",
+          "callee": "b.WithAPIVersion",
+          "lineNumber": 46
+        },
+        {
+          "caller": "ExtractIssuer",
+          "callee": "extractIssuer",
+          "lineNumber": 62
+        },
+        {
+          "caller": "ExtractIssuerStatus",
+          "callee": "extractIssuer",
+          "lineNumber": 69
+        },
+        {
+          "caller": "extractIssuer",
+          "callee": "managedfields.ExtractInto",
+          "lineNumber": 74
+        },
+        {
+          "caller": "extractIssuer",
+          "callee": "internal.Parser().Type",
+          "lineNumber": 74
+        },
+        {
+          "caller": "extractIssuer",
+          "callee": "internal.Parser",
+          "lineNumber": 74
+        },
+        {
+          "caller": "extractIssuer",
+          "callee": "b.WithName",
+          "lineNumber": 78
+        },
+        {
+          "caller": "extractIssuer",
+          "callee": "b.WithNamespace",
+          "lineNumber": 79
+        },
+        {
+          "caller": "extractIssuer",
+          "callee": "b.WithKind",
+          "lineNumber": 81
+        },
+        {
+          "caller": "extractIssuer",
+          "callee": "b.WithAPIVersion",
+          "lineNumber": 82
+        },
+        {
+          "caller": "WithName",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 107
+        },
+        {
+          "caller": "WithGenerateName",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 116
+        },
+        {
+          "caller": "WithNamespace",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 125
+        },
+        {
+          "caller": "WithUID",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 134
+        },
+        {
+          "caller": "WithResourceVersion",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 143
+        },
+        {
+          "caller": "WithGeneration",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 152
+        },
+        {
+          "caller": "WithCreationTimestamp",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 161
+        },
+        {
+          "caller": "WithDeletionTimestamp",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 170
+        },
+        {
+          "caller": "WithDeletionGracePeriodSeconds",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 179
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 189
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 190
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "make",
+          "lineNumber": 191
+        },
+        {
+          "caller": "WithLabels",
+          "callee": "len",
+          "lineNumber": 191
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 204
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 205
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "make",
+          "lineNumber": 206
+        },
+        {
+          "caller": "WithAnnotations",
+          "callee": "len",
+          "lineNumber": 206
+        },
+        {
+          "caller": "WithOwnerReferences",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 218
+        },
+        {
+          "caller": "WithOwnerReferences",
+          "callee": "panic",
+          "lineNumber": 221
+        },
+        {
+          "caller": "WithOwnerReferences",
+          "callee": "append",
+          "lineNumber": 223
+        },
+        {
+          "caller": "WithFinalizers",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 232
+        },
+        {
+          "caller": "WithFinalizers",
+          "callee": "append",
+          "lineNumber": 234
+        },
+        {
+          "caller": "GetName",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 273
+        },
+        {
+          "caller": "GetNamespace",
+          "callee": "b.ensureObjectMetaApplyConfigurationExists",
+          "lineNumber": 279
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 26,
+        "functionCount": 27,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/issuerconfig.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 66,
+      "functions": [
+        {
+          "name": "IssuerConfig",
+          "startLine": 37,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "WithACME",
+          "startLine": 44,
+          "endLine": 47,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithCA",
+          "startLine": 52,
+          "endLine": 55,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithVault",
+          "startLine": 60,
+          "endLine": 63,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithSelfSigned",
+          "startLine": 68,
+          "endLine": 71,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithVenafi",
+          "startLine": 76,
+          "endLine": 79,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IssuerConfigApplyConfiguration",
+          "startLine": 27,
+          "endLine": 33,
+          "methods": [
+            "WithACME",
+            "WithCA",
+            "WithVault",
+            "WithSelfSigned",
+            "WithVenafi"
+          ],
+          "properties": [
+            "ACME",
+            "CA",
+            "Vault",
+            "SelfSigned",
+            "Venafi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IssuerConfigApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "IssuerConfig",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "WithACME",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "WithCA",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "WithVault",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "WithSelfSigned",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "WithVenafi",
+          "line": 76,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 37,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/issuerspec.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 62,
+      "functions": [
+        {
+          "name": "IssuerSpec",
+          "startLine": 33,
+          "endLine": 35,
+          "params": []
+        },
+        {
+          "name": "WithACME",
+          "startLine": 40,
+          "endLine": 43,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithCA",
+          "startLine": 48,
+          "endLine": 51,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithVault",
+          "startLine": 56,
+          "endLine": 59,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithSelfSigned",
+          "startLine": 64,
+          "endLine": 67,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithVenafi",
+          "startLine": 72,
+          "endLine": 75,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IssuerSpecApplyConfiguration",
+          "startLine": 27,
+          "endLine": 29,
+          "methods": [
+            "WithACME",
+            "WithCA",
+            "WithVault",
+            "WithSelfSigned",
+            "WithVenafi"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IssuerSpecApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "IssuerSpec",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "WithACME",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "WithCA",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "WithVault",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "WithSelfSigned",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "WithVenafi",
+          "line": 72,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 37,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/issuerstatus.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "IssuerStatus",
+          "startLine": 34,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "WithConditions",
+          "startLine": 41,
+          "endLine": 49,
+          "params": []
+        },
+        {
+          "name": "WithACME",
+          "startLine": 54,
+          "endLine": 57,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IssuerStatusApplyConfiguration",
+          "startLine": 27,
+          "endLine": 30,
+          "methods": [
+            "WithConditions",
+            "WithACME"
+          ],
+          "properties": [
+            "Conditions",
+            "ACME"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IssuerStatusApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "IssuerStatus",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "WithConditions",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "WithACME",
+          "line": 54,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithConditions",
+          "callee": "panic",
+          "lineNumber": 44
+        },
+        {
+          "caller": "WithConditions",
+          "callee": "append",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 37,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/jkskeystore.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "JKSKeystore",
+          "startLine": 36,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "WithCreate",
+          "startLine": 43,
+          "endLine": 46,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAlias",
+          "startLine": 51,
+          "endLine": 54,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithPasswordSecretRef",
+          "startLine": 59,
+          "endLine": 62,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithPassword",
+          "startLine": 67,
+          "endLine": 70,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "JKSKeystoreApplyConfiguration",
+          "startLine": 27,
+          "endLine": 32,
+          "methods": [
+            "WithCreate",
+            "WithAlias",
+            "WithPasswordSecretRef",
+            "WithPassword"
+          ],
+          "properties": [
+            "Create",
+            "Alias",
+            "PasswordSecretRef",
+            "Password"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "JKSKeystoreApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "JKSKeystore",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "WithCreate",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "WithAlias",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "WithPasswordSecretRef",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "WithPassword",
+          "line": 67,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/nameconstraintitem.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "NameConstraintItem",
+          "startLine": 32,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "WithDNSDomains",
+          "startLine": 39,
+          "endLine": 44,
+          "params": []
+        },
+        {
+          "name": "WithIPRanges",
+          "startLine": 49,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "WithEmailAddresses",
+          "startLine": 59,
+          "endLine": 64,
+          "params": []
+        },
+        {
+          "name": "WithURIDomains",
+          "startLine": 69,
+          "endLine": 74,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "NameConstraintItemApplyConfiguration",
+          "startLine": 23,
+          "endLine": 28,
+          "methods": [
+            "WithDNSDomains",
+            "WithIPRanges",
+            "WithEmailAddresses",
+            "WithURIDomains"
+          ],
+          "properties": [
+            "DNSDomains",
+            "IPRanges",
+            "EmailAddresses",
+            "URIDomains"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NameConstraintItemApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "NameConstraintItem",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "WithDNSDomains",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "WithIPRanges",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "WithEmailAddresses",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "WithURIDomains",
+          "line": 69,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithDNSDomains",
+          "callee": "append",
+          "lineNumber": 41
+        },
+        {
+          "caller": "WithIPRanges",
+          "callee": "append",
+          "lineNumber": 51
+        },
+        {
+          "caller": "WithEmailAddresses",
+          "callee": "append",
+          "lineNumber": 61
+        },
+        {
+          "caller": "WithURIDomains",
+          "callee": "append",
+          "lineNumber": 71
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/nameconstraints.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "NameConstraints",
+          "startLine": 31,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "WithCritical",
+          "startLine": 38,
+          "endLine": 41,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithPermitted",
+          "startLine": 46,
+          "endLine": 49,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithExcluded",
+          "startLine": 54,
+          "endLine": 57,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NameConstraintsApplyConfiguration",
+          "startLine": 23,
+          "endLine": 27,
+          "methods": [
+            "WithCritical",
+            "WithPermitted",
+            "WithExcluded"
+          ],
+          "properties": [
+            "Critical",
+            "Permitted",
+            "Excluded"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NameConstraintsApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "NameConstraints",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "WithCritical",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "WithPermitted",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "WithExcluded",
+          "line": 54,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/othername.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "OtherName",
+          "startLine": 30,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "WithOID",
+          "startLine": 37,
+          "endLine": 40,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithUTF8Value",
+          "startLine": 45,
+          "endLine": 48,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OtherNameApplyConfiguration",
+          "startLine": 23,
+          "endLine": 26,
+          "methods": [
+            "WithOID",
+            "WithUTF8Value"
+          ],
+          "properties": [
+            "OID",
+            "UTF8Value"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OtherNameApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "OtherName",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "WithOID",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "WithUTF8Value",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/pkcs12keystore.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "PKCS12Keystore",
+          "startLine": 37,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "WithCreate",
+          "startLine": 44,
+          "endLine": 47,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithProfile",
+          "startLine": 52,
+          "endLine": 55,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithPasswordSecretRef",
+          "startLine": 60,
+          "endLine": 63,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithPassword",
+          "startLine": 68,
+          "endLine": 71,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PKCS12KeystoreApplyConfiguration",
+          "startLine": 28,
+          "endLine": 33,
+          "methods": [
+            "WithCreate",
+            "WithProfile",
+            "WithPasswordSecretRef",
+            "WithPassword"
+          ],
+          "properties": [
+            "Create",
+            "Profile",
+            "PasswordSecretRef",
+            "Password"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PKCS12KeystoreApplyConfiguration",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "PKCS12Keystore",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "WithCreate",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "WithProfile",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "WithPasswordSecretRef",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "WithPassword",
+          "line": 68,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/selfsignedissuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "SelfSignedIssuer",
+          "startLine": 29,
+          "endLine": 31,
+          "params": []
+        },
+        {
+          "name": "WithCRLDistributionPoints",
+          "startLine": 36,
+          "endLine": 41,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SelfSignedIssuerApplyConfiguration",
+          "startLine": 23,
+          "endLine": 25,
+          "methods": [
+            "WithCRLDistributionPoints"
+          ],
+          "properties": [
+            "CRLDistributionPoints"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SelfSignedIssuerApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "SelfSignedIssuer",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "WithCRLDistributionPoints",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithCRLDistributionPoints",
+          "callee": "append",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/serviceaccountref.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "ServiceAccountRef",
+          "startLine": 30,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "WithName",
+          "startLine": 37,
+          "endLine": 40,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithTokenAudiences",
+          "startLine": 45,
+          "endLine": 50,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ServiceAccountRefApplyConfiguration",
+          "startLine": 23,
+          "endLine": 26,
+          "methods": [
+            "WithName",
+            "WithTokenAudiences"
+          ],
+          "properties": [
+            "Name",
+            "TokenAudiences"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ServiceAccountRefApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "ServiceAccountRef",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "WithName",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "WithTokenAudiences",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithTokenAudiences",
+          "callee": "append",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/vaultapprole.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 50,
+      "functions": [
+        {
+          "name": "VaultAppRole",
+          "startLine": 35,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "WithPath",
+          "startLine": 42,
+          "endLine": 45,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithRoleId",
+          "startLine": 50,
+          "endLine": 53,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithSecretRef",
+          "startLine": 58,
+          "endLine": 61,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "VaultAppRoleApplyConfiguration",
+          "startLine": 27,
+          "endLine": 31,
+          "methods": [
+            "WithPath",
+            "WithRoleId",
+            "WithSecretRef"
+          ],
+          "properties": [
+            "Path",
+            "RoleId",
+            "SecretRef"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "VaultAppRoleApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "VaultAppRole",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "WithPath",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "WithRoleId",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "WithSecretRef",
+          "line": 58,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/vaultauth.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "VaultAuth",
+          "startLine": 36,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "WithTokenSecretRef",
+          "startLine": 43,
+          "endLine": 46,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithAppRole",
+          "startLine": 51,
+          "endLine": 54,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithClientCertificate",
+          "startLine": 59,
+          "endLine": 62,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithKubernetes",
+          "startLine": 67,
+          "endLine": 70,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "VaultAuthApplyConfiguration",
+          "startLine": 27,
+          "endLine": 32,
+          "methods": [
+            "WithTokenSecretRef",
+            "WithAppRole",
+            "WithClientCertificate",
+            "WithKubernetes"
+          ],
+          "properties": [
+            "TokenSecretRef",
+            "AppRole",
+            "ClientCertificate",
+            "Kubernetes"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "VaultAuthApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "VaultAuth",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "WithTokenSecretRef",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "WithAppRole",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "WithClientCertificate",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "WithKubernetes",
+          "line": 67,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/vaultclientcertificateauth.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "VaultClientCertificateAuth",
+          "startLine": 31,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "WithPath",
+          "startLine": 38,
+          "endLine": 41,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithSecretName",
+          "startLine": 46,
+          "endLine": 49,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithName",
+          "startLine": 54,
+          "endLine": 57,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "VaultClientCertificateAuthApplyConfiguration",
+          "startLine": 23,
+          "endLine": 27,
+          "methods": [
+            "WithPath",
+            "WithSecretName",
+            "WithName"
+          ],
+          "properties": [
+            "Path",
+            "SecretName",
+            "Name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "VaultClientCertificateAuthApplyConfiguration",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "VaultClientCertificateAuth",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "WithPath",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "WithSecretName",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "WithName",
+          "line": 54,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pkg/client/applyconfigurations/certmanager/v1/vaultissuer.go",
+      "language": "go",
+      "fileCategory": "code",
+      "totalLines": 117,
+      "nonEmptyLines": 100,
+      "functions": [
+        {
+          "name": "VaultIssuer",
+          "startLine": 41,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "WithAuth",
+          "startLine": 48,
+          "endLine": 51,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithServer",
+          "startLine": 56,
+          "endLine": 59,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithServerName",
+          "startLine": 64,
+          "endLine": 67,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithPath",
+          "startLine": 72,
+          "endLine": 75,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithNamespace",
+          "startLine": 80,
+          "endLine": 83,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithCABundle",
+          "startLine": 88,
+          "endLine": 93,
+          "params": []
+        },
+        {
+          "name": "WithCABundleSecretRef",
+          "startLine": 98,
+          "endLine": 101,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithClientCertSecretRef",
+          "startLine": 106,
+          "endLine": 109,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WithClientKeySecretRef",
+          "startLine": 114,
+          "endLine": 117,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "VaultIssuerApplyConfiguration",
+          "startLine": 27,
+          "endLine": 37,
+          "methods": [
+            "WithAuth",
+            "WithServer",
+            "WithServerName",
+            "WithPath",
+            "WithNamespace",
+            "WithCABundle",
+            "WithCABundleSecretRef",
+            "WithClientCertSecretRef",
+            "WithClientKeySecretRef"
+          ],
+          "properties": [
+            "Auth",
+            "Server",
+            "ServerName",
+            "Path",
+            "Namespace",
+            "CABundle",
+            "CABundleSecretRef",
+            "ClientCertSecretRef",
+            "ClientKeySecretRef"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "VaultIssuerApplyConfiguration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "VaultIssuer",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "WithAuth",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "WithServer",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "WithServerName",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "WithPath",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "WithNamespace",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "WithCABundle",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "WithCABundleSecretRef",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "WithClientCertSecretRef",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "WithClientKeySecretRef",
+          "line": 114,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WithCABundle",
+          "callee": "append",
+          "lineNumber": 90
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 11,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    }
+  ]
+}

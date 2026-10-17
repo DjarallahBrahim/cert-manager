@@ -1,0 +1,58 @@
+{
+  "nodes": [
+    {
+      "id": "file:make/_shared/tools/util/checkhash.sh",
+      "type": "file",
+      "name": "checkhash.sh",
+      "filePath": "make/_shared/tools/util/checkhash.sh",
+      "summary": "Verifies a file's SHA-256 against an expected hash and, in learn mode, appends the corrected substitution to a file instead of failing.",
+      "tags": ["script", "utility", "hash", "verification"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:make/_shared/tools/util/hash.sh",
+      "type": "file",
+      "name": "hash.sh",
+      "filePath": "make/_shared/tools/util/hash.sh",
+      "summary": "Portable wrapper that prints only the SHA-256 hex digest of a file using shasum on macOS and sha256sum elsewhere.",
+      "tags": ["script", "utility", "hash", "portability"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:make/_shared/tools/util/lock.sh",
+      "type": "file",
+      "name": "lock.sh",
+      "filePath": "make/_shared/tools/util/lock.sh",
+      "summary": "Locks a target file while a tool download is in progress, using flock when available and a temporary file plus trap to publish only complete downloads.",
+      "tags": ["script", "utility", "concurrency", "download"],
+      "complexity": "moderate",
+      "languageNotes": "Uses bash exec redirection to hold a file descriptor lock; silently degrades on macOS where flock is absent."
+    },
+    {
+      "id": "function:make/_shared/tools/util/lock.sh:finish",
+      "type": "function",
+      "name": "finish",
+      "filePath": "make/_shared/tools/util/lock.sh",
+      "lineRange": [59, 69],
+      "summary": "EXIT/SIGINT trap that atomically renames the temporary download into place on success, removes partial files on failure, and releases the lock file.",
+      "tags": ["cleanup", "concurrency", "error-handling"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:make/_shared/tools/util/lock.sh",
+      "target": "function:make/_shared/tools/util/lock.sh:finish",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:make/_shared/tools/util/checkhash.sh",
+      "target": "file:make/_shared/tools/util/hash.sh",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "nodes": [
+    {
+      "id": "config:test/fixtures/cert-manager-resources.yaml",
+      "type": "config",
+      "name": "cert-manager-resources.yaml",
+      "filePath": "test/fixtures/cert-manager-resources.yaml",
+      "summary": "Kubernetes test fixture declaring a self-signed Issuer plus two labelled Certificates (test1, test2) that reference it, used to verify that cert-manager reconciles real resources in e2e tests.",
+      "tags": ["configuration", "test-fixture", "kubernetes", "certificate", "issuer"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:test/fixtures/cert-manager-values.yaml",
+      "type": "config",
+      "name": "cert-manager-values.yaml",
+      "filePath": "test/fixtures/cert-manager-values.yaml",
+      "summary": "Helm values override used by the test harness to install cert-manager with locally built images, short leader-election timings, and explicit controller, webhook, and cainjector resource limits.",
+      "tags": ["configuration", "test-fixture", "helm-values", "deployment", "cert-manager"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:test/fixtures/example-webhook-values.yaml",
+      "type": "config",
+      "name": "example-webhook-values.yaml",
+      "filePath": "test/fixtures/example-webhook-values.yaml",
+      "summary": "Minimal example Helm values fragment that sets CPU and memory requests/limits for a webhook container, used as sample input for webhook-related integration tests.",
+      "tags": ["configuration", "test-fixture", "helm-values", "resources", "webhook"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:test/fixtures/pebble-values.yaml",
+      "type": "config",
+      "name": "pebble-values.yaml",
+      "filePath": "test/fixtures/pebble-values.yaml",
+      "summary": "Empty Helm values placeholder for the Pebble ACME test server; the fixture file reserves a customization point that currently relies entirely on chart defaults.",
+      "tags": ["configuration", "test-fixture", "helm-values", "acme", "placeholder"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:test/fixtures/vault-values.yaml",
+      "type": "config",
+      "name": "vault-values.yaml",
+      "filePath": "test/fixtures/vault-values.yaml",
+      "summary": "Empty Helm values placeholder for the Vault test deployment, providing a hook for Vault-specific overrides without changing chart defaults today.",
+      "tags": ["configuration", "test-fixture", "helm-values", "vault", "placeholder"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:test/fixtures/cert-manager-values.yaml",
+      "target": "config:test/fixtures/cert-manager-resources.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}
