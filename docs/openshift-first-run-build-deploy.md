@@ -260,6 +260,49 @@ done
 ```
 
 ---
+1. Read the secret and log in
+Inspect the secret type:
+oc get secret "$SECRET" -n "$NS" -o jsonpath='{.type}{"\n"}'
+oc get secret "$SECRET" -n "$NS" -o json | jq '.data | keys'
+If it is a dockerconfigjson secret
+TMP=$(mktemp)
+
+oc get secret "$SECRET" -n "$NS" -o json \
+  | jq -r '.data[".dockerconfigjson"]' \
+  | base64 -d > "$TMP"
+
+AUTH=$(jq -r --arg r "$REGISTRY" \
+  '.auths[$r].auth // .auths["https://"+$r].auth // empty' "$TMP")
+
+USER=$(printf '%s' "$AUTH" | base64 -d | cut -d: -f1)
+PASS=$(printf '%s' "$AUTH" | base64 -d | cut -d: -f2-)
+
+"$PODMAN" login "$REGISTRY" -u "$USER" -p "$PASS"
+
+rm -f "$TMP"
+If it is a basic-auth secret
+USER=$(oc get secret "$SECRET" -n "$NS" -o jsonpath='{.data.username}' | base64 -d)
+PASS=$(oc get secret "$SECRET" -n "$NS" -o jsonpath='{.data.password}' | base64 -d)
+
+"$PODMAN" login "$REGISTRY" -u "$USER" -p "$PASS"
+2. Load, tag, and push the existing images
+for c in controller webhook cainjector acmesolver startupapicheck; do
+  "$PODMAN" load -i "_bin/containers/cert-manager-${c}-linux-amd64.tar.gz"
+
+  "$PODMAN" tag \
+    "cert-manager-${c}-amd64:${VERSION}" \
+    "${REGISTRY}/${REPO}/cert-manager-${c}:${VERSION}"
+
+  "$PODMAN" push \
+    "${REGISTRY}/${REPO}/cert-manager-${c}:${VERSION}"
+done
+Result:
+artifactory.example.com/docker-local/cert-manager/cert-manager-controller:v1.19.6-ocp.202610191352
+artifactory.example.com/docker-local/cert-manager/cert-manager-webhook:v1.19.6-ocp.202610191352
+artifactory.example.com/docker-local/cert-manager/cert-manager-cainjector:v1.19.6-ocp.202610191352
+artifactory.example.com/docker-local/cert-manager/cert-manager-acmesolver:v1.19.6-ocp.202610191352
+artifactory.example.com/docker-local/cert-manager/cert-manager-startupapicheck:v1.19.6-ocp.202610191352
+That is the full local build → Artifactory push flow using the existing images and the namespace secret.
 
 ## 8. Push to the OpenShift internal registry
 
