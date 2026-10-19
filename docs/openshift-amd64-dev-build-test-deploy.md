@@ -147,6 +147,8 @@ Run generation when the change touches:
 
 ```bash
 make generate-all
+make generate-all \
+  shared_generate_targets="generate-go-mod-tidy generate-base generate-govulncheck generate-golangci-lint-config generate-helm-docs generate-helm-schema generate-crds"
 make generate-licenses
 ```
 
