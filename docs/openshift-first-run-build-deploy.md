@@ -176,6 +176,13 @@ make test
 ## 6. Build the five `amd64` images
 
 ```bash
+make \
+  _bin/server/controller-linux-amd64 \
+  _bin/server/webhook-linux-amd64 \
+  _bin/server/cainjector-linux-amd64 \
+  _bin/server/acmesolver-linux-amd64 \
+  _bin/server/startupapicheck-linux-amd64
+  
 make VERSION="$VERSION" \
   _bin/containers/cert-manager-controller-linux-amd64.tar.gz \
   _bin/containers/cert-manager-webhook-linux-amd64.tar.gz \
