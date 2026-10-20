@@ -20,11 +20,13 @@ The workflow in `docs/venafi-cadn-annotation.md` is **correct and complete**. It
 
 ### Optional Enhancements
 
-| File | Purpose |
-|------|---------|
-| `pkg/controller/certificates/requestmanager/requestmanager_controller.go` | Explicit copy if custom `--copied-annotation-prefixes` used |
-| `pkg/controller/certificates/venafi-adoption/controller.go` | Filter adoption by CADN |
-| `pkg/controller/certificates/venafi-adoption/validate.go` | Validate adoption CA match |
+| File | Purpose | Status |
+|------|---------|--------|
+| `pkg/controller/certificates/requestmanager/requestmanager_controller.go` | Explicit copy if custom `--copied-annotation-prefixes` used | Ready to implement |
+| `pkg/controller/certificates/venafi-adoption/controller.go` | Filter adoption by CADN | **DEFERRED** - Adoption feature not yet implemented |
+| `pkg/controller/certificates/venafi-adoption/validate.go` | Validate adoption CA match | **DEFERRED** - Adoption feature not yet implemented |
+
+> **Note:** The adoption-related enhancements (`venafi-adoption/*`) are marked as **DEFERRED** because the Venafi certificate adoption feature is not yet implemented in cert-manager. These should be implemented **after** the adoption feature is properly merged and tested.
 
 ### Tests (Required)
 
@@ -140,7 +142,7 @@ make test WHAT=./pkg/issuer/venafi/client/...
 | **7.7 Test 2** | No annotation = policy default | TPP uses CA-A |
 | **7.8 Test 3** | Invalid CADN fails | CertReq fails with TPP error |
 | **7.9 Test 4** | Renewal keeps CADN | New CertReq has annotation, uses CA-B |
-| **7.10 Test 5** | Adoption filters by CADN | Only matching CA adopted |
+| **7.10 Test 5** | Adoption filters by CADN | **DEFERRED** - Requires adoption feature first |
 | **7.11 Test 6** | Custom-fields + CADN independent | Both work together |
 | **7.12 Test 7** | Annotation change needs renew | No auto-reissue, `cmctl renew` works |
 
@@ -283,7 +285,7 @@ make VERSION="$VERSION" helm-chart
 | **Annotation change doesn't trigger reissue** | Document `cmctl renew` requirement |
 | **Cloud issuer ignores CADN** | Add validation to reject/warn for Cloud issuers |
 | **Custom `--copied-annotation-prefixes` breaks copy** | Explicit copy in requestmanager (optional, Section 5.2) |
-| **Adoption picks wrong CA** | Filter by CertificateAuthorityDN metadata |
+| **Adoption picks wrong CA** | **DEFERRED** - Filter by CertificateAuthorityDN metadata (after adoption implemented) |
 
 ---
 
@@ -314,10 +316,20 @@ make clean
 
 ## Conclusion
 
-The document provides a **complete, production-ready implementation plan**. The workflow is correct:
+The document provides a **complete, production-ready implementation plan** for the core CADN feature. The workflow is correct:
 1. Annotation → CertificateRequest (auto-copied)
 2. Venafi issuer reads from CertificateRequest
 3. Client passes CADN to vcert
 4. vcert sends to TPP in `Certificates/Request`
 
-**Only 6 files need changes** (plus tests), no CRD/webhook changes required. The OpenShift amd64 build/push/test workflow in Section 7.4-7.6 is accurate for internal registry. For production, use `make all-containers` + multi-arch manifest push to Artifactory.
+**Only 5 files need changes** (plus tests) for the core feature, no CRD/webhook changes required. The OpenShift amd64 build/push/test workflow in Section 7.4-7.6 is accurate for internal registry. For production, use `make all-containers` + multi-arch manifest push to Artifactory.
+
+### Deferred Items (Post-Adoption Implementation)
+
+The following are **explicitly deferred** until the Venafi certificate adoption feature is implemented and stable:
+- Adoption CADN filtering in `pkg/controller/certificates/venafi-adoption/controller.go`
+- Adoption CA validation in `pkg/controller/certificates/venafi-adoption/validate.go`
+- Test 7.10 (adoption filter verification)
+- Risk mitigation for "Adoption picks wrong CA"
+
+These should be tracked as follow-up work items once adoption lands.
