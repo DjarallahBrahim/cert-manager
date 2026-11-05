@@ -597,3 +597,19 @@ enabled, but it is a Tech Preview trade-off and should be evaluated separately.
 - A Route admission rule handles initial creation ordering.
 - Argo CD must ignore the certificate fields or it will revert Kyverno.
 - The main security trade-off is that the private key is stored in the Route.
+
+
+target:
+  name: my-route
+  manifest:
+    apiVersion: route.openshift.io/v1
+    kind: Route
+  template:
+    engineVersion: v2
+    templateFrom:
+      - literal: |
+          certificate: |
+            {{ .tlscrt | nindent 2 }}
+          key: |
+            {{ .tlskey | nindent 2 }}
+        target: spec.tls
